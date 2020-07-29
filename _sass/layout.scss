@@ -1,17 +1,19 @@
-$content-width: 800px;
-$aside-width: 250px;
+$content-max-width: 900px;
+$aside-min-width: 250px;
+$aside-max-width: 300px;
 
 @mixin fixed-aside {
   z-index: 0;
   position: fixed;
-  width: calc(max(#{$aside-width}, (100% - #{$content-width}) / 2));
+  width: calc(max(#{$aside-min-width}, min((100% - #{$content-max-width}) / 2, $aside-max-width)));
 }
 
 .default {
   #content {
-    max-width: $content-width;
+    max-width: $content-max-width;
     margin: 6em auto 4em auto;
     padding: 0 1em;
+    box-sizing: border-box;
 
     & > *:first-child {
       margin-top: 0;
@@ -26,7 +28,8 @@ $aside-width: 250px;
   #content {
     margin-top: 6em;
     margin-bottom: 4em;
-    max-width: $content-width;
+    box-sizing: border-box;
+    max-width: $content-max-width;
     min-width: 0;
     padding: 0 1em;
 
@@ -38,7 +41,7 @@ $aside-width: 250px;
   .aside {
     flex-basis: 0;
     flex-grow: 1;
-    min-width: $aside-width;
+    min-width: $aside-min-width;
 
     *.header {
       display: block;
@@ -49,13 +52,13 @@ $aside-width: 250px;
   }
 }
 
-@media only screen and (max-width: #{$content-width + $aside-width}) {
+@media only screen and (max-width: #{$content-max-width + $aside-min-width}) {
   .asides .aside.right {
     display: none;
   }
 }
 
-@media only screen and (max-width: #{$content-width}) {
+@media only screen and (max-width: #{$content-max-width}) {
   .asides .aside.left {
     display: none;
   }

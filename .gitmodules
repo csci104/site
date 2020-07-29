@@ -1,0 +1,6 @@
+[submodule "_sass\\curricula"]
+	path = _sass\\curricula
+	url = git@github.com:csci104/curricula-web-styles.git
+[submodule "wiki"]
+	path = wiki
+	url = git@github.com:csci104/wiki.git

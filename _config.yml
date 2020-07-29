@@ -1,0 +1,19 @@
+title: CSCI 104
+email: csci104@bytes.usc.edu
+description: The homepage for CSCI 104 at USC
+baseurl: "" # Path
+url: "" # Protocol and host name
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-toc
+
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

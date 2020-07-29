@@ -1,0 +1,23 @@
+.tasks-title {
+  padding: 0.4em 1em;
+  display: block;
+}
+
+ul.task-list {
+  margin-top: 0;
+  padding-left: 0.5em;
+  list-style: none;
+
+  input[type=checkbox] {
+    margin-right: 0.5em;
+  }
+
+  li {
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    margin-top: 0.5em;
+    padding-left: 1em;
+  }
+}

@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<h1>Data Structures and Object Oriented Design</h1>
+<span class="subtitle">University of Southern California, {{ site.data.course.semester }}</span>
+<span class="subtitle">
+  {% for professor in site.data.people.instructors %}
+    {{ professor.name }}
+  {% endfor %}
+</span>
+<div class="columns">
+  <div>
+    <h2>General</h2>
+    <div class="links">
+      <a href="/people/"><img src="/assets/img/icon/user.svg">Staff and hours</a>
+      <a href="/syllabus/"><img src="/assets/img/icon/google-document.svg">Course syllabus</a>
+      <a href="/sections/"><img src="/assets/img/icon/list.svg">Section list</a>
+      <a href="/schedule/"><img src="/assets/img/icon/calendar.svg">Semester schedule</a>
+      <a href="/tools/"><img src="/assets/img/icon/admin.svg">Tools and links</a>
+    </div>
+    <h2>External</h2>
+    <div class="links">
+      <a href="{{ site.data.urls.piazza }}"><img src="/assets/img/icon/discussion.svg">Piazza</a>
+      <a href="{{ site.data.urls.github }}"><img src="/assets/img/icon/github.svg">GitHub organization</a>
+      <a href="{{ site.data.urls.calendar }}"><img src="/assets/img/icon/google-calendar.svg">Office hours calendar</a>
+    </div>
+  </div>
+  <div class="space"></div>
+  <div>
+    <h2>Announcements</h2>
+    {% for post in site.posts limit:5 %}
+    <div>
+      <h4 class="black">{{ post.title }}</h4>
+      {{ post }}
+    </div>
+    {% endfor %}
+  </div>
+</div>

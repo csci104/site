@@ -1,0 +1,9 @@
+---
+layout: base
+---
+
+<div class="default">
+  <div id="content" {% if page.class %}class="{{ page.class }}"{% endif %}>
+    {{ content | inject_anchors }}
+  </div>
+</div>

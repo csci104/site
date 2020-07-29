@@ -1,0 +1,15 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    {% if page.navigation != false %}
+    <div id="navigation">
+      <div class="item"><a href="/">CSCI 104</a></div>
+    </div>
+    {% endif %}
+    {{ content }}
+  </body>
+</html>

@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+<h1>Semester Schedule</h1>
+<p>
+  It is recommended that students take careful notes in class, which might be based on the course notes.
+  Chapter numbers under the textbook column refer to the textbook, while the chapter numbers under "notes" refer to the posted lecture notes.
+</p>
+<h2>Exams</h2>
+<table class="standard exams">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Exam</th>
+      <th>Time</th>
+      <th>Material</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for exam in site.data.content.exams %}
+    <tr>
+      <td>{{ forloop.index }}</td>
+      <td>{{ exam.name }}</td>
+      <td>{{ exam.time }}</td>
+      <td>
+        <ul>
+          {% for material in exam.materials %}
+          <li>{{ material }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Lectures</h2>
+<table class="standard lectures">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Topics</th>
+      <th>Textbook</th>
+      <th>Notes</th>
+      <th>Material</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for lecture in site.data.content.lectures %}
+    <tr>
+      <td>{{ forloop.index }}</td>
+      <td>
+        <ul>
+          {% for topic in lecture.topics %}
+          <li>{{ topic }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+      <td>
+        <ul>
+          {% for section in lecture.textbook %}
+          <li>{{ section }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+      <td>
+        <ul>
+          {% for topic in lecture.notes %}
+          <li>{{ topic }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+      <td>
+        <ul>
+          {% for material in lecture.materials %}
+          <li>{{ material }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,91 @@
+@import 'curricula/theme';
+@import 'layout';
+
+#navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-primary;
+  padding: 1em;
+  color: white;
+  z-index: 1;
+
+  * {
+    color: inherit;
+  }
+}
+
+$color-hover: mix($color-primary, white, 5%);
+$color-selected: mix($color-primary, white, 10%);
+
+.toc {
+  @include fixed-aside;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .spacer {
+    display: block;
+    flex-grow: 1;
+  }
+
+  .tasks {
+    padding-right: 1em;
+  }
+
+  .item {
+    display: block;
+    padding: 0.4em 1em;
+
+    &.a {
+      color: $color-primary;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-hover;
+      }
+    }
+  }
+
+  & > *:last-child {
+    display: block;
+    padding-bottom: 1em;
+  }
+
+  a.header {
+    &:hover {
+      background-color: $color-hover;
+    }
+  }
+
+  ul.section-nav {
+    margin-top: 0;
+    list-style: none;
+    padding-left: 0;
+    padding-right: 1em;
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      padding: 0.4em 1em;
+
+      &:hover {
+        background-color: $color-hover;
+      }
+
+      &.first-in-view {
+        background-color: $color-selected;
+      }
+    }
+
+    li.toc-h2 > a { padding-left: 1em + 1 * 0.5em }
+    li.toc-h3 > a { padding-left: 1em + 2 * 0.5em }
+    li.toc-h4 > a { padding-left: 1em + 3 * 0.5em }
+    li.toc-h5 > a { padding-left: 1em + 4 * 0.5em }
+  }
+}

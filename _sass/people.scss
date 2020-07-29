@@ -1,0 +1,43 @@
+$image-size: 160px;
+
+.people {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1em;
+
+  .person {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-bottom: 0.5em;
+    min-width: 2 * $image-size;
+
+    & > img {
+      width: $image-size;
+      height: $image-size;
+      crop: auto;
+    }
+
+    & > div.info {
+      padding: 0.5em;
+      display: flex;
+      flex-direction: column;
+
+      & > span {
+        display: block;
+        margin-bottom: 0.25em;
+        text-wrap: none;
+      }
+
+      & > .name {
+        font-size: 24px;
+      }
+
+      & > .space {
+        flex-grow: 1;
+      }
+    }
+  }
+}

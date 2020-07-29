@@ -1,0 +1,85 @@
+instructors:
+  - name: Mark Redekopp
+    email: redekopp@usc.edu
+    image: /assets/img/staff/redekopp.jpg
+    hours: >-
+      T: 8-9 AM<br>
+      W: 1-2:30 PM<br>
+      Th: 8-9 AM
+    location: >-
+      <a href="https://usc.zoom.us/j/307718126">Zoom: 307-718-126</a>
+
+assistants:
+  - name: Leif Wesche
+    email: wesche@usc.edu
+    image: /assets/img/staff/wesche.jpg
+    hours: >-
+      F: 7:00-10:00 PM<br>
+      Su: 7:00-10:00 PM
+    location: Zoom
+  - name: Max Pflueger
+    email: pflueger@usc.edu
+    image: /assets/img/staff/pflueger.jpg
+    hours: >-
+      M: 11 AM-1 PM<br>
+      Th: 4-6 PM
+    location: Zoom
+  - name: Nathan Bartley
+    email: nbartley@usc.edu
+    image: /assets/img/staff/nbartley.jpg
+    hours: >-
+      W: 3-5 PM<br>
+      Th: 8-10 PM<br>
+      F: 4-6 PM
+    location: Zoom
+  - name: Brendan Kennedy
+    email: btkenned@usc.edu
+    image: /assets/img/staff/btkenned.png
+    hours: >-
+      M: 4-5 PM<br>
+      F: 9 AM-12 PM
+    location: Zoom
+
+staff:
+  - name: Jiefan Yang
+    email: jiefanya@usc.edu
+    image: /assets/img/staff/jiefanya.jpg
+    hours: >-
+      T: 4-6 PM<br>
+      F: 1-3 PM
+    location: Zoom
+  - name: Zixuan Li
+    email: zixuanli@usc.edu
+    image: /assets/img/staff/zixuanli.jpg
+    hours: >-
+      W: 5-8 PM<br>
+      Th: 5-8 PM
+    location: Zoom
+  - name: Annika Oeth
+    email: aoeth@usc.edu
+    image: /assets/img/staff/annikaoeth.jpeg
+    hours: >-
+      T: 12-3 PM<br>
+      Th: 12-3 PM
+    location: Zoom
+  - name: Julie Shi
+    email: julieshi@usc.edu
+    image: /assets/img/staff/julieshi.png
+    hours: >-
+      T: 8-10 PM<br>
+      F: 7-10 PM
+    location: Zoom
+  - name: Sean Syed
+    email: seansyed@usc.edu
+    image: /assets/img/staff/seansyed.jpg
+    hours: >-
+      M: 8-10 PM<br>
+      T: 8-10 PM<br>
+      W: 8-10 PM
+    location: Zoom
+  - name: Michelle Wong
+    email: wong935@usc.eduz
+    image: /assets/img/staff/michelle.jpg
+    hours: >-
+      Sat: 5-7 PM
+    location: Zoom

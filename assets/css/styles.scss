@@ -1,0 +1,41 @@
+---
+---
+
+@import 'curricula/curricula';
+@import 'curricula/extra';
+@import 'navigation';
+@import 'table';
+@import 'people';
+@import 'layout';
+@import 'tasks';
+
+body {
+  font-size: 16px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  display: block;
+}
+
+h3.black {
+  color: black;
+}
+
+.columns {
+  display: flex;
+  flex-direction: row;
+
+  & > div {
+    flex-basis: 400px;
+    flex-grow: 1;
+  }
+
+  & > div.space {
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 3em;
+    min-width: 3em;
+  }
+}

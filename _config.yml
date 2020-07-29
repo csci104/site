@@ -5,9 +5,14 @@ baseurl: "" # Path
 url: "" # Protocol and host name
 
 markdown: kramdown
+highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-toc
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # exclude:
 #   - Gemfile

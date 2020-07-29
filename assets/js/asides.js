@@ -38,21 +38,21 @@ class Toc {
   }
 
   setLastInView() {
-    for (const pair of this.elements) {
-      pair.link.classList.remove("first-in-view");
+    for (let i = 0; i < this.elements.length - 1; i++) {
+      this.elements[i].link.classList.remove("first-in-view");
     }
     this.elements[this.elements.length - 1].link.classList.add("first-in-view");
   }
 
   setFirstInViewRest() {
     let set = false;
-    for (const pair of this.elements) {
-      const headerBounds = pair.header.getBoundingClientRect()
-      if (!set && headerBounds.top > 0) {
-        pair.link.classList.add("first-in-view");
+    for (let i = 0; i < this.elements.length; i++) {
+      const headerBounds = this.elements[i].header.getBoundingClientRect()
+      if (!set && (headerBounds.bottom >= 0 || i === this.elements.length - 1)) {
+        this.elements[i].link.classList.add("first-in-view");
         set = true;
       } else {
-        pair.link.classList.remove("first-in-view");
+        this.elements[i].link.classList.remove("first-in-view");
       }
     }
   }

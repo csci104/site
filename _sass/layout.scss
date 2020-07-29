@@ -10,7 +10,7 @@ $aside-width: 250px;
 .default {
   #content {
     max-width: $content-width;
-    margin: 5em auto 2em auto;
+    margin: 6em auto 4em auto;
     padding: 0 1em;
 
     & > *:first-child {
@@ -24,8 +24,8 @@ $aside-width: 250px;
   flex-direction: row;
 
   #content {
-    margin-top: 5em;
-    margin-bottom: 2em;
+    margin-top: 6em;
+    margin-bottom: 4em;
     max-width: $content-width;
     min-width: 0;
     padding: 0 1em;

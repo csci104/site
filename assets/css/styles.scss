@@ -2,9 +2,7 @@
 ---
 
 @import 'curricula/curricula';
-@import 'curricula/extra';
 @import 'navigation';
-@import 'table';
 @import 'people';
 @import 'layout';
 @import 'tasks';
@@ -37,5 +35,21 @@ h3.black {
     flex-grow: 0;
     flex-basis: 3em;
     min-width: 3em;
+  }
+}
+
+table.lectures, table.exams {
+  margin-bottom: 2em;
+
+  th:nth-child(1), td:nth-child(1) { width: 4%; }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.1em;
+    }
   }
 }

@@ -58,8 +58,6 @@ See [sections](/sections/).
 
 ## Grading Weights and Scale
 
-### Grade Weights
-
 The following point structure will be used in determining the grade for the course. Your final grade will depend solely on your own performance, graded according to the scale given below.
 
 <div class="text-align-center">
@@ -123,8 +121,6 @@ We will guarantee that you will get at least the grade indicated by the followin
 </div>
 
 ## Assignments, Quizzes, Rubrics, and Grading
-
-See [assignments & grading](/material/).
 
 This page is a continuation of the syllabus and contains **policies** related to grading, assignments, and policies related to submission, contesting grades, academic integrity, etc.
 You are **responsible** for reading that page *carefully* and following all of its stated policies!

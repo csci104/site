@@ -34,13 +34,6 @@ Additional information will be posted here throughout the course as needed.
  - [Runtime and Recursion]({{site.url}}/docs/RuntimeQuiz.pdf) (no solutions)
  - [Linked Lists and Recursion]({{site.url}}/docs/LLRecursionQuiz.pdf) (no solutions)
 
-## External Resources
-
-- [Basic Unix commands](http://www.nbcs.rutgers.edu/%7Eedseries/UNIXcmds.html){:target="_blank"} will improve your shell literacy, which can save you a lot of time.
-- [Cygwin](http://www.cygwin.com/){:target="_blank"} is a full-blown Unix-environment for Windows users that includes GCC, a C++ debugger, and a shell.
-- [cplusplus.com](http://www.cplusplus.com/reference/){:target="_blank"} is a comprehensive reference of the language and standard library. 
-- [cppreference.com](http://www.cppreference.com/wiki/){:target="_blank"} is a complete wiki on C++.
-
 ## Editors and IDEs
 
 We strongly advise you against using gedit, notepad, or other primitive editors.
@@ -55,17 +48,6 @@ Switch to a professional-level environment or editor, such as the following:
 - [Sublime Text](http://www.sublimetext.com/2) is an increasingly popular cross-platform editor.
   Not free; comes with evaluation period.
 
-## Tutorials
-
-- [UMD GDB Tutorial](http://www.cs.umd.edu/%7Esrhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
-- [RMS's gdb Debugger Tutorial](http://www.unknownroad.com/rtfm/gdbtut/gdbtoc.html)
-- [YoLinux.com GDB Cheat Sheet](http://www.yolinux.com/TUTORIALS/GDB-Commands.html)
-- [Valgrind Documentation](http://valgrind.org/docs/)
-- [Memcheck: a memory error detector](http://valgrind.org/docs/manual/mc-manual.html)
-- [Explanation of error messages from Memcheck](http://cs.ecs.baylor.edu/%7Edonahoo/tools/valgrind/messages.html)
-- [Tutorial on Make](http://mrbook.org/tutorials/make/)
-- [Markdown Tutorial](https://www.markdowntutorial.com/)
-
 ## Tutoring
 
-[VARC](http://viterbi.usc.edu/varc/) offers tutoring for this class.</li>
+- [VARC](http://viterbi.usc.edu/varc/) offers tutoring for this class.

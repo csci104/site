@@ -13,7 +13,6 @@ $aside-max-width: 300px;
     max-width: $content-max-width;
     margin: 6em auto 4em auto;
     padding: 0 1em;
-    box-sizing: border-box;
 
     & > *:first-child {
       margin-top: 0;
@@ -28,7 +27,6 @@ $aside-max-width: 300px;
   #content {
     margin-top: 6em;
     margin-bottom: 4em;
-    box-sizing: border-box;
     max-width: $content-max-width;
     min-width: 0;
     padding: 0 1em;

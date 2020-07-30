@@ -6,19 +6,18 @@ layout: default
 <span class="subtitle">University of Southern California, {{ site.data.course.semester }}</span>
 <span class="subtitle">
   {% for professor in site.data.people.instructors %}
-    {{ professor.name }}
+  {{ professor.name }}
   {% endfor %}
 </span>
 <div class="columns">
   <div>
     <h2>General</h2>
     <div class="links">
-      <a href="/people/"><img src="/assets/img/icon/user.svg">Staff and hours</a>
-      <a href="/syllabus/"><img src="/assets/img/icon/google-document.svg">Course syllabus</a>
-      <a href="/sections/"><img src="/assets/img/icon/list.svg">Section list</a>
-      <a href="/schedule/"><img src="/assets/img/icon/calendar.svg">Semester schedule</a>
-      <a href="/wiki/"><img src="/assets/img/icon/world.svg">Wiki and guides</a>
-      <a href="/tools/"><img src="/assets/img/icon/admin.svg">Tools and links</a>
+      {% for item in site.data.navigation.items %}
+      {% if item.index != false %}
+      <a href="{{ item.url }}"><img src="{{ item.icon }}">{{ item.title }}</a>
+      {% endif %}
+      {% endfor %}
     </div>
     <h2>External</h2>
     <div class="links">
@@ -31,7 +30,7 @@ layout: default
   <div>
     <h2>Announcements</h2>
     {% for post in site.posts limit:5 %}
-    <div>
+    <div class="post">
       <h3 class="black">{{ post.title }}</h3>
       {{ post }}
     </div>

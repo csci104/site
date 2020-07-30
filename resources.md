@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Tools and Links
+# Resources
 
 Additional information will be posted here throughout the course as needed.
 

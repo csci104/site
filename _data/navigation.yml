@@ -1,0 +1,29 @@
+items:
+  - title: Staff and hours
+    short: Staff
+    url: /staff/
+    icon: /assets/img/icon/user.svg
+  - title: Assignments
+    short: Assignments
+    url: /assignments/
+    icon: /assets/img/icon/google-document.svg
+  - title: Course syllabus
+    short: Syllabus
+    url: /syllabus/
+    icon: /assets/img/icon/google-document.svg
+  - title: Section list
+    short: Sections
+    url: /sections/
+    icon: /assets/img/icon/list.svg
+  - title: Semester schedule
+    short: Schedule
+    url: /schedule/
+    icon: /assets/img/icon/calendar.svg
+  - title: Wiki and guides
+    short: Wiki
+    url: /wiki/
+    icon: /assets/img/icon/world.svg
+  - title: Resources
+    short: Resources
+    url: /resources/
+    icon: /assets/img/icon/admin.svg

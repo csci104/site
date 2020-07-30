@@ -22,6 +22,14 @@ h3.black {
   color: black;
 }
 
+.post {
+  margin-bottom: 1em;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
 .columns {
   display: flex;
   flex-direction: row;

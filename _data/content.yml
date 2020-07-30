@@ -1,64 +1,11 @@
-exams:
-  - name: Midterm
-    time: Wednesday, June 24 at 10 AM
-    materials:
-      - Sample midterm
-  - name: Final
-    time: Tuesday, July 21 at 10 AM
-    materials:
-      - Sample final
-lectures:
-  - topics:
-      - Course Overview
-      - Motivation for Data Structures
-      - Review of Memory Allocation
-    textbook:
-      - Chapter 1
-      - C++ Interlude 1
-    notes:
-      - Chapter 1
-      - Chapter 2
-      - Chapter 3
-      - Chapter 7
-    materials:
-      - Overview
-      - Memory
-      - Streams review
-      - Classes
-  - topics:
-      - Classes
-      - Operator overloading
-    textbook:
-      - C++ Interlude 5
-    notes:
-      - Chapter 12
-    materials:
-      - Conditional compilation
-      - Operator overloading
-      - Copy semantics
-  - topics:
-      - Copy constructors
-      - Abstract data types (sets, lists, maps)
-      - The standard template library
-    textbook:
-      - Chapter 1
-      - Chapter 10
-      - Chapter 18
-      - C++ Interlude 1
-    notes:
-      - Chapter 8
-      - Chapter 6
-      - Chapter 13
-    materials:
-      - Copy semantics
-      - Standard template library
-  - topics:
-      - C++ STL and Runtime
-    textbook:
-    notes:
-      - Chapter 13
-      - Chapter 14
-    materials:
-      - Makefile Explanation PDF
-      - STL PDF
-      - Runtime PDF
+assignments:
+  - id: hw1
+    title: Introduction and Review
+    dates:
+      assigned: Wednesday, June 24 at 10 AM PST
+      due: Tuesday, July 21 at 10 AM PST
+  - id: hw2
+    title: Next Steps
+    dates:
+      assigned: Wednesday, June 24 at 10 AM PST
+      due: Tuesday, July 21 at 10 AM PST

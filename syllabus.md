@@ -122,10 +122,11 @@ We will guarantee that you will get at least the grade indicated by the followin
   </table>
 </div>
 
-## Assignments, Quizzes, Rubrics, and Grading
+### Assignments, Labs, and Quizzes
 
-This page is a continuation of the syllabus and contains **policies** related to grading, assignments, and policies related to submission, contesting grades, academic integrity, etc.
-You are **responsible** for reading that page *carefully* and following all of its stated policies!
+Grading for [assignments](/assignments/) and [labs](/labs/) are available on their respective pages.
+They contain **policies** related to grading, assignments, and policies related to submission, contesting grades, academic integrity, etc.
+You are **responsible** for reading those pages *carefully* and following all of its stated policies!
 
 ## Attendance
 

@@ -18,7 +18,7 @@ layout: default
     </tr>
   </thead>
   <tbody>
-    {% for exam in site.data.content.exams %}
+    {% for exam in site.data.schedule.exams %}
     <tr>
       <td>{{ forloop.index }}</td>
       <td>{{ exam.name }}</td>
@@ -46,7 +46,7 @@ layout: default
     </tr>
   </thead>
   <tbody>
-    {% for lecture in site.data.content.lectures %}
+    {% for lecture in site.data.schedule.lectures %}
     <tr>
       <td>{{ forloop.index }}</td>
       <td>

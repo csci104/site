@@ -12,6 +12,7 @@ layout: default
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Days</th>
       <th>Time</th>
       <th>Location</th>
       <th>Instructors</th>
@@ -21,6 +22,7 @@ layout: default
     {% for section in site.data.course.sections.lectures %}
     <tr>
       <td>{{ section.id }}</td>
+      <td>{{ section.days }}</td>
       <td>{{ section.time }}</td>
       <td>{{ section.location }}</td>
       <td>{{ section.instructors }}</td>
@@ -33,6 +35,7 @@ layout: default
   <thead>
     <tr>
       <th>Identifier</th>
+      <th>Days</th>
       <th>Time</th>
       <th>Location</th>
       <th>Instructors</th>
@@ -42,6 +45,7 @@ layout: default
     {% for section in site.data.course.sections.labs %}
     <tr>
       <td>{{ section.id }}</td>
+      <td>{{ section.days }}</td>
       <td>{{ section.time }}</td>
       <td>{{ section.location }}</td>
       <td>{{ section.instructors }}</td>

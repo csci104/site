@@ -1,64 +1,212 @@
+show:
+  lectures:
+    textbook: false
+    notes: true
+    material: true
+
 exams:
+
+  - name: Quiz 1
+    time: Friday, September 11
+    location: Quiz section
+
   - name: Midterm
-    time: Wednesday, June 24 at 10 AM
-    materials:
+    time: Friday, September 25
+    location: Quiz section
+    material:
       - Sample midterm
+
+  - name: Quiz 2
+    time: Friday, October 23
+    location: Quiz section
+
   - name: Final
-    time: Tuesday, July 21 at 10 AM
-    materials:
+    time: Saturday, November 21 at 11 AM PST
+    location: Online
+    material:
       - Sample final
+
 lectures:
+
+  # 1
   - topics:
-      - Course Overview
+      - Course overview
       - Motivation for Data Structures
-      - Review of Memory Allocation
-    textbook:
-      - Chapter 1
-      - C++ Interlude 1
+      - Modern Memory Management
     notes:
       - Chapter 1
       - Chapter 2
-      - Chapter 3
-      - Chapter 7
-    materials:
-      - Overview
-      - Memory
-      - Streams review
-      - Classes
+
+  # 2
   - topics:
+      - Object oriented design
       - Classes
+      - Abstract data types
+    notes:
+      - Chapter 6
+      - Chapter 7
+
+  # 3
+  - topics:
       - Operator overloading
-    textbook:
-      - C++ Interlude 5
     notes:
       - Chapter 12
-    materials:
-      - Conditional compilation
-      - Operator overloading
-      - Copy semantics
+
+  # 4
   - topics:
-      - Copy constructors
-      - Abstract data types (sets, lists, maps)
-      - The standard template library
-    textbook:
-      - Chapter 1
-      - Chapter 10
+      - Copy semantics
+    notes:
+      - Chapter 14
+
+  # 5
+  - topics:
+      - Inheritance
+    notes:
+      - Chapter 12
+
+  # 6
+  - topics:
+      - Polymorphism
+    notes:
+      - Chapter 14
+
+  # 7
+  - topics:
+      - Stacks
+      - Queues
+    notes:
+      - Chapter 11
+
+  # 8
+  - topics:
+      - Standard template library
+      - Containers
+    notes: Chapter 13
+
+  # 9
+  - topics:
+      - Review of list implementations
+    notes:
+      - Chapter 5
+      - Chapter 9
+
+  # 10
+  - topics:
+      - Templates
+      - Exceptions
+    notes:
+      - Chapter 15
       - Chapter 18
-      - C++ Interlude 1
+
+  # 11
+  - topics:
+      - Runtime analysis
     notes:
       - Chapter 8
-      - Chapter 6
-      - Chapter 13
-    materials:
-      - Copy semantics
-      - Standard template library
+
+  # 12
   - topics:
-      - C++ STL and Runtime
-    textbook:
+      - Comparison
+      - Sorting
+      - Functors
     notes:
-      - Chapter 13
-      - Chapter 14
-    materials:
-      - Makefile Explanation PDF
-      - STL PDF
-      - Runtime PDF
+      - Chapter 17
+
+  # 13
+  - topics:
+      - Divide and conquer
+      - Sorting
+    notes:
+      - Chapter 17
+
+  # 14
+  - topics:
+      - Graphs
+      - Trees
+    notes:
+      - Chapter 20
+      - Chapter 21
+
+  # 15
+  - topics:
+      - Priority Queues
+      - Heaps
+    notes:
+      - Chapters 22
+
+  # 16
+  - topics:
+      - Tree and graph traversals
+    notes:
+      - Chapter 20
+      - Chapter 21
+
+  # 17
+  - topics:
+      - Dijkstra's algorithm
+      - A* Search
+    notes:
+      - Chapter 23
+
+  # 18
+  - topics:
+      - Recursion
+      - Backtracking
+    notes:
+      - Chapter 4
+
+  # 19
+  - topics:
+      - Recursion
+      - Linked lists
+      - Trees
+    notes:
+      - Chapter 4
+
+  # 20
+  - topics:
+      - Recursion
+      - Generating combinations
+      - Tracing
+    notes:
+      - Chapters 4
+
+  # 21
+  - topics:
+      - Binary search trees
+    notes:
+      - Chapters 21
+
+  # 22
+  - topics:
+      - Balanced search trees
+      - Tree rotations
+      - AVL insertion algorithm
+    notes:
+      - Chapter 24
+
+  # 23
+  - topics:
+      - Balanced search trees
+      - AVL removal algorithm
+    notes:
+      - Chapters 24
+
+  # 24
+  - topics:
+      - Hash tables
+    notes:
+      - Chapters 28
+
+  # 25
+  - topics:
+      - Hash tables
+      - Bloom filters
+    notes:
+      - Chapter 28
+
+  # 26
+  - topics:
+      - Tries
+    notes:
+      - Chapter 32

@@ -4,16 +4,21 @@ layout: default
 
 <h1>Semester Schedule</h1>
 <p>
-  It is recommended that students take careful notes in class, which might be based on the course notes.
+  It is recommended that students take careful notes from recordings and during class meetings.
+  Before class meetings, it is helpful to review relevant chapters in <a href="{{ site.data.urls.notes }}">course notes</a>.
+  Slides and annotated notes will be available on the course Piazza only under the Resources tab.
+</p>
+<p>
   Chapter numbers under the textbook column refer to the textbook, while the chapter numbers under "notes" refer to the posted lecture notes.
 </p>
-<h2>Exams</h2>
+<h2>Exams & Quizzes</h2>
 <table class="standard exams">
   <thead>
     <tr>
       <th></th>
       <th>Exam</th>
       <th>Time</th>
+      <th>Location</th>
       <th>Material</th>
     </tr>
   </thead>
@@ -23,9 +28,10 @@ layout: default
       <td>{{ forloop.index }}</td>
       <td>{{ exam.name }}</td>
       <td>{{ exam.time }}</td>
+      <td>{{ exam.location }}</td>
       <td>
         <ul>
-          {% for material in exam.materials %}
+          {% for material in exam.material %}
           <li>{{ material }}</li>
           {% endfor %}
         </ul>
@@ -40,9 +46,9 @@ layout: default
     <tr>
       <th></th>
       <th>Topics</th>
-      <th>Textbook</th>
-      <th>Notes</th>
-      <th>Material</th>
+      {% if site.data.schedule.show.lectures.textbook %}<th>Textbook</th>{% endif %}
+      {% if site.data.schedule.show.lectures.notes %}<th>Notes</th>{% endif %}
+      {% if site.data.schedule.show.lectures.material %}<th>Material</th>{% endif %}
     </tr>
   </thead>
   <tbody>
@@ -56,6 +62,7 @@ layout: default
           {% endfor %}
         </ul>
       </td>
+      {% if site.data.schedule.show.lectures.textbook %}
       <td>
         <ul>
           {% for section in lecture.textbook %}
@@ -63,20 +70,25 @@ layout: default
           {% endfor %}
         </ul>
       </td>
+      {% endif %}
+      {% if site.data.schedule.show.lectures.notes %}
       <td>
         <ul>
-          {% for topic in lecture.notes %}
-          <li>{{ topic }}</li>
+          {% for chapter in lecture.notes %}
+          <li><a href="{{ site.data.urls.notes }}" target="_blank">{{ chapter }}</a></li>
           {% endfor %}
         </ul>
       </td>
+      {% endif %}
+      {% if site.data.schedule.show.lectures.material %}
       <td>
         <ul>
-          {% for material in lecture.materials %}
+          {% for material in lecture.material %}
           <li>{{ material }}</li>
           {% endfor %}
         </ul>
       </td>
+      {% endif %}
     </tr>
     {% endfor %}
   </tbody>

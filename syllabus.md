@@ -41,10 +41,6 @@ Introduces the student to standard data structures (linear structures such as li
 ### Prerequisites
 
 - CSCI 103: Introduction to Programming
-- CSCI 109: Introduction to Computing
-
-### Corequisites
-
 - CSCI 170: Discrete Methods in Computer Science
 
 ## Lecture / Labs
@@ -60,7 +56,8 @@ See [sections](/sections/).
 
 ## Grading Weights and Scale
 
-The following point structure will be used in determining the grade for the course. Your final grade will depend solely on your own performance, graded according to the scale given below.
+The following point structure will be used in determining the grade for the course.
+Your final grade will depend solely on your own performance, graded according to the scale given below.
 
 <div class="text-align-center">
   <table class="minimal center">
@@ -70,19 +67,27 @@ The following point structure will be used in determining the grade for the cour
     </thead>
     <tbody>
       <tr>
-        <td>35%</td>
+        <td>30%</td>
         <td>Homework</td>
       </tr>
       <tr>
-        <td> 5%</td>
+        <td>5%</td>
         <td>Lab Exercises</td>
       </tr>
       <tr>
-        <td>25%</td>
+        <td>15%</td>
+        <td>Weekly Exercises</td>
+      </tr>
+      <tr>
+        <td>10%</td>
+        <td>Quizzes</td>
+      </tr>
+      <tr>
+        <td>20%</td>
         <td>Midterm Exam</td>
       </tr>
       <tr>
-        <td>35%</td>
+        <td>20%</td>
         <td>Final Exam</td>
       </tr>
     </tbody>
@@ -93,7 +98,9 @@ The following point structure will be used in determining the grade for the cour
 
 ### Grading Scale
 
-We will guarantee that you will get at least the grade indicated by the following scale. Because of the fairly generous scale we will not round up if you are close to the lower threshold of a letter grade.  At the end of the semester, we may decide to lower the scale if the exams were more difficult than intended.
+We will guarantee that you will get at least the grade indicated by the following scale.
+Because of the fairly generous scale we will not round up if you are close to the lower threshold of a letter grade.
+At the end of the semester, we may decide to lower the scale if the exams were more difficult than intended.
 
 <div class="text-align-center">
   <table class="minimal center">
@@ -128,35 +135,49 @@ Grading for [assignments](/assignments/) and [labs](/labs/) are available on the
 They contain **policies** related to grading, assignments, and policies related to submission, contesting grades, academic integrity, etc.
 You are **responsible** for reading those pages *carefully* and following all of its stated policies!
 
+### Weekly Written Exercises
+
+While regular attendance will not be taken, class participation and attendance is **expected**.
+Video recordings will be available before regularly scheduled class meeting times to help you prepare for class meetings.
+During class meetings we will work on exercises in groups.
+You must submit solutions to these exercises that represent your understanding of the solutions and that include the names of your collaborators.
+We will discuss as many of the solutions as possible during class meeting times.
+ 
+In addition, you must submit a question to the **weekly question bank** that will be linked on the course Piazza.
+You will receive credit for completing the weekly written exercises and question bank submissions.
+These will be graded Pass/No Pass (Credit/No Credit).
+We will drop your lowest two scores so that you can miss two weeks of exercises and questions due to illness or other reasons without penalty.
+Experience shows that attendance and participation correlate highly with success in classes!
+
 ## Attendance
 
 While regular attendance will not be taken, class participation and attendance is **expected**.
 
 ## Textbook
 
-*Data Abstraction & Problem Solving with C++*, 6th Ed. Carrano & Henry, Pearson, 2013 (ISBN 978-0132923729)
-
-The textbook is required.
-While the class will not always follow the order or presentation style of the textbook, the textbook is an excellent source for much of the material.
-Students can use older versions of the textbook if they so desire.
-In that case, it is the students' responsibility to ensure that they have access to all required material.
-
-In addition to the textbook, you should download (and possibly print) the [Lecture notes]({{ site.data.main.lecture_notes }}).
+There is no required textbook for the class.
+We will follow the course lecture notes that you may download (and possibly print) the [lecture notes]({{ site.data.urls.notes }}).
 These are based on teaching of CSCI 104 in past semesters, and cover the material quite accurately as presented in class.
 However, the lecture notes may be out of order as we have changed the schedule slightly.
-In addition, we will post Powerpoint slides the day before lecture.
-You are encouraged to print them and bring them to class with you, though none of the instructors in Fall 2017 will be using slides.
-The lecture is intended as supplemental to the textbook/class notes, not a replacement; make sure to use all available resources to maximize your learning experience.
+We will also be providing detailed lecture slides with annotations from the recorded videos on Piazza that you may also use.
 
-In addition to the textbook and lecture notes, we strongly recommend that each student have access to a quality book on the C++ programming language, such as the textbook used for CSCI 103.
+We want to provide you with additional references that may enhance study and may be cited during video recordings.
+In addition to the textbook used for CSCI 103, for the C++ Language the following references are available for free online from the USC Library:
+
+- [Lippman, Stanley, Barbara Moo, and Josee Lajoie. C++ Primer](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/273cgt/cdi_askewsholts_vlebooks_9780133053036). Addison-Wesley Professional, 2012.
+- [Stroustrup, Bjarne. A Tour of C++](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/hs9vaa/alma991043008444003731). Upper Saddle River, NJ: Addison-Wesley, 2014.
+- [Stroustrup, Bjarne. The C++ Programming Language](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/273cgt/cdi_askewsholts_vlebooks_9780133522853). Pearson Addison Wesley, 2013.
+
+For data structures specifically: 
+
+- Carrano, Frank and Thomas Henry. Data Abstraction & Problem Solving with C++ 6th Ed. Pearson, 2013.
+- [Goodrich, Michael T, Roberto Tamassia, and David M Mount. Data Structures and Algorithms in C](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/hs9vaa/alma991043327161803731). Wiley, 2011.
 
 ## Reading Assignments
 
-Readings from the book, lecture notes and other sources form the base of your learning pyramid.
+Readings from lecture notes and other sources form the base of your learning pyramid.
 These readings contain theoretical concepts, examples and usable code that will be very helpful for all the work in this course.
-
-It is strongly recommended that students read the relevant chapters of the textbook before coming to class.
-Class will proceed at a brisk pace and often be more focused on providing extra intuition and discussions rather than rehashing the book content in great detail.
+The lecture notes and reference notes for video recordings will be provided and should be reviewed before group work during class meetings.
 
 ## Statement on Academic Conduct
 
@@ -196,9 +217,9 @@ See additional information in SCampus and university policies on scientific misc
   Provides certification for students with disabilities and helps arrange relevant accommodations.
   [dsp.usc.edu](dsp.usc.edu)
 
-- **Student Support and Advocacy** - (213) 821-4710
+- **Campus Support and Intervention** - (213) 821-4710
   Assists students and families in resolving complex issues adversely affecting their success as a student EX: personal, financial, and academic.
-  [studentaffairs.usc.edu/ssa](studentaffairs.usc.edu/ssa)
+  [studentaffairs.usc.edu/ssa](https://campussupport.usc.edu/)
 
 - **Diversity at USC**
   Information on events, programs and training, the Diversity Task Force (including representatives for each school), chronology, participation, and various resources for students.

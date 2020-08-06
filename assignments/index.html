@@ -6,13 +6,13 @@ title: Assignments
 
 <h1 id="assignments">Assignments</h1>
 <p>
-  Homework will be assigned roughly once every two weeks.
+  Homework will be assigned once every 2 weeks.
   It will be graded, and require substantial work.
   The average student should <span class="font-bold">expect to spend about 15 hours per homework</span>.
-  Homework will typically contain a mix of programming exercises and theory questions about data structures and their implementation.
+  These assignments will primarily be programming exercise about data structures and their implementation.
 </p>
 <p>
-  Roughly 2-3 assignments will contains pieces that contribute toward a class project.
+  Two assignments will contain pieces that contribute toward a <span class="font-bold">class project</span>; the different parts of the project will build on each other.
   As the project progresses, students may find it necessary to revisit and improve their earlier solutions, so good coding practices and documentation are strongly encouraged.
 </p>
 <p>
@@ -25,16 +25,26 @@ title: Assignments
     <tr>
       <th>ID</th>
       <th>Title</th>
-      <th>Assigned</th>
       <th>Due</th>
     </tr>
   </thead>
   <tbody>
     {% for assignment in site.data.content.assignments %}
-    <tr onclick="window.location = '/assignments/{{ assignment.id }}'">
-      <td><a href="/assignments/{{ assignment.id }}">{{ assignment.id }}</a></td>
+    <tr
+      {% if assignment.assigned %}
+      onclick="window.location = '/assignments/{{ assignment.id }}'"
+      {% else %}
+      class="disabled"
+      {% endif %}
+    >
+      <td>
+        {% if assignment.assigned %}
+        <a href="/assignments/{{ assignment.id }}">{{ assignment.id }}</a>
+        {% else %}
+        {{ assignment.id }}
+        {% endif %}
+      </td>
       <td>{{ assignment.title }}</td>
-      <td>{{ assignment.dates.assigned }}</td>
       <td>{{ assignment.dates.due }}</td>
     </tr>
     {% endfor %}
@@ -65,13 +75,9 @@ title: Assignments
   For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).
   Submission must be made correctly via your github account and your SHA must be submitted on the appropriate submission page.
 </p>
-<p class="font-bold">
-  All student have 4 grace days they can use over the course of the semester.
-  A maximum of 1 grace days can be used on a single assignment.
-</p>
 <p>
-  Once you have used your grace days, any late submission will not be accepted; thus, it will be graded as a 0.
-  Our online submission system will automatically deduct and track late days, so you do not need to alert anyone.
+  <span class="font-bold">New: all students may submit by 11:59 pm (PST) on the Sunday after the assignment due date without penalty</span>.
+  No late assignments will be accepted after this grace period except for extenuating circumstances with supporting documentation and a letter of support from your academic adviser.
 </p>
 <h2 id="grade-disputes">Grade Disputes</h2>
 <p>

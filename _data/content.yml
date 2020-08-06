@@ -1,11 +1,37 @@
 assignments:
   - id: hw1
-    title: Introduction and Review
+    title: Course Overview and 103 review
+    assigned: false
     dates:
-      assigned: Wednesday, June 24 at 10 AM PST
-      due: Tuesday, July 21 at 10 AM PST
+      assigned: Monday, August 17
+      due: Friday, September 4 at 11:59PM PST
   - id: hw2
-    title: Next Steps
+    title: Queues and Stacks
+    assigned: false
     dates:
-      assigned: Wednesday, June 24 at 10 AM PST
-      due: Tuesday, July 21 at 10 AM PST
+      assigned: Monday, September 7
+      due: Friday, September 18 at 11:59PM PST
+  - id: hw3
+    title: "Project, Part 1: Object Oriented Design and STL"
+    assigned: false
+    dates:
+      assigned: Monday, September 21
+      due: Friday, October 2 at 11:59PM PST
+  - id: hw4
+    title: Heaps
+    assigned: false
+    dates:
+      assigned: Monday, October 5
+      due: Friday, October 16 at 11:59PM PST
+  - id: hw5
+    title: "Project, Part 2: Graphs and Backtracking Search"
+    assigned: false
+    dates:
+      assigned: Monday, October 19
+      due: Friday, October 30 at 11:59PM PST
+  - id: hw6
+    title: Balanced Search Trees
+    assigned: false
+    dates:
+      assigned: Monday, November 2
+      due: Friday, November 13 at 11:59PM PST

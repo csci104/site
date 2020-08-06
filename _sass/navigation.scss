@@ -18,7 +18,9 @@
   }
 
   .item {
-    padding-left: 2.5em;
+    padding-right: 2.5em;
+    text-wrap: none;
+    white-space: nowrap;
   }
 }
 

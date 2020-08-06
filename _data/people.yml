@@ -1,13 +1,9 @@
 instructors:
-  - name: Mark Redekopp
-    email: redekopp@usc.edu
-    image: /assets/img/staff/redekopp.jpg
-    hours: >-
-      T: 8-9 AM<br>
-      W: 1-2:30 PM<br>
-      Th: 8-9 AM
-    location: >-
-      <a href="https://usc.zoom.us/j/307718126">Zoom: 307-718-126</a>
+  - name: Sandra Batista
+    email: sbatista@usc.edu
+    image: /assets/img/staff/sbatista.jpg
+    hours:
+    location:
 
 assistants:
   - name: Leif Wesche

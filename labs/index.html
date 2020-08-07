@@ -30,7 +30,7 @@ title: Labs
     {% for lab in site.data.content.labs %}
     <tr
       {% if lab.assigned %}
-      onclick="window.location = '/labs/{{ labs.id }}'"
+      onclick="window.location = '/labs/{{ lab.id }}'"
       {% else %}
       class="disabled"
       {% endif %}

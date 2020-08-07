@@ -2,10 +2,10 @@
 layout: asides
 toc: true
 tasks: true
-title: Before Your First Lab
+title: Getting Started
 ---
 
-# Before Your First Lab
+# Getting Started
 
 
 

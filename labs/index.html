@@ -1,0 +1,50 @@
+---
+layout: default
+title: Labs
+---
+
+<h1 id="labs">Labs</h1>
+<p>
+  Lab sessions are held every week and will be conducted by a team of TAs and Sherpas.
+  Labs are designed to provide you with basic knowledge and assistance in using the development tools you need to practice the use of data structures.
+</p>
+<p class="font-bold">
+  You are to attend that lab you are registered for.
+  Attending earlier or later labs is not allowed without explicit permission from one of the TAs.
+</p>
+<p>
+  This schedule may be changed somewhat over the course of the semester.
+  The lab notes as written currently are based on a previous iteration of the class, and may change somewhat.
+  Consider them authoritative after the corresponding week of class.
+</p>
+<h2 id="schedule">Schedule</h2>
+<table class="standard assignments hover click">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Title</th>
+      <th>Topics</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for lab in site.data.content.labs %}
+    <tr
+      {% if lab.assigned %}
+      onclick="window.location = '/labs/{{ labs.id }}'"
+      {% else %}
+      class="disabled"
+      {% endif %}
+    >
+      <td>
+        {% if lab.assigned %}
+        <a href="/labs/{{ lab.id }}">{{ lab.id }}</a>
+        {% else %}
+        {{ lab.id }}
+        {% endif %}
+      </td>
+      <td>{{ lab.title }}</td>
+      <td>{{ lab.topics }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

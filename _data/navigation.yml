@@ -3,10 +3,14 @@ items:
     short: Staff
     url: /staff/
     icon: /assets/img/icon/user.svg
-  - title: Assignments
-    short: Assignments
-    url: /assignments/
+  - title: Homework
+    short: Homework
+    url: /homework/
     icon: /assets/img/icon/google-document.svg
+  - title: Labs
+    short: Labs
+    url: /labs/
+    icon: /assets/img/icon/lab.svg
   - title: Course syllabus
     short: Syllabus
     url: /syllabus/

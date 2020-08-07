@@ -35,3 +35,9 @@ assignments:
     dates:
       assigned: Monday, November 2
       due: Friday, November 13 at 11:59PM PST
+
+labs:
+  - id: lab0
+    title: Before Your First Lab
+    assigned: true
+    topics: GitHub, Registration

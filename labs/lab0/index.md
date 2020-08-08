@@ -76,7 +76,7 @@ If you're using Docker, copy and paste should work how it normally does on your 
 
 Use the following command to generate an SSH key, **replacing `ttrojan@usc.edu` with the email associated with your Github account**:
 
-```
+```shell
 ssh-keygen -t rsa -b 2048 -C "ttrojan@usc.edu"
 ```
 
@@ -146,7 +146,7 @@ Please use your actual first and last name when configuring your git `user.name`
 For your email, you should **use the email address you've associated with your Github account**.
 Configure your information as follows, replacing the example name and email with your own:
 
-```
+```shell
 git config --global user.name "Tommy Trojan"
 git config --global user.email "ttrojan@usc.edu"
 ```
@@ -159,7 +159,7 @@ By default, git does not color its output.
 Pretty printing git messages makes it easy read the output and take proper actions.
 You can enable colors for interactive use with:
 
-```
+```shell
 git config --global color.ui auto
 ```
 
@@ -176,7 +176,7 @@ You can customize this action by setting what command you want to invoke to open
 
 Choose one of them (`nano` is likely the easiest) and run the following command:
 
-```
+```shell
 git config --global core.editor "nano"
 ```
 
@@ -187,7 +187,7 @@ git config --global core.editor "nano"
 Operating systems implement new lines differently.
 Here you will configure git to automatically normalize the line feed to properly match the platform:
 
-```
+```shell
 git config --global core.autocrlf input
 ```
 
@@ -196,7 +196,7 @@ git config --global core.autocrlf input
 Since Git 2.0, Git has updated its default push settings.
 To avoid getting a warning when you push (we will explain what push means soon), apply the following setting:
 
-```
+```shell
 git config --global push.default simple
 ```
 
@@ -204,7 +204,7 @@ git config --global push.default simple
 
 You can double check your settings using the following command:
 
-```
+```shell
 git config --list
 ```
 

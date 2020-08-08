@@ -8,7 +8,7 @@ Additional information will be posted here throughout the course as needed.
 
 ## Extra Content
 
-- Recorded lectures are available on [their own page](/videos/).
+- Recorded lectures are available on [their own page]({{ site.baseurl }}/videos/).
 - Mark Redekopp put together [several lectures](http://ee.usc.edu/~redekopp/csmodules.html) recapping material that you are expected to have learned in CSCI 103.
   These may be particularly helpful if you are a transfer student and your intro class was not as comprehensive as CSCI 103.
 - The [104-specific C++ guide](http://www-scf.usc.edu/%7Ecsci104/docs/coding-guide.pdf) has a bunch of useful information about how you can code for this class. 
@@ -17,22 +17,22 @@ Additional information will be posted here throughout the course as needed.
 
 - We recommend using Docker to virtualize your development environment.
   Instructions are available in [our repository](https://github.com/csci104/docker/){:target="_blank"}.
-- If Docker doesn't work for you or you'd prefer a graphical interface, you can use the [legacy virtual machine setup](/vm/).
+- If Docker doesn't work for you or you'd prefer a graphical interface, you can use the [legacy virtual machine setup]({{ site.baseurl }}/vm/).
   Note that this includes downloading a 2.5 GB virtual image that may take several hours; try to download it overnight.
 
 ## Sample Exams
 
- - [Sample Midterm 1a (Sp14)]({{site.url}}/docs/midterm-sp14.pdf) (no solutions)
- - [Sample Midterm 1b (Mixture of Sp14 and other problems...apologies for duplication of some problems) ]({{site.url}}/docs/MT1.pdf) (no solutions)
- - [Sample Final (Sp14)]({{site.url}}/docs/final-sp14.pdf) (no solutions)
- - [Sample Final (Mixture of Sp14 and other problems...apologies for duplication of some problems)]({{site.url}}/docs/Final.pdf) (no solutions)
+ - [Sample Midterm 1a (Sp14)]({{ site.baseurl }}/docs/midterm-sp14.pdf) (no solutions)
+ - [Sample Midterm 1b (Mixture of Sp14 and other problems...apologies for duplication of some problems) ]({{ site.baseurl }}/docs/MT1.pdf) (no solutions)
+ - [Sample Final (Sp14)]({{ site.baseurl }}/docs/final-sp14.pdf) (no solutions)
+ - [Sample Final (Mixture of Sp14 and other problems...apologies for duplication of some problems)]({{ site.baseurl }}/docs/Final.pdf) (no solutions)
 
 ## Practice Quizzes
 
- - [ADTs]({{site.url}}/docs/ADTQuiz.pdf) (no solutions)
- - [Streams and Simple Recursion]({{site.url}}/docs/StreamsRecursionQuiz.pdf) (no solutions)
- - [Runtime and Recursion]({{site.url}}/docs/RuntimeQuiz.pdf) (no solutions)
- - [Linked Lists and Recursion]({{site.url}}/docs/LLRecursionQuiz.pdf) (no solutions)
+ - [ADTs]({{ site.baseurl }}/docs/ADTQuiz.pdf) (no solutions)
+ - [Streams and Simple Recursion]({{ site.baseurl }}/docs/StreamsRecursionQuiz.pdf) (no solutions)
+ - [Runtime and Recursion]({{ site.baseurl }}/docs/RuntimeQuiz.pdf) (no solutions)
+ - [Linked Lists and Recursion]({{ site.baseurl }}/docs/LLRecursionQuiz.pdf) (no solutions)
 
 ## Editors and IDEs
 

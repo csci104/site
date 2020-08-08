@@ -15,15 +15,15 @@ layout: default
     <div class="links">
       {% for item in site.data.navigation.items %}
       {% if item.index != false %}
-      <a href="{{ item.url }}"><img src="{{ item.icon }}">{{ item.title }}</a>
+      <a href="{{ site.baseurl }}{{ item.url }}"><img src="{{ site.baseurl }}{{ item.icon }}">{{ item.title }}</a>
       {% endif %}
       {% endfor %}
     </div>
     <h2>External</h2>
     <div class="links">
-      <a href="{{ site.data.urls.piazza }}"><img src="/assets/img/icon/discussion.svg">Piazza</a>
-      <a href="{{ site.data.urls.github }}"><img src="/assets/img/icon/github.svg">GitHub organization</a>
-      <a href="{{ site.data.urls.calendar }}"><img src="/assets/img/icon/google-calendar.svg">Office hours calendar</a>
+      <a href="{{ site.data.urls.piazza }}"><img src="{{ site.baseurl }}/assets/img/icon/discussion.svg">Piazza</a>
+      <a href="{{ site.data.urls.github }}"><img src="{{ site.baseurl }}/assets/img/icon/github.svg">GitHub organization</a>
+      <a href="{{ site.data.urls.calendar }}"><img src="{{ site.baseurl }}/assets/img/icon/google-calendar.svg">Office hours calendar</a>
     </div>
   </div>
   <div class="space"></div>

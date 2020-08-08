@@ -31,14 +31,14 @@ title: Labs
     {% for lab in site.data.content.labs %}
     <tr
       {% if lab.assigned %}
-      onclick="window.location = '/labs/{{ lab.id }}'"
+      onclick="window.location = '{{ site.baseurl }}/labs/{{ lab.id }}'"
       {% else %}
       class="disabled"
       {% endif %}
     >
       <td>
         {% if lab.assigned %}
-        <a href="/labs/{{ lab.id }}">{{ lab.id }}</a>
+        <a href="{{ site.baseurl }}/labs/{{ lab.id }}">{{ lab.id }}</a>
         {% else %}
         {{ lab.id }}
         {% endif %}

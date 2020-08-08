@@ -13,21 +13,24 @@ title: Data Structures and Object Oriented Design
 <h2>Instructors</h2>
 <div class="people">
   {% for person in site.data.people.instructors %}
-    {% include person.html %}
+  {% include person.html %}
   {% endfor %}
 </div>
 <h2>Teaching Assistants</h2>
 <div class="people">
   {% for person in site.data.people.assistants %}
-    {% include person.html %}
+  {% include person.html %}
   {% endfor %}
 </div>
 <h2>Course Staff</h2>
 <div class="people">
   {% for person in site.data.people.staff %}
-    {% include person.html %}
+  {% include person.html %}
   {% endfor %}
 </div>
 <h2>Graders</h2>
-<span>Amulya Raveendra Katti</span>
-<span><a href="mailto:akatti@usc.edu">akatti@</a></span>
+<div class="people">
+  {% for person in site.data.people.graders %}
+  {% include person.html %}
+  {% endfor %}
+</div>

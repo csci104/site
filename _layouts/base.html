@@ -2,16 +2,16 @@
   <head>
     <meta charset="UTF-8">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
   </head>
   <body class="night">
     {% if page.navigation != false %}
     <div id="navigation">
-      <div class="item"><a href="/">CSCI 104</a></div>
+      <div class="item"><a href="{{ site.baseurl }}/">CSCI 104</a></div>
       {% for item in site.data.navigation.items %}
       {% if item.menubar != false %}
       <div class="item">
-        <a href="{{ item.url }}">{{ item.short }}</a>
+        <a href="{{ site.baseurl }}{{ item.url }}">{{ item.short }}</a>
       </div>
       {% endif %}
       {% endfor %}

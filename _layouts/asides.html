@@ -6,7 +6,7 @@ layout: base
   <div class="aside left">
     {% if page.toc %}
     <div class="toc">
-      <a class="header" href="/">CSCI 104</a>
+      <a class="header" href="{{ site.baseurl }}/">CSCI 104</a>
       {{ content | toc_only }}
       <span class="spacer"></span>
       {% if page.tasks %}
@@ -29,4 +29,4 @@ layout: base
   <div class="aside right">
   </div>
 </div>
-<script type="text/javascript" src="/assets/js/asides.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/assets/js/asides.js"></script>

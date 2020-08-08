@@ -32,14 +32,14 @@ title: Homework
     {% for assignment in site.data.content.assignments %}
     <tr
       {% if assignment.assigned %}
-      onclick="window.location = '/assignments/{{ assignment.id }}'"
+      onclick="window.location = '{{ site.baseurl }}/assignments/{{ assignment.id }}'"
       {% else %}
       class="disabled"
       {% endif %}
     >
       <td>
         {% if assignment.assigned %}
-        <a href="/assignments/{{ assignment.id }}">{{ assignment.id }}</a>
+        <a href="{{ site.baseurl }}/assignments/{{ assignment.id }}">{{ assignment.id }}</a>
         {% else %}
         {{ assignment.id }}
         {% endif %}

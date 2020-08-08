@@ -45,11 +45,11 @@ Introduces the student to standard data structures (linear structures such as li
 
 ## Lecture / Labs
 
-See [sections](/sections/).
+See [sections]({{ site.baseurl }}/sections/).
 
 ## Course Websites
 
-- [All content & info](/)
+- [All content & info]({{ site.baseurl }}/)
 - [Blackboard]({{ site.data.urls.blackboard }})
 - [CSCI 104 GitHub Organization]({{ site.data.urls.github }})
 - [Piazza]({{ site.data.urls.piazza }})
@@ -131,7 +131,7 @@ At the end of the semester, we may decide to lower the scale if the exams were m
 
 ### Assignments, Labs, and Quizzes
 
-Grading for [assignments](/assignments/) and [labs](/labs/) are available on their respective pages.
+Grading for [homework]({{ site.baseurl }}/homework/) and [labs]({{ site.baseurl }}/labs/) are available on their respective pages.
 They contain **policies** related to grading, assignments, and policies related to submission, contesting grades, academic integrity, etc.
 You are **responsible** for reading those pages *carefully* and following all of its stated policies!
 
@@ -182,7 +182,7 @@ The lecture notes and reference notes for video recordings will be provided and 
 ## Statement on Academic Conduct
 
 Below is USC's official language.
-For more detailed information, also see the [assignments & grading page](/material/).
+For more detailed information, also see the [assignments & grading page]({{ site.baseurl }}/homework/).
 
 Plagiarism - presenting someone else's ideas as your own, either verbatim or recast in your own words - is a serious academic offense with serious consequences.
 Please familiarize yourself with the discussion of plagiarism in *SCampus* in Part B, Section 11, *Behavior Violating University Standards* [https://policy.usc.edu/scampus-part-b/](https://policy.usc.edu/scampus-part-b/).

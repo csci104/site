@@ -84,7 +84,7 @@ staff:
     location: Zoom
   - name: Lihan Zhu
     email: lihanzhu@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/lihan.png
     hours: >-
       T: 12-2 PM<br>
       5-6 PM<br>
@@ -94,6 +94,7 @@ staff:
     email: wong935@usc.eduz
     image: /assets/img/staff/michelle.jpg
     hours: >-
+     Th: 5-8 PM<br>
     location: Zoom
   - name: Noah Kim
     email: noahbkim@usc.edu
@@ -111,11 +112,11 @@ staff:
     email: pluiz@usc.edu
     image: /assets/img/staff/pilar.jpg
     hours: >-
-    M: 10-11:30 AM
+      M: 10-11:30 AM<br>
     location: Zoom
   - name: Raymond Liu
     email: liuraymo@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/raymond.jpg
     hours: >-
       M: 6-7 PM<br>
       T: 4-5 PM<br>
@@ -175,7 +176,7 @@ staff:
 graders:
   - name: Madhury Shankar
     email: madhurys@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/madhury.HEIC
   - name: Niroop Ramdas Sagar
     email: ramdassa@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/niroop.jpg

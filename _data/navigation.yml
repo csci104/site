@@ -3,6 +3,10 @@ items:
     short: Staff
     url: /staff/
     icon: /assets/img/icon/user.svg
+  - title: Semester schedule
+    short: Schedule
+    url: /schedule/
+    icon: /assets/img/icon/calendar.svg
   - title: Homework
     short: Homework
     url: /homework/
@@ -19,10 +23,6 @@ items:
     short: Sections
     url: /sections/
     icon: /assets/img/icon/list.svg
-  - title: Semester schedule
-    short: Schedule
-    url: /schedule/
-    icon: /assets/img/icon/calendar.svg
   - title: Wiki and guides
     short: Wiki
     url: /wiki/

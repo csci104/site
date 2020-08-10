@@ -316,4 +316,3 @@ Request 3 chars in which to place the string "hat"
 
 You can submit your homework [here](http://bits.usc.edu/codedrop/?course=cs104-fa18&assignment=hw1&auth=Google). Please make sure you have read and understood the [submission instructions]({{ site.url }}/assignments/submission-instructions.html).
 
-{% include commit-reclone.md %}

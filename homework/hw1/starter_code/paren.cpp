@@ -60,3 +60,4 @@ bool isParen(string expression) {
 
 bool skippedCharacter(char c){
     return (c == ' ' || c == '+' || c == '*' || isdigit(c));
+}

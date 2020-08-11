@@ -1,186 +1,212 @@
 ---
 layout: asides
-title: CSCI 104 - Homework 1
 toc: true
 tasks: true
+title: Homework 1
 ---
 
 # Homework 1
 
-This is a sample homework designed for testing various facets of the curricula ecosystem.
-These problems are legit, so consider giving them a shot if you're interested!
+
+- Assigned: August 17, 2020 PST
+- Due: September 04, 2020 at 11:59 PST
+- Directory name in your github repository for this homework (case sensitive): `hw1`
+   - Skeleton code for this assignment is available in [`resources/hw1/`]({{ site.data.urls.github }}/resources/).
+   - Once you have cloned your `hw-username` repo, copy the `hw1/` directory into it from `resources`.
 
 
-## 1. Decimal (40%)
+## Objective
 
-Fixed-point decimals are particularly useful in cases where we are dealing with precise values, such as currency, time, or your grades (for which we do in fact use decimals).
-"But what's wrong with floating point numbers?" you might be wondering.
-Nothing intrinsically; `float` and `double` are both convenient and fairly accurate, and are sufficient for most application.
-However, both fall victim to rounding error which you can read about [here](https://floating-point-gui.de/basic/), making them unsuitable for the aforementioned scenarios.
-This is why, as you'll see later on, we don't offer constructors or operations for other numeric types.
-Practically, there's little reason to; if you're working with decimals for their precision, there is no point at which you would want to introduce a stray floating point error.
+In this assignment we will review recursion and memory management by writing a simple character storage manager ourselves.
+In doing so, we will improve our practice of pointers and develop greater appreciation for what the C++ language and the operating system provide for us in terms of memory management.
+We will also practicing using dynamic memory allocation by using dynamically allocated arrays.
 
-In this problem you will implement a rudimentary fixed-point decimal.
-All `Decimal` instances will be templated with a parameter `size_t P`, which will dictate how many places are to be reserved after the decimal point.
-For example, a `Decimal<4>` would have 4 digits of precision, and could store `-12.3456` or `0.6667`.
-Your `Decimal` will have two main capabilities: translation to and from `std::string`, and standard mathematical operations.
+## General Advice
 
-### Underlying Representation
+### Repository Reminders
 
-You'll notice that the `Decimal` class skeleton provided to you has exactly one private member of type `value_type`.
-This is, as defined in the first lines of the file, is an alias to `int64_t`, which is the widest size integer universally supported by C++.
-Using an `int64_t` will give us the largest range with the least trouble.
-Note that we `typedef` it as `value_type` for convenience; if we wish to change the type at a later date, we can do so in just one place.
+1. Never clone one repository inside another.
+   If you have a work folder `cs104` and clone your personal repo `hw-username` under it (i.e., `cs104/hw-username`), whenever you want to clone some other repository (such as `resources`), you'll need to do it back up in the `cs104` folder or another location, **not** in the `hw-username` folder.
+2. Your repository may not be ready immediately but be sure to create your GitHub account and fill out the GitHub information form linked to at the end of [lab 1]({{ site.baseurl }}/labs/lab1/).
 
-In terms of underlying representation, our design is quite simple: our decimal `d` is stored as `d * pow(10, p)`.
-If we had a `Decimal<4>` representing `0.3333`, its value would consist of the integer `3333`.
-If we had a `Decimal<6>` representing `-12.345678`, its value would consist of the integer `-12345678`.
-While this means that we cannot represent anything with more precision than `0.0001` for `Decimal<4>` and `0.000001` for `Decimal<6>`, it also means that we are storing exactly the values that we can represent.
+### Skeleton Code
 
-### Convenience Methods
+On many occasions we will want to distribute skeleton code, tests, and other pertinent files.
+To do this, we have made a separate repository, [`resources`]({{ site.data.urls.github }}/resources/), under the CSCI 104 Github organization.
+You should clone this repository to your laptop and `git pull` regularly to check for updates;
+even we sometimes make mistakes, and when we do, we will fix them as quickly as possible, but you'll only get the fixes when you pull.
 
-There are two convenience methods we highly recommend you write at the start.
-The first is `inline int8_t sign(value_type value)`, which simply returns `-1` if the value is negative and `1` otherwise.
-The second, `constexpr value_type E(size_t n)`, is a little bit more interesting.
+```shell
+git clone {{ site.data.urls.github_ssh }}/resources.git
+```
+
+Again, be sure you don't clone this repo into your `hw-username` repo, but at some higher-up point like in a `cs104` folder on your machine.
+
+### Using Valgrind
+
+Carefully review the lecture topics related to memory management and allocation, classes, operator overloading, and copy constructors/assignment operators.
+On later assignments **you will lose points if you have memory leaks**, so be sure to run `valgrind` once you think your code is working.
+Remember that using C++ smart pointers as we discussed in lecture can help you with memory management and preventing memory leaks.
+
+For example, if you were to compile `program` that takes two arguments:
+
+```
+$ ./program input.txt output.txt
+```
+
+The corresponding Valgrind command would be:
+
+```
+$ valgrind --tool=memcheck --leak-check=yes ./program input.txt output.txt
+```
+
+For more information on Valgrind, take a look at the [Valgrind wiki page]({{ site.baseurl }}/wiki/valgrind).
+
+### Command line Arguments
+
+In order to read parameters as command line arguments in C++, you need to use a slightly different syntax for your `main` function:
  
-All calls to `E(n)` with positive `n` should return 10 to the `n`th power.
-You'll likely find yourself invoking `E` with constant functions of `P` for multiplication, division, and perhaps a few other tasks.  
-Because `P` is a template parameter and therefore also available during compilation, marking `E` as `constexpr` will save us a few cycles during runtime by precomputing the result ahead of time. 
-
-### String Translation
-
-As with all other methods related to the `Decimal<P>`, a base structure is available in the problem resources.
-The first thing you will want to implement is `std::string` parsing, as it will allow you to start testing.
-Like `stoll`, which you may want to use, the overload of `Decimal<P>::value_from_string` you will implement should take the `std::string` from which you are to parse the decimal and an `index` reference, which should be left pointing to the next character in the string after those consumed by the decimal.
-
-This method should return a `value_type` corresponding to the internal representation you would expect for a `Decimal<P>` matching the value of the string.
-In other words, `Decimal<4>::value_from_string("0.6666")` should return `6666`, and `Decimal<4>::value_from_string("1.0")` should return `10000`.
-Throughout this project we will round up from 5 to handle values more precise than we can represent.
-Therefore, `Decimal<4>::value_from_string("0.66666")` should return 6667 and `Decimal<4>::value_from_string("0.33333")` should return `3333`.
-
-Note that this signature also receives the `str` by value, as you will most likely want to modify the buffer.
-By comparison, `Decimal<P>::to_string()` should be a breeze.
-
-## 2. Arithmetic (60%)
-
-Write a parser capable of computing the value of mathematical expressions comprised of `+`, `-`, `*`, `/`, and parentheses.
-The parser should accept read an expression in for every line of `stdin` and output its value to `stdout` on the corresponding line.
-Some example expressions might include:
-
-```
-1 + 2.2 + 3
-6 + 4 / 2 - 3
-(1 - 2) / 3
-12.34 * -2 * 4 + 0.5
--2 - -5 / 5
+```c++
+int main (int argc, char* argv[]) {
+    // Your code here
+}
 ```
 
-Should division by zero occur, the problem should simply output `divide by zero` on the corresponding line.
-However, it should continue reading in expressions until the stream is closed.
-This program will use the decimal class you wrote in the first part of the assignment.
+When your program is called at the command line, `argc` will then contain the total number of arguments that the program was given, and `argv` will be an array of the arguments the program was passed.
 
-### Implementation
+- The argument at `argv[0]` is always the name of your program.
+- Consequently, `argv[1]` is the first argument passed to the program.
 
-We recommend you use an [operator precedence parser](https://en.wikipedia.org/wiki/Operator-precedence_parser), which we will discuss in detail below.
-We also recommended that you tokenize the input prior to parsing, as it will separate your code into more manageable pieces.
-Optionally, we suggest that you use iterators to consume tokens from the input.
+The operating system will assign the values of `argc` and `argv`, and you can just access them inside your program.
 
-- [ ] Skim operator precedence parsing
+### Exceptions
 
-### Tokenization
+Errors happen in programming.
+We receive unexpected or illegal inputs or arguments or we reach a state that we cannot handle. 
+Rather than using return values to indicate errors, an elegant mechanism provided by C++ to handle errors are **exceptions**.
+We will teach you more about exceptions in a few weeks.
+However, in the code we provide for this assignment we are using exceptions to indicate when errors occur.
 
-Tokenization for our arithmetic parser should be fairly straightforward.
-We recommend you represent tokens with an `enum class Kind` and a `Decimal<4>` value.
-While all of the symbols, `+-*/()` will have their own `Kind`, all numeric tokens can share a `number` kind to simplify cases in `parse_primary`.
+- In this homework, you do not need to catch any exceptions.
+- In addition, we have provided the code that throws exceptions when needed.
+- You should simply understand what is happening when we do throw exceptions, i.e. an error case has occurred.
 
-Skipping whitespace and consuming single character tokens should be no problem. 
-For decimals, we recommend you use the static helper `Decimal<P>::from_string` you already implemented.
 
-- [ ] Finish `enum class Kind`
-- [ ] Create a `Token` struct with `Kind kind` and `decimal_type`
-- [ ] Write a tokenizer that takes a string and returns some collection of tokens
-    - [ ] Implement single character token parsing
-    - [ ] Use `decimal_type::from_string` to implement decimal parsing
+## 1. Paren Balance (33.3%)
 
-### Parsing
+In this problem you will implement `are_paren_balanced`, which, given an expression, will return `true` if and only if it is properly parenthesized.
+An expression is properly parenthesized if a left parentheses such as `(` and  `[` have a matching right parentheses.
+Symbols such as `+`, `-`, `*`, `/`, and numbers may be ignored.
 
-Wikipedia provides an extensive review of the theory behind the operator precedence parser, and includes such valuable insights as:
+- Expression strings will only contain parentheses, `+`, `-`, `*`, `/`, spaces, or numbers.
+- Your implementation must recursive.
+- Your solution may use helper functions. 
 
-> An operator-precedence parser is a simple shift-reduce parser that is capable of parsing a subset of LR(1) grammars.
-> More precisely, the operator-precedence parser can parse all LR(1) grammars where two consecutive nonterminals and epsilon never appear in the right-hand side of any rule.
-
-Most of us will likely read this and walk away somehow knowing less.
-However, upon translation to English, there are a couple things we can gleam.
-In general, a grammar is a set of patterns defining the structure of language.
-An operator precedence parser implements a certain grammar to be able to parse things like arithmetic expressions, which can have ambiguities resolved by operator precedence.
-Consider `a + b + c`, which is pretty easy to parse from left to right, and compare it to `a + b * c`, which cannot be parsed the same way.
-
-With all of that said, instead of trying to understand it without all of the requisite linguistic knowledge, we'll simply walk through the algorithm.
-Fortunately, it's fairly concise, and there are two main functions for us to think about.
-
-#### Primaries
-
-The first thing we need to know how to parse is a `primary`, which for operator precedence parsers is defined as a value and any associated unary operators.
-Things like `5.0` and `-20` and `(3.3)` are all primaries, and combinations of them, such as `-(-20)` or even `--4`, are as well.
-It might seem daunting to have to consider all of these possibilities, but it turns out that if we approach the problem recursively, it's nearly painless.
-We will implement four cases in our recursive method:
+Consider the following examples of inputs that should return true and false.
+Note that the expression don't have to be valid mathematically:
 
 ```
-parse_primary(tokens)
-    if next token is number
-        token = pop next token
-        return token
-    if next token is -
-        pop next token
-        token = parse_primary(tokens)
-        negate token value
-        return token
-    if next token is +
-        pop next token
-        token = parse_primary(tokens)
-        return token
-    if next token is (
-        pop next token
-        token = parse_expression(tokens)
-        pop next token  # closing paren
-        return token
+// are_paren_balanced returns true
+(7 + 8)  
+[7 * (6 + 8)]  
+7+8  
+(7+/8/1+*4) ** (5+-6) * (--1-5)
+
+// are_paren_balanced returns false
+[7+8  
+[7+8) 
+([7*5]+(6+8)(15))+5+6)
 ```
 
-- [ ] Implement `parse_primary` however you see fit
+### Design
 
-#### Expressions
+Remember that **a helper function can be used to implement a recursive function** by passing extra parameters to the recursive calls that help solve the problem.
+If you choose to use a helper function, here are some things to consider:
 
-Once this is done, we can implement the aforementioned `parse_expression`.
-Essentially, the idea here is that we only progress from left to right if the next operator is of equal or greater precedence, and if it's not, we first evaluate what we've got then continue.
-
-```
-parse_expression(tokens, lhs, minimum precedence)
-    lookahead = peek next token
-    while lookahead is a binary operator whose precedence is >= minimum precedence
-        operator = pop next token
-        rhs = parse_primary(tokens)
-        lookahead = peek next token
-        while lookahead is a binary operator whose precedence is greater than operator's, 
-                or a right-associative operator whose precedence is equal to operator's
-            rhs = parse_expression(tokens, rhs, lookahead's precedence)
-            lookahead = peek next token
-        lhs = the result of applying operator with operands lhs and rhs
-    return lhs
-```
-
-Note that this implementation associates a precedence with operators.
-For us, it is sufficient for `+` and `-` to have precedence 1 and `*` and `/` to have precedence 2, with the default precedence being 0.
-
-- [ ] Add a `int precedence` and `bool is_binary` to `Token`
-- [ ] Write a method that applies a binary operator to two `Token`s and returns a `Token`
-- [ ] Implement `parse_expression` with pseudocode arguments
-- [ ] Add an overload of `parse_expression` that only takes the tokens for convenience
-- [ ] Use `parse_expression` in `evaluate`
-
-Good luck!
+- What parameters may be helpful to pass?
+- How might you keep track of where the recursion is evaluating in the expression string?
+- How might you keep track of what parentheses must be matched?
+- Should the parameters be **passed by C++ reference** so that the variable is shared across calls or will **passing by value** suffice (do not use pointers, they are not necessary)?
 
 ### Specifications
 
-The entry point for the automated grader, relative to the root of your submission directory, will be `arithmetic/Makefile`.
-This makefile will be executed with no arguments, invoking the default task, and should produce a binary `arithmetic/main` that will be tested. 
+Your implementation should be completed in `main.cpp`, which we have provided for you in the `hw1/paren_balanced/` directory in the [`resources`]({{ site.data.urls.github }}/resources/) repository.
+Please copy the `hw1/` directory into your `hw-username` repository and only make changes where indicated.
+**You may not use STL containers classes nor include any additional libraries**.
+Here are some tips on how to compile and run your program to test it from inside the `hw1/paren_balanced` directory in your homework repository:
+
+```shell
+# Use g++ to compile, use -Wall to get all warnings
+g++ -Wall main.cpp -o paren
+
+# Use quotes when passing arguments to your program that contain spaces or special characters
+./paren "[7 * (6 + 8)]"
+./paren "[7+8"
+```
+
+
+## 2. Rational Numbers (66.7%)
+
+To practice implementing classes and applying operator overloading, implement a `Rational` number class.
+Rational numbers are ones that can be represented as a fraction where there is an integer numerator, `n`, and an integer denominator, `d`: `n/d`.
+
+Operations that apply to rational numbers include the basic arithmetic operators, comparison operators, and some assignment operators.
+You will be asked to **implement a subset of these operators**.  
+
+In addition to typical C++ operators, we will support integer exponentiation using the `^` operator.
+In many programming languages this is the bitwise-XOR operation, but it will be repurposed for our `Rational` class.
+As an example: `(2/7)^2 == 4/49`.
+Note that the integer exponent can be negative and should work appropriately.
+As an example, `(2/7)^-2 == 49/4`.
+
+To determine what operations are required to be implemented:
+
+1. Find `rational.h` in the `hw1/rational/` directory of your homework repository that you copied with the rest of `hw1/` from resources.
+2. Implement all prototyped functions in the class declaration.  
+2. **Add all appropriate functions to support the code written in `test-rational.cpp`**.
+   You can check that you've done so by making sure that `test-rational.cpp` will compile, run, and produce the expected output given in `test-rational.exp`.  
+
+You may wish to test your code for correctenss in cases not present in `test-rational.cpp`, but we will not require any additional operators or methods besides those used in `test-rational.cpp`.
+To reiterate, **no other operations must be supported beyond those exercised by `test-rational.cpp`**.
+
+### Specifications
+
+ - The default constructor should produce a Rational number of `0/1`.
+ - A Rational number can be constructed from any combination of positive and negative numerator and denominator, but should follow traditional mathematical rules.
+   Consider how you want to deal with the sign.  When outputting a negative fraction, the negative sign, `-`, should appear before the fraction (e.g. `-1/2`).
+ - When extracting a Rational number via `operator>>`, you may expect the format ` n / d ` with any amount of whitespace (including none) separating the three components: numerator, `/`, and denominator (e.g. `-1/ 2`, `1 / 2`, `1 /-2`).
+   However, we will never input a rational with just the whole number (e.g. we will enter `2/1` and not just `2`).
+   For a negative numerator or denominator, you do NOT have to handle whitespace between the negative sign and the integer value, you may assume the integer will immediately follow the negative sign.
+   If, as you extract the components of a `Rational`, the stream fails or you don't find the appropriate format, you should set the referenced `Rational` to the **value of a default constructed Rational (i.e. `0/1`)**.
+ - Any time a resulting Rational number results in 0 (i.e. numerator = 0), you must store the denominator as `1`.
+   We have provided a normalization helper function: `void Rational::normalize0();` to perform that check and update and you may call it as needed.
+ - Remember that any rational number may be reduced to a canonical form such that the numerator and denominator do not share any factors except `1`.
+   You must implement a private member function, *reduce*, in order to keep your rational number in a canonical form.
+   To do so, you must find the greatest common divisor (gcd) of the numerator and denominator.
+   **You may use the `<numeric>` library function `std::gcd` to help you**.
+   Note that if at least one of the arguments to this function is negative the returned value is negative and your code should handle this case.
+ - You may use functions from `<cmath>`, `<cstdlib>`, and `<numeric>` as necessary.
+
+
+### Testing
+
+We recommend you use `diff` to ensure the output of `test-rational` matches the contents of `test-rational.exp`.
+You can do so by using the following commands:
+
+```
+# Run the makefile we provide to you
+make
+
+# Run the test-rational binary and write the result to an output file 
+./test-rational > test-rational.out
+
+# Compare the expected and output files
+diff test-rational.out test-rational.exp
+```
+
+Running the final command will result in a line-by-line comparison of the results your program output and what we expect.
+However, there are other cases that we will test for grading beyond those given in `test-rational.exp`.
+In 104 it is your responsibility to test your code thoroughly, thinking through potential corner cases and stress cases.
+Please spend some time thinking about what could break your code, writing more test cases and ensuring they work as expected.
+
 

@@ -25,3 +25,5 @@ bundle exec jekyll serve
 The Jekyll development server will automatically reload when it detects that you've made changes.
 You can view these changes by viewing the site locally in your browser.
 By default, it is served at the URL `http://localhost:4000`.
+
+To update remote, use `git push origin master:deploy`.

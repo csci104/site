@@ -51,7 +51,7 @@ We offer two solutions: a traditional VM and Docker.
 Plus, you can use your own local editor to develop and write code.
 To set this up, please follow the <a href="https://github.com/csci104/docker" target="_blank">directions in the repository</a>.
 
-Alternatively, you can download and install the Course VM, the instructions for which are available [in the wiki](https://bytes.usc.edu/cs104/installing-course-vm.html). 
+Alternatively, you can download and install the Course VM, the instructions for which are available [in the wiki]({{ site.baseurl }}/wiki/vm/). 
 This provides a full-featured virtual OS with graphical interface, etc.
 It is larger, stores your files on a separate "virtual disk" that is not directly accessible from your computer's host OS, and can sometimes get corrupted, so please push your work to Github often.
 

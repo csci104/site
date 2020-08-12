@@ -42,6 +42,7 @@ staff:
     image: /assets/img/staff/annikaoeth.jpeg
     hours: >-
       W: 3-4:30 PM<br>
+      Th: 5:30-7 PM <br>
       F: 11 AM-12 PM
     location: Zoom
   - name: Chase Zimmerman
@@ -50,11 +51,6 @@ staff:
     hours: >-
       T: 10 AM-12 PM<br>
       Th: 10 AM-12 PM
-    location: Zoom
-  - name: Hanzo Huang
-    email: zhonghah@usc.edu
-    image: /assets/img/staff/temp.png
-    hours: >-
     location: Zoom
   - name: Hope Kim
     email: hopekim@usc.edu
@@ -100,6 +96,7 @@ staff:
     email: noahbkim@usc.edu
     image: /assets/img/staff/noahkim.jpeg
     hours: >-
+
     location: Zoom
   - name: Owen Mech
     email: omech@usc.edu
@@ -112,7 +109,8 @@ staff:
     email: pluiz@usc.edu
     image: /assets/img/staff/pilar.jpg
     hours: >-
-      M: 10-11:30 AM<br>
+      M: 5:30-7:30 PM<br>
+      T: 6-7:30 PM
     location: Zoom
   - name: Raymond Liu
     email: liuraymo@usc.edu
@@ -134,7 +132,8 @@ staff:
     email: seansyed@usc.edu
     image: /assets/img/staff/seansyed.jpg
     hours: >-
-      W: 12-2 PM
+      W: 12-2 PM <br>
+      F: 11 AM-1 PM
     location: Zoom
   - name: Spencer Davis
     email: spencetd@usc.edu

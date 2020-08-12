@@ -2,6 +2,7 @@
 layout: asides
 toc: true
 tasks: false
+permalink: /:path/:basename/
 ---
 
 # Valgrind Cheat Sheet

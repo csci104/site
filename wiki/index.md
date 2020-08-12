@@ -17,6 +17,7 @@ Pages in this wiki:
 - [Valgrind](./valgrind) by Cameron Durham
 - [Makefile](./makefile) by Leif Wesche 
 - [Code style](./style) by Noah Kim
+- [Virtual machines](./vm) by Mark Redekopp
 
 ## External Resources
 

@@ -34,7 +34,7 @@ Do that before proceeding.
 ## Register with Curricula
 
 Curricula is our home-grown classroom software suite that we'll be using to handle things like submission, grading, and office hours.
-Your next link your USC ID and GitHub account via the <a href="{{ site.baseurl }}/register/" target="_blank">registration page</a>.
+Your next link your USC ID and GitHub account via the <a href="{{ site.baseurl }}/account/register/" target="_blank">registration page</a>.
 
 This step is particularly important because it will also kickstart the processes that create your homework repository and add you to the necessary GitHub groups.
 

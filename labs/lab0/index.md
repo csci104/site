@@ -22,7 +22,7 @@ We will be using git extensively this semester in labs and in programming assign
 Github is a development ecosystem based around git.
 In CSCI 104, we will be using Github to host our git repositories and we will take advantage of other GitHub features such as the issue tracker and wiki.
 
-We start by visiting Github's <a href="https://github.com/signup/free">signup page</a>.
+We start by visiting Github's <a href="https://github.com/signup/free" target="_blank">signup page</a>.
 You are free to choose your username; it does not necessarily need to match your USC username.
 Likewise, you are welcome to any email, just **remember which email you use as you will need it later**.
 You will be sent an email to verify your email address.
@@ -34,7 +34,7 @@ Do that before proceeding.
 ## Register with Curricula
 
 Curricula is our home-grown classroom software suite that we'll be using to handle things like submission, grading, and office hours.
-Your next link your USC ID and GitHub account via the <a href="/register/">registration page</a>.
+Your next link your USC ID and GitHub account via the <a href="{{ site.baseurl }}/register/" target="_blank">registration page</a>.
 
 This step is particularly important because it will also kickstart the processes that create your homework repository and add you to the necessary GitHub groups.
 
@@ -249,5 +249,7 @@ Homework grade reports are released through GitHub, and using the above settings
 - [ ] Set your profile name to your real name
 - [ ] Upload your SSH key by adding the contents of your `id_rsa.pub`
 - [ ] Enable Github and Github email notifications
+
+
 
 

@@ -29,6 +29,8 @@ We will also practicing using dynamic memory allocation by using dynamically all
    If you have a work folder `cs104` and clone your personal repo `hw-username` under it (i.e., `cs104/hw-username`), whenever you want to clone some other repository (such as `resources`), you'll need to do it back up in the `cs104` folder or another location, **not** in the `hw-username` folder.
 2. Your repository may not be ready immediately but be sure to create your GitHub account and fill out the GitHub information form linked to at the end of [lab 1]({{ site.baseurl }}/labs/lab1/).
 
+- [ ] Agree that you'll never clone a repository into another.
+
 ### Skeleton Code
 
 On many occasions we will want to distribute skeleton code, tests, and other pertinent files.
@@ -41,6 +43,9 @@ git clone {{ site.data.urls.github_ssh }}/resources.git
 ```
 
 Again, be sure you don't clone this repo into your `hw-username` repo, but at some higher-up point like in a `cs104` folder on your machine.
+
+- [ ] Clone `resources` into your CSCI 104 work directory.
+- [ ] Clone your `hw-username` next to it if you haven't already. 
 
 ### Using Valgrind
 
@@ -132,6 +137,8 @@ g++ -Wall main.cpp -o paren
 ./paren "[7+8"
 ```
 
+- [ ] Implement `main.cpp` in `hw1/paren_balanced`.
+
 
 ## 2. Rational Numbers (30%)
 
@@ -151,51 +158,58 @@ To determine what operations are required to be implemented:
 
 1. Find `rational.h` in the `hw1/rational/` directory of your homework repository that you copied with the rest of `hw1/` from resources.
 2. Implement all prototyped functions in the class declaration.  
-2. **Add all appropriate functions to support the code written in `test-rational.cpp`**.
-   You can check that you've done so by making sure that `test-rational.cpp` will compile, run, and produce the expected output given in `test-rational.exp`.  
+2. **Add all appropriate functions to support the code written in `rational_test.cpp`**.
+   You can check that you've done so by making sure that `rational_test.cpp` will compile, run, and produce the expected output given in `rational_test.exp`.  
 
-You may wish to test your code for correctenss in cases not present in `test-rational.cpp`, but we will not require any additional operators or methods besides those used in `test-rational.cpp`.
-To reiterate, **no other operations must be supported beyond those exercised by `test-rational.cpp`**.
+You may wish to test your code for correctness in cases not present in `rational_test.cpp`, but we will not require any additional operators or methods besides those used in `rational_test.cpp`.
+To reiterate, **no other operations must be supported beyond those exercised by `rational_test.cpp`**.
 
 ### Specifications
 
- - The default constructor should produce a Rational number of `0/1`.
- - A Rational number can be constructed from any combination of positive and negative numerator and denominator, but should follow traditional mathematical rules.
-   Consider how you want to deal with the sign.  When outputting a negative fraction, the negative sign, `-`, should appear before the fraction (e.g. `-1/2`).
- - When extracting a Rational number via `operator>>`, you may expect the format ` n / d ` with any amount of whitespace (including none) separating the three components: numerator, `/`, and denominator (e.g. `-1/ 2`, `1 / 2`, `1 /-2`).
-   However, we will never input a rational with just the whole number (e.g. we will enter `2/1` and not just `2`).
-   For a negative numerator or denominator, you do NOT have to handle whitespace between the negative sign and the integer value, you may assume the integer will immediately follow the negative sign.
-   If, as you extract the components of a `Rational`, the stream fails or you don't find the appropriate format, you should set the referenced `Rational` to the **value of a default constructed Rational (i.e. `0/1`)**.
- - Any time a resulting Rational number results in 0 (i.e. numerator = 0), you must store the denominator as `1`.
-   We have provided a normalization helper function: `void Rational::normalize0();` to perform that check and update and you may call it as needed.
- - Remember that any rational number may be reduced to a canonical form such that the numerator and denominator do not share any factors except `1`.
-   You must implement a private member function, *reduce*, in order to keep your rational number in a canonical form.
-   To do so, you must find the greatest common divisor (gcd) of the numerator and denominator.
-   **You may use the `<numeric>` library function `std::gcd` to help you**.
-   Note that if at least one of the arguments to this function is negative the returned value is negative and your code should handle this case.
- - You may use functions from `<cmath>`, `<cstdlib>`, and `<numeric>` as necessary.
+- The default constructor should produce a Rational number of `0/1`.
+- A Rational number can be constructed from any combination of positive and negative numerator and denominator, but should follow traditional mathematical rules.
+  Consider how you want to deal with the sign.
+  When outputting a negative fraction, the negative sign, `-`, should appear before the fraction (e.g. `-1/2`).
+- When extracting a Rational number via `operator>>`, you may expect the format ` n / d ` with any amount of whitespace (including none) separating the numerator, `/`, and denominator (e.g. `-1/ 2`, `1 / 2`, `1 /-2`).
+- We will never input a rational with just the whole number (e.g. we will enter `2/1` and not just `2`).
+- For a negative numerator or denominator, you do not have to handle whitespace between the negative sign and the integer value, you may assume the integer will immediately follow the negative sign.
+- If, as you extract the components of a `Rational`, the stream fails or you don't find the appropriate format, you should set the referenced `Rational` to the **value of a default constructed Rational (i.e. `0/1`)**.
+- Any time a resulting Rational number results in 0 (i.e. numerator = 0), you must store the denominator as `1`.
+  We have provided a normalization helper function: `void Rational::normalize();` to perform that check and update and you may call it as needed.
+- Remember that any rational number may be reduced to a canonical form such that the numerator and denominator do not share any factors except `1`.
+  You must implement a private member function, `reduce`, in order to keep your rational number in a canonical form.
 
+**You may use the `<numeric>` library function `std::gcd` to help you**.
+Note that if at least one of the arguments to this function is negative the returned value is negative and your code should handle this case.
+Additionally, you may use functions from `<cmath>`, `<cstdlib>`, and `<numeric>` as necessary.
+
+- [ ] Implement prototyped functions in `hw1/rational/rational.h` in your `hw-username`.
+- [ ] Implement functions required for `rational_test.cpp`.
 
 ### Testing
 
-We recommend you use `diff` to ensure the output of `test-rational` matches the contents of `test-rational.exp`.
+We recommend you use `diff` to ensure the output of `rational_test` matches the contents of `rational_test.exp`.
 You can do so by using the following commands:
 
 ```shell
-# Run the makefile we provide to you
-make
+# Compile rational_test
+g++ -Wall -std=c++17 rational.cpp rational_test.cpp -o rational_test
 
-# Run the test-rational binary and write the result to an output file 
-./test-rational > test-rational.out
+# Run the rational_test binary and write the result to an output file 
+./rational_test > rational_test.out
 
 # Compare the expected and output files
-diff test-rational.out test-rational.exp
+diff rational_test.out rational_test.exp
 ```
 
 Running the final command will result in a line-by-line comparison of the results your program output and what we expect.
-However, there are other cases that we will test for grading beyond those given in `test-rational.exp`.
+However, there are other cases that we will test for grading beyond those given in `rational_test.exp`.
 In 104 it is your responsibility to test your code thoroughly, thinking through potential corner cases and stress cases.
 Please spend some time thinking about what could break your code, writing more test cases and ensuring they work as expected.
+
+- [ ] Check that `rational_test.cpp` compiles and runs correctly.
+- [ ] Compare the output of your solution.
+- [ ] Ponder edge cases and perhaps therein the meaning of life.
 
 
 ## 3. Character Manager (55%)
@@ -206,10 +220,10 @@ However, this exercise will give a glimpse into what underlies some of the abstr
 
 ### Contiguous Storage
 
-The memory will be stored in a single array of `4096` characters 
+The memory will be stored in a single array of `BUFFER_SIZE` characters where `BUFFER_SIZE` is defined in `manager.h`. 
 
 ```c++
-char buffer[4096]
+char buffer[BUFFER_SIZE]
 ```
 
 You will need to implement the following two functions:
@@ -223,8 +237,10 @@ You will need to implement the following two functions:
 Let's consider a program that utilizes the simple memory manager:
 
 ```c++
+SimpleCharacterManager manager;
+
 // Request space for two characters
-char* c1 = alloc_chars(2);
+char* c1 = manager.alloc_chars(2);
 
 // Check that it was granted, write "hi"
 if (c1 != nullptr) {
@@ -233,13 +249,13 @@ if (c1 != nullptr) {
 }
 
 // Request space for three more characters
-char* c2 = alloc_chars(3);
+char* c2 = manager.alloc_chars(3);
 
 // Free by writing 0 from c1 to the end of the buffer
-free_chars(c1); 
+manager.free_chars(c1); 
 ```
 
-Skeleton code is given in the `simple_manager.h` and `simple_manager.cpp`.
+Skeleton code is given in the `simple.h` and `simple.cpp`.
 You will finish the unimplemented methods.
 
 #### Specifications
@@ -247,7 +263,8 @@ You will finish the unimplemented methods.
 - If a character has not been allocated to the user, then it should contain the null character, `\0`.
 - When a simple memory manager is instantiated, all characters in the buffer will be set to the null character before anything has been allocated to a user.
 - All characters in the buffer should be set to the null character after they have been freed by a call to `free_chars`.
-  We have provided the member function, `overwrite`, to assist in this.
+  You may include `<algorithm>` and use `std::fill` to help you.
+  To do so, `std:fill(start, end,'\0');` given a pointer to a character start and pointer to a character end will overwrite all the characters starting with the character addressed by start and ending at the character addressed by end with the null character.
 
 In this part of the problem, all characters are stored contiguously in memory.
 When memory is requested by your program, you will assign it the smallest address available (i.e. smallest available array index), unless there is not enough remaining space in the buffer.
@@ -258,23 +275,42 @@ This is illustrated below:
     <img src="./assets/contiguous_buffer.jpg" alt="SSH URL" />
 </div>
 
+- [ ] Implement `SimpleCharacterManager::alloc_chars`.
+- [ ] Implement `SimpleCharacterManager::free_chars`.
+
 #### Testing
 
-In order to test your memory manager:
+A small driver program that utilizes your memory manager is provided in `simple_test.cpp`.
+The program should do the following if your memory manager is working correctly.
+First it should store the phrase: `Hello world!\n` one character at a time, storing whitespace and punctuation also.
+Then print the phrase.
+Then release the memory for `world!\n` and finally obtain memory to store the phrase `moon! Bye.\n`.
+This program should work only using your memory manager to do this and not using `malloc`, `new`, `free`, `delete`, or C++ strings.
 
-1. A small driver program that utilizes your memory manager is provided in `first_memtest.cpp`.
-   The program should do the following if your memory manager is working correctly.
-   First it should store the phrase: `Hello world!\n` one character at a time, storing whitespace and punctuation also.
-   Then print the phrase.
-   Then release the memory for `world!\n` and finally obtain memory to store the phrase `moon! Bye.\n`.
-   This program should work only using your memory manager to do this and not using `malloc`, `new`, `free`, `delete`, or C++ strings.
-   You may modify this program as needed to help test your code.
-2. To help debug your program, draw what the stack memory of the driver program looks like.
-   Draw what it should look like if your manager is working properly and then compare to what may be happening with your manager.
-3. This storage manager is very problematic.
-   Consider how it is possible to overwrite part of the buffer that the user still has a pointer to (and may try to access via that pointer).
-   **This is not a problem with your implementation, it is inherent in the design provided**.
-   Try to test this case in the driver program.
+You may modify this program as needed to help test your code.
+In order to actually run it, use `g++` in your Docker shell or VM terminal:
+
+```shell
+# Use -Wall to get a wider array of warnings. Use -std=c++17 to ensure you have
+# access to modern C++ utilities. Finally, use -g to produce debug symbols.
+g++ -Wall -std=c++17 -g simple.cpp simple_test.cpp -o simple_test
+
+# If compilation succeeds, you can run the resultant binary:
+./simple_test
+```
+
+- To help debug your program, draw what the stack memory of the driver program looks like.
+  Draw what it should look like if your manager is working properly and then compare to what may be happening with your manager.
+- You can also use tools we've provided in your development environment.
+  [GDB]({{ site.baseurl }}/wiki/gdb/) allows you to step through during execution, and [Valgrind]({{ site.baseurl }}/wiki/valgrind) checks for leaked memory.
+  However, **it's totally okay if you don't understand how these tools work**; we'll have labs on them later in the semester.
+- This storage manager is very problematic.
+  Consider how it is possible to overwrite part of the buffer that the user still has a pointer to (and may try to access via that pointer).
+  **This is not a problem with your implementation, it is inherent in the design provided**.
+  Try to test this case in the driver program.
+
+- [ ] Compile your program with the test harness.
+- [ ] Work through the comments in the test harness.
 
 ### Improving Flexibility
 
@@ -303,7 +339,6 @@ typedef struct CharacterBlock {
 } CharacterBlock;
 ```
 
-
 Your flexible manager should keep track of all of the memory allocated in array of `CharacterBlock`s.
 That means when there is a call to `alloc_chars`, your flexible char manager should do the following:
 
@@ -321,11 +356,11 @@ That array should be managed by a `unique_ptr` to an array of `CharacterBlock`s 
 
 Remember there are two different arrays:
 
-1. As with the simple manager there is the `buffer` array of `4096` characters that is statically allocated as a data member of the manager class.  
+1. As with the simple manager there is the `buffer` array of `BUFFER_SIZE` characters that is statically allocated as a data member of the manager class.  
 2. For the flexible memory manager, there is also a dynamically allocated array,`blocks`, storing `CharacterBlock` structs that keep track of memory allocated in the `buffer`.
 
-Skeleton code for this part is provided in `flexible_manager.h` and `flexible_manager.cpp`.
-We have provided driver code for testing your memory manager in `flexible_manager_test.cpp`.
+Skeleton code for this part is provided in `flexible.h` and `flexible.cpp`.
+We have provided driver code for testing your memory manager in `flexible_test.cpp`.
 You will need to implement the same functions as in the first part, but now the memory can be assigned from any place in your buffer as long as there is space.
 As a consequence it will be possible to delete individual pointers from memory.
 
@@ -348,6 +383,12 @@ Similarly, `void free_chars(char *)` will still free all memory at the given add
 For example, if a call `alloc_chars(10)` was made and returned `address_1`, then a call to `free_chars(address_1)` would free `10` characters from buffer starting at `address_1`, overwriting the contents with `0` (remember that you can still use the `overwrite` member function).
 If the pointer given as an argument to `free_chars` is not a valid address in the buffer range or has not been requested from `alloc_chars`, then nothing will be done.
 In order to know what memory addresses are valid, you must manage the memory blocks in use.
+
+- [ ] Implement a way to manage `CharacterBlock` objects.
+- [ ] Implement `FlexibleCharacterManager::alloc_chars`.
+- [ ] Implement `FlexibleCharacterManager::free_chars`.
+- [ ] Compile and test your program with `flexible_test.cpp` similarly to `simple_test.cpp`.
+- [ ] Work through the comments in `flexible_test.cpp`.
 
 ### An Aside
 
@@ -378,3 +419,9 @@ Request 3 chars in which to place the string "hat"
 ```
 
 
+
+
+## Submitting
+
+Once you're finished you can submit your code on the [Curricula]({{ site.baseurl }}/submit/ }}) submission page.
+Be sure to carefully read and follow the instructions there.

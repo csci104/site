@@ -10,30 +10,19 @@ assistants:
     email: wesche@usc.edu
     image: /assets/img/staff/wesche.jpg
     hours: >-
-      F: 7:00-10:00 PM<br>
-      Su: 7:00-10:00 PM
+      TBD
     location: Zoom
-  - name: Max Pflueger
-    email: pflueger@usc.edu
-    image: /assets/img/staff/pflueger.jpg
+  - name: Roma Ghewari
+    email: ghewari@usc.edu
+    image: /assets/img/staff/temp.png
     hours: >-
-      M: 11 AM-1 PM<br>
-      Th: 4-6 PM
+      TBD
     location: Zoom
-  - name: Nathan Bartley
-    email: nbartley@usc.edu
-    image: /assets/img/staff/nbartley.jpg
+  - name: Elan Markowitz
+    email: esmarkow@usc.edu
+    image: /assets/img/staff/temp.png
     hours: >-
-      W: 3-5 PM<br>
-      Th: 8-10 PM<br>
-      F: 4-6 PM
-    location: Zoom
-  - name: Brendan Kennedy
-    email: btkenned@usc.edu
-    image: /assets/img/staff/btkenned.png
-    hours: >-
-      M: 4-5 PM<br>
-      F: 9 AM-12 PM
+      W: 5-7 PM
     location: Zoom
 
 staff:
@@ -75,8 +64,9 @@ staff:
     location: Zoom
   - name: Kartik Balodi
     email: balodi@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/kartik.png
     hours: >-
+      TBD
     location: Zoom
   - name: Lihan Zhu
     email: lihanzhu@usc.edu
@@ -96,7 +86,7 @@ staff:
     email: noahbkim@usc.edu
     image: /assets/img/staff/noahkim.jpeg
     hours: >-
-
+      TBD
     location: Zoom
   - name: Owen Mech
     email: omech@usc.edu
@@ -109,8 +99,7 @@ staff:
     email: pluiz@usc.edu
     image: /assets/img/staff/pilar.jpg
     hours: >-
-      M: 5:30-7:30 PM<br>
-      T: 6-7:30 PM
+      M: 5:30-7:30 PM
     location: Zoom
   - name: Raymond Liu
     email: liuraymo@usc.edu

@@ -19,7 +19,7 @@ protocol (FIFO), so we can only add the the back of the list and remove from the
 and have either an STL vector or STL list as the private data and then we want to measure the differences in the operations given each implementation and why this may be occurring.
 We will step you through this here. 
    
-### Problem 6: Circular Linked List (25%)
+### Problem 1: Circular Linked List (25%)
 
 For this problem, you will be using your skills with linked lists to create a class that stores a doubly-linked list of ints.  The list will also be circular, meaning that the head and tail of the list link to each other.  The list supports all operations in the List ADT, including insert, remove, get, and set, as well as a simple iterator interface which is explained below. 
 
@@ -31,20 +31,54 @@ Since this class is a circular list, it is meant to store data that will be acce
 
 The exception to this is when the list has 0 length, and there are no elements at all.  No amount of wrapping would produce a valid index here!  Instead, `get()` should return 0, and `set()` and `remove()` should just return without modifying the list.  
 
-#### What's all this "size_t" business?
 
-You might notice that all functions with parameters for an index accept it as a `size_t`.  You haven't really seen it before, but `size_t` is the the correct type to use for array indicies.  It is defined as a type large enough to hold the size of any object in memory, up to and including the size of your entire PC's memory.  It's also an unsigned type, so it can't hold negative values (there are no negative sizes), and you don't have to worry about handling them.  More then that, it also semantically indicates that a variable is supposed to hold the size of something, not just some random integral quantity.  `size_t`s are used all over the standard library for indices and sizes of collections, so it's best to start getting used to them now.  
 
-You might notice that you get compiler warnings when you try to compare a `size_t` to a regular integer, for example in code like this:
+### Problem 2 (Stacks, 20%)
+Use your `CircularListInt` class to create a Stack data structure for variables of type `int`.  Alternatively, you can use the STL `list<int>` if your Circular Linked List is not work for a cost of 3 points.  Download and use the provided [stackint.h](https://github.com/usc-csci104-fall2018/homework-resources/blob/master/hw3/stackint.h) as is.  Notice the stack has a CircularListInt as a data member (which you'll need to change to `list<int>` if you use that class instead, but don't make any other changes).  This is called **composition**, where we compose/build one class from another, already available class.  Essentially the member functions of the `StackInt` class that you write should really just be wrappers around calls to the underlying linked list.
 
-```cpp
-std::vector<int> foo;
+You should think **carefully** about efficiency.  **All operations (other than possibly the destructor) should run in O(1)**
 
-for(int index = 0; index < foo.size(); ++index)
-{
-	/* do stuff */
-}
+### Problem 3 (Simple Arithmetic Parser and Evaluator, 55%)
+
+Simple arithmetic expressions consist of integers, the operators PLUS (+), MULTIPLY (\*), SHIFTLEFT (<), and SHIFTRIGHT (>), along with parentheses to specify a desired order of operations.  The SHIFTLEFT operator indicates you should double the integer immediately following the operator.  The SHIFTRIGHT operator indicates you should divide the integer by 2 (rounding down).  
+
+Your task is to write a program (the executable should be named `parser`) that will read simple arithmetic expressions from a file, and evaluate and show the output of the given arithmetic expressions.
+
+Simple Arithmetic Expressions are defined formally as follows:
+
+1. Any string of digits is a simple arithmetic expression, namely a positive integer.
+1. If Y1, Y2, ..., Yk are simple arithmetic expressions then the following are simple arithmetic expressions for `k>1`:
+    + <Y1
+    + >Y1
+    + (Y1+Y2+Y3+...+Yk)
+    + (Y1\*Y2\*Y3\*...\*Yk)
+
+Notice that our format rules out the expression 12+23, since it is missing the parentheses. It also rules out (12+34\*123) which would have to instead be written (12+(34\*123)), so you never have to worry about precedence. This should make your parsing task significantly easier. Whitespace may occur in arbitrary places in arithmetic expressions, but never in the middle of an integer. Each expression will be on a single line.
+
+Examples (the first three are valid, the other three are not):  
 
 ```
+(<<14 *(>>123+333 )) // evaluates to 20328
+<>(2 * 1* ( >500000000 + <<0)) // evaluates to 500000000
+<>(1 * >3 * 3) // evaluates to 2
+((<123*234)    // missing parenthesis
+(1337*9001+42)   // mixing operators
+(*1138*3720)    // extra *
+```
+Your program should take the filename in which the formulas are stored as an input parameter.  For each expression, your program should output to `cout`, one per line, one of the options:
 
-The issue is that `std::vector::size()` returns an (unsigned) `size_t`, and it's being compared to a (signed) int in the for-loop statement.  Due to how C type conversion rules work, this can lead so strange and unpredictable results like one of the operands being truncated or converted from negative to positive.  The easiest fix is to just delare all variables containing indices and counts as `size_t`s.  Failing that, you can just cast the result of size to an integer to an int, like this: `index < ((int)foo.size())`.  That will work fine as long as your vector doesn't have more than 2<sup>31</sup>-1 items in it, and that won't happen in this class!
+ - `Malformed` if the formula was malformed (did not meet our definition of a formula) and then continue to the next expression.  
+ - An integer equal to the evaluation of the expression, if the expression was well-formed.
+
+Each expression will be on a single line by itself so that you can use getline() and then parse the whole line of text that is returned to you. If you read a blank line, just ignore it and go on to the next.  The numbers will always fit into `int` types, but as you can see from the example, they can be pretty large.  
+
+While this may be contrary to your expectation of us, you must **not** use recursion to solve this problem. Instead keep a stack on which you push pieces of formula.  **Use your `StackInt` class** from Problem 4 for this purpose.  Push open parenthesis '(', integers, and operators onto the stack.  When you encounter a closing parenthesis ')', pop things from the stack and evaluate them until you pop the open parenthesis '('. Now --- assuming everything was correctly formatted --- compute the value of the expression in parentheses, and push it onto the stack as an integer.  When you reach the end of the string, assuming that everything was correctly formatted (otherwise, report an error), your stack should contain exactly one integer, which you can output.
+
+In order to be able to push all those different things (parentheses, operators, and integers) onto the stack, you will need to represent each item with an integral value.  It is your choice how to do this mapping.  One option is to store special characters (parentheses and operators) as special numbers that you reserve specifically for these purposes.  It might make your code more readable to define the mapping of special characters to integers by declaring them as const ints as in:
+
+```c++
+const int OPEN_PAREN = -1;
+```
+
+That way, your code can use `OPEN_PAREN` wherever you want to check for that value.  Remember that all numbers you are given will be positive, so you can use negative integers for your const values.
+

@@ -65,9 +65,13 @@ Git uses the [Secure Shell](http://en.wikipedia.org/wiki/Secure_Shell) protocol 
 To facilitate this communication, you need to generate a pair of encryption keys: one public and the other private.
 In this step, we will generate the set of keys required to use SSH.
 This will be done manually through the command line.
-To start the configuration you would need to launch the Terminal.
 
-- [ ] Open a Docker shell or Terminal in your VM
+**Important**: where you run the following instructions will depend on whether you're using Docker or the VM.
+**If you are using Docker, you must open a terminal on your normal operating system**.
+If you're on Windows, installing Git should either give you Git Bash or access to unix commands in CMD.
+**If you are using the VM, you have to open Terminal inside the virtual desktop**.
+
+- [ ] Open the correct terminal based on the instructions above.
 
 **Note**: you will be copying and pasting several commands in this lab.
 If you are using the VM, you can use `ctrl + shift + c` to copy from Terminal and `ctrl + shift + v` to paste into Terminal.

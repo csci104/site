@@ -16,7 +16,7 @@ We will be using git extensively this semester in homework assignments.
 [GitHub](https://github.com/) is a development ecosystem based around git.
 In this course, we will be using GitHub to host our git repositories and we will take advantage of other GitHub features such as the issue tracker and wiki.
 
-**If you have not done [Lab 0](/labs/lab0) to set up your GitHub account or install Docker or a VM, please do so now.**
+**If you have not done [Lab 0]({{ site.baseurl }}/labs/lab0) to set up your GitHub account or install Docker or a VM, please do so now.**
 
 
 ## Create a Repository
@@ -459,5 +459,7 @@ Whatever you do, **do not clone one inside the other**, as this will cause probl
 - [ ] Clone `resources` in the same directory.
 - [ ] Congratulate yourself.
       This is the longest damn lab ever.
+
+
 
 

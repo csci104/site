@@ -1,6 +1,8 @@
 ---
 layout: asides
 toc: true
+tasks: false
+permalink: /:path/:basename/
 ---
 
 # 104 Virtual Machine

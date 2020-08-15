@@ -68,7 +68,11 @@ Alternatively, you can download and install the Course VM, the instructions for 
 This provides a full-featured virtual OS with graphical interface, etc.
 It is larger, stores your files on a separate "virtual disk" that is not directly accessible from your computer's host OS, and can sometimes get corrupted, so please push your work to Github often.
 
-- [ ] Install Docker or a virtual machine
+- [ ] Install Docker or a virtual machine.
+
+If you want more information on how Docker works and how to use it, you can read the <a href="https://github.com/csci104/docker/wiki/Usage">additional guide</a>.
+
+- [ ] Read the additional guide or promise you know what you're doing.
 
 
 ## Configuring an SSH Key

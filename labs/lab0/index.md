@@ -41,6 +41,19 @@ This step is particularly important because it will also kickstart the processes
 - [ ] Register with Curricula Web
 
 
+## Install Git
+
+You can skip this section if you have git installed or are using the VM, which has git installed.
+
+In order to actually install the git command line tools, go to the [git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and follow the instructions for your operating system.
+
+### Special Notes for Windows
+
+If you are using Windows, we recommend installing git bash, which will be provided as an option in the installer.
+Git bash is a separate shell that provides access to git as well as other command line utilities.
+If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
+
+
 ## Virtual Machine
 
 We have two options for running the compiler tools that we will use for grading.

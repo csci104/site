@@ -10,11 +10,11 @@ assistants:
     email: wesche@usc.edu
     image: /assets/img/staff/wesche.jpg
     hours: >-
-      TBD
+      T: 6-8 PM
     location: Zoom
   - name: Roma Ghewari
     email: ghewari@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/roma.jpg
     hours: >-
       TBD
     location: Zoom
@@ -22,7 +22,9 @@ assistants:
     email: esmarkow@usc.edu
     image: /assets/img/staff/temp.png
     hours: >-
-      W: 5-7 PM
+      T: 12-1 PM<br>
+      W: 5-7 PM<br>
+      Th: 12-1 PM
     location: Zoom
 
 staff:

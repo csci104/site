@@ -12,12 +12,16 @@ Pages in this wiki:
 
 - [GCC](./gcc) by Cameron Durham
 - [GDB](./gdb) by Spencer Davis
-- [Linux](./linux) by Jamie Flores
+- [Linux](./linux) by Jamie Flores
 - [The preprocessor](./preprocessor) by Anthony Wiencko
 - [Valgrind](./valgrind) by Cameron Durham
 - [Makefile](./makefile) by Leif Wesche 
 - [Code style](./style) by Noah Kim
 - [Virtual machines](./vm) by Mark Redekopp
+
+## More Content
+
+- [CMake](https://www.youtube.com/watch?v=REcsrJUQoQk) by Jamie Smith
 
 ## External Resources
 

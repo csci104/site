@@ -106,9 +106,10 @@ Note that the expression don't have to be valid mathematically:
 (7+/8/1+*4) ** (5+-6) * (--1-5)
 
 // are_paren_balanced returns false
-[7+8  
-[7+8) 
+[7+8
+[7+8)
 ([7*5]+(6+8)(15))+5+6)
+[(5+3])
 ```
 
 ### Design

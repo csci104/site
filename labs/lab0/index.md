@@ -247,7 +247,7 @@ In your [SSH key settings](https://github.com/settings/ssh):
 
 - Click `Add SSH Key`.
 - Provide a name for the key, such as "CS104 VM Key" or "MacBook Key".
-- Display the contents of your `id_rsa.pub` file by running `cat ~/.ssh/id_rsa.pub` in your Docker shell or VM terminal.
+- Display the contents of your `id_rsa.pub` file by running `cat ~/.ssh/id_rsa.pub` in your local terminal (if using Docker) or the VM terminal (if using VM).
 - Copy the contents of your `id_rsa.pub` file and paste them into the key field.
   Make sure you copy the entire contents of the `id_rsa.pub` file.
   It should start with `ssh-rsa` and end with your email address.

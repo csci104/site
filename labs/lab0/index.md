@@ -87,6 +87,7 @@ This will be done manually through the command line.
 **If you are using Docker, you must open a terminal on your normal operating system**.
 If you're on Windows, installing Git should either give you Git Bash or access to unix commands in CMD.
 **If you are using the VM, you have to open Terminal inside the virtual desktop**.
+Going forward, whichever applies to you will be the terminal we refer to when we ask you to open or write commands in a terminal.
 
 - [ ] Open the correct terminal based on the instructions above.
 
@@ -159,7 +160,7 @@ We'll be setting the following fields:
 - Git message colors (make it pretty-er)
 - Newline handling ([why is this a problem?](http://en.wikipedia.org/wiki/Newline#Common_problems)
 
-To get started, have a Docker shell or VM terminal open.
+To get started, have a terminal open.
 
 ### Personal Information
 
@@ -247,7 +248,7 @@ In your [SSH key settings](https://github.com/settings/ssh):
 
 - Click `Add SSH Key`.
 - Provide a name for the key, such as "CS104 VM Key" or "MacBook Key".
-- Display the contents of your `id_rsa.pub` file by running `cat ~/.ssh/id_rsa.pub` in your local terminal (if using Docker) or the VM terminal (if using VM).
+- Display the contents of your `id_rsa.pub` file by running `cat ~/.ssh/id_rsa.pub` in your terminal.
 - Copy the contents of your `id_rsa.pub` file and paste them into the key field.
   Make sure you copy the entire contents of the `id_rsa.pub` file.
   It should start with `ssh-rsa` and end with your email address.

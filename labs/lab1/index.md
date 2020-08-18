@@ -18,6 +18,11 @@ In this course, we will be using GitHub to host our git repositories and we will
 
 **If you have not done [Lab 0]({{ site.baseurl }}/labs/lab0) to set up your GitHub account or install Docker or a VM, please do so now.**
 
+**Important**: in order to complete this lab, make sure you are using the correct terminal.
+If you are using Docker to compile and test, you should **not** be using the `manage shell` to run `git` commands.
+Instead, you should be using the normal terminal you open on your operating system (Terminal on macOS, git bash or CMD on Windows).
+If you are using the VM, you should use the Terminal inside the VM.
+
 
 ## Create a Repository
 
@@ -76,7 +81,7 @@ Additionally, Github requires you to use SSH if 2FA is enable, which we recommen
 
 ### Run Git Clone
 
-Now, open a Docker shell or VM terminal and run the following command to `clone` the repository.
+Now, open a terminal and write the following commands to `clone` the repository to your home directory.
 Note that the setup you did in the previous lab is required, otherwise this won't work.
 Additionally, skim our <a href="/wiki/linux/" target="_blank">Linux cheatsheet</a> if you want to review how paths and basic commands work.
 
@@ -111,7 +116,7 @@ Checking connectivity... done.
 
 Now you have your repository on your local machine.
 
-- [ ] Clone the repository to your home directory on Docker or the VM.
+- [ ] Clone the repository to your home directory.
 
 
 ## Hello, world!
@@ -134,7 +139,7 @@ int main()
 ## Check the Repository Status
 
 Since we've now made changes in our repository, it's a good idea to save and sync those changes to our remote.
-To see what files changed, you run the following command in your Docker shell or VM terminal.
+To see what files changed, you run the following command in your terminal.
 
 ```shell
 git status
@@ -212,7 +217,7 @@ git commit -m "Add hello_world.cpp with some code"
 - [ ] Commit `hello_world.cpp`.
 
 To see recent commits, you can use `git log`.
-Upon running that in your Docker shell or VM terminal, you should something like this:
+Upon running that in your terminal, you should something like this:
 
 ```
 commit df7cd3feda8a856de9cb2dc4bc132f15f7842bb1
@@ -302,7 +307,7 @@ Let's set up this scenario by editing our `hello_world.cpp` directly on GitHub, 
 - [ ] Edit `hello_world.cpp` using the online Github editor.
 - [ ] Promise you won't edit your code using the online Github editor.
 
-If we return to our Docker shell or VM terminal and run `git status` we'll still see the following message:
+If we return to our terminal and run `git status` we'll still see the following message:
 
 ```
 On branch master

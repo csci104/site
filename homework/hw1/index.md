@@ -405,7 +405,7 @@ There are two critical parts to implementing this with the `blocks` array:
 
 Similarly, `void free_chars(char *)` will still free all memory at the given address that had been allocated in an `alloc_chars` call.
 **It will not free all memory left in the buffer, only the memory allocated at the given address from a single `alloc_char` call**.
-For example, if a call `alloc_chars(10)` was made and returned `address_1`, then a call to `free_chars(address_1)` would free `10` characters from buffer starting at `address_1`, overwriting the contents with `0` (remember that you can still use the `overwrite` member function).
+For example, if a call `alloc_chars(10)` was made and returned `address1`, then a call to `free_chars(address1)` would free `10` characters from buffer starting at `address1`, overwriting the contents with `'\0'`.
 If the pointer given as an argument to `free_chars` is not a valid address in the buffer range or has not been requested from `alloc_chars`, then nothing will be done.
 In order to know what memory addresses are valid, you must manage the memory blocks in use.
 

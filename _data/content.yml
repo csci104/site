@@ -1,7 +1,7 @@
 assignments:
   - id: hw1
     title: Course Overview and 103 review
-    assigned: false
+    assigned: true
     dates:
       assigned: Monday, August 17
       due: Friday, September 4 at 11:59PM PST

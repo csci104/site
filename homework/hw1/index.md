@@ -101,7 +101,7 @@ An expression is properly parenthesized if a left parentheses such as `(` and  `
 Symbols such as `+`, `-`, `*`, `/`, and numbers may be ignored.
 
 - Expression strings will only contain parentheses, `+`, `-`, `*`, `/`, spaces, or numbers.
-- Your implementation must recursive.
+- Your implementation must be recursive.
 - Your solution may use helper functions. 
 
 Consider the following examples of inputs that should return true and false.
@@ -196,6 +196,7 @@ To reiterate, **no other operations must be supported beyond those exercised by 
   We have provided a normalization helper function: `void Rational::normalize();` to perform that check and update and you may call it as needed.
 - Remember that any rational number may be reduced to a canonical form such that the numerator and denominator do not share any factors except `1`.
   You must implement a private member function, `reduce`, in order to keep your rational number in a canonical form.
+  If you add `1/4` and `1/4` and print the result, we expect to see `1/2` and not `2/4`. 
 
 **You may use the `<numeric>` library function `std::gcd` to help you**.
 Note that if at least one of the arguments to this function is negative the returned value is negative and your code should handle this case.
@@ -341,7 +342,7 @@ To fix the identified problems, we will need to keep careful track of each of ou
 We will implement a `FlexibleCharacterManager`.
 The `FlexibleCharacterManager` will also have access to the convenience methods in the `AbstractCharacterManager`.
 This means the `FlexibleCharacterManager` also has a large buffer of characters to manage.
-Once again, all unallocated characters in the buffer should be `0`.
+Once again, all unallocated characters in the buffer should be `'\0'`.
 
 We will now allow the user to delete characters in the middle of our buffer while leaving the rest of the characters after intact.
 Therefore, we will need to keep careful track of which characters are allocated; we cannot merely keep track of the last character in use.
@@ -387,7 +388,7 @@ You will need to implement the same functions as in the first part, but now the 
 As a consequence it will be possible to delete individual pointers from memory.
 
 - [ ] Read through `flexible.h` and `flexible.cpp`.
-      The comments will give you some extra pointers.
+      The comments will help you understand the provided code.
 
 #### Specifications
 
@@ -398,9 +399,8 @@ There are two critical parts to implementing this with the `blocks` array:
 1. Check if it's possible to allocate the memory.
    At every position in the `buffer`, check and see if there's enough space to allocate the request amount of space.
    Be sure to check if you're overlapping any existing `CharacterBlock`s in addition to whether you have enough space before the end of the buffer.
-
 2. Create a new `CharacterBlock` and insert it into the `blocks` array so the physical locations of the `CharacterBlock`s are in sorted order by address from lowest to highest.
-   The address in the buffer returned should be the address closest to the starting address of the buffer that can fit the requested characters.
+   **The address in the buffer returned should be the address closest to the starting address of the buffer that can fit the requested characters**.
    If this is not possible, return `nullptr`.
 
 Similarly, `void free_chars(char *)` will still free all memory at the given address that had been allocated in an `alloc_chars` call.

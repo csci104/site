@@ -10,21 +10,19 @@ assistants:
     email: wesche@usc.edu
     image: /assets/img/staff/wesche.jpg
     hours: >-
-      T: 6-8 PM
+      See Google Calendar
     location: Zoom
   - name: Roma Ghewari
     email: ghewari@usc.edu
     image: /assets/img/staff/roma.jpg
     hours: >-
-      TBD
+      See Google Calendar
     location: Zoom
   - name: Elan Markowitz
     email: esmarkow@usc.edu
     image: /assets/img/staff/temp.png
     hours: >-
-      T: 12-1 PM<br>
-      W: 5-7 PM<br>
-      Th: 12-1 PM
+      See Google Calendar
     location: Zoom
 
 staff:
@@ -32,135 +30,109 @@ staff:
     email: aoeth@usc.edu
     image: /assets/img/staff/annikaoeth.jpeg
     hours: >-
-      W: 3-4:30 PM<br>
-      Th: 5:30-7 PM <br>
-      F: 11 AM-12 PM
+      See Google Calendar
     location: Zoom
   - name: Chase Zimmerman
     email: cpzimmer@usc.edu
     image: /assets/img/staff/temp.png
     hours: >-
-      T: 10 AM-12 PM<br>
-      Th: 10 AM-12 PM
+      See Google Calendar
     location: Zoom
   - name: Hope Kim
     email: hopekim@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/hope.jpeg
     hours: >-
-      M: 12-2 PM<br>
-      3:30-5:30 PM
+      See Google Calendar
     location: Zoom
   - name: Jamie Smith
     email: smit109@usc.edu
     image: /assets/img/staff/jamiesmith.jpg
     hours: >-
-      M: 4-6 PM<br>
-      F: 2-4 PM
+      See Google Calendar
     location: Zoom
   - name: Jason Yik
     email: jyik@usc.edu
     image: /assets/img/staff/jason.jpg
     hours: >-
-      T: 3-5 PM<br>
-      Th: 3-5 PM
+      See Google Calendar
     location: Zoom
   - name: Kartik Balodi
     email: balodi@usc.edu
     image: /assets/img/staff/kartik.png
     hours: >-
-      TBD
+      See Google Calendar
     location: Zoom
   - name: Lihan Zhu
     email: lihanzhu@usc.edu
     image: /assets/img/staff/lihan.png
     hours: >-
-      T: 12-2 PM<br>
-      5-6 PM<br>
-      Th: 5-6 PM
+      See Google Calendar
     location: Zoom
   - name: Michelle Wong
     email: wong935@usc.eduz
     image: /assets/img/staff/michelle.jpg
     hours: >-
-     Th: 5-8 PM<br>
+     See Google Calendar
     location: Zoom
   - name: Noah Kim
     email: noahbkim@usc.edu
     image: /assets/img/staff/noahkim.jpeg
     hours: >-
-      TBD
+      See Google Calendar
     location: Zoom
   - name: Owen Mech
     email: omech@usc.edu
     image: /assets/img/staff/owen.jpg
     hours: >-
-      T: 5-6 PM<br>
-      Th: 1-4 PM
+      See Google Calendar
     location: Zoom
   - name: Pilar Luiz
     email: pluiz@usc.edu
     image: /assets/img/staff/pilar.jpg
     hours: >-
-      M: 5:30-7:30 PM
+      See Google Calendar
     location: Zoom
   - name: Raymond Liu
     email: liuraymo@usc.edu
     image: /assets/img/staff/raymond.jpg
     hours: >-
-      M: 6-7 PM<br>
-      T: 4-5 PM<br>
-      W: 4-5 PM <br>
-      Th: 4-5 PM
+      See Google Calendar
     location: Zoom
   - name: Sean McNeely
     email: smcneely@usc.edu
     image: /assets/img/staff/seanmcneely.jpg
     hours: >-
-      M: 12-2 PM<br>
-      W: 12-2 PM
+      See Google Calendar
     location: Zoom
   - name: Sean Syed
     email: seansyed@usc.edu
     image: /assets/img/staff/seansyed.jpg
     hours: >-
-      W: 12-3 PM <br>
-      F: 11 AM-12 PM
+      See Google Calendar
     location: Zoom
   - name: Spencer Davis
     email: spencetd@usc.edu
     image: /assets/img/staff/spencer.png
     hours: >-
-      M: 10 AM-12 PM<br>
-      T: 1-2 PM<br>
-      Th: 1-2 PM
+      See Google Calendar
     location: Zoom
   - name: Tong Zhi
     email: tongzhi@usc.edu
     image: /assets/img/staff/tongzhi.jpeg
     hours: >-
-      T: 2-4 PM<br>
-      F: 2-4 PM<br>
-    location: Zoom
-  - name: Tongyu (Vivian) Zhu
-    email: tongyu@usc.edu
-    image: /assets/img/staff/tongyu.jpg
-    hours: >-
-      T: 10-12 PM<br>
-      Th: 10-12 PM<br>
+      See Google Calendar
     location: Zoom
   - name: Wooju Yim
     email: woojuyim@usc.edu
     image: /assets/img/staff/wooju.jpg
     hours: >-
-      M: 7-8 PM<br>
-      W: 7-8 PM
+      See Google Calendar
     location: Zoom
   - name: Yunrui Wang
     email: yunruiwa@usc.edu
     image: /assets/img/staff/yunrui.jpg
     hours: >-
-      M: 2-4 PM<br>
-      W: 2-4 PM
+      See Google Calendar
     location: Zoom
 
 graders:
@@ -170,3 +142,9 @@ graders:
   - name: Niroop Ramdas Sagar
     email: ramdassa@usc.edu
     image: /assets/img/staff/niroop.jpg
+  - name: Onkar Kulkarni
+    email: oakulkar@usc.edu
+    image: /assets/img/staff/temp.png
+  - name: Sushma Mahadevaswamy
+    email: mahadeva@usc.edu
+    image: /assets/img/staff/temp.png

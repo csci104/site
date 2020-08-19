@@ -23,6 +23,9 @@ We will also practicing using dynamic memory allocation by using dynamically all
 
 ## General Advice
 
+Going forward, we will refer to your homework repository as `hw-username`. 
+Note that you would replace the `username` part with your actual USC username, and you can verify this by finding the repository on Github.
+
 ### Repository Reminders
 
 1. Never clone one repository inside another.
@@ -43,9 +46,15 @@ git clone {{ site.data.urls.github_ssh }}/resources.git
 ```
 
 Again, be sure you don't clone this repo into your `hw-username` repo, but at some higher-up point like in a `cs104` folder on your machine.
+One way to copy the `hw1` files from resources could be to navigate to the directory containing both repositories and run:
+
+```shell
+cp -r resources/hw1/ hw-username/hw1/
+```
 
 - [ ] Clone `resources` into your CSCI 104 work directory.
-- [ ] Clone your `hw-username` next to it if you haven't already. 
+- [ ] Clone your `hw-username` next to it if you haven't already.
+- [ ] Copy `resources/hw1/` to `hw-username/hw1/`.
 
 ### Using Valgrind
 
@@ -122,6 +131,11 @@ If you choose to use a helper function, here are some things to consider:
 - How might you keep track of what parentheses must be matched?
 - Should the parameters be **passed by C++ reference** so that the variable is shared across calls or will **passing by value** suffice (do not use pointers, they are not necessary)?
 
+Don't be afraid to look at the code to get you thinking about these problems.
+We've left some extra bits to get you started.
+
+- [ ] Check out `paren_balance/main.cpp` in the `hw1` you copied from `resources`.
+
 ### Specifications
 
 Your implementation should be completed in `main.cpp`, which we have provided for you in the `hw1/paren_balanced/` directory in the [`resources`]({{ site.data.urls.github }}/resources/) repository.
@@ -164,6 +178,9 @@ To determine what operations are required to be implemented:
 
 You may wish to test your code for correctness in cases not present in `rational_test.cpp`, but we will not require any additional operators or methods besides those used in `rational_test.cpp`.
 To reiterate, **no other operations must be supported beyond those exercised by `rational_test.cpp`**.
+
+- [ ] Read through the comments and examples in `rational.h` and `rational.cpp`.
+- [ ] Read `rational_test.cpp` to get some idea of the additional operators needed.
 
 ### Specifications
 
@@ -219,15 +236,17 @@ In this problem you will create your own memory manager that will be able to sto
 As we move forward in the class we want to rely more on C++ and the operating system to manage memory for us.
 However, this exercise will give a glimpse into what underlies some of the abstractions that are provided to manage memory.
 
+
+
 ### Contiguous Storage
 
-The memory will be stored in a single array of `BUFFER_SIZE` characters where `BUFFER_SIZE` is defined in `manager.h`. 
+The memory will be stored in a single array of `BUFFER_SIZE` characters.
+`BUFFER_SIZE` is defined in `manager.h`, which is in the `character_manager` directory you copied with `resources/hw1`.
+Taking a quick look at `manager.h`, you'll also see an `AbstractCharacterManager`.
+You'll learn more about the `virtual` stuff later, but the gist of this class is that the character managers you implement in this homework will override the methods defined under `AbstractCharacterManager`.
 
-```c++
-char buffer[BUFFER_SIZE]
-```
-
-You will need to implement the following two functions:
+We'll start with the `SimpleCharacterManager` in `simple.h`.
+As specified by `AbstractCharacterManager`, which we're inheriting from, you will need to implement the following two functions:
 
 1. `char* alloc_chars(int n)` will return a pointer to a memory address in the buffer that can hold `n` characters.
    If there is not enough space left in the buffer, return `nullptr`.
@@ -258,6 +277,8 @@ manager.free_chars(c1);
 
 Skeleton code is given in the `simple.h` and `simple.cpp`.
 You will finish the unimplemented methods.
+
+- [ ] Read through `simple.h` and `simple.cpp` to get your bearings.
 
 #### Specifications
 
@@ -364,6 +385,9 @@ Skeleton code for this part is provided in `flexible.h` and `flexible.cpp`.
 We have provided driver code for testing your memory manager in `flexible_test.cpp`.
 You will need to implement the same functions as in the first part, but now the memory can be assigned from any place in your buffer as long as there is space.
 As a consequence it will be possible to delete individual pointers from memory.
+
+- [ ] Read through `flexible.h` and `flexible.cpp`.
+      The comments will give you some extra pointers.
 
 #### Specifications
 

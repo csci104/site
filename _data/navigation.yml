@@ -1,4 +1,8 @@
 items:
+  - title: Office hours queue
+    url: /queue/
+    menubar: false
+    icon: /assets/img/icon/duration.svg
   - title: Staff and hours
     short: Staff
     url: /staff/

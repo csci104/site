@@ -68,6 +68,12 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: LongHuy Nguyen
+    email: longhuyn@usc.edu
+    image: /assets/img/staff/longhuy.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
   - name: Michelle Wong
     email: wong935@usc.edu
     image: /assets/img/staff/michelle.jpg

@@ -448,7 +448,7 @@ Request 3 chars in which to place the string "hat"
 
 ## Submitting
 
-Once you're finished you can submit your code on the [Curricula]({{ site.baseurl }}/submit/hw1) submission page.
+Once you're finished you can submit your code on the [Curricula]({{ site.baseurl }}/submit/assignment/hw1) submission page.
 Be sure to carefully read and follow the instructions there.
 
 - [ ] Submit your code.

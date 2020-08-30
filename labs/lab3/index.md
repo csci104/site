@@ -10,7 +10,7 @@ title: The Rule of Three
 
 
 In this lab we will go over <b>destructors, copy constructors, copy assignment operators</b>, and why we need <b>the rule of three</b>.
-We will get hands-on experience experimenting with the rule of three on a simple `Array` class and a more complex Matrix class.
+We will get hands-on experience experimenting with the rule of three on a simple `Array` class and a more complex `Matrix` class.
 Before we introduce the rule of three, we first need to review how memory is allocated:
 
 ## Review: Memory
@@ -25,11 +25,11 @@ Variables created without `new` are allocated on the stack:
 
 ```c++
 int func() {
-    // a, b and c are allocated on the stack
-    int a = 10;
-    int b = 20;
-    int c = 30;
-    return a + b + c;
+	// a, b and c are allocated on the stack
+	int a = 10;
+	int b = 20;
+	int c = 30;
+	return a + b + c;
 }
 ```
 
@@ -54,9 +54,9 @@ To get started, let's look at an example array class provided in part 1:
 class Array {
 public:
 	Array();
-    ~Array();
-    Array(const Array& other);
-    Array& operator=(const Array& other);
+	~Array();
+	Array(const Array& other);
+	Array& operator=(const Array& other);
 
 	Array operator+(const Array& other) const;
 
@@ -75,9 +75,9 @@ For example, all that a shallow copy of our `Array` class would do is copy over 
 
 ```c++
 Array copy_shallow(const Array& original) {
-    Array copy;
-    copy.data = original.data;
-    return copy;
+	Array copy;
+	copy.data = original.data;
+	return copy;
 }
 ```
 
@@ -86,13 +86,13 @@ A deep copy of our `Array` class will not copy the memory address of the origina
 
 ```c++
 Array copy_deep(const Array& original) {
-    Array copy;
-    copy.data = new int[original.size];
-    copy.size = original.size;
-    for (size_t i = 0; i < original.size; i++) {
-        copy.data[i] = original.data[i];
-    }
-    return copy;
+	Array copy;
+	copy.data = new int[original.size];
+	copy.size = original.size;
+	for (size_t i = 0; i < original.size; i++) {
+		copy.data[i] = original.data[i];
+	}
+	return copy;
 }
 ```
 
@@ -105,7 +105,7 @@ The Rule of Three is a rule in C++ to protect code against exceptions.
 - **Copy constructor**
 - **Copy assignment operator**
 
-If you have no idea what every one of them means right now, don't worry. We are about to go over each and see why we need it in our Array class.  
+If you have no idea what every one of them means right now, don't worry. We are about to go over each and see why we need it in our `Array` class.  
 
 By default, all three function are commented out (unimplemented). 
 
@@ -117,7 +117,7 @@ An example of a destructor for our `Array` class should delete the memory stored
 
 ```c++
 Array::~Array() {
-    delete[] this->data;
+	delete[] this->data;
 }
 ```
 
@@ -160,11 +160,11 @@ For example, a copy constructor for our `Array` class should copy all the data i
 
 ```c++
 Array::Array(const Array& other) {
-    this->data = new int[other._size];
-    this->_size = other._size;
-    for (size_t i = 0; i < other._size; ++i) {
-        this->data[i] = other.data[i];
-    }
+	this->data = new int[other._size];
+	this->_size = other._size;
+	for (size_t i = 0; i < other._size; ++i) {
+		this->data[i] = other.data[i];
+	}
 }
 ```
 
@@ -185,7 +185,7 @@ By default and without us overloading it, the compiler generates a copy construc
 
 ```c++
 Array::Array(const Array& other) {
-    this->data = other.data;
+	this->data = other.data;
 }
 ```
 
@@ -194,7 +194,7 @@ Take a second look at what our destructor does:
 
 ```c++
 Array::~Array() {
-    delete[] data;
+	delete[] data;
 }
 ```
 
@@ -232,21 +232,21 @@ In our `Array` class, we may assume that adding two arrays means concatenating t
 
 ```c++
 Array Array::operator+(const Array& other) {
-    Array result;
-    result._size = this->_size + other._size;
-    result.data = new int[result._size];
+	Array result;
+	result._size = this->_size + other._size;
+	result.data = new int[result._size];
 
-    // Copy this
-    for (size_t i = 0; i < this->_size; i++) {
-        result.data[i] = this->data[i];
-    }
+	// Copy this
+	for (size_t i = 0; i < this->_size; i++) {
+		result.data[i] = this->data[i];
+	}
 
-    // Copy other
-    for (size_t i = 0; i < other._size; i++) {
-        result.data[i + this->_size] = other.data[i];
-    }
+	// Copy other
+	for (size_t i = 0; i < other._size; i++) {
+		result.data[i + this->_size] = other.data[i];
+	}
 
-    return result;
+	return result;
 }
 ```
 
@@ -267,13 +267,13 @@ A copy assignment operator also needs to return a reference to the object itself
 
 ```c++
 Array& Array::operator=(const Array& other) {
-    delete[] this->data;  // wipe old data
-    this->data = new int[other._size];
-    this->_size = other._size;  // replace with data from other
-    for (size_t i = 0; i < other._size; ++i) {
-        this->data[i] = other.data[i];
-    }
-    return *this;
+	delete[] this->data;  // wipe old data
+	this->data = new int[other._size];
+	this->_size = other._size;  // replace with data from other
+	for (size_t i = 0; i < other._size; ++i) {
+		this->data[i] = other.data[i];
+	}
+	return *this;
 }
 ```
 
@@ -293,15 +293,15 @@ You should now see all the tests pass.
 Before we dive into implementation, here are some tips in implementing the rule of three:
 
 - Destructor:
-    - Make sure to free every pointer in the destructor.
-    - For example in a 2d array, which is stored as an array of pointers, we need to first free every pointer inside the array then free the array itself.
+	- Make sure to free every pointer in the destructor.
+	- For example in a 2d array, which is stored as an array of pointers, we need to first free every pointer inside the array then free the array itself.
 - Copy constructor:
-    - Make sure that you do a deep copy for all the pointers and a shallow copy for the non-pointer values.
-    - It is pretty easy to miss the shallow copy on the non-pointer values when we are focusing on the deep copy for the pointers.
+	- Make sure that you do a deep copy for all the pointers and a shallow copy for the non-pointer values.
+	- It is pretty easy to miss the shallow copy on the non-pointer values when we are focusing on the deep copy for the pointers.
 - Copy assignment operator:
-    - Wipe all the data contained in `this`.
-    - Do the deep copy as in the copy constructor.
-    - `return *this;`.
+	- Wipe all the data contained in `this`.
+	- Do the deep copy as in the copy constructor.
+	- `return *this;`.
 
 
 ## Matrix
@@ -318,7 +318,7 @@ It only works on matrices with the same number of rows and columns.
 The sum of matrix A and B is computed by adding up corresponding elements of A and B, as demonstrated:
 
 <div class="showcase">
-    <img src="./assets/02_matrix_addition.svg" alt="bst" width="500" class="no-shadow" />
+	<img src="./assets/02_matrix_addition.svg" alt="bst" width="500" class="no-shadow" />
 </div>
 
 ### Matrix Multiplication
@@ -330,7 +330,7 @@ To compute the element at the `i`th row, `j`th column of the resulting matrix, y
 The following animation shows how matrix multiplication works:
 
 <div class="showcase">
-    <img src="./assets/03_matrix_mult.gif" alt="bst" width="500" class="no-shadow" />
+	<img src="./assets/03_matrix_mult.gif" alt="bst" width="500" class="no-shadow" />
 </div>
 
 If you are more comfortable with formulas, a formal definition of matrix multiplication is on <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">Wikipedia</a>.
@@ -342,7 +342,7 @@ If you are more comfortable with formulas, a formal definition of matrix multipl
   Please do not fiddle with it before you finish the lab.
 - We have overloaded **the `==` operator** so that we can test the results of your implementation.
   It goes through each element in the `data` array of the objects being compared to see if they are the same.
-- To make the matrix easily displayable we overloaded **the `<<` operator** of Matrix.
+- To make the matrix easily displayable we overloaded **the `<<` operator** of `Matrix`.
   This means that you can do `std::cout << matrix << std::endl;` to print out the matrix.
   It also works with `GTest` so when a test fails it will output the actual and expected matrix.
 
@@ -354,7 +354,7 @@ Your task today will be to implement the:
 - copy constructor, and
 - copy assignment operator 
 
-of a Matrix class. You will also overload the
+of a `Matrix` class. You will also overload the
 
  - `+` operator for matrix addition and
  - `*` operator for matrix multiplication.

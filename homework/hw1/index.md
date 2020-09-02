@@ -9,7 +9,7 @@ title: Homework 1
 
 
 - Assigned: August 17, 2020 PST
-- Due: September 04, 2020 at 11:59 PST
+- Due: September 04, 2020 at 21:59 PST
 - Directory name in your github repository for this homework (case sensitive): `hw1`
    - Skeleton code for this assignment is available in [`resources/hw1/`]({{ site.data.urls.github }}/resources/).
    - Once you have cloned your `hw-username` repo, copy the `hw1/` directory into it from `resources`.
@@ -448,7 +448,10 @@ Request 3 chars in which to place the string "hat"
 
 ## Submitting
 
-Once you're finished you can submit your code on the [Curricula]({{ site.baseurl }}/submit/assignment/hw1) submission page.
+Once you've finished, check that all of the code you're submitting is consistently formatted.
+The `README.md` in your homework repository provides instructions for using `clang-format` to do so automatically.
+You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/assignment/hw1).
 Be sure to carefully read and follow the instructions there.
 
+- [ ] Format your code using `clang-format`.
 - [ ] Submit your code.

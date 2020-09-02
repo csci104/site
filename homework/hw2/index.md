@@ -120,7 +120,7 @@ You should think **carefully** about efficiency.
 
 ## 2. Simple Arithmetic (50%)
 
-Wait, so what the hell is a `Token`?
+Wait, so what is a `Token`?
 
 When you see the mathematical expression `(13 * 3)`, the first thing your brain probably does is break it down into syntactic pieces.
 We can think of those pieces as tokens, and in this case we have five: `"("`, `"13"`, `"*"`, `"3"`, and `")"`.
@@ -137,13 +137,22 @@ These kinds are outlined in the `enum class TokenKind` in `token/token.h`:
 
 - The parentheses, `(` and `)`, will each be their own token kind.
 - The operators, `+`, `-`, `*`, `/`, will all be a unique token kind.
-- All numbers, which consist of one or more digits, will be a single token kind. 
+- All non-negative integers, which consist of one or more digits, will be a single token kind. 
 
 ### Grammar
 
 When you think about evaluating a mathematical expressions, you tend to think in patterns.
 For example, when you see an expression of the form `number + number`, you know to sum the two numbers.
 Formally, we call these patterns a **grammar**, but don't worry; we won't need the fancy terminology to implement our parser.
+
+Simple Arithmetic Expressions are defined formally as follows:
+
+1. A non-negative integer is a simple arithmetic expression.
+1. If Y and Z are simple arithmetic expressions then the following are simple arithmetic expressions:
+    + (Y+Z)
+    + (Y\*Z)
+    + (Y-Z)
+    + (Y/Z)
 
 What you should take away from this is that the `TokenKind`s are a matter of practicality. 
 We use them in order to verify that the expressions we're evaluating match our the patterns we're expecting.
@@ -344,7 +353,10 @@ make
 
 ## Submitting
 
-Once you're finished you can submit your code on the [Curricula]({{ site.baseurl }}/submit/assignment/hw2) submission page.
+Once you've finished, check that all of the code you're submitting is consistently formatted.
+The `README.md` in your homework repository provides instructions for using `clang-format` to do so automatically.
+You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/assignment/hw2).
 Be sure to carefully read and follow the instructions there.
 
+- [ ] Format your code using `clang-format`.
 - [ ] Submit your code.

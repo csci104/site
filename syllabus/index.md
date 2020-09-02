@@ -60,7 +60,7 @@ The following point structure will be used in determining the grade for the cour
 Your final grade will depend solely on your own performance, graded according to the scale given below.
 
 <div class="text-align-center">
-  <table class="minimal center">
+  <table class="simple center">
     <thead>
       <th>Weight</th>
       <th>Item</th>
@@ -103,7 +103,7 @@ Because of the fairly generous scale we will not round up if you are close to th
 At the end of the semester, we may decide to lower the scale if the exams were more difficult than intended.
 
 <div class="text-align-center">
-  <table class="minimal center">
+  <table class="simple center">
     <thead>
       <tr><th>Grade</th><th>Letter</th></tr>
     </thead>
@@ -115,7 +115,7 @@ At the end of the semester, we may decide to lower the scale if the exams were m
       <tr><td>65%</td><td>B-</td></tr>
     </tbody>
   </table>
-  <table class="minimal center">
+  <table class="simple center">
     <thead>
       <tr><th>Grade</th><th>Letter</th></tr>
     </thead>

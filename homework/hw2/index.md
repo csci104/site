@@ -2,10 +2,10 @@
 layout: asides
 toc: true
 tasks: true
-title: Lists, Stacks, and Arithmetic
+title: Homework 2
 ---
 
-# Lists, Stacks, and Arithmetic
+# Homework 2
 
 
 - Assigned: September 07, 2020 PST
@@ -26,20 +26,20 @@ This problem will be discussed during our class meeting on stacks and queues.
 We want to give you extra time as this exercise involves coding and running experiments.
 It is helpful if you think about this problem before we meet and start collecting data to discuss.
 
-For this exercise we have implemented for you an abstract queue class in `queue.h`.
+For this exercise we have implemented for you an abstract queue class in `int_queue.h`.
 As we mentioned briefly in lecture, the STL queue class is an adaptive container.
 It is essentially a list, but with the first in first out protocol (FIFO), so we can only add to the the back of the list and remove from the front of the list.
 We provide two different implementations of the queue using different data structures.
-The List Queue implementation in `listqueue.h` uses STL list. The Vector Queue implementation in `vectorqueue.h` uses STL vector. *Please study these implementations.*  The implementation of queue classes use public inheritance for the abstract Queue class to implement the interface and use composition for STL vector or STL list as the private data. They are essentially wrapper implementations and an example of how to use an abstract class. This will be similar to writing a stack as a wrapper implementation for using your circular linked list for Problem 2 below.
+The List Queue implementation in `int_queue_list.h` uses STL list. The Vector Queue implementation in `int_queue_vector.h` uses STL vector. *Please study these implementations.*  The implementation of queue classes use public inheritance for the abstract Queue class to implement the interface and use composition for STL vector or STL list as the private data. They are essentially wrapper implementations and an example of how to use an abstract class. This will be similar to writing a stack as a wrapper implementation for using your circular linked list for Problem 2 below.
 
-We want to measure the differences in the operations given each implementation and why this may be occurring.  We will step you through this here. Starting code for running experiements is include in `queue_test.cpp`. The test as written creates queues, pushes integers onto the queues and tests the timing of the pop_front operations. To compile: ` g++ --std=c++17 -o queuetest queue_test.cpp`
+We want to measure the differences in the operations given each implementation and why this may be occurring.  We will step you through this here. Starting code for running experiements is include in `int_queue_tests.cpp`. The test as written creates queues, pushes integers onto the queues and tests the timing of the pop_front operations. To compile: ` g++ --std=c++17 -o queuetest int_queue_tests.cpp`
 
 We will discuss the following questions during class and how you may be able to verify them either using analysis or experimentally.<BR>
 *Runtime Questions for Queue Implementations:*
 1. In both implementations the functions front(), empty(), size() and push_back() all take constant time O(1). How can you verify this experimentally or using analysis?
 2. Which implementation is more efficient for pop_front(), the vector or list? How can you verify your claim experimentally or using analysis? Can you present data to convince a skeptic? What is the runtime of each? (These are runtimes that were covered in CSCI 103.)
 
-We have included code in `queue_test.cpp` for collecting timing data for an experiment. (This is not the best approach for runtime efficiency analysis, but it is sometimes used in practice. We will discuss the benefits and disadvantages.) To do so we use, we use the C++ high_resolution_clock as show below. You may use this code wherever you want to take timing measurements.
+We have included code in `int_queue_tests.cpp` for collecting timing data for an experiment. (This is not the best approach for runtime efficiency analysis, but it is sometimes used in practice. We will discuss the benefits and disadvantages.) To do so we use the C++ high_resolution_clock as shown below. You may use this code wherever you want to take timing measurements.
 ```
 #include <chrono>
 // Start the timer by getting the current time
@@ -68,7 +68,13 @@ Because `Token`s are simply our value type, we don't have to worry about their s
 This will allow us to more efficiently append to the end of the list.
 It will also support all common operations expected of an abstract list data type, including insert, remove, get, and set.
 
-A class skeleton has been provided in `hw2/tokens/` in the `resources` repository.
+
+Since this class is a circular list, it is meant to store data that will be accessed continuously in a circle, so indicies past the end of the list should wrap around back to the front of the list. For example, if a list has 5 members, index 5 wraps back to element 0, index 6 maps to element 1, and index 10 maps to element 0. This is the same as using modular arithmetic. If there are n members of a list, then to get the appropriate position in the list for index i, the position in the list is `i % n`. This rule applies to `at`, `insert`, and `remove`. To be consistent with this, these functions should behave in the following manner:
+-  If the list is empty, `at` in the starter code throws an exception for you. Otherwise, the function should return the token at the index%n where n is current size of the list assuming that the head of the list is at index 0.
+- `insert` should  first increase the size of the list by 1. Then it should insert the token at index%n where n is the new size of the list and assuming that the head of the list is at index 0. 
+- If the list is empty, `remove` should just return without modifying the list. Otherwise, remove should remove the item at index%n where n is the current size of the list assuming that the head of the list is at index 0.
+
+A class skeleton has been provided in `hw2/tokens/` in the `resources` repository. and 
 Run `git pull` in your local clone to make sure it is up to date.
 You can then copy the entire `hw2/` directory into your local `hw-username` as you did for `hw1`.
 
@@ -110,6 +116,7 @@ The stack skeleton is provided, you simply have to implement the marked methods.
 Notice the `TokenStack` has a `TokenList` as a private data member.
 This is called **composition**.
 The member functions of the `TokenStack` class that you write should really just be wrappers around calls to the underlying linked list implementation.
+If you are not able to fully implement your TokenList class, you may purchase the use of STL list, i.e. list\<Token\>, for **a flat rate penalty of 3%**. If you do so, please be sure to include the appropriate libraries (i.e. #include \<list\>).
 
 You should think **carefully** about efficiency.
 **All operations other than the destructor should run in O(1)**.
@@ -145,19 +152,34 @@ When you think about evaluating a mathematical expressions, you tend to think in
 For example, when you see an expression of the form `number + number`, you know to sum the two numbers.
 Formally, we call these patterns a **grammar**, but don't worry; we won't need the fancy terminology to implement our parser.
 
-Simple Arithmetic Expressions are defined formally as follows:
-
-1. A non-negative integer is a simple arithmetic expression.
-1. If Y and Z are simple arithmetic expressions then the following are simple arithmetic expressions:
-    + (Y+Z)
-    + (Y\*Z)
-    + (Y-Z)
-    + (Y/Z)
-
 What you should take away from this is that the `TokenKind`s are a matter of practicality. 
 We use them in order to verify that the expressions we're evaluating match our the patterns we're expecting.
 When it comes to evaluation, we can simply store the actual value of numeric tokens in `Token.value`.
 For symbols, this is irrelevant. 
+
+The patterns we'll concern ourselves with for this homework are as follows.
+Note the recursive structure, which we'll point out in each:
+
+1. A non-negative integer is a **simple arithmetic expression**.
+   Think of it as the **base case** for our general idea of what a simple arithmetic expression is. 
+
+2. If `p` and `q` are **simple arithmetic expressions**, then the following patterns are also simple arithmetic expressions, invariant to whitespace:
+    - `(p)`
+    - `(-p)`
+    - `(p + q)`
+    - `(p - q)`
+    - `(p * q)`
+    - `(p / q)`
+
+3. Additionally, you may chain as many of the same binary operations together as you want. 
+   We'll call these chained binary operators (where p, q, r and remaining terms are simple arithmetic expressions):
+    - `(p + q + r + ...)`
+    
+ 4. A valid expression cannot be empty and must contain at least one non-negative integer.
+
+These are the cases our parser will address while its consuming tokens from the stack.
+They provide a set of constraints for the kinds of input we accept as valid.
+For example, `32` and `((1 - 2) * 3)` are valid, but `(1 - 2 * 3)` is not because we can't build it with our simple arithmetic expression patterns. 
 
 ### Creating Tokens
 
@@ -198,7 +220,7 @@ Every time you reach a `Token` with `kind` `TokenKind::RP`, you will know that t
 The `reduce` method simply pops a right operand, operator, left operand, and corresponding `TokenKind::LP` off of `work`, evaluates them mathematically, and pushes the result back onto `work`.
 
 Here are a couple examples of how this might look.
-Note that as depicted, `work` is shown in reverse so that you can see its relation to `tokens`.
+Note that **as depicted, `work` is shown in reverse so that you can see its relation to `tokens`**.
 This reversal will be handled in `reduce`.
 
 <div class="text-align-center">
@@ -332,8 +354,56 @@ Here's a slightly more complex example:
     </table>
 </div>
 
+### Implement Evaluate
+
 We recommend you start by implementing `evaluate`, which will hopefully give you the bigger picture of how the parser works.
-You can then go ahead and write out `reduce`.
+The evaluation loop is fairly simple if we don't concern ourselves with the specifics of `reduce`.
+
+- [ ] Write `evaluate`.
+
+### Implementing Reduce
+
+In order to understand how to implement reduce, we first have to think about the preconditions it's executed with.
+Namely, once we've popped items off of `work` and into `immediate` until we hit the corresponding open paren, what will `immediate` look like?
+Based on the patterns we described above, there are two possible cases given a valid expression:
+
+1. The `immediate` stack has a series of tokens comprising some expression `-p` on top.
+   If we check immediate and determine that this is the case, we can simply pop `p`, negate its value, and push it back onto work.
+2. The `work` stack has a series of tokens comprising some expression `p` or `p @ q` or `p @ q @ ...` where `@` represents one of our four binary operators.
+   If this is the case, we will first pop `p`.
+   For every consequent operator and right-hand operand, compute the result and store it in `p.value` (if we have just `(p)`, this loop will run zero times).
+   Once we're done, we can simply put `p` back onto work.
+
+You'll need to make sure both of these branches are handled properly for your parser to work.
+
+- [ ] Implement the `-p` case for `reduce`.
+- [ ] Implement the `p` or `p @ ...` case for `reduce`
+
+There are two notes worth mentioning here about `reduce` that are echoed in the skeleton code comments:
+
+- All arithmetic can be done with `int`.
+  The expressions `(1 / 3)` and `((-1) / 3)` should simply evaluate to `0`, so you don't have to do anything fancy when doing binary operations (you can use C++'s normal integer math behavior).
+-  For any problems with the expressions as well as attempting division by zero, throw the exception invalid_argument("Malformed"). The exact exception you should throw is already written for you in comments in the starter code as well as some cases for you to check for when these incorrect expressions may occur. Here are some examples of malformed expressions:
+```
+()
+-5
+(5 * 6 * 8) + (10)
+(-7 - 9)
+(8 * 7
+(7 / 0)
+(5 / (7 - 7))
+7 / 2
+(* 5 * 8)
+5 * 8)
+(5 + 8 * 5)
+```
+- Any chained binary expressions that have different operators are invalid.
+  For example, `(p + q + r)` is fine but `(p + q - r)` is not.
+ - **The final result of reduce from evaluating a properly formed expression can be any integer (negative, positive, or 0).**
+ 
+  
+### Testing
+
 When you're done, you can test it by running the following:
 
 ```shell
@@ -344,8 +414,6 @@ make
 ./arithmetic "(3 + (4 / 2))"
 ```
 
-- [ ] Write `evaluate`.
-- [ ] Write `reduce`.
 - [ ] Test arithmetic by running it on the command line.
 
 

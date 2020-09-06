@@ -123,11 +123,7 @@ makefile:2: *** missing separator. Stop.
 
 It means on line 2, make is expecting a tab but didn't find it.
 
-<<<<<<< HEAD
-[ ] Compile your code by running `make charizard`
-=======
 - [ ] Compile your code by running `make charizard`
->>>>>>> 2ec827fe506f7f000e58364dc91fcab8d73ba86c
 
 #### 2.2 - Default Target
 

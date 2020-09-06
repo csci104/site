@@ -5,6 +5,8 @@ tasks: true
 title: Makefiles
 ---
 
+# Makefiles
+
 In this lab, we will review Makefiles, how they work, and how to write them. 
 In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration. 
 We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger.

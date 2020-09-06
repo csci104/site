@@ -121,7 +121,7 @@ makefile:2: *** missing separator. Stop.
 
 It means on line 2, make is expecting a tab but didn't find it.
 
-[] Compile your code by running `make charizard`
+- [ ] Compile your code by running `make charizard`
 
 #### 2.2 - Default Target
 
@@ -140,7 +140,7 @@ charizard: charizard.cpp
     g++ -g -Wall charizard.cpp -o charizard
 ```
 
-[] Compile your code by running `make all`
+- [ ] Compile your code by running `make all`
 
 Save this file as `Makefile` in the part1 directory and type make. 
 Congratulations, you've just made your life 100x easier. 
@@ -189,7 +189,7 @@ g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
 Simple as that. 
 Do the same for the other two classes, and we can then compile the main.
 
-[] Run compile commands for battle.cpp and pokemon.cpp
+- [ ] Run compile commands for battle.cpp and pokemon.cpp
 
 #### 3.2 - Putting It All Together
 
@@ -208,7 +208,7 @@ And you have your own pokemon battle simulator! Run it like normal using:
 ```
 ./bin/pokemon
 ```
-[] Run the command to compile main to and then run `./bin/pokemon`
+- [ ] Run the command to compile main to and then run `./bin/pokemon`
 
 #### 3.3 - Makefile Dependencies
 
@@ -255,7 +255,7 @@ bin/<???>: <???>
 If you run `make`, this will fail. 
 You will be filling in all the `<???>` at the end of the lab.
 
-[] Fill in the blanks in the sample code to get your program to successfully compile
+- [ ] Fill in the blanks in the sample code to get your program to successfully compile
 
 ### 4 - More Makefiles
 
@@ -295,7 +295,7 @@ $(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
     $(CXX) $(CPPFLAGS) -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
 ```
 
-[] Rewrite your compile commands to use your new `BIN_DIR` variable
+- [ ] Rewrite your compile commands to use your new `BIN_DIR` variable
 
 The most useful variables you will use are **Automatic Variables**. 
 Things that look like `$@`, `$<`, and `$^` are called automatic variables. 
@@ -319,7 +319,7 @@ $(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
     $(CXX) $(CPPFLAGS) -c $< -o $@
 ```
 
-[] Rewrite your compile commands to use automatic variables
+- [ ] Rewrite your compile commands to use automatic variables
 
 #### 4.2 - DIRSTAMP
 
@@ -345,7 +345,7 @@ all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
 
 It's important that you list .dirstamp before pokemon, because Make will check the dependencies in order. Since building pokemon requires that $(BIN_DIR) exists, make needs to create .dirstamp before pokemon.
 
-[] Add `.dirstamp` to your Makefile where needed
+- [ ] Add `.dirstamp` to your Makefile where needed
 
 #### 4.3 - PHONY and Clean
 
@@ -363,7 +363,7 @@ clean:
 You can add this to the end of your makefile. 
 Now clean your directory using the `make clean` rule.
 
-[] Add `clean` as a target in your Makefile
+- [ ] Add `clean` as a target in your Makefile
 
 Very nice, but there's a small problem with the original rule. 
 If a file named 'clean' exists in our directory, make won't run the clean rule because it sees that the file already exists!
@@ -378,7 +378,7 @@ clean:
 
 Now `clean` will always run when you use `make clean`.
 
-[] Add a `.PHONY` target
+- [ ] Add a `.PHONY` target
 
 **Note:** there's a danger when using rm -rf as it will irreversably delete whatever BIN_DIR is without prompting additional confirmation. 
 Be good and don't delete your entire OS (or worse, delete your grader's VM).
@@ -431,7 +431,7 @@ You can do the same for `src/attackMove.cpp`, `src/battle.cpp`, and `src/pokemon
 Technically, this is not a makefile feature, but a compiler option. 
 However, you don't normally group files into different directories unless your have a bigger project, in which case you should be using a Makefile (or IDE) to manage compilation.
 
-[] Add `-I` to your compile commands
+- [ ] Add `-I` to your compile commands
 
 ### 5 - Assignment: Complete the Makefile
 
@@ -467,6 +467,7 @@ $(BIN_DIR)/.dirstamp:
     mkdir -p $(BIN_DIR)
     touch $(BIN_DIR)/.dirstamp
 ```
+- [ ] Show your final Makefile to a CP or TA for checkoff!
 
 #### 5.1 - Review Questions
 

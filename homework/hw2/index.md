@@ -35,29 +35,58 @@ For this exercise we have implemented for you an abstract queue class in `int_qu
 As we mentioned briefly in lecture, the STL queue class is an adaptive container.
 It is essentially a list, but with the first in first out protocol (FIFO), so we can only add to the the back of the list and remove from the front of the list.
 We provide two different implementations of the queue using different data structures.
-The List Queue implementation in `int_queue_list.h` uses STL list. The Vector Queue implementation in `int_queue_vector.h` uses STL vector. *Please study these implementations.*  The implementation of queue classes use public inheritance for the abstract Queue class to implement the interface and use composition for STL vector or STL list as the private data. They are essentially wrapper implementations and an example of how to use an abstract class. This will be similar to writing a stack as a wrapper implementation for using your circular linked list for Problem 2 below.
+The list queue implementation in `int_queue_list.h` uses an STL `list`.
+The vector queue implementation in `int_queue_vector.h` uses an STL `vector`.
+**Please study these implementations**.
 
-We want to measure the differences in the operations given each implementation and why this may be occurring.  We will step you through this here. Starting code for running experiements is include in `int_queue_tests.cpp`. The test as written creates queues, pushes integers onto the queues and tests the timing of the pop_front operations. To compile: ` g++ --std=c++17 -o queuetest int_queue_tests.cpp`
+- [ ] Read through the queue implementations.
 
-We will discuss the following questions during class and how you may be able to verify them either using analysis or experimentally.<BR>
-*Runtime Questions for Queue Implementations:*
-1. In both implementations the functions front(), empty(), size() and push_back() all take constant time O(1). How can you verify this experimentally or using analysis?
-2. Which implementation is more efficient for pop_front(), the vector or list? How can you verify your claim experimentally or using analysis? Can you present data to convince a skeptic? What is the runtime of each? (These are runtimes that were covered in CSCI 103.)
+Both queues publicly inherit from the abstract queue class to implement the interface.
+Both use composition of an STL `vector` and STL `list` respectively to store the data internally.
+They are essentially wrapper implementations and an example of how to use an abstract class.
+This will be similar to writing a stack as a wrapper implementation for using your circular linked list below.
 
-We have included code in `int_queue_tests.cpp` for collecting timing data for an experiment. (This is not the best approach for runtime efficiency analysis, but it is sometimes used in practice. We will discuss the benefits and disadvantages.) To do so we use the C++ high_resolution_clock as shown below. You may use this code wherever you want to take timing measurements.
+Our goal is to measure and compare the speed of our abstract queue operations between the two implementations. 
+Starting code for running experiments is include in `int_queue_tests.cpp`.
+The test as written creates queues, pushes integers onto the queues and tests the timing of the `pop_front` operations.
+To compile, run:
+ 
+```shell
+g++ --std=c++17 -o int_queue_tests int_queue_tests.cpp
+```
+
+We will discuss the following questions during class and how you may be able to verify them either using analysis or experimentally.
+
+### Runtime Questions
+
+1. In both implementations, the functions `front()`, `empty()`, `size()`, and `push_back()` all take constant time `O(1)`.
+   How can you verify this experimentally or using analysis?
+2. Which implementation is more efficient for `pop_front()`, the vector or list?
+   How can you verify your claim experimentally or using analysis?
+   Can you present data to convince a skeptic?
+   What is the runtime of each (all runtimes here are covered in CSCI 103)?
+
+### Running the Tests
+
+We have included code in `int_queue_tests.cpp` for collecting timing data for an experiment.
+Note that this is not the best approach for runtime efficiency analysis, but it is sometimes used in practice; we will discuss the benefits and disadvantages.
+The tests use the C++ `high_resolution_clock` as shown below.
+You may use this code whenever you want to do any timing in your own code.
+
 ```
 #include <chrono>
-// Start the timer by getting the current time
-  std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now(); 
-  
-//Run experiment
-our_experiment();
 
-// End timer by getting current time when you have finished what you would like to measure
-  std::chrono::high_resolution_clock::time_point stop = std::chrono::high_resolution_clock::now();
 
- // Get the duration of your experiment
-  std::chrono::duration<double, std::milli> fp_ms = stop - start;
+// Start the timer by getting the current time.
+std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now(); 
+
+// TODO: the code you're measuring should be here.
+
+// End timer by getting current time when you have finished what you would like to measure.
+std::chrono::high_resolution_clock::time_point stop = std::chrono::high_resolution_clock::now();
+
+// Get the duration of your experiment
+std::chrono::duration<double, std::milli> duration = stop - start;
 ```
 
 

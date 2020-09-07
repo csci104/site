@@ -70,6 +70,12 @@ We will discuss the following questions during class and how you may be able to 
 
 We have included code in `int_queue_tests.cpp` for collecting timing data for an experiment.
 Note that this is not the best approach for runtime efficiency analysis, but it is sometimes used in practice; we will discuss the benefits and disadvantages.
+To run the tests, use:
+
+```shell
+./int_queue_tests
+```
+
 The tests use the C++ `high_resolution_clock` as shown below.
 You may use this code whenever you want to do any timing in your own code.
 

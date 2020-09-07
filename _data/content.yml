@@ -7,7 +7,7 @@ assignments:
       due: Friday, September 4 at 11:59PM PST
   - id: hw2
     title: Queues and Stacks
-    assigned: false
+    assigned: true
     dates:
       assigned: Monday, September 7
       due: Friday, September 18 at 11:59PM PST
@@ -59,14 +59,14 @@ labs:
     topics: Copy semantics, memory management
   - id: lab4
     week: Week 4
-    title: GTest
-    assigned: false
-    topics: Testing, gtest
+    title: Makefiles
+    assigned: true
+    topics: Make, makefiles, build systems
   - id: lab5
     week: Week 5
-    title: Makefiles
+    title: TBD
     assigned: false
-    topics: Make, makefiles, build systems
+    topics: TBD 
   - id: lab6
     week: Week 6
     title: TBD

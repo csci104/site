@@ -264,7 +264,7 @@ You will be filling in all the `<???>` at the end of the lab.
 
 #### 4.1 - Variables
 
-Your professors decides he doesn't like the students compiling to the `bin` directory. 
+Your professors decides they don't like the students compiling to the `bin` directory. 
 He instead wants the directory to be named `exe`. 
 You could easily find and replace bin with exe, but that's messy and could generate errors. 
 Why not take advantage of variables instead?

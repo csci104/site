@@ -159,7 +159,7 @@ The member functions of the `TokenStack` class that you write should really just
 If you are not able to fully implement your TokenList class, you may purchase the use of STL list, i.e. list\<Token\>, for **a flat rate penalty of 3%**. If you do so, please be sure to include the appropriate libraries (i.e. #include \<list\>).
 
 You should think **carefully** about efficiency.
-**All operations other than the destructor should run in O(1)**.
+**All operations other than `reverse` and the destructor should run in O(1)**.
 
 - [ ] Implement the `TokenStack` methods.
 - [ ] Optionally, test out your `TokenStack`.

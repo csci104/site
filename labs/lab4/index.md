@@ -77,7 +77,7 @@ However, by convention, we usually group the list of source files together and t
 GCC is nice to compile our programs, but it gets annoying if we have to type a 20 character command 10 times during development. 
 This is when a makefile comes in handy.
 
-When you type `make` into terminal, Make will look for a file named `makefile` or 'Makefile' for instructions. 
+When you type `make` into terminal, Make will look for a file named `makefile` or `Makefile` for instructions. 
 Let's start with a makefile for a single cpp file.
 
 In the part 1 folder, you will find a file called `charizard.cpp`. 
@@ -153,9 +153,9 @@ Congratulations, you've just made your life 100x easier.
 
 Compiling a multi-file program requires two main steps: compiling each .cpp file separately, and putting them all together to form the executable. 
 The first step is know as compilation, during which the compiler checks for syntax and semantic mistakes, such as missing semicolons, calling a function that's not declared, or returning the wrong type in a function. 
-The second step is known as linking, during which the linker "links" your function calls - it finds the where the body of a function is so that it knows what line to execute when you call that function.
+The second step is known as linking, during which the linker "links" your function calls - it finds where the body of a function is so that it knows what line to execute when you call that function.
 
-When you compile a program with `g++ -g -Wall charizard.cpp -o charizard`, you are actuallying compiling and linking it. 
+When you compile a program with `g++ -g -Wall charizard.cpp -o charizard`, you are actually compiling and linking it. 
 It turns out that it's possible to do them separately. 
 This comes in handy when you have multiple files in your project. 
 When you change one of the files, you can re-compile only files that depend on the change, and run linker, without having to re-compile the entire project.
@@ -172,17 +172,17 @@ $ cd ../part2
 $ ls *
 ```
 
-You will find three classes: AttackMove, Battle, and Pokemon. 
+You will find three classes: `AttackMove`, `Battle`, and `Pokemon`. 
 We want to compile each of these into their own .o file of the same name.
 
-Since we're going to have a lot of binary files beyond this point, let's make a bin directory to hold them all for easy cleanup.
+Since we're going to have a lot of binary files beyond this point, let's make a `bin` directory to hold them all for easy cleanup.
 
 ```
 $ mkdir bin
 ```
 
 To make an object file, we simply need to add the `-c` flag in the compile command, which tells g++ to not run linker. 
-Let's compile AttackMove first.
+Let's compile `AttackMove` first.
 
 ```
 g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
@@ -265,7 +265,7 @@ You will be filling in all the `<???>` at the end of the lab.
 #### 4.1 - Variables
 
 Your professors decides they don't like the students compiling to the `bin` directory. 
-He instead wants the directory to be named `exe`. 
+They instead want the directory to be named `exe`. 
 You could easily find and replace bin with exe, but that's messy and could generate errors. 
 Why not take advantage of variables instead?
 
@@ -282,7 +282,7 @@ $(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
     g++ -g -Wall -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
 ```
 
-Now when the profesor changes his mind again and wants a different name for the directory, we can just change the variable at the top. 
+Now when the profesors change their mind again and want a different name for the directory, we can just change the variable at the top. 
 By convention, we keep the binaries in a directory named `bin`. 
 (For homework, don't put your final executable in a bin directory unless we tell you to do so.)
 
@@ -326,10 +326,10 @@ $(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
 
 #### 4.2 - DIRSTAMP
 
-If you tried to make again with the above changes, you'll probably get an error that the exe directory doesn't exist. 
+If you tried to run `make` again with the above changes, you'll probably get an error that the `exe` directory doesn't exist. 
 We could just use `mkdir exe` everytime we compile our program, but that's a pain.
 
-Let's define a rule to make sure the exe directory exists.
+Let's define a rule to make sure the `exe` directory exists.
 
 ```
 $(BIN_DIR)/.dirstamp:
@@ -337,7 +337,7 @@ $(BIN_DIR)/.dirstamp:
     touch $(BIN_DIR)/.dirstamp
 ```
 
-The .dirstamp file is a hidden file we make to make sure a directory exists. 
+The `.dirstamp` file is a hidden file we make to make sure a directory exists. 
 Notice that this rule does not have any dependency. 
 When a rule has no dependency, it will be executed if the target does not exist. 
 You can add this rule to the dependency list of your compile commands.
@@ -346,7 +346,7 @@ You can add this rule to the dependency list of your compile commands.
 all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
 ```
 
-It's important that you list .dirstamp before pokemon, because Make will check the dependencies in order. Since building pokemon requires that $(BIN_DIR) exists, make needs to create .dirstamp before pokemon.
+It's important that you list `.dirstamp` before `pokemon`, because Make will check the dependencies in order. Since building `pokemon` requires that `$(BIN_DIR)` exists, make needs to create `.dirstamp` before `pokemon`.
 
 - [ ] Add `.dirstamp` to your Makefile where needed
 
@@ -356,7 +356,7 @@ Now large projects will eventually generate a lot of binary files.
 We want to keep our workspace relatively clean by writing a rule to delete the generated files. 
 This is also helpful when you're having mysterious problems as they sometimes go away after you delete and recompile your binaries.
 
-Here's our clean rule:
+Here's our `clean` rule:
 
 ```
 clean:
@@ -383,7 +383,7 @@ Now `clean` will always run when you use `make clean`.
 
 - [ ] Add a `.PHONY` target
 
-**Note:** there's a danger when using rm -rf as it will irreversably delete whatever BIN_DIR is without prompting additional confirmation. 
+**Note:** there's a danger when using rm -rf as it will irreversably delete whatever `BIN_DIR` is without prompting additional confirmation. 
 Be good and don't delete your entire OS (or worse, delete your grader's VM).
 
 #### 4.4 - Search Path

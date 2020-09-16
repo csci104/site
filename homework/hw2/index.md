@@ -219,7 +219,7 @@ Note the recursive structure, which we'll point out in each:
 
 These are the cases our parser will address while its consuming tokens from the stack.
 They provide a set of constraints for the kinds of input we accept as valid.
-For example, `32` and `((1 - 2) * 3)` are valid, but `(1 - 2 * 3)` is not because we can't build it with our simple arithmetic expression patterns. 
+For example, `(32)` and `((1 - 2) * 3)` are valid, but `(1 - 2 * 3)` is not because we can't build it with our simple arithmetic expression patterns. 
 
 ### Creating Tokens
 

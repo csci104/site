@@ -64,14 +64,14 @@ labs:
     topics: Make, makefiles, build systems
   - id: lab5
     week: Week 5
-    title: TBD
-    assigned: false
-    topics: TBD 
+    title: Inheritance
+    assigned: true
+    topics: Inheritance, polymorphism 
   - id: lab6
     week: Week 6
     title: TBD
     assigned: false
-    topics: Inheritance, polymorphism, STL
+    topics: TBD
   - id: lab7
     week: Week 7
     title: Templates

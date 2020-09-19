@@ -470,3 +470,4 @@ Be sure to carefully read and follow the instructions there.
 
 - [ ] Format your code using `clang-format`.
 - [ ] Submit your code.
+- [ ] Check that your homework satisfies the [Visual Inspection Rubric]({{ site.baseurl }}/homework/rubric)

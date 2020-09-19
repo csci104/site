@@ -13,7 +13,7 @@ assignments:
       due: Friday, September 18 at 11:59PM PST
   - id: hw3
     title: "Project, Part 1: Object Oriented Design and STL"
-    assigned: false
+    assigned: true
     dates:
       assigned: Monday, September 21
       due: Friday, October 2 at 11:59PM PST
@@ -66,7 +66,7 @@ labs:
     week: Week 5
     title: Inheritance
     assigned: true
-    topics: Inheritance, polymorphism 
+    topics: Inheritance, polymorphism
   - id: lab6
     week: Week 6
     title: TBD

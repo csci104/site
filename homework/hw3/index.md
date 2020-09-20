@@ -129,18 +129,6 @@ Most of the work will be done though a Scrabble class, along with a number of ot
 We also provide you with a standard set of config files.
 At the command line, your program should run with `./scrabble config/config.txt` 
 
-We have provided a file for automated testing in the `input` directory called `example.txt` that can be used to mimic a user typing on `std::cin`.
-This file will be simple; feel free to modify it or add others and look for error cases (the config file will be seeded with a fixed value, so nothing is really "random").
-Make sure the moves in your input files actually cause the game to end!
-You can run them by executing:
- 
-```
-cat input/example.txt | ./scrabble <configuration-file-name>
-```
-
-Finally, we provide a working executable for you, so that can help with error case handling.
-The example executable will be called `./solution`.
-
 ## Game Interaction
 
 Here, we will describe how the interaction between the user and the game should go.
@@ -395,7 +383,7 @@ Each of these can easily be tested without having the whole game written, and yo
 - [ ] Use GTests to verify parts of your code.
 - [ ] Try testing example inputs.
 
-### Handling Error Conditions with Exceptions
+### Using Exceptions
 
 In order to handle error conditions, we have provided for you the following exception classes in `exceptions.h`:
 
@@ -421,13 +409,19 @@ The second will tests will be examine the final outcome of your game after a ful
 The GTests will be provided for you in `scrabble_test.cpp` so your grade here should be no surprise.
 These can be compiled with GDB and are a helpful debugging tool!
 Note these tests may change by the time final grading happens. 
+You can run the tests from the test directory by running `make`.
 
 The second set of tests are not provided, but a sample of the format is called `input/example.txt`.
 These tests mimic a user typing on `std::cin`.
 The sample given is simple; feel free to modify it and look for error cases (again, the config file will be seeded with a fixed value, so nothing is really "random").
+Make sure the moves in your input files actually cause the game to end!
+You can run them by executing:
+```
+cat input/example.txt | ./scrabble <configuration-file-name>
+```
 
-We will even provide a working executable for you, so that can help with error case handling.
-The example executable will be called `./solution`
+Finally, we provide a working executable for you, so that can help with error case handling.
+The example executable will be called `./solution`.
 
 Good luck!
 

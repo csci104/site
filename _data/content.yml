@@ -69,9 +69,9 @@ labs:
     topics: Inheritance, polymorphism
   - id: lab6
     week: Week 6
-    title: TBD
-    assigned: false
-    topics: TBD
+    title: Midterm Review
+    assigned: true
+    topics: Weeks 1 - 5
   - id: lab7
     week: Week 7
     title: Templates

@@ -28,6 +28,7 @@ $color-hover: mix($color-primary, white, 5%);
 $color-selected: mix($color-primary, white, 10%);
 
 .toc {
+  overflow: scroll;
   @include fixed-aside;
   display: flex;
   flex-direction: column;

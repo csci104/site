@@ -318,8 +318,8 @@ We **strongly** recommend that before writing any code at all, you spend a few h
 Check out this UML inspired diagram of the provided skeleton:
 
 <div class="showcase">
-    <a href="./assets/uml.png">
-        <img src="./assets/uml.png" alt="Fragmentation" width="100%" class="no-shadow" />
+    <a href="./assets/UML.png">
+        <img src="./assets/UML.png" alt="Fragmentation" width="100%" class="no-shadow" />
     </a>
 </div>
 

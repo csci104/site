@@ -109,153 +109,7 @@ STL stands for Standard Template Library. The C++ STL is a set of classes that i
 
 There are several STL container classes that you'll use in this class and beyond. You can find the names of their member functions, as well as comprehensive examples of how to use them at [C++ Reference](http://www.cplusplus.com/reference/).
 
-#### STL Maps
-
-In the STL map, the following operations are all logarithmic: search, removal and insertion. You'll learn later in the semester how the STL map achieves this logarithimic runtime, but for now, just remember that these operations are ```O(log(n))```.
-
-#### Iterators
-
-To loop through every element in our map in linear time, we can use an iterator. Our code will look something like this: 
-
-```
-std::map<std::string, std::string>::iterator it;
-for(it = myMap.begin(); it != myMap.end(); ++it)   
-{
-  std::cout << it->first << std::endl;
-  std::cout << it->second << std::endl;
-}
-```
-This for loop will take linear time.
-
-Note that this isn't too different from the for loop you'd write to iterate through an array. Instead of starting at index 0, though, we start at the first element in the map data structure by using the `begin()` function.
-
-STL Iterators also *overload* the operator '++', which moves an iterator to the next element. 
-
-Note that our terminate condition of the for loop is ``` it != myMap.end() ```. myMap.end() points past the last element in your map so that your loop stops at the last element. Conceptually, this is just like in our typical for loops that we use to iterate over lists — we stop when `i == size`, which is the last index of our list + 1;
-
-Incrementing or deferencing `end()` will cause undefined behavior, because it's not pointing at an actual element in your map. 
-
-#### Inserting into a Map
-
-There are two basic ways we can insert into a map. There is `insert()` , which only adds the specified element if the key is not already in the map. If the key does exist, insert() does nothing.
-
-We can also insert using the overloaded `operator[]` to index into the map. Unlike `insert()`, using `operator[]` will overwrite the value if the key exists. 
-
-Here's an example of both ways to insert.
-
-```
-myMap.insert(std::make_pair("Key", "Value")); // Inserts the pair
-myMap["Key"] = "Overwrites Previous Value"; // Overwrites "Value"
-myMap.insert(std::make_pair("Key", "This should do nothing")); // Does nothing, because "Key" was already in the map
-``` 
-
-#### Finding Elements in a Map
-
-To find an element, we can use the `find()` function. This returns an iterator pointing to the key-value pair, if found. If it wasn't found, it returns a pointer to `end()`. For example:
-
-```
-std::map<std::string, std::string>::iterator it = myMap.find("Key");
-if (it != myMap.end()) // we found the element
-{
-  std::cout << it->first << " has value " << it->second << std::endl; 
-}
-```
-
-We can also use the `operator[]` to retrieve the element if the key exists. 
-
-```
-std::string var = myMap["Key"];
-```
-
-If the key does not exist, and we try to access it using `[]`, this will insert a new element into the map with the given key. 
-
-- [ ] What do you think the value would be?
-
-We've learned that we can find elements in a map using 'myMap.find("Key")'.
- 
-Take a look at the following code snippet (which is relatively commmon, when students first start using maps). Let's say we want to return true if a certain key is in the map.
-
-```
-std::map<std::string, std::string>::iterator it;
-for(it = myMap.begin(); it != myMap.end(); ++it)   
-{
-  if (it->first == "myKey") {
-    return true;
-  }
-}
-
-return false;
-```
-
-- [ ] Does this code work? What is the runtime? What is the major problem with this approach? What is a better way to solve this problem?
-
-#### Removing Elements in a Map
-
-To remove a single element, we use the `erase()` function. This accepts an iterator or a key as a parameter. 
-
-We can remove like this:
-
-```
-myMap.erase (myMap.find("Key")); 
-```
-
-`find()` returns an iterator pointing to the object containing "Key". There is undefined behavior if iterator is invalid (i.e. `end()`), so don't call erase unless you know that the key is in the set.
-
-or, we can just do:
-
-```
-// This first searches for an object containing "Key", then removes it
-myMap.erase ("Key");
-```
-
-To remove all elements, use the clear() function.
-
-**NOTE:** Successfully erasing or inserting an item from a map will **change the map's internal structure** and therefore invalidate the iterator pointing to the removed element. In other words, we can't use an iterator that we passed into erase in order to look at the next element.
-
-```
-myMap.insert(std::make_pair("K1", "V1"));
-myMap.insert(std::make_pair("K2", "V2"));
-std::map<std::string, std::string>::iterator it = myMap.find("K1"); // it points to a valid position in myMap
-myMap.erase(it);
-++it; // !!! UNDEFINED BEHAVIOR !!! it is no longer valid after its element has been removed from myMap
-```
-
-#### STL Sets
-
-The STL set class is similar to a map, but we only have keys (no values). Keys are unique, and again, we can use `insert()`, `erase()`, and `find()`. We can also use iterators to walk through all the elements in a set. Again, `find()` is logarithmic, and iterating through the set is linear. Here's a code snippet.
-
-```
-
-// insert into the set
-set<string> radioStations;
-radioStations.insert("KCRW");
-radioStations.insert("KXSC");
-string stationName = "KPWR";
-radioStations.insert(stationName);
-
-// iterating through the set
-for(set<string>::iterator it=radioStations.begin(); it != radioStations.end(); ++it)
-{
-  // note that we don't have the concept of it->first or it->last, because there are no values, only keys
-  cout << "Station: " << *it << endl;
-}
-
-stationName = "KPWR";
-
-// find an element
-if(radioStations.find(stationName) != radioStations.end()){
-  cout<< stationName + " is a radio station!" << endl;
-}
-else {
-  cout<< "Couldn't find this station!" << endl;
-}
-
-radioStations.erase("KCRW"); // remove KCRW from the set of names
-// if we try to find "KCRW" now, find() will return radioStations.end()
-
-```
-
-#### Using STL Stack to Implement a Game for Young Children
+#### Example of Using STL Stack
 **[Sample Midterm A](https://bytes.usc.edu/cs104/resources/midterm-a.pdf), Question 5**: Imagine that you are writing a simple game for young children to learn to recognize and match shapes. For our purposes, shapes are restricted to squares and circles. Shapes arrive over time and fall on a stack of items.
 
 At each point, the child may press one of two buttons, 'L' and 'R'. 'L' should be the button to press if there is a square on top, and 'R' if there is a circle on top. More precisely, the rules are as follows: 
@@ -363,9 +217,34 @@ A try block can have multiple catch blocks for different exceptions. The first c
 
 #### Implementing LimitedList, using Exceptions
 
-Modified from **[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 7**: A `LimitedList` is a modified version of a `List` that has a capacity it should not exceed. Given the below header file, complete the implementation for `LimitedList::insert (int i, const T & item)`. Some of it has already been completed for you. You can assume all other member functions work as expected. You can also assume an exception `CapacityException(int capacity)` has already been written for you. 
+Modified from **[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 7**: A `LimitedList` is a modified version of a `List` that has a capacity it should not exceed. Given the below header file, complete the implementation for `LimitedList::insert (int i, const T & item)`. Some of it has already been completed for you. Just for fun, let's make a custom exception class that will print out an interesting error message when you try to insert into a full list. You will need to write and use a custom exception, `CapacityException(int capacity)`.
 
 ```
+#include <stdexcept>
+
+class CapacityException : public std::exception 
+{
+public:
+  /* When an instance of the CapacityException is created, 
+   * it constructs a string that stores the error message 
+   * that we need to display. */
+  CapacityException(int capacity) 
+  : msg(/* What would be a meaningful message? */)
+  {
+  }
+
+  /* It is important that when you declare `what()` for a class 
+   * that inherits from `std::exception`, its signature looks exactly 
+   * like `const char* what() const noexcept` 
+   * (with optional `virtual` at the front). */
+  virtual const char* what() const noexcept
+  {
+    return msg.c_str();
+  }
+private:
+  std::string msg;
+};
+
 class LimitedList {
   public: 
     LimitedList(int capacity); 
@@ -378,7 +257,7 @@ class LimitedList {
     void insert (int i, const string& item) {
       /* almost the same as standard insert, except that if the list is full, it will throw an exception rather than resizing. In the case of the exception being thrown, it will not alter the list. */
       if ( /* TODO - condition to check if exception should be thrown */ ) {
-        /* TODO - throw the exception */
+        /* TODO - throw custom CapacityException */
 
 
 

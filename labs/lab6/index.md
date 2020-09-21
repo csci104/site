@@ -285,10 +285,10 @@ Through templates, however, we can treat a type as a variable, and use it as the
 
 To write a templated class, you must: 
 
-- Precede the class with ` template <typename T> ` or ` template <class T> `.
+- Precede the class with `template <typename T>` or `template <class T>`.
 - Use T wherever you want to use your generic type
 -  Precede the definition of each function with
-template ` <typename T> `
+template `<typename T>`
 - In the scope portion of the class member
 function, add `<T>`
 

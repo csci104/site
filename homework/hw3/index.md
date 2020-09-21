@@ -41,12 +41,12 @@ Here is how the two parts build on each other:
 You will not have to worry about how homework 5 will be incorporated.
 In fact, we are giving much of the design for homework 3 to you so that homework 5 will not require significant changes to your previous code. 
 
-## Rules of Scrabble
+### Rules of Scrabble
 
 As mentioned above, the Scrabble rules are mostly described on the [Scrabble Pages](http://www.scrabblepages.com/scrabble/rules/).
 If you don't know scrabble that's okay, here's a summary, including few minor changes for our particular assignment.
 
-### Letters, Hands, Board
+#### Letters, Hands, Board
 
 - There is an alphabet (in English: a-z, but we want to keep it generic so your game easily ports to other languages).
   For each letter, there is a given number of tiles of that letter, and a given score for that letter.
@@ -61,13 +61,10 @@ If you don't know scrabble that's okay, here's a summary, including few minor ch
   The standard Scrabble board is a 15x15 square, but again, we will want to keep it generic here.
 - All of these generic quantities (language, dictionary, how many of what kinds of tiles, points per tile, board size and layout, etc) will be configured via files of a standard format. 
 
-### Moves
+#### Moves
 
-There are three kinds of moves:
-
-#### Place a Word
-
-When you place a word, you use anywhere from 1 to `hand_size` of your tiles and place them either horizontally or vertically in a line on the board.
+There are three kinds of moves.
+When you **place a word**, you use anywhere from 1 to `hand_size` of your tiles and place them either horizontally or vertically in a line on the board.
 You then draw tiles from the bag equal to the number of tiles you played.
 
 - Your tiles, together with tiles that may already be on the board, must form a single contiguous horizontal or vertical line - no gaps allowed.
@@ -79,23 +76,19 @@ You then draw tiles from the bag equal to the number of tiles you played.
   Single letters are not considered words.
 - The moment you place a word including one or more blank tiles, those blank tiles are assigned letters (by you), which they keep for the rest of the game.
 
-#### Exchange Tiles
-
-You can exchange anywhere from 1 to `hand_size` of your tiles with the bag.
+Instead of placing a word, you may **exchange anywhere from 1 to `hand_size`** of your tiles with the bag.
 When you do this, you first return the tiles, and then you draw the same number of tiles from the bag to replace them (possibly getting some of the same tiles back).
 This ends your move.
 
-#### Pass
+Lastly, **you may pass your turn** and not do anything. 
 
-You can pass your turn and not do anything. 
-
-### Dictionary and Legal Words
+#### Dictionary and Legal Words
 
 We provide you with a dictionary file containing all legal words. This will be a standard English dictionary, but again, any should work.
 Words are legal if and only if they are in the dictionary.
 The program should not let a user play an illegal word (this is slightly different than tournament Scrabble rules).
 
-### Scoring
+#### Scoring
 
 You will get the sum of scores of all the maximal words that are formed by your new tiles.
 By "maximal", we mean that they are bordered on both sides by empty squares or the end of the board; if you put down "hello", you don't also get the scores for "hell", "he", "lo", and "ell".
@@ -112,7 +105,7 @@ The score of a word is computed as the sum of all letter scores in the word, mul
   It is not possible to earn these points if a player has fewer than maximum possible number of tiles.
 - For some examples illustrating this scoring, scroll to the bottom of [this page](https://www.eecs.northwestern.edu/%7Erobby/uc-courses/22001-2008-winter/scrabble.html) or see the [Hasbro Scoring Examples](http://scrabble.hasbro.com/en-us/rules) (click on "scoring" and scroll down).
 
-### Start, Process, and End of Game
+#### Start, Process, and End of Game
 
 - First, the program should ask you about who's playing via `std::cin`.
 - Play proceeds in turn by player order.
@@ -129,7 +122,7 @@ Most of the work will be done though a Scrabble class, along with a number of ot
 We also provide you with a standard set of config files.
 At the command line, your program should run with `./scrabble config/config.txt` 
 
-## Game Interaction
+### Game Interaction
 
 Here, we will describe how the interaction between the user and the game should go.
 You have liberty in choosing exactly what the game **outputs** as it is being played.
@@ -175,7 +168,7 @@ At the end of the game, the final scores of all players should be shown, includi
 Don't wait for any kind of input to terminate the program after the last move.
 For our automated testing to work, you should **call the function`print_result()` provided in `scrabble.h` and `scrabble.cpp`**.
 
-### Examples of commands
+#### Examples of Commands
 
 Here are a few examples of what you would enter, and what the effects would be.
 
@@ -188,7 +181,7 @@ Here are a few examples of what you would enter, and what the effects would be.
 
 Notice that when placing tiles, you do **not** specify the tiles that your word will also be using which are already on the board, only the ones you are adding (in order).
 
-### Errors in commands
+#### Errors in Commands
 
 Obviously, there are many errors that a user could make.
 Here is a sample list of many errors that are possible.
@@ -217,7 +210,7 @@ Errors that we will not formally test (although the solution provided does handl
 
 When an error occurs, you should tell the user what went wrong, and prompt them for another move.
 
-### Files and Formats
+#### Files and Formats
 
 Since there are quite a few parts here that should be "configurable" by the user (such as language, board layout, etc.), you will be interacting with several files.
 There may also be some configuration options later on.
@@ -226,7 +219,7 @@ In order to avoid having to give a huge number of command line arguments, we wil
 As a general rule for this problem, we will provide sensible input files to your program.
 For instance, you don't need to worry about us testing your game with tile sets that have more tiles than there are spaces on the board, or providing file names to files that don't exist, etc.
 
-#### Configuration File
+##### Configuration File
 
 The code we provide handles most of the configuration for you so the following is information rather instruction. 
 The configuration file will tell you the names of the tile file, the board file, and the dictionary file, as well as the number of tiles in each player's hand.
@@ -254,7 +247,7 @@ However you still may need to understand it to work with it and expand it in hom
 We are trying to make your parsing job as easy as possible here, so if you're in doubt, you can probably assume that things are well-formed (though feel free to ask).
 You don't have to have separate subdirectories; this was just given as an example.
 
-#### Tile Set File
+##### Tile Set File
 
 The tile bag file will consist of multiple lines, each of which will be of the form:
 
@@ -281,7 +274,7 @@ c 3 2
 So you don't have to type it up yourself, we are providing you with a file for the standard English tile bag.
 If you want to create tile bagss for other languages, you can find frequencies on the [Wikipedia page for scrabble distributions](https://en.wikipedia.org/wiki/Scrabble_letter_distributions).
 
-#### Dictionary File
+##### Dictionary File
 
 The dictionary file will consist of multiple lines, each a single word in all lowercase letters, consisting only of letters that also appear in the tile set.
 Each word will be at most 30 characters long.
@@ -290,7 +283,7 @@ For your convenience, we are providing you with an English word list.
 While our example file has the words in alphabetical order and in lowercase, we do not guarantee that this will be the case for all dictionaries we test your code on.
 A skeleton of the dictionary parser is provided in `dictionary.cpp`.
 
-#### Board File
+##### Board File
 
 The board file will start with a line of two positive integers `x` and `y`, the width and height of the board.
 On the next line will be two positive integers `sx` and `sy`, **the 1-indexed x and y coordinates of the starting location**.
@@ -309,7 +302,7 @@ Each character will be one of the following:
 
 No other characters will occur. For your convenience, we are providing you with the standard Scrabble board.
 
-### Code Design
+#### Code Design
 
 This is a pretty substantial project, and the first part in particular may look a bit intimidating since there are so many parts to it.
 However, it can be naturally broken down into smaller components, each of which should be quite manageable.
@@ -383,7 +376,7 @@ Each of these can easily be tested without having the whole game written, and yo
 - [ ] Use GTests to verify parts of your code.
 - [ ] Try testing example inputs.
 
-### Using Exceptions
+#### Using Exceptions
 
 In order to handle error conditions, we have provided for you the following exception classes in `exceptions.h`:
 
@@ -400,7 +393,7 @@ In order to handle error conditions, we have provided for you the following exce
 
 *Please remember to use **try catch blocks** to handle errors, so that your program does not abruptly abort*.
 
-### Testing and Grading
+#### Testing and Grading
 
 Your project will be graded based on the outcomes of two sets of test.
 The first will be unit tests, written GTest (just like labs).
@@ -416,6 +409,7 @@ These tests mimic a user typing on `std::cin`.
 The sample given is simple; feel free to modify it and look for error cases (again, the config file will be seeded with a fixed value, so nothing is really "random").
 Make sure the moves in your input files actually cause the game to end!
 You can run them by executing:
+
 ```
 cat input/example.txt | ./scrabble <configuration-file-name>
 ```

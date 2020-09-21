@@ -28,7 +28,6 @@ $color-hover: mix($color-primary, white, 5%);
 $color-selected: mix($color-primary, white, 10%);
 
 .toc {
-  overflow: scroll;
   @include fixed-aside;
   display: flex;
   flex-direction: column;
@@ -91,9 +90,9 @@ $color-selected: mix($color-primary, white, 10%);
       }
     }
 
-    li.toc-h2 > a { padding-left: 1em + 1 * 0.6em }
-    li.toc-h3 > a { padding-left: 1em + 2 * 0.6em }
-    li.toc-h4 > a { padding-left: 1em + 3 * 0.6em }
-    li.toc-h5 > a { padding-left: 1em + 4 * 0.6em }
+    li.toc-h2 > a { padding-left: 1em + 1 * 0.6em; }
+    li.toc-h3 > a { padding-left: 1em + 2 * 0.6em; }
+    li.toc-h4 > a { padding-left: 1em + 3 * 0.6em; }
+    li.toc-h5 > a { padding-left: 1em + 4 * 0.6em; }
   }
 }

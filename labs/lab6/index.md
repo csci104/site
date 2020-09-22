@@ -9,7 +9,7 @@ title: Midterm Review
 
 ### Introduction
 
-The midterm will take place on **Friday, September 25th, 7-9 PM PDT**. and will cover all material from weeks 1 - 5, up to and including templates and exceptions. More details will be posted on Piazza.
+The midterm will take place on **Friday, September 25th, 7-9 PM PDT**. and will cover all material from weeks 1 - 5, not including templates and exceptions. (With that being said, we've included questions that involve a basic understanding of templates and exceptions here for review.)
 
 You won't be tested on any programming tools that you've gone over in lab but not lecture (e.g. gdb, Makefiles). This lab is to help you review and will mostly cover problems taken or modified from the sample midterms under the [Resources](https://bytes.usc.edu/cs104/resources) page. If there's a topic you want to skip, or a topic that's not included here that you really want to go over, let us know! As long as this lab is, it is by no means exhaustive, so remember to go back and review lecture slides and weekly group exercises as well.
 

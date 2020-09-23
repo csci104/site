@@ -195,11 +195,10 @@ The errors your solution must handle and that will be tested formally are as fol
 - One or more of the words formed by placing the tiles are not in the dictionary.
 - A user is trying to make a first move that does not use the start square.
 - A user is trying to make a move (other than the first move) that does not have at least one tile adjacent to a previously placed tile.
-- A user enters a move such that the row or column is invalid such as out of bounds of the board.
-- A user enters a move that is invalid because the letters specified in the `<string of tiles>` exceeds the board dimensions.
 
 Errors that we will not formally test (although the solution provided does handle them):
 
+- User enters a move starting with a out of bounds row or column.
 - User types a non-existing command (like `PASS` or `DISCARD`).
 - User enters the wrong number of arguments for a command.
 - User enters a character other than `-` or `|` for the direction.

@@ -366,16 +366,6 @@ We provide many for you but it is still useful to think about what datastructure
 - [ ] Come up with a checklist for completing Scrabble.
 - [ ] Complete scrabble!
 
-Some of your classes may be difficult to test in isolation, but for many of them, it will be pretty easy to write some tests (GTest) to test if the class does what it is supposed to.
-For instance, does your checking of words with a dictionary give the right answer?
-Do you manage to draw random sets of tiles from the tile bag, and return tiles to it?
-Can you display a state of the board and add tiles to it?
-Does it return correctly what words are formed?
-Each of these can easily be tested without having the whole game written, and you might find it (1) less intimidating to develop your classes one at a time, and (2) much more efficient for your debugging.
-
-- [ ] Use GTests to verify parts of your code.
-- [ ] Try testing example inputs.
-
 #### Using Exceptions
 
 In order to handle error conditions, we have provided for you the following exception classes in `exceptions.h`:
@@ -400,8 +390,10 @@ The first will be unit tests, written GTest (just like labs).
 The second will tests will be examine the final outcome of your game after a full play through. 
 
 The GTests will be provided for you in `scrabble_test.cpp` so your grade here should be no surprise.
-These can be compiled with GDB and are a helpful debugging tool!
+These can be compiled with GDB and are a helpful debugging tool! Without needing to have the game totally running, you can use these to test some (but not all) individual classes. 
+If a test is failing and you aren't sure why, you can step through it by running the test executable with gdb and breaking at any line number in `scrabble_test.cpp`. You can also modify the test code if you want to include print board statements. 
 Note these tests may change by the time final grading happens. 
+Note that you don't have to write any tests of your own or even run these if you aren't interested, it's just an extra tool if you want it. 
 You can run the tests from the test directory by running `make`.
 
 The second set of tests are not provided, but a sample of the format is called `input/example.txt`.

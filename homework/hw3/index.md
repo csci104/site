@@ -199,7 +199,7 @@ The errors your solution must handle and that will be tested formally are as fol
 Errors that we will not formally test (although the solution provided does handle them):
 
 - User enters a move starting with a out of bounds row or column.
-- User types a non-existing command (like `PASS` or `DISCARD`).
+- User types a non-existing or misspelled command (like `PAS` or `DISCARD`).
 - User enters the wrong number of arguments for a command.
 - User enters a character other than `-` or `|` for the direction.
 - User enters a non-numerical (or floating point) value for the row or column.
@@ -284,13 +284,13 @@ A skeleton of the dictionary parser is provided in `dictionary.cpp`.
 
 ##### Board File
 
-The board file will start with a line of two positive integers `x` and `y`, the width and height of the board.
+The board file will start with a line of two positive integers `x` and `y`, the number of rows and columns of the board.
 On the next line will be two positive integers `sx` and `sy`, **the 1-indexed x and y coordinates of the starting location**.
 We will make sure that `0 < sx <= x` and `0 < sy <= y`.
 Rows are numbered from top to bottom and columns from left to right.
 *Rows and columns are numbered starting 1 and not 0 for user accessibility*, though we recommend that you immediately convert to and use 0-indexing internally.
 
-After that, we will have `y` rows of exactly `x` characters each.
+After that, we will have `x` rows of exactly `y` characters each.
 Each character will be one of the following:
 
 - `.` indicating a normal square with no bonus.

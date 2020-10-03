@@ -75,8 +75,8 @@ labs:
   - id: lab7
     week: Week 7
     title: Templates
-    assigned: false
-    topics: Templates, constexpr
+    assigned: true
+    topics: Templates
   - id: lab8
     week: Week 8
     title: Graphs and searches

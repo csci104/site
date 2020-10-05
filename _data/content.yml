@@ -80,7 +80,7 @@ labs:
   - id: lab8
     week: Week 8
     title: Graphs and searches
-    assigned: false
+    assigned: true
     topics: Graphs, search, algorithms
   - id: lab9
     week: Week 9

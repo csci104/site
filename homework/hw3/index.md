@@ -9,7 +9,7 @@ title: Scrabble Part 1
 
 
 - Assigned: September 18, 2020 PST
-- Due: October 01, 2020 at 23:59 PST
+- Due: October 04, 2020 at 23:59 PST
 - Directory name in your github repository for this homework (case sensitive): `hw3`
    - Skeleton code for this assignment is available in [`resources/hw3/`]({{ site.data.urls.github }}/resources/).
    - Once you have cloned your `hw-username` repo, copy the `hw3/` directory into it from `resources`.
@@ -195,11 +195,12 @@ The errors your solution must handle and that will be tested formally are as fol
 - One or more of the words formed by placing the tiles are not in the dictionary.
 - A user is trying to make a first move that does not use the start square.
 - A user is trying to make a move (other than the first move) that does not have at least one tile adjacent to a previously placed tile.
+- A user enters a move such that the row or column is invalid such as out of bounds of the board.
+- A user enters a move that is invalid because the letters specified in the `<string of tiles>` exceeds the board dimensions.
 
 Errors that we will not formally test (although the solution provided does handle them):
 
-- User enters a move starting with a out of bounds row or column.
-- User types a non-existing or misspelled command (like `PAS` or `DISCARD`).
+- User types a non-existing command (like `PASS` or `DISCARD`).
 - User enters the wrong number of arguments for a command.
 - User enters a character other than `-` or `|` for the direction.
 - User enters a non-numerical (or floating point) value for the row or column.
@@ -284,13 +285,13 @@ A skeleton of the dictionary parser is provided in `dictionary.cpp`.
 
 ##### Board File
 
-The board file will start with a line of two positive integers `x` and `y`, the number of rows and columns of the board.
+The board file will start with a line of two positive integers `x` and `y`, the width and height of the board.
 On the next line will be two positive integers `sx` and `sy`, **the 1-indexed x and y coordinates of the starting location**.
 We will make sure that `0 < sx <= x` and `0 < sy <= y`.
 Rows are numbered from top to bottom and columns from left to right.
 *Rows and columns are numbered starting 1 and not 0 for user accessibility*, though we recommend that you immediately convert to and use 0-indexing internally.
 
-After that, we will have `x` rows of exactly `y` characters each.
+After that, we will have `y` rows of exactly `x` characters each.
 Each character will be one of the following:
 
 - `.` indicating a normal square with no bonus.
@@ -365,6 +366,16 @@ We provide many for you but it is still useful to think about what datastructure
 - [ ] Come up with a checklist for completing Scrabble.
 - [ ] Complete scrabble!
 
+Some of your classes may be difficult to test in isolation, but for many of them, it will be pretty easy to write some tests (GTest) to test if the class does what it is supposed to.
+For instance, does your checking of words with a dictionary give the right answer?
+Do you manage to draw random sets of tiles from the tile bag, and return tiles to it?
+Can you display a state of the board and add tiles to it?
+Does it return correctly what words are formed?
+Each of these can easily be tested without having the whole game written, and you might find it (1) less intimidating to develop your classes one at a time, and (2) much more efficient for your debugging.
+
+- [ ] Use GTests to verify parts of your code.
+- [ ] Try testing example inputs.
+
 #### Using Exceptions
 
 In order to handle error conditions, we have provided for you the following exception classes in `exceptions.h`:
@@ -389,10 +400,8 @@ The first will be unit tests, written GTest (just like labs).
 The second will tests will be examine the final outcome of your game after a full play through. 
 
 The GTests will be provided for you in `scrabble_test.cpp` so your grade here should be no surprise.
-These can be compiled with GDB and are a helpful debugging tool! Without needing to have the game totally running, you can use these to test some (but not all) individual classes. 
-If a test is failing and you aren't sure why, you can step through it by running the test executable with gdb and breaking at any line number in `scrabble_test.cpp`. You can also modify the test code if you want to include print board statements. 
+These can be compiled with GDB and are a helpful debugging tool!
 Note these tests may change by the time final grading happens. 
-Note that you don't have to write any tests of your own or even run these if you aren't interested, it's just an extra tool if you want it. 
 You can run the tests from the test directory by running `make`.
 
 The second set of tests are not provided, but a sample of the format is called `input/example.txt`.
@@ -417,7 +426,7 @@ Good luck!
 
 Once you've finished, check that all of the code you're submitting is consistently formatted.
 The `README.md` in your homework repository provides instructions for using `clang-format` to do so automatically.
-You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/assignment/hw3).
+You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/course/usc-csci104-fall2020/hw3).
 Be sure to carefully read and follow the instructions there.
 
 - [ ] Format your code using `clang-format`.

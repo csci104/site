@@ -46,9 +46,8 @@ layout: default
     <tr>
       <th></th>
       <th>Topics</th>
-      {% if site.data.schedule.show.lectures.textbook %}<th>Textbook</th>{% endif %}
+      {% if site.data.schedule.show.lectures.chapters %}<th>Chapers</th>{% endif %}
       {% if site.data.schedule.show.lectures.notes %}<th>Notes</th>{% endif %}
-      {% if site.data.schedule.show.lectures.material %}<th>Material</th>{% endif %}
     </tr>
   </thead>
   <tbody>
@@ -62,31 +61,20 @@ layout: default
           {% endfor %}
         </ul>
       </td>
-      {% if site.data.schedule.show.lectures.textbook %}
+      {% if site.data.schedule.show.lectures.chapters %}
       <td>
         <ul>
-          {% for section in lecture.textbook %}
-          <li>{{ section }}</li>
+          {% for chapter in lecture.chapters %}
+          <li><a href="{{ site.data.urls.notes }}" target="_blank">{{ chapter }}</a></li>
           {% endfor %}
         </ul>
       </td>
       {% endif %}
       {% if site.data.schedule.show.lectures.notes %}
       <td>
-        <ul>
-          {% for chapter in lecture.notes %}
-          <li><a href="{{ site.data.urls.notes }}" target="_blank">{{ chapter }}</a></li>
-          {% endfor %}
-        </ul>
-      </td>
-      {% endif %}
-      {% if site.data.schedule.show.lectures.material %}
-      <td>
-        <ul>
-          {% for material in lecture.material %}
-          <li>{{ material }}</li>
-          {% endfor %}
-        </ul>
+        {% if lecture.notes %}
+        <a href="./notes/{{ lecture.notes }}">{{ lecture.notes }}</a>
+        {% endif %}
       </td>
       {% endif %}
     </tr>

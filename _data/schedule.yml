@@ -1,8 +1,7 @@
 show:
   lectures:
-    textbook: false
+    chapters: true
     notes: true
-    material: true
 
 exams:
 
@@ -33,60 +32,68 @@ lectures:
       - Course overview
       - Motivation for Data Structures
       - Modern Memory Management
-    notes:
+    chapters:
       - Chapter 1
       - Chapter 2
+    notes: L01_Overview.pdf
 
   # 2
   - topics:
       - Object oriented design
       - Classes
       - Abstract data types
-    notes:
+    chapters:
       - Chapter 6
       - Chapter 7
+    notes: L02_MemAlloc.pdf
 
   # 3
   - topics:
       - Operator overloading
-    notes:
+    chapters:
       - Chapter 12
+    notes: L03_Classes_ADTs.pdf
 
   # 4
   - topics:
       - Copy semantics
-    notes:
+    chapters:
       - Chapter 14
+    notes: L04_Operator_Overloading.pdf
 
   # 5
   - topics:
       - Inheritance
-    notes:
+    chapters:
       - Chapter 12
+    notes: L05_Copy_Semantics.pdf
 
   # 6
   - topics:
       - Polymorphism
-    notes:
+    chapters:
       - Chapter 14
+    notes: L06_Inheritance.pdf
 
   # 7
   - topics:
       - Stacks
       - Queues
-    notes:
+    chapters:
       - Chapter 11
+    notes: L07_Polymorphism.pdf
 
   # 8
   - topics:
       - Standard template library
       - Containers
-    notes: Chapter 13
+    chapters:
+      - Chapter 13
 
   # 9
   - topics:
       - Review of list implementations
-    notes:
+    chapters:
       - Chapter 5
       - Chapter 9
 
@@ -94,14 +101,14 @@ lectures:
   - topics:
       - Templates
       - Exceptions
-    notes:
+    chapters:
       - Chapter 15
       - Chapter 18
 
   # 11
   - topics:
       - Runtime analysis
-    notes:
+    chapters:
       - Chapter 8
 
   # 12
@@ -109,21 +116,21 @@ lectures:
       - Comparison
       - Sorting
       - Functors
-    notes:
+    chapters:
       - Chapter 17
 
   # 13
   - topics:
       - Divide and conquer
       - Sorting
-    notes:
+    chapters:
       - Chapter 17
 
   # 14
   - topics:
       - Graphs
       - Trees
-    notes:
+    chapters:
       - Chapter 20
       - Chapter 21
 
@@ -131,13 +138,13 @@ lectures:
   - topics:
       - Priority Queues
       - Heaps
-    notes:
+    chapters:
       - Chapters 22
 
   # 16
   - topics:
       - Tree and graph traversals
-    notes:
+    chapters:
       - Chapter 20
       - Chapter 21
 
@@ -145,14 +152,14 @@ lectures:
   - topics:
       - Dijkstra's algorithm
       - A* Search
-    notes:
+    chapters:
       - Chapter 23
 
   # 18
   - topics:
       - Recursion
       - Backtracking
-    notes:
+    chapters:
       - Chapter 4
 
   # 19
@@ -160,7 +167,7 @@ lectures:
       - Recursion
       - Linked lists
       - Trees
-    notes:
+    chapters:
       - Chapter 4
 
   # 20
@@ -168,13 +175,13 @@ lectures:
       - Recursion
       - Generating combinations
       - Tracing
-    notes:
+    chapters:
       - Chapters 4
 
   # 21
   - topics:
       - Binary search trees
-    notes:
+    chapters:
       - Chapters 21
 
   # 22
@@ -182,31 +189,31 @@ lectures:
       - Balanced search trees
       - Tree rotations
       - AVL insertion algorithm
-    notes:
+    chapters:
       - Chapter 24
 
   # 23
   - topics:
       - Balanced search trees
       - AVL removal algorithm
-    notes:
+    chapters:
       - Chapters 24
 
   # 24
   - topics:
       - Hash tables
-    notes:
+    chapters:
       - Chapters 28
 
   # 25
   - topics:
       - Hash tables
       - Bloom filters
-    notes:
+    chapters:
       - Chapter 28
 
   # 26
   - topics:
       - Tries
-    notes:
+    chapters:
       - Chapter 32

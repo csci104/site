@@ -85,8 +85,8 @@ labs:
   - id: lab9
     week: Week 9
     title: Tree Traversal
-    assigned: false
-    topics: Graphs, search
+    assigned: true
+    topics: Binary trees, tree traversal, searching
   - id: lab10
     week: Week 10
     title: Backtracking

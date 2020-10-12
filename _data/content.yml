@@ -19,7 +19,7 @@ assignments:
       due: Friday, October 2 at 11:59PM PST
   - id: hw4
     title: Heaps
-    assigned: false
+    assigned: true
     dates:
       assigned: Monday, October 5
       due: Friday, October 16 at 11:59PM PST

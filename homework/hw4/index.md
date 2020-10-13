@@ -9,7 +9,7 @@ title: Heaps and Templates
 
 
 - Assigned: October 04, 2020 PST
-- Due: October 23, 2020 at 23:59 PST
+- Due: October 16, 2020 at 23:59 PST
 - Directory name in your github repository for this homework (case sensitive): `hw4`
    - Skeleton code for this assignment is available in [`resources/hw4/`]({{ site.data.urls.github }}/resources/).
    - Once you have cloned your `hw-username` repo, copy the `hw4/` directory into it from `resources`.

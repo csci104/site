@@ -172,6 +172,6 @@ Tips:
 - [ ] Implement DFS and BFS. Run `make GraphTest` and show a CP/TA to get checked off!
 
 ### Optional
-A lot of students recommended practice interview questions, so for this lab, we've included an optional problem based on [this LeetCode question](https://leetcode.com/problems/friend-circles/). There are many ways to solve this... but can you think of a way that uses DFS?
+A lot of students recommended practice interview questions, so for this lab, we've included an optional problem based on [this LeetCode question](https://leetcode.com/problems/friend-circles/). There are many ways to solve this... but can you think of a way that uses BFS or DFS?
 
 - [ ] **Optional**: implement `findCircleNum` in `friend_circles.cpp`. You can run `make FriendCirclesTest` to compile and run a few basic tests on your code.

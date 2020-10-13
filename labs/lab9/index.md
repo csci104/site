@@ -49,7 +49,6 @@ The three main DFS traversals are **Pre-Order Traversal, In-Order Traversal, and
 ```
 
 + If we wanted to delete an entire tree, which traversal would we use?
-+ What is the third kind of traversal? When would it be useful?
 
 ### 3 - Searching
 

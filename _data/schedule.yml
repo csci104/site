@@ -157,24 +157,26 @@ lectures:
 
   # 18
   - topics:
-      - Recursion
-      - Backtracking
+      - Graph Representations
+      - Recursion 
+      - Generating Combinations
     chapters:
       - Chapter 4
+      - Chapter 20
 
   # 19
   - topics:
       - Recursion
-      - Linked lists
-      - Trees
+      - Backtracking
+      - Tracing
     chapters:
       - Chapter 4
 
   # 20
   - topics:
       - Recursion
-      - Generating combinations
-      - Tracing
+      - Linked lists
+      - Trees
     chapters:
       - Chapters 4
 

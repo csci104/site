@@ -35,9 +35,7 @@ lectures:
     chapters:
       - Chapter 1
       - Chapter 2
-    notes: 
-      - L01_Overview.pdf
-      - L02_MemAlloc.pdf
+    notes: L02_MemAlloc.pdf
 
   # 2
   - topics:
@@ -109,10 +107,8 @@ lectures:
     chapters:
       - Chapter 15
       - Chapter 18
-    notes:
-      - L11_Template.pdf
-      - L11_Exceptions.pdf
-
+    notes: L11_Template.pdf
+    
   # 11
   - topics:
       - Runtime analysis
@@ -127,10 +123,8 @@ lectures:
       - Functors
     chapters:
       - Chapter 17
-    notes: 
-      - Comparison_sorting_executive_summary.pdf
-      - L13_Sorting.pdf
-
+    notes: Comparison_sorting_executive_summary.pdf
+ 
   # 13
   - topics:
       - Divide and conquer
@@ -154,13 +148,7 @@ lectures:
       - Heaps
     chapters:
       - Chapters 22
-     notes:
-       - Heaps_Tree_Implementations.pdf
-       - TreesHeaps_p1.pdf
-       - TreesHeaps_p2.pdf
-       - TreesHeaps_p3.pdf
-       - TreesHeaps_p4.pdf
-       - STL_priority_queue.pdf
+     notes: Heaps_Tree_Implementations.pdf
 
   # 16
   - topics:
@@ -168,10 +156,8 @@ lectures:
     chapters:
       - Chapter 20
       - Chapter 21
-     notes:
-      - Graph_Representations_and_Traversals.pdf
-      - Heaps_Tree_Implementations.pdf
-
+     notes: Graph_Representations_and_Traversals.pdf
+      -
   # 17
   - topics:
       - Dijkstra's algorithm

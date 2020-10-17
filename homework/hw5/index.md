@@ -143,6 +143,8 @@ Let's now consider what happens with the partial moves generated as part of exte
 
 This process is done for each anchor square. Try extending right the moves above and what may happen at other anchor squares. It is best to consider how your computer player is searching the paths on the trie for each move possible with the tiles in its hand. Once the computer player has considered all possible moves on the board, it will select the move that is a valid word in the trie and that yields the highest score.
 
+You can check out [this recording](https://usc.zoom.us/rec/share/8V-pahekVUQJbbWM5_ZwQ7r-cSoQSuTGlNrZQySBGgu_NkTnpJ8JT9hx7ACqkvE.ql_TN2XidG0XhuXj) for a more in depth explanation of how the search algorithm works.
+
 #### Anchors with limit = 0
 
 If an anchor's limit is 0, that means there is no prefix, and thus, no call to `left_part`. The preceeding square must be either out of bounds, another anchor square, or an already placed tile. You must check if there are tiles preceeding it and then call `extend_right` using those tiles as the prefix. 

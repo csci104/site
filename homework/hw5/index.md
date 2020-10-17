@@ -1,4 +1,4 @@
---
+---
 layout: default
 title: Homework 5 Scrabble Project Part 2
 nav: assignments

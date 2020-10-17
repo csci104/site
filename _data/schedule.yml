@@ -35,7 +35,9 @@ lectures:
     chapters:
       - Chapter 1
       - Chapter 2
-    notes: L01_Overview.pdf
+    notes: 
+      - L01_Overview.pdf
+      - L02_MemAlloc.pdf
 
   # 2
   - topics:
@@ -45,35 +47,36 @@ lectures:
     chapters:
       - Chapter 6
       - Chapter 7
-    notes: L02_MemAlloc.pdf
+    notes: L03_Classes_ADTs.pdf
+    
 
   # 3
   - topics:
       - Operator overloading
     chapters:
       - Chapter 12
-    notes: L03_Classes_ADTs.pdf
+    notes: L04_Operator_Overloading.pdf
 
   # 4
   - topics:
       - Copy semantics
     chapters:
       - Chapter 14
-    notes: L04_Operator_Overloading.pdf
+    notes: L05_Copy_Semantics.pdf
 
   # 5
   - topics:
       - Inheritance
     chapters:
       - Chapter 12
-    notes: L05_Copy_Semantics.pdf
+    notes: L06_Inheritance.pdf
 
   # 6
   - topics:
       - Polymorphism
     chapters:
       - Chapter 14
-    notes: L06_Inheritance.pdf
+    notes: L07_Polymorphism.pdf
 
   # 7
   - topics:
@@ -81,7 +84,7 @@ lectures:
       - Queues
     chapters:
       - Chapter 11
-    notes: L07_Polymorphism.pdf
+    notes: 
 
   # 8
   - topics:

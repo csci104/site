@@ -73,7 +73,7 @@ std::vector<Anchor> get_anchors() const;
 An Anchor is defined by a *position* on the board (anchor square), a *direction* to place tiles in, and the number of non-occupied, non-anchor squares preceding the anchor square, called the *limit*. This limit is the maximum prefix size to look at before placing a tile at the anchor square. 
 
 
-![](assets/nchor_across.png)
+![](assets/anchor_across.png)
 
 Fig 1. Anchor squares are highlighted and the numbers represent the limit in the ACROSS direction.
 

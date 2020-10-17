@@ -98,7 +98,7 @@ lectures:
     chapters:
       - Chapter 5
       - Chapter 9
-     notes: L09_List_Implementations.pdf
+    notes: L09_List_Implementations.pdf
 
   # 10
   - topics:
@@ -131,7 +131,7 @@ lectures:
       - Sorting
     chapters:
       - Chapter 17
-     notes: L13_Sorting.pdf
+    notes: L13_Sorting.pdf
 
   # 14
   - topics:
@@ -148,7 +148,7 @@ lectures:
       - Heaps
     chapters:
       - Chapters 22
-     notes: Heaps_Tree_Implementations.pdf
+    notes: Heaps_Tree_Implementations.pdf
 
   # 16
   - topics:
@@ -156,7 +156,7 @@ lectures:
     chapters:
       - Chapter 20
       - Chapter 21
-     notes: Graph_Representations_and_Traversals.pdf
+    notes: Graph_Representations_and_Traversals.pdf
       -
   # 17
   - topics:
@@ -182,7 +182,7 @@ lectures:
       - Tracing
     chapters:
       - Chapter 4
-     notes: L18_BacktrackingSearch.pdf
+    notes: L18_BacktrackingSearch.pdf
 
   # 20
   - topics:

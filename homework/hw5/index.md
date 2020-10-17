@@ -14,13 +14,13 @@ hwpath: hw5
 
 This is the second part of your project. As mentioned in the context of HW3, it requires you to implement a Scrabble AI so that you can play against computer-controlled opponents. Your AI should always return a move that gives the maximum possible score. 
 
-For this part of the project, you will work off of your HW3 submission in part 1.
+For this part of the project, you will use your solution to HW3 as your starting code base.
 
 ### Backtracking Algorithm
 
 We will use a backtracking algorithm to find all possible moves. This could also be done with a brute force search - but that would be very slow. Backtracking reduces run time by recognizing when there are no more valid ways to make a move out of the current letters on the board and in the hand, and "backtracking" to try a new combination. 
 
-You will need to write code to determine moves for computer-controlled players. We want you to implement an algorithm derived from the one by Appel and Jacobson presented here: https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf. We give you the citation only for completeness and for your own enrichment as we will explain what is necessary to implement from that work in the assignment description.
+You will need to write code to determine moves for computer-controlled players. We want you to implement an algorithm derived from the one by Appel and Jacobson presented in [The world's fastest Scrabble program](https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf) (as of its publication in 1988). We give you the citation only for completeness and for your own enrichment as we will explain what is necessary to implement from that work in the assignment description.
 
 The basics of this algorithm can be broken into finding Anchors (defined below), finding all prefixes for the Anchor, for each prefix finding all possible endings. 
 
@@ -106,15 +106,15 @@ Let's consider the trie in Figure 3 below. The root node represents the empty st
 
 Now let's consider the right child of the root node. It follows a path with the letter b. The root node's map will have as a key the letter 'b' with a value pointing to a node. Since "b" is not a string in the dictionary, the right child node will have its boolean is_final set to false. 
 
-Lets keep looking past b. Notice that the "b" node has a child node that traverses a path for the letter 'a'. That means the node will have in its map a key 'a' and a value pointing to a node. This child node, a grandchild of the root, represents the string "ba". The "ba" node's is_final boolean is set to false since "ba" is not a word in the dictionary. 
+Let's keep looking past "b". Notice that the "b" node has a child node that traverses a path for the letter 'a'. That means the node will have in its map a key 'a' and a value pointing to a node. This child node, a grandchild of the root, represents the string "ba". The "ba" node's is_final boolean is set to false since "ba" is not a word in the dictionary. 
 
-Finally this grandchild node will have in its map a key value pair where the key is 't' and value is a pointer to its child node. The great grandchild node will have an empty map since it has no children and is a leaf node. It will have its boolean for is_final set to true because the word "bat" is in the dictionary. Notice that nodes representing valid words, eg with is_final set to true, can be leaf nodes or internal nodes.
+Finally this grandchild node will have in its map a key value pair where the key is 't' and value is a pointer to its child node. The great grandchild node will have an empty map since it has no children and is a leaf node. It will have its boolean for is_final set to true because the word "bat" is in the dictionary. Notice that nodes representing valid words in the dictionary, i.e. with is_final set to true, can be leaf nodes or internal nodes.
 
 ![](assets/trie.png)
 
 Fig 3. A trie is shown. Any edge not present means a word cannot be formed by using that letter. For example, we know that no word can be formed with the prefix "acb" because there is no edge from "ac" with the label "b".
 
-The file `dictionary.h` is finished for you, and functions pertaining to building the dictionary are also finished in `dictionary.cpp`. Your task is to write functions to look up words or prefixes in the dictionary. 
+The file `dictionary.h` is finished for you, and functions pertaining to building the dictionary are also finished in `dictionary.cpp`. Your task is to write functions to look up words or prefixes in the dictionary. (This is an example of tree traversal.) 
 
 ### 4. Algorithm
 
@@ -157,7 +157,7 @@ As stated above, we are using the dictionary trie instead of the directed acycli
 
 For this assignment since your code builds on work for HW3 you have two choices for the code base you use to start this second part of the project:
 - Extend your HW3 submission including any additional debugging you have done on it. We will provide all of the HW3 test cases with HW5 as we are still grading your HW3 submissions and will release scores while you are working on HW5.
-- Use executable files (i.e. `*.o` files) that we provide at cost of 10 points from your HW5 grade. In the homework-resources repository, we are providing the HW3 executable files. Please clearly identify in your README if using HW3 executables provided is necessary for your HW5 submission. __You cannot buy scrabble.o or board.o .__ For those you must modify your source files from HW3.
+- You can obtain some HW3 reference solutions source code files for a 10 point deduction on HW5. In making your request for HW3 reference solution source code files, you will need to accept a 10 point deduction on HW5 and acknowledge that you understand that sharing or distributing any reference code would be considered an academic integrity violation and a violation of course policy. You may request source code via [this form.](https://forms.gle/Udt2zQaRf8oy2TTS8) Your email and timestamp will automatically be recorded and we recommend that you have a copy of your request responses sent to you. We will send out source code once per day to all who have submitted their requests before 5 pm PDT.
 
 Your project will be graded in a similar way to HW3 - by a combined score from 
 - GTest unit tests and

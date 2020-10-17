@@ -173,8 +173,6 @@ Finally, we provide a working executable for you, so that can help with error ca
 
 Good luck!
 
-{% include commit-reclone.md %}
-
 ### Citations
 Andrew W. Appel and Guy J. Jacobson. 1988. The world's fastest Scrabble program. Commun. ACM 31, 5 (May 1988), 572–578. 
 DOI:https://doi.org/10.1145/42411.42420

@@ -20,7 +20,7 @@ For this part of the project, you will use your solution to HW3 as your starting
 
 We will use a backtracking algorithm to find all possible moves. This could also be done with a brute force search - but that would be very slow. Backtracking reduces run time by recognizing when there are no more valid ways to make a move out of the current letters on the board and in the hand, and "backtracking" to try a new combination. 
 
-You will need to write code to determine moves for computer-controlled players. We want you to implement an algorithm derived from the one by Appel and Jacobson presented in [The world's fastest Scrabble program.](https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf) (as of its publication in 1988). We give you the citation only for completeness and for your own enrichment as we will explain what is necessary to implement from that work in the assignment description.
+You will need to write code to determine moves for computer-controlled players. We want you to implement an algorithm derived from the one by Appel and Jacobson presented in [The world's fastest Scrabble program](https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/scrabble.pdf) (as of its publication in 1988). We give you the citation only for completeness and for your own enrichment as we will explain what is necessary to implement from that work in the assignment description.
 
 The basics of this algorithm can be broken into finding Anchors (defined below), finding all prefixes for the Anchor, for each prefix finding all possible endings. 
 

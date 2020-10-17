@@ -146,6 +146,7 @@ lectures:
     chapters:
       - Chapter 20
       - Chapter 21
+    notes: Graph_Representations_and_Traversals.pdf
 
   # 15
   - topics:
@@ -154,7 +155,12 @@ lectures:
     chapters:
       - Chapters 22
      notes:
-       - 
+       - Heaps_Tree_Implementations.pdf
+       - TreesHeaps_p1.pdf
+       - TreesHeaps_p2.pdf
+       - TreesHeaps_p3.pdf
+       - TreesHeaps_p4.pdf
+       - STL_priority_queue.pdf
 
   # 16
   - topics:
@@ -162,6 +168,9 @@ lectures:
     chapters:
       - Chapter 20
       - Chapter 21
+     notes:
+      - Graph_Representations_and_Traversals.pdf
+      - Heaps_Tree_Implementations.pdf
 
   # 17
   - topics:

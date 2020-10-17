@@ -165,7 +165,7 @@ As stated above, we are using the dictionary trie instead of the directed acycli
 
 For this assignment since your code builds on work for HW3 you have two choices for the code base you use to start this second part of the project:
 - Extend your HW3 submission including any additional debugging you have done on it. We will provide all of the HW3 test cases with HW5 as we are still grading your HW3 submissions and will release scores while you are working on HW5.
-- Use executable files (i.e. `*.o` files) that we provide at cost of 10 points from your HW5 grade. In the homework-resources repository, we are providing the HW3 executable files. Please clearly identify in your README if using HW3 executables provided is necessary for your HW5 submission. __You cannot buy scrabble.o or board.o .__ For those you must modify your source files from HW3.
+- You obtain some HW3 reference solutions source files for a 10 point deduction on HW5. In making your request for HW3 reference solution source files, you will need to accept the 10 point deduction on HW5 and acknowledge that you understand that sharing or distributing any reference code would be considered an academic integrity violation and a violation of course policy. You may request source code via [this form.](https://forms.gle/Udt2zQaRf8oy2TTS8) Your email and timestamp will automatically be logged and we recommend that you have a copy of your request responses sent to you. We will send out source code once per day to all who have submitted their requests before 5 pm PDT.
 
 Your project will be graded in a similar way to HW3 - by a combined score from 
 - GTest unit tests and

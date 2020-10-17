@@ -133,7 +133,7 @@ The algorithm you are implementing relies on two recursive functions. The first 
 Similar to `left_part`, `extend_right` should search through the dictionary trie and build possible moves. Unlike `left_part`, it must account for other tiles being in the way. 
 As your implementation searces through the possible words for moves, if the dictionary trie node is marked as a real word, i.e. is_final is set to true, you should add word as a move to your list of possible moves. You can evaluate the best move as you do the search or after accumulating all the possible moves.
 
-### An Example of Tracing Left Part and Extend Right for a Single Anchor
+### An Example Tracing the Algorithm
 
 You can check out [this recording](https://usc.zoom.us/rec/share/8V-pahekVUQJbbWM5_ZwQ7r-cSoQSuTGlNrZQySBGgu_NkTnpJ8JT9hx7ACqkvE.ql_TN2XidG0XhuXj) for a more in depth explanation of how the search algorithm works.
 

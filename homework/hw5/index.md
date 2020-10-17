@@ -106,15 +106,15 @@ Let's consider the trie in Figure 3 below. The root node represents the empty st
 
 Now let's consider the right child of the root node. It follows a path with the letter b. The root node's map will have as a key the letter 'b' with a value pointing to a node. Since "b" is not a string in the dictionary, the right child node will have its boolean is_final set to false. 
 
-Lets keep looking past b. Notice that the "b" node has a child node that traverses a path for the letter 'a'. That means the node will have in its map a key 'a' and a value pointing to a node. This child node, a grandchild of the root, represents the string "ba". The "ba" node's is_final boolean is set to false since "ba" is not a word in the dictionary. 
+Let's keep looking past "b". Notice that the "b" node has a child node that traverses a path for the letter 'a'. That means the node will have in its map a key 'a' and a value pointing to a node. This child node, a grandchild of the root, represents the string "ba". The "ba" node's is_final boolean is set to false since "ba" is not a word in the dictionary. 
 
-Finally this grandchild node will have in its map a key value pair where the key is 't' and value is a pointer to its child node. The great grandchild node will have an empty map since it has no children and is a leaf node. It will have its boolean for is_final set to true because the word "bat" is in the dictionary. Notice that nodes representing valid words, eg with is_final set to true, can be leaf nodes or internal nodes.
+Finally this grandchild node will have in its map a key value pair where the key is 't' and value is a pointer to its child node. The great grandchild node will have an empty map since it has no children and is a leaf node. It will have its boolean for is_final set to true because the word "bat" is in the dictionary. Notice that nodes representing valid words in the dictionary, i.e. with is_final set to true, can be leaf nodes or internal nodes.
 
 ![](assets/trie.png)
 
 Fig 3. A trie is shown. Any edge not present means a word cannot be formed by using that letter. For example, we know that no word can be formed with the prefix "acb" because there is no edge from "ac" with the label "b".
 
-The file `dictionary.h` is finished for you, and functions pertaining to building the dictionary are also finished in `dictionary.cpp`. Your task is to write functions to look up words or prefixes in the dictionary. 
+The file `dictionary.h` is finished for you, and functions pertaining to building the dictionary are also finished in `dictionary.cpp`. Your task is to write functions to look up words or prefixes in the dictionary. (This is an example of tree traversal.) 
 
 ### 4. Algorithm
 

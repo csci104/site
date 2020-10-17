@@ -178,12 +178,13 @@ lectures:
       - A* Search
     chapters:
       - Chapter 23
+    notes: L17_Dijkstras_Astar.pdf
 
   # 18
   - topics:
       - Graph Representations
-      - Recursion 
-      - Generating Combinations
+      - Recursion Review from CSCI 103
+      - Generating Combinations 
     chapters:
       - Chapter 4
       - Chapter 20
@@ -195,6 +196,7 @@ lectures:
       - Tracing
     chapters:
       - Chapter 4
+     notes: L18_BacktrackingSearch.pdf
 
   # 20
   - topics:

@@ -14,7 +14,7 @@ hwpath: hw5
 
 This is the second part of your project. As mentioned in the context of HW3, it requires you to implement a Scrabble AI so that you can play against computer-controlled opponents. Your AI should always return a move that gives the maximum possible score. 
 
-For this part of the project, you will work off of your HW3 submission in part 1.
+For this part of the project, you will use your solution to HW3 as your starting code base.
 
 ### Backtracking Algorithm
 

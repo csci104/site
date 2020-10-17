@@ -90,7 +90,7 @@ lectures:
       - Containers
     chapters:
       - Chapter 13
-      notes: L10_STL.pdf
+    notes: L10_STL.pdf
 
   # 9
   - topics:

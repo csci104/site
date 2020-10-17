@@ -157,7 +157,7 @@ As stated above, we are using the dictionary trie instead of the directed acycli
 
 For this assignment since your code builds on work for HW3 you have two choices for the code base you use to start this second part of the project:
 - Extend your HW3 submission including any additional debugging you have done on it. We will provide all of the HW3 test cases with HW5 as we are still grading your HW3 submissions and will release scores while you are working on HW5.
-- We will be announcing by Wednesday morning how you may be able to buy help on the HW3 starter code in exchange for a flat rate point deduction on HW5. 
+- We will be announcing by Wednesday morning, October 21, 2020 how you may be able to buy help on the HW3 starter code in exchange for a flat rate point deduction on HW5. In the meantime, please try to get your HW3 solution working if it is not already. 
 
 Your project will be graded in a similar way to HW3 - by a combined score from 
 - GTest unit tests and

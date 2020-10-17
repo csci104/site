@@ -84,7 +84,7 @@ lectures:
       - Queues
     chapters:
       - Chapter 11
-    notes: 
+    notes: L08_Queues_Stacks.pdf
 
   # 8
   - topics:
@@ -92,6 +92,7 @@ lectures:
       - Containers
     chapters:
       - Chapter 13
+      notes: L10_STL.pdf
 
   # 9
   - topics:
@@ -99,6 +100,7 @@ lectures:
     chapters:
       - Chapter 5
       - Chapter 9
+     notes: L09_List_Implementations.pdf
 
   # 10
   - topics:
@@ -107,12 +109,16 @@ lectures:
     chapters:
       - Chapter 15
       - Chapter 18
+    notes:
+      - L11_Template.pdf
+      - L11_Exceptions.pdf
 
   # 11
   - topics:
       - Runtime analysis
     chapters:
       - Chapter 8
+    notes: L12_Runtime.pdf
 
   # 12
   - topics:
@@ -121,6 +127,9 @@ lectures:
       - Functors
     chapters:
       - Chapter 17
+    notes: 
+      - Comparison_sorting_executive_summary.pdf
+      - L13_Sorting.pdf
 
   # 13
   - topics:
@@ -128,6 +137,7 @@ lectures:
       - Sorting
     chapters:
       - Chapter 17
+     notes: L13_Sorting.pdf
 
   # 14
   - topics:
@@ -143,6 +153,8 @@ lectures:
       - Heaps
     chapters:
       - Chapters 22
+     notes:
+       - 
 
   # 16
   - topics:

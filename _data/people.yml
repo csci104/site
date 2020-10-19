@@ -62,6 +62,12 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: Kesi Sound
+    email: ksoundar@usc.edu
+    image: /assets/img/staff/kesi.png
+    hours: >-
+      See Google Calendar
+    location: Zoom
   - name: Lihan Zhu
     email: lihanzhu@usc.edu
     image: /assets/img/staff/lihan.png

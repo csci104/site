@@ -90,8 +90,8 @@ labs:
   - id: lab10
     week: Week 10
     title: Backtracking
-    assigned: false
-    topics: Recursion, trees, backtracking
+    assigned: true
+    topics: Recursion, backtracking
   - id: lab11
     week: Week 11
     title: AVL Trees

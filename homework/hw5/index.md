@@ -24,7 +24,7 @@ You will need to write code to determine moves for computer-controlled players. 
 
 The basics of this algorithm can be broken into finding Anchors (defined below), finding all prefixes for the Anchor, for each prefix finding all possible endings. 
 
-Your AI will produce a collection of legal moves. From among these moves, it should choose the best move to play. You can choose the best move after all combinations are found (recommended), or if you find a move while searching that you are confident in you can cut off the search early. Ties between equally highly scoring moves may be broken by placing the word would appear first in the dictionary arbitrarily. *Your AI only needs to be concerned with optimizing the current move, not several moves in advance.*
+Your AI will produce a collection of legal moves. From among these moves, it should choose the best move to play. You can choose the best move after all combinations are found (recommended), or if you find a move while searching that you are confident in you can cut off the search early. Ties between equally highly scoring moves may be broken arbitrarily. *Your AI only needs to be concerned with optimizing the current move, not several moves in advance.*
 
 Your code will be visually inspected to make sure it is not a brute force approach and tested on large hand sizes. If you use a brute force search expect a visual inspection deduction, as well as possible failed test cases due to timeouts.  Another thing that could slow down the search is having lots of blanks tiles in the computer AI's hand (26 possibilities per blank). We will not test with more than two blank tiles at once.
 

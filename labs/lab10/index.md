@@ -17,7 +17,7 @@ One algorithmic solution to this problem is to use recursive backtracking.
 ### 1 - Recursive Backtracking
 You should be familiar with some of the uses of recursion at this point. We typically use recursion to split a problem into one or a small number of simple, repeatable steps. One popular way to implement a recursive search is to search one step at a time until you hit a dead end (or impossible situation) or find a solution. If you've successfully found a solution, you're done. If your recursive call returns unsuccessful, remove that value from the list of potential solutions and continue to search until you've exhausted all possibilities.
 
-Recursive backtracking is a ordered for searching a **solution space**. Worst case time complexity wise it's often on par with a brute-force search - but in reality it's much faster. This is because in backtracking when we reach an arrangement where no possible solutions could exist with the current selection (a **dead end**) we forget about testing further options down this path and **backtrack** - undo the last setting and try something else. 
+Recursive backtracking is a ordered method for searching a **solution space**. Worst case time complexity wise it's often on par with a brute-force search - but in reality it's much faster. This is because in backtracking when we reach an arrangement where no possible solutions could exist with the current selection (a **dead end**) we forget about testing further options down this path and **backtrack** - undo the last setting and try something else. 
 
 Recursive Backtracing solutions often look like this:
 
@@ -79,6 +79,11 @@ Notice that in the second step, after we see that the second queen cannot be pla
 0 0 0 0 PASS
 
 etc.
+
+0 1 0 0
+0 0 0 1
+1 0 0 0
+0 0 1 0 PASS -> RETURN TRUE
 ```
 
 The first correct solution we will hit is 1, 3, 0, 2.

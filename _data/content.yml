@@ -94,14 +94,14 @@ labs:
     topics: Recursion, backtracking
   - id: lab11
     week: Week 11
+    title: Recursion Review
+    assigned: true
+    topics: Recursion, Recurrence Relations
+  - id: lab12
+    week: Week 12
     title: AVL Trees
     assigned: false
     topics: AVL, trees, balancing
-  - id: lab12
-    week: Week 12
-    title: Recursion Review
-    assigned: false
-    topics: Recursion, backtracking
   - id: lab13
     week: Week 13
     title: Hash Tables and Tries

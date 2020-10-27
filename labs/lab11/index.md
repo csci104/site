@@ -93,7 +93,7 @@ T(n) = 2T(n - 1) + 1 // note how T(n - 1) = 2T(n - 2) + 1
 = 4[2T(n - 3) + 1] + 2 + 1 = 8T(n - 3) + 1 + 2 + 4
 = 2^k * T(n - k) + 1 + 2 + 2^2 + ... + 2^(k - 1)
 ```
-Since our base case is when `n = 1`, we want to stop when `n - k = 1`, or when `k = n + 1`. Substituting this for `k`, we get:
+Since our base case is when `n = 1`, we want to stop when `n - k = 1`, or when `k = n - 1`. Substituting this for `k`, we get:
 ```
 T(n) = 2^(n - 1) * T(1) + 1 + 2 + 2^2 + ... + 2^(n - 2)
 ```

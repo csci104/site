@@ -31,7 +31,7 @@ assignments:
       due: Friday, October 30 at 11:59PM PST
   - id: hw6
     title: Balanced Search Trees
-    assigned: false
+    assigned: true
     dates:
       assigned: Monday, November 2
       due: Friday, November 13 at 11:59PM PST

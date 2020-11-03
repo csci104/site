@@ -64,11 +64,11 @@ We are providing you a half-finished file `avlbst.h` in the resources repository
 
 You will need to implement the following funtions for this problem:
 
-1. `void leftRotate(std::shared_ptr<AVLNode<Key, Value>> p, std::shared_ptr<AVLNode<Key, Value>>)` : 
+1. `void leftRotate(std::shared_ptr<AVLNode<Key, Value>> p, std::shared_ptr<AVLNode<Key, Value>> n)` : 
 
    Perform a left rotation at the node p; n is the right child of the node p. This should run in constant time.
 
-2. `void rightRotate(std::shared_ptr<AVLNode<Key, Value>> p, std::shared_ptr<AVLNode<Key, Value>>)` : perform a right rotation at the node p.; n is the left child of the node p. This should run in constant time.
+2. `void rightRotate(std::shared_ptr<AVLNode<Key, Value>> p, std::shared_ptr<AVLNode<Key, Value>> n)` : perform a right rotation at the node p.; n is the left child of the node p. This should run in constant time.
 
 3. `void insert(const std::pair<const Key, Value> &new_item)`: insert a new node in the AVL tree. Handle duplicate keys by overwriting the current value with the new value passed in.
 

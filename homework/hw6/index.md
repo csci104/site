@@ -18,24 +18,7 @@ In this homework you will implement a templated binary search trees and then ext
 
 We are providing you with interface specifications for binary search trees.
 
-### Problem 1 (AVL Trees, 10%)
-
-Consider the following initial configuration of an AVL Tree:
-
-![AVL Tree]({{ site.url}}/assignments/img/AVLTree.jpg)
-
-Draw the tree representation of the AVL tree after each of the following operations, using the method presented in class (when deleting a node with two children, always promote a value from the left subtree).  Your operations are done in **sequence**, so your tree should have 11 values in it when you're done. Make sure to clearly indicate each of your final answers.
-
-- Insert 1
-- Insert 6
-- Insert 8
-- Insert 13
-- Remove 5
-- Remove 1
-
-Please solve these by hand before and only use online tools to verify your answers.
-
-### Problem 2 (Binary Search Trees, 40%)
+### Problem 1 (Binary Search Trees, 50%)
 
 We are providing for you a half-finished file `bst.h` in the resources repository which implements a simple binary search tree. Note that the bst we are building will be templated, so the entire implementation will go in this header file. We are also providing a complete `print_bst.h` file that allows you to visually see your tree, for help debugging.  You will need to complete the implementation for all seven public functions that have `TODO` next to their declaration in `bst.h`, as well as a number of mandatory helper functions. We provide additional clarifications/requirements for the following functions, where `n` is the number of nodes in the tree, and `h` is the height of the tree:
 
@@ -58,7 +41,7 @@ We are providing for you a half-finished file `bst.h` in the resources repositor
 
 _**Very Important Warning:** Please do not add, remove, modify, or rename any of the public or protected data or functions in bst.h. Please do not rename any function in bst.h. If you do not heed this warning, our tests won't work, and you'll lose points._
 
-### Problem 3 (AVL Trees, 50%)
+### Problem 2 (AVL Trees, 50%)
 
 We are providing you a half-finished file `avlbst.h` in the resources repository for implementing an AVL Tree. It builds on the BST from the previous question via public inheritance. 
 
@@ -109,7 +92,10 @@ Hints:
 - If the output of printBST is off it is likely that your tree's pointers have been mangled somehow by your code OR that your iterator doesn't work correctly. Start there to ensure things work.
 
 ### Submission Link
+Once you've finished, check that all of the code you're submitting is consistently formatted.
+The `README.md` in your homework repository provides instructions for using `clang-format` to do so automatically.
+You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/course/usc-csci104-fall2020/hw6).
+Be sure to carefully read and follow the instructions there.
 
-You can submit your homework [here](http://bytes.usc.edu/codedrop/?course=cs104-fa18&assignment=hw7&auth=Google). Please make sure you have read and understood the [submission instructions]({{ site.url }}/assignments/submission-instructions.html).
-
-{% include commit-reclone.md %}
+- [ ] Format your code using `clang-format`.
+- [ ] Submit your code.

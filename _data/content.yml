@@ -31,7 +31,7 @@ assignments:
       due: Friday, October 30 at 11:59PM PST
   - id: hw6
     title: Balanced Search Trees
-    assigned: false
+    assigned: true
     dates:
       assigned: Monday, November 2
       due: Friday, November 13 at 11:59PM PST
@@ -99,11 +99,11 @@ labs:
     topics: Recursion, Recurrence Relations
   - id: lab12
     week: Week 12
-    title: AVL Trees
-    assigned: false
-    topics: AVL, trees, balancing
+    title: AVL Trees & Hash Tables
+    assigned: true
+    topics: AVL trees, balancing, hashing, hash tables
   - id: lab13
     week: Week 13
-    title: Hash Tables and Tries
+    title: Tries & Final Review
     assigned: false
-    topics: Hashing, hash tables, tries
+    topics: Tries

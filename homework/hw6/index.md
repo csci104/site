@@ -94,7 +94,7 @@ Hints:
 ### Submission Link
 Once you've finished, check that all of the code you're submitting is consistently formatted.
 The `README.md` in your homework repository provides instructions for using `clang-format` to do so automatically.
-You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/course/usc-csci104-fall2020/hw5).
+You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/course/usc-csci104-fall2020/hw6).
 Be sure to carefully read and follow the instructions there.
 
 - [ ] Format your code using `clang-format`.

@@ -86,7 +86,7 @@ We fix the tree beginning with the newly inserted node.
 
 #### 1.3 - Removing
 
-During removal, we remove as normal and then proceed to fix the tree by traversing up, starting with the parent of the deleted node. In the case that we are swapping with the predecessor, you continue to delete the same node until you cannot swap any further, and then begin fixing the tree in the same fashion.
+During removal, remove as you would in a BST: first find the node to remove, and if the node has two children, swap it with its predecessor (or successor) before proceeding to delete the node. Next, we need to update the local heights of each node along the ancestor chain. We can do this by traversing up, starting with the parent of the deleted node. As soon as we find a node out of balance, we need to immediately rotate and then recurse.
 
 We fix the tree beginning with the parent of the deleted node.
 

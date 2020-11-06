@@ -211,3 +211,5 @@ You will be implementing an unordered set with `string` keys using linear probin
 To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
 - [ ] Implement `insert`, `find`, and `remove` in `hashtable.cpp`
 - [ ] Remember to show your passing tests & `lab12.txt` to a TA/CP for checkoff!
+
+NOTE: it's become apparent to us that `TestRemoveSUPERSTRESS_AGHHHHHHHHH` takes a very long time to run. You might have success running the `HashtableTest` executable faster without Valgrind. Regardless, you do not need to wait for this test to pass to get checked off!

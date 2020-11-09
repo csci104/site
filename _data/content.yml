@@ -104,6 +104,6 @@ labs:
     topics: AVL trees, balancing, hashing, hash tables
   - id: lab13
     week: Week 13
-    title: Tries & Final Review
-    assigned: false
-    topics: Tries
+    title: Final Review
+    assigned: true
+    topics: Weeks 1 - 13

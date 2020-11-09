@@ -12,7 +12,7 @@ The final will take place on **Saturday, November 21st, 11 am - 1 pm PST**. More
 As with the midterm, you won't be tested on any programming tools that you've gone over in lab but not lecture (e.g. gdb, Makefiles). This lab is to help you review, so if there's a topic that's not included here that you really want to go over, let us know! Remember to go back and review lecture slides and weekly group exercises as well.
 
 ### Kahoot
-We've put together a fun Kahoot to review a variety of topics! Your TAs/CPs will share the link with you during lab. To avoid spoiling the fun, we'll post the link here after the last lab has completed the Kahoot.
+We've put together a fun Kahoot to review a variety of topics! To join the game, go to www.kahoot.it and enter the game PIN (which your TAs/CPs will share at the beginning of lab.) To avoid spoiling the fun, we'll post the link with questions & answers after the last lab has completed the Kahoot (ie, on Friday afternoon).
 
 ### Checkoff Problems
 

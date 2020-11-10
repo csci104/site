@@ -78,8 +78,10 @@ We have also provided the test cases that will be used for grading. These test u
 2. `cd hw-username/hw6/hw6_tests`
 3. Install the Python dependencies: `sudo apt-get install python3-xmltodict`. If this gives you an error, try dropping the "sudo" part. 
 4. Initialize the test suite by running `cmake .` - dont forget the dot!
-5. Compile and run the tests by typing `make grade` -  To compile/run the tests again, you only need to execute this command, not any others. If some errors are produced that's fine, just make sure all the tests pass.
-6. Note that the command above can be slow because it recompiles everything. Alternatively, if you only want to recompile what's new, you can run `make`. To run the tests, use `ctest --output-on-failure .` - dont forget the dot!
+6. Compile with `make`. 
+7. To run the tests, use `ctest --output-on-failure .` - dont forget the dot!
+
+**Note the above test instructions have been updated along with the tests in resources as of Nov 9. This new version will check for memory leaks - this feature was disabled at first.**
 
 Hints:
 

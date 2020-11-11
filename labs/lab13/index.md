@@ -12,9 +12,11 @@ The final will take place on **Saturday, November 21st, 11 am - 1 pm PST**. More
 As with the midterm, you won't be tested on any programming tools that you've gone over in lab but not lecture (e.g. gdb, Makefiles). This lab is to help you review, so if there's a topic that's not included here that you really want to go over, let us know! Remember to go back and review lecture slides and weekly group exercises as well.
 
 ### Kahoot
-We've put together a fun Kahoot to review a variety of topics! To join the game, go to www.kahoot.it and enter the game PIN (which your TAs/CPs will share at the beginning of lab.) To avoid spoiling the fun, we'll post the link with questions & answers after the last lab has completed the Kahoot (ie, on Friday afternoon).
+We've put together a fun Kahoot to review a variety of topics! To join the game, go to [Kahoot](https://www.kahoot.it) and enter the game PIN (which your TAs/CPs will share at the beginning of lab.) 
++ If you want to view all the questions AND answers, [here](https://create.kahoot.it/details/csci-104-fall-2020-official-final-review/9ea3f434-0720-4443-b140-a4433462997d) is the link. **Try not to peek until after you've played with your lab section!**
 
 ### Checkoff Problems
+**NOTE:** if you pulled from `resources` before Tuesday, November 10th, 5:30 pm PST, please pull again as there was a bug in the Makefile!
 
 #### Odd Even Linked List
 Rearrange a singly-linked list so that all the odd-indexed nodes come before all the even-indexed nodes. When we say odd and even, we're referring to the **index** of the node, not the value, where the first node is indexed at 1. Here are some examples:

@@ -6,21 +6,27 @@ instructors:
     location:
 
 assistants:
-  - name: Leif Wesche
-    email: wesche@usc.edu
-    image: /assets/img/staff/wesche.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Roma Ghewari
-    email: ghewari@usc.edu
-    image: /assets/img/staff/roma.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Elan Markowitz
-    email: esmarkow@usc.edu
+  - name: Neal Lawton
+    email: nlawton@usc.edu
     image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Phillip Nazarian
+    email: pmnazari@usc.edu
+    image: /assets/img/staff/phillip.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Aleksei Petrenko
+    email: petrenko@usc.edu
+    image: /assets/img/staff/alex.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Hanyuan Xiao
+    email: hanyuanx@usc.edu
+    image: /assets/img/staff/hanyuan.jpg
     hours: >-
       See Google Calendar
     location: Zoom
@@ -32,9 +38,27 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Chase Zimmerman
-    email: cpzimmer@usc.edu
-    image: /assets/img/staff/temp.png
+  - name: Cameron Durham
+    email: cdurham@usc.edu
+    image: /assets/img/staff/cdurham.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Clement Chan
+    email: cjchan@usc.edu
+    image: /assets/img/staff/clement.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Emily Fang
+    email: ejfang@usc.edu
+    image: /assets/img/staff/emily.JPG
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Fred Zhang
+    email: fyzhang@usc.edu
+    image: /assets/img/staff/fred.jpg
     hours: >-
       See Google Calendar
     location: Zoom
@@ -44,9 +68,9 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Jamie Smith
-    email: smit109@usc.edu
-    image: /assets/img/staff/jamiesmith.jpg
+  - name: Jamie Flores
+    email: jamieflo@usc.edu
+    image: /assets/img/staff/jamieflo.jpeg
     hours: >-
       See Google Calendar
     location: Zoom
@@ -56,21 +80,9 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Kartik Balodi
-    email: balodi@usc.edu
-    image: /assets/img/staff/kartik.png
-    hours: >-
-      See Google Calendar
-    location: Zoom
   - name: Kesi Sound
     email: ksoundar@usc.edu
     image: /assets/img/staff/kesi.png
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Lihan Zhu
-    email: lihanzhu@usc.edu
-    image: /assets/img/staff/lihan.png
     hours: >-
       See Google Calendar
     location: Zoom
@@ -104,33 +116,15 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Raymond Liu
-    email: liuraymo@usc.edu
-    image: /assets/img/staff/raymond.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
   - name: Sean McNeely
     email: smcneely@usc.edu
     image: /assets/img/staff/seanmcneely.jpg
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Sean Syed
-    email: seansyed@usc.edu
-    image: /assets/img/staff/seansyed.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Spencer Davis
-    email: spencetd@usc.edu
-    image: /assets/img/staff/spencer.png
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Tong Zhi
-    email: tongzhi@usc.edu
-    image: /assets/img/staff/tongzhi.jpeg
+  - name: George Xu
+    email: leyuxu@usc.edu
+    image: /assets/img/staff/leyu.jpg
     hours: >-
       See Google Calendar
     location: Zoom

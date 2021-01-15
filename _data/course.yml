@@ -1,58 +1,58 @@
-semester: Fall 2020
+semester: Spring 2021
 sections:
   lectures:
-    - id: 29917
-      days: Tuesday, Thursday
-      time: 9:30 AM to 10:50 AM PST
-      location: Online
-      instructors: Sandra Batista
-    - id: 29930
-      days: Tuesday, Thursday
-      time: 2:00 PM to 3:20 PM PST
-      location: Online
-      instructors: Sandra Batista
-    - id: 29931
+    - id: 29905
       days: Tuesday, Thursday
       time: 11:00 AM to 12:20 PM PST
       location: Online
-      instructors: Sandra Batista
+      instructors: Aaron Cote
+    - id: 30399
+      days: Tuesday, Thursday
+      time: 2:00 PM to 3:20 PM PST
+      location: Online
+      instructors: Aaron Cote
   labs:
-    - id: 29905
+    - id: 30200
       days: Tuesday
-      time: 2:00 PM to 3:50 PM PST
+      time: 3:30 PM to 5:20 PM PST
       location: Online
       instructors: TBD
-    - id: 29905
+    - id: 30238
       days: Tuesday
-      time: 2:00 PM to 3:50 PM PST
+      time: 5:30 PM to 7:20 PM PST
       location: Online
       instructors: TBD
-    - id: 29907
-      days: Tuesday
-      time: 4:00 PM to 5:50 PM PST
-      location: Online
-      instructors: TBD
-    - id: 30210
+    - id: 30286
       days: Wednesday
-      time: 10:00 AM to 11:50 AM PST
+      time: 12:00 PM to 1:50 PM PST
       location: Online
       instructors: TBD
-    - id: 29933
+    - id: 29915
+      days: Wednesday
+      time: 12:00 PM to 1:50 PM PST
+      location: Online
+      instructors: TBD
+    - id: 30394
       days: Wednesday
       time: 2:00 PM to 3:50 PM PST
       location: Online
       instructors: TBD
-    - id: 29937
-      days: Thursday
+    - id: 29914
+      days: Wednesday
+      time: 3:00 PM to 4:50 PM PST
+      location: Online
+      instructors: TBD
+    - id: 29912
+      days: Wednesday
       time: 5:00 PM to 6:50 PM PST
       location: Online
       instructors: TBD
-    - id: 29932
+    - id: 30167
       days: Friday
       time: 12:00 PM to 1:50 PM PST
       location: Online
       instructors: TBD
-    - id: 29938
+    - id: 30293
       days: Friday
       time: 12:00 PM to 1:50 PM PST
       location: Online

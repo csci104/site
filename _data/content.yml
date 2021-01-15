@@ -1,37 +1,37 @@
 assignments:
   - id: hw1
     title: Course Overview and 103 review
-    assigned: true
+    assigned: false
     dates:
       assigned: Monday, August 17
       due: Friday, September 4 at 11:59PM PST
   - id: hw2
     title: Queues and Stacks
-    assigned: true
+    assigned: false
     dates:
       assigned: Monday, September 7
       due: Friday, September 18 at 11:59PM PST
   - id: hw3
     title: "Project, Part 1: Object Oriented Design and STL"
-    assigned: true
+    assigned: false
     dates:
       assigned: Monday, September 21
       due: Friday, October 2 at 11:59PM PST
   - id: hw4
     title: Heaps
-    assigned: true
+    assigned: false
     dates:
       assigned: Monday, October 5
       due: Friday, October 16 at 11:59PM PST
   - id: hw5
     title: "Project, Part 2: Graphs and Backtracking Search"
-    assigned: true
+    assigned: false
     dates:
       assigned: Monday, October 19
       due: Friday, October 30 at 11:59PM PST
   - id: hw6
     title: Balanced Search Trees
-    assigned: true
+    assigned: false
     dates:
       assigned: Monday, November 2
       due: Friday, November 13 at 11:59PM PST
@@ -50,60 +50,60 @@ labs:
   - id: lab2
     week: Week 2
     title: GDB
-    assigned: true
+    assigned: false
     topics: Debugging, GDB, tooling
   - id: lab3
     week: Week 3
     title: Rule of Three
-    assigned: true
+    assigned: false
     topics: Copy semantics, memory management
   - id: lab4
     week: Week 4
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, makefiles, build systems
   - id: lab5
     week: Week 5
     title: Inheritance
-    assigned: true
+    assigned: false
     topics: Inheritance, polymorphism
   - id: lab6
     week: Week 6
     title: Midterm Review
-    assigned: true
+    assigned: false
     topics: Weeks 1 - 5
   - id: lab7
     week: Week 7
     title: Templates
-    assigned: true
+    assigned: false
     topics: Templates
   - id: lab8
     week: Week 8
     title: Graphs and searches
-    assigned: true
+    assigned: false
     topics: Graphs, search, algorithms
   - id: lab9
     week: Week 9
     title: Tree Traversal
-    assigned: true
+    assigned: false
     topics: Binary trees, tree traversal, searching
   - id: lab10
     week: Week 10
     title: Backtracking
-    assigned: true
+    assigned: false
     topics: Recursion, backtracking
   - id: lab11
     week: Week 11
     title: Recursion Review
-    assigned: true
+    assigned: false
     topics: Recursion, Recurrence Relations
   - id: lab12
     week: Week 12
     title: AVL Trees & Hash Tables
-    assigned: true
+    assigned: false
     topics: AVL trees, balancing, hashing, hash tables
   - id: lab13
     week: Week 13
     title: Final Review
-    assigned: true
+    assigned: false
     topics: Weeks 1 - 13

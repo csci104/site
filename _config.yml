@@ -1,8 +1,8 @@
 title: CSCI 104
 email: csci104@bytes.usc.edu
 description: The homepage for CSCI 104 at USC
-baseurl: "" # Path
-url: "" # Protocol and host name
+baseurl: "/cs104" # Path
+url: "https://bytes.usc.edu" # Protocol and host name
 
 markdown: kramdown
 highlighter: rouge

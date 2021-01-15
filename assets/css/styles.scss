@@ -1,7 +1,14 @@
 ---
 ---
 
-@import 'curricula';
+@import 'curricula/theme';
+@import 'curricula/forms';
+@import 'curricula/code';
+@import 'curricula/table';
+@import 'curricula/layout';
+@import 'curricula/card';
+@import 'curricula/extra';
+
 @import 'navigation';
 @import 'people';
 @import 'layout';

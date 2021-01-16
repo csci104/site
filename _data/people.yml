@@ -38,6 +38,12 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: Armaan Pishori
+    email: pishori@usc.edu
+    image: /assets/img/staff/armaan.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
   - name: Cameron Durham
     email: cdurham@usc.edu
     image: /assets/img/staff/cdurham.jpg
@@ -142,15 +148,3 @@ staff:
     location: Zoom
 
 graders:
-  - name: Madhury Shankar
-    email: madhurys@usc.edu
-    image: /assets/img/staff/madhury.HEIC
-  - name: Niroop Ramdas Sagar
-    email: ramdassa@usc.edu
-    image: /assets/img/staff/niroop.jpg
-  - name: Onkar Kulkarni
-    email: oakulkar@usc.edu
-    image: /assets/img/staff/temp.png
-  - name: Sushma Mahadevaswamy
-    email: mahadeva@usc.edu
-    image: /assets/img/staff/temp.png

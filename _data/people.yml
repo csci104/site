@@ -1,9 +1,9 @@
 instructors:
   - name: Aaron Cote
     email: aaroncot@usc.edu
-    image: /assets/img/staff/temp.png
-    hours:
-    location:
+    image: /assets/img/staff/aaron.png
+    hours: M 11:30am-1:30pm, W 12:30-1:30pm, F 11:30am-2:30pm
+    location: Zoom
 
 assistants:
   - name: Neal Lawton

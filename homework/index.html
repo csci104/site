@@ -34,30 +34,16 @@ title: Homework
     {% for assignment in site.data.content.assignments %}
     <tr
       {% if assignment.assigned %}
-      onclick="window.location = './{{ assignment.id1 }}/'"
+      onclick="window.location = './{{ assignment.id }}/'"
       {% else %}
       class="disabled"
       {% endif %}
     >
       <td>
         {% if assignment.assigned %}
-        <a href="./{{ assignment.id1 }}/">{{ assignment.id1 }}</a>
+        <a href="./{{ assignment.id }}/">{{ assignment.id }}</a>
         {% else %}
-        {{ assignment.id1 }}
-        {% endif %}
-      </td>
-    <tr
-      {% if assignment.assigned %}
-      onclick="window.location = './{{ assignment.id2 }}/'"
-      {% else %}
-      class="disabled"
-      {% endif %}
-    >
-      <td>
-        {% if assignment.assigned %}
-        <a href="./{{ assignment.id2 }}/">{{ assignment.id2 }}</a>
-        {% else %}
-        {{ assignment.id2 }}
+        {{ assignment.id }}
         {% endif %}
       </td>
       <td>{{ assignment.title }}</td>

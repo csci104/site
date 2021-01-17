@@ -7,12 +7,12 @@ title: Syllabus
 
 # CSCI 104 Syllabus
 
-The course covers the fundamentals of data structures and object-oriented programming.
-They are two sides of the same coin. As a programmer becomes more proficient, they realize that how well and efficiently a problem can be solved often depends on how the data are stored.
+The course covers the fundamentals of data structures.
+As a programmer becomes more proficient, they realize that how well and efficiently a problem can be solved often depends on how the data are stored.
 Some of the ideas are quite sophisticated and clever, and we will explore a spectrum of them in this class, ranging from fairly basic to moderately advanced structures.
 
 The other side is that once one realizes the importance of data structures, it is natural to think of programs not as sequences of instructions that pass around some data, but as data packets that come with the code needed to process them.
-This is at the heart of the object-oriented design paradigm, and often leads to more modular and extensible (and readable) programs. We will learn about the basics of object-oriented programming, along with many of the interesting things that can be naturally done within the paradigm.
+This is at the heart of the object-oriented design paradigm, and often leads to more modular and extensible (and readable) programs.
 
 The class will put significant emphasis on a theoretical understanding of data structures, their implementation, and the object-oriented viewpoint. Assignments will contain significant programming projects along with programming-free questions to explore how data structures work.
 
@@ -27,12 +27,9 @@ The class will put significant emphasis on a theoretical understanding of data s
 7. Ability to use and implement priority queues.
 8. Knowledge of and ability to implement sorting algorithms and compare their performance analytically and empirically.
 9. Understanding of graphs and their representations; ability to implement graph search using BFS, DFS, and Dijkstra's Algorithm.
-10. Ability to solve problems using pointers and dynamically managed memory.
-11. Ability to write recursive functions and understand when recursion is appropriate to a problem.
-12. Ability to design, document, and implement classes and object hierarchies.
-13. Ability to apply tools and techniques for program correctness, such as unit testing, use of a symbolic debugger, and assert statements.
-14. Ability to write readable and maintainable code.
-15. Ability to explain computational solutions in person and in writing.
+10. Ability to write recursive functions and understand when recursion is appropriate to a problem.
+11. Ability to write readable and maintainable code.
+12. Ability to explain computational solutions in person and in writing.
 
 ## Catalog Entry
 
@@ -67,7 +64,7 @@ Your final grade will depend solely on your own performance, graded according to
     </thead>
     <tbody>
       <tr>
-        <td>30%</td>
+        <td>35%</td>
         <td>Homework</td>
       </tr>
       <tr>
@@ -75,26 +72,18 @@ Your final grade will depend solely on your own performance, graded according to
         <td>Lab Exercises</td>
       </tr>
       <tr>
-        <td>15%</td>
-        <td>Weekly Exercises</td>
+        <td>30%</td>
+        <td>Midterm Exams</td>
       </tr>
       <tr>
-        <td>10%</td>
-        <td>Quizzes</td>
-      </tr>
-      <tr>
-        <td>20%</td>
-        <td>Midterm Exam</td>
-      </tr>
-      <tr>
-        <td>20%</td>
+        <td>30%</td>
         <td>Final Exam</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<span class="font-bold">Note</span>: due to COVID-19, Summer 2020 exams will be online and predominantly coding-based.  Unfortunately, for integrity and support reasons we cannot offer alternate time windows for the exam. You must available at the given exam time window (Pacific Daylight Time) to take the exam.  Instructions and details will be provided closer to the examinationd date for how to take the exam and submit it.
+<span class="font-bold">Note</span>: due to COVID-19, will be online.  Instructions and details will be provided closer to the examinationd date for how to take the exam and submit it.
 
 ### Grading Scale
 
@@ -129,25 +118,11 @@ At the end of the semester, we may decide to lower the scale if the exams were m
   </table>
 </div>
 
-### Assignments, Labs, and Quizzes
+### Assignments and Labs
 
 Grading for [homework]({{ site.baseurl }}/homework/) and [labs]({{ site.baseurl }}/labs/) are available on their respective pages.
 They contain **policies** related to grading, assignments, and policies related to submission, contesting grades, academic integrity, etc.
 You are **responsible** for reading those pages *carefully* and following all of its stated policies!
-
-### Weekly Written Exercises
-
-While regular attendance will not be taken, class participation and attendance is **expected**.
-Video recordings will be available before regularly scheduled class meeting times to help you prepare for class meetings.
-During class meetings we will work on exercises in groups.
-You must submit solutions to these exercises that represent your understanding of the solutions and that include the names of your collaborators.
-We will discuss as many of the solutions as possible during class meeting times.
- 
-In addition, you must submit a question to the **weekly question bank** that will be linked on the course Piazza.
-You will receive credit for completing the weekly written exercises and question bank submissions.
-These will be graded Pass/No Pass (Credit/No Credit).
-We will drop your lowest two scores so that you can miss two weeks of exercises and questions due to illness or other reasons without penalty.
-Experience shows that attendance and participation correlate highly with success in classes!
 
 ## Attendance
 
@@ -155,11 +130,11 @@ While regular attendance will not be taken, class participation and attendance i
 
 ## Textbook
 
-There is no required textbook for the class.
-We will follow the course lecture notes that you may download (and possibly print) the [lecture notes]({{ site.data.urls.notes }}).
+We will be using "Data Structures and Algorithm Analysis in C++" by Mark Weiss.  In addition, you should have a Discrete Mathematics textbook (whichever book you used for CSCI 170 will suffice): I will specificially refer to reading from "Essential Discrete Mathematics for Computer Science" by Lewis & Zax.
+You may also find the course lecture notes useful.  You may download (and possibly print) the [lecture notes]({{ site.data.urls.notes }}).
 These are based on teaching of CSCI 104 in past semesters, and cover the material quite accurately as presented in class.
-However, the lecture notes may be out of order as we have changed the schedule slightly.
-We will also be providing detailed lecture slides with annotations from the recorded videos on Piazza that you may also use.
+However, the lecture notes may be out of order and cover different topics, as we have changed the schedule significantly.
+We will also be providing detailed lecture slides and recorded videos that you may also use.
 
 We want to provide you with additional references that may enhance study and may be cited during video recordings.
 In addition to the textbook used for CSCI 103, for the C++ Language the following references are available for free online from the USC Library:
@@ -170,6 +145,7 @@ In addition to the textbook used for CSCI 103, for the C++ Language the followin
 
 For data structures specifically: 
 
+- Weiss.  Data Structures and Algorithm Analysis in C++ 4th Ed. Pearson, 2014.
 - Carrano, Frank and Thomas Henry. Data Abstraction & Problem Solving with C++ 6th Ed. Pearson, 2013.
 - [Goodrich, Michael T, Roberto Tamassia, and David M Mount. Data Structures and Algorithms in C](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/hs9vaa/alma991043327161803731). Wiley, 2011.
 

@@ -1,5 +1,7 @@
 assignments:
   - id: hw1
+    id1: hw1w
+    id2: hw1p
     title: Linked Lists and Recursion
     assigned: false
     dates:
@@ -7,6 +9,8 @@ assignments:
       written: Friday, January 29 at 11:59PM PST
       programming: Friday, February 5 at 11:59PM PST
   - id: hw2
+    id1: hw2w
+    id2: hw2p
     title: Inheritance and Polymorphism
     assigned: false
     dates:
@@ -14,6 +18,8 @@ assignments:
       written: Friday, February 12 at 11:59PM PST
       programming: Friday, February 19 at 11:59PM PST
   - id: hw3
+    id1: hw3w
+    id2: hw3p
     title: Heaps
     assigned: false
     dates:
@@ -21,6 +27,8 @@ assignments:
       written: Friday, March 5 at 11:59PM PST
       programming: Friday, March 12 at 11:59PM PST
   - id: hw4
+    id1: hw4w
+    id2: hw4p
     title: AVL Trees
     assigned: false
     dates:
@@ -28,6 +36,8 @@ assignments:
       written: Friday, March 19 at 11:59PM PST
       programming: Friday, March 26 at 11:59PM PST
   - id: hw5
+    id1: hw5w
+    id2: hw5p
     title: Naive Bayes Classifier
     assigned: false
     dates:
@@ -35,6 +45,8 @@ assignments:
       written: Friday, April 9 at 11:59PM PST
       programming: Friday, April 16 at 11:59PM PST
   - id: hw6
+    id1: hw6w
+    id2: hw6p
     title: Hash Tables
     assigned: false
     dates:

@@ -1,9 +1,10 @@
 ---
-layout: default
-title: Homework 1
-nav: assignments
-hwpath: hw1p
+layout: asides
+toc: true
+tasks: true
+title: Homework 1 Programming
 ---
+
 ## HW1: Programming Assignment
 
 + Due: Friday, February 5th, 11:59pm PST

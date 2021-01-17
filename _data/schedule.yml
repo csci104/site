@@ -1,6 +1,5 @@
 show:
   lectures:
-    chapters: false
     notes: true
 
 exams:
@@ -79,7 +78,7 @@ lectures:
   - topics:
       - Graphs
       - Trees
-    chapters:
+  - chapters:
       - Chapter 4.1-4.2
       - Chapter 9.1
       

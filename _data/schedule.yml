@@ -1,5 +1,6 @@
 show:
   lectures:
+    chapters: true
     notes: true
 
 exams:
@@ -73,15 +74,13 @@ lectures:
       - Containers
   - chapters:
       - Chapter 1.6
-
   # 8
   - topics:
       - Graphs
       - Trees
   - chapters:
       - Chapter 4.1-4.2
-      - Chapter 9.1
-      
+      - Chapter 9.1   
   # 9
   - topics:
       - Priority Queues

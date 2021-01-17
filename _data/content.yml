@@ -1,40 +1,46 @@
 assignments:
   - id: hw1
-    title: Course Overview and 103 review
+    title: Linked Lists and Recursion
     assigned: false
     dates:
-      assigned: Monday, August 17
-      due: Friday, September 4 at 11:59PM PST
+      assigned: Thursday, January 21
+      written due: Friday, January 29 at 11:59PM PST
+      programming due: Friday, February 5 at 11:59PM PST
   - id: hw2
-    title: Queues and Stacks
+    title: Inheritance and Polymorphism
     assigned: false
     dates:
-      assigned: Monday, September 7
-      due: Friday, September 18 at 11:59PM PST
+      assigned: Friday, February 5
+      written due: Friday, February 12 at 11:59PM PST
+      programming due: Friday, February 19 at 11:59PM PST
   - id: hw3
-    title: "Project, Part 1: Object Oriented Design and STL"
-    assigned: false
-    dates:
-      assigned: Monday, September 21
-      due: Friday, October 2 at 11:59PM PST
-  - id: hw4
     title: Heaps
     assigned: false
     dates:
-      assigned: Monday, October 5
-      due: Friday, October 16 at 11:59PM PST
+      assigned: Thursday, February 25
+      written due: Friday, March 5 at 11:59PM PST
+      programming due: Friday, March 12 at 11:59PM PST
+  - id: hw4
+    title: AVL Trees
+    assigned: false
+    dates:
+      assigned: Friday, March 12
+      written due: Friday, March 19 at 11:59PM PST
+      programming due: Friday, March 26 at 11:59PM PST
   - id: hw5
-    title: "Project, Part 2: Graphs and Backtracking Search"
+    title: Naive Bayes Classifier
     assigned: false
     dates:
-      assigned: Monday, October 19
-      due: Friday, October 30 at 11:59PM PST
+      assigned: Thursday, April 1
+      written due: Friday, April 9 at 11:59PM PST
+      programming due: Friday, April 16 at 11:59PM PST
   - id: hw6
-    title: Balanced Search Trees
+    title: Hash Tables
     assigned: false
     dates:
-      assigned: Monday, November 2
-      due: Friday, November 13 at 11:59PM PST
+      assigned: Friday, April 16
+      written due: Friday, April 23 at 11:59PM PST
+      programming due: Saturday, May 1 at 11:59PM PST
 
 labs:
   - id: lab0

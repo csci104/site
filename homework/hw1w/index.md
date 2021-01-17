@@ -2,7 +2,7 @@
 layout: default
 title: Homework 1
 nav: assignments
-hwpath: hw1
+hwpath: hw1w
 ---
 ## HW1: Written Assignment
 

@@ -72,14 +72,14 @@ lectures:
   - topics:
       - Standard template library
       - Containers
-  - chapters:
+    chapters:
       - Chapter 1.6
       
   # 8
   - topics:
       - Graphs
       - Trees
-  - chapters:
+    chapters:
       - Chapter 4.1-4.2
       - Chapter 9.1   
       

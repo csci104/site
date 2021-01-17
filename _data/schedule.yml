@@ -1,6 +1,6 @@
 show:
   lectures:
-    chapters: true
+    chapters: false
     notes: true
 
 exams:

@@ -4,43 +4,43 @@ assignments:
     assigned: false
     dates:
       assigned: Thursday, January 21
-      written due: Friday, January 29 at 11:59PM PST
-      programming due: Friday, February 5 at 11:59PM PST
+      written: Friday, January 29 at 11:59PM PST
+      programming: Friday, February 5 at 11:59PM PST
   - id: hw2
     title: Inheritance and Polymorphism
     assigned: false
     dates:
       assigned: Friday, February 5
-      written due: Friday, February 12 at 11:59PM PST
-      programming due: Friday, February 19 at 11:59PM PST
+      written: Friday, February 12 at 11:59PM PST
+      programming: Friday, February 19 at 11:59PM PST
   - id: hw3
     title: Heaps
     assigned: false
     dates:
       assigned: Thursday, February 25
-      written due: Friday, March 5 at 11:59PM PST
-      programming due: Friday, March 12 at 11:59PM PST
+      written: Friday, March 5 at 11:59PM PST
+      programming: Friday, March 12 at 11:59PM PST
   - id: hw4
     title: AVL Trees
     assigned: false
     dates:
       assigned: Friday, March 12
-      written due: Friday, March 19 at 11:59PM PST
-      programming due: Friday, March 26 at 11:59PM PST
+      written: Friday, March 19 at 11:59PM PST
+      programming: Friday, March 26 at 11:59PM PST
   - id: hw5
     title: Naive Bayes Classifier
     assigned: false
     dates:
       assigned: Thursday, April 1
-      written due: Friday, April 9 at 11:59PM PST
-      programming due: Friday, April 16 at 11:59PM PST
+      written: Friday, April 9 at 11:59PM PST
+      programming: Friday, April 16 at 11:59PM PST
   - id: hw6
     title: Hash Tables
     assigned: false
     dates:
       assigned: Friday, April 16
-      written due: Friday, April 23 at 11:59PM PST
-      programming due: Saturday, May 1 at 11:59PM PST
+      written: Friday, April 23 at 11:59PM PST
+      programming: Saturday, May 1 at 11:59PM PST
 
 labs:
   - id: lab0

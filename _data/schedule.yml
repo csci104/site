@@ -5,25 +5,17 @@ show:
 
 exams:
 
-  - name: Quiz 1
-    time: Friday, September 11
+  - name: Midterm 1
+    time: Thursday, February 25
     location: Quiz section
 
-  - name: Midterm
-    time: Friday, September 25
-    location: Quiz section
-    material:
-      - Sample midterm
-
-  - name: Quiz 2
-    time: Friday, October 23
+  - name: Midterm 2
+    time: Thursday, April 1 (No fooling!)
     location: Quiz section
 
   - name: Final
-    time: Saturday, November 21 at 11 AM PST
+    time: Wednesday, May 5 at 8 AM PST
     location: Online
-    material:
-      - Sample final
 
 lectures:
 
@@ -31,203 +23,181 @@ lectures:
   - topics:
       - Course overview
       - Motivation for Data Structures
-      - Modern Memory Management
+      - Recursion
+      - Runtime
     chapters:
-      - Chapter 1
+      - Chapter 1.1-1.5
       - Chapter 2
-    notes: L02_MemAlloc.pdf
-
+      
   # 2
   - topics:
-      - Object oriented design
-      - Classes
-      - Abstract data types
+      - Recursion
+      - Linked Lists
     chapters:
-      - Chapter 6
-      - Chapter 7
-    notes: L03_Classes_ADTs.pdf
-    
+      - Chapter 1.3
+      - Chapter 2
+      - Chapter 3.3-3.5    
 
   # 3
   - topics:
-      - Operator overloading
+      - Recursion
+      - Copy Semantics
     chapters:
-      - Chapter 12
-    notes: L04_Operator_Overloading.pdf
+      - Chapter 1.3, 1.5
+      - Chapter 2
 
   # 4
   - topics:
-      - Copy semantics
+      - Inheritance
+      - Polymorphism
     chapters:
-      - Chapter 14
-    notes: L05_Copy_Semantics.pdf
+      - Chapter 1.5
 
   # 5
   - topics:
-      - Inheritance
+      - Polymorphism
+      - Exceptions
+      - ADTs
     chapters:
-      - Chapter 12
-    notes: L06_Inheritance.pdf
+      - Chapter 3.1-3.2
 
   # 6
-  - topics:
-      - Polymorphism
-    chapters:
-      - Chapter 14
-    notes: L07_Polymorphism.pdf
-
-  # 7
   - topics:
       - Stacks
       - Queues
     chapters:
-      - Chapter 11
-    notes: L08_Queues_Stacks.pdf
+      - Chapter 3.6-3.7
 
-  # 8
+  # 7
   - topics:
       - Standard template library
       - Containers
-    chapters:
-      - Chapter 13
-    notes: L10_STL.pdf
+  - chapters:
+      - Chapter 1.6
 
-  # 9
-  - topics:
-      - Review of list implementations
-    chapters:
-      - Chapter 5
-      - Chapter 9
-    notes: L09_List_Implementations.pdf
-
-  # 10
-  - topics:
-      - Templates
-      - Exceptions
-    chapters:
-      - Chapter 15
-      - Chapter 18
-    notes: L11_Template.pdf
-    
-  # 11
-  - topics:
-      - Runtime analysis
-    chapters:
-      - Chapter 8
-    notes: L12_Runtime.pdf
-
-  # 12
-  - topics:
-      - Comparison
-      - Sorting
-      - Functors
-    chapters:
-      - Chapter 17
-    notes: Comparison_sorting_executive_summary.pdf
- 
-  # 13
-  - topics:
-      - Divide and conquer
-      - Sorting
-    chapters:
-      - Chapter 17
-    notes: L13_Sorting.pdf
-
-  # 14
+  # 8
   - topics:
       - Graphs
       - Trees
     chapters:
-      - Chapter 20
-      - Chapter 21
-    notes: Graph_Representations_and_Traversals.pdf
-
-  # 15
+      - Chapter 4.1-4.2
+      - Chapter 9.1
+      
+  # 9
   - topics:
       - Priority Queues
       - Heaps
     chapters:
-      - Chapters 22
-    notes: Heaps_Tree_Implementations.pdf
+      - Chapter 6.1-6.5
+      
+  # 10
+  - topics:
+      - Heaps
+      - Dijkstra's Algorithm
+    chapters:
+      - Chapter 6.1-6.5
+      - Chapter 9.3
+    
+  # 11
+  - topics:
+      - A* Search
+      - Binary Search Trees
+    chapters:
+      - Chapter 4.3
+
+  # 12
+  - topics:
+      - Binary Search Trees
+      - AVL Trees
+    chapters:
+      - Chapter 4.3-4.4
+ 
+  # 13
+  - topics:
+      - AVL Trees
+      - Balanced Binary Search Trees
+    chapters:
+      - Chapter 4.4, 4.7
+      - Chapter 12.2
+
+  # 14
+  - topics:
+      - Splay Trees
+    chapters:
+      - Chapter 4.5
+
+  # 15
+  - topics:
+      - Hash Table introduction
+      - Counting
+    chapters:
+      - Chapter 5.1-5.3
+      - Lewis & Zax Chapter 22
 
   # 16
   - topics:
-      - Tree and graph traversals
+      - Counting
     chapters:
-      - Chapter 20
-      - Chapter 21
-    notes: Graph_Representations_and_Traversals.pdf
-      -
+      - Lewis & Zax Chapter 23
+      
   # 17
   - topics:
-      - Dijkstra's algorithm
-      - A* Search
+      - Probability
     chapters:
-      - Chapter 23
-    notes: L17_Dijkstras_Astar.pdf
+      - Lewis & Zax Chapter 26
+      - Lewis & Zax Chapter 27
 
   # 18
   - topics:
-      - Graph Representations
-      - Recursion Review from CSCI 103
-      - Generating Combinations 
+      - Probability
     chapters:
-      - Chapter 4
-      - Chapter 20
+      - Lewis & Zax Chapter 28
+      - Lewis & Zax Chapter 29
 
   # 19
   - topics:
-      - Recursion
-      - Backtracking
-      - Tracing
+      - Number Theory
     chapters:
-      - Chapter 4
-    notes: L18_BacktrackingSearch.pdf
+      - Lewis & Zax Chapter 30
 
   # 20
   - topics:
-      - Recursion
-      - Linked lists
-      - Trees
+      - Number Theory
     chapters:
-      - Chapters 4
+      - Lewis & Zax Chapter 31
 
   # 21
   - topics:
-      - Binary search trees
+      - Hash Tables
     chapters:
-      - Chapters 21
+      - Chapter 5
 
   # 22
   - topics:
-      - Balanced search trees
-      - Tree rotations
-      - AVL insertion algorithm
+      - Bloom Filters
     chapters:
-      - Chapter 24
+      - Chapter 5
 
   # 23
   - topics:
-      - Balanced search trees
-      - AVL removal algorithm
+      - Amortized Analysis
     chapters:
-      - Chapters 24
+      - Chapters 11.1,11.5
 
   # 24
   - topics:
-      - Hash tables
+      - Tries
     chapters:
-      - Chapters 28
+      - Chapter 12.4
 
   # 25
   - topics:
-      - Hash tables
-      - Bloom filters
+      - Extra Topics
     chapters:
-      - Chapter 28
+      - Chapter 6.8
 
   # 26
   - topics:
-      - Tries
+      - Extra Topics
     chapters:
-      - Chapter 32
+      - Chapter 11.2

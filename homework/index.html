@@ -23,7 +23,8 @@ title: Homework
 <table class="standard assignments hover click">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>ID1</th>
+      <th>ID2</th>
       <th>Title</th>
       <th>Written Due</th>
       <th>Programming Due</th>
@@ -33,16 +34,30 @@ title: Homework
     {% for assignment in site.data.content.assignments %}
     <tr
       {% if assignment.assigned %}
-      onclick="window.location = './{{ assignment.id }}/'"
+      onclick="window.location = './{{ assignment.id1 }}/'"
       {% else %}
       class="disabled"
       {% endif %}
     >
       <td>
         {% if assignment.assigned %}
-        <a href="./{{ assignment.id }}/">{{ assignment.id }}</a>
+        <a href="./{{ assignment.id1 }}/">{{ assignment.id1 }}</a>
         {% else %}
-        {{ assignment.id }}
+        {{ assignment.id1 }}
+        {% endif %}
+      </td>
+    <tr
+      {% if assignment.assigned %}
+      onclick="window.location = './{{ assignment.id2 }}/'"
+      {% else %}
+      class="disabled"
+      {% endif %}
+    >
+      <td>
+        {% if assignment.assigned %}
+        <a href="./{{ assignment.id1 }}/">{{ assignment.id2 }}</a>
+        {% else %}
+        {{ assignment.id2 }}
         {% endif %}
       </td>
       <td>{{ assignment.title }}</td>

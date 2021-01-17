@@ -2,7 +2,7 @@
 layout: default
 title: Homework 1
 nav: assignments
-hwpath: hw1
+hwpath: hw1p
 ---
 ## HW1: Programming Assignment
 

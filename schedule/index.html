@@ -11,7 +11,7 @@ layout: default
 <p>
   Chapter numbers under the textbook column refer to the textbook, while the chapter numbers under "notes" refer to the posted lecture notes.
 </p>
-<h2>Exams & Quizzes</h2>
+<h2>Exams</h2>
 <table class="standard exams">
   <thead>
     <tr>
@@ -46,7 +46,7 @@ layout: default
     <tr>
       <th></th>
       <th>Topics</th>
-      {% if site.data.schedule.show.lectures.chapters %}<th>Chapers</th>{% endif %}
+      {% if site.data.schedule.show.lectures.chapters %}<th>Chapters</th>{% endif %}
       {% if site.data.schedule.show.lectures.notes %}<th>Notes</th>{% endif %}
     </tr>
   </thead>
@@ -65,7 +65,7 @@ layout: default
       <td>
         <ul>
           {% for chapter in lecture.chapters %}
-          <li><a href="{{ site.data.urls.notes }}" target="_blank">{{ chapter }}</a></li>
+          <li>{{ chapter }}</li>
           {% endfor %}
         </ul>
       </td>

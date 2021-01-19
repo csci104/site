@@ -156,13 +156,13 @@ void funcB (Node* in1, Node* in2);
 
 Node* funcA (Node* in)
 {
-   if (in == nullptr) return nullptr;
-   Node* out = nullptr;
-   if (in->next != nullptr)
+   if (in == NULL) return NULL;
+   Node* out = NULL;
+   if (in->next != NULL)
    {
        out = funcA (in->next);
        funcB (in, out);
-       in->next = nullptr;
+       in->next = NULL;
        return out;
    }
    return in;
@@ -170,7 +170,7 @@ Node* funcA (Node* in)
 
 void funcB (Node* in1, Node* in2)
 {
-   if (in2->next != nullptr) 
+   if (in2->next != NULL) 
    {
        funcB (in1, in2->next);
        return;

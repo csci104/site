@@ -29,5 +29,5 @@ By default, it is served at the URL `http://localhost:4000`.
 To update remote, use:
 
 ```
-git push origin 2020/fall:deploy
+git push origin 2021/spring:deploy
 ```

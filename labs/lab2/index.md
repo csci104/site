@@ -467,7 +467,9 @@ Think, which call to `Skirmish()` does the program output the wrong thing on?  G
 You have stood fast in the face of overwhelming peril, and banished the bugs back to whence they came!
 <del>The world</del> <del>the town</del> your computer is safe once again!
 
-- [ ] Show a CP or TA to get checked off!!
+- [ ] Show a CP or TA  `answers.txt` to get checked off!!
+- If you don't complete `answers.txt` during lab, you may complete it in your own time and attend a different lab section to get it checked off. (If you have time zone accommodations and cannot make it to any lab section, please email Professor Cote.) You have until the Wednesday 5 pm lab section on 1/27 to get checked off.
+
 
 
 

@@ -15,11 +15,11 @@ title: Exercises
 <script type='text/javascript' src='../../websheets/CodeMirror/addon/edit/matchbrackets.js'></script>
 <link rel='stylesheet' type='text/css' href='../../websheets/CodeMirror/lib/codemirror.css'/>
 <link rel='stylesheet' type='text/css' href='../../websheets/CodeMirror/theme/neat.css'/>
-<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700'/>
-<script type='text/javascript' src='http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700'/>
+<script type='text/javascript' src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 <link rel='stylesheet' type='text/css' href='../../websheets/websheets.css'/>
 <script type='text/javascript' src='../../websheets/websheets.js'></script>
-   <link rel="icon" type="image/png" href="../../websheets/favicon.png">
+<link rel="icon" type="image/png" href="../../websheets/favicon.png">
 <script type='text/x-mathjax-config'>
 MathJax.Hub.Config({tex2jax: {displayMath: [ ['$$','$$'] ], inlineMath: [['$','$'] ]} });
 </script>

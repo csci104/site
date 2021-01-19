@@ -8,7 +8,7 @@ title: Homework 1 Programming
 ## HW1: Programming Assignment
 
 + Due: Friday, February 5th, 11:59pm PST
-+ To access the written portion of this assignment, click [here]({{site.url}}/homework/hw1w/)
++ To access the written portion of this assignment, click [here]({{site.url}}/homework/hw1/)
 + Directory name in your github repository for this homework (case sensitive): `hw1`
    - Do a `git pull` in your `homework-resources` repo.
    - Then copy the `homework-resources/hw1` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw1` folder.

@@ -46,7 +46,7 @@ staff:
     location: Zoom
   - name: Cameron Durham
     email: cdurham@usc.edu
-    image: /assets/img/staff/cdurham.jpg
+    image: /assets/img/staff/cdurham_lil.jpg
     hours: >-
       See Google Calendar
     location: Zoom
@@ -58,7 +58,7 @@ staff:
     location: Zoom
   - name: Emily Fang
     email: ejfang@usc.edu
-    image: /assets/img/staff/emily2.png
+    image: /assets/img/staff/emily_lil.png
     hours: >-
       See Google Calendar
     location: Zoom
@@ -100,7 +100,7 @@ staff:
     location: Zoom
   - name: Michelle Wong
     email: wong935@usc.edu
-    image: /assets/img/staff/michelle2.JPG
+    image: /assets/img/staff/michelle_lil.JPG
     hours: >-
      See Google Calendar
     location: Zoom
@@ -112,7 +112,7 @@ staff:
     location: Zoom
   - name: Owen Mech
     email: omech@usc.edu
-    image: /assets/img/staff/owen2.jpg
+    image: /assets/img/staff/owen_lil.jpg
     hours: >-
       See Google Calendar
     location: Zoom

@@ -79,7 +79,9 @@ layout: default
       </td>
       {% endif %}
       <td>
+        {% if lecture.recording %}
         <a href="{{ lecture.recording }}">Lecture {{ forloop.index }}</a> 
+        {% endif %}
       </td>
     </tr>
     {% endfor %}

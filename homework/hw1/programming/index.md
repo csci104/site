@@ -8,7 +8,7 @@ title: Homework 1 Programming
 ## HW1: Programming Assignment
 
 + Due: Friday, February 5th, 11:59pm PST
-+ To access the written portion of this assignment, click [here]({{site.url}}/homework/hw1w/)
++ To access the written portion of this assignment, click [here](..)
 + Directory name in your github repository for this homework (case sensitive): `hw1`
    - Do a `git pull` in your `homework-resources` repo.
    - Then copy the `homework-resources/hw1` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw1` folder.
@@ -104,13 +104,15 @@ void split (Node*& in, Node*& odds, Node*& evens);
 
 These are prototyped in `split.h` for you which you can `#include` to your `split.cpp` and test file.  **You MAY NOT change the definitions provided in this file.**
 
-Empty lists are represented by `nullptr` . You may assume that `odds` and `evens` are both `nullptr` when `split` is called from the main function.
+Empty lists are represented by `NULL` . You may assume that `odds` and `evens` are both `NULL` when `split` is called from the main function.
 
-When your split function terminates, `in` should be set to `nullptr` (the original list is not preserved), `odds` should point to the head of a linked list containing all items where `value` is an odd integer, and `evens` should point to the head of a linked list containing all items where `value` is an even integer. Obviously, your solution must not leak memory. **Use `valgrind` to verify correct memory handling and cleanup.**
+When your split function terminates, `in` should be set to `NULL` (the original list is not preserved), `odds` should point to the head of a linked list containing all items where `value` is an odd integer, and `evens` should point to the head of a linked list containing all items where `value` is an even integer. Obviously, your solution must not leak memory. **Use `valgrind` to verify correct memory handling and cleanup.**
 
 Hint: by far the easiest way to make this work is to not `delete` or `new` nodes, but just to change the pointers.
 
 While we will only test your `split` function, you will probably want to write some `main` code to actually test it.  To do this, create a file `split_test.cpp` where you will `#include "split.h"` to bring in the prototype and `Node` definition.  Then you can write a `main` that instantiates and fills some linked list cases (up to you to do) and then calls `split` to test its behavior.
+
+If you get an error `NULL is not defined in this scope` when compiling `split.cpp` or your test file, try adding `#include <cstddef>` to your `.cpp` file where you are using `NULL`.
 
  Your submission should be in a file called `split.cpp`, and it should only contain your implementation of the function and **NO `main()`**. 
 

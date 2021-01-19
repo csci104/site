@@ -1,7 +1,7 @@
 assignments:
   - id: hw1
     title: Linked Lists and Recursion
-    assigned: true
+    assigned: false
     dates:
       assigned: Thursday, January 21
       written: Friday, January 29 at 11:59PM PST

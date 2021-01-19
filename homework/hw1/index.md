@@ -5,28 +5,27 @@ tasks: true
 title: Homework 1 Written
 ---
 
-## HW1: Written Assignment
+# HW1: Written Assignment
 
 + Due: Friday, January 29th, 11:59pm PST
 + You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .txt, .jpg, or .pdf)
-+ To access the programming portion of this assignment, click [here]({{site.url}}/homework/hw1p/)
++ To access the programming portion of this assignment, click [here](../hw1p/)
 
-### Problem 1 (Course Policies, 10%)
+## 1. Course Policies (10%)
+
 Carefully study the information on the [course web site]({{site.url}}), then answer the following questions about course policies (anywhere from no to all answers may be correct):
 
-#### Part (a):
+### Part A
 Which of the following are acceptable behaviors in solving homeworks/projects?
 
 1. Looking up information relevant to the course online.
 2. Looking up or asking for sample solutions online.
 3. Copying code from my classmates, and then editing it significantly.
 4. Asking the course staff for help.
-5. Sitting next to my classmate and coding together as a team or with significant
-conversation about our approach.
-6. Sharing my code with a classmate, if he/she just promises not to copy them, but to
-just read over it and learn from it.
+5. Sitting next to my classmate and coding together as a team or with significant conversation about our approach.
+6. Sharing my code with a classmate, if they just promise not to copy them, but to just read over it and learn from it.
 
-#### Part (b):
+### Part B
 Which of the following are recommended ways of writing code (see the Tools and Links page)?
 
 1. gedit
@@ -36,7 +35,7 @@ Which of the following are recommended ways of writing code (see the Tools and L
 5. Microsoft Visual Studio
 6. notepad
 
-#### Part(c):
+### Part C
 What is the late submission policy?
 
 1. Each assignment can be submitted late for 50% credit.
@@ -44,7 +43,7 @@ What is the late submission policy?
 3. Students need to get approval before submitting an assignment late.
 5. Use the normal submission system provided you have grace-days available
 
-#### Part(d):
+### Part D
 After making a late submission by pushing your code to Github you should...
 
 1. Use the normal submission system on the course website
@@ -52,10 +51,10 @@ After making a late submission by pushing your code to Github you should...
 3. Email your instructor.
 4. Start the next assignment sooner (hint: this is correct)
 
-### Problem 2 (Git, 10%)
+## 2. Git (10%)
 Carefully review and implement the steps discussed in [Lab1]({{ site.url }}/labs/lab01.html). Then answer the following questions:
 
-#### Part (a):
+### Part A
 Which of the following git user interfaces are accepted and supported in this course?
 
 1. Git Bash (Windows)
@@ -64,23 +63,23 @@ Which of the following git user interfaces are accepted and supported in this co
 4. Eclipse eGit
 5. Tower Git Client
 
-#### Part (b):
+### Part B
 Provide the appropriate git command to perform the following operations:
 
 1. Stage an untracked file to be committed. The (hypothetical) file is called 'hw1q2b.cpp'.
 2. Display the details of the last three commits in the repository.
 
-#### Part (c)
+### Part C
 Let's say you staged three files to be committed. Then, you ran the following command:
 
 `git commit`
 
 What will git do?
 
-### Problem 3 (Runtime Analysis, 20%)
+## 3. Runtime Analysis (20%)
 In Big-&Theta; notation, analyze the running time of the following pieces of code/pseudo-code. Describe the running time as a function of the input size (here, `n`).  You should **always** explain your work when solving mathematics problems.
 
-#### Part (a)
+### Part A
 
 ```c++
 for(int i=n-1; i >=0; i--){
@@ -90,7 +89,7 @@ for(int i=n-1; i >=0; i--){
 }
 ```
 
-#### Part (b)
+### Part B
 Assume `A` is an array of size n+1.
 
 ```c++
@@ -107,7 +106,7 @@ for(int i=1; i < n; i++){
 
 ```
 
-#### Part (c)
+### Part C
 
 ```c++
 void f3(int* A, int n)
@@ -121,7 +120,7 @@ void f3(int* A, int n)
 }
 ```
 
-#### Part (d)
+### Part D
 
 Notice that this code is similar to what happens if you keep inserting into a vector.
 
@@ -143,7 +142,7 @@ for (int i = 0; i < n; i ++)
   }
 ```
 
-### Problem 4 (Linked Lists, Recursion, 10%)
+## 4. Linked Lists, Recursion (10%)
 
 Consider the following C++ code.  What linked list is returned if funcA is called with the input linked list `1,2,3,4,5`?  All of the points for this problem will be assigned based on your explanation, since we have full faith in your ability to run this program and copy down the answer.  We **strongly** recommend solving this by hand, and only using a compiler to verify your answer.
 
@@ -180,6 +179,6 @@ void funcB (Node* in1, Node* in2)
 }
 ```
 
-### Programming Assignment
+## Programming Assignment
 
-To access the programming portion of this assignment, click [here]({{site.url}}/homework/hw1p/)
+To access the programming portion of this assignment, click [here](./programming/)

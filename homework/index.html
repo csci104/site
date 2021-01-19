@@ -11,7 +11,7 @@ title: Homework
   The average student should <span class="font-bold">expect to spend about 15 hours per homework</span>.
 </p>
 <p>
-  Each assignment has a written component, and a programming component.  The written component will be submitted through Blackboard, and will be due one week after being assigned.  
+  Each assignment has a written component, and a programming component.  The written component will be submitted through Blackboard, and will be due one week after being assigned.
   The programming component will be submitted through <a href="{{ site.data.urls.github }}" target="_blank">GitHub</a> and will be due two weeks after being assigned.
   Most programming assignments will take a significant amount of time: students are expected to start before the written assignment is due.
 </p>
@@ -23,7 +23,7 @@ title: Homework
 <table class="standard assignments hover click">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>#</th>
       <th>Title</th>
       <th>Written Due</th>
       <th>Programming Due</th>
@@ -40,9 +40,9 @@ title: Homework
     >
       <td>
         {% if assignment.assigned %}
-        <a href="./{{ assignment.id }}/">{{ assignment.id }}</a>
+        <a href="./{{ assignment.id }}/">{{ forloop.index }}</a>
         {% else %}
-        {{ assignment.id }}
+        {{ forloop.index }}
         {% endif %}
       </td>
       <td>{{ assignment.title }}</td>

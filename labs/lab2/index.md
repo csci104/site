@@ -33,6 +33,9 @@ In the `lab2` directory you should see the following files:
 9. `output2.check`
 10. `output3.check`
 
+If you are using Docker, please copy and paste the `lab2` directory into the directory you mounted to the Docker container in Lab 0. Remember to open a shell before proceeding (ie, by running `ch shell csci104`).
++ If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
+
 ## What is a debugger?
 
 At its core, a debugger is a tool used to inspect a program while it is running.

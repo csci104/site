@@ -8,7 +8,7 @@ instructors:
 assistants:
   - name: Neal Lawton
     email: nlawton@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/neal.png
     hours: >-
       See Google Calendar
     location: Zoom
@@ -58,7 +58,7 @@ staff:
     location: Zoom
   - name: Emily Fang
     email: ejfang@usc.edu
-    image: /assets/img/staff/emily.JPG
+    image: /assets/img/staff/emily2.png
     hours: >-
       See Google Calendar
     location: Zoom
@@ -100,7 +100,7 @@ staff:
     location: Zoom
   - name: Michelle Wong
     email: wong935@usc.edu
-    image: /assets/img/staff/michelle.jpg
+    image: /assets/img/staff/michelle2.JPG
     hours: >-
      See Google Calendar
     location: Zoom
@@ -112,7 +112,7 @@ staff:
     location: Zoom
   - name: Owen Mech
     email: omech@usc.edu
-    image: /assets/img/staff/owen.jpg
+    image: /assets/img/staff/owen2.jpg
     hours: >-
       See Google Calendar
     location: Zoom

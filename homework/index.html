@@ -23,8 +23,8 @@ title: Homework
 <table class="standard assignments hover click">
   <thead>
     <tr>
-      <th>Written #</th>
-      <th>Programming #</th>
+      <th>Written</th>
+      <th>Programming</th>
       <th>Title</th>
       <th>Written Due</th>
       <th>Programming Due</th>
@@ -41,14 +41,14 @@ title: Homework
     >
       <td>
         {% if assignment.assigned %}
-        <a href="./{{ assignment.id }}/">{{ forloop.index }}</a>
+        <a href="./{{ assignment.id }}/">Written {{ forloop.index }}</a>
         {% else %}
         {{ forloop.index }}
         {% endif %}
       </td>
       <td>
         {% if assignment.assigned %}
-        <a href="./{{ assignment.id }}/">{{ forloop.index }}</a>
+        <a href="./{{ assignment.id }}/programming/">Programming {{ forloop.index }}</a>
         {% else %}
         {{ forloop.index }}
         {% endif %}

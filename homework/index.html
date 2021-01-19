@@ -23,7 +23,8 @@ title: Homework
 <table class="standard assignments hover click">
   <thead>
     <tr>
-      <th>#</th>
+      <th>Written #</th>
+      <th>Programming #</th>
       <th>Title</th>
       <th>Written Due</th>
       <th>Programming Due</th>
@@ -32,6 +33,20 @@ title: Homework
   <tbody>
     {% for assignment in site.data.content.assignments %}
     <tr
+      {% if assignment.assigned %}
+      onclick="window.location = './{{ assignment.id }}/'"
+      {% else %}
+      class="disabled"
+      {% endif %}
+    >
+      <td>
+        {% if assignment.assigned %}
+        <a href="./{{ assignment.id }}/">{{ forloop.index }}</a>
+        {% else %}
+        {{ forloop.index }}
+        {% endif %}
+      </td>
+          <tr
       {% if assignment.assigned %}
       onclick="window.location = './{{ assignment.id }}/'"
       {% else %}

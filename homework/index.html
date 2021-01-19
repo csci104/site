@@ -46,13 +46,6 @@ title: Homework
         {{ forloop.index }}
         {% endif %}
       </td>
-          <tr
-      {% if assignment.assigned %}
-      onclick="window.location = './{{ assignment.id }}/'"
-      {% else %}
-      class="disabled"
-      {% endif %}
-    >
       <td>
         {% if assignment.assigned %}
         <a href="./{{ assignment.id }}/">{{ forloop.index }}</a>

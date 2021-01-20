@@ -6,7 +6,7 @@ title: Jamie's GDB House of Horrors
 ---
 
 # Jamie's GDB House of Horrors
-
+Jan 22 - Jan 27, 2021
 
 
 Can you survive the maze of segfaults, and banish a battery of blatantly bad behavior, all in the name of improving your GDB skills?

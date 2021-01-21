@@ -10,8 +10,8 @@ title: Homework 1 Programming
 + Due: Friday, February 5th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
 + Directory name in your github repository for this homework (case sensitive): `hw1`
-   - Do a `git pull` in your `homework-resources` repo.
-   - Then copy the `homework-resources/hw1` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw1` folder.
+   - Do a `git pull` in your `resources` repo.
+   - Then copy the `resources/hw1` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw1` folder.
    - **We will NOT provide a test suite before the due date for this homework**.  You will need to test the coding questions yourself with your own test programs. This should cause you to a.) appreciate the importance of testing, b.) consider the kinds of test cases you should write (i.e. if none of your test cases exercise a particular set of code in your implementation then you probably need to write more tests), c.) What common tasks related to testing would be useful to reuse and why there are testing frameworks like the one we will use in this class, `gtest`. 
    
 
@@ -117,7 +117,7 @@ If you get an error `NULL is not defined in this scope` when compiling `split.cp
  Your submission should be in a file called `split.cpp`, and it should only contain your implementation of the function and **NO `main()`**. 
 
 ### Problem 2 (Unrolled Linked List, 35%)
-We have provided you an incomplete implementation of an unrolled doubly-linked list in the `homework-resources/hw1` folder.  You can update/pull the `homework-resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo. 
+We have provided you an incomplete implementation of an unrolled doubly-linked list in the `resources/hw1` folder.  You can update/pull the `resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo. 
 
 #### Understanding an Unrolled Linked List
 

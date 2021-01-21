@@ -56,7 +56,7 @@ labs:
   - id: lab2
     week: Week 2
     title: GDB
-    assigned: false
+    assigned: true
     topics: Debugging, GDB, tooling
   - id: lab3
     week: Week 3

@@ -163,9 +163,9 @@ For each problem below, answer in `answers.txt` with:
 Okay, so let's check out the first student's program.
 Open a terminal in the assignment directory, and run the simulation with `make test_game1`. 
 
-If you are using Docker, please first copy and paste the `lab2` directory into the directory you mounted to the Docker container in Lab 0. Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
+If you are using Docker, please first move the `resources` directory into the directory you mounted to the Docker container in Lab 0, if it is not already in there. Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
 
-- [ ] Copy and paste `lab2` into the directory you mounted to the Docker container in Lab 0.
+- [ ] Double check that `resources` is in the directory you mounted to the Docker container in Lab 0.
 - [ ] Start/open a shell.
 
 You should get something like:

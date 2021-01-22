@@ -12,7 +12,7 @@ title: Homework 1 Programming
 + Directory name in your github repository for this homework (case sensitive): `hw1`
    - Do a `git pull` in your `resources` repo.
    - Then copy the `resources/hw1` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw1` folder.
-   - **We will NOT provide a test suite before the due date for this homework**.  You will need to test the coding questions yourself with your own test programs. This should cause you to a.) appreciate the importance of testing, b.) consider the kinds of test cases you should write (i.e. if none of your test cases exercise a particular set of code in your implementation then you probably need to write more tests), c.) What common tasks related to testing would be useful to reuse and why there are testing frameworks like the one we will use in this class, `gtest`. 
+   - **We will NOT provide a test suite before the due date for this homework**.  You will need to test the coding questions yourself with your own test programs. This should cause you to a.) appreciate the importance of testing, b.) consider the kinds of test cases you should write (i.e. if none of your test cases exercise a particular set of code in your implementation then you probably need to write more tests), c.) What common tasks related to testing would be useful to reuse and why there are testing frameworks like the one we will use in this class, `gtest`. (Don't worry, we'll cover `gtest` in lab soon!) 
    
 
 ## General Advice

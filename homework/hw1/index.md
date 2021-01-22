@@ -26,7 +26,7 @@ Which of the following are acceptable behaviors in solving homeworks/projects?
 6. Sharing my code with a classmate, if they just promise not to copy them, but to just read over it and learn from it.
 
 ### Part B
-Which of the following are recommended ways of writing code (see the Tools and Links page)?
+Which of the following are recommended ways of writing code (see the Resources page)?
 
 1. gedit
 2. emacs

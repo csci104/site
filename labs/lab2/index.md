@@ -475,6 +475,7 @@ You have stood fast in the face of overwhelming peril, and banished the bugs bac
 <del>The world</del> <del>the town</del> your computer is safe once again!
 
 - [ ] Show a CP or TA  `answers.txt` to get checked off!!
+
 If you don't complete `answers.txt` during lab, you may complete it in your own time and attend a different lab section to get it checked off. (If you have time zone accommodations and cannot make it to any lab section, please email Professor Cote.) You have until the Friday 2 pm lab section on 1/29 to get checked off. (Just note that the 1/29 lab sections will begin covering material for Lab 3.)
 
 

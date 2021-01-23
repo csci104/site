@@ -41,7 +41,7 @@ What is the late submission policy?
 1. Each assignment can be submitted late for 50% credit.
 2. Each student has 3 late days of which only one can be used per HW.
 3. Students need to get approval before submitting an assignment late.
-5. Use the normal submission system provided you have grace-days available
+5. Use the normal submission system provided you have late days available
 
 ### Part D
 After making a late submission by pushing your code to Github you should...

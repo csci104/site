@@ -60,56 +60,56 @@ labs:
     topics: Debugging, GDB, tooling
   - id: lab3
     week: Week 3
-    title: Rule of Three
-    assigned: false
-    topics: Copy semantics, memory management
-  - id: lab4
-    week: Week 4
     title: Makefiles
     assigned: false
     topics: Make, makefiles, build systems
+  - id: lab4
+    week: Week 4
+    title: GTest
+    assigned: false
+    topics: 
   - id: lab5
     week: Week 5
-    title: Inheritance
+    title: Backtracking
     assigned: false
-    topics: Inheritance, polymorphism
+    topics: Recursion, backtracking
   - id: lab6
     week: Week 6
     title: Midterm Review
     assigned: false
-    topics: Weeks 1 - 5
+    topics: TBD
   - id: lab7
     week: Week 7
-    title: Templates
+    title: TBD
     assigned: false
-    topics: Templates
+    topics: TBD
   - id: lab8
     week: Week 8
-    title: Graphs and searches
+    title: TBD
     assigned: false
-    topics: Graphs, search, algorithms
+    topics: TBD
   - id: lab9
     week: Week 9
-    title: Tree Traversal
+    title: TBD
     assigned: false
-    topics: Binary trees, tree traversal, searching
+    topics: TBD
   - id: lab10
     week: Week 10
-    title: Backtracking
+    title: TBD
     assigned: false
-    topics: Recursion, backtracking
+    topics: TBD
   - id: lab11
     week: Week 11
-    title: Recursion Review
+    title: TBD
     assigned: false
-    topics: Recursion, Recurrence Relations
+    topics: TBD
   - id: lab12
     week: Week 12
-    title: AVL Trees & Hash Tables
+    title: TBD
     assigned: false
-    topics: AVL trees, balancing, hashing, hash tables
+    topics: TBD
   - id: lab13
     week: Week 13
     title: Final Review
     assigned: false
-    topics: Weeks 1 - 13
+    topics: TBD

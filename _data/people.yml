@@ -68,6 +68,12 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: George Xu
+    email: leyuxu@usc.edu
+    image: /assets/img/staff/leyu.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
   - name: Hope Kim
     email: hopekim@usc.edu
     image: /assets/img/staff/hope.jpeg
@@ -116,6 +122,12 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: Philip Chang
+    email: chan987@usc.edu
+    image: /assets/img/staff/philip.png
+    hours: >-
+      See Google Calendar
+    location: Zoom
   - name: Pilar Luiz
     email: pluiz@usc.edu
     image: /assets/img/staff/pilar.jpg
@@ -125,12 +137,6 @@ staff:
   - name: Sedona McNeely
     email: smcneely@usc.edu
     image: /assets/img/staff/seanmcneely.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: George Xu
-    email: leyuxu@usc.edu
-    image: /assets/img/staff/leyu.jpg
     hours: >-
       See Google Calendar
     location: Zoom

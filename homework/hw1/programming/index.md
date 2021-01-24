@@ -171,6 +171,5 @@ g++ -g -Wall ulliststr.cpp ulliststr_test.cpp`
     - This directory needs its own `README.md` file briefly describing your work
  + Your completed `split.cpp`, `split.h` implementation
  + Your completed `ulliststr.cpp`, `ulliststr.h`,  and `ulliststr_test.cpp` implementation
- + You can use the [submission link here](http://bytes.usc.edu/codedrop/?course={{site.data.main.slug}}&assignment=hw1&auth=Google).
-
-You can submit your homework [here](http://bits.usc.edu/codedrop/?course=cs104-sp21&assignment=hw1&auth=Google). Please make sure you have read and understood the [submission instructions]({{ site.url }}/assignments/submission-instructions.html).
+ 
+You can submit your homework [here](http://bits.usc.edu/codedrop/?course=cs104-sp21&assignment=hw1&auth=Google). Please make sure you have read and understood the [submission instructions]({{ site.url }}/submit).

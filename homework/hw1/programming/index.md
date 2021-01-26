@@ -172,4 +172,5 @@ g++ -g -Wall ulliststr.cpp ulliststr_test.cpp`
  + Your completed `split.cpp`, `split.h` implementation
  + Your completed `ulliststr.cpp`, `ulliststr.h`,  and `ulliststr_test.cpp` implementation
  
-You can submit your homework [here](http://bits.usc.edu/codedrop/?course=cs104-sp21&assignment=hw1&auth=Google). Please make sure you have read and understood the [submission instructions]({{ site.url }}/submit).
+You can submit your homework [here](https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2021/hw1/). 
+Please make sure you have read and understood the [submission instructions]({{ site.url }}/submit).

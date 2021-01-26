@@ -173,4 +173,4 @@ g++ -g -Wall ulliststr.cpp ulliststr_test.cpp`
  + Your completed `ulliststr.cpp`, `ulliststr.h`,  and `ulliststr_test.cpp` implementation
  
 You can submit your homework [here](https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2021/hw1/). 
-Please make sure you have read and understood the [submission instructions]({{ site.url }}/submit).
+Please make sure you have read and understood the [submission instructions]({{ site.url }}/cs104/submit).

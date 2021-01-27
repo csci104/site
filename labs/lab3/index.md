@@ -2,384 +2,499 @@
 layout: asides
 toc: true
 tasks: true
-title: The Rule of Three
+title: Makefiles
 ---
 
-# The Rule of Three
+# Makefiles
+This lab will be covered during lab sections between Jan 29 - Feb 3, 2021.
+To get checked off for this lab, you must attend a lab section and show a CP/TA your completed lab. The last day to get checked off is Friday, Feb 5. (See the last checkbox for details.)
 
+In this lab, we will review Makefiles, how they work, and how to write them. 
+In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration. 
+We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger.
 
+## GCC and Makefiles
 
-In this lab we will go over <b>destructors, copy constructors, copy assignment operators</b>, and why we need <b>the rule of three</b>.
-We will get hands-on experience experimenting with the rule of three on a simple `Array` class and a more complex `Matrix` class.
-Before we introduce the rule of three, we first need to review how memory is allocated:
+GCC (GNU Compiler Collection) is a program that we use to compile our program into executables. 
+You have already used it in previous homework.
 
-## Review: Memory
+Make (GNU Make) is a program that makes other programs. 
+This is especially useful when your programs become large, and recompiling after an edit requires multiple steps. 
+Using a `makefile`, we can configure a program to compile simply by typing the `make` command into terminal. 
+This lab will teach you how to write a basic makefile to be used in assignments from here on out.
 
-C++ supports two basic types of memory allocation, allocation on the stack and allocation on the heap.
-A more detailed explanation of the difference between the stack and the heap can be found <a href="https://www.gribblelab.org/CBootCamp/7_Memory_Stack_vs_Heap.html">here</a>.
+### 1 - GCC
 
-### Stack Allocation
+You might have noticed that we have been using some magic commands when we compile files. 
+Namely, you should have seen `g++`, `-g`, `-Wall`, `-o`, and `-c`. 
+Here is a brief explanation of what exactly these commands do.
 
-Allocation on the stack does not require the use of the `new` keyword.
-Variables created without `new` are allocated on the stack:
+First of all, `g++` is used to compile your programs using the GNU Compiler Collection (GCC). 
+The `g++` command tells GCC that you want to compile a C++ program. 
+There are other compilers out there, and when you want to use other compilers, you replace `g++` with the command that's used by the other compiler, such as `clang++`. 
+In this class, we ask that you always compile your program with GCC using the `g++` command, because that's what we use when we grade you.
 
-```c++
-int func() {
-	// a, b and c are allocated on the stack
-	int a = 10;
-	int b = 20;
-	int c = 30;
-	return a + b + c;
-}
-```
+When you see a terminal command that has a `-` followed by some text, this is usually a flag (also called options). 
+A flag can be used to specify a setting or add additional information about the command. 
+An option may or may not take an argument. 
+If an option takes in an argument, the argument is followed immediately after the flag. 
+To use a flag, simply include it with your compile command.
 
-For allocation on the stack:
+In the `g++` command, you will often see `-g`, `-Wall`, `-o`, `-c`, and `-std=` command. 
+Here's a descriptino of what they do and how to use them:
 
-- The size of the variable must be known at compile time.
-- Memory is automatically allocated on the stack when the variable is declared.
-  It is automatically deallocated when they fall out of scope. 
-  The variables `a`, `b`, and `c` in the above function fall out of scope once execution exits the function, and that is when they are automatically deallocated.
+  + `-g`: Provide debugging feature for your program. 
+  You will need this when you want to use gdb or valgrind. 
+  To use this flag, simply append the command to the end of your compile command.
+  + `-Wall`: Turn on all warnings. 
+  This is helpful because, as you might have seen, not all errors cause your program to not compile. 
+  There are some problematic operations that can cause undefined or unexpected behaviors in edge cases. 
+  By turning on all warnings, you make sure that you eliminate these potentially dangerous operations.
+  + `-o`: This flag controls the output name of your compilation. 
+  By default, the binary file name is `a.out`. 
+  When you append `-o filename` to the end of your compile command, the compiled binary output will be the filename you specificed. 
+  Be carefule that the filename is not an existing file because you will overwrite the file.
+  + `-c`: Compile the files but do not link them. 
+  This is usually used to compile intermediate object files. 
+  We will explain this more in later parts of the lab.
+  + `-std=<version>`: This flag is used to specify the c++ version that you would like to use. 
+  As you expect, c++ is an evolving language, and it keeps adding new features to the language. 
+  Therefore, if you use a feature that's introduced in a newer version but try to compile the code with an older version, the compiler wouldn't know what the features are and the compilation will fail. 
+  You use this flag by appending this flag to the end of your compile comand and speficy the version number after the equal sign (i.e. `-std=c++17`). 
+  In this class, most of the times you can get away with using the default version and don't need to include this command at all. 
+  There are times when you need to use the c++ 17 and you do it with `-std=c++17`.
+  + `-fmax-errors=N`: This tells the compiler to stop after encountering N errors in your code. 
+  Usually we don't use it, because we want to see all errors in a code, and fix them together. 
+  However, at times you will find that some error messages are long and there are so many of them that you can't see the top one (and if you are not fixing your compile errors starting with the first one, you should start doing that). 
+  This is when it becomes handy to stop compilation after some number of errors.
+  + `Wfatal-errors`: This is similar to the previous one, except that the compiler will treat an error as fatal and stop on first error.
 
-### Heap Allocation
+Lastly, you might sometimes see people compile files with `g++ something.cpp main.cpp -o main -g -Wall`, and you might wonder why they list the source files before the options. 
+As it turns out, the order that you specify the options does not matter. 
+If you really want to, you can even use `g++ something.cpp -g -Wall main.cpp -o main` to compile your program. 
+However, by convention, we usually group the list of source files together and the list of options together.
 
-Allocation on the heap (a.k.a. dynamic memory allocation) involves the use of the `new` keyword.
-Memory allocated on the heap stays on a separate memory storage base (the heap) until it is deallocated, or once we `delete` it. 
+### 2 - Using Make
 
+GCC is nice to compile our programs, but it gets annoying if we have to type a 20 character command 10 times during development. 
+This is when a makefile comes in handy.
 
-## Array
+When you type `make` into terminal, Make will look for a file named `makefile` or `Makefile` for instructions. 
+Let's start with a makefile for a single cpp file.
 
-To get started, let's look at an example array class provided in part 1:
-
-```c++
-class Array {
-public:
-	Array();
-	~Array();
-	Array(const Array& other);
-	Array& operator=(const Array& other);
-
-	Array operator+(const Array& other) const;
-
-	int at(size_t index) const;
-	size_t size() const;
-	void push(int value);
-
-private:
-	int* data;
-	size_t _size;
-};
-```
-
-A shallow copy of an object copies all of the member field values.
-For example, all that a shallow copy of our `Array` class would do is copy over the only member field, `int* data;`.
-
-```c++
-Array copy_shallow(const Array& original) {
-	Array copy;
-	copy.data = original.data;
-	return copy;
-}
-```
-
-A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields.
-A deep copy of our `Array` class will not copy the memory address of the original `Array` object's data pointer, but the actual array values pointed to by the data pointer:
-
-```c++
-Array copy_deep(const Array& original) {
-	Array copy;
-	copy.data = new int[original.size];
-	copy.size = original.size;
-	for (size_t i = 0; i < original.size; i++) {
-		copy.data[i] = original.data[i];
-	}
-	return copy;
-}
-```
-
-### The Rule of Three
-
-The Rule of Three is a rule in C++ to protect code against exceptions.
-**If a C++ class defines one of the following it should probably explicitly define all three**:
-
-- **Destructor**
-- **Copy constructor**
-- **Copy assignment operator**
-
-If you have no idea what every one of them means right now, don't worry. We are about to go over each and see why we need it in our `Array` class.  
-
-By default, all three function are commented out (unimplemented). 
-
-### Destructor
-
-A destructor is used to destruct an object and free any resources it holds.
-For example, if an object holds dynamic memory, you would want to free that memory when the object is destroyed.
-An example of a destructor for our `Array` class should delete the memory stored inside `int* data;`:
-
-```c++
-Array::~Array() {
-	delete[] this->data;
-}
-```
-
-Let's run `make`, which will run the tests through Valgrind and determine whether memory is being leaked, and if so, how much.
-The commands to make and run are:
+In the part 1 folder, you will find a file called `charizard.cpp`. 
+You can compile this simply with the following instruction:
 
 ```
-make tests
+g++ -g -Wall charizard.cpp -o charizard
 ```
 
-- [ ] Run `Make` on the array files.
+That's too much typing if we need to do it 20 times during developing, so let's use make. 
 
-You should see something like this at the bottom:
+#### 2.1 - Syntax and Structure
 
-```
-==3601== HEAP SUMMARY:
-==3601==     in use at exit: 72,768 bytes in 4 blocks
-==3601==   total heap usage: 193 allocs, 189 frees, 118,287 bytes allocated
-==3601== 
-==3601== LEAK SUMMARY:
-==3601==    definitely lost: 64 bytes in 3 blocks
-==3601==    indirectly lost: 0 bytes in 0 blocks
-==3601==      possibly lost: 0 bytes in 0 blocks
-==3601==    still reachable: 0 bytes in 0 blocks
-==3601==         suppressed: 72,704 bytes in 1 blocks
-==3601== Rerun with --leak-check=full to see details of leaked memory
-```
-
-We passed all the tests but we have memory leaks.
-This is because we haven't implemented our destructor.
-Without the destructor we cannot handle memory leaks, so we have to implement the destructor.
-Let's go into `array.h` and `array.cpp` and uncomment the destructor.
-
-- [ ] Uncomment the destructor.
-
-### Copy Constructor
-
-A class constructor that is used for creating a new object as a copy of an existing object.
-For example, a copy constructor for our `Array` class should copy all the data in the existing `Array`:
-
-```c++
-Array::Array(const Array& other) {
-	this->data = new int[other._size];
-	this->_size = other._size;
-	for (size_t i = 0; i < other._size; ++i) {
-		this->data[i] = other.data[i];
-	}
-}
-```
-
-Now that we have the destructor, let's pretend to be lazy and not follow the rule of three.
-Let's leave the copy constructor and copy assignment operator commented (unimplemented), and again make and run the tests through Valgrind.
+A basic makefile's structure is the following:
 
 ```
-Delete called on memory address: 0x2403c90
-Delete called on memory address: 0x2403c90
-*** Error in `./main': double free or corruption (fasttop): 0x0000000002403c90 ***
-...
+target: dependencies
+    command_1
+    command_2
+    ...
+    command_N
 ```
 
-It looks looks like we called `delete` twice on the same memory address, hence the warning about a double free.
-How did it happen?
+Each of these is called a rule. 
+A target is a file that Make tries to create, commands are used to create the target, and dependencies are the files that determine whether the commands need to be executed. 
+When you type `make <target>`, the make tool searches for the appropriate target in the directory and checks whether any of its dependencies need to be rebuilt. 
+If the file is not found, or if any of its dependencies is newer than the target file, all commands in the rule will be executed.
 
-By default and without us overloading it, the compiler generates a copy constructor for us that does a <b>shallow copy</b>, similar to this:
-
-```c++
-Array::Array(const Array& other) {
-	this->data = other.data;
-}
-```
-
-Can you see a potential problem it will have with our Array?
-Take a second look at what our destructor does:
-
-```c++
-Array::~Array() {
-	delete[] data;
-}
-```
-
-So if we leave out the copy constructor and use the default shallow copy constructor, the objects we are copying from and to will share the same memory address.
-This means that `delete` will be invoked twice on that same memory address when these two objects get destroyed, hence the `double free` memory corruption and the segfault.
-
-What would happen if we overload the copy constructor and do a **deep copy** instead? 
-
-As we can see in the copy constructor code for the `Array` class above, a different piece of memory is allocated and its address given to `this->data`.
-`this->data` and `other.data` no longer point to the same memory address, but they still have the same content as we used a for loop to copy the values in `other.data` to `this->data`.
-When the destructors get called, `delete` will be called once on each of the two memory addresses. 
-
-This is why we need the copy constructor.
-Uncomment the copy constructor from `array.h` and `array.cpp` and rerun the tests.
-
-- [ ] Uncomment the copy constructor.
-- [ ] Rerun the tests with `make`.
+In this instance, we want to create a charizard executable using `g++ -g -Wall charizard.cpp -o charizard`, and we need to recompile the file if charizard.cpp changes. 
+Therefore, our rule should look like this:
 
 ```
-[ RUN      ] ArrayTest.CopyConstructor
-Delete called on memory address: 0x5ce0090
-Delete called on memory address: 0x5ce0030
-[       OK ] ArrayTest.CopyConstructor (3 ms)
+charizard: charizard.cpp
+    g++ -g -Wall charizard.cpp -o charizard
 ```
 
-We still fail the last test which uses copy assignment operators, but we now pass the test using copy constructors.
-Also notice how delete is being called on different memory addresses now that we overloaded the copy constructor.
-
-### Operator Overloading
-
-There are many symbols that denote certain functions in C++, like addition (+) or subtraction (-).
-A programming language knows to output `4` when you pass it `2+2` or even `"catdog"` for `"cat" + "dog"`, but how would it react to an addition between two instances of our homemade `Array` class?
-Operator overloading allows the programmer to specify what should happen in these situations.
-In our `Array` class, we may assume that adding two arrays means concatenating them:
-
-```c++
-Array Array::operator+(const Array& other) {
-	Array result;
-	result._size = this->_size + other._size;
-	result.data = new int[result._size];
-
-	// Copy this
-	for (size_t i = 0; i < this->_size; i++) {
-		result.data[i] = this->data[i];
-	}
-
-	// Copy other
-	for (size_t i = 0; i < other._size; i++) {
-		result.data[i + this->_size] = other.data[i];
-	}
-
-	return result;
-}
-```
-
-Operator overloading works for the `*`, `=`, and all of the other operators available in C++.
-Just replace the `+` symbol with `*` or `=`, etc.
-
-### Copy Assignment Operator
-
-When we do operator overloading for the `=` symbol, we are overloading the copy assignment operator.
-The copy assignment operator is invoked when the user of our class does something like `Array a; Array b; ...; a = b;`.
-After `a = b`, whatever `a` contains before `a = b` should go away and be replaced by what `b` contains.
-In other words, the copy assignment operator needs to: 
-
-- wipe old data, and
-- overwrite it with data of the variable after the `=` sign.
-
-A copy assignment operator also needs to return a reference to the object itself to allow for operations like `a = (b = c)`, which is equivalent to `b = c; a = b;`.
-
-```c++
-Array& Array::operator=(const Array& other) {
-	delete[] this->data;  // wipe old data
-	this->data = new int[other._size];
-	this->_size = other._size;  // replace with data from other
-	for (size_t i = 0; i < other._size; ++i) {
-		this->data[i] = other.data[i];
-	}
-	return *this;
-}
-```
-
-Just as with copy constructors, the default copy assignment operators the compiler provided for us does a **shallow copy**.
-This will lead us to the same problem we have before: calling `delete` on the same memory address more than once.
-The consequence, as we see in our test results, is another segfault.
-To fix that, we will employ the same methodology and overload the copy assignment operator to do a deep copy.
-
-- [ ] Uncomment the assignment implementation.
-
-Note that different from our implementation of the copy constructor, we have a `delete` statement on `this->data` before we do the deep copy.
-This is because if we do the deep copy right away, we will lose reference to what is still left in `this->data` and cause a memory leak. 
-You should now see all the tests pass.
-
-## Tips for Implementation
-
-Before we dive into implementation, here are some tips in implementing the rule of three:
-
-- Destructor:
-	- Make sure to free every pointer in the destructor.
-	- For example in a 2d array, which is stored as an array of pointers, we need to first free every pointer inside the array then free the array itself.
-- Copy constructor:
-	- Make sure that you do a deep copy for all the pointers and a shallow copy for the non-pointer values.
-	- It is pretty easy to miss the shallow copy on the non-pointer values when we are focusing on the deep copy for the pointers.
-- Copy assignment operator:
-	- Wipe all the data contained in `this`.
-	- Do the deep copy as in the copy constructor.
-	- `return *this;`.
-
-
-## Matrix
-
-"Matrix" is a mathematical term for a rectangular, 2-dimensional array of numbers, symbols, or expressions arranged in rows and columns.
-Application of matrices can be found in many scientific fields.
-In computer science they are widely used in machine learning, computer graphics and even within Google's PageRank algorithm!
-
-### Matrix Addition
-
-Matrix Addition is rather trivial.
-It only works on matrices with the same number of rows and columns.
-**We will not ask you to add matrices of different sizes**.
-The sum of matrix A and B is computed by adding up corresponding elements of A and B, as demonstrated:
-
-<div class="showcase">
-	<img src="./assets/02_matrix_addition.svg" alt="bst" width="500" class="no-shadow" />
-</div>
-
-### Matrix Multiplication
-
-Matrix Multiplication only works when the number of columns in the first matrix is equal to the number of rows in the second matrix.
-If you multiply a matrix of `n` x `k` by `k` x `m` size you'll get a new one of size `n` x `m`.
-**We will not give you unmultipliable matrices to multiply**.
-To compute the element at the `i`th row, `j`th column of the resulting matrix, you take the `i`th row of the first matrix and the `j`th column of the second matrix, which should both be of length `k`, then multiply them element-wise before summing up the result of each multiplication. 
-The following animation shows how matrix multiplication works:
-
-<div class="showcase">
-	<img src="./assets/03_matrix_mult.gif" alt="bst" width="500" class="no-shadow" />
-</div>
-
-If you are more comfortable with formulas, a formal definition of matrix multiplication is on <a href="https://en.wikipedia.org/wiki/Matrix_multiplication">Wikipedia</a>.
-
-### What We Implemented For You
-
-- We have implemented the **default constructor** and the **constructor using initializer lists**.
-  Initializer lists are outside the scope of CSCI 104, so for now consider the implementation a blackbox.
-  Please do not fiddle with it before you finish the lab.
-- We have overloaded **the `==` operator** so that we can test the results of your implementation.
-  It goes through each element in the `data` array of the objects being compared to see if they are the same.
-- To make the matrix easily displayable we overloaded **the `<<` operator** of `Matrix`.
-  This means that you can do `std::cout << matrix << std::endl;` to print out the matrix.
-  It also works with `GTest` so when a test fails it will output the actual and expected matrix.
-
-### Your Task
-
-Your task today will be to implement the:
-
-- destructor,
-- copy constructor, and
-- copy assignment operator 
-
-of a `Matrix` class. You will also overload the
-
- - `+` operator for matrix addition and
- - `*` operator for matrix multiplication.
-
-All matrices given will be valid for operations according to the rules we explained above for matrix addition and multiplication.
-Here again are the commands to make and run the tests:
+Note that the system command is and must be precedeeded by a **tab**. 
+If you ever get an error message like this:
 
 ```
-make tests
+makefile:2: *** missing separator. Stop.
 ```
 
-You can also run `make clean` to clear all the executables.
-We recommend that you implement the rule of three before diving into operator overloading.
-If you implement the rule of three correctly, you should pass the first three tests without memory leaks. 
+It means on line 2, make is expecting a tab but didn't find it.
 
-- [ ] Implement the constructor, destructor, and copy constructor.
-- [ ] Implement the additional operators.
+- [ ] Compile your code by running `make charizard`
 
-Once you pass all the tests, you have just made a matrix class that can be used in C++ for a variety of different projects.
-This is definitely not an easy lab, so kudos!
-Show your work and the test results to a CP or TA to get checked off!
+#### 2.2 - Default Target
 
-- [ ] Pass the tests.
-- [ ] Get checked off by a TA.
+What happens when you just run `make`? 
+Good question! 
+By default, `make` will execute the first target in a makefile. 
+By convention, we add a target called `all` and list targets we wish to build on `make` command after `all`.
 
+Let's have 'all' make the charizard file, which will become the name of our target. 
+Our resulting `makefile` is as below:
 
+```
+all: charizard
 
+charizard: charizard.cpp
+    g++ -g -Wall charizard.cpp -o charizard
+```
 
+- [ ] Compile your code by running `make all`
+
+Save this file as `Makefile` in the part1 directory and type make. 
+Congratulations, you've just made your life 100x easier. 
+
+### 3 - Compiling Multi-File Programs
+
+#### 3.1 - Object Files
+
+Compiling a multi-file program requires two main steps: compiling each .cpp file separately, and putting them all together to form the executable. 
+The first step is know as compilation, during which the compiler checks for syntax and semantic mistakes, such as missing semicolons, calling a function that's not declared, or returning the wrong type in a function. 
+The second step is known as linking, during which the linker "links" your function calls - it finds where the body of a function is so that it knows what line to execute when you call that function.
+
+When you compile a program with `g++ -g -Wall charizard.cpp -o charizard`, you are actually compiling and linking it. 
+It turns out that it's possible to do them separately. 
+This comes in handy when you have multiple files in your project. 
+When you change one of the files, you can re-compile only files that depend on the change, and run linker, without having to re-compile the entire project.
+
+In order to do that, we introduce a new binary file type: .o files, or object files. 
+These are the intermediate files we make in preparation to compile the executable. 
+Any file that doesn't contain the main function must be compiled into a .o file. 
+This is because the linker will expect to find the main function and use it as an entry point of your program.
+
+Let's look inside the part 2 folder.
+
+```
+$ cd ../part2
+$ ls *
+```
+
+You will find three classes: `AttackMove`, `Battle`, and `Pokemon`. 
+We want to compile each of these into their own .o file of the same name.
+
+Since we're going to have a lot of binary files beyond this point, let's make a `bin` directory to hold them all for easy cleanup.
+
+```
+$ mkdir bin
+```
+
+To make an object file, we simply need to add the `-c` flag in the compile command, which tells g++ to not run linker. 
+Let's compile `AttackMove` first.
+
+```
+g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
+```
+
+Simple as that. 
+Do the same for the other two classes, and we can then compile the main.
+
+- [ ] Run compile commands for battle.cpp and pokemon.cpp
+
+#### 3.2 - Putting It All Together
+
+To compile the main, we just have to include all the .o files that we've already made in the g++ command.
+
+```
+g++ -g -Wall bin/attackMove.o bin/battle.o bin/pokemon.o main.cpp -o bin/pokemon
+```
+
+**Note:** A .o file is compiled code that doesn't get linked to other code even if it calls functions from other classes. 
+We tell the compiler this using the `-c` flag so that the compiler does not check whether the functions from other classes are implemented. 
+When we want to compile the full executable, we do not want to have the `-c` flag in that statement because we want the compiler to link all the code together in the final step.
+
+And you have your own pokemon battle simulator! Run it like normal using:
+
+```
+./bin/pokemon
+```
+
+- [ ] Run the command to compile main to and then run `./bin/pokemon`
+
+#### 3.3 - Makefile Dependencies
+
+Well that's great and all, but how do we do that in a makefile?
+
+Let's go back to the basic make rule structure:
+
+```
+target: dependencies
+    command_1
+    command_2
+    ...
+    command_N
+```
+
+We skipped dependencies before, but it's something we want to use now. 
+If a target has dependencies, make first checks if those dependencies exist before executing the system command associated with that rule. 
+If the dependencies don't exist, make will run the rule to make those dependencies if they exist.
+
+Make will also check to see if the dependencies have been updated since the last make and will only recompile the dependencies that have changed. 
+This can save you a lot of time if you make a change and don't want to recompile all the files in your project.
+
+Remember that dependencies are the files that can affect the compilation result of your target. 
+This includes all the non-standard-library files that you `#include`, a class's own header file and .cpp file, and, if you are compiling into an executable, all the .o files you need.
+
+A multi-file program might have a Makfile like this:
+
+```
+all: bin/pokemon
+
+bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
+    g++ -g -Wall main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o -o bin/pokemon
+
+bin/attackMove.o: lib/attackMove.h src/attackMove.cpp
+    g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
+
+bin/<???>: <???>
+    <???>
+
+bin/<???>: <???>
+    <???>
+```
+
+If you run `make`, this will fail. 
+You will be filling in all the `<???>` at the end of the lab.
+
+- [ ] Fill in the blanks in the sample code to get your program to successfully compile
+
+### 4 - More Makefiles
+
+#### 4.1 - Variables
+
+Your professors decides they don't like the students compiling to the `bin` directory. 
+They instead want the directory to be named `exe`. 
+You could easily find and replace bin with exe, but that's messy and could generate errors. 
+Why not take advantage of variables instead?
+
+At the top of your makefile, let's define:
+
+```
+BIN_DIR = exe
+```
+
+Now let's replace every instance of `bin` with `$(BIN_DIR)`, like so:
+
+```
+$(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
+    g++ -g -Wall -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
+```
+
+Now when the profesors change their mind again and want a different name for the directory, we can just change the variable at the top. 
+By convention, we keep the binaries in a directory named `bin`. 
+(For homework, don't put your final executable in a bin directory unless we tell you to do so.)
+
+Another use for this is to have a CPPFLAGS (compiler flags) variable that holds all the flags you frequently use to compile. 
+We can have a CXX variable to specify which compiler to use. For example:
+
+```
+CXX = g++
+CPPFLAGS = -Wall -g
+BIN_DIR = exe
+
+$(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
+    $(CXX) $(CPPFLAGS) -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
+```
+
+- [ ] Rewrite your compile commands to use your new `BIN_DIR` variable
+
+The most useful variables you will use are **Automatic Variables**. 
+Things that look like `$@`, `$<`, and `$^` are called automatic variables. 
+When Make parses through the Makefile, it'll automatically substitute them with the correct string.
+
+  + `$@`: target name
+  + `$<`: first dependency
+  + `$^`: entire dependency list.
+
+Using these variables, we can rewrite our makefile rules as so:
+
+```
+CXX = g++
+CPPFLAGS = -Wall -g
+BIN_DIR = exe
+
+bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
+    $(CXX) $(CPPFLAGS) $^ -o $@
+
+$(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
+    $(CXX) $(CPPFLAGS) -c $< -o $@
+```
+
+- [ ] Rewrite your compile commands to use automatic variables
+
+#### 4.2 - DIRSTAMP
+
+If you tried to run `make` again with the above changes, you'll probably get an error that the `exe` directory doesn't exist. 
+We could just use `mkdir exe` everytime we compile our program, but that's a pain.
+
+Let's define a rule to make sure the `exe` directory exists.
+
+```
+$(BIN_DIR)/.dirstamp:
+    mkdir -p $(BIN_DIR)
+    touch $(BIN_DIR)/.dirstamp
+```
+
+The `.dirstamp` file is a hidden file we make to make sure a directory exists. 
+Notice that this rule does not have any dependency. 
+When a rule has no dependency, it will be executed if the target does not exist. 
+You can add this rule to the dependency list of your compile commands.
+
+```
+all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
+```
+
+It's important that you list `.dirstamp` before `pokemon`, because Make will check the dependencies in order. Since building `pokemon` requires that `$(BIN_DIR)` exists, make needs to create `.dirstamp` before `pokemon`.
+
+- [ ] Add `.dirstamp` to your Makefile where needed
+
+#### 4.3 - PHONY and Clean
+
+Now large projects will eventually generate a lot of binary files. 
+We want to keep our workspace relatively clean by writing a rule to delete the generated files. 
+This is also helpful when you're having mysterious problems as they sometimes go away after you delete and recompile your binaries.
+
+Here's our `clean` rule:
+
+```
+clean:
+    rm -rf $(BIN_DIR)
+```
+
+You can add this to the end of your makefile. 
+Now clean your directory using the `make clean` rule.
+
+- [ ] Add `clean` as a target in your Makefile
+
+Very nice, but there's a small problem with the original rule. 
+If a file named 'clean' exists in our directory, make won't run the clean rule because it sees that the file already exists!
+
+To get around this, we declare the clean rule as PHONY to tell make that `clean` is not associated with a file.
+
+```
+.PHONY: clean
+clean:
+    rm -rf $(BIN_DIR)
+```
+
+Now `clean` will always run when you use `make clean`.
+
+- [ ] Add a `.PHONY` target
+
+**Note:** there's a danger when using rm -rf as it will irreversably delete whatever `BIN_DIR` is without prompting additional confirmation. 
+Be good and don't delete your entire OS (or worse, delete your grader's VM).
+
+#### 4.4 - Search Path
+
+If you look at files under `src` or `main.cpp`, you will see that we are including header files by writing out the relative path to it. 
+It can be annoying if we wish to move our header files into a different directories, because we need to go to every single file that includes the header and change the path. 
+We can avoid this by adding additional **Search Paths** during compilation.
+
+By default, GCC will look in the current directory of the file (i.e. `src` when compiling a file in `src`, or `./` when compiling `main.cpp`), but it will not look under nested directories. 
+In addition, GCC also searches for standard libraries. 
+In order to add a directory to its search paths, you use the -I*dir* option, where *dir* is the relative directory path from where you run the compile command. 
+If you are using a Makefile, the path will be relative to where your Makefile is.
+
+In our case, we want to ask GCC to look for files under the `lib` directory. 
+We can add append the option to the end of `CPPFLAGS`.
+
+```
+CXX = g++
+CPPFLAGS = -Wall -g -Ilib
+BIN_DIR = exe
+
+bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
+    $(CXX) $(CPPFLAGS) $^ -o $@
+
+$(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
+    $(CXX) $(CPPFLAGS) -c $< -o $@
+```
+
+Now you can remove `../lib/` and `lib/` when you include a header file in a `cpp` file. 
+Open `main.cpp` and change
+
+```
+#include "lib/attackMove.h"
+#include "lib/pokemon.h"
+#include "lib/battle.h"
+```
+
+to:
+
+```
+#include "attackMove.h"
+#include "pokemon.h"
+#include "battle.h"
+```
+
+You can do the same for `src/attackMove.cpp`, `src/battle.cpp`, and `src/pokemon.cpp`.
+
+Technically, this is not a makefile feature, but a compiler option. 
+However, you don't normally group files into different directories unless your have a bigger project, in which case you should be using a Makefile (or IDE) to manage compilation.
+
+- [ ] Add `-I` to your compile commands
+
+### 5 - Assignment: Complete the Makefile
+
+Your final makefile should look something like this. 
+Note: if you copy and paste the code from course website and paste it into your makefile, you will need to fix all the spaces and change them into tabs.
+
+```
+BIN_DIR = bin
+LIB_DIR = lib
+SRC_DIR = src
+CXX = g++
+CPPFLAGS = -g -Wall -I$(LIB_DIR)
+
+all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
+
+$(BIN_DIR)/pokemon: <???>
+    <???>
+
+<???>.o: <???>
+    <???>
+
+<???>.o: <???>
+    <???>
+
+<???>.o: <???>
+    <???>
+
+.PHONY: clean
+clean:
+    rm -rf $(BIN_DIR)
+
+$(BIN_DIR)/.dirstamp:
+    mkdir -p $(BIN_DIR)
+    touch $(BIN_DIR)/.dirstamp
+```
+- [ ] Show your final Makefile to a CP or TA for checkoff!
+
+If you don't complete your Makefile during lab, you may complete it in your own time and attend a different lab section to get it checked off. (If you have time zone accommodations and cannot make it to any lab section, please email Professor Cote.) You have until the Friday 2 pm lab section on 2/5 to get checked off. (Just note that the 2/5 lab sections will begin covering material for Lab 4.)
+
+#### 5.1 - (Optional, but Recommended) Review Questions
+
+1. What is the purpose of the `-c` flag?
+1. What is the advantage of compiling to .o files via makefile compared to compiling the executable together in one step?
+1. What files should be in a rule's dependency list?
+
+### 6 - More about Makefiles
+
+If you would like to know more about Makefile, you can visit [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html). 
+It covers both the basic and more advanced topics of the Makefiles.
+
+**CAUTION** Do not use these advanced make commands until you are very comfortable with Makefiles.
+
+### 7 - More about GCC
+
+We have listed some commonly used flags and options that you will see in this class. 
+This is just a list of the common flags that you will use in this class.  
+This is in no way comprehensive. 
+If you see a flag that you do not understand, or if you are curious about other options, you can refer to this [official document from GCC](https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html). 
+Feel free to play around with the flags in your free time.
+
+**IMPORTANT** We will be compiling your code with `-g -Wall -std=c++17`, so you must use the same options to check that your code compiles and produces no warnings.

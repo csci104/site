@@ -61,7 +61,7 @@ labs:
   - id: lab3
     week: Week 3
     title: Makefiles
-    assigned: false
+    assigned: true
     topics: Make, makefiles, build systems
   - id: lab4
     week: Week 4

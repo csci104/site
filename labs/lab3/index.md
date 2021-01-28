@@ -7,7 +7,9 @@ title: Makefiles
 
 # Makefiles
 This lab will be covered during lab sections between Jan 29 - Feb 3, 2021.
-To get checked off for this lab, you must attend a lab section and show a CP/TA your completed lab. The last day to get checked off is Friday, Feb 5. (See the last checkbox for details.)
+
+Starting from this lab, there will be a new checkoff policy. **Please read [this Piazza post](https://piazza.com/class/kjvv9vyn6kc32s?cid=266) before continuing.** Thank you!
+- [ ] I've read the new lab policy and know how to get checked off for labs!
 
 In this lab, we will review Makefiles, how they work, and how to write them. 
 In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration. 
@@ -472,11 +474,9 @@ $(BIN_DIR)/.dirstamp:
     mkdir -p $(BIN_DIR)
     touch $(BIN_DIR)/.dirstamp
 ```
-- [ ] Show your final Makefile to a CP or TA for checkoff!
+- [ ] Show your final Makefile to a CP or TA for checkoff. Be prepared to answer some of the review questions below!
 
-If you don't complete your Makefile during lab, you may complete it in your own time and attend a different lab section to get it checked off. (If you have time zone accommodations and cannot make it to any lab section, please email Professor Cote.) You have until the Friday 2 pm lab section on 2/5 to get checked off. (Just note that the 2/5 lab sections will begin covering material for Lab 4.)
-
-#### 5.1 - (Optional, but Recommended) Review Questions
+#### 5.1 - Review Questions
 
 1. What is the purpose of the `-c` flag?
 1. What is the advantage of compiling to .o files via makefile compared to compiling the executable together in one step?

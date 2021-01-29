@@ -130,8 +130,9 @@ It means on line 2, make is expecting a tab but didn't find it.
 Editors like VSCode will convert spaces to tabs automatically. Normally that's fine but it's not okay for Makefiles.
 If you're using VSCode, you can use tabs as indentation this way:
 
-1. Open the control pallete with `Ctrl+Shift+P`
+1. Open the control pallete with `Ctrl+Shift+P` (Windows) `Cmd+Shift+P` (MacOS)
 2. Search/Run the command: "Convert indentation to tabs"
+3. (Suggested for MacOS users) Search/Run the command "Shell Command: Install 'code' command in PATH"
 
 
 - [ ] Compile your code by running `make charizard`

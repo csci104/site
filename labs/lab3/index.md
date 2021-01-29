@@ -132,7 +132,7 @@ If you're using VSCode, you can use tabs as indentation this way:
 
 1. Open the control pallete with `Ctrl+Shift+P` (Windows) `Cmd+Shift+P` (MacOS)
 2. Search/Run the command: "Convert indentation to tabs"
-3. (Suggested for MacOS users) Search/Run the command "Shell Command: Install 'code' command in PATH"
+3. (Suggested for MacOS users) In the command pallete, run the command "Shell Command: Install 'code' command in PATH"
 
 
 - [ ] Compile your code by running `make charizard`
@@ -197,7 +197,7 @@ To make an object file, we simply need to add the `-c` flag in the compile comma
 Let's compile `AttackMove` first.
 
 ```
-g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
+g++ -g -Wall -c attackMove.cpp -o bin/attackMove.o
 ```
 
 Simple as that. 
@@ -257,8 +257,8 @@ all: bin/pokemon
 bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
     g++ -g -Wall main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o -o bin/pokemon
 
-bin/attackMove.o: lib/attackMove.h src/attackMove.cpp
-    g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
+bin/attackMove.o: attackMove.h attackMove.cpp
+    g++ -g -Wall -c attackMove.cpp -o bin/attackMove.o
 
 bin/<???>: <???>
     <???>
@@ -290,8 +290,8 @@ BIN_DIR = exe
 Now let's replace every instance of `bin` with `$(BIN_DIR)`, like so:
 
 ```
-$(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
-    g++ -g -Wall -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
+$(BIN_DIR)/attackMove.o: attackMove.h attackMove.cpp
+    g++ -g -Wall -c attackMove.cpp -o $(BIN_DIR)/attackMove.o
 ```
 
 Now when the profesors change their mind again and want a different name for the directory, we can just change the variable at the top. 
@@ -306,8 +306,8 @@ CXX = g++
 CPPFLAGS = -Wall -g
 BIN_DIR = exe
 
-$(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
-    $(CXX) $(CPPFLAGS) -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
+$(BIN_DIR)/attackMove.o: attackMove.h attackMove.cpp
+    $(CXX) $(CPPFLAGS) -c attackMove.cpp -o $(BIN_DIR)/attackMove.o
 ```
 
 - [ ] Rewrite your compile commands to use your new `BIN_DIR` variable
@@ -330,7 +330,7 @@ BIN_DIR = exe
 bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
     $(CXX) $(CPPFLAGS) $^ -o $@
 
-$(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
+$(BIN_DIR)/attackMove.o: attackMove.cpp attackMove.h
     $(CXX) $(CPPFLAGS) -c $< -o $@
 ```
 
@@ -403,6 +403,15 @@ Be good and don't delete your entire OS (or worse, delete your grader's VM).
 If you look at files under `src` or `main.cpp`, you will see that we are including header files by writing out the relative path to it. 
 It can be annoying if we wish to move our header files into a different directories, because we need to go to every single file that includes the header and change the path. 
 We can avoid this by adding additional **Search Paths** during compilation.
+
+You should create a separate `lib` and `src` directory and move your `*.h` files into `lib` and `*.cpp` files into `src`. Here's some commands to help do that:
+
+```shell
+# run this in part2 folder
+mkdir lib src
+mv *.h lib/
+mv *.cpp src/
+```
 
 By default, GCC will look in the current directory of the file (i.e. `src` when compiling a file in `src`, or `./` when compiling `main.cpp`), but it will not look under nested directories. 
 In addition, GCC also searches for standard libraries. 

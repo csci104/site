@@ -69,7 +69,7 @@ Here's a descriptino of what they do and how to use them:
   Usually we don't use it, because we want to see all errors in a code, and fix them together. 
   However, at times you will find that some error messages are long and there are so many of them that you can't see the top one (and if you are not fixing your compile errors starting with the first one, you should start doing that). 
   This is when it becomes handy to stop compilation after some number of errors.
-  + `Wfatal-errors`: This is similar to the previous one, except that the compiler will treat an error as fatal and stop on first error.
+  + `-Wfatal-errors`: This is similar to the previous one, except that the compiler will treat an error as fatal and stop on first error.
 
 Lastly, you might sometimes see people compile files with `g++ something.cpp main.cpp -o main -g -Wall`, and you might wonder why they list the source files before the options. 
 As it turns out, the order that you specify the options does not matter. 

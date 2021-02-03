@@ -2,495 +2,230 @@
 layout: asides
 toc: true
 tasks: true
-title: Makefiles
+title: GTest
 ---
 
-# Makefiles
+## Unit Testing and GTest
+This lab will be covered during lab sections between Feb 5 - Feb 10, 2021.
 
-In this lab, we will review Makefiles, how they work, and how to write them. 
-In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration. 
-We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger.
+In this lab we want to dive into the topic of unit testing. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project.
 
-## GCC and Makefiles
+### 0 - Motivation
 
-GCC (GNU Compiler Collection) is a program that we use to compile our program into executables. 
-You have already used it in previous homework.
+Testing is absolutely essential to a typical development process. Having a complete test suite can ensure that the code that you spent hours building works, fits specification, and is bug-free.
 
-Make (GNU Make) is a program that makes other programs. 
-This is especially useful when your programs become large, and recompiling after an edit requires multiple steps. 
-Using a `makefile`, we can configure a program to compile simply by typing the `make` command into terminal. 
-This lab will teach you how to write a basic makefile to be used in assignments from here on out.
+Suppose you have just finished homework and you think you have a pretty good implementation of a doubly linked list. How do you know, for sure, that this list behaves like how you intended it to be? You can manually read through the code a million times, but you might still miss something.
+ 
+A good test case program should:
 
-### 1 - GCC
+  + Use your newly created data structure
+  + Perform simple operations with your data structure's methods
+  + Make sure that each method performs the way you intended it to be
+ 
+There are several advantages for having a well-crafted test program: 
 
-You might have noticed that we have been using some magic commands when we compile files. 
-Namely, you should have seen `g++`, `-g`, `-Wall`, `-o`, and `-c`. 
-Here is a brief explanation of what exactly these commands do.
+  + Help you think about edge cases - ones that you might not have thought of when implementing the data structure itself.
+  + Help you make sure each subpart of a problem works correctly. For example, when you implement a new data structure with your new LinkedList, and you encounter a problem, it's very hard to know whose fault it is - the new data structure or the underlying LinkedList. By thoroughly testing your LinkedList in its corresponding test, you will be able to nail down where to hunt for problems fast.
+  + When you make a change to your code, you can make sure that it did not break anything.
 
-First of all, `g++` is used to compile your programs using the GNU Compiler Collection (GCC). 
-The `g++` command tells GCC that you want to compile a C++ program. 
-There are other compilers out there, and when you want to use other compilers, you replace `g++` with the command that's used by the other compiler, such as `clang++`. 
-In this class, we ask that you always compile your program with GCC using the `g++` command, because that's what we use when we grade you.
+The [Google Test documentation](https://code.google.com/p/googletest/wiki/Primer) has further guidelines for what constitute good test suites.
 
-When you see a terminal command that has a `-` followed by some text, this is usually a flag (also called options). 
-A flag can be used to specify a setting or add additional information about the command. 
-An option may or may not take an argument. 
-If an option takes in an argument, the argument is followed immediately after the flag. 
-To use a flag, simply include it with your compile command.
+### 1 - Testing a Fibonacci Program
 
-In the `g++` command, you will often see `-g`, `-Wall`, `-o`, `-c`, and `-std=` command. 
-Here's a descriptino of what they do and how to use them:
+#### 1.1 - Introduction to Testing
 
-  + `-g`: Provide debugging feature for your program. 
-  You will need this when you want to use gdb or valgrind. 
-  To use this flag, simply append the command to the end of your compile command.
-  + `-Wall`: Turn on all warnings. 
-  This is helpful because, as you might have seen, not all errors cause your program to not compile. 
-  There are some problematic operations that can cause undefined or unexpected behaviors in edge cases. 
-  By turning on all warnings, you make sure that you eliminate these potentially dangerous operations.
-  + `-o`: This flag controls the output name of your compilation. 
-  By default, the binary file name is `a.out`. 
-  When you append `-o filename` to the end of your compile command, the compiled binary output will be the filename you specificed. 
-  Be carefule that the filename is not an existing file because you will overwrite the file.
-  + `-c`: Compile the files but do not link them. 
-  This is usually used to compile intermediate object files. 
-  We will explain this more in later parts of the lab.
-  + `-std=<version>`: This flag is used to specify the c++ version that you would like to use. 
-  As you expect, c++ is an evolving language, and it keeps adding new features to the language. 
-  Therefore, if you use a feature that's introduced in a newer version but try to compile the code with an older version, the compiler wouldn't know what the features are and the compilation will fail. 
-  You use this flag by appending this flag to the end of your compile comand and speficy the version number after the equal sign (i.e. `-std=c++17`). 
-  In this class, most of the times you can get away with using the default version and don't need to include this command at all. 
-  There are times when you need to use the c++ 17 and you do it with `-std=c++17`.
-  + `-fmax-errors=N`: This tells the compiler to stop after encountering N errors in your code. 
-  Usually we don't use it, because we want to see all errors in a code, and fix them together. 
-  However, at times you will find that some error messages are long and there are so many of them that you can't see the top one (and if you are not fixing your compile errors starting with the first one, you should start doing that). 
-  This is when it becomes handy to stop compilation after some number of errors.
-  + `Wfatal-errors`: This is similar to the previous one, except that the compiler will treat an error as fatal and stop on first error.
+Let's first begin writing tests for a simple function that computes the nth Fibonacci number. But before you open the code for the Fibonacci program, ask yourself - what are some test cases that we'll need to test?
 
-Lastly, you might sometimes see people compile files with `g++ something.cpp main.cpp -o main -g -Wall`, and you might wonder why they list the source files before the options. 
-As it turns out, the order that you specify the options does not matter. 
-If you really want to, you can even use `g++ something.cpp -g -Wall main.cpp -o main` to compile your program. 
-However, by convention, we usually group the list of source files together and the list of options together.
+**Nominal Cases** - You can always start with the most basic cases - that 5th fibonacci should be 5, 7th should be 13. It's a good idea to include a few basic cases so to be sure you weren't just lucky, but you shouldn't need anything more than that. 
 
-### 2 - Using Make
+**Boundary or Special Cases** - What are the boundaries for this function? For a Fibonacci calculation, it seems that there is only a "lower-bound", namely when n = 1. For some data structures that are slightly more complex, there might be multiple boundaries, like the resize limit ("`capacity`") for an array based implementation of a list.
 
-GCC is nice to compile our programs, but it gets annoying if we have to type a 20 character command 10 times during development. 
-This is when a makefile comes in handy.
+**Off-nominal Cases** - Your program should be completely fool-proof. That means your program should handle even input that does not make sense. For example, asking for the -2th Fibonacci number, or asking to insert at the 5th position for a 2 element array. Note that things that do not compile are not part of off-nominal cases. If your compiler cannot compile the code, you won't even have an executable to run. 
 
-When you type `make` into terminal, Make will look for a file named `makefile` or `Makefile` for instructions. 
-Let's start with a makefile for a single cpp file.
+Notice that we came up with these cases **without the need of looking at code** - all we did was think about how a Fibonacci program should behave, and how a user would be using such a function. In fact, it's very common for industry software engineers to write the test cases first _before_ writing a single line of code; they call this [Test-Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development).
 
-In the part 1 folder, you will find a file called `charizard.cpp`. 
-You can compile this simply with the following instruction:
+A very simple test program might include a long list of test cases made of if statements that looks like this:
 
 ```
-g++ -g -Wall charizard.cpp -o charizard
+Fibonacci fib;
+if (fib.get(5) == 5) {
+	std::cout << "OK" << std::endl;
+} else {
+	std::cerr << "FAIL | 5th Fibonacci number should be 5."
+}
 ```
 
-That's too much typing if we need to do it 20 times during developing, so let's use make. 
+However, a long list of these cases can get out of hand very quickly - it's annoying to read and even more so to write repetitive code. We can use a library called Google Test to help us out. 
 
-#### 2.1 - Syntax and Structure
+#### What is enough, and how much is too much?
 
-A basic makefile's structure is the following:
+Generally speaking, there should be at least one test case for each code execution path in a function. For example, if a function has 3 branch conditions, test at least each path once, to ensure all use cases are covered. There is no need to test a single path more than a few times - it doesn't hurt, but it's generally unnecessary as it increases testing time. This is only a rule of thumb, as some edge cases just cannot be predicted by looking at the code. 
 
-```
-target: dependencies
-    command_1
-    command_2
-    ...
-    command_N
-```
+When testing a class implementation, each public function should be tested. For example, an array implemntation of a list, `ArrayList`, should have test cases for functions `add()`, `set()`, `remove()`, `get()`, and so on. More on class testing in a little bit! 
 
-Each of these is called a rule. 
-A target is a file that Make tries to create, commands are used to create the target, and dependencies are the files that determine whether the commands need to be executed. 
-When you type `make <target>`, the make tool searches for the appropriate target in the directory and checks whether any of its dependencies need to be rebuilt. 
-If the file is not found, or if any of its dependencies is newer than the target file, all commands in the rule will be executed.
+#### 1.2 - Our First Google Test Case
 
-In this instance, we want to create a charizard executable using `g++ -g -Wall charizard.cpp -o charizard`, and we need to recompile the file if charizard.cpp changes. 
-Therefore, our rule should look like this:
+Navigate to the `part1` directory, and open the `test.cpp` file included for you. The meat of the test suite provided to you in this file is in these four lines:
 
 ```
-charizard: charizard.cpp
-    g++ -g -Wall charizard.cpp -o charizard
+TEST(FibTest, Nominal) {
+	Fibonacci f;
+	EXPECT_EQ(5, f.get(5));
+	EXPECT_EQ(13, f.get(7));
+}
 ```
 
-Note that the system command is and must be precedeeded by a **tab**. 
-If you ever get an error message like this:
+You should notice that this is not standard C++ syntax. We're using a **C++ Macro** here that is supplied by the framework. C++, when compiling, will automatically replace this code with some appropriate C++ code defined in the framework. It is likely a much longer chunk of code that Google Test wants to hide and save the user from an unnecessary amount of copy pasting. 
+
+A test case is defined by calling this `TEST` macro. Two more things are important here: `FibTest` and `Nominal`, the two "parameters" that are "passed into" the Macro. The first parameter specifies the name of the test suite. As a rule of thumb, all tests in a file should belong to the same test suite, and in this case, FibTest. The second parameter is the name of this test. We're testing the trivial cases right now, so we're just going to call it the "Nominal" case. 
 
 ```
-makefile:2: *** missing separator. Stop.
+EXPECT_EQ(5, f.get(5));
 ```
 
-It means on line 2, make is expecting a tab but didn't find it.
+Another macro here - `EXPECT_EQ`. The name of this macro is not too surprising - test cases are but a long list of expected results under different circumstances. In here, by calling `EXPECT_EQ`, you're saying: "When I call f.get(5), the value it returns should equal to 5."
 
-- [ ] Compile your code by running `make charizard`
+You can find the list of GTest Macros [here](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md). 
 
-#### 2.2 - Default Target
+#### 1.3 - Adding some more test cases
 
-What happens when you just run `make`? 
-Good question! 
-By default, `make` will execute the first target in a makefile. 
-By convention, we add a target called `all` and list targets we wish to build on `make` command after `all`.
+As we've mentioned, there are more test cases worthy to be tested. Let's add them together to our `test.cpp` file. 
 
-Let's have 'all' make the charizard file, which will become the name of our target. 
-Our resulting `makefile` is as below:
+**Boundary or Special Case**
 
-```
-all: charizard
+In our Fibonacci calculation, we have a base case of "1" and "2" - they return special values unlike the nominal cases. We should add a test that makes sure this happens.
 
-charizard: charizard.cpp
-    g++ -g -Wall charizard.cpp -o charizard
-```
-
-- [ ] Compile your code by running `make all`
-
-Save this file as `Makefile` in the part1 directory and type make. 
-Congratulations, you've just made your life 100x easier. 
-
-### 3 - Compiling Multi-File Programs
-
-#### 3.1 - Object Files
-
-Compiling a multi-file program requires two main steps: compiling each .cpp file separately, and putting them all together to form the executable. 
-The first step is know as compilation, during which the compiler checks for syntax and semantic mistakes, such as missing semicolons, calling a function that's not declared, or returning the wrong type in a function. 
-The second step is known as linking, during which the linker "links" your function calls - it finds where the body of a function is so that it knows what line to execute when you call that function.
-
-When you compile a program with `g++ -g -Wall charizard.cpp -o charizard`, you are actually compiling and linking it. 
-It turns out that it's possible to do them separately. 
-This comes in handy when you have multiple files in your project. 
-When you change one of the files, you can re-compile only files that depend on the change, and run linker, without having to re-compile the entire project.
-
-In order to do that, we introduce a new binary file type: .o files, or object files. 
-These are the intermediate files we make in preparation to compile the executable. 
-Any file that doesn't contain the main function must be compiled into a .o file. 
-This is because the linker will expect to find the main function and use it as an entry point of your program.
-
-Let's look inside the part 2 folder.
+We first start with a call to the macro, with the test suite name staying the same (`FibTest`), and the test case name something like ("Boundary").
 
 ```
-$ cd ../part2
-$ ls *
+TEST(FibTest, Boundary) {
+	Fibonacci f;
+	...
+}
 ```
 
-You will find three classes: `AttackMove`, `Battle`, and `Pokemon`. 
-We want to compile each of these into their own .o file of the same name.
-
-Since we're going to have a lot of binary files beyond this point, let's make a `bin` directory to hold them all for easy cleanup.
+What goes inside? Expectation statements. What do you expect `f.get(1)` return? `f.get(2)`?
 
 ```
-$ mkdir bin
+	EXPECT_EQ(??, ??)
+	EXPECT_EQ(??, ??)
 ```
 
-To make an object file, we simply need to add the `-c` flag in the compile command, which tells g++ to not run linker. 
-Let's compile `AttackMove` first.
+When you're done - _don't run the tests yet_! Finish the entire test suite first, before you try to see if anything's wrong. This is to prevent us tailoring our test cases to the code - you would be able to think about edge cases much more easily from a different perspective.
+
+- [ ] Write a test for the boundary case in `test.cpp`.
+
+**Off-Nominal Case**
+
+What else can go wrong? A rule of thumb is: never trust the user. If something can go wrong, it will; so it's essential that your program handles correctly. 
+
+For the sake of this testing demonstration, let's assume that any invalid input should return a value of 0. Some invalid inputs in this case could be 0, -1. 
+
+- [ ] Write a test case for this and include it in `test.cpp`.
+
+**Bonus**: There is one more edge case. Can you think what it is? (Hint: What's the type of the input?)
+
+#### 1.4 - Run the tests now
+
+Now that we have a complete test suite, we can see if our program works fully to our specs by running `make tests` on the terminal. Because our dependencies are set up properly, this will attempt to compile the `fib` object, and then the test executable. After all the compiling is done, it will then attempt to run the test executable.
+
+You should now see a fancy test runner output, that says the output is unexpected, followed by a segfault. It's okay, we'll fix them one by one.
 
 ```
-g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
+// Line 5: Change from:
+return 0;
+// to:
+return 1;
 ```
 
-Simple as that. 
-Do the same for the other two classes, and we can then compile the main.
-
-- [ ] Run compile commands for battle.cpp and pokemon.cpp
-
-#### 3.2 - Putting It All Together
-
-To compile the main, we just have to include all the .o files that we've already made in the g++ command.
+Run the tests again by calling `make tests`. That nominal test case now passes successful, but the segfaults are still there in the Off-Nominal Case. Well, that's unexpected. As always, try to debug using gdb.
 
 ```
-g++ -g -Wall bin/attackMove.o bin/battle.o bin/pokemon.o main.cpp -o bin/pokemon
+gdb bin/fibTest
 ```
 
-**Note:** A .o file is compiled code that doesn't get linked to other code even if it calls functions from other classes. 
-We tell the compiler this using the `-c` flag so that the compiler does not check whether the functions from other classes are implemented. 
-When we want to compile the full executable, we do not want to have the `-c` flag in that statement because we want the compiler to link all the code together in the final step.
-
-And you have your own pokemon battle simulator! Run it like normal using:
+Run until the segfault happens, and then run `bt` to see how the error occurred. It seems that the program crashed because we ran out of stack space by calling too many recursions. Fix this by modifying our `fib.cpp`:
 
 ```
-./bin/pokemon
+// Add after Line 3:
+if (n <= 0) { 
+	return 0;
+}
 ```
 
-- [ ] Run the command to compile main to and then run `./bin/pokemon`
+Run the test again, and it should now pass with flying colors - green, that is.
 
-#### 3.3 - Makefile Dependencies
+- [ ] Fix the segfault as instructed.
 
-Well that's great and all, but how do we do that in a makefile?
+### 2 - Testing a Class
 
-Let's go back to the basic make rule structure:
+Now that we understand how to run tests, we're going to practice testing on a class implementation. We'll be writing tests for an `ArrayList` class.
 
-```
-target: dependencies
-    command_1
-    command_2
-    ...
-    command_N
-```
+#### 2.1 - Understanding Fixtures
 
-We skipped dependencies before, but it's something we want to use now. 
-If a target has dependencies, make first checks if those dependencies exist before executing the system command associated with that rule. 
-If the dependencies don't exist, make will run the rule to make those dependencies if they exist.
+When we test classes, we often need some initialization before we can test. For example, initializing classes with the correct constructor parameters, populating an array, etc. Because these setup are usually repeated across multiple test cases, we put them in "Fixtures"
 
-Make will also check to see if the dependencies have been updated since the last make and will only recompile the dependencies that have changed. 
-This can save you a lot of time if you make a change and don't want to recompile all the files in your project.
+Open the `test.cpp` in the `part2` folder. You'll notice that this file is slightly longer than the one in the first part. The main difference being a definition of a class `ArrayListTest`. There are several characteristics to this class:
 
-Remember that dependencies are the files that can affect the compilation result of your target. 
-This includes all the non-standard-library files that you `#include`, a class's own header file and .cpp file, and, if you are compiling into an executable, all the .o files you need.
+  + It inherits from a Google Test class `testing::Test`. We have not learned what inheritance works yet, but you will understand how it works in a little bit
+  + The class is largely empty, but it includes a declaration of a member variable of type `ArrayList`. This object is available for use in any of the test cases
+  + It has four methods you can insert code in: 
+	- the class constructor and `SetUp()` is largely the same:both will be called before each test case
+	- similarly, the class destructor and `TearDown()` will be called after each test
 
-A multi-file program might have a Makfile like this:
+In order to have access to the fixture, tests need to be declared using the `TEST_F` fixture instead of `TEST`. The test suite name should also be the same as the class name.
 
-```
-all: bin/pokemon
+You can see all that comes to play in the sample `get()` test. Notice that we are able to read elements from the list right away without any other code inside the test. In fact, for every test in this test suite will inherit these setup instructions as well. This helps to keep the actual test code simple.
 
-bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
-    g++ -g -Wall main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o -o bin/pokemon
+### 3 - More about Testing
 
-bin/attackMove.o: lib/attackMove.h src/attackMove.cpp
-    g++ -g -Wall -c src/attackMove.cpp -o bin/attackMove.o
+A common mistake students make is that they write tests for their program to pass. This is wrong. Your job, when writing test cases, is to try as hard as you can to break your code. Try to think of all possible ways that your program can misbehave. When designing test cases, ask yourself these questions:
 
-bin/<???>: <???>
-    <???>
+  + What promises does the program make in its documentation?
+  + If something is supposed to happen after a function call, does it happen?
+  + If nothing should happen, how can you make sure nothing happened?
+  + What edge cases might a programmer easily overlook?
+  + What input might cause the program to crash?
 
-bin/<???>: <???>
-    <???>
-```
+Remember - the harsher you are when testing your own program, the less bugs will make it to the hands of your end users. 
 
-If you run `make`, this will fail. 
-You will be filling in all the `<???>` at the end of the lab.
+### 4 - Assignment: Identify Two of the Bugs
 
-- [ ] Fill in the blanks in the sample code to get your program to successfully compile
+**TL;DR: Find 2 out of 3 bugs by writing tests, and ask a CP to check you off.**
 
-### 4 - More Makefiles
+In the `part2` folder, we have provided an implementation of ArrayList for you - there is a header file `arraylist.h`, with the specification of the expected function in the comments, and a pre-compiled `ArrayList` implementation. You do not have access to the source code. We do this because again, we do not want you to think about test cases in terms of the source, but in a wider perspective of "how things should work".
 
-#### 4.1 - Variables
+There are **three** bugs in the source code, and it is your task to find the problems by writing a good suite of test. Write a good set of tests for each of `add()`, `set()`, and `remove()` according to the specification provided in the header file, and thinking about edge cases. Find two of these bugs and you're good to go. 
 
-Your professors decides they don't like the students compiling to the `bin` directory. 
-They instead want the directory to be named `exe`. 
-You could easily find and replace bin with exe, but that's messy and could generate errors. 
-Why not take advantage of variables instead?
+We have written a sample test case for you for the `get()` function, although it is by no means an exhaustive test case. There is also a simple Makefile included for you, simply compile and run the test with `make tests`.
 
-At the top of your makefile, let's define:
+Some tips:
 
-```
-BIN_DIR = exe
-```
+  + [Google Test documentation](https://code.google.com/p/googletest/wiki/V1_7_Primer) has a lot more macros you can use: `EXPECT_NE`, `EXPECT_LT`, `EXPECT_TRUE` etc.
+  + When you call a method, how should the state of the object change?
+  + What are the "boundaries" of this class? What happens there?
+  + What are the execution paths in each function?
+  + Big Hint: look at the test names we give you
 
-Now let's replace every instance of `bin` with `$(BIN_DIR)`, like so:
+ - [ ] Find two of the three bugs. Then, show a CP your tests and describe the bugs you found to get checked off.
 
-```
-$(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
-    g++ -g -Wall -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
-```
+### Appendix: A little bit more on the Makefile
 
-Now when the profesors change their mind again and want a different name for the directory, we can just change the variable at the top. 
-By convention, we keep the binaries in a directory named `bin`. 
-(For homework, don't put your final executable in a bin directory unless we tell you to do so.)
+You might be a little more confused about the `GTEST_LL` variable and how we are able to use Google Test. There are several key parts to understand here:
 
-Another use for this is to have a CPPFLAGS (compiler flags) variable that holds all the flags you frequently use to compile. 
-We can have a CXX variable to specify which compiler to use. For example:
+  + The complete compile command is: `g++ -Wall -g test.cpp bin/arraylist.o -I /usr/include/gtest/ -l gtest -l gtest_main -o bin/arrayTest` The important files are `test.cpp` and `bin/arraylist.o`, the rest are just flags.
+  + `GTEST_LL` - This is variable that contains the necessary flags to compile a Google Test program. There are several flags in here:
+  + `-I /usr/include/gtest/`: `-I` means "look up includes in this directory". This is how `#include "gtest/gtest.h"` worked in the test program - when C++ tries to look up a file, it looks not only in the current directory, but in whatever directories specified by `-I` as well. Including the gtest header ensures all necessary functions are imported. This is similar to how `-Ilib` works.
+  + `-l gtest`: Use the library called "gtest". This includes all extra dependencies not included in the header file
+  + `-l gtest_main`: Use the library called "gtest_main". Notice that there are no main functions at all in our test suite program. THat's because the `gtest_main` library comes with one. When we run the test, we're running a main function included in the Google Test framework that automatically detects all tests and execute them accordingly.
+  + `-pthread`: Because Google Test runs tests in parallelize, enable threading support.
 
-```
-CXX = g++
-CPPFLAGS = -Wall -g
-BIN_DIR = exe
+You can probably safely copy this variable everywhere.
 
-$(BIN_DIR)/attackMove.o: lib/attackMove.h src/attackMove.cpp
-    $(CXX) $(CPPFLAGS) -c src/attackMove.cpp -o $(BIN_DIR)/attackMove.o
-```
+**bin/fib.o** - This is the rule to compile the Fibonacci class by itself. Notice that the `-c` flag is used - when we compile the class by itself, we can include the compiled object everywhere - in an actual program, or in the test suite. 
 
-- [ ] Rewrite your compile commands to use your new `BIN_DIR` variable
+**bin/fibTest** - The main test rule. It has two dependencies: the compiled fib object, and the test suite itself. For the command, we simply take all the dependencies and compile them, with the `GTEST_LL` variable. It's important that the libraries are loaded after the source files, or else the linker will likely throw an error.
 
-The most useful variables you will use are **Automatic Variables**. 
-Things that look like `$@`, `$<`, and `$^` are called automatic variables. 
-When Make parses through the Makefile, it'll automatically substitute them with the correct string.
+**tests** - A rule that just runs the tests. Optional. Notice that this is a phony rule, because it doesn't actually create any file.
 
-  + `$@`: target name
-  + `$<`: first dependency
-  + `$^`: entire dependency list.
 
-Using these variables, we can rewrite our makefile rules as so:
-
-```
-CXX = g++
-CPPFLAGS = -Wall -g
-BIN_DIR = exe
-
-bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
-    $(CXX) $(CPPFLAGS) $^ -o $@
-
-$(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
-    $(CXX) $(CPPFLAGS) -c $< -o $@
-```
-
-- [ ] Rewrite your compile commands to use automatic variables
-
-#### 4.2 - DIRSTAMP
-
-If you tried to run `make` again with the above changes, you'll probably get an error that the `exe` directory doesn't exist. 
-We could just use `mkdir exe` everytime we compile our program, but that's a pain.
-
-Let's define a rule to make sure the `exe` directory exists.
-
-```
-$(BIN_DIR)/.dirstamp:
-    mkdir -p $(BIN_DIR)
-    touch $(BIN_DIR)/.dirstamp
-```
-
-The `.dirstamp` file is a hidden file we make to make sure a directory exists. 
-Notice that this rule does not have any dependency. 
-When a rule has no dependency, it will be executed if the target does not exist. 
-You can add this rule to the dependency list of your compile commands.
-
-```
-all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
-```
-
-It's important that you list `.dirstamp` before `pokemon`, because Make will check the dependencies in order. Since building `pokemon` requires that `$(BIN_DIR)` exists, make needs to create `.dirstamp` before `pokemon`.
-
-- [ ] Add `.dirstamp` to your Makefile where needed
-
-#### 4.3 - PHONY and Clean
-
-Now large projects will eventually generate a lot of binary files. 
-We want to keep our workspace relatively clean by writing a rule to delete the generated files. 
-This is also helpful when you're having mysterious problems as they sometimes go away after you delete and recompile your binaries.
-
-Here's our `clean` rule:
-
-```
-clean:
-    rm -rf $(BIN_DIR)
-```
-
-You can add this to the end of your makefile. 
-Now clean your directory using the `make clean` rule.
-
-- [ ] Add `clean` as a target in your Makefile
-
-Very nice, but there's a small problem with the original rule. 
-If a file named 'clean' exists in our directory, make won't run the clean rule because it sees that the file already exists!
-
-To get around this, we declare the clean rule as PHONY to tell make that `clean` is not associated with a file.
-
-```
-.PHONY: clean
-clean:
-    rm -rf $(BIN_DIR)
-```
-
-Now `clean` will always run when you use `make clean`.
-
-- [ ] Add a `.PHONY` target
-
-**Note:** there's a danger when using rm -rf as it will irreversably delete whatever `BIN_DIR` is without prompting additional confirmation. 
-Be good and don't delete your entire OS (or worse, delete your grader's VM).
-
-#### 4.4 - Search Path
-
-If you look at files under `src` or `main.cpp`, you will see that we are including header files by writing out the relative path to it. 
-It can be annoying if we wish to move our header files into a different directories, because we need to go to every single file that includes the header and change the path. 
-We can avoid this by adding additional **Search Paths** during compilation.
-
-By default, GCC will look in the current directory of the file (i.e. `src` when compiling a file in `src`, or `./` when compiling `main.cpp`), but it will not look under nested directories. 
-In addition, GCC also searches for standard libraries. 
-In order to add a directory to its search paths, you use the -I*dir* option, where *dir* is the relative directory path from where you run the compile command. 
-If you are using a Makefile, the path will be relative to where your Makefile is.
-
-In our case, we want to ask GCC to look for files under the `lib` directory. 
-We can add append the option to the end of `CPPFLAGS`.
-
-```
-CXX = g++
-CPPFLAGS = -Wall -g -Ilib
-BIN_DIR = exe
-
-bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
-    $(CXX) $(CPPFLAGS) $^ -o $@
-
-$(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
-    $(CXX) $(CPPFLAGS) -c $< -o $@
-```
-
-Now you can remove `../lib/` and `lib/` when you include a header file in a `cpp` file. 
-Open `main.cpp` and change
-
-```
-#include "lib/attackMove.h"
-#include "lib/pokemon.h"
-#include "lib/battle.h"
-```
-
-to:
-
-```
-#include "attackMove.h"
-#include "pokemon.h"
-#include "battle.h"
-```
-
-You can do the same for `src/attackMove.cpp`, `src/battle.cpp`, and `src/pokemon.cpp`.
-
-Technically, this is not a makefile feature, but a compiler option. 
-However, you don't normally group files into different directories unless your have a bigger project, in which case you should be using a Makefile (or IDE) to manage compilation.
-
-- [ ] Add `-I` to your compile commands
-
-### 5 - Assignment: Complete the Makefile
-
-Your final makefile should look something like this. 
-Note: if you copy and paste the code from course website and paste it into your makefile, you will need to fix all the spaces and change them into tabs.
-
-```
-BIN_DIR = bin
-LIB_DIR = lib
-SRC_DIR = src
-CXX = g++
-CPPFLAGS = -g -Wall -I$(LIB_DIR)
-
-all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
-
-$(BIN_DIR)/pokemon: <???>
-    <???>
-
-<???>.o: <???>
-    <???>
-
-<???>.o: <???>
-    <???>
-
-<???>.o: <???>
-    <???>
-
-.PHONY: clean
-clean:
-    rm -rf $(BIN_DIR)
-
-$(BIN_DIR)/.dirstamp:
-    mkdir -p $(BIN_DIR)
-    touch $(BIN_DIR)/.dirstamp
-```
-- [ ] Show your final Makefile to a CP or TA for checkoff!
-
-#### 5.1 - Review Questions
-
-1. What is the purpose of the `-c` flag?
-1. What is the advantage of compiling to .o files via makefile compared to compiling the executable together in one step?
-1. What files should be in a rule's dependency list?
-
-### 6 - More about Makefiles
-
-If you would like to know more about Makefile, you can visit [GNU Make Manual](https://www.gnu.org/software/make/manual/make.html). 
-It covers both the basic and more advanced topics of the Makefiles.
-
-**CAUTION** Do not use these advanced make commands until you are very comfortable with Makefiles.
-
-### 7 - More about GCC
-
-We have listed some commonly used flags and options that you will see in this class. 
-This is just a list of the common flags that you will use in this class.  
-This is in no way comprehensive. 
-If you see a flag that you do not understand, or if you are curious about other options, you can refer to this [official document from GCC](https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html). 
-Feel free to play around with the flags in your free time.
-
-**IMPORTANT** We will be compiling your code with `-g -Wall -std=c++17`, so you must use the same options to check that your code compiles and produces no warnings.

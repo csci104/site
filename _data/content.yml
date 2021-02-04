@@ -66,7 +66,7 @@ labs:
   - id: lab4
     week: Week 4
     title: GTest
-    assigned: false
+    assigned: true
     topics: 
   - id: lab5
     week: Week 5

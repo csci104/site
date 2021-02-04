@@ -141,7 +141,7 @@ return 1;
 Run the tests again by calling `make tests`. That nominal test case now passes successful, but the segfaults are still there in the Off-Nominal Case. Well, that's unexpected. As always, try to debug using gdb.
 
 ```
-gdb bin/fibTest
+gdb fibTest
 ```
 
 Run until the segfault happens, and then run `bt` to see how the error occurred. It seems that the program crashed because we ran out of stack space by calling too many recursions. Fix this by modifying our `fib.cpp`:
@@ -213,7 +213,7 @@ Some tips:
 
 You might be a little more confused about the `GTEST_LL` variable and how we are able to use Google Test. There are several key parts to understand here:
 
-  + The complete compile command is: `g++ -Wall -g test.cpp bin/arraylist.o -I /usr/include/gtest/ -l gtest -l gtest_main -o bin/arrayTest` The important files are `test.cpp` and `bin/arraylist.o`, the rest are just flags.
+  + The complete compile command is: `g++ -Wall -g test.cpp arraylist.o -I /usr/include/gtest/ -l gtest -l gtest_main -o arrayTest` The important files are `test.cpp` and `arraylist.o`, the rest are just flags.
   + `GTEST_LL` - This is variable that contains the necessary flags to compile a Google Test program. There are several flags in here:
   + `-I /usr/include/gtest/`: `-I` means "look up includes in this directory". This is how `#include "gtest/gtest.h"` worked in the test program - when C++ tries to look up a file, it looks not only in the current directory, but in whatever directories specified by `-I` as well. Including the gtest header ensures all necessary functions are imported. This is similar to how `-Ilib` works.
   + `-l gtest`: Use the library called "gtest". This includes all extra dependencies not included in the header file
@@ -222,9 +222,9 @@ You might be a little more confused about the `GTEST_LL` variable and how we are
 
 You can probably safely copy this variable everywhere.
 
-**bin/fib.o** - This is the rule to compile the Fibonacci class by itself. Notice that the `-c` flag is used - when we compile the class by itself, we can include the compiled object everywhere - in an actual program, or in the test suite. 
+**fib.o** - This is the rule to compile the Fibonacci class by itself. Notice that the `-c` flag is used - when we compile the class by itself, we can include the compiled object everywhere - in an actual program, or in the test suite. 
 
-**bin/fibTest** - The main test rule. It has two dependencies: the compiled fib object, and the test suite itself. For the command, we simply take all the dependencies and compile them, with the `GTEST_LL` variable. It's important that the libraries are loaded after the source files, or else the linker will likely throw an error.
+**fibTest** - The main test rule. It has two dependencies: the compiled fib object, and the test suite itself. For the command, we simply take all the dependencies and compile them, with the `GTEST_LL` variable. It's important that the libraries are loaded after the source files, or else the linker will likely throw an error.
 
 **tests** - A rule that just runs the tests. Optional. Notice that this is a phony rule, because it doesn't actually create any file.
 

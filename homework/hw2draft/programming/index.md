@@ -15,6 +15,7 @@ title: Homework 2 Programming
     - Then copy the `resources/hw2` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw2` folder.
 
     - You **MUST** modify the provided `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `amazon`
+    - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
     -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
     - **You may use any STL classes you like**
 
@@ -25,7 +26,7 @@ In this project you will write code to model a **very** simplified version of an
 
 **Important**:  In practice, reading and understanding others' code is just as important as writing your own code. So in this project you will need to read and understand a good bit of provided code.  Spend time understanding what it does and its structure.  
 
-One common need when reading large code bases (in the grand scheme this is not that large of a code base) is to find where classes or functions are defined that you see being called or used.  Most editors have the ability to do this via some *Find in files* or *Goto definition* related feature(s). In Sublime if you open a folder (e.g. your `hw4` folder) you can right click on a class name or function name and choose *Goto Definition* to jump to where that class or function is declared/defined. 
+One common need when reading large code bases (in the grand scheme this is not that large of a code base) is to find where classes or functions are defined that you see being called or used.  Most editors have the ability to do this via some *Find in files* or *Goto definition* related feature(s). In Sublime if you open a folder (e.g. your `hw2` folder) you can right click on a class name or function name and choose *Goto Definition* to jump to where that class or function is declared/defined. 
 
 Another simple command line tool is `grep`.  At the command prompt you can type:
 
@@ -142,16 +143,16 @@ Here is a list of the files in the codebase that we are providing.  Please do no
 
 + `datastore.h` - **Complete!** Abstract base class.  You will create a derived class which should support storage of all the data: products and users
 
-+ Storage
+##### Storage
  - `user.h` and `user.cpp` - **Complete!**  Class to model a User
  - `product.h` and `product.cpp` - **Complete!**  Abstract base class.  Models the common aspects of all categories of products.  Should support various common operations on all products. Ignore and do not alter `isMatch()` for this assignment. It may be used in a future HW.  
 
-+ Parsing
+##### Parsing
  - `db_parser.h` and `db_parser.cpp` - **Complete!**  A Parser class which utilizes specialized product parsers.
  - `product_parser.h` - **Complete!** In this one file are several class definitions.  The base class, `ProductParser` is meant to parse the common attributes of a product and then there is one derived parser class per category of product to parse the additional attributes 
  - `product_parser.cpp` - **Nearly Complete!** The code for the base class `ProductParser` is complete and does not need to be modified.  For each of the derived types you will need to complete the `makeProduct()` member function of each of these classes to instantiate an appropriate product object for the given category.
 
-+ Utility code
+##### Utility code
  - `util.h` and `util.cpp` - **Incomplete** - You need to complete the code in `util.h` to find the set intersection and set union.  You also need to complete the function to parse a string containing spaces and words into individual words
 
 + `database.txt` - Input file to your program.  You may add more products and users to test your code, or write other input files.  These are just text files and can be named however you like.
@@ -175,10 +176,11 @@ Here is a list of the files in the codebase that we are providing.  Please do no
     `AND Men` would be the same as `OR Men` since there is only 1 term and would return all products that have the word `men`. (i.e. the book `Great Men and Women of Troy` and `Men's Fitted Shirt`).
     `AND hidden Data` would return nothing since no products have both those terms
     `OR hidden Data` would return both the `Hidden Figures DVD` and `Data Abstraction & Problem Solving with C++` products 
+    You may choose any reasonable behavior if the search consists only of `AND` or `OR` (no keywords)
 
 1. Your search must be implemented "efficiently".  You should not have to iterate over ALL products to find the appropriate matches.  Some kind of mapping between keywords and products that match that keyword should be implemented.
 1. **Hits** - Results must be displayed to the user via the `displayProducts(vector<Product*>& hits);` function provided in `amazon.cpp`. Failure to use this function will result in **LARGE** deductions since it will make our testing much harder.
-1. **Adding to Carts** - You should support the notion of a "cart" for each user that they can add products to.  Using the `ADD username hit_result_index` command should cause the product with index `hit_result_index` from the previous search result to be added to `username`'s cart.  **You must maintain the cart in FIFO (first-in, first-out) order** though that doesn't mean you HAVE TO use the C++ `queue` class.  Currently, we will not support the ability to remove products from a cart.  If a product is added to a cart twice, treat them as separate items and store them in your cart twice (i.e. don't try to store it once with a "quantity" of 2).  This implies that each command of `ADD` adds 1 product to the CART.  If the `username` or `hit_result_index` provided is invalid, print `Invalid request` to the screen and do not process the command. Note: The results from the last search should be retained until a new search is performed.  Thus, the hits from one search can be referenced by many `ADD` commands. 
+1. **Adding to Carts** - You should support the notion of a "cart" for each user that they can add products to.  Using the `ADD username hit_result_index` command should cause the product with index `hit_result_index` from the previous search result to be added to `username`'s cart.  **You must maintain the cart in FIFO (first-in, first-out) order** though that doesn't mean you HAVE TO use the C++ `queue` class.  Currently, we will not support the ability to remove products from a cart.  If a product is added to a cart twice, treat them as separate items and store them in your cart twice (i.e. don't try to store it once with a "quantity" of 2).  This implies that each command of `ADD` adds 1 product to the CART.  If the `username` or `hit_result_index` is either not provided, or invalid, print `Invalid request` to the screen and do not process the command. Note: The results from the last search should be retained until a new search is performed.  Thus, the hits from one search can be referenced by many `ADD` commands. 
 1. **Viewing to Carts** - You should support the `VIEWCART username` command which should print the products in `username`'s cart at the current time.  The items should be printed with some ascending index number so it is easy to tell how many items are in the cart.  If the `username` provided is invalid, print `Invalid username` to the screen and do not process the command.
 1. **Buying the cart** - You should support the `BUYCART username` command which should cause the program to iterate through the items in `username`'s cart. If the item is in stock *AND* the user has enough money it should be removed from the cart, the in stock quantity reduced by 1, and the product price should be debited from the user's available credit.  If an item is not in stock or the user does not have enough credit, simply leave it in the cart and go on to the next product.  **Note:** Your cart implementation must iterate through the products in the order they were added.  If the `username` provided is invalid, print `Invalid username` to the screen and do not process the command.
 1. **Quitting** - You should support the `QUIT filename` command which should cause a new version of the database using the format described above to be saved to a file whose name is `filename`.  It should represent the updated state of the database (i.e. changing product quantities and user credit) to reflect purchases. **Note:** Within the various sections, users and products may be written in any order (not necessarily matching the order of the input database file).

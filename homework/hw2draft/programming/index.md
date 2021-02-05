@@ -129,7 +129,7 @@ PG
 </products>
 <users>
 aturing 100.00 0
-johnvn 50.00 1
+johnvn 50.00 
 adal 120.00 1
 </users>
 
@@ -143,6 +143,10 @@ Here is a list of the files in the codebase that we are providing.  Please do no
 
 + `datastore.h` - **Complete!** Abstract base class.  You will create a derived class which should support storage of all the data: products and users
 
++ `database.txt` - Input file to your program.  You may add more products and users to test your code, or write other input files.  These are just text files and can be named however you like.
+
++ `Makefile` - **Partially complete!** Edit as you add or change code
+
 ##### Storage
  - `user.h` and `user.cpp` - **Complete!**  Class to model a User
  - `product.h` and `product.cpp` - **Complete!**  Abstract base class.  Models the common aspects of all categories of products.  Should support various common operations on all products. Ignore and do not alter `isMatch()` for this assignment. It may be used in a future HW.  
@@ -155,10 +159,6 @@ Here is a list of the files in the codebase that we are providing.  Please do no
 ##### Utility code
  - `util.h` and `util.cpp` - **Incomplete** - You need to complete the code in `util.h` to find the set intersection and set union.  You also need to complete the function to parse a string containing spaces and words into individual words
 
-+ `database.txt` - Input file to your program.  You may add more products and users to test your code, or write other input files.  These are just text files and can be named however you like.
-
-+ `Makefile` - **Partially complete!** Edit as you add or change code
-
 ### Requirements
 1. **Keywords** - Your system should build an index mapping keywords to the set of products that match that keyword.  A product should match a keyword if it appears in the product name or one of the following attributes below (dependent on specific type of product):
   + Books: the words in the author's name should be searchable keywords as well as the book's ISBN number
@@ -168,9 +168,9 @@ Here is a list of the files in the codebase that we are providing.  Please do no
 	- `Men's` should yield just a keyword of `Men`
 	- `J.` would not yield any keyword since the remaining substring `J` is only 1 character
 	- `I'll` would yield just `ll` since that substring is 2 or more characters (this is obviously a poor keyword but we'll follow this rule for simplicity)
-  + For other keywords (book ISBN and movie genre) no punctuation or size analysis is necessary and it should be used verbatim as a keyword. Here is an example:
++ For other keywords (book ISBN and movie genre) no punctuation or size analysis is necessary and it should be used verbatim as a keyword. Here is an example:
 	- The ISBN `978-000000000-1` should be used exactly as is for the keyword entry
-  + It is suggested you store your keywords in a common case so that searching is easy and case-insensitive
++ It is suggested you store your keywords in a common case so that searching is easy and case-insensitive
 
 1. **AND/OR Search** - Your system should allow users to search for products based on entering one or more keywords at the program menu prompt.  An `AND` search should return all the products that contain ALL the search terms entered.  An `OR` search is defined as all the products that contain ANY of the search terms entered.  At the prompt the user will need to write `AND` or `OR` as their first word/command followed by any number of search terms separated by spaced.  Your search should treat those terms as case-insensitive when it comes to matching. Examples might be:
     `AND Men` would be the same as `OR Men` since there is only 1 term and would return all products that have the word `men`. (i.e. the book `Great Men and Women of Troy` and `Men's Fitted Shirt`).

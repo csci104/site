@@ -8,7 +8,7 @@ assignments:
       programming: Friday, February 5 at 11:59PM PST
   - id: hw2
     title: Inheritance and Polymorphism
-    assigned: false
+    assigned: true
     dates:
       assigned: Friday, February 5
       written: Friday, February 12 at 11:59PM PST

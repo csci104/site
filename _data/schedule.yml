@@ -86,6 +86,10 @@ lectures:
       - Containers
     chapters:
       - Chapter 1.6
+    notes: 7-STL.pptx
+    
+  # 7
+  - notes: 8-ADTs.pptx
       
   # 8
   - topics:

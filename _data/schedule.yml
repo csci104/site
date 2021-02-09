@@ -87,9 +87,6 @@ lectures:
     chapters:
       - Chapter 1.6
     notes: 7-STL.pptx
-    
-  # 7.5
-  - notes: 8-ADTs.pptx
       
   # 8
   - topics:
@@ -98,6 +95,7 @@ lectures:
     chapters:
       - Chapter 4.1-4.2
       - Chapter 9.1   
+    notes: 8-ADTs.pptx
       
   # 9
   - topics:

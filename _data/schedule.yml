@@ -82,7 +82,7 @@ lectures:
 
   # 7
   - topics:
-      - Standard template library
+      - Standard template library 
       - Containers
     chapters:
       - Chapter 1.6

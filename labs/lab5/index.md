@@ -8,6 +8,7 @@ title: Recursive Backtracking
 ## Recursive Backtracking
 
 ### 0 - N-Queens
+This lab will be covered during lab sections between Feb 12 - Feb 17, 2021.
 
 Last week, we went over backtracking in lecture. Here's a quick review of the N-Queens problem: 
 + You want to arrange 8 queens on an 8x8 chessboard such that each queen is unable to capture any other queens. Now, this can be trivial on a regular-sized chessboard, but what if you wanted to place 100 queens on a 100x100 chessboard? It quickly becomes more complicated.

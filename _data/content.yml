@@ -71,7 +71,7 @@ labs:
   - id: lab5
     week: Week 5
     title: Backtracking
-    assigned: false
+    assigned: true
     topics: Recursion, backtracking
   - id: lab6
     week: Week 6

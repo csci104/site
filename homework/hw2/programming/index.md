@@ -19,14 +19,14 @@ title: Homework 2 Programming
     -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
     - **You may use any STL classes you like**
 
-**Please read the entire assignment through once before you start to perform any tasks.** 
+**Please read the entire assignment through once before you start to perform any tasks.**
 
 ### Background
 In this project you will write code to model a **very** simplified version of an online retail system such as Amazon.  In this project you will read a database of products from certain categories as well as users and their associated information.  Your program will then allow a user to interactively search for products based on certain keywords returning the products that match the search.  From those matches, your program will allow a user to add select items to their "cart", view items in their cart, purchase the items in their cart, and save the updated database of product and user information.
 
-**Important**:  In practice, reading and understanding others' code is just as important as writing your own code. So in this project you will need to read and understand a good bit of provided code.  Spend time understanding what it does and its structure.  
+**Important**:  In practice, reading and understanding others' code is just as important as writing your own code. So in this project you will need to read and understand a good bit of provided code.  Spend time understanding what it does and its structure.
 
-One common need when reading large code bases (in the grand scheme this is not that large of a code base) is to find where classes or functions are defined that you see being called or used.  Most editors have the ability to do this via some *Find in files* or *Goto definition* related feature(s). In Sublime if you open a folder (e.g. your `hw2` folder) you can right click on a class name or function name and choose *Goto Definition* to jump to where that class or function is declared/defined. 
+One common need when reading large code bases (in the grand scheme this is not that large of a code base) is to find where classes or functions are defined that you see being called or used.  Most editors have the ability to do this via some *Find in files* or *Goto definition* related feature(s). In Sublime if you open a folder (e.g. your `hw2` folder) you can right click on a class name or function name and choose *Goto Definition* to jump to where that class or function is declared/defined.
 
 Another simple command line tool is `grep`.  At the command prompt you can type:
 
@@ -40,19 +40,19 @@ grep "search phrase" file(s)
 grep "Product" *
 ```
 
-  would output the lines of text from any file in the current directory that contained `Product`.  An additional option is `-n` to show line numbers.  
+  would output the lines of text from any file in the current directory that contained `Product`.  An additional option is `-n` to show line numbers.
 
 ```bash
 grep -n "Product" *
 ```
 
-would include the line numbers in each file where the search phrase occurs.  
+would include the line numbers in each file where the search phrase occurs.
 
 #### The Data and Its Format
 Your online retail system will sell products of various categories.  All products (no matter the type) will have a:
 
 + Name
-+ Price 
++ Price
 + Quantity in stock
 
 Currently your system will support 3 categories of products and each category will supply additional fields of data as indicated below:
@@ -129,7 +129,7 @@ PG
 </products>
 <users>
 aturing 100.00 0
-johnvn 50.00 
+johnvn 50.00
 adal 120.00 1
 </users>
 
@@ -149,11 +149,11 @@ Here is a list of the files in the codebase that we are providing.  Please do no
 
 ##### Storage
  - `user.h` and `user.cpp` - **Complete!**  Class to model a User
- - `product.h` and `product.cpp` - **Complete!**  Abstract base class.  Models the common aspects of all categories of products.  Should support various common operations on all products. Ignore and do not alter `isMatch()` for this assignment. It may be used in a future HW.  
+ - `product.h` and `product.cpp` - **Complete!**  Abstract base class.  Models the common aspects of all categories of products.  Should support various common operations on all products. Ignore and do not alter `isMatch()` for this assignment. It may be used in a future HW.
 
 ##### Parsing
  - `db_parser.h` and `db_parser.cpp` - **Complete!**  A Parser class which utilizes specialized product parsers.
- - `product_parser.h` - **Complete!** In this one file are several class definitions.  The base class, `ProductParser` is meant to parse the common attributes of a product and then there is one derived parser class per category of product to parse the additional attributes 
+ - `product_parser.h` - **Complete!** In this one file are several class definitions.  The base class, `ProductParser` is meant to parse the common attributes of a product and then there is one derived parser class per category of product to parse the additional attributes
  - `product_parser.cpp` - **Nearly Complete!** The code for the base class `ProductParser` is complete and does not need to be modified.  For each of the derived types you will need to complete the `makeProduct()` member function of each of these classes to instantiate an appropriate product object for the given category.
 
 ##### Utility code
@@ -175,12 +175,12 @@ Here is a list of the files in the codebase that we are providing.  Please do no
 1. **AND/OR Search** - Your system should allow users to search for products based on entering one or more keywords at the program menu prompt.  An `AND` search should return all the products that contain ALL the search terms entered.  An `OR` search is defined as all the products that contain ANY of the search terms entered.  At the prompt the user will need to write `AND` or `OR` as their first word/command followed by any number of search terms separated by spaced.  Your search should treat those terms as case-insensitive when it comes to matching. Examples might be:
     `AND Men` would be the same as `OR Men` since there is only 1 term and would return all products that have the word `men`. (i.e. the book `Great Men and Women of Troy` and `Men's Fitted Shirt`).
     `AND hidden Data` would return nothing since no products have both those terms
-    `OR hidden Data` would return both the `Hidden Figures DVD` and `Data Abstraction & Problem Solving with C++` products 
+    `OR hidden Data` would return both the `Hidden Figures DVD` and `Data Abstraction & Problem Solving with C++` products
     You may choose any reasonable behavior if the search consists only of `AND` or `OR` (no keywords)
 
 1. Your search must be implemented "efficiently".  You should not have to iterate over ALL products to find the appropriate matches.  Some kind of mapping between keywords and products that match that keyword should be implemented.
 1. **Hits** - Results must be displayed to the user via the `displayProducts(vector<Product*>& hits);` function provided in `amazon.cpp`. Failure to use this function will result in **LARGE** deductions since it will make our testing much harder.
-1. **Adding to Carts** - You should support the notion of a "cart" for each user that they can add products to.  Using the `ADD username hit_result_index` command should cause the product with index `hit_result_index` from the previous search result to be added to `username`'s cart (case insensitive).  **You must maintain the cart in FIFO (first-in, first-out) order** though that doesn't mean you HAVE TO use the C++ `queue` class.  Currently, we will not support the ability to remove products from a cart.  If a product is added to a cart twice, treat them as separate items and store them in your cart twice (i.e. don't try to store it once with a "quantity" of 2).  This implies that each command of `ADD` adds 1 product to the CART.  If the `username` or `hit_result_index` is either not provided, or invalid, print `Invalid request` to the screen and do not process the command. Note: The results from the last search should be retained until a new search is performed.  Thus, the hits from one search can be referenced by many `ADD` commands. 
+1. **Adding to Carts** - You should support the notion of a "cart" for each user that they can add products to.  Using the `ADD username hit_result_index` command should cause the product with index `hit_result_index` from the previous search result to be added to `username`'s cart (case insensitive).  **You must maintain the cart in FIFO (first-in, first-out) order** though that doesn't mean you HAVE TO use the C++ `queue` class.  Currently, we will not support the ability to remove products from a cart.  If a product is added to a cart twice, treat them as separate items and store them in your cart twice (i.e. don't try to store it once with a "quantity" of 2).  This implies that each command of `ADD` adds 1 product to the CART.  If the `username` or `hit_result_index` is either not provided, or invalid, print `Invalid request` to the screen and do not process the command. Note: The results from the last search should be retained until a new search is performed.  Thus, the hits from one search can be referenced by many `ADD` commands.
 1. **Viewing to Carts** - You should support the `VIEWCART username` command which should print the products in `username`'s cart (case insensitive) at the current time.  The items should be printed with some ascending index number so it is easy to tell how many items are in the cart.  If the `username` provided is invalid, print `Invalid username` to the screen and do not process the command.
 1. **Buying the cart** - You should support the `BUYCART username` command which should cause the program to iterate through the items in `username`'s cart (case insensitive). If the item is in stock *AND* the user has enough money it should be removed from the cart, the in stock quantity reduced by 1, and the product price should be debited from the user's available credit.  If an item is not in stock or the user does not have enough credit, simply leave it in the cart and go on to the next product.  **Note:** Your cart implementation must iterate through the products in the order they were added.  If the `username` provided is invalid, print `Invalid username` to the screen and do not process the command.
 1. **Quitting** - You should support the `QUIT filename` command which should cause a new version of the database using the format described above to be saved to a file whose name is `filename`.  It should represent the updated state of the database (i.e. changing product quantities and user credit) to reflect purchases. **Note:** Within the various sections, users and products may be written in any order (not necessarily matching the order of the input database file).
@@ -274,7 +274,7 @@ adal 120.00 1
 
 Our code in `amazon.cpp` and `db_parser.cpp` can make calls via the `DataStore` interface by using a base class pointer/reference (`DataStore*` or `DataStore&`).  It is this class where you will likely want to store products and users, via some kind of container object(s).
 
-The parser in `DBParser` is complete but allows for extensions by "registering" certain "section parsers" and "product parsers".  Section parsers handle everything between `<section>...</section>` in the database file.  We can create section parsers out in main() and register them with the DBParser which will maintain a map of section name to the given parser.  When the parser encounters a particular section it will invoke the appropriate section parser.   We have written two sections parsers:  `ProductSectionParser` and `UserSectionParser`.  These are complete.  
+The parser in `DBParser` is complete but allows for extensions by "registering" certain "section parsers" and "product parsers".  Section parsers handle everything between `<section>...</section>` in the database file.  We can create section parsers out in main() and register them with the DBParser which will maintain a map of section name to the given parser.  When the parser encounters a particular section it will invoke the appropriate section parser.   We have written two sections parsers:  `ProductSectionParser` and `UserSectionParser`.  These are complete.
 
 Our product parsers will parse all the aspects of the specific category of product into the data members of the class and then call `makeProduct()`.  It is here that you need to instantiate an appropriate product object and return a pointer to it.  It will then be added to the data store object.  **You only need to fill in the code in the `makeProduct()` functions** for each specific product parser and do not need to change any other code in `product_parser.cpp` other than adding appropriate `#include` statements.
 
@@ -282,9 +282,9 @@ Our product parsers will parse all the aspects of the specific category of produ
 ### Your Task (90%)
 
 1. Complete the `parseStringToWords()` in `util.cpp` according to the specification given above for taking a string of many words and splitting them into individual keywords (split at punctuation, with at least 2 character words)
-1. Complete the `setIntersection` and `setUnion` functions in `util.h`.  These will help you later on to perform searching. These functions should run in **O(n*log(n))** and **NOT O(n^2)**. Note that these are templated functions operating on any generic `set<T>`.  As a hint, to declare an iterator for `set<T>` you must precede the type with the keyword `typename` as in `typename set<T>::iterator it`.  Another **very important** note about using iterators with C++ containers (e.g. `vector`, `set`, `map` ):  if you are iterating over a container with iterators, you should **NOT** modify the contents as you iterate.  Consider the scenario where you have an iterator to the beginning item of a vector, and in your loop you erase that element.  Behind the scenes, the vector shifts all the data elements up a spot, moving the 1st element into the 0th location.  When you increment the iterator you will now move to the next location in the vector skipping the 1st element (now in the 0-th location).   Similar or more serious issues can arise when you insert items, etc. as you iterate.    
+1. Complete the `setIntersection` and `setUnion` functions in `util.h`.  These will help you later on to perform searching. These functions should run in **O(n*log(n))** and **NOT O(n^2)**. Note that these are templated functions operating on any generic `set<T>`.  As a hint, to declare an iterator for `set<T>` you must precede the type with the keyword `typename` as in `typename set<T>::iterator it`.  Another **very important** note about using iterators with C++ containers (e.g. `vector`, `set`, `map` ):  if you are iterating over a container with iterators, you should **NOT** modify the contents as you iterate.  Consider the scenario where you have an iterator to the beginning item of a vector, and in your loop you erase that element.  Behind the scenes, the vector shifts all the data elements up a spot, moving the 1st element into the 0th location.  When you increment the iterator you will now move to the next location in the vector skipping the 1st element (now in the 0-th location).   Similar or more serious issues can arise when you insert items, etc. as you iterate.
 1. Write derived product classes: `Book`, `Clothing` and `Movie` implementing the `keywords()` which returns the appropriate keywords to index the product, `displayString()` [to create a string that contains the product info] and `dump()` [that outputs the database format of the product info].  We recommend trying to compile (NOT test, just compile) each of these files as you write them to avoid solving the same compile issue 3 times for each derived class.  Remember you can easily compile by using the -c flag (e.g. `$ g++ -g -Wall -std=c++11 -c book.cpp` ).  Each class should be written in its own `.h` and `.cpp` files (i.e. `book.h`, `book.cpp`, `clothing.h`, etc.)
-1. Complete each of the specialized product parser implementations of makeProduct() in `product_parser.cpp` to return a new specific Product for each category. Again we recommend ensuring this file can be compiled after you complete it.
+1. Complete each of the specialized product parser implementations of `makeProduct()` in `product_parser.cpp` to return a new specific Product for each category. Again we recommend ensuring this file can be compiled after you complete it.
 1. Implement a derived DataStore class called `MyDataStore` in `mydatastore.h` and `mydatastore.cpp`.  It is here that you will implement the core functionality of your program:  searching, adding products and users, saving the database, etc. (For search you can use the `setIntersection` and `setUnion`) functions in `util.h`.   This class is likely where you should store products and users in some fashion.  Again we recommend compiling this file separately as well after you write the core functionality.  You may need to add to it or modify it later as you work through other design aspects but make sure it can compile now even just using empty "dummy" function implementations.  This derived class may define non-virtual functions to do other specific commands that the menu supports.  It might be a good idea to have one member function in this class that corresponds to and performs each command from the menu options.  You **should not** modify `datastore.h`.
 1. Complete `amazon.cpp`.  It has a pretty good skeleton laid out for you to implement the user interface (text-based menu and command entry) and you only need to modify a few lines in the top area and then add the remaining menu option checks at the bottom.  More specifically, you will need to:
   + Change the `DataStore` object instantiation to your derived type
@@ -324,9 +324,9 @@ Genre: <genre> Rating: <rating>
 
 ### Test your Program
 
-We strongly recommend writing separate test drivers programs (i.e. separate `.cpp` files with a `main()`) that perform basic unit tests by calling various functions or instantiating your classes and invoking the various member functions.  In this way you can have some confidence that the individual pieces work before you try to put them all together.  
+We strongly recommend writing separate test drivers programs (i.e. separate `.cpp` files with a `main()`) that perform basic unit tests by calling various functions or instantiating your classes and invoking the various member functions.  In this way you can have some confidence that the individual pieces work before you try to put them all together.
 
-At the point where you need a database file to parse and act upon, you may use the `database.txt` file. Feel free to add products and users to the `database.txt` or, better, create your own database text file.  Run the program and be sure to test various sequences of command that exercise the requirements described above. 
+At the point where you need a database file to parse and act upon, you may use the `database.txt` file. Feel free to add products and users to the `database.txt` or, better, create your own database text file.  Run the program and be sure to test various sequences of command that exercise the requirements described above.
 
 ### Finishing Up
 

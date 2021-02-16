@@ -114,6 +114,7 @@ lectures:
     chapters:
       - Chapter 6.1-6.5
       - Chapter 9.3
+    notes: 10-Templates.pptx
     
   # 11
   - topics:
@@ -121,6 +122,7 @@ lectures:
       - Binary Search Trees
     chapters:
       - Chapter 4.3
+    notes: 11-Graphs.pptx
 
   # 12
   - topics:

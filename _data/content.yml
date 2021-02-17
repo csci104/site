@@ -76,7 +76,7 @@ labs:
   - id: lab6
     week: Week 6
     title: Midterm Review
-    assigned: false
+    assigned: true
     topics: TBD
   - id: lab7
     week: Week 7

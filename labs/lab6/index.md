@@ -146,83 +146,80 @@ int calculateTime(std::string keyboard, std::string word);
 ```
 - [ ] Implement `calculateTime`. We've provided skeleton code and tests for you in `resources/lab6`.
 
+### Polymorphism & Inheritance
 
-### Design Problems
-
-#### Implementing a Forgetful Brain
-**[Sample Midterm](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 7**: In this problem, you will be implementing a data structure for a "forgetful brain". The waya forgetful brain works is as follows: it has a fixed and limited capacity for facts (which for our purposes are just strings). Initially, your brain is empty. As you learn more facts, they are added to the brain. When the brain is full, any newly added fact displaces one that was previously there, meaning that you forget the previous fact. Which fact gets displaced? The one that was used least recently. There are two ways in which your brain can use a fact: (1) Learning a new fact is using it; that is, you remember the things you learned recently. (2) You can deliberately recall a fact. 
-
-As an example, suppose that your brain has a capacity of 3 facts, and you learn A, B, C in order. Then, you recall A, and then you learn D. At this point, B is the least recently used fact, so you forget B in order to learn D. When you learn E, you next forget C, and if you learn F, you forget A. If instead, you recalled A again before learning F, then you would next forget D. The `Brain` class thus looks as follows:
+**[Sample Midterm](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 5**: Here is a piece of code. Tell us what it outputs. (You will get partial credit for partially correct answers.)
 
 ```c++
-class Brain {
-  public: 
-    Brain (int capacity); 
-      // Create a new Brain with the given fixed capacity
-    void remember (const string& fact); 
-      /* access the fact, i.e., mark it as freshly remembered. 
-         We will never ask you to remember a fact that you haven't learned */
-    void learn (const string& fact);
-      /* add the given fact to the brain, and mark it as freshly remembered.
-         If the brain is full, throw out the least recently used fact
-         to make room for the newly added fact. */
-}; 
+class Question {
+public:
+  Question(int v) : val(v) { }
+  virtual ~Question() { cout << "d1" << endl; }
+  virtual string studentResponse() = 0;
+  int getValue() { return val; }
+private:
+  int val;
+};
+
+class NonTrivialQuestion : public Question {
+public:
+  NonTrivialQuestion() : Question(10) { }
+  NonTrivialQuestion(int v) : Question(v) { }
+  ~NonTrivialQuestion() { cout << "d2" << endl; }
+  string studentResponse() { return "I got this!"; }
+  int getValue() { return 15 + Question::getValue(); }
+};
+
+class DifficultQuestion : public NonTrivialQuestion {
+public:
+  DifficultQuestion() : NonTrivialQuestion() { }
+  ~DifficultQuestion() { cout << "d3" << endl; }
+  string studentResponse()
+  { return "When are office hours?"; }
+};
+
+int main()
+{
+  Question* p[2];
+  p[0] = new NonTrivialQuestion(15);
+  p[1] = new DifficultQuestion;
+  for(int i=0; i < 2; i++){
+    cout << p[i]->getValue() << endl;
+    cout << p[i]->studentResponse() << endl;
+  }
+  NonTrivialQuestion* q[2];
+  q[0] = new NonTrivialQuestion(15);
+  q[1] = new DifficultQuestion;
+  for(int i=0; i < 2; i++){
+    cout << q[i]->getValue() << endl;
+    cout << q[i]->studentResponse() << endl;
+  }
+  delete p[1];
+  return 0;
+}
 ```
 
-In order to implement this Brain class, you should use the following modified version of a `List`, which a friend has already written for you, and which you cannot modify. We guarantee that you will never be asked to learn the same fact twice, so you don’t need to worry about duplicates in your brain or list.
-Your friend’s modified list class is called `LimitedList`; it’s basically a `List` which will never resize, even if you reached the capacity. Instead, it will throw an exception if you exceed its capacity. Here is your friend’s header file.
+### Deep Copy Constructors
+**[Sample Midterm](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 6**: Consider the following code: 
 
 ```c++
-class LimitedList {
+class IntArray {
 public:
-  LimitedList (int capacity);
-  /* creates a list fixed to this capacity. It can still grow and
-  shrink with insert/remove, but if an insert would make the
-  size exceed the capacity, it will throw an exception. */
-  void set (int i, const string & item); // exactly the same as standard set
-  const string & get (int i) const; // exactly the same as standard get
-  void insert (int i, const string & item);
-  /* almost the same as standard insert, except if the list is
-  full, it will throw an exception rather than resizing.
-  In the case of the exception being thrown, it will not alter
-  the list. */
-  void remove (int i); // exactly the same as standard remove
-protected:
-  int find (const string & item) const;
-  /* returns the first location at which item is stored in the
-  list. Returns -1 if the item isn’t in the list. */
-  int size () const;
-  // returns the number of items currently stored in the list
+  IntArray(const IntArray &other);
+  //other class functions are here, which you don’t need to worry about
 private:
-  // the actual variables used to store stuff
+  int *myarray; //data
+  int used; //number of elements in myarray
+  int alloc; //number of allocated indices. Unused indices have garbage values.
+};
+class ArrayOfArrays {
+public:
+  ArrayOfArrays(const ArrayOfArrays &other);
+  //other class functions are here, which you don’t need to worry about
+private:
+  IntArray **myarray; //an array of IntArray pointers.
+  int used; //number of arrays in myarray
+  int alloc; //number of allocated indices. Unused indices have garbage values.
 };
 ```
-
-- [ ] How should you use `LimitedList` to build `Brain`? Inheritance (if so, what type), composition, or other? Why?
-
-- [ ] Give an implementation of the `Brain` class by adding your code in the following piece of code. 
-
-```
-class Brain
-// relevant code here if you want
-{
-  public: 
-    Brain (int capacity) 
-    {
-
-    }
-    
-    void remember (const string & fact) 
-    {
-
-    }
-
-    void learn (const string & fact) 
-    {
-
-    }
-  
-  private: // any data or methods you would like to add
-}; 
-```
-
+- [ ] Implement deep copy constructors for both `IntArray` and `ArrayOfArray`

@@ -106,7 +106,8 @@ lectures:
     chapters:
       - Chapter 6.1-6.5
     notes: 9-Stacks and Queues.pptx
-      
+    recording: https://usc.zoom.us/rec/share/q7SRQlGHm8nuJ9v6v_MAlAv6prta5w3vLLbzB3cgOnzxEcT8Ljfd1kOfM7gGDk4.8fwduBZbG70pnpcY%20
+    
   # 10
   - topics:
       - Heaps
@@ -130,6 +131,7 @@ lectures:
       - AVL Trees
     chapters:
       - Chapter 4.3-4.4
+    notes: 12-Heaps.pptx
  
   # 13
   - topics:

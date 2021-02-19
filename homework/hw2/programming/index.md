@@ -338,6 +338,7 @@ At the point where you need a database file to parse and act upon, you may use t
   - `amazon.cpp`, `datastore.h`, `db_parser.cpp`, `db_parser.h`, `product.cpp`, `product.h`, `product_parser.cpp`, `product_parser.h`, `user.cpp`, `user.h`, `util.cpp`, `util.h`
   - Any files you created
   - Your `Makefile`
- + You can use the [submission link here](http://bytes.usc.edu/codedrop/?course={{site.data.main.slug}}&assignment=hw2&auth=Google).
+ + You can use the [submission link here](https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2021/hw2/).
 
-You can submit your homework [here](http://bits.usc.edu/codedrop/?course=cs104-sp21&assignment=hw2&auth=Google). Please make sure you have read and understood the [submission instructions]({{ site.url }}/assignments/submission-instructions.html).
+You can submit your homework [here](https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2021/).
+Please make sure you have read and understood the [submission instructions]({{ site.url }}/assignments/submission-instructions.html).

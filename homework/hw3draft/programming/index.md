@@ -10,12 +10,11 @@ title: Homework 3 Programming
 + Due: Friday, March 12th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
 + Directory name in your github repository for this homework (case sensitive): `hw3`
-
-    - Do a `git pull` in your `resources` repo.
-    - Then copy the `resources/hw3` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw3` folder.
-- You should provide a `Makefile` to compile your coloring program.  While you should test your heap, you won't submit your testing code, and thus will not need to provide a compilation command for it.
-    - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
-    -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
++ Do a `git pull` in your `resources` repo.
++ Then copy the `resources/hw3` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw3` folder.
++ You should provide a `Makefile` to compile your coloring program.  While you should test your heap, you won't submit your testing code, and thus will not need to provide a compilation command for it.
++ Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
++ Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
 
 ### Problem 1 (Recursion and Backtracking - Graph Coloring, 35%)
 

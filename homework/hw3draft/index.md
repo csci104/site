@@ -27,7 +27,7 @@ Your answer should not be in array form like ours, but instead be drawn as a tre
 ### Problem 2 (A*, 10%)
 
 <div class="showcase">
-    <img src="../../img/astar.jpg" alt="A-Star" width="640"/>
+    <img src="../img/astar.jpg" alt="A-Star" width="640"/>
 </div>
 
 You are given the above graph, and want to find the shortest path from node A to node P, using **A* Search**.  Your algorithm has the following properties:

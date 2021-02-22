@@ -2,158 +2,69 @@
 layout: asides
 toc: true
 tasks: true
-title: Templates
+title: Heaps
 ---
 
-## Templates
+## Intro
 
-At this point in the course, we've created many simple data structures ourselves, as well as used a number of already-templated STL classes. The first goal of this lab is to learn how to actually create these templated classes ourselves. By the end of this lab, you will learn to convert one of the type-specific lists into a generic, templated one.
+Any questions, thoughts or concerns? How can we help you?
 
-### 1 - Template Motivation
+## Heaps & Priority Queues
 
-In Homework 2, you implemented `TokenList`, a doubly-linked list of `Token` objects. What if, for example, a user wants to use a doubly-linked list, but for a series of `string`s? In order to use the same kind of data structure for different data types, we'll have to make a copy of the code, change almost every single mention of `Token` to `string`. Doing so creates a lot of code that is repeated unnecsesarily, violating a software engineering principle called [**Don't Repeat Yourself (DRY)**](http://en.wikipedia.org/wiki/Don't_repeat_yourself). It's easy to setup, but comes with a heavy price: if you discover a bug in one set of code, you'll have to apply the patch across multiple files, making your project very prone to mistakes and errors.
+In today's lab, we're going to focus on priority queues, an important data structure that you'll need to understand for the next assignment and beyond.
 
-Through templates, however, we can treat a type as a variable, and use it as the type in class definition. Later, when a user declares a templated object with a particular type, the compiler will substitute in the user-speficied type to generate a version of your implementation with this type.
+### Heaps Introduction
 
-### 2 - Template Example
+In office hours, we use a standard FIFO queue system, where the student waiting the longest is called next. But what if we wanted to apply a more complicated calculation to found who was next? Maybe the person with the shortest question? The person who started the assignment the earliest? The person who's asked the fewest questions? We still want the popping functionality of a queue, where we just care about who's on top, and don't need to access anyone in the middle. However, we no longer want to process items in order of the arrival.
 
-One of the simplest templated examples we've encountered so far is the `std::pair` class. It is declared with two "types", and values of the sepcified types are passed in to the constructor. In a templated class, functions signatures and parameters can be defined "programatically". For example:
+How do we add, return, and remove items based on their assigned priority?
+ 
+Heaps are an implementation of a **priority queue**, an ADT that allows us to add items to their appropriate location (based on their priority), return the item of highest priority, and remove the item of highest priority. You can visualize a heap as a complete d-ary tree (usually, d = 2) that satisfies the heap property: 
 
-```
-std::pair<int, std::string> student(1234567890, "Tommy Trojan");
-std::pair<std::string, int> question("What is the answer to life, universe, and everything?", 104);
-```
+Every parent is better than both of its children. 
 
-Similarly, the return values of its functions can be defined "programmatically" as well. For example:
+In a min heap, a node is less than or equal to all its children. In a max heap, a node is greater than or equal to all its children. 
 
-```
-int studentId = student.first; // returns an int
-std::string answer = question.first; // returns a string
-```
+- [ ] So, **where in the tree is the “best” (maximum or minimum) item at any given time?**
 
-Let's open the file `pair.h` and take a closer look.
+- [ ] **For a binary heap, does it matter which child is on the left and which child is on the right? Why or why not?**
 
-#### 2.1 - Declare the types with `template < >`
+- [ ] **In what data structure is there an ordering property between the left and right children, and why is it necessary for that data structure and not in heaps?**
+ 
+Since a complete tree is one where the first (h-1) levels are full AND the bottom level is filled from left to right, we can store our heaps in a single array. Suppose we index our array starting at index 1. For any node i, parent(i) = i/2. For any parent p, left_child(p) = 2p and right_child(p) = 2p + 1.
 
-We list the number of programatically declared types that we'll use in a templated class with a simple `template < >` tag before the class declaration and before each implementation of the class's functions. This is important — a templated `Pair` class with two dynamic types is an entirely different class from a non-templated `Pair` class, even if they share the same name. Therefore, every time we mention a templated class, we must refer to it with `template < >`.
+- [ ] **How does this change if we index our array starting at index 0? And how does that change if we have a 3-ary heap, 4-ary heap, 5-ary heap, etc.?**
+ 
+Thankfully, implementing the functions of a priority queue is not as hard as it sounds. Let’s say our heap is stored in an array a, and the variable size returns the number of items in the heap at a given time.
+ 
+**Pushing an Item:** to add an item, we need to think about where to add it. In what location should we add our new item if we want to keep our tree complete? What index of our array does this correspond to? Adding the item is the easy part; after adding, we need to think about maintaining the heap property as well. If our newly added leaf is worse than its parent, does our heap property still hold?  This is where “trickling up” comes in: to maintain the heap property, we need to recursively promote our new leaf up. How do we know when to stop “trickling up?”
 
-Notice that with Pair, we are listing that two classes can be specified with `template <typename FirstType, typename SecondType>`. It means we're going to name the first type `FirstType` and the second type `SecondType`. These names act as variable names — wherever in this class, `FirstType` and `SecondType` refer to the specific types that the user of the templated class specified in declaration. Think of `typename` as their type, `FirstType` or `SecondType` as their name, just like when you declare `int counter`, `int` is the type and `counter` is the name, which you can later refer to in your program.
+**Popping an Item:** recall that when we remove from a heap, we are removing the best item. However, the best item is stored in the root, and we can’t just delete our root from the tree! In fact, the only item we can remove while maintaining a complete tree is the leaf node that is as far right as possible. Removing an item is going to involve three main steps:
 
-#### 2.2 Do not pre-compile!
+a.     Swap the “best” node with the very last leaf node. Where are these stored in our array?
 
-Another thing you'll notice is that the class's implementations for all its methods are included in this header file. This is not a bad practice; in fact, it is required for templated class to do so, since templated classes cannot be pre-compiled, and the reason is rather complex:
+b.     Delete the very last leaf node (which now stores our “best” item.)
 
-In a templated class declaration and implementation, since it uses a variable type, there is no information for the compiler to know if a member funciton or data exists.
+c.     Since the root now contains what was previously our very last leaf node, we are going to have to put it in its right place to maintain our heap property. The last step of removing involves “trickling down”: recursively swapping our new root with its best child. How do we know when to stop “trickling down?”
 
-```
-template <typename T>
-class Dummy
-{
-public:
-	void SomeFunction() 
-	{
-		T name;
-		std::cout << name.length(); // Does T have a member function length()?
-	}
-}
-```
+**Top/Returning Best Value:** to return the best value, all we have to do is return a[0]. The runtime of top() is clearly constant. What are the runtimes of adding/removing an item? (Hint: what is the height of a complete d-ary tree?)
 
-In order to resolve the linking problem, the compiler will generate a version of the templated class implementation by substituting in the type that the users try to use into the variable type.
+### Assignment
 
-```
-// If a user tries to use Dummy<int> and Dummy<std::string>, the compiler will generate the following two code
-// The actual generated code is not in C++ but some low-level machine code. 
-// C++ code is shown here for illustration purpose only.
+We're not going to be coding up a heap today — instead, we're going to practice using one!
 
-class DummyInt
-{
-public:
-	void SomeFunction() 
-	{
-		int name; // Notice T is replaced with int
-		std::cout << name.length(); // This should not compile
-	}
-}
+Here's the problem:
 
-class DummyStdString
-{
-public:
-	void SomeFunction() 
-	{
-		std::string name; // Notice T is replaced with std::string
-		std::cout << name.length(); // This should compile
-	}
-}
-```
+**ROCK BATTLE:**
 
-From the above example, you can see that the compiler doesn't know whether the code should compile until it sees how the user is using the code. In addition, where the class definition is and when it's needed also depends on when and where the users use the templated class. All of these make it impossible for the compiler to compile templated class into object files ahead of time. 
+We have a collection of stones. Each stone has a positive integer weight. The stones are represented as a vector of ints, where each int is the stone's weight.
 
-Since the compiler needs to do substitutions based on the use of templated class, it will do it while it's in the user's program, where the templated class is use, based on the implementation of the class referenced by `#include`. Therefore it needs to know all implementations from the header file, so we should not separate out the implementations into a `.cpp` file.
+We want our rocks to battle. Each turn, we choose the two heaviest rocks and smash them together. Suppose the stones have weights x and y, where x <= y.  The result of the smash is:
 
-**TL;DR: Always put your templated class implementations in the header file. Never compile a templated class into `.o` files. Always include the header file in the dependency list but never list it in the compile command.**
+If x == y, both stones are totally destroyed.
 
-### 3 - Using Inner Class of Templated Class
+If x != y, the stone of weight x is totally destroyed, and the stone of weight y now has weight y-x.
 
-In your homework you have seen the use of the inner struct `Item` in `TokenList`. Inner classes work the same way in templated classes, and inner classes share their outer class's templated type variables. However, the syntax for using the inner class is a little different. Wherever you need to refer to the inner class outside of your class definition, you must append `typename` to the front of the type.
+At the end, there is at most 1 stone left.  Return the weight of this stone (or 0 if there are no stones left.)
 
-```
-template<typename T>
-class Outer
-{
-private:
-	// We don't need template<typename T> here. Inner will get it from Outer.
-	struct Inner
-	{
-		T val; // Inner class will share outer class's template variable name
-	};
-	
-public:
-	T GetValue();
-private:
-	Inner GetInner(); // We are in class definition, so we can refer to the inner class without Inner<T>, though that will work just fine.
-
-private:
-	Inner mInner;
-};
-
-// The first template<typename T> tells the compiler that we need to use T as a type variable.
-// Outer<T>::GetValue is the function name. Since Outer is templated, Outer<int>::GetValue is 
-// very different from Outer<double>::GetValue, so must include <T> after Outer.
-
-template<typename T>
-T Outer<T>::GetValue()
-{
-	return mInner.val;
-}
-
-// The typename in second line at the front of function signature tells the compiler Outer<T>::Inner 
-// is a class or struct name, not a static variable name and Outer<T>::Inner is the return type. Again, 
-// since Outer is templated, we must include <T> after Outer.
-
-template<typename T>
-typename Outer<T>::Inner Outer<T>::GetInner()
-{
-	return mInner;
-}
-```
-
-### Check Off: Templated Linked List 
-
-We have included a simplified version of a linked list of integers,`LList`, in `resources`. Your job is to template it and make it usable with any class, not just ints.
-
-What you need to do:
-
-- [ ] Template the LList class. Include `template < >` tags wherever the class is mentioned. Since there is only one generic type - convention the name is `T` (instead of `FirstType`, `SecondType`).
-- [ ] Fix the inner classes Item. Item is setup to store an int variable.
-- [ ] Change approriate mentions of `int` to `T`. References to inner classes need to be changed as well - remember that they are now templated.
-- [ ] Copy the contents from `llist.cpp` into the bottom of `llist.h`, and fix these functions.
-- [ ] Make and run the program using `make`. It should produce the following output without valgrind errors:
-
-```
-1 Bulbasaur
-4 Charmander
-7 Squirtle
-144 Articuno
-145 Zapdos
-146 Moltres
-```
+You're encouraged to use the [STL heap](http://www.cplusplus.com/reference/algorithm/make_heap/) or [priority queue](http://www.cplusplus.com/reference/queue/priority_queue/).

@@ -77,6 +77,11 @@ layout: default
         <a href="./notes/{{ lecture.notes }}">{{ lecture.notes }}</a>
         {% endif %}
       </td>
+      <td>
+        {% if lecture.notes %}
+        <a href="./notes/{{ lecture.notes }}">{{ lecture.notes2 }}</a>
+        {% endif %}
+      </td>
       {% endif %}
       <td>
         {% if lecture.recording %}

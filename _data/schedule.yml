@@ -2,6 +2,7 @@ show:
   lectures:
     chapters: true
     notes: true
+    notes2: true
 
 exams:
 
@@ -87,6 +88,7 @@ lectures:
     chapters:
       - Chapter 1.6
     notes: 7-STL.pptx
+    notes2: 8-ADTs.pptx
     recording: https://usc.zoom.us/rec/share/4FxBW-K0YCoPoXrnUsTIucv7IyfrOS6AAb0pqTN_9jpgYY8BIqFLClqc-Sy7VsHa.5W-sJbNnWJzk7X0V 
       
   # 8
@@ -96,7 +98,7 @@ lectures:
     chapters:
       - Chapter 4.1-4.2
       - Chapter 9.1   
-    notes: 8-ADTs.pptx
+    notes: 9-Stacks and Queues.pptx
     recording: https://usc.zoom.us/rec/share/6C-djAvtojyRdlRgt81V2all23YS7ky4wn-ygJhJFSvz9xO9KeyLHC0uYT6P49xJ.OxL8uR6iw2f5jm3D 
       
   # 9
@@ -105,7 +107,8 @@ lectures:
       - Heaps
     chapters:
       - Chapter 6.1-6.5
-    notes: 9-Stacks and Queues.pptx
+    notes: 10-Templates.pptx
+    notes2: 11-Graphs.pptx
     recording: https://usc.zoom.us/rec/share/q7SRQlGHm8nuJ9v6v_MAlAv6prta5w3vLLbzB3cgOnzxEcT8Ljfd1kOfM7gGDk4.8fwduBZbG70pnpcY%20
     
   # 10
@@ -115,7 +118,7 @@ lectures:
     chapters:
       - Chapter 6.1-6.5
       - Chapter 9.3
-    notes: 10-Templates.pptx
+    notes: 12-Heaps.pptx
     recording: https://usc.zoom.us/rec/share/H4T8vY7Aaawk7_cM1S3q2hcUImGQ9ec9Smv6IA6C8BCduZ8saHObkTkCabdhtOzL.VAUyZ__CclFreNUH 
     
   # 11
@@ -124,7 +127,8 @@ lectures:
       - Binary Search Trees
     chapters:
       - Chapter 4.3
-    notes: 11-Graphs.pptx
+    notes: 13-Graph Algorithms.pptx
+    recording: https://usc.zoom.us/rec/share/YbVd62L8Qalp_3_wRciaT7_vf-C8RYlZmwM4eOg7JiYtr9eMj9BKqw6iMNHzL7On.7plpS-C7wiwZQwGa 
 
   # 12
   - topics:
@@ -132,7 +136,6 @@ lectures:
       - AVL Trees
     chapters:
       - Chapter 4.3-4.4
-    notes: 12-Heaps.pptx
  
   # 13
   - topics:
@@ -141,7 +144,6 @@ lectures:
     chapters:
       - Chapter 4.4, 4.7
       - Chapter 12.2
-    notes: 13-Graph Algorithms.pptx
 
   # 14
   - topics:

@@ -78,14 +78,14 @@ layout: default
         {% endif %}
       </td>
       <td>
-        {% if lecture.notes %}
-        <a href="./notes/{{ lecture.notes }}">{{ lecture.notes2 }}</a>
+        {% if lecture.notes2 %}
+        <a href="./notes/{{ lecture.notes2 }}">{{ lecture.notes2 }}</a>
         {% endif %}
       </td>
       {% endif %}
       <td>
         {% if lecture.recording %}
-        <a href="{{ lecture.recording }}">Lecture {{ forloop.index }}</a> 
+        <a href="{{ lecture.recording }}">Lecture {{ forloop.index }}</a>
         {% endif %}
       </td>
     </tr>

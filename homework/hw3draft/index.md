@@ -30,7 +30,7 @@ Your answer should not be in array form like ours, but instead be drawn as a tre
     <img src="../img/astar.jpg" alt="A-Star" width="320"/>
 </div>
 
-You are given the above graph, and want to find the shortest path from node A to node P, using **A* Search**.  Your algorithm has the following properties:
+You are given the above unweighted graph, and want to find the shortest path from node A to node P, using **A* Search**.  Your algorithm has the following properties:
 
 - It uses Manhattan distance as its heuristic (the h-value)
 - If two nodes look equally good, it breaks ties by selecting the node with a smaller heuristic (or, equivalently, the node with the largest distance travelled)

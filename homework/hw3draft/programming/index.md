@@ -10,8 +10,7 @@ title: Homework 3 Programming
 + Due: Friday, March 12th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
 + Directory name in your github repository for this homework (case sensitive): `hw3`
-+ Do a `git pull` in your `resources` repo.
-+ Then copy the `resources/hw3` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw3` folder.
++ There is no skeleton code for PA3
 + You should provide a `Makefile` to compile your coloring program.  While you should test your heap, you won't submit your testing code, and thus will not need to provide a compilation command for it.
 + Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
 + Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
@@ -147,6 +146,8 @@ In order to guide you to the right solution, think first about the following que
 1. In the same scenario as above, what are the indices of the children of the node at position i?
 1. What changes in the heap functions you learned in class when you move to d-ary arrays?
 
+You do not need to submit your answers, these questions are merely to help you formulate your solution.
+
 ### Finishing Up
 
 ### Completion Checklist
@@ -156,8 +157,6 @@ In order to guide you to the right solution, think first about the following que
   - This directory needs its own `README.md` file briefly describing your work
   - `coloring.cpp`, `MinHeap.h`
   - Your `Makefile`
- + You can use the [submission link here](http://bytes.usc.edu/codedrop/?course={{site.data.main.slug}}&assignment=hw3&auth=Google).
-
-You can submit your homework [here](http://bits.usc.edu/codedrop/?course=cs104-sp21&assignment=hw3&auth=Google). Please make sure you have read and understood the [submission instructions]({{ site.url }}/assignments/submission-instructions.html).
++ The submission link will be posted on Piazza a few days before the due date.
 
 #### 

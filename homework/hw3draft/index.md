@@ -7,7 +7,7 @@ title: Homework 3 Written
 
 # HW3: Written Assignment
 
-+ Due: Friday, February 5th, 11:59pm PST
++ Due: Friday, March 5th, 11:59pm PST
 + You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .jpg, or .pdf)
 + To access the programming portion of this assignment, click [here](./programming/)
 

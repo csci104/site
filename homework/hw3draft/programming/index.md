@@ -158,5 +158,3 @@ You do not need to submit your answers, these questions are merely to help you f
   - `coloring.cpp`, `MinHeap.h`
   - Your `Makefile`
 + The submission link will be posted on Piazza a few days before the due date.
-
-#### 

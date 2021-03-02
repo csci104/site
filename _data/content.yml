@@ -85,9 +85,9 @@ labs:
     topics: Heaps
   - id: lab8
     week: Week 8
-    title: TBD
+    title: BST and AVL Trees
     assigned: false
-    topics: TBD
+    topics: BST and AVL Trees
   - id: lab9
     week: Week 9
     title: TBD

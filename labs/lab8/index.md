@@ -7,6 +7,8 @@ title: BST and AVL Trees
 
 ## BST and AVL Trees
 
+This lab will be covered during lab sections between Mar 5 - Mar 10, 2021. 
+
 A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
 
 ### BSTs
@@ -54,7 +56,7 @@ As we will see in a few weeks, most operations on a BST take time directly propo
 
 Here is an example of balanced vs. non balanced trees.
 
-<div style="text-align:center"><img src="./assets/examples.GIF" alt="bst" width="550" height="250" /> </div>
+<div style="text-align:center"><img src="./assets/examples.gif" alt="bst" width="550" height="250" /> </div>
 
 ### How can we maintain these properties at the same time?
 

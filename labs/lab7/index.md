@@ -34,7 +34,13 @@ In a min heap, a node is less than or equal to all its children. In a max heap, 
  
 Since a complete tree is one where the first (h-1) levels are full AND the bottom level is filled from left to right, we can store our heaps in a single array. Suppose we index our array starting at index 1. For any node i, parent(i) = i/2. For any parent p, left_child(p) = 2p and right_child(p) = 2p + 1.
 
-- [ ] **How does this change if we index our array starting at index 0? And how does that change if we have a 3-ary heap, 4-ary heap, 5-ary heap, etc.?**
+- [ ] How does this change if we index our array starting at index 0?
+
+If we start at index 0, for any node i, parent(i) = (i - 2)/2. For any parent p, left_child(p) = 2p + 1 and right_child(p) = 2p + 2.
+
+- [ ] How does that change if we have a 3-ary heap, 4-ary heap, 5-ary heap, etc.?
+
+That's for you to figure out in the homework!
  
 Thankfully, implementing the functions of a priority queue is not as hard as it sounds. Let’s say our heap is stored in an array a, and the variable size returns the number of items in the heap at a given time.
  

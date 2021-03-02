@@ -189,6 +189,6 @@ title: Homework 4 Programming
 + Directory name for this homework (case sensitive): `hw4`
   - This directory should be in your `hw-username` repository
   - This directory needs its own `README.md` file briefly describing your work
-  - `floorplan.cpp`, `bst.h`, `avlbst.h`
+  - `floorplan.cpp`, `bst.h`, `avlbst.h`, `print_bst.h`
   - Your `Makefile`
 + The submission link will be posted on Piazza a few days before the due date.

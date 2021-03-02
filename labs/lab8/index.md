@@ -2,176 +2,192 @@
 layout: asides
 toc: true
 tasks: true
-title: Graphs
+title: BST and AVL Trees
 ---
 
-## Introduction
+## BST and AVL Trees
 
-Graphs are very important when it comes to your success as a Software Engineer. Many problems within combinatorics, discrete math and general engineering can be solved or represented using graphs. The key take away is that graphs represent relationships.
+### Review: Binary Trees
 
-Consider Facebook: your network of friends can easily be represented by a graph. Each person is a node and a "friend" is represented as an edge. The same logic can be applied to Linkedin. The cool thing about Linkedin is that it shows you what your "distance" is from another person. Pretty cool huh?
+What does it mean for a tree to be binary?
 
-In this lab we will be looking at implementations of graphs and then implementing the basic search algorithms.
+<img src="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/tree1.bmp" alt="" width="385" height="343" /> 
 
-### 1 - How do you represent a graph?
+A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
 
-The relationships between nodes in a graph can be represented with an Adjacency Matrix or an Adjacency List. Both represent directed edges, a connection between two nodes is a one way relationship. 
+### BSTs
 
-For the sake of explanation, we will use this example of a graph:
+The **Binary Search Tree Property** (BST) states that all nodes in the left subtree must have key values less than or equal to the root and all of the nodes in the right subtree must have key values greater than the root. Usually, if key values are distinct, we do not worry about equality. BSTs exist to enable (potentially) fast searches. 
 
-<img src="./assets/graph.png" alt="graph" style="width:450px; height:300px"/>
++ For a BST, what is special about operating on elements using an in-order traversal? If we were printing integers using this traversal, what would the output look like? 
 
-When determining how to choose which graph implementation to use, one must consider a few things:
++ Why do we say potentially? Can someone think of an example in which the search is really slow, even if we have a valid BST?
 
-1. Memory or space needed
-2. Time needed to find an edge (i, j)
-3. Time needed to find all neighbors of given node
+Our search function will simply return true or false depending on whether or not our search parameter exists in the tree. Another reasonable return value of a search function could be an iterator pointing to the found element (see std::map find).
 
-These topics will be discussed in the following sections.
+To search for key `X` in a BST, we compare *X* to the current node.
 
-#### 1.1 - Adjacency Matrix
+  - If the current node is null, `X` must not reside in the tree.
+  - If `X`is equal to the current node, simply return the current node.
+  - If it is less than the current node, we check the left subtree.
+  - Else, it must be greater than the current node, so we check the right subtree.
 
-An adjacency matrix is a square matrix used to represent a finite graph. The idea is also simple - imagine an n by n grid, where each row and each column represents a vertex. At the ith row and jth column, we store the edge weight of an edge from the vertex i to vertex j. If such edge doesn't exist, we store zero.
+#### Example
 
-Below is a visualization:
+Take a look at this example:
 
-<img src="./assets/Adjacency_Matrix.png" alt="matrix" style="width:350px; height:250px"/>
+<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" height="250" />
 
-In code, an adjacency matrix would be a two dimentional array, as shown below:
+Operation: `find(6)` // We begin at the root 
 
-```
-vector<vector<int> > adjacency_matrix =
-{
-    {0, 1, 1, 0},
-    {0, 0, 0, 0},
-    {0, 0, 0, 1},
-    {0, 0, 1, 0}
-};
-```
+Let's walk through this.
 
-Pros:
+Now, here's an example where we try to find a node that does not exist in the tree:
 
-1. Finding an edge is fast. It requires O(1) time. Ex. adjacency_matrix[i][j]
+Operation: `find(0)` // We begin at the root 
 
-Cons:
+Let's walk through this one too.
 
-1. Space needed is O(n^2). Every possible node -> node relationship is represented.
-2. Time needed to find all neighbors in O(n). Traverse an entire row to find adjacent nodes.
+The best-case runtime for searching a value `X` in a BST with *N* elements is `O(logN)`. What is the worst-case runtime?
 
-#### 1.2 - Adjacency List
+### What's a balanced Binary Tree?
 
-The next implementation, adjacency list, is also very common. Most of the time, when you have an adjacency list, you will have a Node or Vertex struct that stores some information about a vertex as well as a list of vertices to which the current vertex has an outgoing edge.
+A balanced  binary trees is a tree that ensures that the height of each subtree differs by no more than 1 node. When binary trees maintain balance, the binary tree keeps its height logarithmic in n where n is the total number of nodes in the tree for a sequence of insertions and deletions. This structure provide efficient implementations for abstract data structures. 
 
-Below is a visualization:
+A tree is considered balanced if it conforms to the **Height-Balancing Property**: A node in a tree is height-balanced if the heights of its subtrees differ by no more than 1. 
 
-<img src="./assets/Adjacency_List.png" alt="list" style="width:250px; height:200px"/>
+As we will see in a few weeks, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced.
 
-In code, an adjacency list would be a vector or array of Nodes, as shown below:
+Here is an example of balanced vs. non balanced trees.
 
-```
-struct Node
-{
-    std::vector<Node*> neighbors;
-};
-```
+<div style="text-align:center"><img src="{{site.url}}/labs/balanced/examples.GIF" alt="bst" width="550" height="250" /> </div>
 
-Pros:
+### How can we maintain these properties at the same time?
 
-1. Space needed to store O(e), where e is the number of edges within the graph. Only what is needed is stored.
-2. Time needed to find all adjacent nodes or neighbors is O(a), where a is the number of adjacent nodes.
+We will study these details more carefully in the next section. However, this is a good preview to start familiarizing yourself with these ideas. The BST property is maintained by smart insertion and deletion. In an insert, you traverse the tree based on the key to be inserted. Once you encounter a situation where you can't traverse any further, you know that the key can be placed there. Because we are traversing based on the key value, we are inherently upholding the BST property.
+ 
+The same thing can be said about a deletion in a BST. This is done by choosing which node to promote. Either the predecessor, if the node has two children, or the child if the node has 1 child. By doing this, the BST property is being maintained.
 
-Cons:
+A BST that maintains its balance throughout all insertions and deletions is called a  self-balancing BST. These types of trees that auto-balance or self balance inherently with the insertion are called Self-Balancing Binary Search Trees. Examples are:
 
-1. Time needed to find an edge is O(i), where i is the number of adjacent nodes of node i. You must traverse i's entire adjacency list in order to determine if edge (i, j) exists. 
+1. Splay Trees
+2. AVL Trees
+3. Red Black Trees
+4. B-Trees
+5. 2-3 Trees
 
-### 2 - Search Algorithms
+For all of these self-balancing binary search trees, the height-balancing property is upheld by the nature of an insert or remove. The best way to do so is with rotation, or series of rotations. 
 
-There are two basic types of graph search algorithms: depth-first and breadth-first.
+### AVL Trees
 
-<img src="./assets/dfs_bfs.gif" alt="list" style="width:500px; height:250px"/>
+An AVL tree is a type of balanced Binary Search Tree that uses the height of substrees and rotations to maintain balance.
 
-#### 2.1 - Depth First Search (DFS)
+#### Rotations
 
-The algorithm starts at the root node and explores as far as possible along each branch before backtracking.
+A rotation changes the local structure of a binary tree without changing its ordering. This means that in between rotations, the BST property is still maintained.
 
-```
-DFS(start node ) {
-    push node u
-    while the stack is not empty {
-        pop the next node v
-        for all outgoing edges (v,w) from v {
-            if we haven’t yet visited w {
-                push node w
-            }
-        }
-    }
-}
-```
+Rotations can be broken up into left and right rotations which are just inversions of eachother.
 
-#### 2.2 - Breadth First Search (BFS)
+<div style="text-align:center"><img src="./assets/rotations.gif" alt="rotations" width="500" height="200" /></div>
 
-It starts at the tree root and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.
+Rotaions make up the foundation of the AVL tree. In your homework, you will need to implement these rotations in a variety of scenarios. There are 4 combinations of rotations: left-left, left-right, right-left, right-right. Sometimes, these rotations are referred to as "zig zig" or "zig zag", or something similar. The point is, during these sequences of rotations, the tree becomes more balanced than it was before.
+
+__If longer subtrees are left and then left__
 
 ```
-BFS(start node) {
-    enqueue node u
-    while the queue is not empty {
-        dequeue the next node v
-        for all outgoing edges (v,w) from v {
-            if we haven’t yet visited w {
-                enqueue node w
-            }
-        }
-    }
-}
+T1, T2, T3 and T4 are subtrees.
+         z                                      y 
+        / \                                   /   \
+       y   T4      Right Rotate (z)          x      z
+      / \          - - - - - - - - ->      /  \    /  \ 
+     x   T3                               T1  T2  T3  T4
+    / \
+  T1   T2
 ```
 
-*NOTICE THE DIFFERENCE BETWEEN THE TWO ALGORITHMS!* **WHAT CHANGED?**
-
-### Assignment/Check Off
-
-You will be implementing DFS and BFS to determine if there is a connection between two nodes in a graph. This means that you will preform BFS or DFS on the start node until you find the end node or traverse all connected nodes. Because the two search algorithms are so similar, you will be implementing DFS on an Adjacency List and BFS on an Adjacency Matrix.
-
-Make all of your changed in `graph.cpp`. Do not mess with the function declarations. You can follow the general DFS and BFS algorithms above but you will need to make some small changes to match the use case.
-
-#### DFS on Adjacency List
+__If longer subtrees are left and then right__
 
 ```
-bool DFS(Node* start, Node* end) {
-
-}
+     z                               z                           x
+    / \                            /   \                        /  \ 
+   y   T4  Left Rotate (y)        x    T4  Right Rotate(z)    y      z
+  / \      - - - - - - - - ->    /  \      - - - - - - - ->  / \    / \
+T1   x                          y    T3                    T1  T2 T3  T4
+    / \                        / \
+  T2   T3                    T1   T2
 ```
 
-Tips:
-
-* Uses a Stack
-* Nodes are represented as Node pointers
-* Each Node has a vector of adjacent Node pointers
-* Each Node has a `visited` flag to determine if it has been visited or not.
-* Do you need to check if an edge exists?
-
-#### BFS on Adjacency Matrix
+__If longer subtrees are right and then right__
 
 ```
-bool BFS(vector<vector<int> > adjacency_matrix, int start, int end) {
-
-}
+  z                                y
+ /  \                            /   \ 
+T1   y     Left Rotate(z)       z      x
+    /  \   - - - - - - - ->    / \    / \
+   T2   x                     T1  T2 T3  T4
+       / \
+     T3  T4
 ```
 
-Tips:
+__If longer subtrees are right and then left__
 
-* Uses a Queue
-* Nodes are represented as ints (0 -> adjacency_matrix.size() - 1)
-* The adjacency matrix is passed in as a double vector.
-* The matrix is square, so rows == cols. 
-* How will you determine if a Node has been visited or not? What kind of data structure can you use?
-* How will you check if an edge exists?
+```
+   z                            z                            x
+  / \                          / \                          /  \ 
+T1   y   Right Rotate (y)    T1   x      Left Rotate(z)   z      y
+    / \  - - - - - - - - ->     /  \   - - - - - - - ->  / \    / \
+   x   T4                      T2   y                  T1  T2  T3  T4
+  / \                              /  \
+T2   T3                           T3   T4
+```
 
-**Running `make` will run both tests.**
+By using combinations of rotations during insertion and removal, we are able to maintain consistent balance throughout the lifetime of the tree.
 
-- [ ] Implement DFS and BFS. Run `make GraphTest` and show a CP/TA to get checked off!
+#### Inserting
 
-### Optional
-A lot of students recommended practice interview questions, so for this lab, we've included an optional problem based on [this LeetCode question](https://leetcode.com/problems/friend-circles/). There are many ways to solve this... but can you think of a way that uses BFS or DFS?
+During insertion, we start by inserting the value at its correct location as a normal BST would. Then, we traverse up the tree, evaluating the local height of each node and fixing that portion if the height of the left and right subtrees differ by 2 or more. We only need to traverse up the tree from the inserted node because the subtree containing the new node is the only subtree where height can change and we need to rotate.
 
-- [ ] **Optional**: implement `findCircleNum` in `friend_circles.cpp`. You can run `make FriendCirclesTest` to compile and run a few basic tests on your code.
+We fix the tree beginning with the newly inserted node.
+
+#### Removing
+
+During removal, we remove as normal and then proceed to fix the tree by traversing up, starting with the parent of the deleted node. In the case that we are swapping with the predecessor, you continue to delete the same node until you cannot swap any further, and then begin fixing the tree in the same fashion.
+
+We fix the tree beginning with the parent of the deleted node.
+
+### Checkoff
+
+#### 1. Range Sum
+
+Given the root of a *BST* and two values L and R, return the sum of all the nodes in the tree with values between L and R (inclusive).
+
+For example, if L = 1, R = 3, and your BST has values {1, 2, 3, 4} return 6 (1 + 2 + 3).
+
+- [ ] Implement `rangeSum` in `bst.cpp`
+
+### 2. AVL Insertion & Removal
+
+Take some time to confirm your understanding by showing the tree after each of the following operations in a file named `lab8.txt` (or whatever file format you can show your CP). 
+
+__Initial Tree__
+
+```
+                13
+        +--------+---+
+        10          15
+    +---+---+        +--+
+    5       11          16
++---+---+
+4       8
+```
++ Insert 14
++ Insert 3 
++ Remove 3
++ Remove 4
+
+- [ ] Show what the tree looks like after each of the above operations. Operations should happen sequentially (ie, Insert 3 happens after Insert 14). 
+
+
+### Check off
+
+- [ ] Use `make` to run tests. Show a TA/CP your passed tests and AVL tree to get checked off! 

@@ -36,7 +36,7 @@ Since a complete tree is one where the first (h-1) levels are full AND the botto
 
 - [ ] How does this change if we index our array starting at index 0?
 
-If we start at index 0, for any node i, parent(i) = (i - 2)/2. For any parent p, left_child(p) = 2p + 1 and right_child(p) = 2p + 2.
+If we start at index 0, for any node i, parent(i) = (i - 1)/2. For any parent p, left_child(p) = 2p + 1 and right_child(p) = 2p + 2.
 
 - [ ] How does that change if we have a 3-ary heap, 4-ary heap, 5-ary heap, etc.?
 

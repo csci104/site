@@ -7,7 +7,7 @@ title: Homework 3 Programming
 
 # HW3: Programming Assignment
 
-+ Due: Friday, March 12th, 11:59pm PST
++ Due: Saturday, March 13th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
 + Directory name in your github repository for this homework (case sensitive): `hw3`
 + There is no skeleton code for PA3

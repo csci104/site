@@ -101,6 +101,8 @@ F 4
 
 Feel free to generate your own map files and post them on Piazza along with the possible valid color assignments.
 
+**Your output should be printed to the console, using `cout`.**
+
 ### Problem 2 (Build a templated d-ary heap, 35%)
 
 Build your own d-ary `MinHeap` class in `MinHeap.h` with the interface given below.  You learned in class how to build a binary `MinHeap`, where each node had 2 children.  For a d-ary `MinHeap`, each node will have d children.

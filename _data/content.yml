@@ -86,7 +86,7 @@ labs:
   - id: lab8
     week: Week 8
     title: BST and AVL Trees
-    assigned: false
+    assigned: true
     topics: BST and AVL Trees
   - id: lab9
     week: Week 9

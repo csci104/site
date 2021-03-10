@@ -19,7 +19,7 @@ assignments:
     dates:
       assigned: Saturday, February 27
       written: Friday, March 5 at 11:59PM PST
-      programming: Friday, March 12 at 11:59PM PST
+      programming: Saturday, March 13 at 11:59PM PST
   - id: hw4
     title: AVL Trees
     assigned: false
@@ -67,7 +67,7 @@ labs:
     week: Week 4
     title: GTest
     assigned: true
-    topics: 
+    topics:
   - id: lab5
     week: Week 5
     title: Backtracking

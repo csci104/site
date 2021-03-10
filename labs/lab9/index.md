@@ -2,166 +2,144 @@
 layout: asides
 toc: true
 tasks: true
-title: Tree Traversal
+title: Counting
 ---
 
-## Binary Tree Traversal
+## Counting
 
-### 1 - Binary Trees
+This lab will be covered during lab sections between March 16 - March 19, 2021.
 
-What does it mean for a tree to be binary?
+This week's lecture will go over the fine art of counting! We'll review the concepts covered in lecture, go over a few practice examples, and then give you some exercises to do on your own. As it turns out, counting is not always as easy as 1-2-3!
 
-<img src="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/tree1.bmp" alt="" width="385" height="343" /> 
+*For this lab, you will need to write down the answers to the practice problems and share your solutions with a CP/TA to get checked off. You are expected to do all the exercises, and your CP/TA will randomly select two questions to check your understanding (this means you have to show your work!)* Don't worry, we'll go through examples together!
 
-A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
+### Basic Counting
 
-### 2 - Traversals
+Recall the Product, Sum, Subtraction, and Division Rules, and use them to solve the following questions.
 
-A traversal is a methodology for stepping through a structure (such as using Breadth-First Traversal as opposed to Depth-First Traversal on a graph). BFS is sometimes called "Level-Order Traversal". In the case of DFS, there are a few different ways we can traverse.
+#### Product Rule
+The **Product Rule** states that if a procedure can be broken up into a sequence of **k** tasks, and there are **n<sub>1</sub>** ways to do the first task, **n<sub>2</sub>** ways to do the second task, ..., and **n<sub>k</sub>** ways to execute the kth task, then there are **n<sub>1</sub> * n<sub>2</sub> * ... * n<sub>k</sub>** ways to do the procedure. 
 
-The three main DFS traversals are **Pre-Order Traversal, In-Order Traversal, and Post-Order Traversal**. In each of these traversals, we must eventually operate on every node. The difference between these traversals is lies in the *order* nodes are operated on.
+Another way of thinking about the product rule is to consider two finite sets, |A| and |B|. The cartesian product |A × B| = |A| × |B|.
 
-**Pre-Order Traversal**
+##### Example:
+There's an old English nursery rhyme that goes like this:
 
-```
-// Operate on current node
-// Recurse left
-// Recurse right
-// return
-```
+> As I was going to St Ives,
+> 
+> Upon the road I met seven wives;
+> 
+> Every wife had seven sacks,
+> 
+> Every sack had seven cats,
+> 
+> Every cat had seven kits:
+> 
+> Kits, cats, sacks, and wives,
+> 
+> How many were going to St Ives?
 
-**In-Order Traversal**
+Spoiler: there was only only one person going to St. Ives--you, the speaker/reader/narrator! But how many kits, cats, sacks, and wives are there coming *from* St. Ives?
 
-```
-// Recurse left
-// Operate on current node
-// Recurse right
-// return
-```
+**Solution**: 
 
-**Post-Order Traversal**
++ There are 7 wives 
++ There are 7 * 7 = 49 sacks
++ There are 49 * 7 = 343 cats
++ There are 343 * 7 = 2401 kits 🐈
 
-```
-// Recurse left
-// Recurse right
-// Operate on current node
-// return
-```
+#### Sum Rule
+The **Sum Rule** states that if a task can be done in one of **n<sub>1</sub>** ways or in one of **n<sub>2</sub>** ways, where none of the set of **n<sub>1</sub>** ways is the same as any of the set of **n<sub>2</sub>** ways, then there are **n<sub>1</sub> + n<sub>2</sub>** ways to do the task.
 
-+ If we wanted to delete an entire tree, which traversal would we use?
+Another way of thinking about the sum rule is to consider two finite and disjoint sets (meaning |A ∩ B| = 0), |A| and |B|. |A ∪ B| = |A| + |B|.
 
-### 3 - Searching
+##### Example:
+Remember your trip to St. Ives? Well, on your trip, you decide to adopt not one, but two felines! One of the wives tells you to draw 2 cats out of her sack. Recall that there are 49 felines in the sack (7 cats, and for each cat, 7 kittens). Of the 49 felines, 17 are black, 21 are tabbies, and 11 are calicos. In how many ways can you draw exactly 1 black cat or exactly 1 calico cat?
 
-The **Binary Search Tree Property** (BST) states that all nodes in the left subtree must have key values less than or equal to the root and all of the nodes in the right subtree must have key values greater than the root. Usually, if key values are distinct, we do not worry about equality. BSTs exist to enable (potentially) fast searches. 
+**Solution**: let's use B to denote black, T to denote tabby, and C to denote calico. Any one of the following arrangements has exactly 1 black or 1 calico cat: BT, BC, CT.
 
-+ For a BST, what is special about operating on elements using an in-order traversal? If we were printing integers using this traversal, what would the output look like? 
++ The number of ways we can get 1 black and 1 tabby cat is: 17 * 21 = 367
++ The number of ways we can get 1 black and 1 calico cat is: 17 * 11 = 187
++ The number of ways we can get 1 calico and 1 tabby cat is: 11 * 21 = 231
 
-+ Why do we say potentially? Can someone think of an example in which the search is really slow, even if we have a valid BST?
+The number of ways we can get exactly 1 black or 1 calico cat is: 367 + 187 + 231 = **785**
 
-Our search function will simply return true or false depending on whether or not our search parameter exists in the tree. Another reasonable return value of a search function could be an iterator pointing to the found element (see std::map find).
+#### Subtraction Rule
+The **Subtraction Rule** states that if a task can be done in either one of **n<sub>1</sub>** ways or one of **n<sub>2</sub>** ways, and there is an overlap between these two methods of **n<sub>3</sub>** common ways, then the number of ways to do the task is **n<sub>1</sub> + n<sub>2</sub> – n<sub>3</sub>**.
 
-To search for key `X` in a BST, we compare *X* to the current node.
+Another way of thinking about the subtraction rule is to consider two finite sets, |A| and |B|. |A ∪ B| = |A| + |B| - |A ∩ B|. 
 
-  - If the current node is null, `X` must not reside in the tree.
-  - If `X`is equal to the current node, simply return the current node.
-  - If it is less than the current node, we check the left subtree.
-  - Else, it must be greater than the current node, so we check the right subtree.
+##### Example:
+You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to inspect each cat's paws. 41 cats have black paws, 50 cats have pink paws, and 21 cats have black AND pink paws. How many cats are in the cat cafe?
 
-#### 3.1 - Example
+**Solution**: 41 + 50 - 21 = **70 cats** 🐱
 
-Take a look at this example:
+#### Division Rule
+**Division Rule**: there are n/d ways to do a task which can be done in one of n different ways, but for each specific way, it is identical to d-1 other ways.
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" height="250" />
+##### Example:
+How many distinct ways can we arrange the letters in "KITTEN"?
 
-Operation: `find(6)` // We begin at the root 
+**Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.) However, "KITTEN" has 2 T's. Given that there are  2 * 1 = 2! ways to arrange the 2 T's, and that we want DISTINCT arrangements, the answer is **6!/2!**
 
-Let's walk through this.
+### Permutations & Combinations
+Recall from lecture that an **r-permutation** is an **ordered** arrangement of r elements from a set of n, denoted as:
+<div style="text-align:center"><img src="./assets/nPr.png" alt="r permutation" height="70"/></div>
 
-Now, here's an example where we try to find a node that does not exist in the tree:
+An **r-combination** is an **unordered** arrangement of r elements from a set of size n, and is commonly spoken as “n choose r”:
+<div style="text-align:center"><img src="./assets/nCr.png" alt="n choose r" height="60"/></div>
 
-Operation: `find(0)` // We begin at the root 
+#### Example: Permutations
+The Pied Piper Duck Fashion Show takes place in Sydney, Asutralia every year. Since we can't fly to Australia, let's suppose we are hosting our own CS104 exclusive duck fashion show. There are 30 ducks, and 3 prizes: gold, silver, and bronze. How many ways can we award gold, silver, and bronze among our 30 fashionable ducks?
 
-Let's walk through this one too.
+**Solution:** first, we want to ask ourselves: does order matter here? The answer is yes--having duck A win gold, duck B win silver, and duck C win bronze is NOT the same as having duck B win gold, duck A win silver, and duck C win bronze. 
 
-The best-case runtime for searching a value `X` in a BST with *N* elements is `O(logN)`. What is the worst-case runtime?
+Suppose we chose our gold winner first, followed by our silver winner, followed by our bronze winner. 
++ We have 30 ducks to choose from for gold.
++ After selecting our golden duck, we have 29 ducks to choose from for silver.
++ After selecting our silver duck, we have 28 ducks to choose from for bronze.
 
-### What's a balanced Binary Tree?
+There are thus **30 * 29 * 28** ways of selecting our winning ducks out of our 30 contestants. This is equivalent to 30!/[(30-3)!]
 
-A balanced  binary trees is a tree that ensures that the height of each subtree differs by no more than 1 node. When binary trees maintain balance, the binary tree keeps its height logarithmic in n where n is the total number of nodes in the tree for a sequence of insertions and deletions. This structure provide efficient implementations for abstract data structures.  *Any binary tree can be balanced or not. You can check this property (as demonstrated in this lab's exercises.)*
+#### Example: Combinations
+There are 10 people in a chess match. How many games do they need to play to guarantee that each person plays with everyone exactly once?
 
-A tree is considered balanced if it conforms to the **Height-Balancing Property**: A node in a tree is height-balanced if the heights of its subtrees differ by no more than 1. 
+**Solution**: first, we want to ask ourselves: does order matter here? The answer is no: A playing against B is no different from B playing against A. Given 10 players, there are "10 choose 2" ways of selecting 2 players, so our answer is 10 choose 2 = **45 games**
 
-As we will see in a few weeks, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced .
+### With or Without Repetition?
+The above two examples are examples of permutations and combinations *without* repetition. Once a duck is selected for gold, we do not reconsider that duck for silver. Player A cannot play against him/herself in a chess match. 
 
-Here is an example of balanced vs. non balanced trees.
+However, sometimes we do allow for repetition. Recall from lecture that the the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**. 
 
-<div style="text-align:center"><img src="./assets/examples.gif" alt="bst" width="550" height="250" /> </div>
+The number of r-combinations of a set of n objects, where repetition is allowed, is:
+<div style="text-align:center"><img src="./assets/rComboWithRepetition.png" alt="n combinations with repetition" height="60"/></div>
 
-### How can we maintain these properties at the same time?
+#### Example: Permutations with Repetition
+How many different 4-digit PINs are possible?
 
-We will study these details more carefully in a few weeks. However, this is a good preview to start familiarizing yourself with these ideas. The BST property is maintained by smart insertion and deletion. In an insert, you traverse the tree based on the key to be inserted. Once you encounter a situation where you can't traverse any further, you know that the key can be placed there. Because we are traversing based on the key value, we are inherently upholding the BST property.
- 
-The same thing can be said about a deletion in a BST. This is done by choosing which node to promote. Either the predecessor, if the node has two children, or the child if the node has 1 child. By doing this, the BST property is being maintained.
+**Solution**: here, order does matter (1234 is a different PIN from 4321), and repetition is allowed (1111 is a valid PIN.) There are therefore **10<sup>4</sup>** possible PINs.
 
-A BST that maintains its balance throughout all insertions and deletions is called a  self-balancing BST. These types of trees that auto-balance or self balance inherently with the insertion are called Self-Balancing Binary Search Trees. Examples are:
+#### Example: Combinations with Repetition
+You walk into a cereal bar and build an epic cereal bowl. You are allowed to choose 3 servings of cereal, and there are 6 cereals to choose from: Apple Jacks, Cinnamon Toast Crunch, Fruit Loops, Honey Nut Cheerios, Lucky Charms, and Rice Krispies. How many different combinations of epic cereal bowls can you make?
 
-1. Splay Trees
-2. AVL Trees
-3. Red Black Trees
-4. B-Trees
-5. 2-3 Trees
+**Solution**: here, order does not matter and repetitions are allowed (you might go all in and make a bowl with 3 servings of Lucky Charms, for example.) The number of possible cereal bowls is: **8!/3!5!**
 
-For all of these self-balancing binary search trees, the height-balancing property is upheld by the nature of an insert or remove. The best way to do so is with rotation, or series of rotations. We're not going to go into how these rotations work now, but this is something you'll have to know for your last homework!
+### Indistinguishable Objects Over Distinguishable Boxes
+As it turns out, the number of combinations of **n** objects selected **r** at a time with repetition is equivalent to the number of ways to distribute **r** indistinguishable objects into **n** distinguishable boxes.
 
-### Checkoff
+#### Example
+How many ways can we distribute 12 cans of dog food among 3 dogs?
 
-Given this *binary tree*:
+**Solution**: here, n = 3 and r = 12. The answer is: **14!/12!2!**
 
-<img src="./assets/bst.png" alt="bst" width="300" height="300" /> 
+### Summary of Important Formulas
+<div style="text-align:center"><img src="./assets/table.png" alt="n choose r" width="500"/></div>
 
-- [ ] What order will the nodes be printed out with Pre-Order traversal? In-Order? Post-Order?
-Save your answers in a .txt file for checkoff.
-
-Next, you'll have to complete the following three binary tree traversal problems. A node is defined in `bst.h` as such: 
-
-```
-class Node {
-    Node *left;
-    Node *right;
-    int key;
-}
-```
-
-#### 2. Range Sum
-
-Given the root of a *BST* and two values L and R, return the sum of all the nodes in the tree with values between L and R (inclusive).
-
-For example, if L = 1, R = 3, and your BST has values {1, 2, 3, 4} return 6 (1 + 2 + 3).
-
-- [ ] Implement `rangeSum` in `bst.cpp`
-
-#### 3. Is a Tree Balanced?
-
-Given a *binary tree*, determine if it obeys the height-balancing property.
-
-For this problem, a height-balanced binary tree is defined as:
-
-+ A binary tree in which the depth of the two subtrees of every node never differs by more than 1.
-
-```
-bool isBalanced(Node *root)
-```
-
-Something to think about: does your solution work even if the tree is not a BST?
-
-- [ ] Implement `isBalanced` in `bst.cpp`
-
-#### 4. Level Order Traversal
-
-Given a *binary tree*, return the level order traversal of its nodes' values. (i.e. from left to right, level by level).
-
-- [ ] Implement `levelOrder` in `bst.cpp`
-
-### Check off
-
-- [ ] Use `make` to run all tests and show a TA/CP to get checked off! 
+##### Exercises:
+1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select? 
+2. How many possible passwords are there, if your computer system requires a password with 8 alphanumerical characters with at least 1 upper case character, 1 lower case character, and 1 digit?
+3. You're visiting animal sanctuaries across the nation. There are 90 animal sanctuaries: 40 have pigs, 50 have cows, 80 have chickens, 21 have both pigs and cows, 41 have both cows and chickens, and 33 have both pigs and chickens. Determine the number of sanctuaries that have pigs 🐷, cows 🐮, and chickens 🐔.
+4. How many 32-bit strings have exactly 23 ones and 9 zeros?
+5. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls?
+6. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
+7. We have 5 breakout rooms and 30 students in lab. How many ways can we distribute 30 students into the 5 breakout rooms?

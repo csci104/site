@@ -23,6 +23,11 @@ Pages in this wiki:
 
 - [CMake](https://www.youtube.com/watch?v=REcsrJUQoQk) by Jamie Smith
 
+## Old Labs
+
+Here are some old labs that won't be covered this semester due to the change in curriculum.
+- [Tree Traversals](./treetraversals)
+
 ## External Resources
 
 - [Basic Unix commands](http://www.nbcs.rutgers.edu/%7Eedseries/UNIXcmds.html){:target="_blank"} will improve your shell literacy, which can save you a lot of time.

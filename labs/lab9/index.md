@@ -54,9 +54,9 @@ The **Sum Rule** states that if a task can be done in one of **n<sub>1</sub>** w
 Another way of thinking about the sum rule is to consider two finite and disjoint sets (meaning |A ∩ B| = 0), |A| and |B|. |A ∪ B| = |A| + |B|.
 
 ##### Example:
-Remember your trip to St. Ives? Well, on your trip, you decide to adopt not one, but two felines! One of the wives tells you to draw 2 cats out of her sack. Recall that there are 49 felines in the sack (7 cats, and for each cat, 7 kittens). Of the 49 felines, 17 are black, 21 are tabbies, and 11 are calicos. In how many ways can you draw exactly 1 black cat or exactly 1 calico cat?
+Remember your trip to St. Ives? Well, on your trip, you decide to adopt not one, but two felines! One of the wives tells you to draw 2 cats out of her sack. Recall that there are 49 felines in the sack (7 cats, and for each cat, 7 kittens). Of the 49 felines, 17 are black, 21 are tabbies, and 11 are calicos. In how many ways can you draw exactly 1 black cat or exactly 1 calico cat? (Using B to denote black, T to denote tabby, and C to denote calico, any one of the following arrangements has exactly 1 black or 1 calico cat: BT, BC, CT.)
 
-**Solution**: let's use B to denote black, T to denote tabby, and C to denote calico. Any one of the following arrangements has exactly 1 black or 1 calico cat: BT, BC, CT.
+**Solution**: 
 
 + The number of ways we can get 1 black and 1 tabby cat is: 17 * 21 = 367
 + The number of ways we can get 1 black and 1 calico cat is: 17 * 11 = 187
@@ -70,7 +70,7 @@ The **Subtraction Rule** states that if a task can be done in either one of **n<
 Another way of thinking about the subtraction rule is to consider two finite sets, |A| and |B|. |A ∪ B| = |A| + |B| - |A ∩ B|. 
 
 ##### Example:
-You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to inspect each cat's paws. 41 cats have black paws, 50 cats have pink paws, and 21 cats have black AND pink paws. How many cats are in the cat cafe?
+You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to inspect each cat's paws. Every cat has black or pink paws. 41 cats have black paws, 50 cats have pink paws, and 21 cats have black AND pink paws. How many cats are in the cat cafe?
 
 **Solution**: 41 + 50 - 21 = **70 cats** 🐱
 
@@ -80,7 +80,11 @@ You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to
 ##### Example:
 How many distinct ways can we arrange the letters in "KITTEN"?
 
-**Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.) However, "KITTEN" has 2 T's. Given that there are  2 * 1 = 2! ways to arrange the 2 T's, and that we want DISTINCT arrangements, the answer is **6!/2!**
+**Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.) 
+
+However, "KITTEN" has 2 T's, T<sub>1</sub> and T<sub>2</sub>. This means every arrangment has an identical other arrangement in which T<sub>1</sub> and T<sub>2</sub> are swapped: KIT<sub>1</sub>T<sub>2</sub>EN and KIT<sub>2</sub>T<sub>1</sub>EN are the same word! 
+
+Given that there are  2 * 1 = 2! ways to arrange the 2 T's, and that we want DISTINCT arrangements, the answer is **6!/2!**
 
 ### Permutations & Combinations
 Recall from lecture that an **r-permutation** is an **ordered** arrangement of r elements from a set of n, denoted as:
@@ -92,7 +96,7 @@ An **r-combination** is an **unordered** arrangement of r elements from a set of
 #### Example: Permutations
 The Pied Piper Duck Fashion Show takes place in Sydney, Asutralia every year. Since we can't fly to Australia, let's suppose we are hosting our own CS104 exclusive duck fashion show. There are 30 ducks, and 3 prizes: gold, silver, and bronze. How many ways can we award gold, silver, and bronze among our 30 fashionable ducks?
 
-**Solution:** first, we want to ask ourselves: does order matter here? The answer is yes--having duck A win gold, duck B win silver, and duck C win bronze is NOT the same as having duck B win gold, duck A win silver, and duck C win bronze. 
+**Solution:** first, we want to ask ourselves: does order matter here? The answer is yes--suppose we had ducks Donald, Daisy, and Scrooge. Donald winning gold, Daisy winning silver, and Scrooge winning bronze is NOT the same as Scrooge winning gold, Donald winning silver, and Daisy winning bronze. 
 
 Suppose we chose our gold winner first, followed by our silver winner, followed by our bronze winner. 
 + We have 30 ducks to choose from for gold.
@@ -137,9 +141,7 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 
 ##### Exercises:
 1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select? 
-2. How many possible passwords are there, if your computer system requires a password with 8 alphanumerical characters with at least 1 upper case character, 1 lower case character, and 1 digit?
-3. You're visiting animal sanctuaries across the nation. There are 90 animal sanctuaries: 40 have pigs, 50 have cows, 80 have chickens, 21 have both pigs and cows, 41 have both cows and chickens, and 33 have both pigs and chickens. Determine the number of sanctuaries that have pigs 🐷, cows 🐮, and chickens 🐔.
-4. How many 32-bit strings have exactly 23 ones and 9 zeros?
-5. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls?
-6. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
-7. We have 5 breakout rooms and 30 students in lab. How many ways can we distribute 30 students into the 5 breakout rooms?
+2. How many 32-bit strings have exactly 23 ones and 9 zeros?
+3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls?
+4. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
+5. We have 5 breakout rooms and 30 students in lab. How many ways can we distribute 30 students into the 5 breakout rooms?

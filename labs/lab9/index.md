@@ -20,9 +20,9 @@ Recall the Product, Sum, Subtraction, and Division Rules, and use them to solve 
 #### Product Rule
 The **Product Rule** states that if a procedure can be broken up into a sequence of **k** tasks, and there are **n<sub>1</sub>** ways to do the first task, **n<sub>2</sub>** ways to do the second task, ..., and **n<sub>k</sub>** ways to execute the kth task, then there are **n<sub>1</sub> * n<sub>2</sub> * ... * n<sub>k</sub>** ways to do the procedure. 
 
-Another way of thinking about the product rule is to consider two finite sets, |A| and |B|. The cartesian product |A × B| = |A| × |B|.
+Another way of thinking about the product rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. The cartesian product &#124;A × B&#124; = &#124;A&#124; × &#124;B&#124;.
 
-##### Example:
+#### Example
 There's an old English nursery rhyme that goes like this:
 
 > As I was going to St Ives,
@@ -51,9 +51,9 @@ Spoiler: there was only only one person going to St. Ives--you, the speaker/read
 #### Sum Rule
 The **Sum Rule** states that if a task can be done in one of **n<sub>1</sub>** ways or in one of **n<sub>2</sub>** ways, where none of the set of **n<sub>1</sub>** ways is the same as any of the set of **n<sub>2</sub>** ways, then there are **n<sub>1</sub> + n<sub>2</sub>** ways to do the task.
 
-Another way of thinking about the sum rule is to consider two finite and disjoint sets (meaning |A ∩ B| = 0), |A| and |B|. |A ∪ B| = |A| + |B|.
+Another way of thinking about the sum rule is to consider two finite and disjoint sets (meaning &#124;A ∩ B&#124; = 0), &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124;.
 
-##### Example:
+#### Example
 Remember your trip to St. Ives? Well, on your trip, you decide to adopt not one, but two felines! One of the wives tells you to draw 2 cats out of her sack. Recall that there are 49 felines in the sack (7 cats, and for each cat, 7 kittens). Of the 49 felines, 17 are black, 21 are tabbies, and 11 are calicos. In how many ways can you draw exactly 1 black cat or exactly 1 calico cat? (Using B to denote black, T to denote tabby, and C to denote calico, any one of the following arrangements has exactly 1 black or 1 calico cat: BT, BC, CT.)
 
 **Solution**: 
@@ -67,9 +67,9 @@ The number of ways we can get exactly 1 black or 1 calico cat is: 367 + 187 + 23
 #### Subtraction Rule
 The **Subtraction Rule** states that if a task can be done in either one of **n<sub>1</sub>** ways or one of **n<sub>2</sub>** ways, and there is an overlap between these two methods of **n<sub>3</sub>** common ways, then the number of ways to do the task is **n<sub>1</sub> + n<sub>2</sub> – n<sub>3</sub>**.
 
-Another way of thinking about the subtraction rule is to consider two finite sets, |A| and |B|. |A ∪ B| = |A| + |B| - |A ∩ B|. 
+Another way of thinking about the subtraction rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124; - &#124;A ∩ B&#124;. 
 
-##### Example:
+#### Example
 You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to inspect each cat's paws. Every cat has black or pink paws. 41 cats have black paws, 50 cats have pink paws, and 21 cats have black AND pink paws. How many cats are in the cat cafe?
 
 **Solution**: 41 + 50 - 21 = **70 cats** 🐱
@@ -77,7 +77,7 @@ You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to
 #### Division Rule
 **Division Rule**: there are n/d ways to do a task which can be done in one of n different ways, but for each specific way, it is identical to d-1 other ways.
 
-##### Example:
+#### Example
 How many distinct ways can we arrange the letters in "KITTEN"?
 
 **Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.) 
@@ -139,7 +139,7 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 ### Summary of Important Formulas
 <div style="text-align:center"><img src="./assets/table.png" alt="n choose r" width="500"/></div>
 
-##### Exercises:
+### Exercises
 1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select? 
 2. How many 32-bit strings have exactly 23 ones and 9 zeros?
 3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls?

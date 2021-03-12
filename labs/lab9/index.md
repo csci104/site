@@ -113,7 +113,7 @@ There are 10 people in a chess match. How many games do they need to play to gua
 ### With or Without Repetition?
 The above two examples are examples of permutations and combinations *without* repetition. Once a duck is selected for gold, we do not reconsider that duck for silver. Player A cannot play against him/herself in a chess match. 
 
-However, sometimes we do allow for repetition. Recall from lecture that the the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**. 
+However, sometimes we do allow for repetition. Recall from lecture that the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**. 
 
 The number of r-combinations of a set of n objects, where repetition is allowed, is:
 <div style="text-align:center"><img src="./assets/rComboWithRepetition.png" alt="n combinations with repetition" height="60"/></div>

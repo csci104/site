@@ -7,7 +7,7 @@ title: Counting
 
 ## Counting
 
-This lab will be covered during lab sections between March 16 - March 19, 2021.
+This lab will be covered during lab sections between March 16 - March 19, 2021. **You need to get checked off during a lab sesson on or before March 19th.**
 
 This week's lecture will go over the fine art of counting! We'll review the concepts covered in lecture, go over a few practice examples, and then give you some exercises to do on your own. As it turns out, counting is not always as easy as 1-2-3!
 
@@ -145,3 +145,5 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls?
 4. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
 5. We have 5 breakout rooms and 30 students in lab. How many ways can we distribute 30 students into the 5 breakout rooms?
+
+- [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during a lab sesson on or before March 19th.**

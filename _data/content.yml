@@ -90,9 +90,9 @@ labs:
     topics: BST and AVL Trees
   - id: lab9
     week: Week 9
-    title: TBD
-    assigned: false
-    topics: TBD
+    title: Counting
+    assigned: true
+    topics: Counting
   - id: lab10
     week: Week 10
     title: TBD

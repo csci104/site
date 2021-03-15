@@ -142,8 +142,8 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 ### Exercises
 1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select? 
 2. How many 32-bit strings have exactly 23 ones and 9 zeros?
-3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls?
+3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls? (Denoting B for boy and G for girl, GGBBBB is one "way" and BBBBGG is another "way".)
 4. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
-5. We have 5 breakout rooms and 30 students in lab. How many ways can we distribute 30 students into the 5 breakout rooms?
+5. We have 5 breakout rooms and 30 students in lab. How many ways can we distribute 30 students into the 5 breakout rooms? (Breakout rooms can be empty.)
 
 - [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during a lab sesson on or before March 19th.**

@@ -144,6 +144,7 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 2. How many 32-bit strings have exactly 23 ones and 9 zeros?
 3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls? (Denoting B for boy and G for girl, GGBBBB is one "way" and BBBBGG is another "way".)
 4. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
-5. We have 5 breakout rooms and 30 students in lab. How many ways can we distribute 30 students into the 5 breakout rooms? (Breakout rooms can be empty.)
+5. (Updated on Wednesday, March 17): we have 5 breakout rooms and 30 *distinct* students in lab. How many ways can we distribute 30 *distinct* students into the 5 breakout rooms? (Breakout rooms can be empty.)
++ How many ways can we distribute 30 *identical* students into the 5 breakout rooms? (If 30 identical students bothers you, an equivalent question would be: how many ways can we distribute 30 *distinct* chairs into 5 classrooms?)
 
 - [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during a lab sesson on or before March 19th.**

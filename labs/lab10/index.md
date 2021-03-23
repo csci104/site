@@ -65,7 +65,7 @@ Draw the tree representation of the splay tree after performing the following op
 
 - [ ] Insert 1
 - [ ] Find 3
-- [ ] Remove 3
+- [ ] Remove 2
 
 ### Counting
 

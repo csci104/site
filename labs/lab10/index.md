@@ -2,107 +2,76 @@
 layout: asides
 toc: true
 tasks: true
-title: Recursive Backtracking
+title: Midterm Review
 ---
 
-## Recursive Backtracking
+## Midterm Review
 
-### 0 - N-Queens
+### Introduction
 
-On Tuesday's lecture, you will be going over the N-Queens problem. Here's a quick review: 
-+ You want to arrange 8 queens on an 8x8 chessboard such that each queen is unable to capture any other queens. Now, this can be trivial on a regular-sized chessboard, but what if you wanted to place 100 queens on a 100x100 chessboard? It quickly becomes more complicated.
+This lab will be covered during lab sections between Wednesday, March 24 and Tuesday, March 30, 2021. **There is no checkoff for this lab.**
 
-One algorithmic solution to this problem is to use recursive backtracking.
+The midterm will take place on **Thursday, April 1st** (THIS IS NOT A JOKE!) If you need time zone accommodations, please email Prof. Cote.
 
-### 1 - Recursive Backtracking
-You should be familiar with some of the uses of recursion at this point. We typically use recursion to split a problem into one or a small number of simple, repeatable steps. One popular way to implement a recursive search is to search one step at a time until you hit a dead end (or impossible situation) or find a solution. If you've successfully found a solution, you're done. If your recursive call returns unsuccessful, remove that value from the list of potential solutions and continue to search until you've exhausted all possibilities.
+You won't be tested on any programming tools that you've gone over in lab but not lecture (e.g. gdb, Makefiles). This lab is to help you review and will mostly cover problems taken or modified from the sample midterms and quizzes under the [Resources](https://bytes.usc.edu/cs104/resources) page, as well as labs from previous semesters. If there's a topic you want to skip, or a topic that's not included here that you really want to go over, let us know! As long as this lab is, it is by no means exhaustive, so remember to go back and review lecture slides as well.
 
-Recursive backtracking is a ordered method for searching a **solution space**. Worst case time complexity wise it's often on par with a brute-force search - but in reality it's much faster. This is because in backtracking when we reach an arrangement where no possible solutions could exist with the current selection (a **dead end**) we forget about testing further options down this path and **backtrack** - undo the last setting and try something else. 
+### Binary Tree Recursion
 
-Recursive Backtracing solutions often look like this:
+Given a binary tree, return true if the tree is symmetric and false if it is not. We will define a symmetric tree to be one where the left & right subtrees are mirror images of one another. An empty tree is symmetrical.
 
-1. `solve()` function : performs whatever necessary setup and calls the helper
-2. `recursive_helper()` function : iterates over posibilities in some **sub domain**. 
-	+ In N-Queens, this domain is a row. After checking if an option `is_valid()`, `recursive_helper()` calls itself on the next row after to test each option. It returns true if it has reached the end OR if its child call returns true. It returns false otherwise to tell the caller it has reached a dead end. If a child call returns false, undo whatever option was tested. 
-3. `is_valid()` function : Tells you whether or not an option is viable for a specific arrangement. 
-
-### 1.1 - Example
-
-Let's take a look at an example. Consider a 4x4 chessboard for simplicity.
-
-Notice that in the second step, after we see that the second queen cannot be placed at grid (0,1), we need to undo the placement (clear it to 0) before we move on to try the next position. If we do not undo the move, then all subsequent placements on this row will always fail because we will always see a queen at (0,1).
-
+Example of a symmetrical tree:
 ```
-1 0 0 0
-0 0 0 0
-0 0 0 0
-0 0 0 0 PASS
+             1
+            /  \
+           2    2 
+          / \   / \
+         4   3  3  4 
+```
+Examples of asymmetrical trees:
+```
+             1
+            /  \
+           3    2 
+          / \   / \
+         4   3  3  4 
 
-1 0 0 0
-1 0 0 0
-0 0 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 1 0 0
-0 0 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 0 0 0
-0 0 0 0 PASS
-
-1 0 0 0
-0 0 1 0
-1 0 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 1 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 0 1 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 0 0 1
-0 0 0 0 FAIL (entire row fails)
-
-1 0 0 0
-0 0 0 1
-0 0 0 0
-0 0 0 0 PASS
-
-etc.
-
-0 1 0 0
-0 0 0 1
-1 0 0 0
-0 0 1 0 PASS -> RETURN TRUE
+             1
+            /  \
+           2    2 
+            \   / \
+             3  3  4 
 ```
 
-The first correct solution we will hit is 1, 3, 0, 2.
+- [ ] Implement `isSymmetrical` in `symmetrical.cpp`
 
+### AVL Trees
 
-#### 3.1 - Sudoku
+<div style="text-align:center"><img src="./assets/avl.png" alt="initial avl tree" width="500"/></div>
 
-[Sudoku](http://www.websudoku.com/) is a popular puzzle game involving a 9x9 grid and the numbers 1-9. The goal of the game is to fill board such that each row, column, and 3x3 box have the numbers 1-9 with no repeats. We will be programming a sudoku solver for lab.
+Draw the tree representation of the AVL tree after each of the following operations, using the method presented in class (if appropriate when deleting, choose your successor to swap with). Your operations are done in sequence.
 
-Sudoku boards always start with some numbers in place, but mostly 0's which represent squares we need to solve for. 
+- [ ] Insert 4
+- [ ] Insert 19
+- [ ] Remove 1
+- [ ] Insert 5
+- [ ] Delete 13
+- [ ] Delete 2
 
-In `lab10/sudoku.cpp`, you will find some functions to get you started. Your task is to implement `solveHelper()` called by `solve()`. You may change the parameters as you like. We suggest taking in the row and column of the grid space you're trying to solve.
+### Splay Trees
 
-The basic strategy is as follows:
+<div style="text-align:center"><img src="./assets/splay.png" alt="initial splay tree" width="200"/></div>
 
-Start in the top left corner (0, 0) and work your way down to the bottom right corner (8, 8). At each point, check if the block needs to be solved. If the block's value is 0, then it needs to be solved. After you have found a valid number to put in the block, try solving the next one in sequence. Continue until you have solved the puzzle or cannot find a number that will fit in the block.
+Draw the tree representation of the splay tree after performing the following operations:
 
-In this problem, the sub-domain that each `solveHelper()` iterates over is a individual cell. The options are int's 1-9, inclusive. 
+- [ ] Insert 1
+- [ ] Find 3
+- [ ] Remove 3
 
-Compile with `make`, run with `./sudoku`. The first two puzzles should yield a valid configuration, and the last one should fail.
+### Counting
 
-- [ ] Implement `solveHelper()`. Remember to show a TA/CP to get checked off!
+For these questions, you do not need to simplify your answers/plug things into a calculator.
+- [ ] One of the many talents of our CP, Clement, is his ability to sing the ABCs backwards. Let’s challenge Clement to sing the alphabet song in a different order. How many ways can we arrange the 26 letters of the alphabet? For brownie points, turn on your mic and demonstrate how to sing one of these “ways.”
+- [ ] How many ways can we arrange the 26 letters of the alphabet, such that A always comes before Z?
+- [ ] You draw 4 cards from a standard deck (52 cards, no Jokers). In how many ways can you get 2 pairs? KKQQ is the same as QQKK.
+- [ ] How many nonnegative integer solutions are there to `x1 + x2 + x3 + x4 + x5 + x6 + x7 = 99`? 
+

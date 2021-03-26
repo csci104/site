@@ -7,7 +7,7 @@ title: Homework 4 Programming
 
 # HW4: Programming Assignment
 
-+ Due: Friday, March 26th, 11:59pm PST
++ Due: Saturday, March 27th, 11:59pm PST
 
 + To access the written portion of this assignment, click [here](..)
 

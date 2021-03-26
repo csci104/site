@@ -26,7 +26,7 @@ assignments:
     dates:
       assigned: Saturday, March 13
       written: Friday, March 19 at 11:59PM PST
-      programming: Friday, March 26 at 11:59PM PST
+      programming: Saturday, March 27 at 11:59PM PST
   - id: hw5
     title: Naive Bayes Classifier
     assigned: false

@@ -2,163 +2,167 @@
 layout: asides
 toc: true
 tasks: true
-title: Recursion Review
+title: Probability Theory
 ---
-## Recursion Review
 
-### Tower of Hanoi
+## Probability Theory
 
-This week, we will be going over another classic problem in recursion: the Tower of Hanoi puzzle.
+This lab will be covered during lab sections between March 31 (Wednesday) - April 6th, 2021 (Tuesday). **You need to get checked off during a lab sesson on or before April 6th (Tuesday).**
 
-The Tower of Hanoi is a game involving three pegs (or "towers") and `n` discs of varying size. We'll label our discs 1 to `n` and we'll name our towers `src` (for "source"), `dst` (for "destination"), and `alt` for ("alternative").
+This week, we'll be taking the counting principles we learned from Lab 9 and applying them to probability! Probability is something you'll be revisiting time and time again both in and outside of computer science. Maybe you're interested in artificial intelligence or machine learning, or maybe you just want to think more critically about the uncertainty of life. Probability is an important skill you'll want to carry with you well beyond 104, regardless of what path you take!
 
-Here's what the game looks like with three discs:
-<div style="text-align:center"><img src="./assets/three_discs0.png" alt="three discs" width="550"/> </div> 
+*For this lab, you will need to write down the answers to the practice problems and share your solutions with a CP/TA to get checked off. You are expected to do all the exercises, and your CP/TA will randomly select two questions to check your understanding (this means you have to show your work!)* Don't worry, we'll go through examples together!
 
-In the beginning of the game, all of the discs are stacked on one peg (the "source" peg) in order of largest to smallest. In other words, the largest disc (disc `n`) is on the bottom and the smallest disc (disc 1) is on the top, as shown above. The goal of the game is to move the entire stack from the source tower to another "destination" tower, while obeying 2 rules:
-1. You cannot place a larger disc on top of a smaller disc.
-2. You can only move one disc at a time.
+### Warm Up, Definitions, and Rules
 
-For example, this is not allowed:
-<div style="text-align:center"><img src="./assets/invalid_discs.png" alt="invalid discs" width="550" /> </div>
+Suppose we have a fair coin, and we flip it 2 times. What is the probability of getting at least one head?
 
-To illustrate, here are a few examples.
+Here, flipping a coin 2 times is called a **trial**. Each trial has an outcome, and our **sample space** is the set of all possible outcomes for any trial. Denoting H for heads and T for tails, and assuming each coin flip yields either H or T (and will never land on an edge), our sample space can be written as {H, T}<sup>2</sup>. The size of our sample space is &#124;{H,T}&#124;<sup>2</sup> = 4. With a small sample space like this, it should be easy enough to list out all the elements:
 
-#### Example 1: One Disc
-Let's start with a pretty trivial example, with a game of 1 disc. Hopefully, you can tell that this can be solved by simply moving (1) from `src` to `dst`.
++ HH
++ HT
++ TH
++ TT
 
-#### Example 2: Two Discs
-Now, let's run through an example using 2 discs. This puzzle can be solved by moving (1) to `alt`, (2) to `dst`, and (1) to `dst` for a total of 3 moves. 
+Any subset of the sample space is called an **event**. In this example, the event we are interested in is the event of getting at least one head,  {HH, HT, TH}. Assuming that all outcomes are equally likely, we can say that the probability of this event occurring is 3/4.
 
-<div style="text-align:center"><img src="./assets/two_discs.png" alt="two discs" width="550" /> </div>
+More generally, if S is a sample space of equally likely outcomes and E is an event of S, the probability of E is:
 
-#### Example 3: Three Discs
-Finally, here's another example with 3 discs. We've already established above that we can move 2 discs, so let's move the smallest two discs out of the way to `alt`, for a total of 3 moves. 
+<div style="text-align:center"><img src="./assets/p(E).png" alt="P(E)" height="60"/></div>
 
-<div style="text-align:center"><img src="./assets/three_discs1.png" alt="three discs" width="550" /> </div>
-With (1) and (2) out of the way, we are now free to move (3). We'll move (3) to `dst`.
+#### Probabilty of Complements
 
-<div style="text-align:center"><img src="./assets/three_discs2.png" alt="three discs" width="550" /> </div>
+The **complement** of an event E, denoted as Ē, is the event that E does not occur. 
 
-Note how when we only have one disc remaining in `src`, and an empty `dst` tower, the problem becomes trivial. After moving (3) to `dst`, we just have to move discs (1) and (2) to `dst`. 
-+ Again, we've already established that we can do this with 3 moves (ie, (1) to `src`, (2) to `dst`, and (1) to `dst` to solve the puzzle for a total of 7 moves.)
+The **Complement Rule** states that the probability of an event and its complement should sum up to 1:
 
-<div style="text-align:center"><img src="./assets/three_discs3.png" alt="three discs" width="550" /> </div>
+<div style="text-align:center"><img src="./assets/p(Ec).png" alt="P(E complement)" height="37"/></div>
 
-### Recursion
+Sometimes it is easier to first compute the probability of an event's complement, in order to compute the probability of an event. For example, rather than asking "what is the probability of getting at least one head" in 2 consecutive coin tosses, we might instead consider the probability of its complement, or "the probability of getting ZERO heads." The probability of getting zero heads is easy--the only way this can happen is if we get 2 tails, which has a probability of 1/4. Using the complement rule, we can compute the probability of getting at least 1 head as 1 - 1/4 = 3/4.
 
-Recall that recursion is particularly useful when the problem we want to solve can be broken down into smaller subproblems. You may have noticed that in the above example, solving a game where with `n = 3` discs can be broken down into 3 steps:
-1. Move  `n - 1 = 2` discs from `src` to `alt`
-2. Move disc `n = 3` from `src` to `dst`
-3. Move `n - 1 = 2` discs from `alt` to `dst`
+#### Sum Rule
 
-We can generalize the 3 steps above for any `n` number of discs. For example, if we have 4 discs, we can first move discs (1) to (3) from `src` to `alt`, then move disc (4) to `src`, then move discs (1) to (3) from `alt` to `src`. The puzzle for `n = 4` can be solved in a total of 7 + 1 + 7 = 15 moves.
+The **Sum Rule** states that given a sequence of pairwise disjoint (mutually exclusive) events E<sub>1</sub>, E<sub>2</sub>, E<sub>3</sub>, the probability of these events occurring is the sum of the probability of each event: P(E<sub>1</sub> ∪ E<sub>2</sub> ∪ E<sub>3</sub> ∪ ...) = P(E<sub>1</sub>) + P(E<sub>2</sub>) + P(E<sub>3</sub>) + ...
 
-As you can probably tell by now, this makes recursion a great way to solve the Tower of Hanoi puzzle. Let's go through it together!
++ Events E<sub>i</sub> and E<sub>j</sub> are **mutually exclusive** if E<sub>i</sub> ∩ E<sub>j</sub> = ∅. In other words, they cannot occur at the same time.
 
-#### Pseudocode
-First, we need to ask ourselves: what is our base case? What is our recursive case?
+#### Example
 
-Based on the above examples, you may have observed that disc (1) is always movable. We'll let `n == 1` be our base case. Here's the pseudocode for solving Towers of Hanoi:
-```
-// Base Case
-if (n == 1) {
-	// Move disc 1 from src to dst
-}
-// Recursive Case
-else {
-	// Move n - 1 discs from src to alt
-	// Move disc n from src to dst
-	// Move n - 1 discs from alt to dst
-}
-```
+Suppose we draw a card from a standard deck of cards. What is the probability that the card we draw is a Queen or a King?
 
-### Class Exercise: Implement solveTowers
-Our first task for today is to implement `solveTowers` recursively. Let's replace the pseudocode above with real code!
+**Solution**: let event E<sub>1</sub> be the event of getting a Queen, and event E<sub>2</sub> be the event of getting a King. There are 4 Queens and 4 Kings in a standard deck of 52 cards, so P(E<sub>1</sub>) = 4/52, and P(E<sub>2</sub>) = 4/52. Thus, the probability of drawing a Queen or King is 4/52 + 4/52 = 8/52.
 
-- [ ] Implement `solveTowers` in `hanoi.cpp`
-+ You can compile it with `g++ -g -Wall -std=c++11 hanoi.cpp -o hanoi`
+#### Subtraction Rule (Inclusion-Exclusion Principle)
 
-### Runtime
-What is the runtime of `solveTowers`? Let's set up the recurrence relationship. `T(1)` is easy, because that's our base case. For our recursive cases, `T(n)`, we'll go through the three steps outlined in the pseudocode: move `n-1` discs from `src` to `alt`, move disc `n` from `src` to `dst`, and move `n-1` discs from `alt` to `dst`. We can write our recurrence relationship like so:
-```
-T(1) = 1
-T(n) = T(n - 1) + 1 + T(n - 1) = 2T(n - 1) + 1
-```
+What if we want to compute the probability of the union of events that are not mutually exclusive? This is where the **inclusion-exclusion principle** comes in:
 
-There are different ways to solve this recurrence relationship, but let's try unrolling it to see if we can find a pattern. To unroll, keep replacing `T(n)` with the right hand side of the recurrence relationship until you hit the base case, `n = 1`.
-```
-T(n) = 2T(n - 1) + 1 // note how T(n - 1) = 2T(n - 2) + 1
-= 2[2T(n - 2) + 1] + 1 = 4T(n - 2) + 1 + 2
-= 4[2T(n - 3) + 1] + 2 + 1 = 8T(n - 3) + 1 + 2 + 4
-= 2^k * T(n - k) + 1 + 2 + 2^2 + ... + 2^(k - 1)
-```
-Since our base case is when `n = 1`, we want to stop when `n - k = 1`, or when `k = n - 1`. Substituting this for `k`, we get:
-```
-T(n) = 2^(n - 1) * T(1) + 1 + 2 + 2^2 + ... + 2^(n - 2)
-```
+<div style="text-align:center"><img src="./assets/subtraction_rule.png" alt="P(E1 U E2)" height="37"/></div>
 
-Using this, can you write a closed form solution? Hint: you will probably need to use the geometric series!
+#### Example
 
-### Checkoff: More Recursion!
-For checkoff, we have two more very exciting recursion problems for you. Recursion is not easy, but it can be mastered with practice!
+Suppose we draw a card from a standard deck of cards. What is the probability that the card we draw is a Queen or a Heart?
 
-#### Is Symmetrical
-Given a *binary tree*, return true if the tree is symmetric and false if it is not. We will define a symmetric tree to be one where the left & right subtrees are mirror images of one another. An empty tree is symmetrical.
+**Solution**: let event E<sub>1</sub> be the event of getting a Queen, and event E<sub>2</sub> be the event of getting a Heart. These two events are no longer mutually exclusive: both events can occur simultaneously if we draw a Queen of hearts. There are 4 Queens, 13 Hearts, and 1 Queen of hearts in a standard deck of 52 cards. Thus, P(E<sub>1</sub>) = 4/52, P(E<sub>2</sub>) = 13/52, and P(E<sub>1</sub> ∩ E<sub>2</sub>) = 1/52. Thus, the probability of drawing a Queen or Heart is 4/52 + 13/52 - 1/52 = 16/52. 
 
-Example of a symmetrical tree:
-```
-             1
-            /  \
-           2    2 
-          / \   / \
-         4   3  3  4 
-```
-Examples of asymmetrical trees:
-```
-             1
-            /  \
-           3    2 
-          / \   / \
-         4   3  3  4 
+### Conditional Probability
 
-             1
-            /  \
-           2    2 
-            \   / \
-             3  3  4 
-```
+The **Conditional Probability** of an event B is the probability of B occurring given that another event A has already happened. We write and compute "the probability of B given A" as:
 
-- [ ] Implement `bool isSymmetrical(Node *root)`
-  + To test, run `make SymmetricalTest`
-  + Feel free to use helper functions!
-- [ ] In a file named `lab11.txt`, **trace** the recursive calls of `isSymmetrical` when it is given the following *asymmetrical* tree:
-```
-             1
-            /  \
-           3    3 
-          / \   / \
-         4   3  2  4
-```
+<div style="text-align:center"><img src="./assets/conditionalP.png" alt="P(B|A)" height="50"/></div>
 
-#### All Letter Combinations
-Given a set of characters in a vector called `letters` and an integer length `n`, find all the n-length combinations of letters.
+We say that events A and B are **independent** if the likelihood of B occurring does not depend on event A, or if P(B|A) = P(A).
 
-For example, if `n = 2` and letters contains: U S C, your output vector should have the following strings:
-```
-UU
-US
-UC
-SU
-SS
-SC
-CU
-CS
-CC
-```
-- [ ] Implement `vector<string> allCombos(const vector<char>& letters, int n);`
-  + To test, run `make AllCombosTest`
-  + Feel free to use helper functions!
+#### Example
 
+We draw a card from a deck. We know the card is a face card. Given this information, what is the probability the card is a King?
 
+Let K denote King, and let A be the event that the card is a face card, and B be the event that the card is a K.
 
+First, let's compute P(A). There are 52 cards in a deck. Each deck has 13 ranks, 3 of which have "faces" (Jack, Queen, King). Each rank comes in 4 suits, yielding a total of 3 * 4 = 12 face cards in a deck. Thus, assuming a well shuffled deck where all outcomes are equally likely, the probability of event A is 12/52.
+
+Next, we need to compute P(A ∩ B). Of the 12 possible face cards one can draw, 4 are Ks. P(A ∩ B), the probability of drawing a face card AND a K, is 4/52.
+
+Finally, we can compute P(B): (4/52)/(12/52) = 4/12 = 1/3
+
+### Random Variables
+
+A **Random Variable** is a mapping from the sample space to the set of real numbers. Consider the earlier example of flipping 2 coins. Our sample space had 4 elements, listed below. We can create a random variable **X** to denote the number of heads in each outcome:
+
++ X(HH) = 2
++ X(HT) = 1
++ X(TH) = 1
++ X(TT) = 0
+
+The **probability distribution** of a random variable X is the probability of every possible value of X. In the above example, the distribution of X is:
+
++ P(X = 0) = 1/4
++ P(X = 1) = 2/4
++ P(X = 2) = 1/4
+
+### Expectation
+
+Given a random variable X, the **expectation** or **expected value** of X, E(X), is the weighted average of X:
+
+<div style="text-align:center"><img src="./assets/expectation.png" alt="E(X)" height="42"/></div>
+
+Using the **linearity of expectations**, we can calculate the expectation of a sum of random variables:
+
+<div style="text-align:center"><img src="./assets/linearity.png" alt="linearity of expectations" height="42"/></div>
+
+The above holds even if random variables are not independent!
+
+Furthermore, multiplying a random variable by a scalar constant multiplies its expected value by that constant; likewise, adding a constant to a random variable adds that constant to its expected value. For random variable X and constants a and b:
+
+<div style="text-align:center"><img src="./assets/expectation2.png" alt="E(aX+b)" height="37"/></div>
+
+The above holds even if random variables are not independent!
+
+To compute the expectation of a product of two *independent* random variables, X and Y, we take the product of their expectations:
+
+<div style="text-align:center"><img src="./assets/E(XY).png" alt="E(XY)" height="37"/></div>
+
+### Variance
+
+While the expectation of a random variable tells us its mean, the **variance** tells us how widely distributed its values are. Two data sets with the same mean but have a vastly different distributions: if you are told that in a batch of a dozen chocolate chip cookies, the average number of chocolate chips is 10 per cookie, it's possible that every cookie has 10 chocolate chips, but it's also possible that one cookie has 120 chocolate chips, while the others have none! (That would be a very sad batch of cookies indeed!)
+
+We can compute the variance for the random variable X as follows:
+<div style="text-align:center"><img src="./assets/variance.png" alt="variance" height="47"/></div>
+
+Although we won't prove it here, this can be simplified to V(X) = E(X<sup>2</sup>) - E(X)<sup>2</sup>
+
+#### Example
+
+Suppose we roll 2 fair dice. Let X be the sum of each roll. What is E(X)? What is V(X)?
+
+**Solution**: the probability distribution of X is:
+
++ P(X = 2) = 1/36
++ P(X = 3) = 2/36
++ P(X = 4) = 3/36
++ P(X = 5) = 4/36
++ P(X = 6) = 5/36
++ P(X = 7) = 6/36
++ P(X = 8) = 5/36
++ P(X = 9) = 4/36
++ P(X = 10) = 3/36
++ P(X = 11) = 2/36
++ P(X = 12) = 1/36
+
+Thus:
+
++ E(X) = 2 * (1/36) + 3 * (2/36) + ... + 12 * (1/36) = 7.
++ E(X<sup>2</sup>) = 2<sup>2</sup> * (1/36) + 3<sup>2</sup> * (2/36) + ... + 12<sup>2</sup> * (1/36) = 54.83333
++ V(X) = E(X<sup>2</sup>) - E(X)<sup>2</sup> = 54.83333 - 49 = 5.83
+
+### Exercises
+1. In Charlie and the Chocolate Factory, Willy Wonka invites 5 lucky children to tour his factory. He randomly distributes 5 golden tickets in a batch of 1000 chocolate bars. You purchase 5 chocolate bars, hoping that at least one of them will have a golden ticket.
++ What is the probability of getting at least 1 golden ticket?
++ What is the probability of getting 5 golden tickets?
+2. Scrooge is getting ready for the 104 Duck Fashion Show. Scrooge has 3 hats (yellow, black, green), 9 shirts (3 of which are yellow, and 6 of which are green), and 7 bowties (all of which are blue). Scrooge selects his outfit randomly. What is the probability that his hat and shirt will be different colors?
+3. You roll a fair die 6 times. What is the probability that no two number appears twice?
+4. Earlier this month, porcupines Stekeltje and Loki in Belgium's ZOO Plackendael gave birth to two porcupettes, Wafa and Winga. You are told that Wafa is male. Given this information, what is the probability that Winga is also male? 
+5. Two cookies are pulled out one by one (order matters) and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. What is the probability distribution of X?
++ What is the expected value of X?
++ What is the variance of X?
+
+- [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during a lab sesson on or before April 6th (Tuesday).**

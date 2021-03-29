@@ -29,9 +29,9 @@ You'll be running your program on some very simple and non-controversial data: p
 
 ### How It Works
 
-Most of the data will be used to train.  For any given classification C of data (such as C = "*is sweet*"), Pr(C) will be the number of pieces of fruit that meet that classification, divided by the total pieces of fruit in our training data set.  Pr(x | C) would be the probability an arbitrary record will meet classification x, given that it meets classification C (such as, what is the probability an object is sweet, given that it is an apple?)  You will train on this type of data.
+Most of the data will be used to train.  For any given classification C of data (such as C = "*is sweet*"), Pr(C) will be the number of pieces of fruit that meet that classification, divided by the total pieces of fruit in our training data set.  `Pr(x | C)` would be the probability an arbitrary record will meet classification x, given that it meets classification C (such as, what is the probability an object is sweet, given that it is an apple?)  You will train on this type of data.
 
-Using the data you collect, you will then try to classify the rest of the data.  You will try to calculate Pr(C \| x) (such as, what is the probability an object is an apple, given that it is sweet?)  You will also try to calculate more complicated things, where you have multiple traits (such as, what is the probability an object is an apple, given that it is both sweet and crunchy?)  To do this, you will: 
+Using the data you collect, you will then try to classify the rest of the data.  You will try to calculate `Pr(C | x)` (such as, what is the probability an object is an apple, given that it is sweet?)  You will also try to calculate more complicated things, where you have multiple traits (such as, what is the probability an object is an apple, given that it is both sweet and crunchy?)  To do this, you will: 
 
 1. Use Bayes' Theorem
 2. Assume, rightly or not, that each trait is conditionally independent.  That is, `Pr(sweet and crunchy | apple) = Pr(sweet | apple) * Pr(crunchy | apple)`.  We make this assumption because, for a specific item we are trying to classify, we will not have seen much (if any) training data that has *exactly* those traits.
@@ -40,7 +40,7 @@ Using the data you collect, you will then try to classify the rest of the data. 
 
 Suppose you are trying to classify a piece of fruit that is soggy.  Oops, none of your training data involved fruit that was soggy!  What should you do?  One possibility would just be to refuse to classify ("I'm afraid I can't do that, Dave").  This is not ideal, because what if all of the other traits that this fruit has match up perfectly with being an apple?  It's probably just a soggy, gross apple.
 
-Normally, when calculating Pr(x | C) with your training data, you would divide the # of occurrences of x and C (denoted occ(x,C)) by the # of occurrences of C (denoted occ(C)).  Now, to accomplish our goal, we will calculate it as:
+Normally, when calculating `Pr(x | C)` with your training data, you would divide the # of occurrences of x and C (denoted occ(x,C)) by the # of occurrences of C (denoted occ(C)).  Now, to accomplish our goal, we will calculate it as:
 
 $$
 \frac{1+occ(x,C)}{1+occ(C)}
@@ -54,7 +54,7 @@ $$
 
 ### Log-Likelihoods
 
-Instead of calculating probabilities, we'll be calculating the logs (base-2) of probabilities.  That is, we calculate log(Pr(x)) instead of Pr(x).  Why?  This is for computational convenience.  To calculate Pr(x1 ^ x2 ^ ... ^ xn | C), we are instead calculating Pr(x1 | C) * Pr(x2 | C) * ... * Pr(xn | C).  If we take the log of this, all those multiplications turn into easier-to-handle additions:
+Instead of calculating probabilities, we'll be calculating the logs (base-2) of probabilities.  That is, we calculate log(Pr(x)) instead of Pr(x).  Why?  This is for computational convenience.  To calculate `Pr(x1 ^ x2 ^ ... ^ xn | C)`, we are instead calculating `Pr(x1 | C) * Pr(x2 | C) * ... * Pr(xn | C)`.  If we take the log of this, all those multiplications turn into easier-to-handle additions:
 
 $$
 log(Pr(x_1 \wedge x_2 \wedge ... \wedge x_n | C)) = log(Pr(x_1 | C)) + log(Pr(x_2 | C)) + ... + log(Pr(x_n | C))

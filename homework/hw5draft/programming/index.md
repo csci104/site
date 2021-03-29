@@ -42,7 +42,7 @@ Suppose you are trying to classify a piece of fruit that is soggy.  Oops, none o
 
 Normally, when calculating `Pr(x | C)` with your training data, you would divide the # of occurrences of x and C (denoted occ(x,C)) by the # of occurrences of C (denoted occ(C)).  Now, to accomplish our goal, we will calculate it as:
 
-$$\frac{1+occ(x,C)}{1+occ(C)}$$
+\\[ \frac{1+occ(x,C)}{1+occ(C)} \\]
 
 In particular, this will lead us to calculate the probability that something soggy is an apple as:
 

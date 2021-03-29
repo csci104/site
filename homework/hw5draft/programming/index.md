@@ -48,12 +48,6 @@ In particular, this will lead us to calculate the probability that something sog
 
 `1 / (1+occ(apple))`
 
-### Log-Likelihoods
-
-Instead of calculating probabilities, we'll be calculating the logs (base-2) of probabilities.  That is, we calculate log(Pr(x)) instead of Pr(x).  Why?  This is for computational convenience.  To calculate `Pr(x1 ^ x2 ^ ... ^ xn | C)`, we are instead calculating `Pr(x1 | C) * Pr(x2 | C) * ... * Pr(xn | C)`.  If we take the log of this, all those multiplications turn into easier-to-handle additions:
-
-`log(Pr(x1 ^ x2 ^ ... ^ xn | C)) = log(Pr(x1 | C)) + log(Pr(x2 | C)) + ... + log(Pr(xn | C))`
-
 ### Input/Output
 
 You will run your program as `./bayes train.txt classify.txt output.txt`.   

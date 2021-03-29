@@ -31,7 +31,7 @@ You'll be running your program on some very simple and non-controversial data: p
 
 Most of the data will be used to train.  For any given classification C of data (such as C = "*is sweet*"), Pr(C) will be the number of pieces of fruit that meet that classification, divided by the total pieces of fruit in our training data set.  Pr(x | C) would be the probability an arbitrary record will meet classification x, given that it meets classification C (such as, what is the probability an object is sweet, given that it is an apple?)  You will train on this type of data.
 
-Using the data you collect, you will then try to classify the rest of the data.  You will try to calculate Pr(C | x) (such as, what is the probability an object is an apple, given that it is sweet?)  You will also try to calculate more complicated things, where you have multiple traits (such as, what is the probability an object is an apple, given that it is both sweet and crunchy?)  To do this, you will: 
+Using the data you collect, you will then try to classify the rest of the data.  You will try to calculate Pr(C \| x) (such as, what is the probability an object is an apple, given that it is sweet?)  You will also try to calculate more complicated things, where you have multiple traits (such as, what is the probability an object is an apple, given that it is both sweet and crunchy?)  To do this, you will: 
 
 1. Use Bayes' Theorem
 2. Assume, rightly or not, that each trait is conditionally independent.  That is, `Pr(sweet and crunchy | apple) = Pr(sweet | apple) * Pr(crunchy | apple)`.  We make this assumption because, for a specific item we are trying to classify, we will not have seen much (if any) training data that has *exactly* those traits.

@@ -117,22 +117,9 @@ Furthermore, multiplying a random variable by a scalar constant multiplies its e
 
 The above holds even if random variables are not independent!
 
-To compute the expectation of a product of two *independent* random variables, X and Y, we take the product of their expectations:
-
-<div style="text-align:center"><img src="./assets/E(XY).png" alt="E(XY)" height="37"/></div>
-
-### Variance
-
-While the expectation of a random variable tells us its mean, the **variance** tells us how widely distributed its values are. Two data sets with the same mean but have a vastly different distributions: if you are told that in a batch of a dozen chocolate chip cookies, the average number of chocolate chips is 10 per cookie, it's possible that every cookie has 10 chocolate chips, but it's also possible that one cookie has 120 chocolate chips, while the others have none! (That would be a very sad batch of cookies indeed!)
-
-We can compute the variance for the random variable X as follows:
-<div style="text-align:center"><img src="./assets/variance.png" alt="variance" height="47"/></div>
-
-Although we won't prove it here, this can be simplified to V(X) = E(X<sup>2</sup>) - E(X)<sup>2</sup>
-
 #### Example
 
-Suppose we roll 2 fair dice. Let X be the sum of each roll. What is E(X)? What is V(X)?
+Suppose we roll 2 fair dice. Let X be the sum of each roll. What is E(X)?
 
 **Solution**: the probability distribution of X is:
 
@@ -151,18 +138,15 @@ Suppose we roll 2 fair dice. Let X be the sum of each roll. What is E(X)? What i
 Thus:
 
 + E(X) = 2 * (1/36) + 3 * (2/36) + ... + 12 * (1/36) = 7.
-+ E(X<sup>2</sup>) = 2<sup>2</sup> * (1/36) + 3<sup>2</sup> * (2/36) + ... + 12<sup>2</sup> * (1/36) = 54.83333
-+ V(X) = E(X<sup>2</sup>) - E(X)<sup>2</sup> = 54.83333 - 49 = 5.83
 
 ### Exercises
 1. In Charlie and the Chocolate Factory, Willy Wonka invites 5 lucky children to tour his factory. He randomly distributes 5 golden tickets in a batch of 1000 chocolate bars. You purchase 5 chocolate bars, hoping that at least one of them will have a golden ticket.
 + What is the probability of getting at least 1 golden ticket?
 + What is the probability of getting 5 golden tickets?
-2. Scrooge is getting ready for the 104 Duck Fashion Show. Scrooge has 3 hats (yellow, black, green), 9 shirts (3 of which are yellow, and 6 of which are green), and 7 bowties (all of which are blue). Scrooge selects his outfit randomly. What is the probability that his hat and shirt will be different colors?
-3. You roll a fair die 6 times. What is the probability that no two number appears twice?
-4. Earlier this month, porcupines Stekeltje and Loki in Belgium's ZOO Plackendael gave birth to two porcupettes, Wafa and Winga. You are told that Wafa is male. Given this information, what is the probability that Winga is also male? 
+2. Scrooge is getting ready for the 104 Duck Fashion Show. Scrooge has 3 hats (yellow, black, green), 9 shirts (3 of which are yellow, and 6 of which are green), and 7 bowties (all of which are blue). Scrooge selects his outfit uniformly at random. What is the probability that his hat and shirt will be different colors?
+3. You roll a fair die 6 times. What is the probability that no number appears twice?
+4. Earlier this month, porcupines Stekeltje and Loki in Belgium's ZOO Plackendael gave birth to two porcupettes, Wafa and Winga. You are told that at least one of the porcupettes is male. Given this information, what is the probability that both Wafa and Winga are male? 
 5. Two cookies are pulled out one by one (order matters) and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. What is the probability distribution of X?
 + What is the expected value of X?
-+ What is the variance of X?
 
 - [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during a lab sesson on or before April 6th (Tuesday).**

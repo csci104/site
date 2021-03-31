@@ -100,9 +100,9 @@ labs:
     topics: Binary Tree Recursion, AVL Trees, Splay Trees, Counting
   - id: lab11
     week: Week 11
-    title: TBD
-    assigned: false
-    topics: TBD
+    title: Probability Theory
+    assigned: true
+    topics: Probability Theory
   - id: lab12
     week: Week 12
     title: TBD

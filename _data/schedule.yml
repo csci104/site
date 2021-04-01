@@ -64,20 +64,20 @@ lectures:
 
   # 5
   - topics:
+      - Inheritance
       - Polymorphism
-      - Exceptions
-      - ADTs
     chapters:
-      - Chapter 3.1-3.2
+      - Chapter 1.5
     notes: 5-Polymorphism.pptx
     recording: https://usc.zoom.us/rec/share/ipiSXkUF6Re5KSy8EEt_M-7HYItwm7CeNVTBsG4cTmx_QUcX2NkzgHZ3r4D73Gwy.DHWBfGx_v_rBlEoF 
 
   # 6
   - topics:
-      - Stacks
-      - Queues
+      - Polymorphism
+      - Exceptions
+      - ADTs
     chapters:
-      - Chapter 3.6-3.7
+      - Chapter 3.1-3.2
     notes: 6-Exceptions.pptx
     recording: https://usc.zoom.us/rec/share/euQufFFWuHFfaNgx_sYfZfDhtMPONfqiOPxakQCwL25cBBsYabODmeSIqDMGNudT.5OL7jiW00uCF_z8M 
 
@@ -93,150 +93,163 @@ lectures:
       
   # 8
   - topics:
-      - Graphs
-      - Trees
+      - Stacks
+      - Queues
     chapters:
-      - Chapter 4.1-4.2
-      - Chapter 9.1   
+      - Chapter 3.6-3.7
     notes: 9-Stacks and Queues.pptx
     recording: https://usc.zoom.us/rec/share/6C-djAvtojyRdlRgt81V2all23YS7ky4wn-ygJhJFSvz9xO9KeyLHC0uYT6P49xJ.OxL8uR6iw2f5jm3D 
       
   # 9
   - topics:
-      - Priority Queues
-      - Heaps
+      - Graphs
+      - Trees
     chapters:
-      - Chapter 6.1-6.5
+      - Chapter 4.1-4.2
+      - Chapter 9.1   
     notes: 10-Templates.pptx
     notes2: 11-Graphs.pptx
     recording: https://usc.zoom.us/rec/share/q7SRQlGHm8nuJ9v6v_MAlAv6prta5w3vLLbzB3cgOnzxEcT8Ljfd1kOfM7gGDk4.8fwduBZbG70pnpcY%20
     
   # 10
   - topics:
+      - Priority Queues
       - Heaps
-      - Dijkstra's Algorithm
     chapters:
       - Chapter 6.1-6.5
-      - Chapter 9.3
     notes: 12-Heaps.pptx
     recording: https://usc.zoom.us/rec/share/H4T8vY7Aaawk7_cM1S3q2hcUImGQ9ec9Smv6IA6C8BCduZ8saHObkTkCabdhtOzL.VAUyZ__CclFreNUH 
     
   # 11
   - topics:
-      - A* Search
-      - Binary Search Trees
+      - Heaps
+      - Dijkstra's Algorithm
     chapters:
-      - Chapter 4.3
+      - Chapter 6.1-6.5
+      - Chapter 9.3
     notes: 13-Graph Algorithms.pptx
     recording: https://usc.zoom.us/rec/share/YbVd62L8Qalp_3_wRciaT7_vf-C8RYlZmwM4eOg7JiYtr9eMj9BKqw6iMNHzL7On.7plpS-C7wiwZQwGa 
 
   # 12
   - topics:
+      - A* Search
       - Binary Search Trees
-      - AVL Trees
     chapters:
-      - Chapter 4.3-4.4
+      - Chapter 4.3
     notes: 14-AVL Trees.pptx
     recording: https://usc.zoom.us/rec/share/FvaMUcSYL24H5DLaxM_dgl6NQL1F6N86J40mU5Vu1AfuW7MLx1VWYo08qfJ_8r_s.AX90sGS0m1fU0TK8 
  
   # 13
+  - topics:
+      - Binary Search Trees
+      - AVL Trees
+    chapters:
+      - Chapter 4.3-4.4
+    recording: https://usc.zoom.us/rec/share/o22rcz4WFx0102JLXpHj8MQy48M29f3bt8nkrFT8tVXRmH4h2ZRaVm-bdssCKcAf.N4ZyWaOuxxD03V2N 
+
+  # 14
   - topics:
       - AVL Trees
       - Balanced Binary Search Trees
     chapters:
       - Chapter 4.4, 4.7
       - Chapter 12.2
-    recording: https://usc.zoom.us/rec/share/o22rcz4WFx0102JLXpHj8MQy48M29f3bt8nkrFT8tVXRmH4h2ZRaVm-bdssCKcAf.N4ZyWaOuxxD03V2N 
+    recording: https://usc.zoom.us/rec/share/yiATmYTP0otxMNWE2p7V5TQvjnqzCc9041Eo9qSzRLYglh7nAv-mEzyOLJVUp1R-.ee-IszcYMAbDRgzn 
 
-  # 14
+  # 15
   - topics:
       - Splay Trees
     chapters:
       - Chapter 4.5
-    recording: https://usc.zoom.us/rec/share/yiATmYTP0otxMNWE2p7V5TQvjnqzCc9041Eo9qSzRLYglh7nAv-mEzyOLJVUp1R-.ee-IszcYMAbDRgzn 
+    notes: 15-Splay Trees.pptx
+    recording: https://usc.zoom.us/rec/share/0EihN4QE4PzciqJdV1n-cMfLGtkxPuvoic_fE2uMHWE-M5p1I0czm8X5bOFIJ5o_.1YvoBNXao2B5u1AM 
 
-  # 15
+  # 16
   - topics:
       - Hash Table introduction
       - Counting
     chapters:
       - Chapter 5.1-5.3
       - Lewis & Zax Chapter 22
-    notes: 15-Splay Trees.pptx
-    recording: https://usc.zoom.us/rec/share/0EihN4QE4PzciqJdV1n-cMfLGtkxPuvoic_fE2uMHWE-M5p1I0czm8X5bOFIJ5o_.1YvoBNXao2B5u1AM 
-
-  # 16
-  - topics:
-      - Counting
-    chapters:
-      - Lewis & Zax Chapter 23
     notes: 16-Hash Tables.pptx
     notes2: 17-Counting.pptx
     recording: https://usc.zoom.us/rec/share/K-NjnlF0NltFusRmQ1rRqQUoLY2nJeTkumK-p_Vd_IBkh6mDK7Z2CpG-AOa9LljC.AcllTabq8nOApXJ1 
       
   # 17
   - topics:
-      - Probability
+      - Counting
     chapters:
-      - Lewis & Zax Chapter 26
-      - Lewis & Zax Chapter 27
+      - Lewis & Zax Chapter 23
     recording: https://usc.zoom.us/rec/share/cYOsESy45jnxErd56mKA2pyItz1-Ui8IYCDXAUuV0FoqVhjxz7QRmKenBjaqDc0e.wmsWucyPO5CEavLb 
 
   # 18
   - topics:
       - Probability
     chapters:
-      - Lewis & Zax Chapter 28
-      - Lewis & Zax Chapter 29
+      - Lewis & Zax Chapter 26
     notes: 18-Probability.pptx
     recording: https://usc.zoom.us/rec/share/Z2hyVjTTjqYTi8KZgNlpKsAQWw3YFPC-YfzmfwVtwS171hG4GJczXo5lDaY_ue2G.qTahTolDbIoUf7kl 
 
   # 19
   - topics:
-      - Number Theory
+      - Probability
     chapters:
-      - Lewis & Zax Chapter 30
+      - Lewis & Zax Chapter 27
     recording: https://usc.zoom.us/rec/share/pPweajXXUJ_ed9H8vgHmZwEGOr1vUtVu94SV9Q-EHq6FdhFJGxCKhGNBzhW45QpS.y1AJ2DNjMcdzb9U4 
 
   # 20
   - topics:
-      - Number Theory
+      - Probability
     chapters:
-      - Lewis & Zax Chapter 31
+      - Lewis & Zax Chapter 28
+      - Lewis & Zax Chapter 29
     recording: https://usc.zoom.us/rec/share/qL8SaU02u-aubI83LqIeA64eNIiR8FI9nDOEgBVNiIEH9lwIyi8c2Ji9an1bAxq-.755b27gtjrGMhjSF 
 
   # 21
   - topics:
+      - Number Theory
+    chapters:
+      - Lewis & Zax Chapter 30
+    notes: 19-Number Theory.pptx
+    recording: https://usc.zoom.us/rec/share/lzs1GJliJYUGDo6YUJH5yO_LP2fEsMZWc5IwoN9S5F5LJpkn0Dv2uVhLWDC5V7fX.MwuSIjXGNuG5-LO2 
+
+  # 22
+  - topics:
+      - Number Theory
+    chapters:
+      - Lewis & Zax Chapter 31
+
+  # 23
+  - topics:
       - Hash Tables
     chapters:
       - Chapter 5
-    notes: 19-Number Theory.pptx
 
-  # 22
+  # 24
   - topics:
       - Bloom Filters
     chapters:
       - Chapter 5
 
-  # 23
+  # 25
   - topics:
       - Amortized Analysis
     chapters:
       - Chapters 11.1,11.5
 
-  # 24
+  # 26
   - topics:
       - Tries
     chapters:
       - Chapter 12.4
 
-  # 25
+  # 27
   - topics:
       - Extra Topics
     chapters:
       - Chapter 6.8
 
-  # 26
+  # 28
   - topics:
       - Extra Topics
     chapters:

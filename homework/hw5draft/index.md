@@ -27,10 +27,10 @@ Answer the following questions:
 Answer the following questions:
 
 1. A family has 5 children, where each child is equally likely to be a boy or a girl.  E is the event where there are at least 3 boys.  F is the event where all children are the same gender.  Are these events independent?
-2. A hash table has 10 indices, and 7 pieces of data are placed into it.  each piece of data is assigned an index, independently of each other, and uniformly at random.  What is the probability that no two pieces of data are assigned the same index?
-3. Urn 1 contains 3 red balls and 5 white balls.  Urn 2 contains 7 red balls and 9 white balls.  We select urn 1 with probability 1/3 and otherwise we select urn 2.  We then choose a ball from the chosen urn uniformly at random.  If we draw a red ball, what is the probability that it came form urn 1?
-4. There are n jelly beans in a box of Bertie Bott's jelly beans.  Exactly one is your desired flavor (hot chocolate).  You draw one bean from the box at a time until you find your desired jelly bean.  What is the expected number of beans you draw?
-5. There are n pairs of roommates (so, 2n people) that enter a lottery to win free mobile service for one year.  Exactly m people will win the year of service, the others win nothing.    What is the expected number of pairs of roommates where neither wins anything?
+2. A hash table has 10 indices, and 7 pieces of data are placed into it.  Each piece of data is assigned an index, independently of each other, and uniformly at random.  What is the probability that no two pieces of data are assigned the same index?
+3. There are n jelly beans in a box of Bertie Bott's jelly beans.  Exactly one is your desired flavor (hot chocolate).  You draw one bean from the box at a time until you find your desired jelly bean.  What is the expected number of beans you draw?
+5. A *triangle* in an undirected graph is a set of 3 nodes that all have edges to each other.  Let G be a graph with n nodes.  Each of the (n choose 2) possible edges exist with probability p.  What is the expected number of triangles in G?
+5. Two hundred kilometers above the coast of Brazil lies the center of the South Atlantic Anomaly (SAA) which is known to be a very hazardous zone of high energetic particles. This region exposes orbiting satellites to much higher-than-usual levels of radiation and can potentially destroy electronics onboard a satellite. Flying through the SAA, an ordinary satellite has a survival rate of 80\%. However, if the satellite has radiation-hardened (rad-hard) components, the survival rate is 97\%.  Four satellites (A, B, C, D) flew through the SAA and one of them didn't survive. Satellite D was the only one without rad-hard components.  What is the probability that satellite D was the one that didn't survive?
 
 ## Programming Assignment
 

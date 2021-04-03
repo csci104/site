@@ -38,7 +38,7 @@ Using the data you collect, you will then try to classify the rest of the data. 
 
 ### Laplacian Smoothing
 
-Suppose you are trying to classify a piece of fruit that is soggy.  Oops, none of your training data involved fruit that was soggy!  What should you do?  One possibility would just be to refuse to classify (https://www.youtube.com/watch?v=7qnd-hdmgfk).  This is not ideal, because what if all of the other traits that this fruit has match up perfectly with being an apple?  It's probably just a soggy, gross apple (https://www.youtube.com/watch?v=Uj1ykZWtPYI).
+Suppose you are trying to classify a piece of fruit that is soggy.  Oops, none of your training data involved fruit that was soggy!  What should you do?  One possibility would just be to [refuse to classify](https://www.youtube.com/watch?v=7qnd-hdmgfk).  This is not ideal, because what if all of the other traits that this fruit has match up perfectly with being an apple?  It's probably just a [soggy, gross apple](https://www.youtube.com/watch?v=Uj1ykZWtPYI).
 
 Normally, when calculating `Pr(x | C)` with your training data, you would divide the # of occurrences of x and C (denoted occ(x,C)) by the # of occurrences of C (denoted occ(C)).  Now, to accomplish our goal, we will calculate it as:
 

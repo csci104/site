@@ -70,7 +70,7 @@ The **Conditional Probability** of an event B is the probability of B occurring 
 
 <div style="text-align:center"><img src="./assets/conditionalP.png" alt="P(B|A)" height="50"/></div>
 
-We say that events A and B are **independent** if the likelihood of B occurring does not depend on event A, or if P(B&#124;A) = P(A).
+We say that events A and B are **independent** if the likelihood of B occurring does not depend on event A, or if P(B&#124;A) = P(B).
 
 #### Example
 

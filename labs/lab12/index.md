@@ -113,4 +113,4 @@ To run the tests, run `make` to compile the hashtable binary, then run the progr
 - [ ] Implement `insert`, `find`, and `remove` in `hashtable.cpp`
 - [ ] Remember to show your passing tests & `lab12.txt` to a TA/CP for checkoff!
 
-NOTE: note that `TestRemoveSUPERSTRESS_AGHHHHHHHHH` takes a very long time to run. You might have success running the `HashtableTest` executable faster without Valgrind. Regardless, you do not need to wait for this test to pass to get checked off!
+NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!

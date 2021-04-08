@@ -106,7 +106,7 @@ labs:
   - id: lab12
     week: Week 12
     title: Hash Tables
-    assigned: false
+    assigned: true
     topics: Hash Tables and Unordered Maps
   - id: lab13
     week: Week 13

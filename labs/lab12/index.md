@@ -110,7 +110,7 @@ You must explicitly create an unordered map using `std::unordered_map`.
 You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
 
 To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
-- [ ] Implement `insert`, `find`, and `remove` in `hashtable.cpp`
+- [ ] Implement `remove` in `hashtable.cpp`
 - [ ] Remember to show your passing tests & `lab12.txt` to a TA/CP for checkoff!
 
 NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!

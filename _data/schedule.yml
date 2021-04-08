@@ -225,6 +225,7 @@ lectures:
       - Hash Tables
     chapters:
       - Chapter 5
+    notes: 20-Hash Functions.pptx
 
   # 24
   - topics:

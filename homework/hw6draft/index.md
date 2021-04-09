@@ -11,17 +11,28 @@ title: Homework 6 Written
 + You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .jpg, or .pdf)
 + To access the programming portion of this assignment, click [here](./programming/)
 
-### Problem 1 (Number Theory, 25%)
+### Problem 1 (Number Theory, 20%)
 
 Answer the following questions and show your work.
 
-1. Suppose that for positive integers, a and b, `gcd(a,b) = d`. What is `gcd(a/d, b/d)`? Justify your answer.
-2. What is `gcd(x!+1,(x+1)!+1)`, where `x > 0`?
+1. What is `gcd(x!+1,(x+1)!+1)`, where `x > 0`?
 3. How many integers `n : 1 <= n <= 100`, are there such that `(n+1)(n+3)` is divisible by 7?
 4. What is `(1! + 2! + 3! + 4! + ... + 1000!) % 10`?
 5. Our prisons are too crowded, so we need to release some inmates.  For a high-security prison, there are 1000 inmates and 1000 guards.  Initially, all doors are locked.  Beginning with the 1st guard, the `i`th guard switches the locked/unlocked state of every `i`th door. For example, the first guard would go through and unlock every door. Then the 2nd guard switches the (lock/unlock) state for every even door (effectively locking every even door while leaving every odd door unlocked).  Then the 3rd guard switches the state for every 3rd door, unlocking the door if it is locked, or locking the door if it is unlocked. After the 1000th guard, how many doors are left unlocked?
 
-### Problem 2 (Analysis of Chaining, 15%)
+### Problem 2 (Hashing Applications, 15%)
+
+In the Pattern Matching problem, you have a long string `S = s1 s2 ... sn`, and a short string `T = t1 t2 ... tk` (`k < n`).  You are wondering if T shows up anywhere in S; that is, if there is an i such that `si s(i+1) ... s(i+k-1) = T`.  
+
+A naive algorithm for this would be to check `s1 s2 ... sk`, and if that fails at any point, to check `s2 s3 ... s(k+1)`, and if that fails, keep incrementing i until you find T, or you determine that it is not in S.  This algorithm would take O(nk) time.
+
+Instead, we will use the universal hash function described in the lecture notes (assume that S and T are already in the correct base, so `0 <= si < m` and `0 <= ti < m`, where m is the prime modulus of h).  We will calculate h(T) and compare that to `h(s1 s2 ... sk)`, `h(s2 s3 ... s(k+1))`, etc.
+
+1. Explain how, given the value of `h(s1 s2 ... sk)`, you can update it in constant time to obtain `h(s2 s3 ... s(k+1))`.
+2. If `h(si s(i+1) ... s(i+k-1)) = h(T)`, why have we **not** necessarily found a match?  How would we verify whether this is actually a match?
+3. The probability of a false positive (that is, finding `h(si s(i+1) ... s(i+k-1)) = h(T)` when it isn't a match) is `1/m`, and you can assume that `k < m`.  Explain how the algorithm sketched out in your previous answers obtains an average runtime of O(n) 
+
+### Problem 3 (Analysis of Chaining, 15%)
 
 Recall that in chaining, we create a linked list (or array) at each position of the hash table. When multiple items collide at that position, we store them in that list/array. Since to find an item, we now have to perform a linear search through that "bucket", it's important to bound how many items are likely to be stored in any one bucket. 
 

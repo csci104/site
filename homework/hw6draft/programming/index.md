@@ -22,7 +22,7 @@ title: Homework 6 Programming
 ### Problem 0 (Course Evaluations, 0%)
 Please make sure to fill out the online course evaluations for this course.  The instructor takes these seriously, and you can have a positive impact on how this class is taught in future semesters.  Pay it forward!
 
-### Problem 1 (Create a hash table, 45%)
+### Problem 1 (Create a hash table, 35%)
 
 You will create a Hashtable<string,int> data structure with probing for collision resolution. We will use only strings made of lowercase letters, and no other characters. Your solution to this problem should be in files `Hashtable.h` and `Hashtable.cpp`. 
 

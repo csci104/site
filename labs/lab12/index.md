@@ -7,6 +7,8 @@ title: Hashtables
 
 ## HashTables
 
+This lab will be covered during lab sections between April 9th (Friday) - April 14th, 2021 (Wednesday). **You need to get checked off during a lab sesson on or before April 14th (Wednesday).**
+
 ### 0 - What is a Map?
 
 Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
@@ -111,6 +113,6 @@ You will be implementing an unordered set with `string` keys using linear probin
 
 To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
 - [ ] Implement `remove` in `hashtable.cpp`
-- [ ] Remember to show your passing tests to a TA/CP for checkoff!
+- [ ] Remember to show your passing tests to a TA/CP for checkoff! **You need to get checked off during a lab sesson on or before April 14th (Wednesday).**
 
 NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!

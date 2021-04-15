@@ -240,7 +240,6 @@ lectures:
       - Amortized Analysis
     chapters:
       - Chapters 11.1,11.5
-    notes: 21-Amortized Analysis.pptx
 
   # 26
   - topics:

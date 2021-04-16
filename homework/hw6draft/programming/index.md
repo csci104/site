@@ -114,7 +114,7 @@ int main() {
 }
 ```
 
-For each input, run your program once each with linear probing, quadratic probing, double-hashing, and AVL Trees.  Make sure that your inputs cover several orders of magnitude, say, roughly 30, 300, 3000, and 30000 words (and larger, if you can find a good text for it). For a good large free text to use, you could use Shakespeare's Hamlet. If you can't find other shorter texts, you can always start from a longer text and only keep the first n words of it. For small texts, you'll need to use the r variable to get an accurate measurement.
+For each input, run your program once each with linear probing, quadratic probing, double-hashing, and AVL Trees.  Make sure that your inputs cover several orders of magnitude, say, roughly 30, 300, 3000, and 30000 words (and larger, if you can find a good text for it). For a good large free text to use, you could use (Shakespeare's Hamlet)[https://gist.github.com/provpup/2fc41686eab7400b796b]. If you can't find other shorter texts, you can always start from a longer text and only keep the first n words of it. For small texts, you'll need to use the r variable to get an accurate measurement.
 
 #### What to Report
 

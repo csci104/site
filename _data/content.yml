@@ -110,9 +110,9 @@ labs:
     topics: Hash Tables and Unordered Maps
   - id: lab13
     week: Week 13
-    title: TBD
-    assigned: false
-    topics: TBD
+    title: C++11
+    assigned: true
+    topics: Auto, Smart Pointers, Lambda Expressions, and more!
   - id: lab14
     week: Week 14
     title: Final Review

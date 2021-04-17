@@ -26,11 +26,11 @@ In the Pattern Matching problem, you have a long string `S = s1 s2 ... sn`, and 
 
 A naive algorithm for this would be to check `s1 s2 ... sk`, and if that fails at any point, to check `s2 s3 ... s(k+1)`, and if that fails, keep incrementing i until you find T, or you determine that it is not in S.  This algorithm would take O(nk) time.
 
-Instead, we will use the universal hash function described in the lecture notes (assume that S and T are already in the correct base, so `0 <= si < m` and `0 <= ti < m`, where m is the prime modulus of h).  We will calculate h(T) and compare that to `h(s1 s2 ... sk)`, `h(s2 s3 ... s(k+1))`, etc.
+Instead, we will use a very simple hash function `h(a1 a2 ... ak)` which takes an input string of length k, and adds the integer values of each character together: `a1 + a2 + ... + ak`.  We will calculate h(T) and compare that to `h(s1 s2 ... sk)`, `h(s2 s3 ... s(k+1))`, etc.
 
 1. Explain how, given the value of `h(s1 s2 ... sk)`, you can update it in constant time to obtain `h(s2 s3 ... s(k+1))`.
 2. If `h(si s(i+1) ... s(i+k-1)) = h(T)`, why have we **not** necessarily found a match?  How would we verify whether this is actually a match?
-3. The probability of a false positive (that is, finding `h(si s(i+1) ... s(i+k-1)) = h(T)` when it isn't a match) is `1/m`, and you can assume that `k < m`.  Explain how the algorithm sketched out in your previous answers obtains an average runtime of O(n) 
+3. We will assume the probability of a false positive (that is, finding `h(si s(i+1) ... s(i+k-1)) = h(T)` when it isn't a match) is smaller than `1/k`.  Explain how the algorithm sketched out in your previous answers obtains an average runtime of O(n) 
 
 ### Problem 3 (Analysis of Chaining, 15%)
 

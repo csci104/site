@@ -62,7 +62,7 @@ We will now hash the word. Use the following formula to produce the result, and 
 
 You will need a second hash function for the double-hashing option.
 
-`h(w) = p - ((w1+w2+w3+w4+w5) \% p)`
+`h(w) = p - ((w1+w2+w3+w4+w5) % p)`
 
 p must be a prime smaller than `size`. Use the following values for p. (The order corresponds to the table sizes we gave you above.)
 

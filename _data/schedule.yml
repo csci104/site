@@ -247,6 +247,8 @@ lectures:
       - Tries
     chapters:
       - Chapter 12.4
+    notes: 21-Amortized Analysis.pptx
+    notes2: 22-Merge Trees.pptx
 
   # 27
   - topics:

@@ -116,5 +116,5 @@ labs:
   - id: lab14
     week: Week 14
     title: Final Review
-    assigned: false
-    topics: TBD
+    assigned: true
+    topics: 

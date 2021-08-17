@@ -1,59 +1,59 @@
-semester: Spring 2021
+semester: Fall 2021
 sections:
   lectures:
-    - id: 29905
+    - id: 29931
       days: Tuesday, Thursday
       time: 11:00 AM to 12:20 PM PST
-      location: Online
+      location: THH 101
       instructors: Aaron Cote
-    - id: 30399
+    - id: 29930
       days: Tuesday, Thursday
       time: 2:00 PM to 3:20 PM PST
-      location: Online
+      location: SOS B2
       instructors: Aaron Cote
   labs:
-    - id: 30200
+    - id: 29905
       days: Tuesday
-      time: 3:30 PM to 5:20 PM PST
-      location: Online
+      time: 2:00 PM to 3:50 PM PST
+      location: SAL 109
       instructors: TBD
-    - id: 30238
+    - id: 29907
       days: Tuesday
-      time: 5:30 PM to 7:20 PM PST
-      location: Online
+      time: 4:00 PM to 5:50 PM PST
+      location: SAL 109
       instructors: TBD
-    - id: 30286
+    - id: 30210
+      days: Wednesday
+      time: 10:00 AM to 11:50 AM PST
+      location: SAL 127
+      instructors: TBD
+    - id: 30252
       days: Wednesday
       time: 12:00 PM to 1:50 PM PST
-      location: Online
+      location: SAL 126
       instructors: TBD
-    - id: 29915
-      days: Wednesday
-      time: 12:00 PM to 1:50 PM PST
-      location: Online
-      instructors: TBD
-    - id: 30394
+    - id: 29953
       days: Wednesday
       time: 2:00 PM to 3:50 PM PST
-      location: Online
+      location: SAL 109
       instructors: TBD
-    - id: 29914
+    - id: 30251
       days: Wednesday
-      time: 3:00 PM to 4:50 PM PST
-      location: Online
+      time: 4:00 PM to 5:50 PM PST
+      location: SAL 126
       instructors: TBD
-    - id: 29912
-      days: Wednesday
+    - id: 29937
+      days: Thursday
       time: 5:00 PM to 6:50 PM PST
-      location: Online
+      location: SAL 126
       instructors: TBD
-    - id: 30167
+    - id: 29932
       days: Friday
       time: 12:00 PM to 1:50 PM PST
-      location: Online
+      location: SAL 109
       instructors: TBD
-    - id: 30293
+    - id: 29938
       days: Friday
-      time: 2:00 PM to 3:50 PM PST
-      location: Online
+      time: 12:00 PM to 1:50 PM PST
+      location: SAL 127
       instructors: TBD

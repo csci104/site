@@ -48,7 +48,6 @@ layout: default
       <th>Topics</th>
       {% if site.data.schedule.show.lectures.chapters %}<th>Chapters</th>{% endif %}
       {% if site.data.schedule.show.lectures.notes %}<th>Notes</th><th></th>{% endif %}
-      <th>Recordings</th>
     </tr>
   </thead>
   <tbody>
@@ -83,11 +82,6 @@ layout: default
         {% endif %}
       </td>
       {% endif %}
-      <td>
-        {% if lecture.recording %}
-        <a href="{{ lecture.recording }}">Lecture {{ forloop.index }}</a>
-        {% endif %}
-      </td>
     </tr>
     {% endfor %}
   </tbody>

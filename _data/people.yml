@@ -2,25 +2,19 @@ instructors:
   - name: Aaron Cote
     email: aaroncot@usc.edu
     image: /assets/img/staff/aaron.png
-    hours: M 11:30am-1:30pm, W 12:30-1:30pm, F 11:30am-2:30pm
-    location: Zoom
+    hours: M 12:45pm-1:45pm (SAL 210), W 12:45-1:45pm (Zoom), F 1:30pm-3:30pm (Zoom)
+    location: SAL 210 (Mon), https://usc.zoom.us/j/9589028572 (Wed/Fri)
 
 assistants:
-  - name: Neal Lawton
-    email: nlawton@usc.edu
-    image: /assets/img/staff/neal.png
+  - name: Wuxuan Jiang
+    email: wuxuanji@usc.edu
+    image: 
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Phillip Nazarian
-    email: pmnazari@usc.edu
-    image: /assets/img/staff/phillip.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Aleksei Petrenko
-    email: petrenko@usc.edu
-    image: /assets/img/staff/alex.jpg
+  - name: Gozde Sahi
+    email: gsahin@usc.edu
+    image: /assets/img/staff/gozde.jpg
     hours: >-
       See Google Calendar
     location: Zoom

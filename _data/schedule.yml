@@ -7,16 +7,16 @@ show:
 exams:
 
   - name: Midterm 1
-    time: Thursday, February 25
+    time: Friday, October 1
     location: Quiz section
 
   - name: Midterm 2
-    time: Thursday, April 1 (No fooling!)
+    time: Friday, November 5 (No fooling!)
     location: Quiz section
 
   - name: Final
-    time: Wednesday, May 5 at 8 AM PST
-    location: Online
+    time: Saturday, December 11 at 11 AM PST
+    location: TBA
 
 lectures:
 
@@ -29,239 +29,186 @@ lectures:
     chapters:
       - Chapter 1.1-1.5
       - Chapter 2
-    notes: 1-Introduction.pptx
-    recording: https://usc.zoom.us/rec/share/_3SSJGOXhEGmhOz5ct6Gw3nr7jZDxavh9Yt5S_UYLxtTO7_uNUCseiM6Yg2WBbZ4.2IpdUN7q67JzNhmb 
+    notes:
       
   # 2
   - topics:
       - Recursion
-      - Linked Lists
     chapters:
       - Chapter 1.3
       - Chapter 2
-      - Chapter 3.3-3.5    
-    notes: 2-Recursion.pptx
-    recording: https://usc.zoom.us/rec/play/P0HGNtZAZxKWXNHXxJVnxTj3ua4DQNsjHm_l629XQNXcxH3q63_cMeuGk-XTrWPFse1MLofB8UwCYfjW.f7rjYm4bVGVr3GIv
-
+    notes:
   # 3
   - topics:
-      - Recursion
+      - Linked Lists
       - Copy Semantics
     chapters:
-      - Chapter 1.3, 1.5
-      - Chapter 2
-    notes: 3-Copy Constructors.pptx
-    recording: https://usc.zoom.us/rec/share/xwDpFGPLsGLlyALxTIEodZfxBgwA_ik5HiUyqWcOYz9XtD4TgSOH9gpL3_ESrjtS.zjT-8KfWst4Jr7KM 
-
+      - Chapter 3.3-3.5    
+    notes:
   # 4
   - topics:
       - Inheritance
       - Polymorphism
     chapters:
       - Chapter 1.5
-    notes: 4-Inheritance.pptx
-    recording: https://usc.zoom.us/rec/share/R1JXGR3uKbA6IuusbExmrblwvzIlufNcRXU9LbBFLo6Pw3gJqSueKDuxh3fmcjxb.j1HXrHmoZ4fEz6Uq 
-
+    notes:
   # 5
   - topics:
-      - Inheritance
-      - Polymorphism
-    chapters:
-      - Chapter 1.5
-    notes: 5-Polymorphism.pptx
-    recording: https://usc.zoom.us/rec/share/ipiSXkUF6Re5KSy8EEt_M-7HYItwm7CeNVTBsG4cTmx_QUcX2NkzgHZ3r4D73Gwy.DHWBfGx_v_rBlEoF 
-
-  # 6
-  - topics:
-      - Polymorphism
       - Exceptions
       - ADTs
+      - Stacks
     chapters:
       - Chapter 3.1-3.2
-    notes: 6-Exceptions.pptx
-    recording: https://usc.zoom.us/rec/share/euQufFFWuHFfaNgx_sYfZfDhtMPONfqiOPxakQCwL25cBBsYabODmeSIqDMGNudT.5OL7jiW00uCF_z8M 
-
-  # 7
+      - Chapter 3.6-3.7
+    notes:
+  # 6
   - topics:
+      - Stacks
+      - Queues
       - Standard template library 
       - Containers
     chapters:
       - Chapter 1.6
-    notes: 7-STL.pptx
-    notes2: 8-ADTs.pptx
-    recording: https://usc.zoom.us/rec/share/4FxBW-K0YCoPoXrnUsTIucv7IyfrOS6AAb0pqTN_9jpgYY8BIqFLClqc-Sy7VsHa.5W-sJbNnWJzk7X0V 
-      
-  # 8
-  - topics:
-      - Stacks
-      - Queues
-    chapters:
       - Chapter 3.6-3.7
-    notes: 9-Stacks and Queues.pptx
-    recording: https://usc.zoom.us/rec/share/6C-djAvtojyRdlRgt81V2all23YS7ky4wn-ygJhJFSvz9xO9KeyLHC0uYT6P49xJ.OxL8uR6iw2f5jm3D 
-      
-  # 9
+    notes:
+  # 7
   - topics:
+      - Templates
       - Graphs
       - Trees
     chapters:
       - Chapter 4.1-4.2
       - Chapter 9.1   
-    notes: 10-Templates.pptx
-    notes2: 11-Graphs.pptx
-    recording: https://usc.zoom.us/rec/share/q7SRQlGHm8nuJ9v6v_MAlAv6prta5w3vLLbzB3cgOnzxEcT8Ljfd1kOfM7gGDk4.8fwduBZbG70pnpcY%20
-    
-  # 10
+    notes:
+  # 8
   - topics:
       - Priority Queues
       - Heaps
     chapters:
       - Chapter 6.1-6.5
-    notes: 12-Heaps.pptx
-    recording: https://usc.zoom.us/rec/share/H4T8vY7Aaawk7_cM1S3q2hcUImGQ9ec9Smv6IA6C8BCduZ8saHObkTkCabdhtOzL.VAUyZ__CclFreNUH 
-    
-  # 11
+    notes:
+  # 9
   - topics:
       - Heaps
       - Dijkstra's Algorithm
+      - A* Search
     chapters:
       - Chapter 6.1-6.5
       - Chapter 9.3
-    notes: 13-Graph Algorithms.pptx
-    recording: https://usc.zoom.us/rec/share/YbVd62L8Qalp_3_wRciaT7_vf-C8RYlZmwM4eOg7JiYtr9eMj9BKqw6iMNHzL7On.7plpS-C7wiwZQwGa 
-
-  # 12
-  - topics:
-      - A* Search
-      - Binary Search Trees
-    chapters:
-      - Chapter 4.3
-    notes: 14-AVL Trees.pptx
-    recording: https://usc.zoom.us/rec/share/FvaMUcSYL24H5DLaxM_dgl6NQL1F6N86J40mU5Vu1AfuW7MLx1VWYo08qfJ_8r_s.AX90sGS0m1fU0TK8 
- 
-  # 13
-  - topics:
-      - Binary Search Trees
-      - AVL Trees
-    chapters:
-      - Chapter 4.3-4.4
-    recording: https://usc.zoom.us/rec/share/o22rcz4WFx0102JLXpHj8MQy48M29f3bt8nkrFT8tVXRmH4h2ZRaVm-bdssCKcAf.N4ZyWaOuxxD03V2N 
-
-  # 14
-  - topics:
-      - AVL Trees
-      - Balanced Binary Search Trees
-    chapters:
-      - Chapter 4.4, 4.7
-      - Chapter 12.2
-    recording: https://usc.zoom.us/rec/share/yiATmYTP0otxMNWE2p7V5TQvjnqzCc9041Eo9qSzRLYglh7nAv-mEzyOLJVUp1R-.ee-IszcYMAbDRgzn 
-
-  # 15
-  - topics:
-      - Splay Trees
-    chapters:
-      - Chapter 4.5
-    notes: 15-Splay Trees.pptx
-    recording: https://usc.zoom.us/rec/share/0EihN4QE4PzciqJdV1n-cMfLGtkxPuvoic_fE2uMHWE-M5p1I0czm8X5bOFIJ5o_.1YvoBNXao2B5u1AM 
-
-  # 16
+    notes:
+  # 10
   - topics:
       - Hash Table introduction
       - Counting
     chapters:
       - Chapter 5.1-5.3
       - Lewis & Zax Chapter 22
-    notes: 16-Hash Tables.pptx
-    notes2: 17-Counting.pptx
-    recording: https://usc.zoom.us/rec/share/K-NjnlF0NltFusRmQ1rRqQUoLY2nJeTkumK-p_Vd_IBkh6mDK7Z2CpG-AOa9LljC.AcllTabq8nOApXJ1 
-      
-  # 17
+    notes:
+  # 11
   - topics:
       - Counting
     chapters:
       - Lewis & Zax Chapter 23
-    recording: https://usc.zoom.us/rec/share/cYOsESy45jnxErd56mKA2pyItz1-Ui8IYCDXAUuV0FoqVhjxz7QRmKenBjaqDc0e.wmsWucyPO5CEavLb 
-
-  # 18
+    
+  # 12
   - topics:
       - Probability
     chapters:
       - Lewis & Zax Chapter 26
-    notes: 18-Probability.pptx
-    recording: https://usc.zoom.us/rec/share/Z2hyVjTTjqYTi8KZgNlpKsAQWw3YFPC-YfzmfwVtwS171hG4GJczXo5lDaY_ue2G.qTahTolDbIoUf7kl 
-
-  # 19
+    notes:
+  # 13
   - topics:
       - Probability
     chapters:
       - Lewis & Zax Chapter 27
-    recording: https://usc.zoom.us/rec/share/pPweajXXUJ_ed9H8vgHmZwEGOr1vUtVu94SV9Q-EHq6FdhFJGxCKhGNBzhW45QpS.y1AJ2DNjMcdzb9U4 
-
-  # 20
+    
+  # 14
   - topics:
       - Probability
     chapters:
       - Lewis & Zax Chapter 28
       - Lewis & Zax Chapter 29
-    recording: https://usc.zoom.us/rec/share/qL8SaU02u-aubI83LqIeA64eNIiR8FI9nDOEgBVNiIEH9lwIyi8c2Ji9an1bAxq-.755b27gtjrGMhjSF 
-
-  # 21
+    
+  # 15
   - topics:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 30
-    notes: 19-Number Theory.pptx
-    recording: https://usc.zoom.us/rec/share/lzs1GJliJYUGDo6YUJH5yO_LP2fEsMZWc5IwoN9S5F5LJpkn0Dv2uVhLWDC5V7fX.MwuSIjXGNuG5-LO2 
-
-  # 22
+    notes:
+  # 16
   - topics:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 31
-    recording: https://usc.zoom.us/rec/share/09KWWeEEEISH98ugwpWlpaZGWMQdgeTHJ_AfkTMKw-GGKefOYjGAiEKXaoL4DOU.1GPbniJuKmi9Olgn 
-
-  # 23
+    
+  # 17
   - topics:
       - Hash Tables
     chapters:
       - Chapter 5
-    notes: 20-Hash Functions.pptx
-    recording: https://usc.zoom.us/rec/share/1cSzSTVezNJJk-r_yl8zK_VQjqJzPvSYJMMxfq5Io_KigueRb6wQFe5Z9szA4QBp.hZq5NWjaBwC0_nRp 
-
-  # 24
+    notes:
+  # 18
   - topics:
       - Bloom Filters
     chapters:
       - Chapter 5
-    recording: https://usc.zoom.us/rec/share/HhLDQwxkEJ5MhSTR3ToYYPJ4VjAUKAbRR1b-CQDSe6v0tZzgQPjwa4oD8jPJwRmw.6kkR8mFDaxlSk9Fv 
-
-  # 25
+  # 19
   - topics:
       - Amortized Analysis
     chapters:
       - Chapters 11.1,11.5
-    recording: https://usc.zoom.us/rec/share/XL3wPc2E8LC5ytTru-uSetrFQz8ZC0_F9BuSnWuEF7mjdwdoDaJ-ip8gSjtywSLM.zJjQQP2r3cc6f605 
-
-  # 26
+  # 20
+  - topics:
+      - Log-Structured Merge Trees
+    chapters:
+      - Chapters 11.1,11.5
+    
+  # 21
+  - topics:
+      - Binary Search Trees
+    chapters:
+      - Chapter 4.3
+    notes:
+  # 22
+  - topics:
+      - Binary Search Trees
+      - AVL Trees
+    chapters:
+      - Chapter 4.3-4.4
+    
+  # 23
+  - topics:
+      - AVL Trees
+      - Balanced Binary Search Trees
+    chapters:
+      - Chapter 4.4, 4.7
+      - Chapter 12.2
+    
+  # 24
+  - topics:
+      - Splay Trees
+    chapters:
+      - Chapter 4.5
+    notes:
+    
+  # 25
   - topics:
       - Tries
     chapters:
       - Chapter 12.4
-    notes: 21-Amortized Analysis.pptx
-    notes2: 22-Merge Trees.pptx
-    recording: https://usc.zoom.us/rec/share/5FX7HW0gSJSIoMOBOYuf8hpCZIvijOLyuKxWLV3aq5uGQ7zLHJ0ebIhKdTEtQA9b.eQQf2b2baRLT4rDn 
-
-  # 27
+    notes:
+  # 26
   - topics:
       - Extra Topics
     chapters:
       - Chapter 6.8
-    notes: 23-Tries.pptx
-    recording: https://usc.zoom.us/rec/share/IGWEtSFRetFiP1nfD0r1qfLlnDEy2ncbuvy63xTPD90GXwlizYpvrOWYAGUihl2u.vlt4L-UqialkwL3u 
-
-  # 28
+    notes:
+  # 27
   - topics:
       - Extra Topics
     chapters:
       - Chapter 11.2
-    recording: https://usc.zoom.us/rec/share/Bsb6bmJPlWMbKWo3oEv-t8DTInspEy0_ZOECmvnD1XuSGhBjT-KGKvq7iy3U6jvH.w5Z88tQbfB0QRwqn 
+# 28
+  - topics:
+      - Review
+    chapters:

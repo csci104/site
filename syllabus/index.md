@@ -83,8 +83,6 @@ Your final grade will depend solely on your own performance, graded according to
   </table>
 </div>
 
-<span class="font-bold">Note</span>: due to COVID-19, will be online.  Instructions and details will be provided closer to the examinationd date for how to take the exam and submit it.
-
 ### Grading Scale
 
 We will guarantee that you will get at least the grade indicated by the following scale.

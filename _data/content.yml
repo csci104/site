@@ -1,46 +1,45 @@
 assignments:
   - id: hw1
     title: Linked Lists and Recursion
-    assigned: true
+    assigned: false
     dates:
-      assigned: Thursday, January 21
-      written: Friday, January 29 at 11:59PM PST
-      programming: Friday, February 5 at 11:59PM PST
+      assigned: Thursday, August 26
+      written: Friday, September 3 at 11:59PM PST
+      programming: Friday, September 10 at 11:59PM PST
   - id: hw2
     title: Inheritance and Polymorphism
-    assigned: true
+    assigned: false
     dates:
-      assigned: Saturday, February 6
-      written: Friday, February 12 at 11:59PM PST
-      programming: Friday, February 19 at 11:59PM PST
+      assigned: Saturday, September 11
+      written: Friday, September 17 at 11:59PM PST
+      programming: Friday, September 24 at 11:59PM PST
   - id: hw3
     title: Heaps
-    assigned: true
+    assigned: false
     dates:
-      assigned: Saturday, February 27
-      written: Friday, March 5 at 11:59PM PST
-      programming: Saturday, March 13 at 11:59PM PST
+      assigned: Saturday, October 2
+      written: Friday, October 8 at 11:59PM PST
+      programming: Wednesday, October 13 at 11:59PM PST
   - id: hw4
-    title: AVL Trees
-    assigned: true
+    title: RSA
+    assigned: false
     dates:
-      assigned: Saturday, March 13
-      written: Friday, March 19 at 11:59PM PST
-      programming: Saturday, March 27 at 11:59PM PST
+      assigned: Saturday, October 16
+      written: Friday, October 22 at 11:59PM PST
+      programming: Friday, October 29 at 11:59PM PST
   - id: hw5
-    title: Naive Bayes Classifier
-    assigned: true
-    dates:
-      assigned: Saturday, April 3
-      written: Friday, April 9 at 11:59PM PST
-      programming: Friday, April 16 at 11:59PM PST
-  - id: hw6
     title: Hash Tables
-    assigned: true
+    assigned: false
     dates:
-      assigned: Saturday, April 17
-      written: Friday, April 23 at 11:59PM PST
-      programming: Saturday, May 1 at 11:59PM PST
+      assigned: Saturday, November 6
+      written: Friday, November 12 at 11:59PM PST
+      programming: Friday, November 19 at 11:59PM PST
+  - id: hw6
+    title: AVL Trees
+    assigned: false
+    dates:
+      assigned: Saturday, November 20
+      programming: Friday, December 3 at 11:59PM PST
 
 labs:
   - id: lab0

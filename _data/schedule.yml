@@ -2,7 +2,7 @@ show:
   lectures:
     chapters: true
     notes: true
-    notes2: true
+    notes2: false
 
 exams:
 

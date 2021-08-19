@@ -8,11 +8,7 @@ instructors:
 assistants:
   - name: Wuxuan Jiang
     email: wuxuanji@usc.edu
-<<<<<<< HEAD
-    image: /assets/img/staff/temp.png
-=======
     image: 
->>>>>>> fall21
     hours: >-
       See Google Calendar
     location: Zoom

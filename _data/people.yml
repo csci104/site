@@ -8,7 +8,7 @@ instructors:
 assistants:
   - name: Wuxuan Jiang
     email: wuxuanji@usc.edu
-    image: 
+    image: /assets/img/staff/temp.png
     hours: >-
       See Google Calendar
     location: Zoom
@@ -31,106 +31,112 @@ staff:
     image: /assets/img/staff/annikaoeth.jpeg
     hours: >-
       See Google Calendar
+    location: SAL
+  - name: Carolyn Luo
+    email: xluo0963@usc.edu
+    image: /assets/img/staff/carolyn.JPG
+    hours: >-
+     See Google Calendar
     location: Zoom
-  - name: Armaan Pishori
-    email: pishori@usc.edu
-    image: /assets/img/staff/armaan.jpg
+  - name: Crystal Wu
+    email: wucrysta@usc.edu
+    image: /assets/img/staff/crystal.jpg
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Cameron Durham
-    email: cdurham@usc.edu
-    image: /assets/img/staff/cdurham_lil.jpg
+  - name: Daniel Wang
+    email: jinghao@usc.edu
+    image: /assets/img/staff/daniel.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
-  - name: Clement Chan
-    email: cjchan@usc.edu
-    image: /assets/img/staff/clement.jpg
+    location: SAL
+  - name: Iman Arfa-Zanganeh
+    email: arfazang@usc.edu
+    image: /assets/img/staff/iman.jpeg
     hours: >-
       See Google Calendar
-    location: Zoom
-  - name: Emily Fang
-    email: ejfang@usc.edu
-    image: /assets/img/staff/emily_lil.png
+    location: SAL
+  - name: Leo Zhuang
+    email: llzhuang@usc.edu
+    image: /assets/img/staff/leo.JPG
     hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Fred Zhang
-    email: fyzhang@usc.edu
-    image: /assets/img/staff/fred.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: George Xu
-    email: leyuxu@usc.edu
-    image: /assets/img/staff/leyu.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Hope Kim
-    email: hopekim@usc.edu
-    image: /assets/img/staff/hope.jpeg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Jamie Flores
-    email: jamieflo@usc.edu
-    image: /assets/img/staff/jamieflo.jpeg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Jason Yik
-    email: jyik@usc.edu
-    image: /assets/img/staff/jason.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Kesi Sound
-    email: ksoundar@usc.edu
-    image: /assets/img/staff/kesi.png
-    hours: >-
-      See Google Calendar
-    location: Zoom
+     See Google Calendar
+    location: SAL
   - name: LongHuy Nguyen
     email: longhuyn@usc.edu
     image: /assets/img/staff/longhuy.jpg
     hours: >-
       See Google Calendar
+    location: SAL
+  - name: Louis Addison
+    email: laddison@usc.edu
+    image: /assets/img/staff/louis.jpg
+    hours: >-
+      See Google Calendar
     location: Zoom
-  - name: Michelle Wong
-    email: wong935@usc.edu
-    image: /assets/img/staff/michelle_lil.JPG
+  - name: Matthew Leslie
+    email: mtleslie@usc.edu
+    image: /assets/img/staff/matt.jpg
     hours: >-
      See Google Calendar
     location: Zoom
+  - name: Michelle Wong
+    email: wong935@usc.edu
+    image: /assets/img/staff/michelle.JPG
+    hours: >-
+     See Google Calendar
+    location: Zoom
+  - name: Mila Mathias
+    email: memathia@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+     See Google Calendar
+    location: Zoom
+  - name: Netanel Sadeghi
+    email: nnsadegh@usc.edu
+    image: /assets/img/staff/netanel.jpg
+    hours: >-
+      See Google Calendar
+    location: SAL
   - name: Noah Kim
     email: noahbkim@usc.edu
     image: /assets/img/staff/noahkim.jpeg
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Owen Mech
-    email: omech@usc.edu
-    image: /assets/img/staff/owen_lil.jpg
+  - name: Shuning Zhang
+    email: shuningz@usc.edu
+    image: /assets/img/staff/shuning.jpg
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Philip Chang
-    email: chan987@usc.edu
-    image: /assets/img/staff/philip.png
+  - name: Simon Zhang
+    email: simonzha@usc.edu
+    image: /assets/img/staff/temp.png
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Pilar Luiz
-    email: pluiz@usc.edu
-    image: /assets/img/staff/pilar.jpg
+  - name: Spencer Davis
+    email: spencetd@usc.edu
+    image: /assets/img/staff/spencer.png
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Sedona McNeely
-    email: smcneely@usc.edu
-    image: /assets/img/staff/sedona_lil.png
+  - name: Steven Yuan
+    email: syuan697@usc.edu
+    image: /assets/img/staff/steven.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Tommy Shao
+    email: anntians@usc.edu
+    image: /assets/img/staff/tommy.jpeg
+    hours: >-
+     See Google Calendar
+    location: Zoom
+  - name: Trevor Asbery
+    email: asbery@usc.edu
+    image: /assets/img/staff/temp.png
     hours: >-
       See Google Calendar
     location: Zoom
@@ -140,11 +146,17 @@ staff:
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Yunrui Wang
+  - name: Billy Wang
     email: yunruiwa@usc.edu
     image: /assets/img/staff/yunrui.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
+    location: SAL
+  - name: Yutong Li
+    email: yli81711@usc.edu
+    image: /assets/img/staff/yutong.jpg
+    hours: >-
+     See Google Calendar
+    location: SAL
 
 graders:

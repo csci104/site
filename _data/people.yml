@@ -8,7 +8,7 @@ instructors:
 assistants:
   - name: Wuxuan Jiang
     email: wuxuanji@usc.edu
-    image: 
+    image: /assets/img/staff/wuxuan.jpg
     hours: >-
       See Google Calendar
     location: Zoom
@@ -92,12 +92,18 @@ staff:
     hours: >-
      See Google Calendar
     location: Zoom
+  - name: Monil Sorathia
+    email: msorathi@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+     See Google Calendar
+    location: SAL
   - name: Netanel Sadeghi
     email: nnsadegh@usc.edu
     image: /assets/img/staff/netanel.jpg
     hours: >-
       See Google Calendar
-    location: SAL
+    location: Zoom
   - name: Noah Kim
     email: noahbkim@usc.edu
     image: /assets/img/staff/noahkim.jpeg
@@ -136,7 +142,7 @@ staff:
     location: Zoom
   - name: Trevor Asbery
     email: asbery@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/trevor.png
     hours: >-
       See Google Calendar
     location: Zoom

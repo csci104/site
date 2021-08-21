@@ -84,7 +84,7 @@ In this step, we will generate the set of keys required to use SSH.
 This will be done manually through the command line.
 
 **Important**: where you run the following instructions will depend on whether you're using Docker or the VM.
-**If you are using Docker, you must open a terminal on your normal operating system**.
+**If you are using Docker, you must open a terminal on your normal operating system. This is because Docker reboots itself from a pre-canned image everytime, which would erase all git configurations you had**.
 If you're on Windows, installing Git should either give you Git Bash or access to unix commands in CMD.
 **If you are using the VM, you have to open Terminal inside the virtual desktop**.
 Going forward, whichever applies to you will be the terminal we refer to when we ask you to open or write commands in a terminal.

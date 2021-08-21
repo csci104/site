@@ -94,7 +94,7 @@ staff:
     location: Zoom
   - name: Monil Sorathia
     email: msorathi@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/monil.jpeg
     hours: >-
      See Google Calendar
     location: SAL
@@ -118,7 +118,7 @@ staff:
     location: Zoom
   - name: Simon Zhang
     email: simonzha@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/simon.jpg
     hours: >-
       See Google Calendar
     location: Zoom

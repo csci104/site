@@ -25,11 +25,10 @@ The class will put significant emphasis on a theoretical understanding of data s
 5. Ability to implement and use search structures and algorithms including binary search, search trees, and hash tables.
 6. Ability to use and implement search data structures, including search trees and hash tables.
 7. Ability to use and implement priority queues.
-8. Knowledge of and ability to implement sorting algorithms and compare their performance analytically and empirically.
-9. Understanding of graphs and their representations; ability to implement graph search using BFS, DFS, and Dijkstra's Algorithm.
-10. Ability to write recursive functions and understand when recursion is appropriate to a problem.
-11. Ability to write readable and maintainable code.
-12. Ability to explain computational solutions in person and in writing.
+8. Understanding of graphs and their representations; ability to implement graph search using BFS, DFS, and Dijkstra's Algorithm.
+9. Ability to write recursive functions and understand when recursion is appropriate to a problem.
+10. Ability to write readable and maintainable code.
+11. Ability to explain computational solutions in person and in writing.
 
 ## Catalog Entry
 

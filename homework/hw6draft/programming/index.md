@@ -7,123 +7,96 @@ title: Homework 6 Programming
 
 # HW6: Programming Assignment
 
-+ Due: Saturday, May 1st, 11:59pm PST
-
-+ To access the written portion of this assignment, click [here](..)
-
++ Due: Friday, December 3rd, 11:59pm PST
++ Due to the Thanksgiving holiday, there is no written assignment.  However, the programming portion is **substantial** so start early!
 + Directory name in your github repository for this homework (case sensitive): `hw6`
 
-  - There is no skeleton code for this assignment.
-  - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make`.
-- Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
+  - In this project we have provided a **substantial** code base.  Do a `git pull` in your `resources` repo.
+  - Then copy the `resources/hw6` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw6` folder.
+  - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should, among other compilation commands, produce an executable `scheduling`
+  - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
   - Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
-  
+  - **We will NOT provide a test suite before the due date for this homework**.  You will need to test the coding questions yourself with your own test programs.
 
-### Problem 0 (Course Evaluations, 0%)
-Please make sure to fill out the online course evaluations for this course.  The instructor takes these seriously, and you can have a positive impact on how this class is taught in future semesters.  Pay it forward!
+### Problem 1 (Binary Search Tree Iterators, 25%)
 
-### Problem 1 (Create a hash table, 35%)
+We are providing you with interface specifications for binary search trees.
 
-You will create a Hashtable<string,int> data structure with probing for collision resolution. We will use only strings made of lowercase letters, and no other characters. Your solution to this problem should be in files `Hashtable.h` and `Hashtable.cpp`. 
+We are providing for you a half-finished file `bst.h` (in the homework-resources repository) which implements a simple binary search tree.    We are also providing a complete `print_bst.h` file that allows you to visually see your tree, for help in debugging.  You will need to complete the implementation for all seven functions that have `TODO` next to their declaration in `bst.h`. We provide additional clarifications for the following functions, where `n` is the number of nodes in the tree, and `h` is the height of the tree:
 
-Your hash table will initially have 11 positions. You will need to implement the following functions:
+1. `void insert(const std::pair<const Key, Value>& keyValuePair)` : This function will insert a new node into the tree with the specified key and value.  There is no guarantee the tree is balanced before or after the insertion.  If key is already in the tree, you should overwrite the current value with the updated value. Runtime is `O(h)`.  We recommend writing a protected helper function that inserts the key/value pair and returns a pointer to the created node (this will be handy in problem 2).
+2. `void remove(const Key& key)` : This function will remove the node with the specified key from the tree.  There is no guarantee the tree is balanced before or after the removal. If the key is not already in the tree, this function will do nothing. If the node to be removed has two children, swap with its **predecessor** (not its _successor_) in the BST removal algorithm. If the node to be removed has exactly one child, you can promote the child.  You may **NOT** just swap key,value pairs. You must swap the actual nodes by changing pointers, but we have given you a helper function to do this in the BST class:  `nodeSwap()`. Runtime of removal should be `O(h)`.   We recommend writing a protected helper function that deletes the key/value pair and returns a pointer to the parent of the deleted node (this will be handy in problem 2).
+3. `void clear()` : Deletes all nodes inside the tree, resetting it to the empty tree.   Runtime is `O(n)`.
+4. `Node* internalFind(const Key& key)` : Returns a pointer to the node with the specified key.  Runtime is `O(h)`.
+5. `Node* getSmallestNode()` : Returns a pointer to the node with the smallest key.  This function is used by the iterator.  Runtime is `O(h)`.
+6. `bool isBalanced() const` : Returns true if the BST is an AVL Tree (that is, for every node, the height of its left subtree is within 1 of the height of its right subtree).  It is okay if your algorithm is not particularly efficient, as long as it is `O(n^2)`.  This function may help you debug your AVL Tree is problem 4.
+7. Constructor and destructor : Your destructor will probably just call the clear function.  The constructor should take constant time.
+8. You will need to implement the unfinished functions of the iterator class.
 
-+ `Hashtable (bool debug = false, unsigned int probing = 0)`: Constructor for the Hashtable. The effect of the Boolean `debug` flag is described below. The parameter `probing` will always be 0, 1, or 2. 0 means that your Hashtable must use linear probing, 1 means quadratic probing, and 2 means double hashing.
-+ `~Hashtable ()`: Destructor
-+ `add (string k)`: If k is already in the HashTable, then increment its value.  If it is new, add it to the HashTable with a value of 1.
-+ `count (string k)`: Returns the int associated with k, or 0 if k is not in the Hashtable.
-+ `reportAll (ostream &) const` : output, to the given stream, every (key,value) pair, in the order they appear in the hashtable;  on each line, output the key, followed by a space, followed by the value, and then a newline.
-+ `resize ()`:  A private helper function which approximately doubles the number of indices available.  You call this function when you try to insert into a hash table whose load factor is already at least 0.5.  The number of indices should follow this sequence: 11, 23, 47, 97, 197, 397, 797, 1597, 3203, 6421, 12853, 25717, 51437, 102877, 205759, 411527, 823117, 1646237, 3292489, 6584983, 13169977, 26339969, 52679969, 105359969, 210719881, 421439783, 842879579, 1685759167. After resizing the table, you need to rehash all strings and their values, and you must rehash all of the strings starting from the beginning of the table and proceeding in order to the end of the table.
-+ `int hash (string k) const`:  This private/protected function takes a string as input, and outputs a pseudo-random index to store it at. More detail on how to write this hash function is provided below.
+Note that a BST (as well as *any* map implementation) should always be organized via the **key** of the key/value pair.
 
-When you create a HashTable or resize a HashTable without `debug` mode, you should generate 5 random numbers between 0 and m-1 (inclusive): we'll refer to them as r1, r2, r3, r4, r5.
-When you create a debug-mode HashTable, you must set r1=983132572, r2=62337998, r3=552714139, r4=984953261, r5=261934300, regardless of the current value of m (these numbers were generated by `random.org`).
+_**Very Important Warning:** Please do not add, remove, modify, or rename any of the public or protected data or functions in bst.h. Please do not rename any function in bst.h. If you do not heed this warning, our tests won't work, and you'll lose points._
 
-You will use the above 5 integers in your hash function detailed below.
+### Problem 2 (AVL Trees, 40%)
 
-#### Writing a Hash Function
+We are providing you a half-finished file `avlbst.h` (in the homework-resources repository) for implementing an AVL Tree.  It builds on the file you completed for the previous question.
 
-First translate each letter into a value between 0 and 25, where a=0, b=1, c=2, ..., z=25.
-You can translate a string of 6 letters a1 a2 a3 a4 a5 a6 into an int via the following mathematical formula:
+Complete this file by implementing the `insert()` and `remove()` functions for AVL Trees.  You are strongly encouraged to use private/protected helper functions.
 
-`26^5 a1 + 26^4 a2 + 26^3 a3 + 26^2 a4 + 26 a5 + a6`
+When you compile code that includes `avlbst.h` you will need to add the option `--std=c++11` to the `g++` compilation command.  This is because of the usage of the `override` keyword for various virtual functions.  You can read about it online but it mainly provides some additional compiler checks to ensure the signatures of a virtual function in the derived class matches the one you are attempting to "override" in the base class (i.e. if your base virtual function is a `const`-member but you forget to add `const` to the derived and thus are creating a whole new member function, the compiler will catch the error).
 
-Place zeros in the leading positions if your word is shorter than 6 letters.  So `abc` would set a1, a2, and a3 all to zero.
+#### Notes and Requirements
 
-If an input word is longer than 6 letters, then you should first do the above process for the last 6 letters in the word, then repeat the process for each successive 6 letters.  You will never receive a word longer than "antidisestablishmentarianism" (that is, 28 letters), which should result in a sequence of no more than 5 ints `w1 w2 w3 w4 w5`, where `w5` was produced by the last 6 letters of the word.
+1. You know this one already, but you are **NOT** allowed to use online sources to give you the game plan for coding an AVL tree.  Feel free, however, to ask various questions on Piazza, utilize course materials, or ask in office hours.
+1. For the `insert()` method, you should handle duplicate entries by overwriting the current value with the updated value. 
+1. There is a data member variable `height_` for the `AVLNode` in `avlbst.h` which you should use to store and update the height of a given node.
+1. When writing a class (AVLTree) that is derived from a templated class (BinarySearchTree), accessing the inherited members must be done by scoping (i.e. `BinarySearchTree<Key,Value>::` or preceding with the keyword `this->`.
+1. This note may not make sense until you have started coding.  Your AVLTree will inherit from your BST.  This means the root member of BST is a `Node` type pointer that points to an `AVLNode` (since you will need to create AVLNodes with `height` values for your AVLTree), which is fine because a base `Node` pointer can point at derived `AVLNode`s.  If you need to access AVLNode-specific members (i.e., members that are part of AVLNode but not Node) then one simple way is to (down)cast your `Node` pointer to an `AVLNode` pointer, as in `static_cast<AVLNode<K,V>*>(root)` to temporarily access the AVLNode-specific behavior/data.
+1. When erasing (removing) a key that has 2 children, you should always swap it with its **predecessor**.  Again, you must swap the nodes positions in the tree and not just the key/value pairs.  Again, use the provided `nodeSwap` function to help you.
+1. You do not need to submit any tests for your AVL tree and iterator but obviously you should test it. You are welcome to commit/push those tests but they will not be graded.
+1. Your AVL implementation must maintain the balance of the tree and provide O(log n) runtime for `insert`, `remove`, and `find`.  Failure to do so could lead to *severe* point deductions on this problem.
 
-Store these values in an int array. Place zeros in the leading positions if the word was shorter than 25 letters.  So for a string of 12 letters, w1, w2, and w3 would all be 0.
+#### Tips
 
-We will now hash the word. Use the following formula to produce the result, and make sure to cast this into a `long long` at the appropriate places so that you don't have an overflow error: the compiler will assume each intermediate value is an int if you don't specify this.  `m` is the number of indices in the hashtable:
+ - Helper functions like:  `rotateLeft(...)` and `rotateRight(...)` are a great idea.  Even simple ones like `isLeftChild(n, p)` or `isRightChild(n,p`, etc. are fine.  Anything that makes it easier to abstract (and thus ensure correctness) of the algorithm.
 
-`(r1 w1 + r2 w2 + r3 w3 + r4 w4 + r5 w5) % m`
+### Problem 3 (Backtracking, 35%)
 
-#### Creating Your Second Hash Function
-
-You will need a second hash function for the double-hashing option.
-
-`h(w) = p - ((w1+w2+w3+w4+w5) \% p)`
-
-p must be a prime smaller than `size`. Use the following values for p. (The order corresponds to the table sizes we gave you above.)
-
-7, 19, 43, 89, 193, 389, 787, 1583, 3191, 6397, 12841, 25703, 51431, 102871, 205721, 411503, 823051, 1646221, 3292463, 6584957, 13169963, 26339921, 52679927, 105359939, 210719881, 421439749, 842879563, 1685759113
-
-### Problem 2 (Analyze the Hashtable, 15%)
-
-Create a program `counting` that will be called as follows:
-
-`./counting [input] [output] x d r`
-
-Your submission should include a `counting.cpp` file which we will use to run your program. You should also include a rule in your `Makefile` to compile this problem with the command `make counting`.
-
-+ `[input]` will be an input text file, which you will run your program on.
-+ `[output]` will be an output text file, which you will store your results in.
-+ x will be an integer with value 0, 1, 2, or 3.  If x=0, use linear probing.  If x=1, use quadratic probing.  If x=2, use double-hashing.  If x=3, use your AVL Tree from HW4 (if your AVL Tree isn't working, use the STL map, but that's much less interesting).
-+ d will be an integer with value 0 or 1.  If d=0, then create a normal HashTable.  If d=1, then create a debug-mode HashTable.  This value is ignored by your program if x=3.
-+ r will be an integer that says how often to repeat the whole program. (This is useful to measure the time when the input is small and the time is otherwise reported as 0.)
-
-Your program should create a HashTable/AVL Tree, and populate it with the contents of the input text file.  Each word in the file will be separated by an arbitrary amount of whitespace (possibly including newlines and tabs).  For a given word, you should strip out all characters which are not the letters a-z or A-Z.  So the string "let's" should become "lets". Convert the string to all lowercase before storing it in your structure.
-
-Your program should time how long it takes to insert/update all the words in the file. Since we want to focus on the time the Hashtable/AVL Tree takes, and not have it overshadowed by the time to access a file or parse inputs, you should first put the sequence of all pruned/stripped words into a `vector<string>`. Once you've done that, start the timer, and then record the time for inserting/updating all the words in the data structure. Repeat this r times, each time for a completely new instantiation of your data structure. Then stop/record the timer, and output the number of occurrences for all words in the text. 
-
-We will guarantee the following for all input test cases we use on your program: 
-
-+ You will never need more than 1685759167 indices.
-+ All input words will be no longer than 28 letters.
-
-#### Timing Your Code
-To time your code, you can do something like the following:
+In a file named `scheduling.cpp`, write a program to schedule exam time slots so that no student has two exams at the same time, using recursion and backtracking.  The input file (whose name will be passed in at the command line) will have three parameters on the first line: how many exams there are, how many students there are, and how many timeslots there are, separated by an arbitrary amount of whitespace.  Each successive line will have the name of a student (a string of lowercase letters), followed by the name of the classes that student is in (each one being an integer greater than 0).  There will be an arbitrary amount of whitespace between the student name and each class.  You may assume you always receive a correctly formatted input file.
 
 ```
-#include <iostream>
-#include <ctime>
-
-int main() {
-    clock_t start;
-    double duration;
-
-    /* Preprocessing here that you don't want to time */
-
-    start = clock();
-
-    /* Your algorithm here */
-
-    duration = ( clock() - start ) / (double) CLOCKS_PER_SEC;
-
-    std::cout << duration/r << endl;
-}
+5 4 3
+aaron    104 170
+leia 104   170 350
+jarjar  101
+finn  270  350
 ```
 
-For each input, run your program once each with linear probing, quadratic probing, double-hashing, and AVL Trees.  Make sure that your inputs cover several orders of magnitude, say, roughly 30, 300, 3000, and 30000 words (and larger, if you can find a good text for it). For a good large free text to use, you could use [Shakespeare's Hamlet](https://gist.github.com/provpup/2fc41686eab7400b796b). If you can't find other shorter texts, you can always start from a longer text and only keep the first n words of it. For small texts, you'll need to use the r variable to get an accurate measurement.
+The output should be an assignment of classes to the integers between `1` and the number of timeslots, one class per line:
 
-#### What to Report
+```
+101 1
+104 1
+170 2
+270 1
+350 3
+```
 
-Answer the following questions in your readme file:
+There are of course other solutions, you only need to find one that works.  If there is no solution for the requested number of timeslots, you should output `No valid solution.`
 
-+ Which size of input cases did you use?
-+ Did you use AVL Trees or the STL map?
-+ For each of the 4 approaches (linear probing, quadratic probing, double hashing, AVL Trees), report how long each of your input cases took. How long did it take per operation?
-+ Explain why you think the results turned out the way they did, and whether you were surprised by them.
+You must maintain a map of each class to its timeslot, using your AVL implementation.  As there is no method to update a value in your AVL Tree, you will need to delete the old value and insert the new value.  You may use the STL map instead of your AVL Tree at cost of a 10 point deduction, in case you cannot finish your AVL Tree.
+
+Since some of the function calls throw exceptions, make sure to use `try` and `catch` appropriately, even if you do not expect the catch blocks to be used.
+
+Your Makefile should compile your program into an executable called `scheduling`
+
+### Chocolate Problem (1 Chocolate Bar): Merging Startups, Revisited
+
+Remember the merging startups from Homework 1? We will modify the problem a little bit now. Companies will not split any more. And you don't need to worry about any destructors. So what you want to be able to do is just merge the companies of two given students (assuming that they aren't already in the same company), and to query whether two given students are currently in the same company or not. That's it. But now, every operation has to run in time O(log n), where n is the total number of students.
+
+Design a data structure that supports these two operations to run in worst-case time O(log n), and prove that this is in fact the worst-case running time. You do not need to provide actual C++ code - clear pseudo-code is enough. The important part is the proof.
+
+If you are **really** ambitious, you can try to design a data structure in which the worst-case **amortized** cost per operation is less than O(log n). One can get it down to almost constant, definitely much less than O(log log n). But this is quite a lot harder.
 
 ### Finishing Up
 
@@ -132,6 +105,7 @@ Answer the following questions in your readme file:
 + Directory name for this homework (case sensitive): `hw6`
   - This directory should be in your `hw-username` repository
   - This directory needs its own `README.md` file briefly describing your work
-  - Any `.cpp` and `.h` files you created/migrated from hw4
+  - `scheduling.cpp`, `bst.h`, `avlbst.h`, `print_bst.h`
   - Your `Makefile`
 + The submission link will be posted on Piazza a few days before the due date.
+

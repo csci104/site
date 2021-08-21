@@ -15,7 +15,6 @@ Additional information will be posted here throughout the course as needed.
 
  - [Sample Midterm](./midterm-b.pdf) (no solutions)
  - [Sample Midterm 2](./midterm-c.pdf) (no solutions)
- - [Sample Final (Spring 2014)](./final-a.pdf) (no solutions)
  - [Sample Final (Spring 2014 and others)](./final-b.pdf) (no solutions)
 
 ## Practice Quizzes
@@ -33,6 +32,7 @@ Switch to a professional-level environment or editor, such as the following:
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/) is a commercial development environment that is generally not free, but for which you can get a free license as a USC student.
 - [JetBrains CLion](https://www.jetbrains.com/clion/) requires a CMake project to offer IntelliSense, however it is an incredibly powerful IDE that can be gotten for free as a student.
 - [Visual Studio Code](https://code.visualstudio.com/) is a free, open source IDE with good developer tooling and a wide array of plugins.
+- [Eclipse](https://www.eclipse.org/) is a free IDE for C/C++, Java, and PHP.
 
 ## Tutoring
 

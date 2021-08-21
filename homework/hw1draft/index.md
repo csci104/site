@@ -29,11 +29,9 @@ Which of the following are acceptable behaviors in solving homeworks/projects?
 Which of the following are recommended ways of writing code (see the Resources page)?
 
 1. gedit
-2. emacs
-3. Eclipse
-4. sublime
-5. Microsoft Visual Studio
-6. notepad
+2. Eclipse
+3. Microsoft Visual Studio
+4. notepad
 
 ### Part C
 Which of the following are true about the late submission policy?

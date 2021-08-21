@@ -15,7 +15,6 @@ Additional information will be posted here throughout the course as needed.
 
  - [Sample Midterm](./midterm-b.pdf) (no solutions)
  - [Sample Midterm 2](./midterm-c.pdf) (no solutions)
- - [Sample Final (Spring 2014)](./final-a.pdf) (no solutions)
  - [Sample Final (Spring 2014 and others)](./final-b.pdf) (no solutions)
 
 ## Practice Quizzes

@@ -55,65 +55,65 @@ labs:
   - id: lab2
     week: Week 2
     title: GDB
-    assigned: true
+    assigned: false
     topics: Debugging, GDB, tooling
   - id: lab3
     week: Week 3
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, makefiles, build systems
   - id: lab4
     week: Week 4
     title: GTest
-    assigned: true
+    assigned: false
     topics:
   - id: lab5
     week: Week 5
     title: Backtracking
-    assigned: true
+    assigned: false
     topics: Recursion, backtracking
   - id: lab6
     week: Week 6
     title: Midterm Review
-    assigned: true
+    assigned: false
     topics: TBD
   - id: lab7
     week: Week 7
     title: Heaps
-    assigned: true
+    assigned: false
     topics: Heaps
   - id: lab8
     week: Week 8
     title: BST and AVL Trees
-    assigned: true
+    assigned: false
     topics: BST and AVL Trees
   - id: lab9
     week: Week 9
     title: Counting
-    assigned: true
+    assigned: false
     topics: Counting
   - id: lab10
     week: Week 10
     title: Midterm Review
-    assigned: true
+    assigned: false
     topics: Binary Tree Recursion, AVL Trees, Splay Trees, Counting
   - id: lab11
     week: Week 11
     title: Probability Theory
-    assigned: true
+    assigned: false
     topics: Probability Theory
   - id: lab12
     week: Week 12
     title: Hash Tables
-    assigned: true
+    assigned: false
     topics: Hash Tables and Unordered Maps
   - id: lab13
     week: Week 13
     title: C++11
-    assigned: true
+    assigned: false
     topics: Auto, Smart Pointers, Lambda Expressions, and more!
   - id: lab14
     week: Week 14
     title: Final Review
-    assigned: true
+    assigned: false
     topics: 

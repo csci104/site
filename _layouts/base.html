@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/theme.js"></script>
   </head>
 
   {% include scripts.html %}
@@ -19,6 +20,11 @@
       </div>
       {% endif %}
       {% endfor %}
+      <div class="spacer"></div>
+      <div class="item">
+        <img src="{{ site.baseurl }}/assets/img/icon/sun.svg" class="theme-toggle light" />
+        <img src="{{ site.baseurl }}/assets/img/icon/moon.svg" class="theme-toggle dark" />
+      </div>
     </div>
     {% endif %}
     {{ content }}

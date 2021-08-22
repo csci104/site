@@ -6,12 +6,13 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   padding: 1em;
-  color: white;
+  color: var(--color-primary-text);
   z-index: 1;
   display: flex;
   flex-direction: row;
+  align-items: center;
 
   * {
     color: inherit;
@@ -21,11 +22,22 @@
     padding-right: 2.5em;
     text-wrap: none;
     white-space: nowrap;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .theme-toggle {
+    height: 1.25em;
+    filter: var(--icon-filter-navigation);
+    cursor: pointer;
   }
 }
-
-$color-hover: mix($color-primary, white, 5%);
-$color-selected: mix($color-primary, white, 10%);
 
 .toc {
   overflow: scroll;
@@ -48,11 +60,11 @@ $color-selected: mix($color-primary, white, 10%);
     padding: 0.2em 1em;
 
     &.a {
-      color: $color-primary;
+      color: var(--color-primary);
       cursor: pointer;
 
       &:hover {
-        background-color: $color-hover;
+        background-color: var(--color-background-sidebar-hover);
       }
     }
   }
@@ -64,7 +76,7 @@ $color-selected: mix($color-primary, white, 10%);
 
   a.header {
     &:hover {
-      background-color: $color-hover;
+      background-color: var(--color-background-sidebar-hover);
     }
   }
 
@@ -83,11 +95,11 @@ $color-selected: mix($color-primary, white, 10%);
       padding: 0.2em 1em;
 
       &:hover {
-        background-color: $color-hover;
+        background-color: var(--color-background-sidebar-hover);
       }
 
       &.first-in-view {
-        background-color: $color-selected;
+        background-color: var(--color-background-sidebar-selected);
       }
     }
 

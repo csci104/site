@@ -157,8 +157,8 @@ We'll be setting the following fields:
 - Full name
 - Email associated with GitHub
 - Editor for commit messages, e.g. `nano`, `vi`, `emacs`, `notepad`
-- Git message colors (make it pretty-er)
-- Newline handling ([why is this a problem?](http://en.wikipedia.org/wiki/Newline#Common_problems)
+- Git message colors (make it prettier)
+- Newline handling ([why is this a problem?](http://en.wikipedia.org/wiki/Newline#Common_problems))
 
 To get started, have a terminal open.
 

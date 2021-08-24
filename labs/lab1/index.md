@@ -400,7 +400,7 @@ Since we asked Github to give us a `C++`-based `.gitignore` when we created our 
 Each line of a `.gitignore` file specifies a file name or pattern to ignore, with `*` as a wildcard operator.
 For example `*.o` ignores all files that have extension `.o`, e.g. `binary.o` or `hello_world.o`.
 But say we want to name our binary something else.
-Run the following command to compile `hello_world.cpp` to binary executable `hello_world`.
+Run the following command **inside Docker or the VM** to compile `hello_world.cpp` to binary executable `hello_world`.
 
 ```
 g++ hello_world.cpp -o hello_world

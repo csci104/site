@@ -220,7 +220,7 @@ You may not use any containers from the STL in this problem, other than the vect
 4. To compile a program of multiple files you must list **ALL** the `.cpp` files in the `g++` command line AND **NEVER** compile a `.h` file on the `g++` command line.  Thus, your compilation commmand would look like: 
 
 ```bash
-g++ -g -Wall company.cpp company_test.cpp`
+g++ -g -Wall company.cpp company_test.cpp
 ```
 
 ### Chocolate Problem (1 Chocolate Bar)

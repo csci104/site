@@ -13,7 +13,7 @@ title: Homework 1 Written
 
 ## 1. Course Policies (10%)
 
-Carefully  study the information on the [course web site]({{site.url}{baseurl}}), then answer the following questions about course policies (anywhere from one to all answers may be correct):
+carefully study the information on the [course web site]({{site.url}{baseurl}}), then answer the following questions about course policies (anywhere from one to all answers may be correct):
 
 ### Part A
 Which of the following are acceptable behaviors in solving homeworks/projects?

@@ -239,6 +239,6 @@ Use recursion to write a program playing **perfect** Tic Tac Toe. Feel free to d
     - This directory should be in your `hw-username` repository
     - This directory needs its own `README.md` file briefly describing your work
  + Your completed `permutations.cpp` implementation
- + Your completed `company.cpp` and `company_test.h` implementation
+ + Your completed `company.cpp` and `company_test.cpp` implementation
 
 The submission link will be posted on Piazza a few days before the due date.

@@ -207,7 +207,7 @@ private:
 };
 ```
 
-The signature above is given to you as a file `company.h` in the `resources/hw1` repo.  You can update/pull the `resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo.  There, we also give you a bit of skeleton code that you are welcome to use to simplify your life a little bit. You may add private helper functions to `CompanyTracker`, but you cannot change the signatures of any of the functions we gave you - otherwise, we cannot test your solution, and that would be bad for your score.  Each of your functions should run in no worse than O(n) time.
+The signature above is given to you as a file `company.hpp` in the `resources/hw1` repo.  You can update/pull the `resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo.  There, we also give you a bit of skeleton code that you are welcome to use to simplify your life a little bit. You may add private helper functions to `CompanyTracker`, but you cannot change the signatures of any of the functions we gave you - otherwise, we cannot test your solution, and that would be bad for your score.  Each of your functions should run in no worse than O(n) time.
 
 You may not use any containers from the STL in this problem, other than the vector (if you so choose).
 
@@ -217,10 +217,10 @@ You may not use any containers from the STL in this problem, other than the vect
 
 3. Ensure you do not change the filenames of the skeleton we give you and that your test file is named `company_test.cpp` and submit it with your other files.  Do **NOT** place a `main` function in the class file: `CompanyTracker.cpp` (it should be in your test file: `company_test.cpp`). Your test code will be graded based on the quality and thoroughness of your tests.  Obviously, your own `CompanyTracker` class should pass your own tests.
 
-4. To compile a program of multiple files you must list **ALL** the `.cpp` files in the `g++` command line AND **NEVER** compile a `.h` file on the `g++` command line.  Thus, your compilation commmand would look like: 
+4. To compile a program of multiple files you must list **ALL** the `.cpp` files in the `g++` command line AND **NEVER** compile a `.h` or `.hpp` file on the `g++` command line.  Thus, your compilation commmand would look like: 
 
 ```bash
-g++ -g -Wall company.cpp company_test.cpp`
+g++ -g -Wall company.cpp company_test.cpp
 ```
 
 ### Chocolate Problem (1 Chocolate Bar)
@@ -239,6 +239,6 @@ Use recursion to write a program playing **perfect** Tic Tac Toe. Feel free to d
     - This directory should be in your `hw-username` repository
     - This directory needs its own `README.md` file briefly describing your work
  + Your completed `permutations.cpp` implementation
- + Your completed `company.cpp` and `company_test.h` implementation
+ + Your completed `company.cpp` and `company_test.cpp` implementation
 
 The submission link will be posted on Piazza a few days before the due date.

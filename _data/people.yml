@@ -31,138 +31,115 @@ staff:
     image: /assets/img/staff/annikaoeth.jpeg
     hours: >-
       See Google Calendar
-    location: SAL
   - name: Carolyn Luo
     email: xluo0963@usc.edu
     image: /assets/img/staff/carolyn.JPG
     hours: >-
      See Google Calendar
-    location: Zoom
   - name: Crystal Wu
     email: wucrysta@usc.edu
     image: /assets/img/staff/crystal.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Daniel Wang
     email: jinghao@usc.edu
     image: /assets/img/staff/daniel.jpg
     hours: >-
       See Google Calendar
-    location: SAL
   - name: Iman Arfa-Zanganeh
     email: arfazang@usc.edu
     image: /assets/img/staff/iman.jpeg
     hours: >-
       See Google Calendar
-    location: SAL
   - name: Leo Zhuang
     email: llzhuang@usc.edu
     image: /assets/img/staff/leo.JPG
     hours: >-
      See Google Calendar
-    location: SAL
   - name: LongHuy Nguyen
     email: longhuyn@usc.edu
     image: /assets/img/staff/longhuy.jpg
     hours: >-
       See Google Calendar
-    location: SAL
   - name: Louis Addison
     email: laddison@usc.edu
     image: /assets/img/staff/louis.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Matthew Leslie
     email: mtleslie@usc.edu
     image: /assets/img/staff/matt.jpg
     hours: >-
      See Google Calendar
-    location: Zoom
   - name: Michelle Wong
     email: wong935@usc.edu
     image: /assets/img/staff/michelle.jpg
     hours: >-
      See Google Calendar
-    location: Zoom
   - name: Mila Mathias
     email: memathia@usc.edu
     image: /assets/img/staff/mila.jpg
     hours: >-
      See Google Calendar
-    location: Zoom
   - name: Monil Sorathia
     email: msorathi@usc.edu
     image: /assets/img/staff/monil.jpeg
     hours: >-
      See Google Calendar
-    location: SAL
   - name: Netanel Sadeghi
     email: nnsadegh@usc.edu
     image: /assets/img/staff/netanel.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Noah Kim
     email: noahbkim@usc.edu
     image: /assets/img/staff/noahkim.jpeg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Shuning Zhang
     email: shuningz@usc.edu
     image: /assets/img/staff/shuning.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Simon Zhang
     email: simonzha@usc.edu
     image: /assets/img/staff/simon.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Spencer Davis
     email: spencetd@usc.edu
-    image: /assets/img/staff/spencer.png
+    image: /assets/img/staff/spencer.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Steven Yuan
     email: syuan697@usc.edu
     image: /assets/img/staff/steven.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Tommy Shao
     email: anntians@usc.edu
     image: /assets/img/staff/tommy.jpeg
     hours: >-
      See Google Calendar
-    location: Zoom
   - name: Trevor Asbery
     email: asbery@usc.edu
     image: /assets/img/staff/trevor.png
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Wooju Yim
     email: woojuyim@usc.edu
     image: /assets/img/staff/wooju.jpg
     hours: >-
       See Google Calendar
-    location: Zoom
   - name: Billy Wang
     email: yunruiwa@usc.edu
     image: /assets/img/staff/yunrui.jpg
     hours: >-
       See Google Calendar
-    location: SAL
   - name: Yutong Li
     email: yli81711@usc.edu
     image: /assets/img/staff/yutong.jpg
     hours: >-
      See Google Calendar
-    location: SAL
 
 graders:

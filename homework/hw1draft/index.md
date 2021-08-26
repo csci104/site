@@ -95,7 +95,6 @@ for (int i = 0; i < n; i ++)
 ```
 
 ### Part B
-Assume `A` is an array of size n+1.
 
 ```c++
 for (int i = 1; i < n; i *= 2)

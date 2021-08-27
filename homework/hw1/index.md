@@ -2,303 +2,191 @@
 layout: asides
 toc: true
 tasks: true
-title: Homework 1
+title: Homework 1 Written
 ---
 
-# Homework 1
+# HW1: Written Assignment
 
-- Assigned: January 15, 2020 PST
-- Due: January 29, 2020 at 11:59 PST
-- Directory in your repository for this homework (case-sensitive): `hw1`
-   - Skeleton code for this assignment is available in [`resources/hw1/`]({{ site.data.urls.github }}/resources/).
-   - Once you have cloned your `hw-username` repo, copy the `hw1/` directory into it from `resources`.
++ Due: Friday, September 3rd, 11:59pm PST
++ You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .txt, .jpg, or .pdf)
++ To access the programming portion of this assignment, click [here](./programming/)
 
-## Notes
+## 1. Course Policies (10%)
 
-**We will NOT provide a test suite before the due date for this homework**.
-You will need to test the coding questions yourself with your own test programs.
-This should cause you to
+Carefully study the information on the [course web site]({{site.url}}/cs104/), then answer the following questions about course policies (anywhere from one to all answers may be correct):
 
-1. Appreciate the importance of testing.
-2. Consider the kinds of test cases you should write (i.e. if none of your test cases exercise a particular set of code in your implementation then you probably need to write more tests).
-3. Think about what common tasks related to testing would be useful to reuse and why there are testing frameworks like the one we teach in this class, `gtest` (don't worry, we'll cover `gtest` in lab soon!).
+### Part A
+Which of the following are acceptable behaviors in solving homeworks/projects?
 
-Going forward, we will refer to your homework repository as `hw-username`. 
-Note that you would replace the `username` part with your actual USC username, and you can verify this by finding the repository on Github.
+1. Looking up information relevant to the course online.
+2. Looking up or asking for sample solutions online.
+3. Copying code from my classmates, and then editing it significantly.
+4. Asking the course staff for help.
+5. Sitting next to my classmate and coding together as a team or with significant conversation about our approach.
+6. Sharing my code with a classmate, if they just promise not to copy them, but to just read over it and learn from it.
 
-## Repository Reminders
+### Part B
+Which of the following are recommended ways of writing code (see the Resources page)?
 
-1. Never clone one repository inside another.
-   If you have a work folder `cs104` and clone your personal repo `hw-username` under it (i.e., `cs104/hw-username`), whenever you want to clone some other repository (such as `resources`), you'll need to do it back up in the `cs104` folder or another location, **not** in the `hw-username` folder.
-2. Your repository may not be ready immediately but be sure to create your GitHub account and fill out the GitHub information form linked to at the end of [lab 1]({{ site.baseurl }}/labs/lab1/).
+1. gedit
+2. Eclipse
+3. Microsoft Visual Studio
+4. notepad
 
-- [ ] Agree that you'll never clone a repository into another.
+### Part C
+Which of the following are true about the late submission policy?
 
-## Skeleton Code
+1. Each assignment can be submitted late for 50% credit.
+2. Each student has 3 late days of which only one can be used per HW.
+3. Students need to get approval before submitting an assignment late.
+5. Use the normal submission system provided you have late days available
 
-On many occasions we will want to distribute skeleton code, tests, and other pertinent files.
-To do this, we have made a separate repository, [`resources`]({{ site.data.urls.github }}/resources/), under the CSCI 104 Github organization.
-You should clone this repository to your laptop and `git pull` regularly to check for updates;
-even we sometimes make mistakes, and when we do, we will fix them as quickly as possible, but you'll only get the fixes when you pull.
+### Part D
+After making a late submission by pushing your code to Github you should...
 
-```shell
-git clone {{ site.data.urls.github_ssh }}/resources.git
-```
+1. Use the normal submission system on the course website
+2. Complete a separate late submission form.
+3. Email your instructor.
+4. Start the next assignment sooner (hint: this is correct)
 
-Again, be sure you don't clone this repo into your `hw-username` repo, but at some higher-up point like in a `cs104` folder on your machine.
-One way to copy the `hw1` files from resources could be to navigate to the directory containing both repositories and run:
+## 2. Git (10%)
+Carefully review and implement the steps discussed in [Lab1]({{ site.url }}/cs104/labs/lab1.html). Then answer the following questions:
 
-```shell
-cp -r resources/hw1/ hw-username/hw1/
-```
+### Part A
+Which of the following git user interfaces are accepted and supported in this course?
 
-- [ ] Clone `resources` into your CSCI 104 work directory.
-- [ ] Clone your `hw-username` next to it if you haven't already.
-- [ ] Copy `resources/hw1/` to `hw-username/hw1/`.
+1. Git Bash (Windows)
+2. GitHub Desktop Client
+3. Terminal (Mac or Linux)
+4. Eclipse eGit
+5. Tower Git Client
 
-## Using Valgrind
+### Part B
+Provide the appropriate git command to perform the following operations:
 
-If you were to compile `program` that takes two arguments:
+1. Stage an untracked file to be committed. The (hypothetical) file is called 'hw1q2b.cpp'.
+2. Display the details of the last three commits in the repository.
 
-```
-$ ./program input.txt output.txt
-```
+### Part C
+Let's say you staged three files to be committed. Then, you ran the following command:
 
-The corresponding Valgrind command would be:
+`git commit`
 
-```
-$ valgrind --tool=memcheck --leak-check=yes ./program input.txt output.txt
-```
+What will git do?
 
-For more information on Valgrind, take a look at the [Valgrind wiki page]({{ site.baseurl }}/wiki/valgrind).
+## 3. Runtime Analysis (20%)
+In Big-&Theta; notation, analyze the running time of the following pieces of code/pseudo-code. Describe the running time as a function of the input size (here, `n`).  You should **always** explain your work when solving mathematics problems.
 
-## Command Line Arguments
-
-In order to read parameters as command line arguments in C++, you need to use a slightly different syntax for your `main` function:
+### Part A
 
 ```c++
-int main (int argc, char* argv[]) {
-    // Your code here
+for (int i = 0; i < n; i ++)
+{  // A is an array of integers of sufficient size
+   if (A[i] == 0) {
+      for (int j = 0; j <= i; j++) {
+          if (A[i] == 0) {
+             for (int k = 0; k <= j; k++) {
+                 A[i] = 1;   // this is no typo
+             }
+          }
+      }
+   }
 }
 ```
 
-When your program is called at the command line, `argc` will then contain the total number of arguments that the program was given, and `argv` will be an array of the arguments the program was passed.
-
-- The argument at `argv[0]` is always the name of your program.
-- Consequently, `argv[1]` is the first argument passed to the program.
-
-The operating system will assign the values of `argc` and `argv`, and you can just access them inside your program.
-
-## 1. Permutations (30%)
-
-Write a function that takes in a string, and outputs all possible permutations of the input, one per line.  A permutation is a shuffling of the characters.
-
-If the input is `USC`, then the output would be (in any order):
-
-```
-USC
-UCS
-SUC
-SCU
-CUS
-CSU
-```
-
-If the input string is length n, then there should be exactly n! output strings.  If the input string has no repeat letters, then there should be no repeat output strings.
-
-If the input is `CSC`, then there will be repeat output (`CCS` shows up twice, once when one `C` is the first character, the other when the other `C` is the first character):
-
-```
-CSC
-CCS
-SCC
-SCC
-CSC
-CCS
-```
-
-Here is the function you should implement:
+### Part B
 
 ```c++
-void permutations(std::string in)
-```
+for (int i = 1; i < n; i *= 2)
+{
+   func(i);
+}
 
-You may **not** change the function parameters, but you **can** (and probably should) create a helper function with whatever parameters you like.
-
-While we will only test your `permutations` function, you will probably want to write some `main` code to actually test it.
-Your submission should be in a file called `permutations.cpp`, and it should only contain your implementation of the function; **don't include your main/testing code**.
-
-You may use loops and/or recursion in your implementation (hint: you probably want to combine the two).
-You may **not** use the STL on this problem, other than the `vector` (if you so choose).
-Obviously, your solution must not leak memory.
-**Use `valgrind` to verify correct memory handling and cleanup**.
-
-- [ ] Implement `void permutations(std::string in)`
-
-## 2. Startup Companies (70%)
-
-Startups these days are merging so fast, it's hard to keep track of who is in what company.
-Company A merges with Company B, and Company C merges with Company D, and then the two merged companies merge, and suddenly, employees from companies A and C find themselves being colleagues.
-This is getting sufficiently difficult to follow that we will have you write a startup tracker.
-Here is how this will work.
-
-You have `n` students.
-Initially, each starts a startup company by himself/herself.
-Then, companies may merge.
-When you have a `merge` command, you will be given the numbers of two representative students, one from each company.
-Then, for each of those two students, you find the "biggest" company they are in, i.e., companies that are not subcompanies of any bigger company; let's call them A and B.
-Those two companies A and B are then merged into a new company; let's call it C.
-C will become the parent company of A and B.
-
-Sometimes, companies also split up again.
-When we call `split`, we will again give you a representative student.
-Then, you find the biggest company that the student is in---let's call it A.
-As a result of the split, A should be completely removed, and the two companies that were at some point in the past merged to become A will now be individual companies without a parent again.
-If the student is only in their own 1-person company, `split` does nothing.
-
-You will build a data structure that allows you to process a sequence of merges and splits, and answer queries about whether two students are in the same company.
-
-To illustrate this, consider the following example with 5 students.
-After each command, we are showing you the structure of the nested companies with braces.
-The notation `{ {1}, { {2}, {3} } }` means that we have a company with two subcompanies: the first subcompany is just student 1, while the second subcompany again has two subcompanies, one consisting of just student 2, the other consisting of just student 3.
+void func(int x) {
+  if (x <= 1) return;
+  func(x-1);
+}
 
 ```
-merge (0,1)   => { {0}, {1} }, {2}, {3}, {4}
-merge (2,3)   => { {0}, {1} }, { {2}, {3} }, {4}
-merge (0,3)   => { { {0}, {1} }, { {2}, {3} } }, {4}
-split (2)     => { {0}, {1} }, { {2},{3} }, {4}
-split (2)     => { {0}, {1} }, {2}, {3}, {4}
-merge (2,4)   => { {0}, {1} }, { {2}, {4} }, {3}
-split (0)     => {0}, {1}, { {2}, {4} }, {3}
-```
 
-A company is captured by the following
+### Part C
 
 ```c++
-struct Company {
-  // The parent company, or nullptr if it has no parent.
-  Company *parent;
+// This problem uses the same singly linked list Node structure you've seen a lot
+// A is an array of integers of sufficiently large size
+Node *head = new Node;
+Node *curr = head;
+head->data = 0;
+head->next = nullptr;
+for (int i = 1; i < n; i++)
+{
+   curr->next = new Node;
+   curr = curr->next;
+   curr->data = i;
+   curr->next = nullptr;
+}
+for (int i = 1; i <= n; i++) {
+   curr = head;
+   while (curr != nullptr) {
+      if (curr->data % i == 0) {
+         for (int j = 0; j < n; j++) {
+             A[j] ++;
+         }
+      }
+      curr = curr->next;
+   }
+}
+```
 
-  // The subcompanies that were merged to obtain this company.
-  // nullptr if this is a 1-student company.
-  Company *merge1, *merge2;
+### Part D
 
-  Company()
-    : parent(nullptr)
-    , merge1(nullptr)
-    , merge2(nullptr)
-  {}
+Notice that this code is similar to what happens if you keep inserting into a vector.
 
-  Company(Company *m1, Company *m2)
-    : parent(nullptr)
-    , merge1(m1)
-    , merge2(m2)
-  {}
+```c++
+double *a = new double [3];
+int size = 3;
+for (int i = 0; i < n; i ++) 
+{
+   if (i == size)
+   {  
+       int newsize = 3 * size;
+       double *b = new double [newsize];
+       for (int j = 0; j < size; j++) b[j] = a[j];
+       delete [] a;
+       a = b;
+       size = newsize;
+   }
+   a[i] = sqrt(i);
+}
+```
+
+## 4. Linked Lists, Recursion (10%)
+
+Consider the following C++ code.  What linked list is returned if funcA is called with the input linked list `1,2,3,4,5`?  All of the points for this problem will be assigned based on your explanation, since we have full faith in your ability to run this program and copy down the answer.  We **strongly** recommend solving this by hand, and only using a compiler to verify your answer.
+
+```c++
+struct Node {
+    int value;
+    Node *next;
 };
+
+Node* funcA(Node* in) {
+    Node *out = in;
+    while (out->next != nullptr) {
+	out = out->next;
+    }
+    funcB(in)->next = NULL;
+    return out;
+}
+
+Node* funcB(Node* in) {
+   if (in->next != nullptr) {
+	funcB(in->next)->next = in;
+   }
+   return in;
+}
 ```
 
-Your task is to implement the following data structure:
+## Programming Assignment
 
-```c++
-class CompanyTracker {
-public:
-  // initializes the tracker with n students and their 1-person companies
-  CompanyTracker(int n);
-
-  // deallocates all dynamically allocated memory
-  ~CompanyTracker();
-
-  /** Merges the largest companies containing students i and j.
-   * 
-   * Generates a new Company object which will become the parent company of
-   * the largest companies currently containing students i and j. If i and j
-   * already belong to the same company (or are the same), merge doesn't do
-   * anything. If either i or j are out of range, merge doesn't do anything.
-   */
-  void merge(int i, int j);
-
-  /** Splits the largest company that student i belongs to.
-   *
-   * Deletes that Company object, and makes sure that the two subcompanies
-   * have no parent afterwards. If i's largest company is a 1-person company,
-   * split doesn't do anything. If i is out of range, split doesn't do
-   * anything.
-   */
-  void split(int i);
-  
-  /** Returns whether students i and j are currently in the same company.
-   *
-   * Returns true if i == j. Returns false if i or j (or both) is out of range.
-   */
-  bool inSameCompany(int i, int j);
-     
-private:
-  // The number of companies you are tracking
-  int numCompanies;
-
-  /** An array of pointers to all the 1-person companies.
-   *
-   * Allocated in the constructor. Will not contain the merged companies.
-   */
-  Company** companies; 
-  
-  /** Feel free to add private helper functions as you see fit.
-   *
-   * In particular, you may want a function to find the largest company
-   * that a student i is part of.
-   */
-};
-```
-
-The signature above is given to you as a file `company.h` in the `resources/hw1` repo.
-You can update/pull the `resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo.
-There, we also give you a bit of skeleton code that you are welcome to use to simplify your life a little bit.
-You may add private helper functions to `CompanyTracker`, but you cannot change the signatures of any of the functions we gave you---otherwise, we cannot test your solution, and that would be bad for your score.
-Each of your functions should run in no worse than O(n) time.
-
-You may not use any containers from the STL in this problem, other than the vector (if you so choose).
-
-1. After completing the functions above, you should write a separate program name, `company_test.cpp`, to test your implementation. 
-   Please note that these tests **will** be graded (and hence you should not copy or share them with your classmates).
-   You should allocate one of your `CompanyTracker` and some `Company` items and make calls to `merge`, `split`, and `inSameCompany` that will exercise the various cases you've coded in the functions.
-   For example, if you have a case in `split` for when there is only a 1-person company and a separate case for when it has several merged companies, then you should make calls to `split`  that execute both of those cases. 
-   It is important that when you write code, you test it thoroughly, ensuring each line of code in the `CompanyTracker` class is triggered at some point.
-   You need to think about how you can test whether it worked or failed as well. 
-   In this case, calls to `inSameCompany` can help give you visibility as to whether your code worked or failed. 
-
-2. Ensure your solution does not access memory incorrectly or leak memory.
-   **Use `valgrind` to verify correct memory handling and cleanup.**
-
-3. Ensure you do not change the filenames of the skeleton we give you and that your test file is named `company_test.cpp` and submit it with your other files.
-   Do **NOT** place a `main` function in the class file: `CompanyTracker.cpp` (it should be in your test file: `company_test.cpp`).
-   Your test code will be graded based on the quality and thoroughness of your tests.
-   Obviously, your own `CompanyTracker` class should pass your own tests.
-
-4. To compile a program of multiple files you must list **ALL** the `.cpp` files in the `g++` command line AND **NEVER** compile a `.h` file on the `g++` command line.
-   Thus, your compilation command would look like: 
-
-    ```bash
-    g++ -g -Wall company.cpp company_test.cpp
-    ```
-
-In summary:
-
-- [ ] Implement the methods declared by the included header in `company.cpp`.
-- [ ] Write a `company_test.cpp` with test cases for your implementation.
-- [ ] Use Valgrind to make sure your tests do not cause your implementation to leak memory.
-- [ ] Check your files are all named correctly. 
-
-## Note for Graders
-
-Note from Noah: the key for this assignment is available [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
-Please remove prior to publishing.
-
-## Submitting
-
-Once you've finished, check that all the code you're submitting is consistently formatted.
-The `README.md` in your homework repository provides instructions for using `clang-format` to do so automatically.
-You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/course/{{ site.data.course.short }}/hw1).
-Be sure to carefully read and follow the instructions there.
-
-- [ ] Format your code using `clang-format`.
-- [ ] Submit your code.
+To access the programming portion of this assignment, click [here](./programming/)

@@ -44,14 +44,14 @@ lectures:
       - Copy Semantics
     chapters:
       - Chapter 3.3-3.5    
-    notes:
+    notes: handout3.pdf
   # 4
   - topics:
       - Inheritance
       - Polymorphism
     chapters:
       - Chapter 1.5
-    notes:
+    notes: handout4.pdf
   # 5
   - topics:
       - Exceptions

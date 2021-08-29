@@ -5,10 +5,17 @@ tasks: true
 title: Jamie's GDB House of Horrors
 ---
 
-# Jamie's GDB House of Horrors
-This lab will be covered during lab sections between Jan 22 - Jan 27, 2021.
-To get checked off for this lab, you must attend a lab section and show a CP/TA your completed lab. The last day to get checked off is Friday, January 29. (See the last checkbox for details.)
+---
 
+**Due: 10 Sep, 2021 @5:59pm**
+
+You could go to any lab sections before the due date and show your work to any CP/TA to get checked off for the lab, but we prefer that you do this during the lab section you signed up for (you are checked off based on effort not completion of the lab).
+
+**If you are joining from zoom**, you could make a **private** Piazza post to request checkoff. We will post the content you are required to submit at the end of each lab instruction page.
+
+---
+
+# Jamie's GDB House of Horrors
 
 Can you survive the maze of segfaults, and banish a battery of blatantly bad behavior, all in the name of improving your GDB skills?
 This lab will guide you through hunting down the kind of bugs that keep programmers awake at night.
@@ -474,7 +481,7 @@ Think, which call to `Skirmish()` does the program output the wrong thing on?  G
 You have stood fast in the face of overwhelming peril, and banished the bugs back to whence they came!
 <del>The world</del> <del>the town</del> your computer is safe once again!
 
-- [ ] Show a CP or TA  `answers.txt` to get checked off!!
+- [ ] Show a CP or TA  `answers.txt` to get checked off!! (Attach this to your Piazza post if you wish to get checked off remotely)
 
 If you don't complete `answers.txt` during lab, you may complete it in your own time and attend a different lab section to get it checked off. (If you have time zone accommodations and cannot make it to any lab section, please email Professor Cote.) You have until the Friday 2 pm lab section on 1/29 to get checked off. (Just note that the 1/29 lab sections will begin covering material for Lab 3.)
 

@@ -13,7 +13,7 @@ title: Homework 1 Written
 
 ## 1. Course Policies (10%)
 
-Carefully study the information on the [course web site]({{site.url}}), then answer the following questions about course policies (anywhere from one to all answers may be correct):
+Carefully study the information on the [course web site]({{site.url}}/cs104/), then answer the following questions about course policies (anywhere from one to all answers may be correct):
 
 ### Part A
 Which of the following are acceptable behaviors in solving homeworks/projects?
@@ -50,7 +50,7 @@ After making a late submission by pushing your code to Github you should...
 4. Start the next assignment sooner (hint: this is correct)
 
 ## 2. Git (10%)
-Carefully review and implement the steps discussed in [Lab1]({{ site.url }}/labs/lab01.html). Then answer the following questions:
+Carefully review and implement the steps discussed in [Lab1]({{ site.url }}/cs104/labs/lab1.html). Then answer the following questions:
 
 ### Part A
 Which of the following git user interfaces are accepted and supported in this course?
@@ -95,7 +95,6 @@ for (int i = 0; i < n; i ++)
 ```
 
 ### Part B
-Assume `A` is an array of size n+1.
 
 ```c++
 for (int i = 1; i < n; i *= 2)

@@ -19,10 +19,10 @@ items:
     short: Labs
     url: /labs/
     icon: /assets/img/icon/lab.svg
-#  - title: Exercises
-#    short: Exercises
-#    url: /exercises/
-#    icon: /assets/img/icon/admin.svg
+  - title: Exercises
+    short: Exercises
+    url: /exercises/
+    icon: /assets/img/icon/admin.svg
   - title: Course syllabus
     short: Syllabus
     url: /syllabus/

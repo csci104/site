@@ -7,8 +7,7 @@ title: Homework 1
 
 # Homework 1
 
-- Assigned: January 15, 2020 PST
-- Due: January 29, 2020 at 11:59 PST
+- Due: Friday, September 10, 2021 at 11:59 PST
 - Directory in your repository for this homework (case-sensitive): `hw1`
    - Skeleton code for this assignment is available in [`resources/hw1/`]({{ site.data.urls.github }}/resources/).
    - Once you have cloned your `hw-username` repo, copy the `hw1/` directory into it from `resources`.

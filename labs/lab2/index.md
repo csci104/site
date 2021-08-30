@@ -7,7 +7,7 @@ title: Jamie's GDB House of Horrors
 
 ---
 
-**Due: 4 Sep, 2021 @11:59pm**
+**Due: 4 Sep, 2021 @7:00 pm**
 
 You are expected to show your work to any CP/TA to get checked off for this lab. You could do this during any lab section, in-person or remotely, though you are encouraged to go to your assigned lab section. Note that as long as you show effort during the lab section, we would check you off at the end of the section regardless of whether you have completed it or not.
 

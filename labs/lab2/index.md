@@ -7,11 +7,11 @@ title: Jamie's GDB House of Horrors
 
 ---
 
-**Due: 10 Sep, 2021 @5:59pm**
+**Due: 4 Sep, 2021 @11:59pm**
 
-You could go to any lab sections before the due date and show your work to any CP/TA to get checked off for the lab, but we prefer that you do this during the lab section you signed up for (you are checked off based on effort not completion of the lab).
+You are expected to show your work to any CP/TA to get checked off for this lab. You could do this during any lab section, in-person or remotely, though you are encouraged to go to your assigned lab section. Note that as long as you show effort during the lab section, we would check you off at the end of the section regardless of whether you have completed it or not.
 
-**If you are joining from zoom**, you could make a **private** Piazza post to request checkoff. We will post the content you are required to submit at the end of each lab instruction page.
+If you are joining from Zoom, we might ask you to make a **private** Piazza post with your work attached. A detailed list of deliverables can be found at the end of each lab.
 
 ---
 

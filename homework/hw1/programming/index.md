@@ -88,7 +88,7 @@ When your program is called at the command line, `argc` will then contain the to
 
 The operating system will assign the values of `argc` and `argv`, and you can just access them inside your program.
 
-## 1. Permutations (30%)
+## 1. Permutations (15%)
 
 Write a function that takes in a string, and outputs all possible permutations of the input, one per line.  A permutation is a shuffling of the characters.
 
@@ -134,7 +134,7 @@ Obviously, your solution must not leak memory.
 
 - [ ] Implement `void permutations(std::string in)`
 
-## 2. Startup Companies (70%)
+## 2. Startup Companies (35%)
 
 Startups these days are merging so fast, it's hard to keep track of who is in what company.
 Company A merges with Company B, and Company C merges with Company D, and then the two merged companies merge, and suddenly, employees from companies A and C find themselves being colleagues.

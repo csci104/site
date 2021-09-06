@@ -119,6 +119,7 @@ charizard: charizard.cpp
 ```
 
 Note that the system command is and must be precedeeded by a **tab**. 
+
 If you ever get an error message like this:
 
 ```
@@ -173,9 +174,7 @@ This comes in handy when you have multiple files in your project.
 When you change one of the files, you can re-compile only files that depend on the change, and run linker, without having to re-compile the entire project.
 
 In order to do that, we introduce a new binary file type: .o files, or object files. 
-These are the intermediate files we make in preparation to compile the executable. 
-Any file that doesn't contain the main function must be compiled into a .o file. 
-This is because the linker will expect to find the main function and use it as an entry point of your program.
+These are the intermediate files we make in preparation to compile the executable.
 
 Let's look inside the part 2 folder.
 
@@ -204,6 +203,8 @@ Simple as that.
 Do the same for the other two classes, and we can then compile the main.
 
 - [ ] Run compile commands for battle.cpp and pokemon.cpp
+
+[^1]: Or a library
 
 #### 3.2 - Putting It All Together
 

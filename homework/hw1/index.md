@@ -50,7 +50,7 @@ After making a late submission by pushing your code to Github you should...
 4. Start the next assignment sooner (hint: this is correct)
 
 ## 2. Git (10%)
-Carefully review and implement the steps discussed in [Lab1]({{ site.url }}/cs104/labs/lab1.html). Then answer the following questions:
+Carefully review and implement the steps discussed in [Lab1]({{ site.url }}/cs104/labs/lab1). Then answer the following questions:
 
 ### Part A
 Which of the following git user interfaces are accepted and supported in this course?

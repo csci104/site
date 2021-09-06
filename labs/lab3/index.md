@@ -5,8 +5,14 @@ tasks: true
 title: Makefiles
 ---
 
+---
+
+**Due @ 7:00 pm on Sep 10, 2021**
+
+---
+
 # Makefiles
-This lab will be covered during lab sections between Jan 29 - Feb 3, 2021.
+This lab will be covered during lab sections between Sep 7 - Sep 10, 2021.
 
 Starting from this lab, there will be a new checkoff policy. **Please read [this Piazza post](https://piazza.com/class/kjvv9vyn6kc32s?cid=266) before continuing.** Thank you!
 - [ ] I've read the new lab policy and know how to get checked off for labs!

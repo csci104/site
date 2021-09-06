@@ -492,7 +492,7 @@ $(BIN_DIR)/.dirstamp:
     mkdir -p $(BIN_DIR)
     touch $(BIN_DIR)/.dirstamp
 ```
-- [ ] Show your final Makefile to a CP or TA for checkoff. Be prepared to answer some of the review questions below!
+- [ ] Show your final Makefile to a CP or TA for checkoff. Be prepared to answer some of the review questions below! (If you are checking off via piazza, submit a file named `answer.txt` with the answers to the following questions)
 
 #### 5.1 - Review Questions
 

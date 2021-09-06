@@ -64,14 +64,14 @@ labs:
     topics: Make, makefiles, build systems
   - id: lab4
     week: Week 4
-    title: GTest
+    title: Inheritance and STL
     assigned: false
     topics:
   - id: lab5
     week: Week 5
-    title: Backtracking
+    title: Templates
     assigned: false
-    topics: Recursion, backtracking
+    topics:
   - id: lab6
     week: Week 6
     title: Midterm Review

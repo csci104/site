@@ -14,9 +14,6 @@ title: Makefiles
 # Makefiles
 This lab will be covered during lab sections between Sep 7 - Sep 10, 2021.
 
-Starting from this lab, there will be a new checkoff policy. **Please read [this Piazza post](https://piazza.com/class/kjvv9vyn6kc32s?cid=266) before continuing.** Thank you!
-- [ ] I've read the new lab policy and know how to get checked off for labs!
-
 In this lab, we will review Makefiles, how they work, and how to write them. 
 In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration. 
 We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger.

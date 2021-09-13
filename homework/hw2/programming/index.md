@@ -103,6 +103,7 @@ The following program is a bit strange, but remember that variables are initiali
 Therefore it should output this:
 
 ```
+0
 A 0
 ```
 

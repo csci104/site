@@ -2,230 +2,333 @@
 layout: asides
 toc: true
 tasks: true
-title: GTest
+title: Inheritance
 ---
 
-## Unit Testing and GTest
-This lab will be covered during lab sections between Feb 5 - Feb 10, 2021.
+---
 
-In this lab we want to dive into the topic of unit testing. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project.
+**Due @ 7:00 pm on Sep 17, 2021**
 
-### 0 - Motivation
+---
 
-Testing is absolutely essential to a typical development process. Having a complete test suite can ensure that the code that you spent hours building works, fits specification, and is bug-free.
+## Inheritance
 
-Suppose you have just finished homework and you think you have a pretty good implementation of a doubly linked list. How do you know, for sure, that this list behaves like how you intended it to be? You can manually read through the code a million times, but you might still miss something.
- 
-A good test case program should:
+### Why do we use inheritance?
 
-  + Use your newly created data structure
-  + Perform simple operations with your data structure's methods
-  + Make sure that each method performs the way you intended it to be
- 
-There are several advantages for having a well-crafted test program: 
-
-  + Help you think about edge cases - ones that you might not have thought of when implementing the data structure itself.
-  + Help you make sure each subpart of a problem works correctly. For example, when you implement a new data structure with your new LinkedList, and you encounter a problem, it's very hard to know whose fault it is - the new data structure or the underlying LinkedList. By thoroughly testing your LinkedList in its corresponding test, you will be able to nail down where to hunt for problems fast.
-  + When you make a change to your code, you can make sure that it did not break anything.
-
-The [Google Test documentation](https://code.google.com/p/googletest/wiki/Primer) has further guidelines for what constitute good test suites.
-
-### 1 - Testing a Fibonacci Program
-
-#### 1.1 - Introduction to Testing
-
-Let's first begin writing tests for a simple function that computes the nth Fibonacci number. But before you open the code for the Fibonacci program, ask yourself - what are some test cases that we'll need to test?
-
-**Nominal Cases** - You can always start with the most basic cases - that 5th fibonacci should be 5, 7th should be 13. It's a good idea to include a few basic cases so to be sure you weren't just lucky, but you shouldn't need anything more than that. 
-
-**Boundary or Special Cases** - What are the boundaries for this function? For a Fibonacci calculation, it seems that there is only a "lower-bound", namely when n = 1. For some data structures that are slightly more complex, there might be multiple boundaries, like the resize limit ("`capacity`") for an array based implementation of a list.
-
-**Off-nominal Cases** - Your program should be completely fool-proof. That means your program should handle even input that does not make sense. For example, asking for the -2th Fibonacci number, or asking to insert at the 5th position for a 2 element array. Note that things that do not compile are not part of off-nominal cases. If your compiler cannot compile the code, you won't even have an executable to run. 
-
-Notice that we came up with these cases **without the need of looking at code** - all we did was think about how a Fibonacci program should behave, and how a user would be using such a function. In fact, it's very common for industry software engineers to write the test cases first _before_ writing a single line of code; they call this [Test-Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development).
-
-A very simple test program might include a long list of test cases made of if statements that looks like this:
+You've learned in your intro CS classes that copying and pasting code is an indication that you could be doing something better. For example, if you're iterating through an array of three elements, instead of typing:
 
 ```
-Fibonacci fib;
-if (fib.get(5) == 5) {
-	std::cout << "OK" << std::endl;
-} else {
-	std::cerr << "FAIL | 5th Fibonacci number should be 5."
+cout << arr[0] << endl;
+
+cout << arr[1] << endl;
+
+cout << arr[2] << endl;
+```
+
+you would use a for loop. Not only is this a lot cleaner, it's also easier to make changes. For example, if you decide later on that you want to print out both the value and its index, you would only have to change one line of code to ```cout << i + " : " + arr[i]```, instead of three.
+
+Similarly, if you're doing a task multiple times with different inputs, you'll want to abstract out the repeated code into a function, and pass in different parameters. 
+
+You already have a lot of experience with loops and functions, and today we're going to talk about another aspect of code reuse that's just as fundamental: **inheritance**.
+
+### What is inheritance?
+
+**Inheritance** is the major principle of object orientated programming. 
+
+If Class `B` inherits from Class `A`, it automatically copies all the data members and functions. Class `B`, which is called the child class, can create new functions and data members, as well as overwrite functions defined in Class `A`, which is called the parent or base class.
+
+The syntax looks something like this:
+
+```
+class B : public A
+{
+...
+}
+
+```
+
+Think about how you could you could implement this without using inheritance. What are the cons of this approach?
+
+### What does inheritance look like?
+
+Let's take a look at a more concrete example. Imagine you have a database of different people, and you want to print some information about them. 
+
+We have two types of people in our database: students and professors. For the students, we'd like to print out their majors, and for the professors, we'd like to print out their department. For everyone, we'd like to print out their name. 
+
+We could write our classes like this: 
+
+**NOTE:** Normally, we would only have one class per header file for better organization, but for this simple example, we're going to keep everything together.
+
+```
+class Student {
+	public:
+		Student(std::string name, std::string major);
+		std::string getName();
+		std::string getMajor();
+	private:
+		std::string mName;
+		std::string mMajor;
+};
+
+class Professor {
+	public:
+		Professor(std::string name, std::string department);
+		std::string getName();
+		std::string getDepartment();
+	private:
+		std::string mName;
+		std::string mDepartment;
+};
+
+```
+
+This would work, but note the repetition — students and professors both have `mName` data members and `getName` functions. Every person has a name, so instead of writing the same function in both classes, we can have Student and Professor inherit from a third class, a Person class. We're also going to add some additional functions and data members, so that our classes looks like this diagram.
+
+<div style="text-align:center"><img src="{{site.url}}/labs/lab5/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
+
+
+```
+class Person {
+	public:
+		Person(std::string name);
+		std::string getName();
+	private:
+		std::string mName;
+		int mAge;
+};
+
+class Professor : public Person {
+	public:
+		Professor(std::string name, std::string department);
+		std::string getDepartment();
+	private:
+		int mSalary;
+		std::string mDepartment;
+};
+
+class Student : public Person {
+	public:
+		Student(std::string name, std::string major);
+		std::string getMajor();
+	private:
+		std::string mMajor;
+};
+
+class UscStudent : public Student {
+	public:
+		UscStudent(std::string name, std::string major);
+		std::string getUscEmail();
+	private:
+		int mUscID;
+		std::string mUscEmail;
+};
+
+```
+
+Now, `Professor`, `Student` and `UscStudent` all have the function `getName()` and the data member `mName`, but we didn't have to write those out three times, because these classes inherit from `Person`. 
+
+In this example, we have both `Professor` and `Student` inheriting from `Person`, but we only have one class inheriting from `Student`. What's the point of the `Student` class? Shouldn't we just have a `UscStudent` class?
+
+#### Constructors
+
+Let's try to compile this code. Run ``` make ``` and see what happens.
+
+We get a ton of errors. Let's start with this one: `"no matching function for call to 'Person::Person()'"`.
+
+What does this error message mean? You've probably seen an error message like this before, like if you passed in the wrong argument to a function. Here, the compiler is confused because when you inherit from the `Person` object, you need to call a constructor, and since we didn't do that, the default constructor is implicitly called. But there is no default constructor for `Person`! Why is that?
+
+To fix this error, we need to explicitly call our `Person` constructor, which takes in a name. 
+
+This will look like this: 
+
+```
+Student::Student(string name, string major) : Person(name) {
+	// rest of student constructor
 }
 ```
 
-However, a long list of these cases can get out of hand very quickly - it's annoying to read and even more so to write repetitive code. We can use a library called Google Test to help us out. 
+- [ ] Make these changes (to `Student`, `Professor`, and `UscStudent`), and now your code should compile.
 
-#### What is enough, and how much is too much?
+#### Private, protected, public
 
-Generally speaking, there should be at least one test case for each code execution path in a function. For example, if a function has 3 branch conditions, test at least each path once, to ensure all use cases are covered. There is no need to test a single path more than a few times - it doesn't hurt, but it's generally unnecessary as it increases testing time. This is only a rule of thumb, as some edge cases just cannot be predicted by looking at the code. 
+Now, let's add some additional functionality to our `UscStudent` class. 
 
-When testing a class implementation, each public function should be tested. For example, an array implemntation of a list, `ArrayList`, should have test cases for functions `add()`, `set()`, `remove()`, `get()`, and so on. More on class testing in a little bit! 
+- [ ] Write a public function called `printTranscript()`, which will print out (and nicely format) the name of the school, the student's name, their GPA, and their major. 
 
-#### 1.2 - Our First Google Test Case
+What problem pops up when you try to compile this function?
 
-Navigate to the `part1` directory, and open the `test.cpp` file included for you. The meat of the test suite provided to you in this file is in these four lines:
+How can we resolve this?
+
+We need to change the access level of the `mGpa` data member. We don't want to make it public (although that would allow the program to compile), but we do want to be able to access it from the `UscStudent` class. To allow inherited classes to access a data member, you can make it **protected**. 
+
+- [ ] Change `mGpa` to protected, and test out your function.
+
+What's another way we could solve this problem while leaving `mGpa` private?
+
+#### Inheritance and visibility
+
+Private, protected and public also apply to the type of inheritance. Look back at this line: 
+
+`class Student : public Person {`
+
+Putting the word public in front of Person means that we are using **public inheritance**. That is, every function and data member in `Person` has the same level of protection in `Student`. This will *not* make every element in `Person` public — if an element was protected in `Person`, it will be protected in `Student`, and if an element was private in `Person`, it will be private in `Student`. 
+
+**Protected inheritance** means that all private and protected elements in a parent class A will remain at the same access level in a child class B, but all public elements will now be protected in B. This means that every element in B that was in inherited from A is now either protected or private.
+
+
+Finally, **private inheritance** means that all elements inherited from A in B are private. 
+
+When would you use these types of inheritance? Let's take a look back at our `UscStudent` class. A `UscStudent` is a type of `Student`, and needs to have the same data members as `Student`. However, imagine that someone is using our `UscStudent` class. We only want them to have access to a few functions, like `printTranscript()` and `getUscEmail()`, and we don't want them to have access to the `setGPA()` function. We can make `UscStudent` protectedly inherit from `Student`. 
+
+`class UscStudent : protected Student {`
+
+- [ ] Now, uncomment the line 8 in `tests.cpp`, and `make`.
+
+We get the error `void Student::setGPA(double)’ is inaccessible in this context`. We can't publicly call the `setGPA()` function for a `UscStudent` object, even though it was a public function in `Student`.
+
+Now, let's go over a few more important parts of inheritance.
+
+#### Polymorphism
+
+If a child and base class both implement a function, what code gets executed? This concept, of determining which version of a function to use, is called **polymorphism**, and there are two types: dynamic binding and static binding.
+
+Let's say we have a `printTitle()` function in (a simplified version of) all of our classes. Here's the header file.
 
 ```
-TEST(FibTest, Nominal) {
-	Fibonacci f;
-	EXPECT_EQ(5, f.get(5));
-	EXPECT_EQ(13, f.get(7));
+class Person {
+  public:
+    printTitle(); // prints "Person"
+};
+
+class Professor {
+  public:
+    printTitle(); // prints "Professor"
+};
+
+class Student {
+  public:
+    printTitle(); // prints "Student"
+};
+
+class UscStudent {
+  public:
+   printTitle(); // prints "USC Student"
+};
+
+```
+
+If we call `printTitle()` on the object `UscStudent`, it will print out "USC Student".
+
+``` 
+UscStudent* u = new UscStudent(); 
+u->printTitle(); // will print "USC Student"
+```
+
+But what if we our code looks like this instead?
+
+```
+Person* p = new UscStudent();
+p->printTitle();
+```
+
+What gets printed? This time it's less clear. 
+
+Does "USC Student" get printed, or "Person"?
+
+In this case, it will print "Person", because the compile time type of the object is `Person`. This is called **static binding**, because the version of the function that is called is based on the static (can't change) type of the pointer. If you're familiar with Java, this is a difference between the two languages, because Java will execute the function of the runtime object.
+
+Now, what if we *do* want to do this?
+
+We add the **virtual** keyword to the function in the base class. 
+
+```
+class Person {
+  public:
+    virtual void printTitle(); // prints "Person"
+};
+
+class Professor {
+  public:
+    void printTitle(); // prints "Professor"
+};
+
+class Student {
+  public:
+    virtual void printTitle(); // prints "Student"
+};
+
+class UscStudent {
+  public:
+   void printTitle(); // prints "USC Student"
+};
+
+```
+
+Now, when we run the same code snippet, we had earlier, it will print "USC Student".
+
+```
+Person* p = new UscStudent();
+p->printTitle(); // USC Student
+```
+
+This is called **dynamic binding**, because the function that is called is based on the type of object that is being pointed to, which can change. 
+
+All base classes should have a virtual destructor. Why do you think this is?
+
+#### Abstract classes
+
+Let's take a look at another classic example of inheritance: shapes. 
+
+Consider the following shapes: square, rectangle, circle, and triangle. All of these shapes should have a `getName()` function, and a name data member, which indicates that they should probably inherit from a `Shape` base class that implements this function. 
+
+Aditionally, we want the to call `getArea()` and `getPerimeter()` functions on the shapes, but these values are not calculated the same way for each type. We're going to need a different implementation for square, rectangle, circle, and triangle.
+
+But what does the `Shape` class do for `getArea()` and `getPerimeter()`? In this case, we declare these functions in our base class, but we don't implement them, because we don't know which formula to apply for an arbitrary shape. In `Shape.h`, our functions will look like this:
+
+```
+class Shape {
+	public:
+		virtual double getArea() = 0; // = 0 indicates that this class doesn't implement this function
+		virtual double getPerimeter() = 0; 
 }
 ```
 
-You should notice that this is not standard C++ syntax. We're using a **C++ Macro** here that is supplied by the framework. C++, when compiling, will automatically replace this code with some appropriate C++ code defined in the framework. It is likely a much longer chunk of code that Google Test wants to hide and save the user from an unnecessary amount of copy pasting. 
+These functions are called **pure virtual functions**, and this call is now an **abstract class**. If a class has at least one pure virtual function, it cannot be instantiated. That is, we can't do this:
 
-A test case is defined by calling this `TEST` macro. Two more things are important here: `FibTest` and `Nominal`, the two "parameters" that are "passed into" the Macro. The first parameter specifies the name of the test suite. As a rule of thumb, all tests in a file should belong to the same test suite, and in this case, FibTest. The second parameter is the name of this test. We're testing the trivial cases right now, so we're just going to call it the "Nominal" case. 
+``` Shape s = new Shape(); ```
 
-```
-EXPECT_EQ(5, f.get(5));
-```
+If we try, we get the following error message:
 
-Another macro here - `EXPECT_EQ`. The name of this macro is not too surprising - test cases are but a long list of expected results under different circumstances. In here, by calling `EXPECT_EQ`, you're saying: "When I call f.get(5), the value it returns should equal to 5."
+```invalid new-expression of abstract class type 'Shape' because the following virtual functions are pure virtual ```
 
-You can find the list of GTest Macros [here](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md). 
+If we wanted to instantiate this class, we'd have to implement all the functions.
 
-#### 1.3 - Adding some more test cases
+## Assignment
 
-As we've mentioned, there are more test cases worthy to be tested. Let's add them together to our `test.cpp` file. 
+That was a lot of information! Let's apply it.
 
-**Boundary or Special Case**
+Take a look at the files in part 2. 
 
-In our Fibonacci calculation, we have a base case of "1" and "2" - they return special values unlike the nominal cases. We should add a test that makes sure this happens.
+## Making an RPG
 
-We first start with a call to the macro, with the test suite name staying the same (`FibTest`), and the test case name something like ("Boundary").
+The assignment asks you to to make a very simple RPG (role-playing game). There are three player classes: `Tank`, `Healer`, and `Fighter`. 
 
-```
-TEST(FibTest, Boundary) {
-	Fibonacci f;
-	...
-}
-```
+You must implement the `doAction()` method for all the classes. We've done the implementation of the `Tank` class for you (that was easy!). Complete `Healer` and `Fighter`. The `Healer` must restore 75 HP (Health Points) to the target **up to the maxHP limit**, and the `Fighter` must deal 75 damage to the target (here, you can go below 0). You also need to fix the doAction() declaration in `player.h`.
 
-What goes inside? Expectation statements. What do you expect `f.get(1)` return? `f.get(2)`?
+- [ ] Implement `doAction()` for `Healer` and `Fighter`
 
-```
-	EXPECT_EQ(??, ??)
-	EXPECT_EQ(??, ??)
-```
+Players also have an inventory of items. We want to store the name and amount of each item. Normally, we would use a `map` to do this (make sure you know why!), but to get some practice with vectors, we're going to use a `vector` to implement the map. Recall that, like arrays, `vectors` are lists of elements, but unlike arrays, they can dynamically change in size. 
 
-When you're done - _don't run the tests yet_! Finish the entire test suite first, before you try to see if anything's wrong. This is to prevent us tailoring our test cases to the code - you would be able to think about edge cases much more easily from a different perspective.
+[C++ Reference](http://www.cplusplus.com/reference/vector/vector/) is a great resource to use throughout 104, and especially in this lab for `vector` syntax and examples!
 
-- [ ] Write a test for the boundary case in `test.cpp`.
+As you can see in `inventory.h`, `Inventory` inherits from `vector`. Notice that this is *private* inheritance, so outside classes cannot call `vector` functions on our `Inventory` object. That is, if we have instance of `Inventory`, we can't call the `vector` function `push_back` — we can only call `addItem()`. 
 
-**Off-Nominal Case**
+- [ ] Implement the inventory system in `inventory.cpp`.
 
-What else can go wrong? A rule of thumb is: never trust the user. If something can go wrong, it will; so it's essential that your program handles correctly. 
+When you're done, the provided test should run using `make tests`. The Makefile is already written for you, and you don't need to modify it.
 
-For the sake of this testing demonstration, let's assume that any invalid input should return a value of 0. Some invalid inputs in this case could be 0, -1. 
+*If you're unable to `make`, carefully read the error messages!*
 
-- [ ] Write a test case for this and include it in `test.cpp`.
+- [ ] Once all of your tests pass, show your code to a CP to get checked off!
 
-**Bonus**: There is one more edge case. Can you think what it is? (Hint: What's the type of the input?)
-
-#### 1.4 - Run the tests now
-
-Now that we have a complete test suite, we can see if our program works fully to our specs by running `make tests` on the terminal. Because our dependencies are set up properly, this will attempt to compile the `fib` object, and then the test executable. After all the compiling is done, it will then attempt to run the test executable.
-
-You should now see a fancy test runner output, that says the output is unexpected, followed by a segfault. It's okay, we'll fix them one by one.
-
-```
-// Line 5: Change from:
-return 0;
-// to:
-return 1;
-```
-
-Run the tests again by calling `make tests`. That nominal test case now passes successful, but the segfaults are still there in the Off-Nominal Case. Well, that's unexpected. As always, try to debug using gdb.
-
-```
-gdb fibTest
-```
-
-Run until the segfault happens, and then run `bt` to see how the error occurred. It seems that the program crashed because we ran out of stack space by calling too many recursions. Fix this by modifying our `fib.cpp`:
-
-```
-// Add after Line 3:
-if (n <= 0) { 
-	return 0;
-}
-```
-
-Run the test again, and it should now pass with flying colors - green, that is.
-
-- [ ] Fix the segfault as instructed.
-
-### 2 - Testing a Class
-
-Now that we understand how to run tests, we're going to practice testing on a class implementation. We'll be writing tests for an `ArrayList` class.
-
-#### 2.1 - Understanding Fixtures
-
-When we test classes, we often need some initialization before we can test. For example, initializing classes with the correct constructor parameters, populating an array, etc. Because these setup are usually repeated across multiple test cases, we put them in "Fixtures"
-
-Open the `test.cpp` in the `part2` folder. You'll notice that this file is slightly longer than the one in the first part. The main difference being a definition of a class `ArrayListTest`. There are several characteristics to this class:
-
-  + It inherits from a Google Test class `testing::Test`. We have not learned what inheritance works yet, but you will understand how it works in a little bit
-  + The class is largely empty, but it includes a declaration of a member variable of type `ArrayList`. This object is available for use in any of the test cases
-  + It has four methods you can insert code in: 
-	- the class constructor and `SetUp()` is largely the same:both will be called before each test case
-	- similarly, the class destructor and `TearDown()` will be called after each test
-
-In order to have access to the fixture, tests need to be declared using the `TEST_F` fixture instead of `TEST`. The test suite name should also be the same as the class name.
-
-You can see all that comes to play in the sample `get()` test. Notice that we are able to read elements from the list right away without any other code inside the test. In fact, for every test in this test suite will inherit these setup instructions as well. This helps to keep the actual test code simple.
-
-### 3 - More about Testing
-
-A common mistake students make is that they write tests for their program to pass. This is wrong. Your job, when writing test cases, is to try as hard as you can to break your code. Try to think of all possible ways that your program can misbehave. When designing test cases, ask yourself these questions:
-
-  + What promises does the program make in its documentation?
-  + If something is supposed to happen after a function call, does it happen?
-  + If nothing should happen, how can you make sure nothing happened?
-  + What edge cases might a programmer easily overlook?
-  + What input might cause the program to crash?
-
-Remember - the harsher you are when testing your own program, the less bugs will make it to the hands of your end users. 
-
-### 4 - Assignment: Identify Two of the Bugs
-
-**TL;DR: Find 2 out of 3 bugs by writing tests, and ask a CP to check you off.**
-
-In the `part2` folder, we have provided an implementation of ArrayList for you - there is a header file `arraylist.h`, with the specification of the expected function in the comments, and a pre-compiled `ArrayList` implementation. You do not have access to the source code. We do this because again, we do not want you to think about test cases in terms of the source, but in a wider perspective of "how things should work".
-
-There are **three** bugs in the source code, and it is your task to find the problems by writing a good suite of test. Write a good set of tests for each of `add()`, `set()`, and `remove()` according to the specification provided in the header file, and thinking about edge cases. Find two of these bugs and you're good to go. 
-
-We have written a sample test case for you for the `get()` function, although it is by no means an exhaustive test case. There is also a simple Makefile included for you, simply compile and run the test with `make tests`.
-
-Some tips:
-
-  + [Google Test documentation](https://code.google.com/p/googletest/wiki/V1_7_Primer) has a lot more macros you can use: `EXPECT_NE`, `EXPECT_LT`, `EXPECT_TRUE` etc.
-  + When you call a method, how should the state of the object change?
-  + What are the "boundaries" of this class? What happens there?
-  + What are the execution paths in each function?
-  + Big Hint: look at the test names we give you
-
- - [ ] Find two of the three bugs. Then, show a CP your tests and describe the bugs you found to get checked off.
-
-### Appendix: A little bit more on the Makefile
-
-You might be a little more confused about the `GTEST_LL` variable and how we are able to use Google Test. There are several key parts to understand here:
-
-  + The complete compile command is: `g++ -Wall -g test.cpp arraylist.o -I /usr/include/gtest/ -l gtest -l gtest_main -o arrayTest` The important files are `test.cpp` and `arraylist.o`, the rest are just flags.
-  + `GTEST_LL` - This is variable that contains the necessary flags to compile a Google Test program. There are several flags in here:
-  + `-I /usr/include/gtest/`: `-I` means "look up includes in this directory". This is how `#include "gtest/gtest.h"` worked in the test program - when C++ tries to look up a file, it looks not only in the current directory, but in whatever directories specified by `-I` as well. Including the gtest header ensures all necessary functions are imported. This is similar to how `-Ilib` works.
-  + `-l gtest`: Use the library called "gtest". This includes all extra dependencies not included in the header file
-  + `-l gtest_main`: Use the library called "gtest_main". Notice that there are no main functions at all in our test suite program. THat's because the `gtest_main` library comes with one. When we run the test, we're running a main function included in the Google Test framework that automatically detects all tests and execute them accordingly.
-  + `-pthread`: Because Google Test runs tests in parallelize, enable threading support.
-
-You can probably safely copy this variable everywhere.
-
-**fib.o** - This is the rule to compile the Fibonacci class by itself. Notice that the `-c` flag is used - when we compile the class by itself, we can include the compiled object everywhere - in an actual program, or in the test suite. 
-
-**fibTest** - The main test rule. It has two dependencies: the compiled fib object, and the test suite itself. For the command, we simply take all the dependencies and compile them, with the `GTEST_LL` variable. It's important that the libraries are loaded after the source files, or else the linker will likely throw an error.
-
-**tests** - A rule that just runs the tests. Optional. Notice that this is a phony rule, because it doesn't actually create any file.
-
-
+Note: if you are checking off via Piazza, 

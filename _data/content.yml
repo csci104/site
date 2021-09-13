@@ -64,8 +64,8 @@ labs:
     topics: Make, makefiles, build systems
   - id: lab4
     week: Week 4
-    title: Inheritance and STL
-    assigned: false
+    title: Inheritance
+    assigned: true
     topics:
   - id: lab5
     week: Week 5

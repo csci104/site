@@ -331,4 +331,4 @@ When you're done, the provided test should run using `make tests`. The Makefile 
 
 - [ ] Once all of your tests pass, show your code to a CP to get checked off!
 
-Note: if you are checking off via Piazza, 
+**Note: if you are checking off via Piazza, just post a screenshot of your terminal after running `make tests`, together with your USC email and 10-digit USC ID.**

@@ -14,7 +14,7 @@ title: Homework 2 Programming
     - In this project we have provided a code base.  Do a `git pull` in your `resources` repo.
     - Then copy the `resources/hw2` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw2` folder.
 
-    - You **MUST** modify the provided `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `amazon`
+    - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `interpreter`
     - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
     -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
     - **You may use any STL classes you like**
@@ -103,6 +103,7 @@ The following program is a bit strange, but remember that variables are initiali
 Therefore it should output this:
 
 ```
+0
 A 0
 ```
 
@@ -351,7 +352,7 @@ and "No" for
 + Directory name for this homework (case sensitive): `hw2`
   - This directory should be in your `hw-username` repository
   - This directory needs its own `README.md` file briefly describing your work
-  - `amazon.cpp`, `datastore.h`, `db_parser.cpp`, `db_parser.h`, `product.cpp`, `product.h`, `product_parser.cpp`, `product_parser.h`, `user.cpp`, `user.h`, `util.cpp`, `util.h`
+  - `Interpreter.cpp`, `LetStatement.cpp`, `LetStatement.h`, `PrintStatement.cpp`, `PrintStatement.h`, `ProgramState.h`, `Statement.h`
   - Any files you created
   - Your `Makefile`
 

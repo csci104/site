@@ -17,7 +17,7 @@ title: Inheritance
 
 You've learned in your intro CS classes that copying and pasting code is an indication that you could be doing something better. For example, if you're iterating through an array of three elements, instead of typing:
 
-```
+```c++
 cout << arr[0] << endl;
 
 cout << arr[1] << endl;
@@ -39,7 +39,7 @@ If Class `B` inherits from Class `A`, it automatically copies all the data membe
 
 The syntax looks something like this:
 
-```
+```c++
 class B : public A
 {
 ...
@@ -59,7 +59,7 @@ We could write our classes like this:
 
 **NOTE:** Normally, we would only have one class per header file for better organization, but for this simple example, we're going to keep everything together.
 
-```
+```c++
 class Student {
 	public:
 		Student(std::string name, std::string major);
@@ -87,7 +87,7 @@ This would work, but note the repetition — students and professors both have `
 <div style="text-align:center"><img src="{{site.url}}/cs104/labs/lab4/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
 
 
-```
+```c++
 class Person {
 	public:
 		Person(std::string name);
@@ -194,7 +194,7 @@ If a child and base class both implement a function, what code gets executed? Th
 
 Let's say we have a `printTitle()` function in (a simplified version of) all of our classes. Here's the header file.
 
-```
+```c++
 class Person {
   public:
     printTitle(); // prints "Person"
@@ -219,14 +219,14 @@ class UscStudent {
 
 If we call `printTitle()` on the object `UscStudent`, it will print out "USC Student".
 
-``` 
+```c++
 UscStudent* u = new UscStudent(); 
 u->printTitle(); // will print "USC Student"
 ```
 
 But what if we our code looks like this instead?
 
-```
+```c++
 Person* p = new UscStudent();
 p->printTitle();
 ```
@@ -241,7 +241,7 @@ Now, what if we *do* want to do this?
 
 We add the **virtual** keyword to the function in the base class. 
 
-```
+```c++
 class Person {
   public:
     virtual void printTitle(); // prints "Person"
@@ -285,7 +285,7 @@ Aditionally, we want the to call `getArea()` and `getPerimeter()` functions on t
 
 But what does the `Shape` class do for `getArea()` and `getPerimeter()`? In this case, we declare these functions in our base class, but we don't implement them, because we don't know which formula to apply for an arbitrary shape. In `Shape.h`, our functions will look like this:
 
-```
+```c++
 class Shape {
 	public:
 		virtual double getArea() = 0; // = 0 indicates that this class doesn't implement this function

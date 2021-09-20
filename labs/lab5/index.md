@@ -5,9 +5,12 @@ tasks: true
 title: Templates
 ---
 
----
+
+--------
+
 Due @ 7:00 pm, Sep. 24, 2021
----
+
+--------
 
 ## Templates
 

@@ -79,14 +79,14 @@ lectures:
     chapters:
       - Chapter 4.1-4.2
       - Chapter 9.1   
-    notes:
+    notes: handout7.pdf
   # 8
   - topics:
       - Priority Queues
       - Heaps
     chapters:
       - Chapter 6.1-6.5
-    notes:
+    notes: handout8.pdf
   # 9
   - topics:
       - Heaps

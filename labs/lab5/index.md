@@ -2,108 +2,164 @@
 layout: asides
 toc: true
 tasks: true
-title: Recursive Backtracking
+title: Templates
 ---
 
-## Recursive Backtracking
+---
+Due @ 7:00 pm, Sep. 24, 2021
+---
 
-### 0 - N-Queens
-This lab will be covered during lab sections between Feb 12 - Feb 17, 2021.
+## Templates
 
-Last week, we went over backtracking in lecture. Here's a quick review of the N-Queens problem: 
-+ You want to arrange 8 queens on an 8x8 chessboard such that each queen is unable to capture any other queens. Now, this can be trivial on a regular-sized chessboard, but what if you wanted to place 100 queens on a 100x100 chessboard? It quickly becomes more complicated.
+At this point in the course, we've created many simple data structures ourselves, as well as used a number of already-templated STL classes. The first goal of this lab is to learn how to actually create these templated classes ourselves. By the end of this lab, you will learn to convert one of the type-specific lists into a generic, templated one.
 
-One algorithmic solution to this problem is to use recursive backtracking.
+### 1 - Template Motivation
 
-### 1 - Recursive Backtracking
-You should be familiar with some of the uses of recursion at this point. We typically use recursion to split a problem into one or a small number of simple, repeatable steps. One popular way to implement a recursive search is to search one step at a time until you hit a dead end (or impossible situation) or find a solution. If you've successfully found a solution, you're done. If your recursive call returns unsuccessful, remove that value from the list of potential solutions and continue to search until you've exhausted all possibilities.
+In Homework 2, you implemented `TokenList`, a doubly-linked list of `Token` objects. What if, for example, a user wants to use a doubly-linked list, but for a series of `string`s? In order to use the same kind of data structure for different data types, we'll have to make a copy of the code, change almost every single mention of `Token` to `string`. Doing so creates a lot of code that is repeated unnecsesarily, violating a software engineering principle called [**Don't Repeat Yourself (DRY)**](http://en.wikipedia.org/wiki/Don't_repeat_yourself). It's easy to setup, but comes with a heavy price: if you discover a bug in one set of code, you'll have to apply the patch across multiple files, making your project very prone to mistakes and errors.
 
-Recursive backtracking is a ordered method for searching a **solution space**. Worst case time complexity wise it's often on par with a brute-force search - but in reality it's much faster. This is because in backtracking when we reach an arrangement where no possible solutions could exist with the current selection (a **dead end**) we forget about testing further options down this path and **backtrack** - undo the last setting and try something else. 
+Through templates, however, we can treat a type as a variable, and use it as the type in class definition. Later, when a user declares a templated object with a particular type, the compiler will substitute in the user-speficied type to generate a version of your implementation with this type.
 
-Recursive Backtracing solutions often look like this:
+### 2 - Template Example
 
-1. `solve()` function : performs whatever necessary setup and calls the helper
-2. `recursive_helper()` function : iterates over posibilities in some **sub domain**. 
-	+ In N-Queens, this domain is a row. After checking if an option `is_valid()`, `recursive_helper()` calls itself on the next row after to test each option. It returns true if it has reached the end OR if its child call returns true. It returns false otherwise to tell the caller it has reached a dead end. If a child call returns false, undo whatever option was tested. 
-3. `is_valid()` function : Tells you whether or not an option is viable for a specific arrangement. 
-
-### 1.1 - Example
-
-Let's take a look at an example. Consider a 4x4 chessboard for simplicity.
-
-Notice that in the second step, after we see that the second queen cannot be placed at grid (0,1), we need to undo the placement (clear it to 0) before we move on to try the next position. If we do not undo the move, then all subsequent placements on this row will always fail because we will always see a queen at (0,1).
+One of the simplest templated examples we've encountered so far is the `std::pair` class. It is declared with two "types", and values of the sepcified types are passed in to the constructor. In a templated class, functions signatures and parameters can be defined "programatically". For example:
 
 ```
-1 0 0 0
-0 0 0 0
-0 0 0 0
-0 0 0 0 PASS
-
-1 0 0 0
-1 0 0 0
-0 0 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 1 0 0
-0 0 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 0 0 0
-0 0 0 0 PASS
-
-1 0 0 0
-0 0 1 0
-1 0 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 1 0 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 0 1 0
-0 0 0 0 FAIL
-
-1 0 0 0
-0 0 1 0
-0 0 0 1
-0 0 0 0 FAIL (entire row fails)
-
-1 0 0 0
-0 0 0 1
-0 0 0 0
-0 0 0 0 PASS
-
-etc.
-
-0 1 0 0
-0 0 0 1
-1 0 0 0
-0 0 1 0 PASS -> RETURN TRUE
+std::pair<int, std::string> student(1234567890, "Tommy Trojan");
+std::pair<std::string, int> question("What is the answer to life, universe, and everything?", 104);
 ```
 
-The first correct solution we will hit is 1, 3, 0, 2.
+Similarly, the return values of its functions can be defined "programmatically" as well. For example:
 
+```
+int studentId = student.first; // returns an int
+std::string answer = question.first; // returns a string
+```
 
-#### 3.1 - Sudoku
+Let's open the file `pair.h` and take a closer look.
 
-[Sudoku](http://www.websudoku.com/) is a popular puzzle game involving a 9x9 grid and the numbers 1-9. The goal of the game is to fill board such that each row, column, and 3x3 box have the numbers 1-9 with no repeats. We will be programming a sudoku solver for lab.
+#### 2.1 - Declare the types with `template < >`
 
-Sudoku boards always start with some numbers in place, but mostly 0's which represent squares we need to solve for. 
+We list the number of programatically declared types that we'll use in a templated class with a simple `template < >` tag before the class declaration and before each implementation of the class's functions. This is important — a templated `Pair` class with two dynamic types is an entirely different class from a non-templated `Pair` class, even if they share the same name. Therefore, every time we mention a templated class, we must refer to it with `template < >`.
 
-In `lab5/sudoku.cpp`, you will find some functions to get you started. Your task is to implement `solveHelper()` called by `solve()`. You may change the parameters as you like. We suggest taking in the row and column of the grid space you're trying to solve.
+Notice that with Pair, we are listing that two classes can be specified with `template <typename FirstType, typename SecondType>`. It means we're going to name the first type `FirstType` and the second type `SecondType`. These names act as variable names — wherever in this class, `FirstType` and `SecondType` refer to the specific types that the user of the templated class specified in declaration. Think of `typename` as their type, `FirstType` or `SecondType` as their name, just like when you declare `int counter`, `int` is the type and `counter` is the name, which you can later refer to in your program.
 
-The basic strategy is as follows:
+#### 2.2 Do not pre-compile!
 
-Start in the top left corner (0, 0) and work your way down to the bottom right corner (8, 8). At each point, check if the block needs to be solved. If the block's value is 0, then it needs to be solved. After you have found a valid number to put in the block, try solving the next one in sequence. Continue until you have solved the puzzle or cannot find a number that will fit in the block.
+Another thing you'll notice is that the class's implementations for all its methods are included in this header file. This is not a bad practice; in fact, it is required for templated class to do so, since templated classes cannot be pre-compiled, and the reason is rather complex:
 
-In this problem, the sub-domain that each `solveHelper()` iterates over is a individual cell. The options are int's 1-9, inclusive. 
+In a templated class declaration and implementation, since it uses a variable type, there is no information for the compiler to know if a member funciton or data exists.
 
-Compile with `make`, run with `./sudoku`. The first two puzzles should yield a valid configuration, and the last one should fail.
+```
+template <typename T>
+class Dummy
+{
+public:
+	void SomeFunction() 
+	{
+		T name;
+		std::cout << name.length(); // Does T have a member function length()?
+	}
+}
+```
 
-- [ ] Implement `solveHelper()`. Remember to show a TA/CP to get checked off!
+In order to resolve the linking problem, the compiler will generate a version of the templated class implementation by substituting in the type that the users try to use into the variable type.
+
+```
+// If a user tries to use Dummy<int> and Dummy<std::string>, the compiler will generate the following two code
+// The actual generated code is not in C++ but some low-level machine code. 
+// C++ code is shown here for illustration purpose only.
+
+class DummyInt
+{
+public:
+	void SomeFunction() 
+	{
+		int name; // Notice T is replaced with int
+		std::cout << name.length(); // This should not compile
+	}
+}
+
+class DummyStdString
+{
+public:
+	void SomeFunction() 
+	{
+		std::string name; // Notice T is replaced with std::string
+		std::cout << name.length(); // This should compile
+	}
+}
+```
+
+From the above example, you can see that the compiler doesn't know whether the code should compile until it sees how the user is using the code. In addition, where the class definition is and when it's needed also depends on when and where the users use the templated class. All of these make it impossible for the compiler to compile templated class into object files ahead of time. 
+
+Since the compiler needs to do substitutions based on the use of templated class, it will do it while it's in the user's program, where the templated class is use, based on the implementation of the class referenced by `#include`. Therefore it needs to know all implementations from the header file, so we should not separate out the implementations into a `.cpp` file.
+
+**TL;DR: Always put your templated class implementations in the header file. Never compile a templated class into `.o` files. Always include the header file in the dependency list but never list it in the compile command.**
+
+### 3 - Using Inner Class of Templated Class
+
+In your homework you have seen the use of the inner struct `Item` in `TokenList`. Inner classes work the same way in templated classes, and inner classes share their outer class's templated type variables. However, the syntax for using the inner class is a little different. Wherever you need to refer to the inner class outside of your class definition, you must append `typename` to the front of the type.
+
+```
+template<typename T>
+class Outer
+{
+private:
+	// We don't need template<typename T> here. Inner will get it from Outer.
+	struct Inner
+	{
+		T val; // Inner class will share outer class's template variable name
+	};
+	
+public:
+	T GetValue();
+private:
+	Inner GetInner(); // We are in class definition, so we can refer to the inner class without Inner<T>, though that will work just fine.
+
+private:
+	Inner mInner;
+};
+
+// The first template<typename T> tells the compiler that we need to use T as a type variable.
+// Outer<T>::GetValue is the function name. Since Outer is templated, Outer<int>::GetValue is 
+// very different from Outer<double>::GetValue, so must include <T> after Outer.
+
+template<typename T>
+T Outer<T>::GetValue()
+{
+	return mInner.val;
+}
+
+// The typename in second line at the front of function signature tells the compiler Outer<T>::Inner 
+// is a class or struct name, not a static variable name and Outer<T>::Inner is the return type. Again, 
+// since Outer is templated, we must include <T> after Outer.
+
+template<typename T>
+typename Outer<T>::Inner Outer<T>::GetInner()
+{
+	return mInner;
+}
+```
+
+### Check Off: Templated Linked List 
+
+We have included a simplified version of a linked list of integers,`LList`, in `resources`. Your job is to template it and make it usable with any class, not just ints.
+
+What you need to do:
+
+- [ ] Template the LList class. Include `template < >` tags wherever the class is mentioned. Since there is only one generic type - convention the name is `T` (instead of `FirstType`, `SecondType`).
+- [ ] Fix the inner classes Item. Item is setup to store an int variable.
+- [ ] Change approriate mentions of `int` to `T`. References to inner classes need to be changed as well - remember that they are now templated.
+- [ ] Copy the contents from `llist.cpp` into the bottom of `llist.h`, and fix these functions.
+- [ ] Make and run the program using `make`. It should produce the following output without valgrind errors:
+
+```
+1 Bulbasaur
+4 Charmander
+7 Squirtle
+144 Articuno
+145 Zapdos
+146 Moltres
+```
+
+(Note: if you are checking off via Piazza, please attach your `llist.h` file together with your screenshot after running `make`, togehter with your USC email and 10-digit USC id)

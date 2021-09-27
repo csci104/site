@@ -109,13 +109,14 @@ lectures:
       - Counting
     chapters:
       - Lewis & Zax Chapter 23
+    notes: handout11.pdf
     
   # 12
   - topics:
       - Probability
     chapters:
       - Lewis & Zax Chapter 26
-    notes:
+    notes: handout12.pdf
   # 13
   - topics:
       - Probability

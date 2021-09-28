@@ -95,7 +95,7 @@ lectures:
     chapters:
       - Chapter 6.1-6.5
       - Chapter 9.3
-    notes:
+    notes: handout9.pdf
   # 10
   - topics:
       - Hash Table introduction
@@ -103,19 +103,20 @@ lectures:
     chapters:
       - Chapter 5.1-5.3
       - Lewis & Zax Chapter 22
-    notes:
+    notes: handout10.pdf
   # 11
   - topics:
       - Counting
     chapters:
       - Lewis & Zax Chapter 23
+    notes: handout11.pdf
     
   # 12
   - topics:
       - Probability
     chapters:
       - Lewis & Zax Chapter 26
-    notes:
+    notes: handout12.pdf
   # 13
   - topics:
       - Probability

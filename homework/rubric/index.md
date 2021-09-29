@@ -29,7 +29,7 @@ title: Visual Inspection Rubric
                 <td>Always apply unless explicitly allowed</td>
             </tr>
             <tr>
-                <td>Adding public functions or exposing private variables/functions</td>
+                <td>Adding public variables/functions or exposing private variables/functions</td>
                 <td>3 points</td>
                 <td>Always apply unless explicitly allowed</td>
             </tr>
@@ -94,7 +94,7 @@ title: Visual Inspection Rubric
             </tr>
             <tr>
                 <td>Extra files (binary files, temp files, etc.)</td>
-                <td>1 point per file</td>
+                <td>1 point per file, max 5</td>
                 <td>We will ignore test files</td>
             </tr>
             <tr>

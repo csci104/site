@@ -53,7 +53,7 @@ Build your own d-ary `MinHeap` class in `MinHeap.h` with the interface given bel
   };
 ```
 
-In order to build it, you may use internally the vector<T> container (you are not required to do so).  You should of course not use the STL `priority_queue` class or `make_heap`, `push`, `pop` algorithms.
+In order to build it, you may use internally the `vector<T>` container (you are not required to do so).  You should of course not use the STL `priority_queue` class or `make_heap`, `push`, `pop` algorithms.
 
 In order to guide you to the right solution, think first about the following questions. We strongly recommend that you start your array indexing at 0 (that will make the following calculations easier). In order to figure out the answers, we suggest that you create some examples and find a pattern.
 

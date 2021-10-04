@@ -56,7 +56,7 @@ We will now hash the word. Use the following formula to produce the result, and 
 
 ### Problem 2 (Collect Data, 10%)
 
-Does your Hashtable live up to its hype?  Now you can find out!  Using variable initial Hashtable sizes, the return value for your add function, and whatever test cases you want to run on, collect data you are interested in, and report on your results README file.  Unsure what to do?  Here are some suggestions:
+Does your Hashtable live up to its hype?  Now you can find out!  Using variable initial Hashtable sizes, the return value for your add function, and whatever test cases you want to run on, collect data you are interested in, and report on your results in your README file.  Unsure what to do?  Here are some suggestions:
 
 1. **Confirm the Birthday Paradox:**  With an initial size of 365, add items until the first probe occurs or (very unlikely) you resize the array.  Run this a bunch of times (at least 1000).  You should find that approximately 50.7% of the time you insert 23 things or less, and the rest of the time you insert 24 things or more.
 2. **Probe Rate:** How many probes occur, on average, when inserting n elements into the Hashtable?  When the Hashtable is (almost) half full, you should expect 1 probe on average.  When the Hashtable is about a quarter full, you should expect 1/3 probes on average.  Since your Hashtable oscillates between these loading factors when resizing, you should probably find something a bit smaller than 2n/3.

@@ -15,7 +15,7 @@ assignments:
       programming: Friday, September 24 at 11:59PM PST
   - id: hw3
     title: Heaps
-    assigned: false
+    assigned: true
     dates:
       assigned: Saturday, October 2
       written: Friday, October 8 at 11:59PM PST

@@ -53,7 +53,7 @@ Build your own d-ary `MinHeap` class in `MinHeap.h` with the interface given bel
   };
 ```
 
-In order to build it, you may use internally the vector<T> container (you are not required to do so).  You should of course not use the STL `priority_queue` class or `make_heap`, `push`, `pop` algorithms.
+In order to build it, you may use internally the `vector<T>` container (you are not required to do so).  You should of course not use the STL `priority_queue` class or `make_heap`, `push`, `pop` algorithms.
 
 In order to guide you to the right solution, think first about the following questions. We strongly recommend that you start your array indexing at 0 (that will make the following calculations easier). In order to figure out the answers, we suggest that you create some examples and find a pattern.
 
@@ -65,7 +65,7 @@ You do not need to submit your answers, these questions are merely to help you f
 
 Lastly, you may break ties however you wish, but you may want to break ties a specific way considering that you will be using your heap in problem 2.  On a related note, we promise to only instantiate your Heap with classes that have operator< defined.
 
-### Problem 2 (A* Search, 40%)
+### Problem 2 (A* Search, 50%)
 
 The word game "Doublet" was invented by Lewis Carroll, and is a word transformation puzzle.  Two words of identical length are given.  The objective is to transform the first word into the second word by forming successive words of the same length, changing only one letter at a time.  Here is an example from HEAD to TAIL:
 

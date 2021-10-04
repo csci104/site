@@ -22,20 +22,6 @@ Try to be specific, e.g., rather than just saying "a list", say "a list of integ
 3. a data type that stores all of the students in CSCI 104: given a student name, it brings up the student with that name.
 4. a data type that stores all of the students that were in CSCI 103 in Spring 2021. Given a grade, it brings up all of the students that earned that grade.
 
-### Problem 2 (A*, 10%)
-
-<div class="showcase">
-    <img src="../img/astar.jpg" alt="A-Star" width="320"/>
-</div>
-
-You are given the above unweighted graph, and want to find the shortest path from node A to node P, using **A* Search**.  Your algorithm has the following properties:
-
-- It uses Manhattan distance as its heuristic (the h-value)
-- If two nodes look equally good, it breaks ties by selecting the node with a smaller heuristic (or, equivalently, the node with the largest distance travelled)
-- If two nodes are still tied, it break ties by choosing the node which comes first alphabetically.
-
-For each of the nodes, specify the g-value and h-value when they are discovered.  Then, specify the order in which nodes are explored, stopping once P is explored.
-
 ## Programming Assignment
 
 To access the programming portion of this assignment, click [here](./programming/)

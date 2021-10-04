@@ -5,6 +5,13 @@ tasks: true
 title: Heaps
 ---
 
+
+---
+
+Due Oct 8, 2021 @ 7pm
+
+---
+
 ## Intro
 
 Any questions, thoughts or concerns? How can we help you?
@@ -75,3 +82,5 @@ If x != y, the stone of weight x is totally destroyed, and the stone of weight y
 At the end, there is at most 1 stone left.  Return the weight of this stone (or 0 if there are no stones left.)
 
 You're encouraged to use the [STL heap](http://www.cplusplus.com/reference/algorithm/make_heap/) or [priority queue](http://www.cplusplus.com/reference/queue/priority_queue/).
+
+- [ ] If you are checking off via Piazza, attach your `stones.cpp` and a screenshot of your test result, together with your USC email and 10-digit USC ID.

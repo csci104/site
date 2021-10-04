@@ -80,7 +80,7 @@ labs:
   - id: lab7
     week: Week 7
     title: Heaps
-    assigned: false
+    assigned: true
     topics: Heaps
   - id: lab8
     week: Week 8

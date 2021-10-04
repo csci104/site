@@ -17,7 +17,6 @@ Due Oct 8, 2021 @ 7pm
 Any questions, thoughts or concerns? How can we help you?
 
 ## Heaps & Priority Queues
-This lab will be covered during lab sections between Feb 26 - Mar 3, 2021. 
 
 In today's lab, we're going to focus on priority queues, an important data structure that you'll need to understand for the next assignment and beyond.
 

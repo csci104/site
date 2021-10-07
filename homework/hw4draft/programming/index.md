@@ -35,7 +35,7 @@ If Alice and Bob wanted to use this program for its intended purpose, Alice woul
 
 1. Set e = 65537 (a common choice of e, but there are other specific choices of e that also work)
 2. Calculate x = 1+log_100 (n/27), rounding down.  If n is smaller than 27, your program should output some type of error message and gracefully terminate.
-3. Convert the first x characters in [message] to an integer M: space is 00, a is 01, b is 02, and z is 26.    If there are less than x characters remaining, pretend there is an appropriate amount of whitespace at the end of the message.  So if x=5, then TROJAN would produce M = 2,018,151,001, and in the next iteration, M would be 1,400,000,000.
+3. Convert the first x characters in [message] to an integer M: space is 00, a is 01, b is 02, and z is 26.    If there are less than x characters remaining, pretend there is an appropriate amount of whitespace at the end of the message.  So if x=5, then 'trojan' would produce M = 2,018,151,001, and in the next iteration, M would be 1,400,000,000.
 4. Calculate C = M^e mod n, and write this number to the output file.  Due to the large value of e, you will need to implement the **Modular Exponentiation Algorithm** to calculate this.  Review the relevant lecture handout for this algorithm.
 5. Repeat steps 3 and 4 for the next x characters, until the entire message is encrypted.  Each number in the output file should be separated by a single whitespace.
 

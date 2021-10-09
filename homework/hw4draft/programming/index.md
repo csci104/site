@@ -79,7 +79,7 @@ The extended Euclidean Algorithm is explained [here](https://www.youtube.com/wat
 
 #### A note on data sizes
 
-We will only run your program on inputs that fit inside a long long, for simplicity.  Inside your modular exponentiation algorithm, you will need to deal with values as large as (n-1)^2 (make sure your algorithm does not require you to store values any larger than this).  When you are testing your program, make sure to choose p and q values such that (p*q-1)^2 is no bigger than about 10^18, and we will do the same.
+We will only run your program on inputs that fit inside a long, for simplicity.  Inside your modular exponentiation algorithm, you will need to deal with values as large as (n-1)^2 (make sure your algorithm does not require you to store values any larger than this).  When you are testing your program, make sure to choose p and q values such that (p*q-1)^2 is no bigger than about 10^18, and we will do the same.
 
 ### Finishing Up
 

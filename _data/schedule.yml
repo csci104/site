@@ -135,13 +135,13 @@ lectures:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 30
-    notes:
+    notes: handout15.pdf
   # 16
   - topics:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 31
-    
+    notes: handout16.pdf
   # 17
   - topics:
       - Hash Tables

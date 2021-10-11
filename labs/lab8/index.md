@@ -140,7 +140,7 @@ Example: In a town, 30% of families own a dog and 50% own a cat, and 65% own eit
 
 ### f) Independence
 
-We say that two events $A$ and $B$ are independent if $P(A|B)=P(A)$.
+We say that two events $A$ and $B$ are independent if $P(A \vert B)=P(A)$.
 
 Intuitively speaking, this says the knowing $B$ happens does not change the probability that $A$ happens, and vice versa.
 

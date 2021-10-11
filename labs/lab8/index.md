@@ -104,7 +104,7 @@ Example: What is the proability that you get at least one 20 after you've rolled
 
 Solution: It is easier to calculate the probality that you get no twenty at all. This is simply $(19/20)^{20}$. So the final answer would just be $1-(19/20)^{20}$
 
-### d) Conditional probability
+### c) Conditional probability
 
 The event that both $A$ and $B$ happen is denoted as $A \cap B$, and from that we define the conditional
 probablity $P(A|B)$ (reads: probablity of A given B) as
@@ -112,7 +112,7 @@ probablity $P(A|B)$ (reads: probablity of A given B) as
 $$P(A|B) = \frac{P(A\cap B)}{P(B)}$$
 
 
-### e) Mututally exclusive events
+### d) Mututally exclusive events
 
 Sometimes you are given a collection of events, where if one of them happens, then the others cannot happen. Tossing a coin can give you either head or tail (unless you are Harvey Dent), but not both. Getting a head necessary means it cannot be a tail, and vice versa.
 
@@ -138,7 +138,7 @@ $$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$
 
 Example: In a town, 30% of families own a dog and 50% own a cat, and 65% own either a cat or a dog (or both). What percentage of families in the town own both a cat and a dog?
 
-### e) Independence
+### f) Independence
 
 We say that two events $A$ and $B$ are independent if $P(A|B)=P(A)$.
 
@@ -146,7 +146,7 @@ Intuitively speaking, this says the knowing $B$ happens does not change the prob
 
 By definition of conditional probality, this is equivalent to $P(A)P(B) = P(A\cap B)$
 
-### e) Bayes' Theorem
+### g) Bayes' Theorem
 
 This is the theorem:
 
@@ -168,7 +168,7 @@ P(I|T)
 \end{split}
 $$
 
-### c) Binomial distribution
+### h) Binomial distribution
 
 Example: A mobile network has 30 users, and at any given time, each user has a 10% chance of being active. Assuming users act independently, what is the probablity that there are at least 10 users active at the same time?
 
@@ -176,7 +176,7 @@ Generalization: Given $n$ independent Bernulli trials with a probability of succ
 
 $$\binom{n}{k}p^k(1-p)^{n-k}$$
 
-### d) Random Variables
+### i) Random Variables
 
 A **Random Variable** is a mapping from the sample space to the set of real numbers. Consider the outcomes of flipping 2 coins. Our sample space had 4 elements, listed below. We can create a random variable **X** to denote the number of heads in each outcome:
 
@@ -191,7 +191,7 @@ The **probability distribution** of a random variable X is the probability of ev
 + $P(X = 1) = 2/4$
 + $P(X = 2) = 1/4$
 
-### e) Expectation
+### j) Expectation
 
 Given a random variable X, the **expectation** or **expected value** of X, E(X), is the weighted average of X:
 

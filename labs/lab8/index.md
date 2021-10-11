@@ -21,7 +21,7 @@ In this lab we are going to do a quick review of counting and probability.
 
 ### a) Circular permutation
 
-Example: 10 students are sitting in a cirle. How many arrangements are there if two arrangements are considered the same if for each person, the neighbors of that person in both arrangements are the same?
+Example: 10 students are sitting in a cirle. How many arrangements are there if two arrangements are considered the same if every student has the same neighbors in the two arrangements?
 
 Generalization: If there are $n$ students, then the number of possible arrangements is:
 
@@ -90,17 +90,19 @@ where $\vert E \vert$ is the size of the event (i.e the number of outcomes in th
 
 Example: two fair D20-s (a D20 is a die with 20 faces, i.e a icosahedron) are rolled, what is the probability that their sum is 15?
 
-*How did you chose the sample space when you are solving this problem?*
+*How did you choose the sample space when you were solving this problem?*
 
 ### b) The complement rule 
 
-Sometimes life is hard - and calculating the probablity of an event $E$ directly is even harder. However, you may find out that calculating the probablity that the event does not happen is much easier
+Sometimes life is hard - and calculating the probablity of an event $E$ directly is even harder. However, you may find out that calculating the probablity that the event does not happen is much easier.
 
 The event that $E$ does not happen is called $E$'s complement, and is denoted by $\bar{E}$. The probablity of $\bar{E}$ is simply:
 
 $$P(\bar{E})=1-P(E)$$
 
 Example: What is the proability that you get at least one 20 after you've rolled a D20 for 20 times?
+
+Solution: It is easier to calculate the probality that you get no twenty at all. This is simply $(19/20)^{20}$. So the final answer would just be $1-(19/20)^{20}$
 
 ### d) Conditional probability
 
@@ -277,7 +279,7 @@ f) In the card shuffling example above, what is the proabablity that **exactly 4
 
 g) (Bonus) How many ways are there to arrange $n$ pairs of parentheses such that they are balanced? (Example: for $n=2$, we can only do `(())` and `()()`)
 
-- [ ] To get checked off, do the problems from (a) through (f). Problem (g) is optional. You do not have to calculate the exact numeric answer, and you will be asked to explain your solution so be prepared!
+- [ ] To get checked off, finish the problems from (a) through (f) (Problem (g) is optional). You do not have to calculate the exact numeric answer. You will be asked to explain your solution, so be prepared!
 
 If you are requesting a checkoff via Piazza, please include the following in your post:
 

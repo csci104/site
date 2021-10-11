@@ -122,26 +122,26 @@ lectures:
       - Probability
     chapters:
       - Lewis & Zax Chapter 27
-    
+    notes: handout13.pdf
   # 14
   - topics:
       - Probability
     chapters:
       - Lewis & Zax Chapter 28
       - Lewis & Zax Chapter 29
-    
+    notes: handout14.pdf
   # 15
   - topics:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 30
-    notes:
+    notes: handout15.pdf
   # 16
   - topics:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 31
-    
+    notes: handout16.pdf
   # 17
   - topics:
       - Hash Tables

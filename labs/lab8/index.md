@@ -271,7 +271,7 @@ c) The rule of California's Mega Million lottery is as followed:
 
 The host would do the same (at random). If the player's choice matches the host's choice, the player wins the jackpot. What is the probability of winning a jackpot?
 
-d) There are 20 different gifts and 5 different children. How many ways are there to distribute all the gifts to the children if each child must have at least one gift?
+d) There are 15 different gifts and 5 different children. How many ways are there to distribute all the gifts to the children if the $i$-th child must receive exactly $i$ gifts? (i.e child 1 must receive 1 gift, child 2 must receive 2 gifts, and so on)
 
 e) There are a total of 100,000 lottery tickets of which 100 are winning tickets. You bought 50 lottery tickets at random. What is the expected number of winning tickets among those you bought?
 

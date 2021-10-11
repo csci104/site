@@ -261,7 +261,7 @@ $$
 
 ### Practice Problems
 
-a) You are sending a message to your friend via a network consists of three routers A, B, and C. The message could reach your friend only if all three routers are functioning correctly. At any given time, router A, B, and C have chances of failure of 1%, 2%, and 3%, respectively. If your friend does not receive your message, what is the probablity that router A is not functioning correctly? (Assuming that routers function independently)
+a) You are sending a message to your friend via a network consisting of three routers A, B, and C. The message could reach your friend only if all three routers are functioning correctly. At any given time, router A, B, and C have chances of failure of 1%, 2%, and 3%, respectively. If your friend does not receive your message, what is the probablity that router A is not functioning correctly? (Assuming that routers function independently)
 
 b) What is the number of integer solutions of the equation $x+y+z=12$, where $x, y, z \geq -2$?
 

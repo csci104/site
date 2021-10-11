@@ -275,8 +275,6 @@ d) There are 15 different gifts and 5 different children. How many ways are ther
 
 e) There are a total of 100,000 lottery tickets of which 100 are winning tickets. You bought 50 lottery tickets at random. What is the expected number of winning tickets among those you bought?
 
-f) In the card shuffling example above, what is the proabablity that **exactly 4** cards has not changed their position in the pile?
-
 g) (Bonus) How many ways are there to arrange $n$ pairs of parentheses such that they are balanced? (Example: for $n=2$, we can only do `(())` and `()()`)
 
 - [ ] To get checked off, finish the problems from (a) through (f) (Problem (g) is optional). You do not have to calculate the exact numeric answer. You will be asked to explain your solution, so be prepared!

@@ -275,9 +275,9 @@ d) There are 15 different gifts and 5 different children. How many ways are ther
 
 e) There are a total of 100,000 lottery tickets of which 100 are winning tickets. You bought 50 lottery tickets at random. What is the expected number of winning tickets among those you bought?
 
-g) (Bonus) How many ways are there to arrange $n$ pairs of parentheses such that they are balanced? (Example: for $n=2$, we can only do `(())` and `()()`)
+f) (Bonus) How many ways are there to arrange $n$ pairs of parentheses such that they are balanced? (Example: for $n=2$, we can only do `(())` and `()()`)
 
-- [ ] To get checked off, finish the problems from (a) through (f) (Problem (g) is optional). You do not have to calculate the exact numeric answer. You will be asked to explain your solution, so be prepared!
+- [ ] To get checked off, finish the problems from (a) through (e) (Problem (f) is optional). You do not have to calculate the exact numeric answer. You will be asked to explain your solution, so be prepared!
 
 If you are requesting a checkoff via Piazza, please include the following in your post:
 

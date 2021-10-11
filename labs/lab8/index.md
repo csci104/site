@@ -2,188 +2,285 @@
 layout: asides
 toc: true
 tasks: true
-title: BST and AVL Trees
+title: Probability Theory
 ---
 
-## BST and AVL Trees
+---
 
-This lab will be covered during lab sections between Mar 5 - Mar 10, 2021. 
+***Due 7pm @ Oct. 22, 2021***
 
-A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
+Note: since we have fall break this Thursday and Friday, the lab would not be due until the week after. If you have lab on Tuesday and Wednesday, then your sections will be going over this lab one week earlier than those who habe lab on Thursday and Friday.
 
-### BSTs
+Due to this time offset, starting from next week until the end of the semester, there will be two labs topics going on for each week  (Thursday and Friday labs will always be one week behind). So be careful of choosing which lab sections you attend if you decide to go to a different section then you registered for!
 
-The **Binary Search Tree Property** (BST) states that all nodes in the left subtree must have key values less than or equal to the root and all of the nodes in the right subtree must have key values greater than the root. Usually, if key values are distinct, we do not worry about equality. BSTs exist to enable (potentially) fast searches. 
+---
 
-+ For a BST, what is special about operating on elements using an in-order traversal? If we were printing integers using this traversal, what would the output look like? 
+In this lab we are going to do a quick review of counting and probability.
 
-+ Why do we say potentially? Can someone think of an example in which the search is really slow, even if we have a valid BST?
+## Counting
 
-Our search function will simply return true or false depending on whether or not our search parameter exists in the tree. Another reasonable return value of a search function could be an iterator pointing to the found element (see std::map find).
+### a) Circular permutation
 
-To search for key `X` in a BST, we compare *X* to the current node.
+Example: 10 students are sitting in a cirle. How many arrangements are there if two arrangements are considered the same if for each person, the neighbors of that person in both arrangements are the same?
 
-  - If the current node is null, `X` must not reside in the tree.
-  - If `X`is equal to the current node, simply return the current node.
-  - If it is less than the current node, we check the left subtree.
-  - Else, it must be greater than the current node, so we check the right subtree.
+Generalization: If there are $n$ students, then the number of possible arrangements is:
 
-#### Example
+$$\frac{(n-1)!}{2}$$
 
-Take a look at this example:
+for all $n \geq 2$.
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" height="250" />
+- [ ] Where does the $-1$ in the numerator come from?
+- [ ] Where does the $2$ in the denominator come from?
 
-Operation: `find(6)` // We begin at the root 
+### b) Number of pathes on a regular grid
 
-Let's walk through this.
+Example: Given a 10x10 grid with bottom left coordinate (0, 0) and top right coordinate (10, 10), you start from the bottom left and walks to the top right, and for each step, you may only walk one unit to the right or one unit to the top. How many different paths could you take?
 
-Now, here's an example where we try to find a node that does not exist in the tree:
+Generalization: for a $m$-by-$n$ grid, the number of different paths is
 
-Operation: `find(0)` // We begin at the root 
+$$\binom{m+n}{m}$$
 
-Let's walk through this one too.
+- [ ] Why is this the case?
 
-The best-case runtime for searching a value `X` in a BST with *N* elements is `O(logN)`. What is the worst-case runtime?
+### c) Multi-set partitioning
 
-### What's a balanced Binary Tree?
+Example: How many different permutations (doesn't need to be an actual English word) could you make out of the letters of the word `mississippi`?
 
-A balanced  binary trees is a tree that ensures that the height of each subtree differs by no more than 1 node. When binary trees maintain balance, the binary tree keeps its height logarithmic in n where n is the total number of nodes in the tree for a sequence of insertions and deletions. This structure provide efficient implementations for abstract data structures. 
+Generalization: Given a collection of $n=k_1+k_2+\dots+k_m$ objects which can be split into $m$ groups of $k_1,k_2,\dots,k_m$ objects, and objects from the same group are considered identical, whereas objects from different groups are considered different, then there are
 
-A tree is considered balanced if it conforms to the **Height-Balancing Property**: A node in a tree is height-balanced if the heights of its subtrees differ by no more than 1. 
+$$\frac{n!}{k_1! k_2! \dots k_m!}$$
 
-As we will see in a few weeks, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced.
+- [ ] Why is this the case?
 
-Here is an example of balanced vs. non balanced trees.
+### d) Integer solutions of equations
 
-<div style="text-align:center"><img src="./assets/examples.gif" alt="bst" width="550" height="250" /> </div>
+Example: How many different solutions are there for the equation
 
-### How can we maintain these properties at the same time?
+$$x+y+z=12$$
 
-We will study these details more carefully in the next section. However, this is a good preview to start familiarizing yourself with these ideas. The BST property is maintained by smart insertion and deletion. In an insert, you traverse the tree based on the key to be inserted. Once you encounter a situation where you can't traverse any further, you know that the key can be placed there. Because we are traversing based on the key value, we are inherently upholding the BST property.
- 
-The same thing can be said about a deletion in a BST. This is done by choosing which node to promote. Either the predecessor, if the node has two children, or the child if the node has 1 child. By doing this, the BST property is being maintained.
+where $x, y, z$ are all positive integers?
 
-A BST that maintains its balance throughout all insertions and deletions is called a  self-balancing BST. These types of trees that auto-balance or self balance inherently with the insertion are called Self-Balancing Binary Search Trees. Examples are:
+Generalization: The number of positive integer solutions of $x_1+x_2+\dots+x_m=n$ where $n \geq m$ is
 
-1. Splay Trees
-2. AVL Trees
-3. Red Black Trees
-4. B-Trees
-5. 2-3 Trees
+$$\binom{n-1}{m-1}$$
 
-For all of these self-balancing binary search trees, the height-balancing property is upheld by the nature of an insert or remove. The best way to do so is with rotation, or series of rotations. 
+Example: How many different solutions are there for the equation
 
-### AVL Trees
+$$x+y+z=12$$
 
-An AVL tree is a type of balanced Binary Search Tree that uses the height of substrees and rotations to maintain balance.
+where $x, y, z$ are all **non-negative** integers?
 
-#### Rotations
+- [ ] Could you reduce it to the previous case?
 
-A rotation changes the local structure of a binary tree without changing its ordering. This means that in between rotations, the BST property is still maintained.
+Generalization: The number of non-negative integer solutions of $x_1+x_2+\dots+x_m=n$ where $n \geq 0$ is
 
-Rotations can be broken up into left and right rotations which are just inversions of eachother.
+$$\binom{n+m-1}{m-1}$$
 
-<div style="text-align:center"><img src="./assets/rotations.gif" alt="rotations" width="500" height="200" /></div>
+## Probability Theory
 
-Rotaions make up the foundation of the AVL tree. In your homework, you will need to implement these rotations in a variety of scenarios. There are 4 combinations of rotations: left-left, left-right, right-left, right-right. Sometimes, these rotations are referred to as "zig zig" or "zig zag", or something similar. The point is, during these sequences of rotations, the tree becomes more balanced than it was before.
+### a) Simplest case
 
-__If longer subtrees are left and then left__
+Most of probability problems you have seen so far asks you to find the probability of a certain **event** given a **sample space**. The sample space is a set of potential outcomes (i.e the roll of a die could give you numbers from $1$ to $6$, therefore the sample space is simply $\{1, 2, 3, 4, 5, 6\}$). An event is a subset of that sample space, and therefore, a selected set of "favorable" outcomes (i.e. the event that you rolled the die and get a even number is represented by the set $\{2, 4, 6\}$).
 
-```
-T1, T2, T3 and T4 are subtrees.
-         z                                      y 
-        / \                                   /   \
-       y   T4      Right Rotate (z)          x      z
-      / \          - - - - - - - - ->      /  \    /  \ 
-     x   T3                               T1  T2  T3  T4
-    / \
-  T1   T2
-```
+In some problem the sample space would be uniform, meaning: every outcome in the sample space is equally likely to occur. In the above example, this corresponds to a fair die. In such case, the probablity is simply
 
-__If longer subtrees are left and then right__
+$$\frac{|E|}{|S|}$$
 
-```
-     z                               z                           x
-    / \                            /   \                        /  \ 
-   y   T4  Left Rotate (y)        x    T4  Right Rotate(z)    y      z
-  / \      - - - - - - - - ->    /  \      - - - - - - - ->  / \    / \
-T1   x                          y    T3                    T1  T2 T3  T4
-    / \                        / \
-  T2   T3                    T1   T2
-```
+where $|E|$ is the size of the event (i.e the number of outcomes in the event) and $|S|$ is the size of the sample space.
 
-__If longer subtrees are right and then right__
+Example: two fair D20-s (a D20 is a die with 20 faces, i.e a icosahedron) are rolled, what is the probability that their sum is 15?
 
-```
-  z                                y
- /  \                            /   \ 
-T1   y     Left Rotate(z)       z      x
-    /  \   - - - - - - - ->    / \    / \
-   T2   x                     T1  T2 T3  T4
-       / \
-     T3  T4
-```
+*How did you chose the sample space when you are solving this problem?*
 
-__If longer subtrees are right and then left__
+### b) The complement rule 
 
-```
-   z                            z                            x
-  / \                          / \                          /  \ 
-T1   y   Right Rotate (y)    T1   x      Left Rotate(z)   z      y
-    / \  - - - - - - - - ->     /  \   - - - - - - - ->  / \    / \
-   x   T4                      T2   y                  T1  T2  T3  T4
-  / \                              /  \
-T2   T3                           T3   T4
-```
+Sometimes life is hard - and calculating the probablity of an event $E$ directly is even harder. However, you may find out that calculating the probablity that the event does not happen is much easier
 
-By using combinations of rotations during insertion and removal, we are able to maintain consistent balance throughout the lifetime of the tree.
+The event that $E$ does not happen is called $E$'s complement, and is denoted by $\bar{E}$. The probablity of $\bar{E}$ is simply:
 
-#### Inserting
+$$P(\bar{E})=1-P(E)$$
 
-During insertion, we start by inserting the value at its correct location as a normal BST would. Then, we traverse up the tree, evaluating the local height of each node and fixing that portion if the height of the left and right subtrees differ by 2 or more. We only need to traverse up the tree from the inserted node because the subtree containing the new node is the only subtree where height can change and we need to rotate.
+Example: What is the proability that you get at least one 20 after you've rolled a D20 for 20 times?
 
-We fix the tree beginning with the newly inserted node.
+### d) Conditional probability
 
-#### Removing
+The event that both $A$ and $B$ happen is denoted as $A \cap B$, and from that we define the conditional
+probablity $P(A|B)$ (reads: probablity of A given B) as
 
-During removal, we remove as normal and then proceed to fix the tree by traversing up, starting with the parent of the deleted node. In the case that we are swapping with the predecessor, you continue to delete the same node until you cannot swap any further, and then begin fixing the tree in the same fashion.
+$$P(A|B) = \frac{P(A\cap B)}{P(B)}$$
 
-We fix the tree beginning with the parent of the deleted node.
 
-### Checkoff
+### e) Mututally exclusive events
 
-#### 1. Range Sum
+Sometimes you are given a collection of events, where if one of them happens, then the others cannot happen. Tossing a coin can give you either head or tail (unless you are Harvey Dent), but not both. Getting a head necessary means it cannot be a tail, and vice versa.
 
-Given the root of a *BST* and two values L and R, return the sum of all the nodes in the tree with values between L and R (inclusive).
+Events don't have to be compliments of each other in order to be mutually exclusive. For example, if you roll a D6, the event of getting a 1 and the event of getting a 6 are mutually exclusive, even though they don't cover the whole sample space.
 
-For example, if L = 1, R = 3, and your BST has values {1, 2, 3, 4} return 6 (1 + 2 + 3).
+More formally, given $m$ events $E_1, E_2, ..., E_m$, they are said to be mutually exclusive if $E_i \cap E_j = \empty$ for all $i \neq j$.
 
-- [ ] Implement `rangeSum` in `bst.cpp`
+The probability of the union of mutually exlusive events is just the sum of the probablity of the individual events:
 
-### 2. AVL Insertion & Removal
+$$P(\ \bigcup_{i=1}^m E_i \ ) = \sum_{i=1}^m P(E_i)$$
 
-Take some time to confirm your understanding by showing the tree after each of the following operations in a file named `lab8.txt` (or whatever file format you can show your CP). 
+However, if we do not know whether those events are mutually exclusive, we still know that
 
-__Initial Tree__
+$$P(\ \bigcup_{i=1}^m E_i \ ) \leq \sum_{i=1}^m P(E_i)$$
 
-```
-                13
-        +--------+---+
-        10          15
-    +---+---+        +--+
-    5       11          16
-+---+---+
-4       8
-```
-+ Insert 14
-+ Insert 3 
-+ Remove 3
-+ Remove 4
+The above inequality is called Boole's inequality.
 
-- [ ] Show what the tree looks like after each of the above operations. Operations should happen sequentially (ie, Insert 3 happens after Insert 14). 
+### e) Inclusion-exclusion principle
 
+If you don't know that two events are mutually exclusive, you can still calculate the probablity of their union by:
 
-### Check off
+$$P(A\cup B)=P(A)+P(B)-P(A\cap B)$$
 
-- [ ] Use `make` to run tests. Show a TA/CP your passed tests and AVL tree to get checked off! 
+Example: In a town, 30% of families own a dog and 50% own a cat, and 65% own either a cat or a dog (or both). What percentage of families in the town own both a cat and a dog?
+
+### e) Independence
+
+We say that two events $A$ and $B$ are independent if $P(A|B)=P(A)$.
+
+Intuitively speaking, this says the knowing $B$ happens does not change the probability that $A$ happens, and vice versa.
+
+By definition of conditional probality, this is equivalent to $P(A)P(B) = P(A\cap B)$
+
+### e) Bayes' Theorem
+
+This is the theorem:
+
+$$P(A|B)=\frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\bar{A})P(\bar{A})}$$
+
+- [ ] Could you prove it? 
+    *Hint: use the fact that $P(E) = P(E|F)+P(E|\bar{F})$*
+
+Example: A test for a virus is accurate 95% of the time on patients infected by the virus, and 99% accurate of the time on patients thatr are not infected. It is estimated that 1% of the population is infected. A patient is chosen randomly from the population, and he tested positive for the virus, what is the probablity that he is actually infected?
+
+Solution: Let $I$ be the event that the patient is infected and $T$ be the event that the patient tested positive. Then
+
+$$
+\begin{split}
+P(I|T)
+&=\frac{P(T|I)P(I)}{P(T|I)P(I)+P(T|\bar{I})P(\bar{I})} \\
+&=\frac{0.95 \times 0.01}{0.95 \times 0.01 + 0.01 \times 0.99} \\
+&\approx 0.49
+\end{split}
+$$
+
+### c) Binomial distribution
+
+Example: A mobile network has 30 users, and at any given time, each user has a 10% chance of being active. Assuming users act independently, what is the probablity that there are at least 10 users active at the same time?
+
+Generalization: Given $n$ independent Bernulli trials with a probability of success of $p$, the probablity of getting $k$ successes is
+
+$$\binom{n}{k}p^k(1-p)^{n-k}$$
+
+### d) Random Variables
+
+A **Random Variable** is a mapping from the sample space to the set of real numbers. Consider the outcomes of flipping 2 coins. Our sample space had 4 elements, listed below. We can create a random variable **X** to denote the number of heads in each outcome:
+
++ $X(HH) = 2$
++ $X(HT) = 1$
++ $X(TH) = 1$
++ $X(TT) = 0$
+
+The **probability distribution** of a random variable X is the probability of every possible value of X. In the above example, the distribution of X is:
+
++ $P(X = 0) = 1/4$
++ $P(X = 1) = 2/4$
++ $P(X = 2) = 1/4$
+
+### e) Expectation
+
+Given a random variable X, the **expectation** or **expected value** of X, E(X), is the weighted average of X:
+
+$$E(X)=\sum_{s \in S} P(s)X(s)$$
+
+Using the **linearity of expectations**, we can calculate the expectation of a sum of random variables:
+
+$$E(X_1+X_2+\dots+X_n)=E(X_1)+E(X_2)+...+E(X_n)$$
+
+**The above holds even if random variables are not independent!**
+
+Furthermore, multiplying a random variable by a scalar constant multiplies its expected value by that constant; likewise, adding a constant to a random variable adds that constant to its expected value. For random variable X and constants a and b:
+
+$$E(aX+b)=a \cdot E(X) + b$$
+
+**Example 1:** 
+
+Suppose we roll 2 fair dice. Let X be the sum of each roll. What is E(X)?
+
+**Solution**: the probability distribution of X is:
+
++ $P(X = 2) = 1/36$
++ $P(X = 3) = 2/36$
++ $P(X = 4) = 3/36$
++ $P(X = 5) = 4/36$
++ $P(X = 6) = 5/36$
++ $P(X = 7) = 6/36$
++ $P(X = 8) = 5/36$
++ $P(X = 9) = 4/36$
++ $P(X = 10) = 3/36$
++ $P(X = 11) = 2/36$
++ $P(X = 12) = 1/36$
+
+Thus:
+
+$$E(X) = 2 * (1/36) + 3 * (2/36) + ... + 12 * (1/36) = 7$$
+
+**Example 2:**
+
+You are given a standard deck of 52 cards. You then shuffled it in a way so that each permutation is equally likely to occur. What is the expected number of cards that stayed at the same position in the pile before and after the shuffle?
+
+**Solution:**
+
+Given a specific card $C_i$, it has the proability of ${51!}/{52!}=1/52$ of staying at the same position.
+
+We can define the random variables $F_i$, where $i=1,2,\dots,52$
+
+$$
+F_i = \begin{cases}
+   1 &\text{if } C_i \text{ does not change position} \\
+   c &\text{otherwise} 
+\end{cases}
+$$
+
+Let $X$ be the number of cards that does not change position.
+
+Then $X=F_1+F_2+\dots+F_{52}$
+
+Therefore 
+
+$$
+\begin{split}
+E(X) &=E(F_1+F_2+\dots+F_{52})\\
+&=E(F_1)+E(F_2)+\dots+E(F_{52})\\&=52 \times 1/52=1
+\end{split}
+$$
+
+### Practice Problems
+
+a) You are sending a message to your friend via a network consists of three routers A, B, and C. The message could reach your friend only if all three routers are functioning correctly. At any given time, router A, B, and C have chances of failure of 1%, 2%, and 3%, respectively. If your friend does not receive your message, what is the probablity that router A is not functioning correctly? (Assuming that routers function independently)
+
+b) What is the number of integer solutions of the equation $x+y+z=12$, where $x, y, z \geq -2$?
+
+c) The rule of California's Mega Million lottery is as followed:
+
+> Players may pick six numbers from two separate pools of numbers - five different numbers from 1 to 70 (the white balls) and one number from 1 to 25 (the gold Mega Ball)
+
+The host would do the same (at random). If the player's choice matches the host's choice, the player wins the jackpot. What is the probability of winning a jackpot?
+
+d) There are 20 different gifts and 5 different children. How many ways are there to distribute all the gifts to the children if each child must have at least one gift?
+
+e) There are a total of 100,000 lottery tickets of which 100 are winning tickets. You bought 50 lottery tickets at random. What is the expected number of winning tickets among those you bought?
+
+f) In the card shuffling example above, what is the proabablity that **exactly 4** cards has not changed their position in the pile?
+
+g) (Bonus) How many ways are there to arrange $n$ pairs of parentheses such that they are balanced? (Example: for $n=2$, we can only do `(())` and `()()`)
+
+- [ ] To get checked off, do the problems from (a) through (f). Problem (g) is optional. You do not have to calculate the exact numeric answer, and you will be asked to explain your solution so be prepared!
+
+If you are requesting a checkoff via Piazza, please include the following in your post:
+
+- [ ] The lab number you are requesting checkoff for. (**This is lab 8**)
+- [ ] A copy of your answers to the practice problems (including a reasonable amount of intermediate steps or explainations)
+- [ ] Your USC email and your 10-digit USC ID.

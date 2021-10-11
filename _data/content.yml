@@ -84,8 +84,8 @@ labs:
     topics: Heaps
   - id: lab8
     week: Week 8
-    title: BST and AVL Trees
-    assigned: false
+    title: Counting and Probability
+    assigned: true
     topics: BST and AVL Trees
   - id: lab9
     week: Week 9

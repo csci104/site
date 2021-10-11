@@ -86,17 +86,17 @@ labs:
     week: Week 8
     title: Counting and Probability
     assigned: true
-    topics: BST and AVL Trees
+    topics: Counting and Probability
   - id: lab9
     week: Week 9
-    title: Counting
+    title: Hash Tables
     assigned: false
-    topics: Counting
+    topics: Hash Tables
   - id: lab10
     week: Week 10
     title: Midterm Review
     assigned: false
-    topics: Binary Tree Recursion, AVL Trees, Splay Trees, Counting
+    topics: Counting, hash tables, Number theory
   - id: lab11
     week: Week 11
     title: Probability Theory

@@ -86,7 +86,7 @@ In some problem the sample space would be uniform, meaning: every outcome in the
 
 $$\frac{|E|}{|S|}$$
 
-where $|E|$ is the size of the event (i.e the number of outcomes in the event) and $|S|$ is the size of the sample space.
+where $\vert E \vert$ is the size of the event (i.e the number of outcomes in the event) and $\vert S \vert$ is the size of the sample space.
 
 Example: two fair D20-s (a D20 is a die with 20 faces, i.e a icosahedron) are rolled, what is the probability that their sum is 15?
 
@@ -116,7 +116,7 @@ Sometimes you are given a collection of events, where if one of them happens, th
 
 Events don't have to be compliments of each other in order to be mutually exclusive. For example, if you roll a D6, the event of getting a 1 and the event of getting a 6 are mutually exclusive, even though they don't cover the whole sample space.
 
-More formally, given $m$ events $E_1, E_2, ..., E_m$, they are said to be mutually exclusive if $E_i \cap E_j = \empty$ for all $i \neq j$.
+More formally, given $m$ events $E_1, E_2, ..., E_m$, they are said to be mutually exclusive if $E_i \cap E_j = \emptyset$ for all $i \neq j$.
 
 The probability of the union of mutually exlusive events is just the sum of the probablity of the individual events:
 

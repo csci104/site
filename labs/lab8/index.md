@@ -9,9 +9,9 @@ title: Probability Theory
 
 ***Due 7pm @ Oct. 22, 2021***
 
-Note: since we have fall break this Thursday and Friday, the lab would not be due until the week after. If you have lab on Tuesday and Wednesday, then your sections will be going over this lab one week earlier than those who habe lab on Thursday and Friday.
+Note: since we have fall break this Thursday and Friday, the lab would not be due until the week after. If you have lab on Tuesday and Wednesday, then your sections will be going over this lab one week earlier than those who have lab on Thursday and Friday.
 
-Due to this time offset, starting from next week until the end of the semester, there will be two labs topics going on for each week  (Thursday and Friday labs will always be one week behind). So be careful of choosing which lab sections you attend if you decide to go to a different section then you registered for!
+Due to this time offset, starting from next week until the end of the semester, there will be two labs topics going on for each week  (Thursday and Friday labs will always be one week behind). So be careful of choosing which lab sections you attend if you decide to go to a different section than you registered for!
 
 ---
 

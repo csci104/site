@@ -85,7 +85,7 @@ labs:
   - id: lab8
     week: Week 8
     title: Counting and Probability
-    assigned: true
+    assigned: false
     topics: Counting and Probability
   - id: lab9
     week: Week 9

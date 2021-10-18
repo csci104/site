@@ -8,6 +8,11 @@ title: Hashtables
 ## HashTables
 
 **Due Fri, Oct 29 @ 7:00pm**
+<<<<<<< HEAD
+=======
+
+This lab will be covered in sections on Oct 18, Oct 19, Oct 28, and Oct 29.
+>>>>>>> 75776025c87df8ff2350e44d01b95c7a9021f852
 
 This lab will be covered in sections on Oct 19, Oct 20, Oct 28, and Oct 29.
 

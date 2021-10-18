@@ -7,9 +7,11 @@ title: Hashtables
 
 ## HashTables
 
-This lab will be covered in sections on Oct. 18, Oct. 19, Oct. 28, and Oct. 29.
+**Due Fri, Oct 29 @ 7:00pm**
 
-**As a friendly reminder, the lab sections on Oct. 21, and Oct. 22 will be covering lab 8, not lab 9.**
+This lab will be covered in sections on Oct 19, Oct 20, Oct 28, and Oct 29.
+
+**As a friendly reminder, lab sections on Oct. 21, and Oct. 22 will be covering lab 8, not lab 9.**
 
 ### 0 - What is a Map?
 
@@ -115,7 +117,7 @@ You will be implementing an unordered set with `string` keys using linear probin
 
 To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
 - [ ] Implement `remove` in `hashtable.cpp`
-- [ ] Remember to show your passing tests to a TA/CP for checkoff! **You need to get checked off during a lab sesson on or before April 14th (Wednesday).**
+- [ ] Remember to show your passing tests to a TA/CP for checkoff!
 
 NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!
 

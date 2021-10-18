@@ -90,7 +90,7 @@ labs:
   - id: lab9
     week: Week 9
     title: Hash Tables
-    assigned: false
+    assigned: true
     topics: Hash Tables
   - id: lab10
     week: Week 10

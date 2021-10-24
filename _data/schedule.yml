@@ -147,7 +147,7 @@ lectures:
       - Hash Tables
     chapters:
       - Chapter 5
-    notes:
+    notes: handout17.pdf
   # 18
   - topics:
       - Bloom Filters

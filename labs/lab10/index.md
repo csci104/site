@@ -7,6 +7,10 @@ title: Number Theory
 
 ## Number Theory
 
+**Due Nov 5 @ 7pm**
+
+This lab would be covered in sections on Oct 26, Oct 27, Nov 4, and Nov 5. Please note that sections on Oct 28 and Oct 29 would covering the hashtable lab.
+
 ### Quick review
 
 (1)
@@ -106,7 +110,10 @@ $$n^p \equiv n \pmod{p}$$
 
 (3) Prove that if $n, p$ are integers where $p$ is a prime number, and $n^2 \equiv 1 \pmod{p}$, then $n \equiv 1\pmod{p}$ or $n \equiv -1\pmod{p}$.
 
-<!-- 
+- [ ] To get checked off for this lab, show your work for excercises (1), (2), (3) to a CP. If you are checking off via Piazza, please include your 10-digit USC ID and USC email in the post.
+
+In case you get bored, here is a bonus question:
+
 (4) Imgaine a new Pac-Man game where there is a $m$-by-$n$ grid, and there is a dot on every cell of the grid. Pac-Man starts at the bottom left cell, and for every step, Pac-Man does the following:
 
 * Eat the dot at his position (if there is any).
@@ -115,4 +122,4 @@ $$n^p \equiv n \pmod{p}$$
 
 * Move one unit to the top, unless he is already on the topmost row of the grid, in which case he is teleported to the bottom-most cell of the column he is currently in.
 
-In what condition (in terms of $m$ and $n$) would Pac-Man be able to eat all the dots on the grid? -->
+In what condition (in terms of $m$ and $n$) would Pac-Man be able to eat all the dots on the grid?

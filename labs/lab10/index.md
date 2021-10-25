@@ -21,8 +21,6 @@ $$a \equiv b \pmod{m}$$
 
 The above reads as "$a$ is congruent to $b$ modulo $m$", and means that $m \mid a - b$.
 
-### Review of modulo arithmetics
-
 If $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$, then:
 
 $$
@@ -36,7 +34,7 @@ $$
 
 $$\gcd(a, b)$$
 
-The above denotes the "greatest common divider of $a$ and $b$", which is the greatest positive integer $d$ such that $d \mid a$ and $d \mid b$.
+The above denotes the "greatest common divisor of $a$ and $b$", which is the greatest positive integer $d$ such that $d \mid a$ and $d \mid b$.
 
 If $gcd(a, b)=1$, then $a$ and $b$ are said to be "co-prime" or "relatively prime" to each other.
 
@@ -108,6 +106,7 @@ $$n^p \equiv n \pmod{p}$$
 
 (3) Prove that if $n, p$ are integers where $p$ is a prime number, and $n^2 \equiv 1 \pmod{p}$, then $n \equiv 1\pmod{p}$ or $n \equiv -1\pmod{p}$.
 
+<!-- 
 (4) Imgaine a new Pac-Man game where there is a $m$-by-$n$ grid, and there is a dot on every cell of the grid. Pac-Man starts at the bottom left cell, and for every step, Pac-Man does the following:
 
 * Eat the dot at his position (if there is any).
@@ -116,4 +115,4 @@ $$n^p \equiv n \pmod{p}$$
 
 * Move one unit to the top, unless he is already on the topmost row of the grid, in which case he is teleported to the bottom-most cell of the column he is currently in.
 
-In what condition (in terms of $m$ and $n$) would Pac-Man be able to eat all the dots on the grid?
+In what condition (in terms of $m$ and $n$) would Pac-Man be able to eat all the dots on the grid? -->

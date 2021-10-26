@@ -94,9 +94,9 @@ labs:
     topics: Hash Tables
   - id: lab10
     week: Week 10
-    title: Midterm Review
-    assigned: false
-    topics: Counting, hash tables, Number theory
+    title: Number Theory
+    assigned: true
+    topics: Number theory
   - id: lab11
     week: Week 11
     title: Probability Theory

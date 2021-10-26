@@ -66,7 +66,7 @@ An important corollary follows from above (which is also extremekly useful): If 
 
 (2) Prove that given a prime $p$ and integers $m, n, k$ such that $1 \leq m, n, k \leq p-1$ and $m \neq n$, we have $mk \not\equiv nk \pmod{p}$.
 
-***Proof.*** We can do a proof by contradiction. Assume that $mk \equiv nk \pmod p$. Since $1 \leq k \leq p-1$ we have $\gcd(k, p-1)=1$, and therefore by (1), we have $m \equiv n \pmod p$. But since $1 \leq m, n \leq p-1$, we have $m = n$, which is a contradiction. Therefore $mk \not\equiv nk \pmod{p}$.
+***Proof.*** We can do a proof by contradiction. Assume that $mk \equiv nk \pmod p$. Since $1 \leq k \leq p-1$ we have $\gcd(k, p)=1$, and therefore by (1), we have $m \equiv n \pmod p$. But since $1 \leq m, n \leq p-1$, we have $m = n$, which is a contradiction. Therefore $mk \not\equiv nk \pmod{p}$.
 
 (3) Prove that given a prime $p$ and integer $k$ such that $1 \leq k \leq p-1$, we have:
 

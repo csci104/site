@@ -153,11 +153,13 @@ lectures:
       - Bloom Filters
     chapters:
       - Chapter 5
+    notes: handout18.pdf
   # 19
   - topics:
       - Amortized Analysis
     chapters:
       - Chapters 11.1,11.5
+    notes: handout19.pdf
   # 20
   - topics:
       - Log-Structured Merge Trees

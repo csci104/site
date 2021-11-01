@@ -50,10 +50,10 @@ If Alice and Bob wanted to use this program for its intended purpose, Alice woul
 
 First, compute L = the least common multiple of p-1 and q-1.
 
-1. This is provably equal to (p-1)*(q-1) / gcd(p-1, q-1)
+1. This is provably equal to (p-1) * (q-1) / gcd(p-1, q-1)
 2. You will need to implement the **Euclidean Algorithm** to calculate gcd(p-1, q-1).  You will be using an extended version of this algorithm later on.
 3. If L is equal to e (65537) or smaller, output an error message and gracefully terminate.
-4. d would be the value that satisfies d*e mod L = 1.  You can find it by running the **extended Euclidean Algorithm** (detailed below) to find gcd(e, L) (which hopefully is 1), as well as the values d and y such that e * d + L * y = gcd(e, L) = 1.
+4. d would be the value that satisfies d * e mod L = 1.  You can find it by running the **extended Euclidean Algorithm** (detailed below) to find gcd(e, L) (which hopefully is 1), as well as the values d and y such that e * d + L * y = gcd(e, L) = 1.  If the Euclidean algorithm finds d to be < 0, you can correct it by adding (p-1) * (q-1) to d.
 5. If you find that gcd(e,L) is not 1, you had an unfortunate choice of p and q.  You can output an error message and gracefully terminate, or continue to run your program as normal (your choice), but be aware that we can no longer vouch that the decryption key will work correctly or securely.
 6. Return d.
 
@@ -73,7 +73,7 @@ The **extended Euclidean Algorithm** is as follows:
 12. Update `t = old_t - quotient * t`
 13. Update `old_t = temp`.  Note that `old_r = e * old_t + L * old_s`
 14. Repeat steps 4-13 until r == 0
-15. The gcd is `old_r`, and d is `|old_t|` (and y is `|old_s|`, but we don't need that).
+15. The gcd is `old_r`, and d is `old_t` (and y is `old_s`, but we don't need that).
 
 The extended Euclidean Algorithm is explained [here](https://www.youtube.com/watch?v=6KmhCKxFWOs).
 

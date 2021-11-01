@@ -17,7 +17,9 @@ What does it mean for a tree to be binary?
 
 <img src="./tree1.bmp" alt="" width="385" height="343" /> 
 
-A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
+A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value.
+
++ Is the above a binary search tree? If not, could you build a binary search tree with the same nodes from the above?
 
 ### 2 - Traversals
 

@@ -15,7 +15,7 @@ title: BST Basics
 
 What does it mean for a tree to be binary?
 
-<img src="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/tree1.bmp" alt="" width="385" height="343" /> 
+<img src="./tree1.bmp" alt="" width="385" height="343" /> 
 
 A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
 
@@ -100,7 +100,7 @@ As we will see in a few weeks, most operations on a BST take time directly propo
 
 Here is an example of balanced vs. non balanced trees.
 
-<div style="text-align:center"><img src="{{site.url}}/labs/balanced/examples.GIF" alt="bst" width="550" height="250" /> </div>
+<div style="text-align:center"><img src="https://www.ocf.berkeley.edu/~shidi/cs61a/w/images/8/88/Balanced_vs_unbalanced_BST.png" alt="bst" width="642" height="238" /> </div>
 
 ### How can we maintain these properties at the same time?
 
@@ -125,7 +125,7 @@ Given this *binary tree*:
 <img src="./bst.png" alt="bst" width="300" height="300" /> 
 
 - [ ] What order will the nodes be printed out with Pre-Order traversal? In-Order? Post-Order?
-Save your answers in a .txt file for checkoff.
+Save your answers in a .txt file called `answers.txt` for checkoff.
 
 Next, you'll have to complete the following three binary tree traversal problems. A node is defined in `bst.h` as such: 
 
@@ -171,4 +171,4 @@ Given a *binary tree*, return the level order traversal of its nodes' values. (i
 
 - [ ] Use `make` to run all tests and show a TA/CP to get checked off! 
 
-(If you are checking off via Piazza, include your `bst.cpp` and tests results in your post, as well as your USC email and ten digit USC ID)
+(If you are checking off via Piazza, include your `answers.txt`, `bst.cpp` and tests results in your post, as well as your USC email and ten digit USC ID)

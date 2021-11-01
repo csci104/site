@@ -99,9 +99,9 @@ labs:
     topics: Number theory
   - id: lab11
     week: Week 11
-    title: Probability Theory
-    assigned: false
-    topics: Probability Theory
+    title: BST Basics
+    assigned: true
+    topics: Binary search tree
   - id: lab12
     week: Week 12
     title: Hash Tables

@@ -7,7 +7,7 @@ title: Homework 5 Programming
 
 # HW5: Programming Assignment
 
-+ Due: Friday, November 12th, 11:59pm PST
++ Due: Friday, November 19th, 11:59pm PST
 
 + To access the written portion of this assignment, click [here](..)
 

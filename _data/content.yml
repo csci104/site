@@ -29,7 +29,7 @@ assignments:
       programming: Friday, October 29 at 11:59PM PST
   - id: hw5
     title: Hash Tables
-    assigned: false
+    assigned: true
     dates:
       assigned: Saturday, November 6
       written: Friday, November 12 at 11:59PM PST

@@ -165,13 +165,14 @@ lectures:
       - Log-Structured Merge Trees
     chapters:
       - Chapters 11.1,11.5
+    notes: handout20.pdf
     
   # 21
   - topics:
       - Binary Search Trees
     chapters:
       - Chapter 4.3
-    notes:
+    notes: handout21.pdf
   # 22
   - topics:
       - Binary Search Trees

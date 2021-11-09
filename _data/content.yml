@@ -104,9 +104,9 @@ labs:
     topics: Binary search tree
   - id: lab12
     week: Week 12
-    title: Hash Tables
+    title: More on BST
     assigned: false
-    topics: Hash Tables and Unordered Maps
+    topics: 
   - id: lab13
     week: Week 13
     title: C++11

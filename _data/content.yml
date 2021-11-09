@@ -105,7 +105,7 @@ labs:
   - id: lab12
     week: Week 12
     title: More on BST
-    assigned: false
+    assigned: true
     topics: 
   - id: lab13
     week: Week 13

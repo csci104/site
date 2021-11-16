@@ -179,6 +179,7 @@ lectures:
       - AVL Trees
     chapters:
       - Chapter 4.3-4.4
+    notes: handout22.pdf
     
   # 23
   - topics:
@@ -187,6 +188,7 @@ lectures:
     chapters:
       - Chapter 4.4, 4.7
       - Chapter 12.2
+    notes: handout23.pdf
     
   # 24
   - topics:

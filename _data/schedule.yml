@@ -195,7 +195,7 @@ lectures:
       - Splay Trees
     chapters:
       - Chapter 4.5
-    notes:
+    notes: handout24.pdf
     
   # 25
   - topics:

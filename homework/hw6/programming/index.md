@@ -86,8 +86,6 @@ There are of course other solutions, you only need to find one that works.  If t
 
 You must maintain a map of each class to its timeslot, using your AVL implementation.  As there is no method to update a value in your AVL Tree, you will need to delete the old value and insert the new value.  You may use the STL map instead of your AVL Tree at cost of a 10 point deduction, in case you cannot finish your AVL Tree.
 
-Since some of the function calls throw exceptions, make sure to use `try` and `catch` appropriately, even if you do not expect the catch blocks to be used.
-
 Your Makefile should compile your program into an executable called `scheduling`
 
 ### Chocolate Problem (1 Chocolate Bar): Merging Startups, Revisited

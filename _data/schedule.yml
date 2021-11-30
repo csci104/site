@@ -202,19 +202,9 @@ lectures:
       - Tries
     chapters:
       - Chapter 12.4
-    notes:
+    notes: handout25.pdf
   # 26
-  - topics:
-      - Extra Topics
-    chapters:
-      - Chapter 6.8
-    notes:
-  # 27
-  - topics:
-      - Extra Topics
-    chapters:
-      - Chapter 11.2
-# 28
   - topics:
       - Review
     chapters:
+    notes: handout26.pdf

@@ -1,9 +1,9 @@
 instructors:
-  - name: Aaron Cote
-    email: aaroncot@usc.edu
-    image: /assets/img/staff/aaron.png
-    hours: M 12:45pm-1:45pm (SAL 210), W 12:45-1:45pm (Zoom), F 1:30pm-3:30pm (Zoom)
-    location: SAL 210 (Mon), https://usc.zoom.us/j/9589028572 (Wed/Fri)
+  - name: Mark Redekopp
+    email: redekopp@usc.edu
+    image: /assets/img/staff/redekopp-crop.jpg
+    hours: M,W 9-9:45 a.m., T,Th: 1:30-3:00 p.m., F: 1-2 p.m.
+    location:  https://usc.zoom.us/j/307718126
 
 assistants:
   - name: Wuxuan Jiang

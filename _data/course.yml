@@ -1,18 +1,18 @@
-semester: Fall 2021
-short: usc-csci104-fall2021
+semester: Spring 2022
+short: usc-csci104-spring2022
 
 sections:
   lectures:
-    - id: 29931
-      days: Tuesday, Thursday
-      time: 11:00 AM to 12:20 PM PST
+    - id: 29968
+      days: Monday, Wednesday
+      time: 10:00 AM to 11:40 PM PST
+      location: SGM 101
+      instructors: Mark Redekopp
+    - id: 30001
+      days: Monday, Wednesday
+      time: 2:00 PM to 3:40 PM PST
       location: THH 101
-      instructors: Aaron Cote
-    - id: 29930
-      days: Tuesday, Thursday
-      time: 2:00 PM to 3:20 PM PST
-      location: SOS B2
-      instructors: Aaron Cote
+      instructors: Mark Redekopp
   labs:
     - id: 29905
       days: Tuesday

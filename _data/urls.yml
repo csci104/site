@@ -1,10 +1,13 @@
 piazza: https://piazza.com/class/ksgo211u37k10l
 calendar: https://calendar.google.com/calendar/u/1?cid=Y19sZGhqN2kwbzdwbHFmcXRwbHF2dXVqaGVxc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-github: https://github.com/usc-csci104-fall2021
-github_ssh: git@github.com:usc-csci104-fall2021
+github: https://github.com/usc-csci104-spring2022
+github_ssh: git@github.com:usc-csci104-spring2022
+github_org: 'usc-csci104-spring2022'
 discord: https://discord.gg/YNAzZkF
 vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 
 blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
 regrades: https://forms.gle/mdJzzvhoMokpuiUa9
+slug: cs104-su21
+slide_location: http://ee.usc.edu/~redekopp/cs104/slides

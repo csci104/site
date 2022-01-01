@@ -8,7 +8,7 @@ hw1:
       number: 2
       title: Git
       points: 6
-    - writeup: runtime-1.md
+    - writeup: runtime-1b.md
       number: 3
       title: Runtime Analysis
       points: 25

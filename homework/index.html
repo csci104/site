@@ -24,11 +24,9 @@ title: Homework
   <thead>
     <tr>
       <th>#</th>
-      <th>Links</th>
-      <th></th>
+      <th>Link</th>
       <th>Title</th>
-      <th>Written Due</th>
-      <th>Programming Due</th>
+      <th>Due</th>
     </tr>
   </thead>
   <tbody>
@@ -48,16 +46,8 @@ title: Homework
         Write
         {% endif %}
       </td>
-      <td>
-        {% if assignment.assigned %}
-        <a href="./{{ assignment.id }}/programming/">Code</a>
-        {% else %}
-        Code
-        {% endif %}
-      </td>
       <td>{{ assignment.title }}</td>
-      <td>{{ assignment.dates.written }}</td>
-      <td>{{ assignment.dates.programming }}</td>
+      <td>{{ assignment.dates.due }}</td>
     </tr>
     {% endfor %}
   </tbody>

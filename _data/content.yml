@@ -4,37 +4,43 @@ assignments:
     assigned: true
     dates:
       assigned: Thursday, January 13
-      due: Friday, January 28th PST at 11:59PM PST
+      checkpoint: Friday, January 21 at 11:59PM PST
+      due: Thursday, January 27 at 11:59PM PST
   - id: hw2
     title: Inheritance and Polymorphism
     assigned: true
     dates:
-      assigned: Saturday, September 11
-      due: Friday, September 17 at 11:59PM PST
+      assigned: Thursday, January 27
+      checkpoint: Friday, Februrary 4 at 11:59PM PST
+      due: Thursday, February 10 at 11:59PM PST
   - id: hw3
     title: Heaps
     assigned: true
     dates:
-      assigned: Saturday, October 2
-      due: Friday, October 8 at 11:59PM PST
+      assigned: Thursday, February 10
+      checkpoint: Friday, Februrary 18 at 11:59PM PST
+      due: Thursday, February 24 at 11:59PM PST
   - id: hw4
-    title: RSA
-    assigned: true
-    dates:
-      assigned: Saturday, October 16
-      due: Friday, October 22 at 11:59PM PST
-  - id: hw5
-    title: Hash Tables
-    assigned: true
-    dates:
-      assigned: Saturday, November 6
-      due: Friday, November 12 at 11:59PM PST
-  - id: hw6
     title: AVL Trees
     assigned: true
     dates:
-      assigned: Saturday, November 20
-      due: Friday, December 3 at 11:59PM PST
+      assigned: Thursday, March 3
+      checkpoint: Friday, March 11 at 11:59PM PST
+      due: Thursday, March 31 at 11:59PM PST
+  - id: hw5
+    title: Counting, Probability, Recursion
+    assigned: true
+    dates:
+      assigned: Thursday, March 31
+      checkpoint: Friday, April 8 at 11:59PM PST
+      due: Thursday, April 14 at 11:59PM PST
+  - id: hw6
+    title: Hash tables
+    assigned: true
+    dates:
+      assigned: Thursday, April 14
+      checkpoint: Friday, April 22 at 11:59PM PST
+      due: Thursday, April 28 at 11:59PM PST
 
 labs:
   - id: lab0

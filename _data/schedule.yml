@@ -149,7 +149,6 @@ lectures:
       - Tree Traversals
       - Recursion - All combinations
     chapters:
-      - Chapter 9.3
       - Chapter 4.1-4.2
     notes: 
       - L11_GraphTraversals.pdf
@@ -160,6 +159,7 @@ lectures:
       - Recursion - Backtracking
       - Iterators
     chapters:
+      - Chapter 2
       - Class Notes
     notes: 
       - L13_Iterators.pdf
@@ -192,7 +192,7 @@ lectures:
       - AVL Trees
       - Splay Trees
     chapters:
-      - Chapter 4.5
+      - Chapter 4.4,4.5,4.7
     notes: 
       - L15_SplayTrees.pdf
 
@@ -208,7 +208,6 @@ lectures:
   - topics:
       - Counting
     chapters:
-      - Chapter 5.1-5.3
       - Lewis & Zax Chapter 22
     notes: 
       - L17_Counting.pdf
@@ -218,8 +217,8 @@ lectures:
       - Counting
       - Probability
     chapters:
-      - Chapter 5.1-5.3
-      - Lewis & Zax Chapter 22
+      - Lewis & Zax Chapter 23
+      - Lewis & Zax Chapter 26
     notes: 
       - L17_Counting.pdf
       - L18_Probability.pdf
@@ -247,7 +246,7 @@ lectures:
   - topics:
       - Number Theory
     chapters:
-      - Lewis & Zax Chapter 30
+      - Lewis & Zax Chapter 31
     notes: 
       - L19_NumberTheory.pdf
  
@@ -255,7 +254,7 @@ lectures:
   - topics:
       - Hash Tables and Functions 
     chapters:
-      - Chapter 12.4.2
+      - Chapter 5
     notes: 
       - L20_HashFunctions.pdf
 
@@ -264,7 +263,8 @@ lectures:
       - Bloom Filters
       - Tries
     chapters:
-      - Chapter 12.4.2
+      - Chapter 5
+      - Chapter 12.4
     notes: 
       - L20_HashFunctions.pdf
       - L22_Tries.pdf
@@ -274,7 +274,7 @@ lectures:
       - Skip Lists
       - Amortized Analysis
     chapters:
-      - Chapter 12.4.2
+      - Chapter 11.1,11.5
     notes: 
       - L21_SkipLists.pdf
       - L23_AmortizedAnalysis.pdf
@@ -284,7 +284,7 @@ lectures:
       - Amortized Analysis
       - Merge Trees
     chapters:
-      - Chapter 12.4.2
+      - Chapter 11.1,11.5
     notes: 
       - L23_AmortizedAnalysis.pdf
       - L24_MergeTrees.pdf
@@ -294,7 +294,7 @@ lectures:
       - Merge Trees
       - Review and Wrapup
     chapters:
-      - Chapter 12.4.2
+      - Chapter 11.1,11.5
     notes: 
       - L24_MergeTrees.pdf
       - L25_Review.pdf

@@ -1,5 +1,7 @@
 ---
 layout: asides
+toc: true
+tasks: true
 title: Homework 1
 nav: assignments
 hwpath: hw1

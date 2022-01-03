@@ -14,17 +14,17 @@ This exercise will build your linked list skills and confidence and ability in u
 
 New messages are always added to the end of the `all` list. Once added, they can be labelled or unlabelled, as desired.  Messages can also be deleted (removed) permanently.  New labels need not be created explicitly by the user, but the first time a label is applied to a message, a new list should be created and the message will added to that new list.  For example, if a `fam` (short for `family`) label is applied to message 1 then a new label is added to the list of labels and the index where that label is added becomes the index in the vector of the next and previous pointers in each message that is a member of that label, which will require resizing those vectors in the node. (Note that only member messages need to have their next/previous vectors resized, while as messages that are not a member of the new label need not be modified).
 
-![img](assets/labellist-label.png)
+<img src="{{site.baseurl}}/homework/img/labellist-label.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 When a message is unlabeled, it is simply removed from the corresponding list.  
 
-![img](assets/labellist-unlabel.png)
+<img src="{{site.baseurl}}/homework/img/labellist-unlabel.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 Removing a message should delete the entire message node, first unlinking it from all lists of which it is a member.
 
-![img](assets/labellist-remove.png)
+<img src="{{site.baseurl}}/homework/img/labellist-remove.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 ### Approach and Motivation
@@ -36,8 +36,8 @@ However, such an approach lacks two key features we would like to support.
    1. First, having obtained a pointer or reference to a message, we would like to be able to quickly (roughly constant time) find neighboring (next/previous) messages of a different label.  If we had a separate vector per label, we'd need to perform a new search within the new label's vector for the current message to then find its neighbors. 
    2. Second, erasing a message should be a constant time operation.  Again, we do not want to have to search for the message pointer/reference in each label's vector.
 
-![img](assets/labellist-motivation1.png)
-![img](assets/labellist-motivation2.png)
+<img src="{{site.baseurl}}/homework/img/labellist-motivation1.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
+<img src="{{site.baseurl}}/homework/img/labellist-motivation2.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 Thus, we have chosen to use a multi-level, doubly-linked list approach.  In this implementation, we will have a vector of labels and a vector of head pointers (1 head pointer per label) stored in the `LabelList` object.  The index of a label stored in the label vector should correspond to the index of that label's head pointer.  Each message node we add will have a vector of previous and next pointers as well as a vector of booleans indicating whether the message is a member of the label that corresponds to that level/index.
 
@@ -61,7 +61,7 @@ One goal of object-oriented design is **encapsulation** which usually means givi
 
 **A look ahead:**  You should shorlty learn about `iterator`s in the C++ STL container library.  This `MsgToken` object is very similar and should help the concept of iterators make more intuitive sense in the future.
 
-![img](assets/labellist-msgtoken.png)
+<img src="{{site.baseurl}}/homework/img/labellist-msgtoken.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 ### C++ and Background Information

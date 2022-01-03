@@ -72,9 +72,11 @@ layout: default
       {% endif %}
       {% if site.data.schedule.show.lectures.notes %}
       <td>
-        {% if lecture.notes %}
-        <a href="./notes/{{ lecture.notes }}">{{ lecture.notes }}</a>
-        {% endif %}
+        <ul>
+          {% for note in lecture.notes %}
+          <li><a href="{{ site.data.urls.slide_location }}/{{ note }}">{{ note }}</a></li>
+          {% endfor %}
+        </ul>
       </td>
       <td>
         {% if lecture.notes2 %}

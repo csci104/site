@@ -1,192 +1,55 @@
 ---
-layout: asides
-toc: true
-tasks: true
-title: Homework 1 Written
+layout: default
+title: Homework 1
+nav: assignments
+hwpath: hw1
+
 ---
 
-# HW1: Written Assignment
+## {{page.hwpath}}
 
-+ Due: Friday, September 3rd, 11:59pm PST
-+ You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .txt, .jpg, or .pdf)
-+ To access the programming portion of this assignment, click [here](./programming/)
++ Due: See [assignments page]({{site.url}}/assignments/index.html)
++ Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
+   - Once you have cloned your `hw-username` repo, create this `{{page.hwpath}}` folder underneath it (i.e. `hw-username/{{page.hwpath}}`)
+   - If your `hw-username` repo has not been created yet, please do your work in a separate folder and you can copy over relevant files before submitting
 
-## 1. Course Policies (10%)
+## Written Portion
 
-Carefully study the information on the [course web site]({{site.url}}/cs104/), then answer the following questions about course policies (anywhere from one to all answers may be correct):
+### A Few Notes on Repositories
 
-### Part A
-Which of the following are acceptable behaviors in solving homeworks/projects?
+1. Never clone one repo into another.  If you have a folder `cs104` on your VM, Docker, or laptop (wherever you created your Github keys from Lab 1) and you clone your personal repo `hw-username` under it (i.e. `cs104/hw-username`) then whenever you want to clone some other repo, you need to do it back up in the `cs104` folder or other location, NOT in the `hw-username` folder.
+1. Your repos may not be ready immediately but be sure to create your GitHub account described in Lab 0 on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.main.piazza}}) to let your instructors know that your repository needs to be created.  Be sure to include your USC username and github username for reference.
 
-1. Looking up information relevant to the course online.
-2. Looking up or asking for sample solutions online.
-3. Copying code from my classmates, and then editing it significantly.
-4. Asking the course staff for help.
-5. Sitting next to my classmate and coding together as a team or with significant conversation about our approach.
-6. Sharing my code with a classmate, if they just promise not to copy them, but to just read over it and learn from it.
+### Skeleton Code
 
-### Part B
-Which of the following are recommended ways of writing code (see the Resources page)?
-
-1. gedit
-2. Eclipse
-3. Microsoft Visual Studio
-4. notepad
-
-### Part C
-Which of the following are true about the late submission policy?
-
-1. Each assignment can be submitted late for 50% credit.
-2. Each student has 3 late days of which only one can be used per HW.
-3. Students need to get approval before submitting an assignment late.
-5. Use the normal submission system provided you have late days available
-
-### Part D
-After making a late submission by pushing your code to Github you should...
-
-1. Use the normal submission system on the course website
-2. Complete a separate late submission form.
-3. Email your instructor.
-4. Start the next assignment sooner (hint: this is correct)
-
-## 2. Git (10%)
-Carefully review and implement the steps discussed in [Lab1]({{ site.url }}/cs104/labs/lab1). Then answer the following questions:
-
-### Part A
-Which of the following git user interfaces are accepted and supported in this course?
-
-1. Git Bash (Windows)
-2. GitHub Desktop Client
-3. Terminal (Mac or Linux)
-4. Eclipse eGit
-5. Tower Git Client
-
-### Part B
-Provide the appropriate git command to perform the following operations:
-
-1. Stage an untracked file to be committed. The (hypothetical) file is called 'hw1q2b.cpp'.
-2. Display the details of the last three commits in the repository.
-
-### Part C
-Let's say you staged three files to be committed. Then, you ran the following command:
-
-`git commit`
-
-What will git do?
-
-## 3. Runtime Analysis (20%)
-In Big-&Theta; notation, analyze the running time of the following pieces of code/pseudo-code. Describe the running time as a function of the input size (here, `n`).  You should **always** explain your work when solving mathematics problems.
-
-### Part A
-
-```c++
-for (int i = 0; i < n; i ++)
-{  // A is an array of integers of sufficient size
-   if (A[i] == 0) {
-      for (int j = 0; j <= i; j++) {
-          if (A[i] == 0) {
-             for (int k = 0; k <= j; k++) {
-                 A[i] = 1;   // this is no typo
-             }
-          }
-      }
-   }
-}
-```
-
-### Part B
-
-```c++
-for (int i = 1; i < n; i *= 2)
-{
-   func(i);
-}
-
-void func(int x) {
-  if (x <= 1) return;
-  func(x-1);
-}
+On many occasions we will want to distribute skeleton code, tests, and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.main.github}}/resources ), under our class GitHub site.  You should clone this repository to your laptop and do a `git pull` regularly to check for updates. 
 
 ```
-
-### Part C
-
-```c++
-// This problem uses the same singly linked list Node structure you've seen a lot
-// A is an array of integers of sufficiently large size
-Node *head = new Node;
-Node *curr = head;
-head->data = 0;
-head->next = nullptr;
-for (int i = 1; i < n; i++)
-{
-   curr->next = new Node;
-   curr = curr->next;
-   curr->data = i;
-   curr->next = nullptr;
-}
-for (int i = 1; i <= n; i++) {
-   curr = head;
-   while (curr != nullptr) {
-      if (curr->data % i == 0) {
-         for (int j = 0; j < n; j++) {
-             A[j] ++;
-         }
-      }
-      curr = curr->next;
-   }
-}
+$ git clone git@github.com:{{ site.data.main.github_org }}/resources
 ```
 
-### Part D
+Again, be sure you don't clone this repo into your `hw-username` repo but at some higher up point like in a `cs104` folder on your laptop.  You can then manually copy (in your OS's GUI or at the command line) the skeleton files from `homeworks-resources/{{page.hwpath}}` to `hw-username/{{page.hwpath}}`.
 
-Notice that this code is similar to what happens if you keep inserting into a vector.
 
-```c++
-double *a = new double [3];
-int size = 3;
-for (int i = 0; i < n; i ++) 
-{
-   if (i == size)
-   {  
-       int newsize = 3 * size;
-       double *b = new double [newsize];
-       for (int j = 0; j < size; j++) b[j] = a[j];
-       delete [] a;
-       a = b;
-       size = newsize;
-   }
-   a[i] = sqrt(i);
-}
-```
+{% for part in site.data.hws.hw1.written_parts %}
 
-## 4. Linked Lists, Recursion (10%)
+### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
-Consider the following C++ code.  What linked list is returned if funcA is called with the input linked list `1,2,3,4,5`?  All of the points for this problem will be assigned based on your explanation, since we have full faith in your ability to run this program and copy down the answer.  We **strongly** recommend solving this by hand, and only using a compiler to verify your answer.
+{% include_relative writeups/{{ part.writeup }} %}
 
-```c++
-struct Node {
-    int value;
-    Node *next;
-};
+{% endfor %}
 
-Node* funcA(Node* in) {
-    Node *out = in;
-    while (out->next != nullptr) {
-	out = out->next;
-    }
-    funcB(in)->next = NULL;
-    return out;
-}
 
-Node* funcB(Node* in) {
-   if (in->next != nullptr) {
-	funcB(in->next)->next = in;
-   }
-   return in;
-}
-```
+## Programming Portion
 
-## Programming Assignment
+{% for part in site.data.hws.hw1.programming_parts %}
 
-To access the programming portion of this assignment, click [here](./programming/)
+### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
+
+{% include_relative writeups/{{ part.writeup }} %}
+
+{% endfor %}
+
+
+{% include commit-reclone.md %}
+

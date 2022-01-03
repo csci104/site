@@ -35,7 +35,7 @@ Again, be sure you don't clone this repo into your `hw-username` repo but at som
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
-{% include_relative writeups/{{ part.writeup }} %}
+{% include_relative ../writeups/{{ part.writeup }} %}
 
 {% endfor %}
 
@@ -46,7 +46,7 @@ Again, be sure you don't clone this repo into your `hw-username` repo but at som
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
-{% include_relative writeups/{{ part.writeup }} %}
+{% include_relative ../writeups/{{ part.writeup }} %}
 
 {% endfor %}
 

@@ -49,7 +49,7 @@ In order to actually install the git command line tools, go to the [git website]
 
 ### Special Notes for Windows
 
-If you are using Windows, we recommend installing git bash, which will be provided as an option in the installer.
+If you are using Windows, we recommend installing [git bash](https://git-scm.com/download/win), which will be provided as an option in the installer.
 Git bash is a separate shell that provides access to git as well as other command line utilities.
 If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
 

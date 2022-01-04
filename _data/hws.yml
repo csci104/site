@@ -45,9 +45,9 @@ hw2:
       title: Class Structures and OO Design
       points: 10
   programming_parts:
-    - writeup: twitter-1.md
+    - writeup: websearch-1.md
       number: 5
-      title: Twitter (Inheritance, Polymorphism, Sets, Maps)
+      title: Websearch (Inheritance, Polymorphism, Sets, Maps)
       points: 70
 
 hw3:

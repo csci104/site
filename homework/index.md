@@ -13,11 +13,6 @@ Each student will receive a private code repository on the course's [GitHub Orga
 
 Please read the submission instructions and policies below **carefully**!
 
-</p>
-<p>
-  Students will receive a private repository on the course's <a href="{{ site.data.urls.github }}" target="_blank">GitHub</a> to use it for the development and submission of all assignments.
-  You will be using the git source code management tool to maintain your homework code.
-</p>
 <h2 id="schedule">Schedule</h2>
 <table class="standard assignments hover click">
   <thead>

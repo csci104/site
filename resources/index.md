@@ -22,17 +22,17 @@ Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
 - [The unofficial 104 textbook](./textbook-data-structures.pdf) has extensive notes on all 104 topics by David Kempe.
 
 ## Exam Info pages
- - [MT1 Info page]({{site.baseurl}}/mt1-info.html) 
- - [Final Info page]({{site.baseurl}}/final-info.html)
+ - [MT1 Info page]({{site.baseurl}}/resources/mt1-info/) 
+ - [Final Info page]({{site.baseurl}}/resources/final-info/)
 
 ## Editors and IDEs
 
 We strongly advise you against using gedit, notepad, or other primitive editors.
 Switch to a professional-level environment or editor, such as the following:
 
+- [Visual Studio Code](https://code.visualstudio.com/) is a free, open source IDE with good developer tooling and a wide array of plugins. **This is the recommended editor for CS 104**.
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/) is a commercial development environment that is generally not free, but for which you can get a free license as a USC student.
-- [JetBrains CLion](https://www.jetbrains.com/clion/) requires a CMake project to offer IntelliSense, however it is an incredibly powerful IDE that can be gotten for free as a student.
-- [Visual Studio Code](https://code.visualstudio.com/) is a free, open source IDE with good developer tooling and a wide array of plugins.
+- [JetBrains CLion](https://www.jetbrains.com/clion/) requires a CMake project to offer IntelliSense, however it is an incredibly powerful IDE that can be obtained for free as a student.
 - [Eclipse](https://www.eclipse.org/) is a free IDE for C/C++, Java, and PHP.
 
 ## Tutoring

@@ -4,14 +4,6 @@ title: Midterm 1 Info
 nav: Resources
 ---
 
-exams:
-
-  - name: MT1 
-    time: Thurs, March 3 at 7 PM Pacific
-    location: TBA
-    link: mt1-info.html
-
-
 ## MT1 Info
 
 ### Overview and Process

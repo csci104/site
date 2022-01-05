@@ -47,9 +47,15 @@ Please read the submission instructions and policies below **carefully**!
   </tbody>
 </table>
 
+## Editors, Debuggers, and Git Help
+
+Checkout our [**Tools and Links page**]({{site.baseurl}}/resources)
+
 ## Submission
 
-For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).  The programming submission must be made correctly via your github account and your **`git` commit SHA** must be submitted on the appropriate submission page.  You must follow the submission instructions.  Read them carefully and follow them for each homework.  **Failure to do so may lead to a 0 on the assignment** even though you may have had all the code working on your machine.  Much of software development requires following strict processes, so it is important you start to understand and follow those processes.
+In order to properly submit your assignment, **please follow the course [submission instructions]({{ site.baseurl }}/homework/submission-instructions/)** which will show you the steps to submit a particular `git` commit of your code. 
+
+For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).  The programming submission must be made correctly via your github account and your **`git` commit SHA** must be submitted on the appropriate submission page using the process described on the [submission instructions]({{ site.baseurl }}/homework/submission-instructions/) page.  Read and follow those instructions carefully for each homework.  **Failure to do so may lead to a 0 on the assignment** even though you may have had all the code working on your machine.  Much of software development requires following strict processes, so it is important you start to understand and follow those processes.
 
 
 **Important Note:**  You will NOT receive an exception for failing to follow these instructions!

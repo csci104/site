@@ -11,4 +11,8 @@ notes: http://david-kempe.com/teaching/DataStructures.pdf
 regrades: https://forms.gle/mdJzzvhoMokpuiUa9
 slug: cs104-su21
 slide_location: http://ee.usc.edu/~redekopp/cs104/slides
-extension_form: 
+extension_form:
+visual_code: https://code.visualstudio.com/download
+docker_repo: https://github.com/csci104/docker
+lab_form: 
+git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf

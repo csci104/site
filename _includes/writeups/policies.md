@@ -5,7 +5,7 @@ Carefully study the information on the [course web site]({{site.url}}), then ans
 #### Part (a): 
 Which of the following are acceptable behaviors in solving homeworks/projects (list all that apply)?
 
-1. Looking up information relevant to the course online.
+1. Looking up relevant C++ reference information online.
 1. Looking up or asking for sample solutions online from sites like Chegg, Github, etc.
 1. Talking to my classmates about general approaches about the problems (but no specific coding statements or description of your own code or someone else's code).
 1. Copying code from my classmates or an online source, and then editing it significantly.
@@ -26,7 +26,7 @@ What is the late submission policy (list all that apply)?
 
 1. One hour late submission is acceptable for each assignment.
 1. Each assignment can be submitted up to two days late for 50% credit.
-1. Each student has 5 late days of which only 1 can be used per HW
+1. Each student has 5 late days of which only 2 can be used per HW
 1. Students need to get an approval before submitting an assignment late.
 
 #### Part(d): 
@@ -50,5 +50,5 @@ General submission policies (indicate True/False).
 
 1. *True/False*:  Before submitting your HW you should reclone your repo to a separate folder and ensure all files are present and your code compiles.
 1. *True/False*:  If you forget to submit a file via GITHUB you can still apply for a regrade after the deadline and submit the missing file.
-1. You only have 7 days to submit a regrade for homeworks, unless otherwise stated, and after that you are not eligible for a regrade for ANY reason.
+1. *True/False*:  You only have 7 days to submit a regrade for homeworks, unless otherwise stated, and after that you are not eligible for a regrade for ANY reason.
 

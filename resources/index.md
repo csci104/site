@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: asides
+toc: true
 ---
 
 # Resources
@@ -14,24 +15,15 @@ Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
 
  - [CS 104 Docker Repository]({{site.data.urls.docker_repo}}). Instructions are in the [README.md]({{site.data.urls.docker_repo}}/blob/main/README.md)
  - [CS 104 VM Image]({{site.data.urls.vm}})
-  
+
 ## 104 Resources
 
 - [The legacy 104 C++ guide](./guide-coding.pdf) has a bunch of useful information about how you can code for this class. 
 - [The unofficial 104 textbook](./textbook-data-structures.pdf) has extensive notes on all 104 topics by David Kempe.
 
-## Sample Exams
-
- - [Sample Midterm](./midterm-b.pdf) (no solutions)
- - [Sample Midterm 2](./midterm-c.pdf) (no solutions)
- - [Sample Final (Spring 2014 and others)](./final-b.pdf) (no solutions)
-
-## Practice Quizzes
-
- - [ADTs](./quiz-adts.pdf) (no solutions)
- - [Streams and Simple Recursion](./quiz-streams-recursion.pdf) (no solutions)
- - [Runtime and Recursion](./quiz-runtime.pdf) (no solutions)
- - [Linked Lists and Recursion](./quiz-list-recursion.pdf) (no solutions)
+## Exam Info pages
+ - [MT1 Info page]({{site.baseurl}}/mt1-info.html) 
+ - [Final Info page]({{site.baseurl}}/final-info.html)
 
 ## Editors and IDEs
 

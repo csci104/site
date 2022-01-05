@@ -29,7 +29,7 @@ layout: default
       <td>{{ exam.name }}</td>
       <td>{{ exam.time }}</td>
       <td>{{ exam.location }}</td>
-      <td>{{ exam.link}}</td>
+      <td><a href="{{site.baseurl}}/resources/{{ exam.link }}">Info, Topics, Practice </a></td>
     </tr>
     {% endfor %}
   </tbody>

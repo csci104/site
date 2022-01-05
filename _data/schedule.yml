@@ -9,12 +9,12 @@ exams:
   - name: MT1 
     time: Thurs, March 3 at 7 PM Pacific
     location: TBA
-    link: mt1-info.html
+    link: mt1-info/
 
   - name: Final
     time: Wed, May 4 at 8 AM Pacific
     location: TBA
-    link: final-info.html
+    link: final-info/
 
 lectures:
 

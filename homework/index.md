@@ -54,7 +54,8 @@ Please read the submission instructions and policies below **carefully**!
 
 ## Submission
 
-In order to properly submit your assignment, please follow the course submission instructions.  Read them carefully and follow them for each homework.  **Failure to do so may lead to a 0 on the assignment** even though you may have had all the code working on your machine.  Much of software development requires following strict processes, so it is important you start to understand and follow those processes.
+For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).  The programming submission must be made correctly via your github account and your **`git` commit SHA** must be submitted on the appropriate submission page.  You must follow the submission instructions.  Read them carefully and follow them for each homework.  **Failure to do so may lead to a 0 on the assignment** even though you may have had all the code working on your machine.  Much of software development requires following strict processes, so it is important you start to understand and follow those processes.
+
 
 **Important Note:**  You will NOT receive an exception for failing to follow these instructions!
 
@@ -66,9 +67,14 @@ You WILL lose points for submitting unreadable code, or for failing to follow su
 
 ## Policies
 
-For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).  The programming submission must be made correctly via your github account and your **`git` commit SHA** must be submitted on the appropriate submission page.
+There will be **6 assignments** due roughly every **2 weeks**.  In CS 104 we do not accept late submissions (except in the cases outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 2 weeks per assignment should allow you to finish with ample time if you **start early** and **work consistently**, we will provide **5 grace days** to be used over the semester with a **maximum of 2 grace days allowed per assignment**. 48 hours after the due date, no submissions will be allowed.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone. 
 
-All students have **5 late days to use over the course of the semester** with a maximum of **2 grace days** allowed per assignment. Thus after 48 hours after the due date, no submission will be allowed and a 0 will be assigned.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone. 
+In this age of COVID, TrojanCheck, etc. we realize that being sick or having sick family may preclude you from working on your assignments as you would be able to otherwise.  If a confirmed COVID-related illness or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}) and make a private note on Piazza to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment.
+
+For non-emergency issues (especially those close to the deadline), extensions are generally not applicable. Instead, **your grace days** are available and should be conserved for such circumstances.
+
+In addition, **starting early** can help offset any blocks to working on and completing your assignment.  The most consistent advice from students who have done well in CS 104 is (you guessed it): **start early!**  Thus, we are implementing a **checkpoint** for each assignment.  These are milestones in the assignment that should be relatively easy to achieve but that you must complete by a certain date (usually 4-7 days) BEFORE the full due date (to ensure you start early).  By submitting your checkpoint you earn **5 points extra credit** to be applied to your assignment, though capping at 100%.  So if you completed the checkpoint, and then got 87/100 after the HW is graded, you would be boosted to 92/100.  If you got 97/100, you'd be boosted to 100. However, You do NOT have to do the checkpoint if you so choose. You can still earn 100/100 on the HW. Your will simply keep whatever score you have earned after the grading process. Details of each checkpoint will be described in the assignment writeup.  (Note: that consistently meeting the checkpoints may also be used when weighing borderline grades or other requests).  
+
 
 ## Grade Disputes
 We will work hard to post HW scores and feedback within 1-2 weeks of the homework's due date. Exams will typically be graded within at most a few days of the exam date. If you have not received your score on a particular HW even though most other students in the class have (say, 24 hours after the score release date), post a private note on Piazza and someone will then follow up with your grader.

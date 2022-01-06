@@ -20,6 +20,7 @@ Please read the submission instructions and policies below **carefully**!
       <th>#</th>
       <th>Link</th>
       <th>Title</th>
+      <th>Checkpoint</th>
       <th>Due</th>
     </tr>
   </thead>
@@ -41,6 +42,7 @@ Please read the submission instructions and policies below **carefully**!
         {% endif %}
       </td>
       <td>{{ assignment.title }}</td>
+      <td>{{ assignment.dates.checkpoint }}</td>
       <td>{{ assignment.dates.due }}</td>
     </tr>
     {% endfor %}

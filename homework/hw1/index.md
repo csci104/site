@@ -10,7 +10,7 @@ hwpath: hw1
 
 ## {{page.title}}
 
-+ Due: See [assignments page]({{site.url}}/assignments/index.html)
++ Due: See [assignments page]({{site.url}}/homework/index.html)
 + Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
    - Once you have cloned your `hw-username` repo, create this `{{page.hwpath}}` folder underneath it (i.e. `hw-username/{{page.hwpath}}`)
    - If your `hw-username` repo has not been created yet, please do your work in a separate folder and you can copy over relevant files before submitting

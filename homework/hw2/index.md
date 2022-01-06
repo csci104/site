@@ -24,7 +24,7 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
-{% include_relative writeups/{{ part.writeup }} %}
+{% include writeups/{{ part.writeup }} %}
 
 {% endfor %}
 
@@ -35,7 +35,7 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
-{% include_relative writeups/{{ part.writeup }} %}
+{% include writeups/{{ part.writeup }} %}
 
 {% endfor %}
 

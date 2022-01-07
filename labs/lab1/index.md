@@ -359,7 +359,7 @@ and `library.o` are no longer there.
 
 ## Pulling changes from GitHub
 
-Sometimes would like to download changes from the remote repo because
+Sometimes you would like to download changes from the remote repo because
 someone else (or even you from another machine) modified the remote repo.
 This is the case when we release the skeleton code in the `resources` repo
 for a new assignment and you would like to download it.

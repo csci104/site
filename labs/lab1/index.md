@@ -359,11 +359,12 @@ and `library.o` are no longer there.
 
 ## Pulling changes from GitHub
 
-Sometimes you the remote repo is modified, and you would like to download those
-changes to your local machine. This is the case when we release new skeleton code
-in the `resources` repo and you would like to download them.
+Sometimes would like to download changes from the remote repo because
+someone else (or even you from another machine) modified the remote repo.
+This is the case when we release the skeleton code in the `resources` repo
+for a new assignment and you would like to download it.
 
-This won't happen until `hw1` of course, so let's do this to your `hw-username`
+This won't happen until assignment 1 of course, so let's do this to your `hw-username`
 repo instead.
 
 ### Modifying a file on GitHub

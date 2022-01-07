@@ -56,7 +56,7 @@ assignments:
 
 labs:
   - id: lab0
-    week: Before test
+    week: Before
     title: Getting Started
     assigned: true
     topics: Github, curricula, registration, setup

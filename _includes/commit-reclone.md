@@ -8,6 +8,6 @@ Be sure to add, commit, and push your code in your {{page.hwpath}} directory to 
 1. Go to your home directory: `$ cd ~`
 1. Create a `verify` directory: `$ mkdir verify`
 1. Go into that directory: `$ cd verify`
-1. Clone your hw_username repo: `$ git clone git@github.com:{{site.data.urls.github_org}}/hw-usc-username.git`
+1. Clone your hw_username repo: `$ git clone git@github.com:{{site.data.urls.github_org}}/hw-username.git`
 1. Go into your hw4 folder `$ cd hw-username/{{page.hwpath}}`
 1. Recompile and rerun your programs and tests to ensure that what you submitted works.

@@ -25,10 +25,13 @@ The class will put significant emphasis on a theoretical understanding of data s
 5. Ability to implement and use search structures and algorithms including binary search, search trees, and hash tables.
 6. Ability to use and implement search data structures, including search trees and hash tables.
 7. Ability to use and implement priority queues.
-8. Understanding of graphs and their representations; ability to implement graph search using BFS, DFS, and Dijkstra's Algorithm.
-9. Ability to write recursive functions and understand when recursion is appropriate to a problem.
-10. Ability to write readable and maintainable code.
-11. Ability to explain computational solutions in person and in writing.
+8. Knowledge of and ability to implement sorting algorithms and compare their performance analytically and empirically.
+9. Understanding of graphs and their representations; ability to implement graph search using BFS, DFS, and Dijkstra's Algorithm.
+10. Ability to write recursive functions and understand when recursion is appropriate to a problem.
+11. Ability to write readable and maintainable code.
+12. Ability to explain computational solutions in person and in writing.
+13. Use probability as a tool in analyzing the efficiency of various data structures
+14. Use basic number theory to analyze basic hash functions
 
 ## Catalog Entry
 
@@ -38,10 +41,6 @@ Introduces the student to standard data structures (linear structures such as li
 
 - CSCI 103: Introduction to Programming
 - CSCI 170: Discrete Methods in Computer Science
-
-## Lecture / Labs
-
-See [sections]({{ site.baseurl }}/sections/).
 
 ## Course Websites
 
@@ -63,15 +62,15 @@ Your final grade will depend solely on your own performance, graded according to
     </thead>
     <tbody>
       <tr>
-        <td>35%</td>
+        <td>36%</td>
         <td>Homework</td>
       </tr>
       <tr>
-        <td>5%</td>
+        <td>6%</td>
         <td>Lab Exercises</td>
       </tr>
       <tr>
-        <td>30%</td>
+        <td>28%</td>
         <td>Midterm Exams</td>
       </tr>
       <tr>
@@ -155,7 +154,7 @@ The lecture notes and reference notes for video recordings will be provided and 
 ## Statement on Academic Conduct
 
 Below is USC's official language.
-For more detailed information, also see the [assignments & grading page]({{ site.baseurl }}/homework/).
+ However, **we have specific rules in CS 104 which are outlined on the [assignments & grading page]({{ site.url }}/homework/)**.
 
 Plagiarism - presenting someone else's ideas as your own, either verbatim or recast in your own words - is a serious academic offense with serious consequences.
 Please familiarize yourself with the discussion of plagiarism in *SCampus* in Part B, Section 11, *Behavior Violating University Standards* [https://policy.usc.edu/scampus-part-b/](https://policy.usc.edu/scampus-part-b/).

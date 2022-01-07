@@ -1,24 +1,45 @@
 ---
 layout: asides
 toc: true
-tasks: true
-title: Homework 2 Written
+tasks: false
+title: Homework 2
+nav: assignments
+hwpath: hw2
+
 ---
 
-# HW2: Written Assignment
+## {{page.hwpath}}
 
-+ Due: Friday, September 17th, 11:59pm PST
-+ You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .jpg, or .pdf)
-+ To access the programming portion of this assignment, click [here](./programming/)
++ Due: See [assignments page]({{site.url}}/assignments/index.html)
++ Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
 
-## Inheritance Diagram (10%)
+### Skeleton Code
+Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and has been pushed to the Github repository [`resources`](https://github.com/{{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  Otherwise you'll need to clone it.
 
-Read the programming assignment carefully, and study the provided skeleton code.  Then, draw an inheritance diagram of all the classes in the skeleton code, as well as all of the classes you plan to create for this assignment.  As best you can, explain the reasoning for why the code is structured this way.  For example, you should explain:
 
-1. Why do we have an abstract `Statement` class?
-2. Why do we have a pure virtual `execute` function inside the `Statement` class?
-3. What is the purpose of each of the classes you added?
+## Written Portion
 
-## Programming Assignment
 
-To access the programming portion of this assignment, click [here](./programming/)
+{% for part in site.data.hws.hw2.written_parts %}
+
+### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
+
+{% include writeups/{{ part.writeup }} %}
+
+{% endfor %}
+
+
+## Programming Portion
+
+{% for part in site.data.hws.hw2.programming_parts %}
+
+### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
+
+{% include writeups/{{ part.writeup }} %}
+
+{% endfor %}
+
+
+{% include commit-reclone.md %}
+
+

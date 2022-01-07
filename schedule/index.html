@@ -6,7 +6,6 @@ layout: default
 <p>
   It is recommended that students take careful notes from recordings and during class meetings.
   Before class meetings, it is helpful to review relevant chapters in <a href="{{ site.data.urls.notes }}">course notes</a>.
-  Slides and annotated notes will be available on the course Piazza only under the Resources tab.
 </p>
 <p>
   Chapter numbers under the textbook column refer to the textbook, while the chapter numbers under "notes" refer to the posted lecture notes.
@@ -19,7 +18,7 @@ layout: default
       <th>Exam</th>
       <th>Time</th>
       <th>Location</th>
-      <th>Material</th>
+      <th>Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -29,13 +28,7 @@ layout: default
       <td>{{ exam.name }}</td>
       <td>{{ exam.time }}</td>
       <td>{{ exam.location }}</td>
-      <td>
-        <ul>
-          {% for material in exam.material %}
-          <li>{{ material }}</li>
-          {% endfor %}
-        </ul>
-      </td>
+      <td><a href="{{site.baseurl}}/resources/{{ exam.link }}">Info, Topics, Practice </a></td>
     </tr>
     {% endfor %}
   </tbody>
@@ -72,9 +65,11 @@ layout: default
       {% endif %}
       {% if site.data.schedule.show.lectures.notes %}
       <td>
-        {% if lecture.notes %}
-        <a href="./notes/{{ lecture.notes }}">{{ lecture.notes }}</a>
-        {% endif %}
+        <ul>
+          {% for note in lecture.notes %}
+          <li><a href="{{ site.data.urls.slide_location }}/{{ note }}">{{ note }}</a></li>
+          {% endfor %}
+        </ul>
       </td>
       <td>
         {% if lecture.notes2 %}

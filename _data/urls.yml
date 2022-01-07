@@ -1,10 +1,21 @@
 piazza: https://piazza.com/class/ksgo211u37k10l
 calendar: https://calendar.google.com/calendar/u/1?cid=Y19sZGhqN2kwbzdwbHFmcXRwbHF2dXVqaGVxc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-github: https://github.com/usc-csci104-fall2021
-github_ssh: git@github.com:usc-csci104-fall2021
+github: https://github.com/usc-csci104-spring2022
+github_ssh: git@github.com:usc-csci104-spring2022
+github_org: 'usc-csci104-spring2022'
 discord: https://discord.gg/YNAzZkF
 vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 
 blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
-regrades: https://forms.gle/mdJzzvhoMokpuiUa9
+regrades: 
+slug: cs104-sp22
+slide_location: http://ee.usc.edu/~redekopp/cs104/slides
+extension_form: https://forms.gle/L3381uqHutpkfeVx6
+visual_code: https://code.visualstudio.com/download
+docker_repo: https://github.com/csci104/docker
+lab_form: 
+git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
+osas_dsp_form: https://forms.gle/SezcgxMRrXSYreC77
+account_ta_name: TBD
+account_ta_email: tbd@usc.edu

@@ -2,358 +2,321 @@
 layout: asides
 toc: true
 tasks: true
-title: Homework 2 Programming
+title: Homework 1
 ---
 
-# HW2: Programming Assignment
+# Homework 1
 
-+ Due: Friday, September 24th, 11:59pm PST
-+ To access the written portion of this assignment, click [here](..)
-+ Directory name in your github repository for this homework (case sensitive): `hw2`
+- Due: Friday, September 10, 2021 at 11:59 PST
+- Directory in your repository for this homework (case-sensitive): `hw1`
+   - Skeleton code for this assignment is available in [`resources/hw1/`]({{ site.data.urls.github }}/resources/).
+   - Once you have cloned your `hw-username` repo, copy the `hw1/` directory into it from `resources`.
 
-    - In this project we have provided a code base.  Do a `git pull` in your `resources` repo.
-    - Then copy the `resources/hw2` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw2` folder.
+## Notes
 
-    - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `interpreter`
-    - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
-    -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
-    - **You may use any STL classes you like**
+**We will NOT provide a test suite before the due date for this homework**.
+You will need to test the coding questions yourself with your own test programs.
+This should cause you to
 
-**Please read the entire assignment through once before you start to perform any tasks.**
+1. Appreciate the importance of testing.
+2. Consider the kinds of test cases you should write (i.e. if none of your test cases exercise a particular set of code in your implementation then you probably need to write more tests).
+3. Think about what common tasks related to testing would be useful to reuse and why there are testing frameworks like the one we teach in this class, `gtest` (don't worry, we'll cover `gtest` in lab soon!).
 
-#### Background
+Going forward, we will refer to your homework repository as `hw-username`. 
+Note that you would replace the `username` part with your actual USC username, and you can verify this by finding the repository on Github.
 
-When you compile your C++ code, the compiler turns your code into a bunch of 0s and 1s (machine code).  There is another way this could be done however: an *Interpreter* doesn't compile the code, but rather goes line by line, interpreting what needs to be done.  It keeps track of the *Program State* as it runs (that is, the values of variables, what line it is on, etc).  Implementing an effective interpreter for C++ would take years.
+## Repository Reminders
 
-#### The Language
+1. Never clone one repository inside another.
+   If you have a work folder `cs104` and clone your personal repo `hw-username` under it (i.e., `cs104/hw-username`), whenever you want to clone some other repository (such as `resources`), you'll need to do it back up in the `cs104` folder or another location, **not** in the `hw-username` folder.
+2. Your repository may not be ready immediately but be sure to create your GitHub account and fill out the GitHub information form linked to at the end of [lab 1]({{ site.baseurl }}/labs/lab1/).
 
-You will be writing an Interpreter for a very limited version of the well-known programming language BASIC.  BASIC was widely used a few decades ago, and is considered easy to learn.  Like any other language, BASIC has variables, expressions, and commands.
+- [ ] Agree that you'll never clone a repository into another.
 
-One of the main control flow commands in BASIC is GOTO, which jumps to a given line number.
-While you will need to handle GOTO statements in BASIC, don't try to use them in C++: this is considered very bad style.  The GOTO statement produces code which is very difficult to understand, which is why most languages nowadays strongly discourage it, or not make it available at all.  See the article [Go To Statement Considered Harmful](https://homepages.cwi.nl/~storm/teaching/reader/Dijkstra68.pdf), one of the most influential computer science articles of all time, and also check out the following [XKCD comic](https://xkcd.com/292/).
+## Skeleton Code
 
-We will worry about only twelve kinds of statements.  There is a generic `Statement` class, which serves as the base class for all twelve types (that is, there is a class for each type, and it inherits from the generic `Statement` class).  You will need to add functionality for each of the twelve types of statements.
+On many occasions we will want to distribute skeleton code, tests, and other pertinent files.
+To do this, we have made a separate repository, [`resources`]({{ site.data.urls.github }}/resources/), under the CSCI 104 Github organization.
+You should clone this repository to your laptop and `git pull` regularly to check for updates;
+even we sometimes make mistakes, and when we do, we will fix them as quickly as possible, but you'll only get the fixes when you pull.
 
-You will implement an `interpretProgram` function which will read in a valid program from an input stream, interpret that program, and output everything to an output stream.  In the skeleton code, we are passing in a file stream as input and cout as output, but your program should work just as well if we pass in different streams to the `interpretProgram` function (such as redirecting output to a file).
-
-A valid program is a sequence of statements, one per line.  **You will only receive valid programs as input, so you don't have to do error checking of this type.** Here is an example of a valid program:
-
-```
-1 LET ABRA 42
-2 PRINT ABRA
-3 GOSUB 7
-4 PRINT ABRA
-5 PRINT CADABRA
-6 GOTO 10
-7 LET ABRA 9001
-8 LET CADABRA 3720
-9 RETURN
-10 PRINT ABRA
-11 END
-12 .
+```shell
+git clone {{ site.data.urls.github_ssh }}/resources.git
 ```
 
-Each line contains exactly one statement (there are no blank lines).  A line number is assigned to each line, where the first line is numbered 1, the second line is numbered 2, etc.  The last line is always a period.  Execution of the program always starts at line 1.  A valid program may not exceed 1000 lines.
+Again, be sure you don't clone this repo into your `hw-username` repo, but at some higher-up point like in a `cs104` folder on your machine.
+One way to copy the `hw1` files from resources could be to navigate to the directory containing both repositories and run:
 
-#### Variables
-
-A variable in a valid program consists of a string of upper-case letters.  Each variable is capable of storing an integer value.  They do not need to be declared: if a variable is referenced before a value is set, the variable should have a value of `0`.
-
-The value of a variable can be changed with a LET statement, and printed with a PRINT statement.  The PRINT statement prints the value of a single variable on its own line.
-
-```
-1 LET HAN 42
-2 LET SOLO -9
-3 PRINT HAN
-4 PRINT SOLO
-5 .
+```shell
+cp -r resources/hw1/ hw-username/hw1/
 ```
 
-The above program would output:
+- [ ] Clone `resources` into your CSCI 104 work directory.
+- [ ] Clone your `hw-username` next to it if you haven't already.
+- [ ] Copy `resources/hw1/` to `hw-username/hw1/`.
+
+## Using Valgrind
+
+If you were to compile `program` that takes two arguments:
 
 ```
-42
--9
+$ ./program input.txt output.txt
 ```
 
-The PRINTALL statement should output the value of all variables which have been used: each line should have the name of a variable, followed by a space, followed by the value.
+The corresponding Valgrind command would be:
 
 ```
-1 LET HAN 42
-2 LET SOLO -9
-3 PRINTALL
-4 .
+$ valgrind --tool=memcheck --leak-check=yes ./program input.txt output.txt
 ```
 
-The above program would output:
+For more information on Valgrind, take a look at the [Valgrind wiki page]({{ site.baseurl }}/wiki/valgrind).
 
-```
-HAN 42
-SOLO -9
-```
+## Command Line Arguments
 
-The following program is a bit strange, but remember that variables are initialized to be 0.
+In order to read parameters as command line arguments in C++, you need to use a slightly different syntax for your `main` function:
 
-```
-1 PRINT A
-2 PRINTALL
-3 .
+```c++
+int main (int argc, char* argv[]) {
+    // Your code here
+}
 ```
 
-Therefore it should output this:
+When your program is called at the command line, `argc` will then contain the total number of arguments that the program was given, and `argv` will be an array of the arguments the program was passed.
+
+- The argument at `argv[0]` is always the name of your program.
+- Consequently, `argv[1]` is the first argument passed to the program.
+
+The operating system will assign the values of `argc` and `argv`, and you can just access them inside your program.
+
+## 1. Permutations (15%)
+
+Write a function that takes in a string, and outputs all possible permutations of the input, one per line.  A permutation is a shuffling of the characters.
+
+If the input is `USC`, then the output would be (in any order):
 
 ```
-0
-A 0
+USC
+UCS
+SUC
+SCU
+CUS
+CSU
 ```
 
-#### Execution
+If the input string is length n, then there should be exactly n! output strings.  If the input string has no repeat letters, then there should be no repeat output strings.
 
-A program is executed one line at a time, starting at line 1, and proceeding sequentially.  The program terminates when an END statement is reached, or the last line of the program is reached (which consists of a single period).
-
-You can cause the program to execute out of sequence via a GOTO statement, which indicates which line to jump to.
+If the input is `CSC`, then there will be repeat output (`CCS` shows up twice, once when one `C` is the first character, the other when the other `C` is the first character):
 
 ```
-1 LET YODA 1
-2 GOTO 4
-3 LET YODA 2
-4 PRINT YODA
-5 .
+CSC
+CCS
+SCC
+SCC
+CSC
+CCS
 ```
 
-The above program would output 1, since line 3 is skipped over via the GOTO statement.  A GOTO statement can jump either forward or backward.  If a GOTO statement tries to jump to a line that is not within the boundaries of the program (non-positive integers, or integers larger than the number of lines in the program), the interpreter should terminate with the error message "Illegal jump instruction".
+Here is the function you should implement:
 
-#### Mathematical operations
-
-You can perform addition, subtraction, multiplication, and division.
-
-```
-1 LET LUKE 4
-2 ADD LUKE 3
-3 PRINT LUKE
-4 LET LEIA 5
-5 SUB LEIA 3
-6 PRINT LEIA
-7 LET REY 6
-8 MULT REY LUKE
-9 PRINT REY
-10 LET FINN 7
-11 DIV FINN 2
-12 PRINT FINN
-13 .
+```c++
+void permutations(std::string in)
 ```
 
-The above example will output:
+You may **not** change the function parameters, but you **can** (and probably should) create a helper function with whatever parameters you like.
+
+While we will only test your `permutations` function, you will probably want to write some `main` code to actually test it.
+Your submission should be in a file called `permutations.cpp`, and it should only contain your implementation of the function; **don't include your main/testing code**.
+
+You may use loops and/or recursion in your implementation (hint: you probably want to combine the two).
+You may **not** use the STL on this problem, other than the `vector` (if you so choose).
+Obviously, your solution must not leak memory.
+**Use `valgrind` to verify correct memory handling and cleanup**.
+
+- [ ] Implement `void permutations(std::string in)`
+
+## 2. Startup Companies (35%)
+
+Startups these days are merging so fast, it's hard to keep track of who is in what company.
+Company A merges with Company B, and Company C merges with Company D, and then the two merged companies merge, and suddenly, employees from companies A and C find themselves being colleagues.
+This is getting sufficiently difficult to follow that we will have you write a startup tracker.
+Here is how this will work.
+
+You have `n` students.
+Initially, each starts a startup company by himself/herself.
+Then, companies may merge.
+When you have a `merge` command, you will be given the numbers of two representative students, one from each company.
+Then, for each of those two students, you find the "biggest" company they are in, i.e., companies that are not subcompanies of any bigger company; let's call them A and B.
+Those two companies A and B are then merged into a new company; let's call it C.
+C will become the parent company of A and B.
+
+Sometimes, companies also split up again.
+When we call `split`, we will again give you a representative student.
+Then, you find the biggest company that the student is in---let's call it A.
+As a result of the split, A should be completely removed, and the two companies that were at some point in the past merged to become A will now be individual companies without a parent again.
+If the student is only in their own 1-person company, `split` does nothing.
+
+You will build a data structure that allows you to process a sequence of merges and splits, and answer queries about whether two students are in the same company.
+
+To illustrate this, consider the following example with 5 students.
+After each command, we are showing you the structure of the nested companies with braces.
+The notation `{ {1}, { {2}, {3} } }` means that we have a company with two subcompanies: the first subcompany is just student 1, while the second subcompany again has two subcompanies, one consisting of just student 2, the other consisting of just student 3.
 
 ```
-7
-2
-42
-3
+merge (0,1)   => { {0}, {1} }, {2}, {3}, {4}
+merge (2,3)   => { {0}, {1} }, { {2}, {3} }, {4}
+merge (0,3)   => { { {0}, {1} }, { {2}, {3} } }, {4}
+split (2)     => { {0}, {1} }, { {2},{3} }, {4}
+split (2)     => { {0}, {1} }, {2}, {3}, {4}
+merge (2,4)   => { {0}, {1} }, { {2}, {4} }, {3}
+split (0)     => {0}, {1}, { {2}, {4} }, {3}
 ```
 
-Note that integer division is performed, so we round down.  If a statement tries to divide by zero, the interpreter should immediately terminate with the error message "Divide by zero exception".  Note that you could have the statement `DIV PALPATINE 0` in your program as long as that line never gets executed.
+A company is captured by the following
 
-#### IF Statements
+```c++
+struct Company {
+  // The parent company, or nullptr if it has no parent.
+  Company *parent;
 
-An IF statement acts as a conditional GOTO statement.  It performs a comparison, and jumps to the specified line number if the comparison is true.
+  // The subcompanies that were merged to obtain this company.
+  // nullptr if this is a 1-student company.
+  Company *merge1, *merge2;
 
-```
-1 LET CHEWBACCA 3
-2 LET VADER 6
-3 IF CHEWBACCA < 4 THEN 5
-4 PRINT CHEWBACCA
-5 PRINT VADER
-6 .
-```
+  Company()
+    : parent(nullptr)
+    , merge1(nullptr)
+    , merge2(nullptr)
+  {}
 
-This will print out only 6, since line 4 is skipped over.  A comparison can use any of the following operators: `<`, `<=`, `>`, `>=`, `=` (equal to), or `<>` (not equal to).
-
-An IF will always be followed by exactly five strings.  The first is the name of the variable, the second is the operator, the third is an integer, the fourth is the word THEN, and the fifth is the line number.
-
-As with GOTO statements, your program should terminate with the error message "Illegal jump instruction" if it tries to jump outside the boundaries of the program.
-
-#### Subroutines
-
-There are no functions, but a simpler mechanism called a subroutine, which is called with a GOSUB statement.  A GOSUB is just like a GOTO, except that it allows you to use the RETURN statement to return to where you jumped from.
-
-```
-1 LET ANAKIN 1
-2 GOSUB 6
-3 PRINT ANAKIN
-4 PRINT PADME
-5 END
-6 LET ANAKIN 2
-7 LET PADME 3
-8 RETURN
-9 .
+  Company(Company *m1, Company *m2)
+    : parent(nullptr)
+    , merge1(m1)
+    , merge2(m2)
+  {}
+};
 ```
 
-In the above program, ANAKIN will get set to 1, then the program will jump to line 6, overwriting ANAKIN with 2, setting PADME to 3, and then returning to the point it jumped from.  It will then output ANAKIN, then PADME, then terminate.
+Your task is to implement the following data structure:
 
-```
-2
-3
-```
+```c++
+class CompanyTracker {
+public:
+  // initializes the tracker with n students and their 1-person companies
+  CompanyTracker(int n);
 
-A RETURN statement returns from the *most recent* GOSUB statement.  As an example:
+  // deallocates all dynamically allocated memory
+  ~CompanyTracker();
 
-```
-1 LET KYLO 1
-2 GOSUB 7
-3 PRINT KYLO
-4 END
-5 LET KYLO 3
-6 RETURN
-7 PRINT KYLO
-8 LET KYLO 2
-9 GOSUB 5
-10 PRINT KYLO
-11 RETURN
-12 .
-```
+  /** Merges the largest companies containing students i and j.
+   * 
+   * Generates a new Company object which will become the parent company of
+   * the largest companies currently containing students i and j. If i and j
+   * already belong to the same company (or are the same), merge doesn't do
+   * anything. If either i or j are out of range, merge doesn't do anything.
+   */
+  void merge(int i, int j);
 
-The above program will set KYLO to 1, jump to line 7, print KYLO, overwrite KYLO with 2, jump to line 5, overwrite KYLO with 3, return from the most recent GOSUB statement by jumping back to line 10, printing KYLO, then returning from the first GOSUB statement by jumping to line 3, printing KYLO, and terminating.
+  /** Splits the largest company that student i belongs to.
+   *
+   * Deletes that Company object, and makes sure that the two subcompanies
+   * have no parent afterwards. If i's largest company is a 1-person company,
+   * split doesn't do anything. If i is out of range, split doesn't do
+   * anything.
+   */
+  void split(int i);
+  
+  /** Returns whether students i and j are currently in the same company.
+   *
+   * Returns true if i == j. Returns false if i or j (or both) is out of range.
+   */
+  bool inSameCompany(int i, int j);
+     
+private:
+  // The number of companies you are tracking
+  int numCompanies;
 
-```
-1
-3
-3
-```
-
-#### Whitespace
-
-There will be no blank lines in your program, but there may be an arbitrary amount of whitespace placed between tokens.  The following program would be valid:
-
-``` 
- 1   LET    Z  5
- 2 GOTO   7
-3 LET WEDGE   4
- 4 PRINT WEDGE
-5 PRINT         Z
- 6  END
-7 PRINT WEDGE
-    8     PRINT  Z
-    9 GOTO      3
-  10 .
-```
-
-#### Reference chart
-
-Here is a list of all the statements you will need to support.  Syntax is exactly as written (you won't get lower-case 'let' in a valid program).
-
-```
-LET *var* *int*  | Change the value of variable *var* to the integer *int*
---------------------------------------------------------------------------------------------------------
-PRINT *var*      | Print the value of variable *var* to output
---------------------------------------------------------------------------------------------------------
-PRINTALL         | Prints the value of all used variables to output, one per line.
---------------------------------------------------------------------------------------------------------
-ADD *var* *p*    | Adds *p* to the value of the variable *var*, where *p* is an int or variable.
---------------------------------------------------------------------------------------------------------
-SUB *var* *p*    | Subtracts *p* from  the value of the variable *var*, where *p* is an int or variable.
---------------------------------------------------------------------------------------------------------
-MULT *var* *p*   | Multiplies the value of the variable *var* by the integer or variable *p*
---------------------------------------------------------------------------------------------------------
-DIV *var* *p*    | Divides the value of the variable *var* by the integer or variable *p*
---------------------------------------------------------------------------------------------------------
-GOTO *linenum*   | Jumps execution of the program to the line numbered *linenum*
---------------------------------------------------------------------------------------------------------
-IF *var* *op*    | Compares the value of the variable *var* to the integer *int*
-*int* THEN       | via the operator *op* (<, <=, >, >=, =, <>), and jumps
-*linenum*        | execution of the program to line *linenum* if true.
---------------------------------------------------------------------------------------------------------
-GOSUB *linenum*  | Temporarily jumps to line *linenum*, and jumps back after a RETURN
---------------------------------------------------------------------------------------------------------
-RETURN           | Jumps execution of the program back to the most recently executed GOSUB.
---------------------------------------------------------------------------------------------------------
-END              | Immediately terminates the program.
---------------------------------------------------------------------------------------------------------
-.                | Placed at the end of the program, and behaves like an END statement.
+  /** An array of pointers to all the 1-person companies.
+   *
+   * Allocated in the constructor. Will not contain the merged companies.
+   */
+  Company** companies; 
+  
+  /** Feel free to add private helper functions as you see fit.
+   *
+   * In particular, you may want a function to find the largest company
+   * that a student i is part of.
+   */
+};
 ```
 
-### Your Task (90%)
+The signature above is given to you as a file `company.h` in the `resources/hw1` repo.
+You can update/pull the `resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo.
+There, we also give you a bit of skeleton code that you are welcome to use to simplify your life a little bit.
+You may add private helper functions to `CompanyTracker`, but you cannot change the signatures of any of the functions we gave you---otherwise, we cannot test your solution, and that would be bad for your score.
+Each of your functions should run in no worse than O(n) time.
 
-##### Step 1 (Familiarize yourself with the STL Stack)
+You may not use any containers from the STL in this problem, other than the vector (if you so choose).
 
-You will need to use a Stack to handle GOSUB and RETURN statements.  Whenever you reach a GOSUB statement, you should push the line number you want to return to onto your stack.  When you reach a RETURN statement, you should pop the line number from your stack and jump to that line.  If you hit a RETURN statement and nothing is on your stack, the program should terminate as if it hit an END statement.
+1. After completing the functions above, you should write a separate program name, `company_test.cpp`, to test your implementation. 
+   Please note that these tests **will** be graded (and hence you should not copy or share them with your classmates).
+   You should allocate one of your `CompanyTracker` and some `Company` items and make calls to `merge`, `split`, and `inSameCompany` that will exercise the various cases you've coded in the functions.
+   For example, if you have a case in `split` for when there is only a 1-person company and a separate case for when it has several merged companies, then you should make calls to `split`  that execute both of those cases. 
+   It is important that when you write code, you test it thoroughly, ensuring each line of code in the `CompanyTracker` class is triggered at some point.
+   You need to think about how you can test whether it worked or failed as well. 
+   In this case, calls to `inSameCompany` can help give you visibility as to whether your code worked or failed. 
 
-If you really want to, you can write your own Stack, but it is easier to use the Stack provided by the STL.
+2. Ensure your solution does not access memory incorrectly or leak memory.
+   **Use `valgrind` to verify correct memory handling and cleanup.**
 
-##### Step 2 (Add a Map to the Program State)
+3. Ensure you do not change the filenames of the skeleton we give you and that your test file is named `company_test.cpp` and submit it with your other files.
+   Do **NOT** place a `main` function in the class file: `CompanyTracker.cpp` (it should be in your test file: `company_test.cpp`).
+   Your test code will be graded based on the quality and thoroughness of your tests.
+   Obviously, your own `CompanyTracker` class should pass your own tests.
 
-You will need to keep track of what are the values of each variable at all points in time.  You will need to use the STL Map for this purpose.  You will want to specifically use a `map<string, int>` so that you can pass in a variable name and quickly get out its value.  
+4. To compile a program of multiple files you must list **ALL** the `.cpp` files in the `g++` command line AND **NEVER** compile a `.h` file on the `g++` command line.
+   Thus, your compilation command would look like: 
 
-To implement the PRINTALL statement, we require you to use the map iterator so as to produce consistent output for our tests.  Note that this will display your variables in alphabetical order rather than the order they are added to the map.
+    ```bash
+    g++ -g -Wall company.cpp company_test.cpp
+    ```
 
-##### Step 3 (Implement the LET statement)
+In summary:
 
-You will probably want to start by thinking about how to implement the `LetStatement::execute` function.  You will need to use your `ProgramState` map to accomplish this, and you will likely want to add some functions to your `ProgramState` class.
+- [ ] Implement the methods declared by the included header in `company.cpp`.
+- [ ] Write a `company_test.cpp` with test cases for your implementation.
+- [ ] Use Valgrind to make sure your tests do not cause your implementation to leak memory.
+- [ ] Check your files are all named correctly. 
 
-Next you will want to review how the LET statement is parsed in the `parseLine` function.  You will need to implement this functionality for the other types of statements.
+## Chocolate Problem: Tic Tac Toe
 
-##### Step 4 (Implement the interpretProgram function)
+We will from time to time assign "Chocolate Problems" on homeworks.
+These are entirely optional: solving them will not in any way affect your grade in this class.
+The reward is literally chocolate: if your solution is correct (or close enough), you will get the number of chocolate bars listed with the problem.
+If you have preferences/allergies, feel free to specify those with your submission.
+You can solve chocolate problems in teams, and will then share the chocolate as a team.
+The number of chocolate bars is a rough estimate of how difficult or time-consuming we think the problem is, but keep in mind that even a "1 chocolate bar" problem is more challenging than most standard homework problems.
+If you solved a chocolate problem, do not submit it via GitHub---instead, just send all necessary files as an email attachment to Aaron Cote.
+Similarly, if you want to discuss ideas or get hints on chocolate problems, don't ask the course producers and TAs (they have enough to do helping your classmates with regular homework); instead, ask Aaron directly in person or on Piazza.
+Homework deadlines do not explicitly apply to chocolate problems, but please do not submit more than a couple days after the actual HW deadline.
 
-The `interpretProgram` function should execute each line in the program in the correct order of execution.  You will want to place this inside a loop which breaks when the program is supposed to terminate.
+Use recursion to write a program playing **perfect** Tic Tac Toe.
+Feel free to design any reasonable user interface (input and output).
+Your program should never lose, and win whenever given a chance.
 
-##### Step 5 (Implement the END statement)
+Note: contrary to the [famous clip from the movie War Games](http://www.youtube.com/watch?v=F7qOV8xonfY), even if you let your program play itself, it will not learn that sometimes in life, one has to lose.
 
-Follow the template above to implement the next statement.
+## Note for Graders
 
-##### Step 6 (Test your code)
+Additional hints for students are available [here](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+Please remove prior to publishing.
 
-Make some small programs using only LET statements and END statements to test the code you have written so far.
 
-##### Step 7 (Implement the rest of the Interpreter)
+## Submitting
 
-Its your choice where to go from here, but we strongly recommend that you implement one statement-type at a time and thoroughly test it before moving on to the next statement.
+Once you've finished, check that all the code you're submitting is consistently formatted.
+The `README.md` in your homework repository provides instructions for using `clang-format` to do so automatically.
+You can then submit your code on the [Curricula submission page]({{ site.baseurl }}/submit/course/{{ site.data.course.short }}/hw1).
+Be sure to carefully read and follow the instructions there.
 
-### Chocolate Problem (2 Chocolate Bars)
-
-A more limited "Programming Language" than C++, Java, etc., can be obtained using just a single Stack for all data storage. This "computer" has a finite set of "states" (numbered from 0 to S). It starts in state 0, and at any given time, it's in one of those states. It reads a string one character at a time. In addition, it is allowed to push characters on the stack, pop characters off the stack, and read the top element of the stack. In each step, based on the state, the current character, and the character on top of the stack, it decides (1) whether to pop a character off the stack or not, (2) whether to push a character onto the stack or not (and if so, which one), and (3) which new state to enter. Two of the states (let's say S-1 and S) are special, in that when you reach S-1, you output "Yes", and when you reach S, you output "No". (Otherwise, nothing is ever output.)
-
-Here would be an example program:
-
-```
-(0, 'a', 'b') -> (-, 'c', 2)
-(1, 'b', 'b') -> (+, 'a', 1)
-(1, 'b', -) -> (-, 'b', 3) 
-```
-
-The first line says that if the computer is in state 0, reads an 'a' from input, and sees a 'b' on top of the stack, then it should not pop from the stack, push a 'c' onto the stack, and enter state 2.
-The second line says that if the computer is in state 1, reads a 'b' from input and also sees a 'b' on top of the stack, it should pop from the stack, then push an 'a' onto the stack, and reenter state 1.
-The final line says that if the computer is in state 1, reads a 'b' from input, and the stack is empty, then it should not pop from the stack (good idea!), push a 'b' on the stack, and enter state 3.
-This type of computer is not as powerful as, say, a C++ compiler. But it can do some interesting things.
-
-1. Write a simulator for this type of program. Feel free to alter the format from the one given above, so long as what you design is readable and your program can parse it. You should output what happens to your program on a given input string when the computer starts in state 0.
-2. As a warmup, write a program in this language that will output "Yes" exactly when the string is correctly parenthesized (see early recursive class definitions). So the only legal characters will be '(', '[', ')', ']', and you need to check that all parentheses match.
-3. Write a program in this language that will output "Yes" exactly when the input string is a correct arithmetic expression. The legal symbols are variable names made up only of the letters 'a'-'z' (let's say only lowercase), digits '0'-'9' forming integer numbers, and the symbols '+', '-', '*', '/', '(', and ')'. No other symbols will occur. 
-
-As some examples, your program should output "Yes" for the following:
-
-```
-(hello+world+531)*(the-answer-is+42)
-(a*(b+(c*(d+(e*f)))))
-a/b/c/d/e
-```
-
-and "No" for
-
-```
-(hello2+world1)
-)a+b(
-(a+(b+c)
-```
-
-### Finishing Up
-
-### Completion Checklist
-
-+ Directory name for this homework (case sensitive): `hw2`
-  - This directory should be in your `hw-username` repository
-  - This directory needs its own `README.md` file briefly describing your work
-  - `Interpreter.cpp`, `LetStatement.cpp`, `LetStatement.h`, `PrintStatement.cpp`, `PrintStatement.h`, `ProgramState.h`, `Statement.h`
-  - Any files you created
-  - Your `Makefile`
-
-The submission link will be posted on Piazza a few days before the due date.
+- [ ] Format your code using `clang-format`.
+- [ ] Submit your code.

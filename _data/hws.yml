@@ -1,0 +1,155 @@
+hw1:
+  written_parts:
+    - writeup: policies.md
+      number: 1
+      title: Course Policies
+      points: 12
+    - writeup: git-1.md
+      number: 2
+      title: Git
+      points: 6
+    - writeup: runtime-1b.md
+      number: 3
+      title: Runtime Analysis
+      points: 25
+    - writeup: ll-rec-tracing-1.md
+      number: 4
+      title: Linked List Recursion Tracing
+      points: 13
+    - writeup: constructors.md
+      number: 5
+      title: NOT GRADED (PRACTICE ONLY) - Constructors and Destructors
+      points: 0
+  programming_parts:
+    - writeup: labellist.md
+      number: 6
+      title: LabelList (Classes, Pointers, LinkedLists)
+      points: 50
+
+hw2:
+  written_parts:
+    - writeup: git-2.md
+      number: 1
+      title: More git Questions
+      points: 6
+    - writeup: make.md
+      number: 2
+      title: Makefiles
+      points: 8
+    - writeup: adt.md
+      number: 3
+      title: ADTs
+      points: 6
+    - writeup: class-design.md
+      number: 4
+      title: Class Structures and OO Design
+      points: 10
+  programming_parts:
+    - writeup: websearch-1.md
+      number: 5
+      title: Websearch (Inheritance, Polymorphism, Sets, Maps)
+      points: 70
+
+hw3:
+  written_parts:
+    - writeup: heap-trace-1.md
+      number: 1
+      title: Heap Tracing
+      points: 8
+    - writeup: astar-tracing.md
+      number: 2
+      title: A* Algorithm Tracing
+      points: 7
+  programming_parts:
+    - writeup: ll-recursion.md
+      number: 3
+      title: Linked List Recursion Coding
+      points: 20
+    - writeup: llstack.md
+      number: 4
+      title: Templated Stack Class
+      points: 10
+    - writeup: stack-laundry.md
+      number: 5
+      title: Dirty Laundry
+      points: 10
+    - writeup: functor-background.md
+      number: 6
+      title: Comparator Functor Background
+      points: 0
+    - writeup: heaps.md
+      number: 7
+      title: m-ary Heaps
+      points: 25
+    - writeup: huffman.md
+      number: 8
+      title: Huffman Codes
+      points: 20
+
+hw4:
+  written_parts:
+    - writeup: avl-tracing-1.md
+      number: 1
+      title: AVL Operations
+      points: 10
+  programming_parts:
+    - writeup: traversal-intrange.md
+      number: 2
+      title: Tree Traversals
+      points: 10
+    - writeup: bst.md
+      number: 3
+      title: BSTs and Iterators
+      points: 35
+    - writeup: bst-avl.md
+      number: 4
+      title: AVL Trees
+      points: 45
+
+hw5:
+  written_parts:
+    - writeup: counting1.md
+      number: 1
+      title: Counting
+      points: 25
+    - writeup: probability1.md
+      number: 2
+      title: Probability
+      points: 25
+  programming_parts:
+    - writeup: gridpaths.md
+      number: 3
+      title: Recursion, Counting, and Combinations
+      points: 20
+    - writeup: satsolver.md
+      number: 4
+      title: Recursion and Backtracking and Boolean Satisfiability
+      points: 30
+
+hw6:
+  written_parts:
+    - writeup: course-evals.md
+      number: 0
+      title: Complete the Course Evalutions
+      points: 0
+    - writeup: number-theory1.md
+      number: 1
+      title: Number Thoery
+      points: 30
+  programming_parts:
+    - writeup: hashtable.md
+      number: 2
+      title: Hash Table with Quadratic Probing and Performance
+      points: 40
+    - writeup: hashtable-analysis.md
+      number: 3
+      title: Hash Table Analysis
+      points: 10
+    - writeup: hash-func-str.md
+      number: 4
+      title: Write Your Own String Hash Function
+      points: 10
+    - writeup: pairless-hash.md
+      number: 5
+      title: Lost Pairs
+      points: 10

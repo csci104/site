@@ -1,0 +1,67 @@
+Continue your answers in `hw2.txt`.
+
+#### Part (a): 
+Every *action* line in a makefile must start with a:
+
+1. TAB
+1. Newline
+1. Capital letter
+1. Space
+1. It doesn't matter, any character can start an action line
+
+#### Part (b):
+Look at the Makefile below and answer the following question. Assume this makefile is in the current directory, and all required files are available.
+
+```
+IDIR =.
+CC=g++
+CFLAGS=-I$(IDIR) -std=c++11 -ggdb
+
+ODIR=.
+LDIR =../lib
+
+LIBS=-lm
+
+_DEPS = shape.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ = shape.o shape1.o shape2.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+$(ODIR)/%.o: %.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+all: shape1 shape2
+
+shape1: shape1.o shape.o
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+shape2: shape2.o shape.o
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
+.PHONY: clean
+
+clean:
+	rm -f $(ODIR)/*.o *~ shape1 shape2 $(IDIR)/*~
+``` 
+
+Now we run the command 
+
+```
+make clean
+make shape1
+```
+
+Which action(s) will get called? What compiler command(s) with what exact parameters will get executed as a result of the action(s)?
+
+#### Part (c):
+What is the purpose of a .PHONY rule?
+
+#### Part (d):
+What are acceptable names for a makefile? Select all that applies.
+
+1. Makefile.txt
+1. Makefile
+1. makefile.sh
+1. makefile
+

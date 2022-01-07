@@ -3,7 +3,7 @@ assignments:
     title: Linked Lists and Recursion
     assigned: true
     regrade_form: 
-    submit_link: 
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2022
     dates:
       assigned: Thursday, January 13
       checkpoint: Friday, January 21 at 11:59PM PST
@@ -12,7 +12,7 @@ assignments:
     title: Inheritance and Polymorphism
     assigned: true
     regrade_form: 
-    submit_link: 
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2022
     dates:
       assigned: Thursday, January 27
       checkpoint: Friday, Februrary 4 at 11:59PM PST
@@ -21,7 +21,7 @@ assignments:
     title: Heaps
     assigned: true
     regrade_form: 
-    submit_link: 
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2022
     dates:
       assigned: Thursday, February 10
       checkpoint: Friday, Februrary 18 at 11:59PM PST
@@ -30,7 +30,7 @@ assignments:
     title: AVL Trees
     assigned: true
     regrade_form: 
-    submit_link: 
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2022
     dates:
       assigned: Thursday, March 3
       checkpoint: Friday, March 11 at 11:59PM PST
@@ -39,7 +39,7 @@ assignments:
     title: Counting, Probability, Recursion
     assigned: true
     regrade_form: 
-    submit_link: 
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2022
     dates:
       assigned: Thursday, March 31
       checkpoint: Friday, April 8 at 11:59PM PST
@@ -48,7 +48,7 @@ assignments:
     title: Hash tables
     assigned: true
     regrade_form: 
-    submit_link: 
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2022
     dates:
       assigned: Thursday, April 14
       checkpoint: Friday, April 22 at 11:59PM PST

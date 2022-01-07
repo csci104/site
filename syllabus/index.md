@@ -151,6 +151,14 @@ Readings from lecture notes and other sources form the base of your learning pyr
 These readings contain theoretical concepts, examples and usable code that will be very helpful for all the work in this course.
 The lecture notes and reference notes for video recordings will be provided and should be reviewed before group work during class meetings.
 
+## Exams
+
+Exams will involve analysis and coding.  Questions require students to demonstrate their mastery over the material. Exams are currently expected to be in person but will likely be given via Gradescope and require you to bring a laptop. More details will be posted at least 1 week before the exam.
+
+## Accommodations
+
+If you have USC approved (OSAS) accommodations, you **MUST** upload your OSAS generated PDF letter for this class to the **[linked form]({{site.data.urls.osas_dsp_form}})**.
+
 ## Statement on Academic Conduct
 
 Below is USC's official language.

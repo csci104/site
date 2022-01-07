@@ -6,6 +6,7 @@ url: "https://bytes.usc.edu" # Protocol and host name
 
 markdown: kramdown
 highlighter: rouge
+
 plugins:
   - jekyll-feed
   - jekyll-toc

@@ -1,5 +1,5 @@
 ---
-layout: asides
+layout: default
 title: Labs
 ---
 

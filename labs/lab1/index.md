@@ -7,7 +7,7 @@ title: Introduction to Git
 
 # Introduction to Git
 
-[Git](http://git-scm.com/) is a distributed source code version control system.
+[Git](http://git-scm.com/) is a distributed source code version control system. 
 When you place your code under version control, you record the changes you make to your files over time and you can recall the history of each of your file changes at will.
 We will be using git extensively this semester in homework assignments.
 

@@ -7,7 +7,7 @@ title: Getting Started
 
 # Getting Started
 
-
+TEST
 
 Before you start out on your 104 journey you're going to have to complete a couple of setup steps.
 Make sure you read each section carefully; if you don't, you may find yourself unable to submit assignments.

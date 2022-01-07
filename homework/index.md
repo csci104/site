@@ -46,8 +46,8 @@ Please read the submission instructions and policies below **carefully**!
       <td>{{ assignment.title }}</td>
       <td>{{ assignment.dates.checkpoint }}</td>
       <td>{{ assignment.dates.due }}</td>
-      <td>{{ assignment.submit_link }}</td>
-      <td>{{ assignment.regrade }}</td>
+      <td><a href="{{ assignment.submit_link }}">Submit</a></td>
+      <td><a href="{{ assignment.regrade }}">Regrade</a></td>
     </tr>
     {% endfor %}
   </tbody>

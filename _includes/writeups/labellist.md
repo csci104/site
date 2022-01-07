@@ -173,11 +173,19 @@ For the `LabelList` class, you will need to implement the following:
   - the `findLabelIndex` helper function to return the index/level of a given label (i.e. what index in the `heads_` and `next_/prev_` vectors corresponds to the specified label). **Note:** `findLabelIndex` returns `INVALID_LABEL` when a message cannot be found while `getLabelIndex` will throw an exception (i.e. `getLabelIndex` should be used when a correspond label **SHOULD** be defined while `findLabelIndex` should be used if a label may appropriately not exist yet)
   - If you find yourself duplicating work or wanting to break a complex task into simpler tasks, consider adding **private** member functions to help.
 
-### Testing
+### Coding and Testing
+
+#### Coding Approach
+
+As mentioned earlier, it would be wise to code and test incrementally and not try to write all the code at once.  A possible approach would be:
+ - Implement just the base necessities of the `MsgNode`, `MsgToken`, and `LabelList` class to **add** and **remove** nodes from the `all` list/label.  Test your code in `labellist-test.cpp` by creating a `Labellist`, adding a few nodes, saving the tokens, and using them to access the message and/or remove the messages.  Use `LabelList::print()` to verify the contents visually.
+ - Add the label method and more tests to use additional labels, again using `LabelList::print()` to verify the contents of each list visually.  Note: `print()` only traverses a list in the forward direction.  If you have any errors setting previous pointers, they may remain hidden.  Consider using the `MsgToken`s to traverse a label list in the backward direction.
+ - Add the unlabel method and test it
+ - Add any remaining functionality.
 
 #### Unit Tests
 
-Within several days of the assignment posting, we will provide suite of unit tests. Information on how to run those tests will either be posted here or on our Q&A site.
+Within several days of the assignment posting, we will provide suite of unit tests that will also be utilized for automated grading. Information on how to run those tests will either be posted here or on our Q&A site.
 
 #### Using Valgrind
 

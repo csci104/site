@@ -2,6 +2,8 @@ assignments:
   - id: hw1
     title: Linked Lists and Recursion
     assigned: true
+    regrade_form: 
+    submit_link: 
     dates:
       assigned: Thursday, January 13
       checkpoint: Friday, January 21 at 11:59PM PST
@@ -9,6 +11,8 @@ assignments:
   - id: hw2
     title: Inheritance and Polymorphism
     assigned: true
+    regrade_form: 
+    submit_link: 
     dates:
       assigned: Thursday, January 27
       checkpoint: Friday, Februrary 4 at 11:59PM PST
@@ -16,6 +20,8 @@ assignments:
   - id: hw3
     title: Heaps
     assigned: true
+    regrade_form: 
+    submit_link: 
     dates:
       assigned: Thursday, February 10
       checkpoint: Friday, Februrary 18 at 11:59PM PST
@@ -23,6 +29,8 @@ assignments:
   - id: hw4
     title: AVL Trees
     assigned: true
+    regrade_form: 
+    submit_link: 
     dates:
       assigned: Thursday, March 3
       checkpoint: Friday, March 11 at 11:59PM PST
@@ -30,6 +38,8 @@ assignments:
   - id: hw5
     title: Counting, Probability, Recursion
     assigned: true
+    regrade_form: 
+    submit_link: 
     dates:
       assigned: Thursday, March 31
       checkpoint: Friday, April 8 at 11:59PM PST
@@ -37,6 +47,8 @@ assignments:
   - id: hw6
     title: Hash tables
     assigned: true
+    regrade_form: 
+    submit_link: 
     dates:
       assigned: Thursday, April 14
       checkpoint: Friday, April 22 at 11:59PM PST

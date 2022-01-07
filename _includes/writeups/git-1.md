@@ -1,6 +1,6 @@
-Carefully review and implement the steps discussed in [Lab1]({{site.url}}/labs/lab01.html). Then, answer the following questions:
+Carefully review and implement the steps discussed in [Lab1]({{site.url}}/labs/lab1/). Then, answer the following questions:
 
-**Continue your answers to this question in the file name `hw1.txt`**
+**Continue your answers to this question in the file name `hw1.txt` in your `hw-username/{{page.hwpath}}` folder.**
 
 #### Part (a): 
 When cloning a Git repo, which of the following should you avoid:

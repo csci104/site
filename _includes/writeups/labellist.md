@@ -2,9 +2,9 @@
 
 ### How To Approach This Assignment
 
-We use this homework not just as a coding exercise but to teach aspects of C++, object-oriented design, and rationale for certain data structure choices.  Several of these aspects are discussed in the Motivation and Background Information sections.  Links to other examples or reference material are often provided. Take time to consider these, read more on your own, and ask questions. We recommend you read through the entire assignment once or twice before even considering code (though you can look at the skeleton files, especially the header file for reference).  
+We use this homework not just as a coding exercise but to teach aspects of C++, object-oriented design, and rationale for certain data structure choices.  Several of these aspects are discussed in the Motivation and Background Information sections.  Links to other examples or reference material are often provided. Take time to consider these, read more on your own, and ask questions. We recommend you read through the entire assignment once or twice before even considering writing code (though you can look at the skeleton files, especially the header file for reference).  
 
-**** Layout an approach to incremental implementation and testing.
+In addition, we suggest you an **incremental** coding/test approach. Avoid the temptation to write the all the code at once. Instead, write one portion (feature), compile, and test it before moving on to the next.  In this way, dealing with compile and debugging errors becomes MUCH more manageable and by committing/pushing your code you can have snapshots of working features.
 
 ### Introduction
 
@@ -12,17 +12,25 @@ This exercise will build your linked list skills and confidence and ability in u
 
 <img src="{{site.baseurl}}/homework/img/labellist.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
-New messages are always added to the end of the `all` list. Once added, they can be labelled or unlabelled, as desired.  Messages can also be deleted (removed) permanently.  New labels need not be created explicitly by the user, but the first time a label is applied to a message, a new list for that label should be created and the message will added to that new list.  For example, suppose a new label `fam` (short for `family`) is applied to message 1.  `fam` should be added to the list of labels and a new head pointer should be added to the `heads_` list.  The index (i.e. `4` in the diagram below) of this new label and head pointer should now be used as the index of the **next** and **prev** pointer for this label in each member message's `next_` and `prev_` lists.  This will require resizing those vectors in the message node. (Note that only member messages need to have their next/previous vectors resized, while  messages that are not a member of the new label need not be modified).
+*Note: the `1` or `0` in the message nodes is a Boolean indicate membership in a given label's list.*
+
+New messages are always added to the end of the `all` list. Once added, they can be labelled or unlabelled, as desired.  Messages can also be deleted (removed) permanently.  New labels need not be created explicitly by the user, but the first time a label is applied to a message, a new list for that label should be created and the message will added to that new list.  For example, suppose a new label `fam` (short for `family`) is applied to message 1.  `fam` should be added to the list of labels and a new head pointer should be added to the `heads_` list.  The index (i.e. `4` in the diagram below) of this new label and head pointer should now be used as the index of the **next** and **prev** pointer for this label in each member message's `next_` and `prev_` lists.  This will require resizing those vectors (of next and prev pointers) in the message node. (Note that only member messages need to have their next/previous vectors resized, while  messages that are not a member of the new label need not be modified).
+
+*Effects of adding the label `fam` to message 1:*
 
 <img src="{{site.baseurl}}/homework/img/labellist-label.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 When a message is unlabeled, it is simply removed from the corresponding list.  
 
+*Effects of unlabeling `usc` from message 0:*
+
 <img src="{{site.baseurl}}/homework/img/labellist-unlabel.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 Removing a message should delete the entire message node, first unlinking it from all lists of which it is a member.
+
+*Effects of removing message 0:*
 
 <img src="{{site.baseurl}}/homework/img/labellist-remove.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 

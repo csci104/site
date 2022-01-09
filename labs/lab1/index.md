@@ -16,39 +16,79 @@ In this course, we will be using GitHub to host our git repositories and we will
 
 **If you have not done [Lab 0]({{ site.baseurl }}/labs/lab0) to set up your GitHub account or install Docker or a VM, please do so now.**
 
-**Important**: in order to complete this lab, make sure you are using the correct terminal.
-If you are using Docker to compile and test, you should **not** be using the `manage shell` to run `git` commands.
-Instead, you should be using the native you open on your operating system (Terminal on macOS, git bash or CMD on Windows).
+## Important: Using the correct terminal
 
-If you are using the VM, you should use the Terminal inside the VM.
+In order to complete this lab, make sure you are using the correct terminal to run commands:
 
+* If you are running the course VM (through Virtual Box), then **all commands** from this lab shall be ran from
+  the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
+  Alternatively, you could open it by searching for "terminal" in the quick launcher:
+
+<div style="text-align:center;"> <img src="assets/vm-terminal.png" width="50%" /> </div>
+
+* If you are running Docker, then there are two types of terminals you are going to interact with:
+  - The **native terminal** refers to the terminal provided by your native OS, not docker. On Windows, type
+    `Win + R` and then `powershell` to start it. On Mac, open you app launcher and search for "terminal".
+  - The **docker terminal** refers to the terminal you obtain by typing the following in your **native terminal**:
+
+```shell
+ch start csci104
+ch shell csci104
+```
+
+From now on, every sequence of command we show you would be annotated with either *`[native]`* or *`[docker]`*. This denotes the
+terminal you should be running the command from if you are using Docker. (If you are using the VM, then always use the VM terminal).
+
+Examples:
+
+*`[native]`*
+```shell
+notepad.exe cat.txt
+```
+
+The above command shall be ran from your **native terminal**.
+
+*`[docker]`*
+```shell
+vim cat.txt
+```
+
+The above command shall be ran from your **Docker terminal**.
 
 ## Cloning the `resource` and `hw-username` repositories
 
-### Changing the working directory
+### The Concept of the *working directory*
 
-Open your **native terminal**:
+Every open terminal has a *working directory*. When you run a command inside that terminal,
+the command would interpret paths and filenames to be relative to that working directory, for example:
 
-* If you are using the Course VM, press `Ctrl+Alt+T` inside the VM.
-* On Windows, press `Win + R` and then enter `powershell`.
-* On Mac, press `Command + Space` and then search for terminal.
+```
+mkdir sub
+```
 
-Once you have opened up your terminal, you need to change the terminal's [**working directory**](https://en.wikipedia.org/wiki/Working_directory) to the working directory you [assigned to Docker during setup](https://github.com/csci104/docker#step-5-set-your-working-directory).
+creates the subdirectory named `sub` under the current *working directory*. If the *working directory* is `/usr/root/parent`, then this will
+create the directory `/usr/root/parent/sub`.
+
+### Step 1. Changing working directory to Docker's assigned `/work` directory
+
+First open your **native terminal**. Then, change the working directory to the
+directory you [assigned to Docker during setup](https://github.com/csci104/docker#step-5-set-your-working-directory).
 
 If you are working on the course VM, you may use any directory you like on the VM (e.g. `~/csci104`).
 
-In my case, it is `C:\Users\rin\Documents\csci104\home` (yours might be different, depending on how you configured your docker), therefore I type:
+The command for changing the working directory is `cd` (which stands for "**c**hange **d**irectory"). In my case, the path to change to is:
+`C:\Users\rin\Documents\csci104\home` (yours might be different, depending on how you configured your docker), therefore I just type:
 
+*`[native]`*
 ```shell
 cd C:\Users\rin\Documents\csci104\home
 ```
 
-where `cd` stands for "**c**hange **d**irectory".
-
-**Note: You need double quotes around the path if your path contains space, e.g. `cd "C:\My Documents\Home"`**
+**Note: You will need double quotes around the path if your path contains space, e.g. `cd "C:\My Documents\Home"`**
 
 If you have forgotten which path you have assigned to Docker, you could check it by typing:
 
+*`[native]`*
 ```shell
 ch list
 ```
@@ -66,12 +106,14 @@ Name:   csci104
 
 The path after `Volume: ` (excluding `:/work`) is what you are looking for.
 
-### Performing the clone
+### Step 2. Obtaining clones of the `hw-username` and `resources` repositories
 
 This step assumes that you have already finished the git, GitHub, and SSH key setup from Lab 0.
 
-Once you are inside the correct working directory, type the following commands (**replace the `username` in `hw-username` with your actual USC Net Id**):
+Once you are inside the correct working directory, type the following commands (**replace the `username` in `hw-username` with your actual USC Net Id, the same goes for everything that follows**):
 
+
+*`[native]`*
 ```shell
 git clone git@github.com:usc-csci104-spring2022/hw-username.git
 git clone git@github.com:usc-csci104-spring2022/resources.git
@@ -100,35 +142,52 @@ Checking connectivity... done.
 
 We have provided an `example` project to test whether you have the correct environment setup to compile our homeworks. Make sure you follow the steps below and the output on your terminal matches the ones on this page.
 
-### Copy the `example` dirctory to your `hw-username` directory
+### Step 3. Copy the `example` dirctory to your `hw-username` directory
 
-For every assignment from this class, we would provide the skeleton code of the assignment inside the `resources` repository. When you start doing your assignment, you have to copy the skeleton code to your `hw-username` directory and do your work there. The `resources` repository is read-only and you would not be able to push to it.
+For every assignment from this class, we would provide the it's skeleton code inside the `resources` repository, and you need to copy it into your
+`hw-username` directory when you start the assignment. You should then do all of your work in your `hw-username` repo instead of the 
+`resources` repo.
 
-If you are using Docker, type the following commands in your native terminal:
+The `example` project is also provided in the `resources` repo. To copy it, first start the **docker terminal** if you are using Docker:
 
+*`[native]`*
 ```
 ch start csci104
 ch shell csci104
 ```
 
-To copy the directory, first make sure you are in the correct working directory (where you put the `hw-username` and `resources` repo clones), then type:
+Then, make sure your working directory is where you put the `hw-username` and `resources` clones. You could check this by typing:
 
+*`[docker]`*
+```
+ls
+```
+
+and you should see `hw-username` and `resources` in the output.
+
+If not, you have to use `cd` to change to the correct working directory.
+
+To copy the directory, type:
+
+*`[docker]`*
 ```
 cp -r resources/example hw-username/example
 ```
 
-where `cp` stands for "copy" and the `-r` standard for "recursive" which allows the command to copy directories.
+where `cp` stands for "copy" and the `-r` standard for "recursive" which allows copying of directories.
 
-### Building the example project
+### Step 4. Building the example project
 
 Now, go into your `hw-username/example` directory by typing:
 
+*`[docker]`*
 ```
 cd hw-username/example
 ```
 
 Then, run the following command:
 
+*`[docker]`*
 ```
 make run
 ```
@@ -169,7 +228,7 @@ make: *** [Makefile:8: run] Error 1
 You **don't** have to worry about the red `[FAILED]` message as long as it shows up (it is intentional), 
 but in case it does not show up, please ask for help from your lab instructor.
 
-### Fixing the FAILED test case
+### Step 5. Fixing the FAILED test case
 
 What you have just seen above is an example of an automated test. We run automated tests to grade your
 assignments, and you will learn more about them in later labs. For now, you could just think of them
@@ -193,13 +252,14 @@ which points to exactly the same issue.
 
 Therefore, change the return value to `37` and run `make run` again. This time every test should pass.
 
-### Committing and pushing to your homework repository
+### Step 6. Committing and pushing to your homework repository
 
 Now that you have finished the work locally, you would also want to push the changes to GitHub.
 
 To do so, open your **native** terminal (or the VM terminal is you are using the course VM) and change
 the working directory to `hw-username`. Then type
 
+*`[native]`*
 ```
 git status
 ```
@@ -218,12 +278,12 @@ which means that nothing from your `example` directory is tracked by git.
 
 To track those files run the following command:
 
+*`[native]`*
 ```
 git add .
 ```
 
-This command tells git to track all modification you have done to the repo (adding a new file, modifying a file, deleting a file, renaming a file, etc.). You could also specify
-individual files to track by providing their name instead of `.` (e.g. `git add library.cpp`).
+This command tells git to track all modification you have done to the repo (adding a new file, modifying a file, deleting a file, renaming a file, etc.). You could also specify individual files to track by providing their name instead of `.` (e.g. `git add library.cpp`).
 
 Now, if you check `git status`, you would see:
 
@@ -247,6 +307,7 @@ Changes to be committed:
 
 All the changes are now ready to be *committed*. You could now run the following command:
 
+*`[native]`*
 ```
 git commit -m "fixed the example"
 ```
@@ -269,6 +330,7 @@ nothing to commit, working directory clean
 This tells that your local repo has one commit that the remote does not have. To
 upload the commit, simply type:
 
+*`[native]`*
 ```
 git push
 ```
@@ -277,7 +339,7 @@ Now, if you everything runs successfully, the changes you have made would be syn
 the repo page on GitHub (it should be at https://github.com/usc-csci104-spring2022/hw-username, with `username`
 replaced with your actual Net ID), and navigate to `example`, you should see the following files:
 
-<img src="assets/github-example-first-commit.png" width="80%">
+<div style="text-align:center;"><img src="assets/github-example-first-commit.png" width="80%"></div>
 
 If you read the `library.cpp` file, you should be able to see the code you have just modified.
 
@@ -286,7 +348,7 @@ named `libary.o` and `test`. Those are the binary files created by the `make run
 the project. As a good practice you should never push anything generated by a build process. We would deduct
 points if you submitted your assignment with those files (unless otherwise specified).
 
-### Removing the extra files from your repo
+### Step 7. Removing the extra files from your repo
 
 To tell git to remove those files from the repo, first go back to your native terminal and change directory
 to `hw-username/example`. Then type the following:
@@ -297,7 +359,7 @@ git rm libary.o test
 
 This will remove the two files from the directory and ask git to track the removal.
 
-### Prevent accidentally adding files with .gitignore
+### Step 8. Prevent accidentally adding files with .gitignore
 
 The `git rm` command only solves the problem temporarily. What if in the future you run `make run` again and
 generated the files again? It would be an annoyance to run `git rm` every time you push.
@@ -329,6 +391,7 @@ for each of your assignment.
 
 Now, if you type 
 
+*`[native]`*
 ```
 git add .
 git status
@@ -348,6 +411,7 @@ Changes to be committed:
 
 You could then commit and push the changes to GitHub:
 
+*`[native]`*
 ```
 git commit -m "removed extra files and added .gitignore"
 git push
@@ -367,24 +431,25 @@ for a new assignment and you would like to download it.
 This won't happen until assignment 1 of course, so let's do this to your `hw-username`
 repo instead.
 
-### Modifying a file on GitHub
+### Step 9. Modifying a file on GitHub
 
 First navigate to the `example/README.md` file in your `hw-username` GitHub repo page, and
 click the pencil icon (see the image below):
 
-<img src="assets/github-edit-pencil.png" width="80%" />
+<div style="text-align:center;"><img src="assets/github-edit-pencil.png" width="80%" /></div>
 
 Then make an edit to the markdown file (any edit will do), and click `Commit Changes`:
 
-<img src="assets/github-edit-submit.png" width="80%" />
+<div style="text-align:center;"><img src="assets/github-edit-submit.png" width="80%" /></div>
 
 **Note in general we do not recommend modifying files directly on GitHub, it is used
 here just for demonstration purposes**
 
-### Pulling the change
+### Step 10. Pulling the change
 
 Now change your directory into `hw-username` in your local terminal, and then type:
 
+*`[native]`*
 ```
 git pull
 ```

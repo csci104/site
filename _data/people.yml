@@ -26,24 +26,19 @@ assistants:
     location: Zoom
 
 staff:
-  - name: Annika Oeth
-    email: aoeth@usc.edu
-    image: /assets/img/staff/annikaoeth.jpeg
-    hours: >-
-      See Google Calendar
   - name: Carolyn Luo
     email: xluo0963@usc.edu
     image: /assets/img/staff/carolyn.JPG
     hours: >-
-     See Google Calendar
+      See Google Calendar
   - name: Crystal Wu
     email: wucrysta@usc.edu
     image: /assets/img/staff/crystal.jpg
     hours: >-
       See Google Calendar
-  - name: Daniel Wang
-    email: jinghao@usc.edu
-    image: /assets/img/staff/daniel.jpg
+  - name: Elliott Kau
+    email: kaue@usc.edu
+    image: /assets/img/staff/elliott.jpg
     hours: >-
       See Google Calendar
   - name: Iman Arfa-Zanganeh
@@ -51,11 +46,16 @@ staff:
     image: /assets/img/staff/iman.jpeg
     hours: >-
       See Google Calendar
+  - name: Jordan Cahoon
+    email: jcahoon@usc.edu
+    image: /assets/img/staff/jordan.jpg
+    hours: >-
+      See Google Calendar
   - name: Leo Zhuang
     email: llzhuang@usc.edu
     image: /assets/img/staff/leo.JPG
     hours: >-
-     See Google Calendar
+      See Google Calendar
   - name: LongHuy Nguyen
     email: longhuyn@usc.edu
     image: /assets/img/staff/longhuy.jpg
@@ -70,30 +70,40 @@ staff:
     email: mtleslie@usc.edu
     image: /assets/img/staff/matt.jpg
     hours: >-
-     See Google Calendar
-  - name: Michelle Wong
-    email: wong935@usc.edu
-    image: /assets/img/staff/michelle.jpg
+      See Google Calendar
+  - name: Mellissa Zhang
+    email: mellissa@usc.edu
+    image: /assets/img/staff/mellissa.jpg
     hours: >-
-     See Google Calendar
+      See Google Calendar
   - name: Mila Mathias
     email: memathia@usc.edu
     image: /assets/img/staff/mila.jpg
     hours: >-
-     See Google Calendar
+      See Google Calendar
   - name: Monil Sorathia
     email: msorathi@usc.edu
     image: /assets/img/staff/monil.jpeg
     hours: >-
-     See Google Calendar
-  - name: Netanel Sadeghi
-    email: nnsadegh@usc.edu
-    image: /assets/img/staff/netanel.jpg
+      See Google Calendar
+  - name: Nirav Adunuthula
+    email: adunuthu@usc.edu
+    image: /assets/img/staff/nirav.jpg
     hours: >-
       See Google Calendar
   - name: Noah Kim
     email: noahbkim@usc.edu
     image: /assets/img/staff/noahkim.jpeg
+    hours: >-
+      See Google Calendar
+  - name: Olivia Du
+    email: odu@usc.edu
+    image: /assets/img/staff/olivia.jpg
+    hours: >-
+      See Google Calendar
+  - name: Raymond Liu
+    email: liuraymo@usc.edu
+    image: /assets/img/staff/raymond.jpg
     hours: >-
       See Google Calendar
   - name: Shuning Zhang
@@ -111,9 +121,14 @@ staff:
     image: /assets/img/staff/spencer.jpg
     hours: >-
       See Google Calendar
-  - name: Steven Yuan
-    email: syuan697@usc.edu
-    image: /assets/img/staff/steven.jpg
+  - name: Stephanie Yoshimoto
+    email: syoshimo@usc.edu
+    image: /assets/img/staff/stephanie.jpg
+    hours: >-
+      See Google Calendar
+  - name: Toan Huynh
+    email: toanh@usc.edu
+    image: /assets/img/staff/toan.jpg
     hours: >-
       See Google Calendar
   - name: Tommy Shao
@@ -126,12 +141,12 @@ staff:
     image: /assets/img/staff/trevor.png
     hours: >-
       See Google Calendar
-  - name: Wooju Yim
-    email: woojuyim@usc.edu
-    image: /assets/img/staff/wooju.jpg
+  - name: William Chang
+    email: wfchang@usc.edu
+    image: /assets/img/staff/william.jpg
     hours: >-
       See Google Calendar
-  - name: Billy Wang
+  - name: Yunrui Billy Wang
     email: yunruiwa@usc.edu
     image: /assets/img/staff/yunrui.jpg
     hours: >-
@@ -139,6 +154,11 @@ staff:
   - name: Yutong Li
     email: yli81711@usc.edu
     image: /assets/img/staff/yutong.jpg
+    hours: >-
+     See Google Calendar
+  - name: Zaid Abdulrehman
+    email: zabdulre@usc.edu
+    image: /assets/img/staff/zaid.jpg
     hours: >-
      See Google Calendar
 

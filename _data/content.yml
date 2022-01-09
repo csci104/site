@@ -68,57 +68,57 @@ labs:
   - id: lab2
     week: Week 2
     title: GDB
-    assigned: true
+    assigned: false
     topics: Debugging, GDB, tooling
   - id: lab3
     week: Week 3
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, makefiles, build systems
   - id: lab4
     week: Week 4
     title: Inheritance
-    assigned: true
+    assigned: false
     topics:
   - id: lab5
     week: Week 5
     title: Templates
-    assigned: true
+    assigned: false
     topics:
   - id: lab6
     week: Week 6
     title: Midterm Review
-    assigned: true
+    assigned: false
     topics:
   - id: lab7
     week: Week 7
     title: Heaps
-    assigned: true
+    assigned: false
     topics: Heaps
   - id: lab8
     week: Week 8
     title: Counting and Probability
-    assigned: true
+    assigned: false
     topics: Counting and Probability
   - id: lab9
     week: Week 9
     title: Hash Tables
-    assigned: true
+    assigned: false
     topics: Hash Tables
   - id: lab10
     week: Week 10
     title: Number Theory
-    assigned: true
+    assigned: false
     topics: Number theory
   - id: lab11
     week: Week 11
     title: BST Basics
-    assigned: true
+    assigned: false
     topics: Binary search tree
   - id: lab12
     week: Week 12
     title: More on BST
-    assigned: true
+    assigned: false
     topics: 
   - id: lab13
     week: Week 13

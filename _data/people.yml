@@ -6,21 +6,15 @@ instructors:
     location:  (Zoom) https://usc.zoom.us/j/307718126
 
 assistants:
-  - name: Wuxuan Jiang
-    email: wuxuanji@usc.edu
-    image: /assets/img/staff/wuxuan.jpg
+  - name: Aleksei Petrenko
+    email: petrenko@usc.edu
+    image: /assets/img/staff/aleksei.jpg
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Gozde Sahi
-    email: gsahin@usc.edu
-    image: /assets/img/staff/gozde.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Hanyuan Xiao
-    email: hanyuanx@usc.edu
-    image: /assets/img/staff/hanyuan.jpg
+  - name: Krishna Kadam
+    email: kjkadam@usc.edu
+    image: /assets/img/staff/krishna.jpg
     hours: >-
       See Google Calendar
     location: Zoom
@@ -78,7 +72,7 @@ staff:
       See Google Calendar
   - name: Mila Mathias
     email: memathia@usc.edu
-    image: /assets/img/staff/mila.jpg
+    image: /assets/img/staff/mila2.jpg
     hours: >-
       See Google Calendar
   - name: Monil Sorathia

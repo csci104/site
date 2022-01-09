@@ -2,9 +2,9 @@
 
 ### How To Approach This Assignment
 
-We use this homework not just as a coding exercise but to teach aspects of C++, object-oriented design, and rationale for certain data structure choices.  Several of these aspects are discussed in the Motivation and Background Information sections.  Links to other examples or reference material are often provided. Take time to consider these, read more on your own, and ask questions. We recommend you read through the entire assignment once or twice before even considering code (though you can look at the skeleton files, especially the header file for reference).  
+We use this homework not just as a coding exercise but to teach aspects of C++, object-oriented design, and rationale for certain data structure choices.  Several of these aspects are discussed in the Motivation and Background Information sections.  Links to other examples or reference material are often provided. Take time to consider these, read more on your own, and ask questions. We recommend you read through the entire assignment once or twice before even considering writing code (though you can look at the skeleton files, especially the header file for reference).  
 
-**** Layout an approach to incremental implementation and testing.
+In addition, we suggest you an **incremental** coding/test approach. Avoid the temptation to write the all the code at once. Instead, write one portion (feature), compile, and test it before moving on to the next.  In this way, dealing with compile and debugging errors becomes MUCH more manageable and by committing/pushing your code you can have snapshots of working features.
 
 ### Introduction
 
@@ -12,24 +12,32 @@ This exercise will build your linked list skills and confidence and ability in u
 
 <img src="{{site.baseurl}}/homework/img/labellist.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
-New messages are always added to the end of the `all` list. Once added, they can be labelled or unlabelled, as desired.  Messages can also be deleted (removed) permanently.  New labels need not be created explicitly by the user, but the first time a label is applied to a message, a new list for that label should be created and the message will added to that new list.  For example, suppose a new label `fam` (short for `family`) is applied to message 1.  `fam` should be added to the list of labels and a new head pointer should be added to the `heads_` list.  The index (i.e. `4` in the diagram below) of this new label and head pointer should now be used as the index of the **next** and **prev** pointer for this label in each member message's `next_` and `prev_` lists.  This will require resizing those vectors in the message node. (Note that only member messages need to have their next/previous vectors resized, while  messages that are not a member of the new label need not be modified).
+*Note: the `1` or `0` in the message nodes is a Boolean indicate membership in a given label's list.*
+
+New messages are always added to the end of the `all` list. Once added, they can be labelled or unlabelled, as desired.  Messages can also be deleted (removed) permanently.  New labels need not be created explicitly by the user, but the first time a label is applied to a message, a new list for that label should be created and the message will added to that new list.  For example, suppose a new label `fam` (short for `family`) is applied to message 1.  `fam` should be added to the list of labels and a new head pointer should be added to the `heads_` list.  The index (i.e. `4` in the diagram below) of this new label and head pointer should now be used as the index of the **next** and **prev** pointer for this label in each member message's `next_` and `prev_` lists.  This will require resizing those vectors (of next and prev pointers) in the message node. (Note that only member messages need to have their next/previous vectors resized, while  messages that are not a member of the new label need not be modified).
+
+*Effects of adding the label `fam` to message 1:*
 
 <img src="{{site.baseurl}}/homework/img/labellist-label.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 When a message is unlabeled, it is simply removed from the corresponding list.  
 
+*Effects of unlabeling `usc` from message 0:*
+
 <img src="{{site.baseurl}}/homework/img/labellist-unlabel.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 Removing a message should delete the entire message node, first unlinking it from all lists of which it is a member.
+
+*Effects of removing message 0:*
 
 <img src="{{site.baseurl}}/homework/img/labellist-remove.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 
 ### Approach and Motivation
 
-Many possible data structures can be implemented to support these operations.  For example, one could simply store all messages in a single linked list or vector and then use a separate vector per label that stores pointers to the messages that are members of that label. This would lead to a vector of vectors iemplementation.  
+Many possible data structures can be implemented to support these operations.  For example, one could simply store all messages in a singly-linked list or vector and then use a separate vector per label that stores pointers to the messages that are members of that label. This would lead to a vector of vectors iemplementation.  
 
 
 However, such an approach lacks two key features we would like to support.  
@@ -59,7 +67,7 @@ To model a message and its next/previous pointers, a nested struct `MsgNode` has
 
 One goal of object-oriented design is **encapsulation** which usually means giving only the minimum access necessary to third parties.  We want/need to provide the client some way of referencing a particular message and performing operations on it (accessing the message, navigating to neighboring messages for a given label, etc.). However, if we simply returned a pointer to a `MsgNode` the client would have access to the public members of the `MsgNode` struct. Instead, to limit access to only the operations we want to expose to clients, we define a `MsgToken` class that internally (privately), stores a pointer to a paritcular `MsgNode` as well as the overall `LabelList` that the `MsgNode` belongs to and provides public functions to access the message or navigate to the next or previous messages of a given label.  
 
-**A look ahead:**  You should shorlty learn about `iterator`s in the C++ STL container library.  This `MsgToken` object is very similar and should help the concept of iterators make more intuitive sense in the future.
+**A look ahead:**  You should shortly learn about `iterator`s in the C++ STL container library.  This `MsgToken` object is very similar and should help the concept of iterators make more intuitive sense in the future.
 
 <img src="{{site.baseurl}}/homework/img/labellist-msgtoken.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
@@ -74,18 +82,20 @@ Suppose two classes each contain pointers to each other. Which would you define 
 
 
 ```c++
+#include "TypeB.h"
 class TypeA {
-  TypeB b;
+  TypeB* b;
 };
 ```
 
 ```c++
+#include "TypeA.h"
 class TypeB {
-  TypeA a;
+  TypeA* a;
 };
 ```
 
-To break the dependence, we can use a forward *declaration*.  A forward *declaration* states a class/struct will exist and be defined without providing its definition (i.e. data and function members).  Given a forward declaration **NO objects of that type can be declared**, BUT **pointers and references to that type CAN BE declared**.
+To break the dependence, we can use a forward *declaration*.  A forward *declaration* effectively states a class/struct *will exist and be defined* without actually providing its definition (i.e. data and function members).  Given a forward declaration **NO objects of that type can be declared**, BUT **pointers and references to that type CAN BE declared**.
 
 Thus, the example above could be made to work using these forward declarations:
 
@@ -111,17 +121,21 @@ We use that approach in our `LabelList` to `typedef` a vector of `MsgNode*` befo
 
 #### Friend classes
 
-Recall the motivation for the `MsgToken` class is to provide an access mechanism to 3rd-party clients without exposing the underlying structure of (and access to) our `MsgNode`.  However, we may want the `LabelList` methods to access private members or construct `MsgToken`s differently than the public interface.  Thus, we use C++'s `friend` declaration.  Classes can indicate that a particular non-member function **OR another class** is a `friend` and thus can access private members of the class.  Thus the `MsgToken` class specifies the `LabelList` as a `friend` class.  Note: `friend` declarations are one way (just because `A` declares `B` as a friend class, `A` is not automatically a friend of `B`.  However, because we are using nested types and `MsgToken` is a member of `LabelList`, then members have access to other members.  So as a member of `LabelList`,  `MsgToken`s have access to other `LabelList` members, such as `findLabelIndex`, etc. 
+Recall the motivation for the `MsgToken` class is to provide an access mechanism to 3rd-party clients without exposing the underlying structure of (and access to) our `MsgNode`.  However, we may want the `LabelList` methods to access private members or construct `MsgToken`s differently than the public interface.  Thus, we use C++'s `friend` declaration.  Classes can indicate that a particular non-member function **OR another class** is a `friend` and thus can access private members of the class.  Thus the `MsgToken` class specifies the `LabelList` as a `friend` class.  Note: `friend` declarations are one way (just because `A` declares `B` as a friend class, `A` is not automatically a friend of `B`).  However, because we are using nested types and `MsgToken` is a member of `LabelList`, then members have access to other members.  So as a member of `LabelList`,  `MsgToken`s have access to other `LabelList` members, such as `findLabelIndex`, etc. 
 
-Notice we also have two constructors for `MsgToken`.  The defaults constructor `MsgToken()` allows 3rd party clients to declare `MsgToken` objects but prevents initialization of its members to anything but an invalid state.  This forces clients to then assign the token with the return values produced by `LabelList` members (like `add()` or `find()`).  The initializing constructor `MsgToken(MsgNode* node, LabelList* list)` is private, so that only the friend `LabelList` class can use it to create valid tokens.  This again requires clients to use the `LabelList` interface to generate valid tokens. 
+Notice we also have two constructors for `MsgToken`.  The default constructor `MsgToken()` allows 3rd party clients to declare `MsgToken` objects but prevents initialization of its members to anything but an invalid state.  This forces clients to then assign the token with the return values produced by `LabelList` members (like `add()` or `find()`).  The initializing constructor `MsgToken(MsgNode* node, LabelList* list)` is private, so that only the friend `LabelList` class can use it to create valid tokens.  This again requires clients to use the `LabelList` interface to generate valid tokens. 
 
 #### Static members
 
 Often, certain data members or constants may be the same for **ALL** instances of the object and need not require a separate data member (storage) in each object.  Instead, we can define the data member once and have it be shared by all objects.  `LabelList` defines two static members:  the constant `size_t INVALID_LABEL` and the `MsgToken end_`.  `INVALID_LABEL` is used as the return value to the helper function `findLabelIndex` to indicate a non-existent label.  `end_` is returned by any `LabelList` member functions such as `find()` if the desired message cannot be found, or when attempting to advance to the next or previous message when none exists.
 
- Once declared in the class with the `static` keywork, static members should generally be instantiated and initialized in the `.cpp` (though for integral values, newer versions of C++ allow them to be defined inline in the header file).  We intialize `INVALID_LABEL` to `(size_t)-1` since `-1` is all 1s in binary and will be the largest unsigned value when **cast to an unsigned type**.  We construct `end_` in the `labellist.cpp` implementation.  You can see that it looks like a global variable declaration, but is preceded with the `static` keyword and is **scoped** to indicate it is a member of the `LabelList` class.  You may need to use `INVALID_LABEL` as you implement certain functions.  Similarly, `end_` can be returned by functions that need to return a `MsgToken` when no valid token is possible.
+ Once declared in the class with the `static` keyword, static members should generally be instantiated and initialized in the `.cpp` (though for integral values, newer versions of C++ allow them to be defined inline in the header file).  We intialize `INVALID_LABEL` to `(size_t)-1` since `-1` is all 1s in binary and will be the largest unsigned value when **cast to an unsigned type**.  Note: An example of a similar use of static members is the constant `npos` defined in `std::string` (really `std::basic_string`).  Info about its use is [here](http://www.cplusplus.com/reference/string/string/npos/)
  
- Note: An example of a similar use of static members is the constant `npos` defined in `std::string` (really `std::basic_string`).  Info about its use is [here](http://www.cplusplus.com/reference/string/string/npos/)
+  We construct `end_` in the `labellist.cpp` implementation.  You can see that it looks like a global variable declaration, but is preceded with the `static` keyword and is **scoped** to indicate it is a member of the `LabelList` class.  
+  
+  You may need to use `INVALID_LABEL` as you implement certain functions.  Similarly, `end_` can be returned by functions that need to return a `MsgToken` when no valid token is possible.
+ 
+ 
 
 
 
@@ -137,7 +151,7 @@ You should learn about exceptions by watching the [provided lecture video](http:
 
 ### Implementation Tasks
 
-To start your implementation, read over the provided `labellist.h` and the documentation provided for each member function. This documentation acts as a set of requirements by which you will be graded for partial credit (in addition to some automated tests).  Ensure you meet the specified requirements (including runtime).  You may declare additional data members and private helper functions but should never change the given public interface without express consent from the instructor (ask on Piazza).
+To start your implementation, read over the provided `labellist.h` and the documentation provided for each member function. **This documentation acts as a set of requirements by which you will be graded for partial credit** (in addition to some automated tests).  Ensure you meet the specified requirements (including runtime).  **You may declare additional data members and private helper functions but should never change the given public interface without express consent from the instructor** (ask on our Q&A site).
 
 In `labellist.cpp` note the functions that have been specified as `Complete` or `To be completed`.  Only the latter are functions you need to write.  
 
@@ -159,11 +173,19 @@ For the `LabelList` class, you will need to implement the following:
   - the `findLabelIndex` helper function to return the index/level of a given label (i.e. what index in the `heads_` and `next_/prev_` vectors corresponds to the specified label). **Note:** `findLabelIndex` returns `INVALID_LABEL` when a message cannot be found while `getLabelIndex` will throw an exception (i.e. `getLabelIndex` should be used when a correspond label **SHOULD** be defined while `findLabelIndex` should be used if a label may appropriately not exist yet)
   - If you find yourself duplicating work or wanting to break a complex task into simpler tasks, consider adding **private** member functions to help.
 
-### Testing
+### Coding and Testing
+
+#### Coding Approach
+
+As mentioned earlier, it would be wise to code and test incrementally and not try to write all the code at once.  A possible approach would be:
+ - Implement just the base necessities of the `MsgNode`, `MsgToken`, and `LabelList` class to **add** and **remove** nodes from the `all` list/label.  Test your code in `labellist-test.cpp` by creating a `Labellist`, adding a few nodes, saving the tokens, and using them to access the message and/or remove the messages.  Use `LabelList::print()` to verify the contents visually.
+ - Add the label method and more tests to use additional labels, again using `LabelList::print()` to verify the contents of each list visually.  Note: `print()` only traverses a list in the forward direction.  If you have any errors setting previous pointers, they may remain hidden.  Consider using the `MsgToken`s to traverse a label list in the backward direction.
+ - Add the unlabel method and test it
+ - Add any remaining functionality.
 
 #### Unit Tests
 
-We are providing a suite of unit tests.  
+Within several days of the assignment posting, we will provide suite of unit tests that will also be utilized for automated grading. Information on how to run those tests will either be posted here or on our Q&A site.
 
 #### Using Valgrind
 

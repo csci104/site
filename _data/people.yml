@@ -12,14 +12,31 @@ assistants:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: Anoushka Agrawal
+    email: aa68777@usc.edu
+    image: /assets/img/staff/anoushka.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
   - name: Krishna Kadam
     email: kjkadam@usc.edu
     image: /assets/img/staff/krishna.jpg
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: Sumeet Batra
+    email: ssbatra@usc.edu
+    image: /assets/img/staff/temp.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
 
 staff:
+  - name: Angela Nguyen
+    email: angelang@usc.edu
+    image: /assets/img/staff/angela.jpg
+    hours: >-
+      See Google Calendar
   - name: Carolyn Luo
     email: xluo0963@usc.edu
     image: /assets/img/staff/carolyn.JPG
@@ -28,6 +45,11 @@ staff:
   - name: Crystal Wu
     email: wucrysta@usc.edu
     image: /assets/img/staff/crystal.jpg
+    hours: >-
+      See Google Calendar
+  - name: Eli Morris
+    email: elimorri@usc.edu
+    image: /assets/img/staff/eli.jpg
     hours: >-
       See Google Calendar
   - name: Elliott Kau
@@ -77,7 +99,7 @@ staff:
       See Google Calendar
   - name: Monil Sorathia
     email: msorathi@usc.edu
-    image: /assets/img/staff/monil.jpeg
+    image: /assets/img/staff/monil2.jpeg
     hours: >-
       See Google Calendar
   - name: Nirav Adunuthula
@@ -138,6 +160,11 @@ staff:
   - name: William Chang
     email: wfchang@usc.edu
     image: /assets/img/staff/william.jpg
+    hours: >-
+      See Google Calendar
+  - name: Xander Morgan
+    email: xmorgan@usc.edu
+    image: /assets/img/staff/xander.jpg
     hours: >-
       See Google Calendar
   - name: Yunrui Billy Wang

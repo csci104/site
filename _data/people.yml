@@ -26,7 +26,7 @@ assistants:
     location: Zoom
   - name: Sumeet Batra
     email: ssbatra@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/temp.png
     hours: >-
       See Google Calendar
     location: Zoom
@@ -99,7 +99,7 @@ staff:
       See Google Calendar
   - name: Monil Sorathia
     email: msorathi@usc.edu
-    image: /assets/img/staff/monil2.jpeg
+    image: /assets/img/staff/monil2.jpg
     hours: >-
       See Google Calendar
   - name: Nirav Adunuthula

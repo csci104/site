@@ -116,9 +116,9 @@ At the end of the semester, we may decide to lower the scale if the exams were m
 
 ### Assignments and Labs
 
-Grading for [homework]({{ site.baseurl }}/homework/) and [labs]({{ site.baseurl }}/labs/) are available on their respective pages.
+Information regarding [homework]({{ site.baseurl }}/homework/) and [labs]({{ site.baseurl }}/labs/) are available on their respective pages.
 They contain **policies** related to grading, assignments, and policies related to submission, contesting grades, academic integrity, etc.
-You are **responsible** for reading those pages *carefully* and following all of its stated policies!
+You are **responsible** for reading those pages *carefully* and following all of its stated policies, which should be considered as part of this syllabus.
 
 ## Attendance
 
@@ -126,7 +126,7 @@ While regular attendance will not be taken, class participation and attendance i
 
 ## Textbook
 
-We will be using "Data Structures and Algorithm Analysis in C++" by Mark Weiss.  In addition, you should have a Discrete Mathematics textbook (whichever book you used for CSCI 170 will suffice): I will specificially refer to reading from "Essential Discrete Mathematics for Computer Science" by Lewis & Zax.
+We will be using **"Data Structures and Algorithm Analysis in C++" by Mark Weiss**.  In addition, you should have a Discrete Mathematics textbook (whichever book you used for CSCI 170 will suffice): I will specificially refer to reading from "Essential Discrete Mathematics for Computer Science" by Lewis & Zax.
 You may also find the course lecture notes useful.  You may download (and possibly print) the [lecture notes]({{ site.data.urls.notes }}).
 These are based on teaching of CSCI 104 in past semesters, and cover the material quite accurately as presented in class.
 However, the lecture notes may be out of order and cover different topics, as we have changed the schedule significantly.
@@ -148,8 +148,7 @@ For data structures specifically:
 ## Reading Assignments
 
 Readings from lecture notes and other sources form the base of your learning pyramid.
-These readings contain theoretical concepts, examples and usable code that will be very helpful for all the work in this course.
-The lecture notes and reference notes for video recordings will be provided and should be reviewed before group work during class meetings.
+These readings contain theoretical concepts, examples and usable code that will be very helpful for all the work in this course.  We also recommend reviewing the lecture slides/notes after each lecture (or at the end of each week to see what you still remember, what doesn't make sense now that you have to do an exercise yourself, etc.)  This will help you retain the content, increase mastery, and prime you to ask quesitons in future lectures.
 
 ## Exams
 

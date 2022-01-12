@@ -24,7 +24,7 @@ hwpath: hw1
 
 ### Skeleton Code
 
-On many occasions we will want to distribute skeleton code, tests, and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.urls.github}}/resources ), under our class GitHub site.  You should clone this repository to your laptop and do a `git pull` regularly to check for updates. 
+On many occasions we will want to distribute skeleton code, tests, and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.urls.github}}/resources ), under our class GitHub site.  You should clone this repository to your laptop (**but only if you have not already done this as part of lab**) and do a `git pull` regularly to check for updates. 
 
 ```
 $ git clone git@github.com:{{ site.data.urls.github_org }}/resources

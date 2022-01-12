@@ -13,12 +13,12 @@ hw1:
       title: Runtime Analysis
       points: 24
     - writeup: constructors.md
-      number: 5
+      number: 4
       title: NOT GRADED (PRACTICE ONLY) - Constructors and Destructors
       points: 0
   programming_parts:
     - writeup: labellist.md
-      number: 6
+      number: 5
       title: LabelList (Classes, Pointers, LinkedLists)
       points: 58
 

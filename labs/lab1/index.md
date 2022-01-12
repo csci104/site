@@ -115,8 +115,8 @@ Once you are inside the correct working directory, type the following commands (
 
 *`[native]`*
 ```shell
-git clone git@github.com:usc-csci104-spring2022/hw-username.git
-git clone git@github.com:usc-csci104-spring2022/resources.git
+git clone git@github.com:{{site.data.urls.github_org}}/hw-username.git
+git clone git@github.com:{{site.data.urls.github_org}}/resources.git
 ```
 
 If you see the following dialog in your command line, type `yes` and press `enter`.

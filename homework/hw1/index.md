@@ -59,6 +59,13 @@ Again be sure to replace `hw-username` with your USC username (e.g. `hw-ttrojan`
 
 {% endfor %}
 
+## Checkpoint
+
+For checkpoint credit, commit and push your `hw-username` repo with a `hw1` subfolder that contains:
+
+- `hw1.txt` with your answers to question 1 and 2
+- `hw1.pdf` that AT least contains your answer and justification to runtime question **3a**
+- a version of `labellist.h/cpp` that can pass the `hw1-checkpt` tests in `hw1-checkpt.cpp`.  To attempt to compile and run the `hw1-checkpt` tests, type `make check` at the command line which will both compiler AND run the tests (if the compilation succeeded).
 
 {% include commit-reclone.md %}
 

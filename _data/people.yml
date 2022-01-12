@@ -30,6 +30,12 @@ assistants:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: Swetha Sivakumar
+    email: swethasi@usc.edu
+    image: /assets/img/staff/swetha.png
+    hours: >-
+      See Google Calendar
+    location: Zoom
 
 staff:
   - name: Angela Nguyen

@@ -11,20 +11,16 @@ hw1:
     - writeup: runtime-1b.md
       number: 3
       title: Runtime Analysis
-      points: 25
-    - writeup: ll-rec-tracing-1.md
-      number: 4
-      title: Linked List Recursion Tracing
-      points: 13
+      points: 24
     - writeup: constructors.md
-      number: 5
+      number: 4
       title: NOT GRADED (PRACTICE ONLY) - Constructors and Destructors
       points: 0
   programming_parts:
     - writeup: labellist.md
-      number: 6
+      number: 5
       title: LabelList (Classes, Pointers, LinkedLists)
-      points: 50
+      points: 58
 
 hw2:
   written_parts:
@@ -36,19 +32,23 @@ hw2:
       number: 2
       title: Makefiles
       points: 8
-    - writeup: adt.md
+    - writeup: ll-rec-tracing-1.md
       number: 3
+      title: Linked List Recursion Tracing
+      points: 10
+    - writeup: adt.md
+      number: 4
       title: ADTs
       points: 6
     - writeup: class-design.md
-      number: 4
+      number: 5
       title: Class Structures and OO Design
       points: 10
   programming_parts:
     - writeup: websearch-1.md
       number: 5
       title: Websearch (Inheritance, Polymorphism, Sets, Maps)
-      points: 70
+      points: 60
 
 hw3:
   written_parts:

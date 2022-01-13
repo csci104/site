@@ -24,10 +24,10 @@ hwpath: hw1
 
 ### Skeleton Code
 
-On many occasions we will want to distribute skeleton code, tests, and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.urls.github}}/resources ), under our class GitHub site.  You should clone this repository to your laptop and do a `git pull` regularly to check for updates. 
+On many occasions we will want to distribute skeleton code, tests, and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.urls.github}}/resources ), under our class GitHub site.  You should clone this repository to your laptop (**but only if you have not already done this as part of lab**) and do a `git pull` regularly to check for updates. 
 
 ```
-$ git clone git@github.com:{{ site.data.main.github_org }}/resources
+$ git clone git@github.com:{{ site.data.urls.github_org }}/resources
 ```
 
 Again, be sure you don't clone this repo into your `hw-username` repo but at some higher up point like in a `cs104` folder on your laptop.  You can then manually copy (in your OS's GUI or at the command line) the skeleton files from `resources/{{page.hwpath}}` to `hw-username/{{page.hwpath}}`.
@@ -59,6 +59,15 @@ Again be sure to replace `hw-username` with your USC username (e.g. `hw-ttrojan`
 
 {% endfor %}
 
+## Checkpoint
+
+For checkpoint credit, commit and push your `hw-username` repo with a `hw1` subfolder that contains:
+
+- `hw1.txt` with your answers to question 1 and 2
+- `hw1.pdf` that AT least contains your answer and justification to runtime question **3a**
+- a version of `labellist.h/cpp` that can pass the `hw1-checkpt` tests in `hw1-checkpt.cpp`.  To attempt to compile and run the `hw1-checkpt` tests, type `make check` at the command line which will both compile AND run the tests (if the compilation succeeded). To pass the checkpoint tests you must have implementation of the
+   - `LabelList` constructor, `add()`, and `label()` 
+   - `LabelList::MsgToken` member functions `msg()` (both const and non-const version) and operators `==`, `!=` and `bool`
 
 {% include commit-reclone.md %}
 

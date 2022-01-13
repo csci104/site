@@ -23,6 +23,7 @@ Lab sessions are held every week and will be conducted by a team of TAs and Cour
       <th>Week</th>
       <th>Title</th>
       <th>Topics</th>
+      <th>Slides</th>
     </tr>
   </thead>
   <tbody>
@@ -44,6 +45,7 @@ Lab sessions are held every week and will be conducted by a team of TAs and Cour
       <td>{{ lab.week }}</td>
       <td>{{ lab.title }}</td>
       <td>{{ lab.topics }}</td>
+      <td>{{ lab.slides }}</td>
     </tr>
     {% endfor %}
   </tbody>

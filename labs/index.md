@@ -46,7 +46,7 @@ Lab sessions are held every week and will be conducted by a team of TAs and Cour
       <td>{{ lab.title }}</td>
       <td>{{ lab.topics }}</td>
       <td>
-        {% if lab.slides != empty %}
+        {% if lab.slides %}
         <a href="assets/{{ lab.slides }}">{{ lab.slides }}</a>
         {% endif}
       </td>

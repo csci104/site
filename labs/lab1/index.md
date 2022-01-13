@@ -110,7 +110,7 @@ The path after `Volume: ` (excluding `:/work`) is what you are looking for.
 
 This step assumes that you have already finished the git, GitHub, and SSH key setup from Lab 0.
 
-Once you are inside the correct working directory, type the following commands (**replace the `username` in `hw-username` with your actual USC Net Id, the same goes for everything that follows**):
+Once you are inside the correct working directory, type the following commands (**replace the `username` in `hw-username` with your actual USC Net Id, the same goes for everything that follows. Your USC NetId is your USC email address without the "@usc.edu" part, not the 10-digit Student ID**):
 
 
 *`[native]`*

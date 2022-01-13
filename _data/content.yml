@@ -65,7 +65,7 @@ labs:
     title: Git Tutorial
     assigned: true
     topics: Git, github
-    slides: "[Lab 1](assets/git_lab.pdf)"
+    slides: /git_lab.pdf
   - id: lab2
     week: Week 2
     title: GDB

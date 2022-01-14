@@ -110,7 +110,7 @@ The path after `Volume: ` (excluding `:/work`) is what you are looking for.
 
 This step assumes that you have already finished the git, GitHub, and SSH key setup from Lab 0.
 
-Once you are inside the correct working directory, type the following commands (**replace the `username` in `hw-username` with your actual USC Net Id, the same goes for everything that follows**):
+Once you are inside the correct working directory, type the following commands (**replace the `username` in `hw-username` with your actual USC Net Id, the same goes for everything that follows. Your USC NetId is your USC email address without the "@usc.edu" part, not the 10-digit Student ID**):
 
 
 *`[native]`*
@@ -485,26 +485,3 @@ There are tons of git cheatsheets all over the web.
 Here's [one by Tower](https://www.git-tower.com/blog/git-cheat-sheet/) and [another by Atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet).
 You can use one of these your make your own; git has a bit of a learning curve and at the end of the day comes down to memorizing the most useful commands and what they do.
 Don't worry if it takes a little while.
-
-As for this class, the main repositories you will interact with are as follows:
-
-- `hw-username`, with your USC username instead of "username", will be your homework repository.
-  You will write and submit your code for assignments from that repository.
-  Once you register with Curricula, which you will have already done by now, your repository will be created.
-- `resources` will contain any skeleton code, tests, or other files you will need for homework and labs.
-  Keep this repository up to date so you're always working with our most recent changes.
-
-Both of these are accessible from the [course Github page]({{ site.data.urls.github }}).
-If you've registered with Curricula and do not have access to these, please contact the course staff.
-Otherwise, **go ahead and clone both repositories** and check out their current contents.
-You'll probably want them adjacent in a 104-specific directory; `/work` is fine in Docker, maybe `~/cs104` or `~/Desktop/cs104` in the VM.
-Whatever you do, **do not clone one inside the other**, as this will cause problems. 
-
-- [ ] Clone my homework repository wherever I keep 104 stuff.
-- [ ] Clone `resources` in the same directory.
-- [ ] Congratulate yourself.
-      This is the longest damn lab ever.
-
-
-
-

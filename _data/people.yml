@@ -26,7 +26,13 @@ assistants:
     location: Zoom
   - name: Sumeet Batra
     email: ssbatra@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/sumeet.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
+  - name: Swetha Sivakumar
+    email: swethasi@usc.edu
+    image: /assets/img/staff/swetha.jpg
     hours: >-
       See Google Calendar
     location: Zoom
@@ -154,7 +160,7 @@ staff:
      See Google Calendar
   - name: Trevor Asbery
     email: asbery@usc.edu
-    image: /assets/img/staff/trevor.png
+    image: /assets/img/staff/trevor.jpg
     hours: >-
       See Google Calendar
   - name: William Chang

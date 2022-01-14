@@ -138,6 +138,10 @@ Receiving objects: 100% (4/4), done.
 Checking connectivity... done.
 ```
 
+A few notes about cloning:
+ - **Never clone a Git repository** into a Dropbox or other sync'ed folder (Google Drive, etc.).
+ - **Never clone a Git repository** under another repository folder. They should be at the same level.
+ 
 ## Running the Example Project
 
 We have provided an `example` project to test whether you have the correct environment setup to compile our homeworks. Make sure you follow the steps below and the output on your terminal matches the ones on this page.

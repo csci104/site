@@ -7,7 +7,7 @@ title: Jamie's GDB House of Horrors
 
 ---
 
-**Due: 3 Sep, 2021 @7:00 pm**
+**Due: 21 Jan, 2022 @4:00 pm**
 
 You are expected to show your work to any CP/TA to get checked off for this lab. You could do this during any lab section, in-person or remotely, though you are encouraged to go to your assigned lab section. Note that as long as you show effort during the lab section, we would check you off at the end of the section regardless of whether you have completed it or not.
 
@@ -481,12 +481,4 @@ Think, which call to `Skirmish()` does the program output the wrong thing on?  G
 You have stood fast in the face of overwhelming peril, and banished the bugs back to whence they came!
 <del>The world</del> <del>the town</del> your computer is safe once again!
 
-- [ ] Show a CP or TA  `answers.txt` to get checked off!! (Attach this to your Piazza post if you wish to get checked off remotely)
-
-If you don't complete `answers.txt` during lab, you may complete it in your own time and attend a different lab section to get it checked off. (If you have time zone accommodations and cannot make it to any lab section, please email Professor Cote.) You have until the Friday 2 pm lab section on 1/29 to get checked off. (Just note that the 1/29 lab sections will begin covering material for Lab 3.)
-
-
-
-
-
-
+- [ ] Show a CP or TA  `answers.txt` to get checked off!!

@@ -11,6 +11,7 @@ title: Jamie's GDB House of Horrors
 
 You are expected to show your work to any CP/TA to get checked off during the lab section
 you registered for.
+
 ---
 
 # Jamie's GDB House of Horrors

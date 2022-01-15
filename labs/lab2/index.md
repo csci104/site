@@ -9,10 +9,8 @@ title: Jamie's GDB House of Horrors
 
 **Due: 21 Jan, 2022 @4:00 pm**
 
-You are expected to show your work to any CP/TA to get checked off for this lab. You could do this during any lab section, in-person or remotely, though you are encouraged to go to your assigned lab section. Note that as long as you show effort during the lab section, we would check you off at the end of the section regardless of whether you have completed it or not.
-
-If you are joining from Zoom, we might ask you to make a **private** Piazza post with your work attached. A detailed list of deliverables can be found at the end of each lab.
-
+You are expected to show your work to any CP/TA to get checked off during the lab section
+you registered for.
 ---
 
 # Jamie's GDB House of Horrors

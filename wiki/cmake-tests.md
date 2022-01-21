@@ -5,7 +5,7 @@ tasks: false
 permalink: /:path/:basename/
 ---
 
-We have posted the full test suite for **HW1**. We will do this for some but likely not every assignment since testing is an important skill that we will want you to build for yourself. However, here are the details for configuring, running, and debugging our grading tests. They use the Google Test Suite and a compilation tool `cmake`. **Please read the entire post** to understand all the features.`
+We have posted the full test suite for **HW1** in the `resources` repo, `hw1_tests` folder. We will post full test suites for some but likely not every assignment since testing is an important skill that we will want you to build for yourself. However, here are the details for configuring, running, and debugging our grading tests. They use the Google Test Suite and a compilation tool `cmake`. **Please read the entire post** to understand all the features.`
 
 #### How to Get and Use the Tests
 
@@ -51,6 +51,16 @@ Running main() from gtest_main.cc
 [----------] 1 test from LabelList (0 ms total)
 ```
 
+You can also run a subset of tests using the `--gtest_filter` option to the executable:
+
+```
+./label_tests --gtest_filter=MsgToken.*
+```
+which will run all the MsgToken tests, or
+
+```
+./label_tests --gtest_filter=Remove.UnlinkNodeLabel
+```
 You can run the tests in `gdb` or `valgrind` directly (or see below for running a single test case in `gdb`:
 
 ```

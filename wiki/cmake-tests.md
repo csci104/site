@@ -27,7 +27,7 @@ We have posted the full test suite for **HW1**. We will do this for some but lik
 
 *   This is the basic flow:
     -  `cmake .` (run only once), 
-    - `make`, 
+    - `make` 
     - `ctest`
 
 `make` and `ctest` should be rerun each time you change your source files in the folder above. Note that `ctest` runs ALL the tests. See below for how to run individual tests to shorten your test/debug cycle.

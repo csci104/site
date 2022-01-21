@@ -13,6 +13,7 @@ Pages in this wiki:
 - [GCC](./gcc) by Cameron Durham
 - [GDB](./gdb) by Spencer Davis
 - [Linux](./linux) by Jamie Flores
+- [CMake test scaffolding](./cmake-tests) by Mark Redekopp
 - [The preprocessor](./preprocessor) by Anthony Wiencko
 - [Valgrind](./valgrind) by Cameron Durham
 - [Makefile](./makefile) by Leif Wesche 

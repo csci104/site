@@ -1,3 +1,10 @@
+---
+layout: asides
+toc: true
+tasks: false
+permalink: /:path/:basename/
+---
+
 We have posted the full test suite for **HW1**. We will do this for some but likely not every assignment since testing is an important skill that we will want you to build for yourself. However, here are the details for configuring, running, and debugging our grading tests. They use the Google Test Suite and a compilation tool `cmake`. **Please read the entire post** to understand all the features.`
 
 #### How to Get and Use the Tests

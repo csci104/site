@@ -83,7 +83,9 @@ Any of these command should run in your Unix/Linux/MacOS terminal.
 
 ### Opening a Text Editor
 
-- `code` opens a blank sublime document.
+If you are using VS Code, 
+
+- `code` opens a blank editor.
 - `code <file_name>` opens only that file.
 - `code <directory_name>` (e.g. `cd` to your `hw-username/hw1` folder and type `code .` which will open the whole `hw1` folder and let you access all files in that folder (SUPER CONVENIENT)!
 

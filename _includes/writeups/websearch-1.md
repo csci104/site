@@ -1,12 +1,12 @@
-### 1. Web Search (65%)
-
 
 ### Skeleton Code
-Some skeleton code has been provided for you in the `{{ page.hwpath }}` folder and has been pushed to the Github repository [`homework-resources`]({{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  
+Some skeleton code has been provided for you in the `{{ page.hwpath }}` folder and has been pushed to the Github repository [`resources`]({{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  
 
-Copy the contents of `{{ page.hwpath }}` (and its subdirectories) over to a `{{ page.hwpath }}` folder under your `hw_usc-username` repository.
+Copy the contents of `{{ page.hwpath }}` (and its subdirectories) over to a `{{ page.hwpath }}` folder under your `hw-username` repository.
 
 ### Overview
+
+*Note:  Read through the contents of this description a few times (even if it seems long).  In the end, there is not a LOT of complex code that needs to be written for this assignment, but it is more about understanding class and OO design and using the appropriate ADTs.*
 
 This problem will have you implement a search engine (mimicing a toy version of Google or the like). As you will see, it will require using quite a lot of the ADTs / data structures you are learning about. You will use C++ STL `map`, `set`, etc. 
 
@@ -26,9 +26,11 @@ At a high level, a search engine is based on the following components:
 For this assignment, we focus on parsing and simply returning all answers to a query, without worrying about ranking or user customization. Notice, however, that you want to keep an eye on making your code well documented and **extensible** by using good object-oriented principles (encapsulation, loose-coupling, inheritance/polymorphism, and appropriate distribution of responsibilities, etc.) in case we add to it later. (That said, you will also be allowed to rewrite your code later.)  
 
 
+<!--
 The diagram below shows the general class structure and can be referenced as you read the remainder of this assignment.
 
 <img src="{{ site.url }}/assignments/img/class_organization.png" alt="Class Org" width="640"/>
+-->
 
 ### Parsing Web Pages
 Your first challenge is to complete a simplified MD parser.  We want our search engine to be able to support alternate file formats (TXT, MD, HTML, etc.) so we created an abstract `PageParser` class with a parse method.

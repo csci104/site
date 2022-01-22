@@ -6,6 +6,6 @@ Then provide an explanation for the following questions.
 2. Why does the `Handler` class have a pure virtual `process` function? 
 3. Do a bit of online research about the **Model, View, Controller (MVC)** software design pattern.  Identify what major classes implement the each of the three and briefly describe how they achieve each of the three.
 
-Below is an example of the kind of diagram we want you to produce which shows inheritance and composition relationships.
+Below is an example of the kind of diagram we want you to produce which shows inheritance and composition relationships.  Note: `*` means **many** and helps define a 1-to-many relationship vs. a 1-to-1 relationship.
 
 <img src="{{site.baseurl}}/homework/img/classhierarchy.png">

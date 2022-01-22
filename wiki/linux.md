@@ -83,13 +83,13 @@ Any of these command should run in your Unix/Linux/MacOS terminal.
 
 ### Opening a Text Editor
 
-- `subl` opens a blank sublime document.
-- `subl <file_name>` opens only that file.
-- `subl <directory_name>` opens all the files in the directory and is SUPER CONVENIENT!
+- `code` opens a blank sublime document.
+- `code <file_name>` opens only that file.
+- `code <directory_name>` (e.g. `cd` to your `hw-username/hw1` folder and type `code .` which will open the whole `hw1` folder and let you access all files in that folder (SUPER CONVENIENT)!
 
-NOTE: if you are using VS Code, just replace `subl` with `code`.
+NOTE: if you are using Sublime, just replace `code` with `subl`.
 For Emacs, replace with `emacs`.
-For sublime, replace with `vim`. 
+For VI, replace with `vim`. 
 
 ### Deleting Stuff
 

@@ -8,4 +8,4 @@ Then provide an explanation for the following questions.
 
 Below is an example of the kind of diagram we want you to produce which shows inheritance and composition relationships.
 
-<img src="{{site.baseurl}}/homework/img/classhierarch.png">
+<img src="{{site.baseurl}}/homework/img/classhierarchy.png">

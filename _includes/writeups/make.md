@@ -10,7 +10,7 @@ Every *action* line in a makefile must start with a:
 1. It doesn't matter, any character can start an action line
 
 #### Part (b):
-Look at the Makefile below and answer the following question. Assume this makefile is in the current directory, and all required files are available.
+Look at the Makefile below and answer the following question. Assume this Makefile is in the current directory, and all required files are available.
 
 ```
 IDIR =.
@@ -29,15 +29,15 @@ _OBJ = shape.o shape1.o shape2.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.cpp $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) $(CFLAGS) -c  $< -o $@ 
 
 all: shape1 shape2
 
 shape1: shape1.o shape.o
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) $(CFLAGS) $^ -o $@   $(LIBS)
 
 shape2: shape2.o shape.o
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) $(CFLAGS) $^ -o $@ $(LIBS)
 
 .PHONY: clean
 

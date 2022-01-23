@@ -35,12 +35,12 @@ hw2:
     - writeup: ll-rec-tracing-1.md
       number: 3
       title: Linked List Recursion Tracing
-      points: 10
-    - writeup: adt.md
+      points: 8
+    - writeup: adt-sp22.md
       number: 4
       title: ADTs
-      points: 6
-    - writeup: class-design.md
+      points: 8
+    - writeup: class-design-websearch.md
       number: 5
       title: Class Structures and OO Design
       points: 10

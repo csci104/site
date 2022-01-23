@@ -1,0 +1,8 @@
+Place your answers in `hw2.txt`. For each of the following data storage needs, describe which abstract data types you would suggest using. Natural choices would include list, set, map, queue, stack, but also any simpler data types (string, int, double) that you may have learned about before.
+
+Try to be specific, e.g., rather than just saying "a list", say "a list of integers" or "a list of names (strings) and a GPA (double)". If you specify a map please describe what the key and value will be. Also, please give a brief explanation for your choice: we are grading you at least as much on your justification as on the correctness of the answer. Also, if you give a wrong answer, when you include an explanation, we'll know whether it was a minor error or a major one, and can give you appropriate partial credit. Also, there may be multiple equally good options, so your justification may get you full credit.
+
+ 1. a data type to store the text of the steps of a recipe for how to bake a cake
+ 2. a data type that stores all the TV station identifications (e.g. `KABC`, `KNBC`, etc.) so we can ensure new stations don't reuse the same identification.
+ 3. a data type that stores what players (assume names are unique) are on each team (given by the team name) in a league and allows quick checks whether a given player is on a partical team (i.e. given a team name and player name, we can quickly ascertain if that player is on that team).
+ 4. a data type that associates a file extension (e.g. `cpp`, `pdf`) with the possible programs that are able to read/open that kind of file

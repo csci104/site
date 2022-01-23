@@ -1,7 +1,7 @@
 
   In this problem, suppose we are working with a fictitious repository called `SampleRepo` (**Note: this repo doesn't exist so you can't try the commands and expect them to work**) which has a file `README.md` already committed to it. Let us now measure your understanding of the [file status lifecycle](http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository) in git. Please frame your answers in the context of the following lifecycle based on your interaction with the repository as specified below:
 
-![Git File Status Lifecycle]({{ site.url}}/assignments/img/git-file-lifecycle.png "Git File Lifecycle")
+![Git File Status Lifecycle]({{ site.baseurl}}/homework/img/git-file-lifecycle.png "Git File Lifecycle")
 >figure courtesy of the [Pro Git](http://git-scm.com/book) book by Scott Chacon
 
 Notes:

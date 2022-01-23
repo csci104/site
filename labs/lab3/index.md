@@ -11,10 +11,7 @@ title: Makefiles
 
 ---
 
-# Checkoff Policies
-
-We are holding the labs in-person this week, so you are expected to show up in your registered
-lab sections and get checked off by a CP/TA face-to-face. Lab sections will be recorded and streamed over Zoom, but you should join the lab via zoom **only if you have valid COVID concerns (i.e. you have symptoms / you tested positive)**. Let your lab instructor know in advance so we could make accomodations.
+We are holding the hybrid labs sections this week - they will be recorded and streamed over Zoom, and you could get checked off over zoom. However you are strongly recommended to go to the physical location, unless you have COVID concerns (e.g. you tested positive or have symptoms).
 
 # Makefiles
 

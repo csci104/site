@@ -501,6 +501,15 @@ $(BIN_DIR)/.dirstamp:
     touch $(BIN_DIR)/.dirstamp
 ```
 
+After finishing this part, you should be able to run
+
+```shell
+make
+bin/pokemon
+```
+
+to see a marvelous battle between pokemons!
+
 - [ ] Show your final Makefile to a CP or TA for checkoff. Be prepared to answer some of the review questions below!
 
 #### 5.1 - Review Questions

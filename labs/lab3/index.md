@@ -505,7 +505,7 @@ After finishing this part, you should be able to run
 
 ```shell
 make
-bin/pokemon
+exe/pokemon
 ```
 
 to see a marvelous battle between pokemons!

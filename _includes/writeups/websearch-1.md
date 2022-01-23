@@ -70,7 +70,7 @@ If the contents of a file are...
 
 You may implement the Markdown parser as you see fit. However, we recommend using a finite state machine (FSM) approach to read the file character by character and use "states" to determine how to process/handle that character and whether text is a normal term, a link, etc. The diagram below shows a potential FSM for parsing Markdown.  Here we assume we read 1 character (i.e. `c`) at each iteration until we reach the end of the file and process `c` as well as use it to transition between states.  We can use the `isalnum` function from the `cctype` library in C++ to check whether a character is a valid character for a search term.  In addition, we assume we maintain two strings: `term` and `link` where we can append characters until we are ready to split and start a new term/link.  
 
-<img src="{{ site.baseurl }}/homework/img/md_parse_fsm.png" alt="MD Parsing FSM" width="640"/>
+<img src="{{ site.baseurl }}/homework/img/websearch-mdfsm.png" alt="MD Parsing FSM" width="600"/>
 
 In addition to parsing search terms, the parsers will implement a `display_text` function to generate a displayable text string.  This function strips out URL/links from the text contents of a file and only shows the anchor text.
 
@@ -275,7 +275,7 @@ All of our `SearchUI` functions use generic `std::istream` or `std::ostream` ref
 
 1. Complete your `MDParser`.  Consider writing a separate test program (i.e. `.cpp` program with a `main()`) that creates an MDParser and parses a sample MD file.  Examine the output and ensure you have the desired terms and links.
 
-2. Complete the various `WebPageSetCombiner` derived implementations (in `combiners.cpp`)
+2. Complete the various `WebPageSetCombiner` derived implementations (in `combiners.h/cpp`)
 
 3. Implement the remainder of the `SearchEng` class.
 

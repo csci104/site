@@ -7,16 +7,28 @@ title: Makefiles
 
 ---
 
-**Due @ 7:00 pm on Sep 10, 2021**
+**Due at the end of your registered lab section**
 
 ---
 
+# Checkoff Policies
+
+We are holding the labs in-person this week, so you are expected to show up in your registered
+lab sections and get checked off by a CP/TA face-to-face. Lab sections will be recorded and streamed over Zoom, but you should join the lab via zoom **only if you have valid COVID concerns (i.e. you have symptoms / you tested positive)**. Let your lab instructor know in advance so we could make accomodations.
+
 # Makefiles
-This lab will be covered during lab sections between Sep 7 - Sep 10, 2021.
 
 In this lab, we will review Makefiles, how they work, and how to write them. 
 In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration. 
 We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger.
+
+## Extra - Running Homework 1 Tests
+
+Before we get into Makefiles, here is something important for homework 1: running and debugging
+the tests. We have posted the instructions [here](https://bytes.usc.edu/cs104/wiki/cmake-tests/).
+
+We will also do live demo in each lab section. If you would like to see it in action ASAP, you
+could check the lab recordings for earlier sections.
 
 ## GCC and Makefiles
 
@@ -131,7 +143,7 @@ makefile:2: *** missing separator. Stop.
 
 It means on line 2, make is expecting a tab but didn't find it.
 
-Editors like VSCode will convert spaces to tabs automatically. Normally that's fine but it's not okay for Makefiles.
+Editors like VSCode will convert tabs to spaces automatically. Normally that's fine but it's not okay for Makefiles.
 If you're using VSCode, you can use tabs as indentation this way:
 
 1. Open the command pallete with `Ctrl+Shift+P` (Windows) `Cmd+Shift+P` (MacOS)
@@ -167,7 +179,7 @@ Congratulations, you've just made your life 100x easier.
 
 #### 3.1 - Object Files
 
-Compiling a multi-file program requires two main steps: compiling each .cpp file separately, and putting them all together to form the executable. 
+Compiling a multi-file program requires two main steps: compiling each `.cpp` file separately, and putting them all together to form the executable. 
 The first step is know as compilation, during which the compiler checks for syntax and semantic mistakes, such as missing semicolons, calling a function that's not declared, or returning the wrong type in a function. 
 The second step is known as linking, during which the linker "links" your function calls - it finds where the body of a function is so that it knows what line to execute when you call that function.
 
@@ -211,13 +223,13 @@ Do the same for the other two classes, and we can then compile the main.
 
 #### 3.2 - Putting It All Together
 
-To compile the main, we just have to include all the .o files that we've already made in the g++ command.
+To compile the main, we just have to include all the `.o` files that we've already made in the g++ command.
 
 ```
 g++ -g -Wall bin/attackMove.o bin/battle.o bin/pokemon.o main.cpp -o bin/pokemon
 ```
 
-**Note:** A .o file is compiled code that doesn't get linked to other code even if it calls functions from other classes. 
+**Note:** A `.o` file is compiled code that doesn't get linked to other code even if it calls functions from other classes. 
 We tell the compiler this using the `-c` flag so that the compiler does not check whether the functions from other classes are implemented. 
 When we want to compile the full executable, we do not want to have the `-c` flag in that statement because we want the compiler to link all the code together in the final step.
 
@@ -252,6 +264,8 @@ This can save you a lot of time if you make a change and don't want to recompile
 
 Remember that dependencies are the files that can affect the compilation result of your target. 
 This includes all the non-standard-library files that you `#include`, a class's own header file and .cpp file, and, if you are compiling into an executable, all the .o files you need.
+
+(Note: techincally speaking, `#include` files should be considered as transitive dependencies, that is: if `A` includes `B`, and `B` includes `C`, then `C` would also be a dependency of `A`. However, handling transitive inclusion is more complicated and not covered here)
 
 A multi-file program might have a Makfile like this:
 
@@ -331,7 +345,7 @@ CXX = g++
 CPPFLAGS = -Wall -g
 BIN_DIR = exe
 
-bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
+$(BIN_DIR)/pokemon: main.cpp $(BIN_DIR)/attackMove.o $(BIN_DIR)/battle.o $(BIN_DIR)/pokemon.o
     $(CXX) $(CPPFLAGS) $^ -o $@
 
 $(BIN_DIR)/attackMove.o: attackMove.cpp attackMove.h
@@ -342,7 +356,14 @@ $(BIN_DIR)/attackMove.o: attackMove.cpp attackMove.h
 
 #### 4.2 - DIRSTAMP
 
-If you tried to run `make` again with the above changes, you'll probably get an error that the `exe` directory doesn't exist. 
+There is one problem with the above approach. If you now run
+
+```shell
+rm -r exe
+g++ -Wall -g -c attackMove.cpp -o exe/attackMove.o
+```
+
+you'll probably get an error that the `exe` directory doesn't exist. 
 We could just use `mkdir exe` everytime we compile our program, but that's a pain.
 
 Let's define a rule to make sure the `exe` directory exists.
@@ -417,44 +438,30 @@ mv *.h lib/
 mv *.cpp src/
 ```
 
-By default, GCC will look in the current directory of the file (i.e. `src` when compiling a file in `src`, or `./` when compiling `main.cpp`), but it will not look under nested directories. 
-In addition, GCC also searches for standard libraries. 
-In order to add a directory to its search paths, you use the -I*dir* option, where *dir* is the relative directory path from where you run the compile command. 
-If you are using a Makefile, the path will be relative to where your Makefile is.
-
-In our case, we want to ask GCC to look for files under the `lib` directory. 
-We can add append the option to the end of `CPPFLAGS`.
+Now that every `cpp` file has been moved to the `src/` directory, you need to change
+your Makefile to reflect that. Change `main.cpp` to `src/main.cpp` and `attackMove.cpp` to
+`src/attackMove.cpp`, and `attackMove.h` to `lib/attackMove.h`.
 
 ```
-CXX = g++
-CPPFLAGS = -Wall -g -Ilib
-BIN_DIR = exe
-
-bin/pokemon: main.cpp bin/attackMove.o bin/battle.o bin/pokemon.o
+$(BIN_DIR)/pokemon: src/main.cpp $(BIN_DIR)/attackMove.o $(BIN_DIR)/battle.o $(BIN_DIR)/pokemon.o
     $(CXX) $(CPPFLAGS) $^ -o $@
 
 $(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
     $(CXX) $(CPPFLAGS) -c $< -o $@
 ```
 
-Now you can remove `../lib/` and `lib/` when you include a header file in a `cpp` file. 
-Open `main.cpp` and change
+There is another problem, however. By default, GCC will look in the current directory of the file (i.e. `src` when compiling a file in `src`), but it will not look under nested directories. 
+In addition, GCC also searches for standard libraries.
+
+In order to add a directory to its search paths, you use the -I*dir* option, where *dir* is the relative directory path from where you run the compile command. 
+If you are using a Makefile, the path will be relative to where your Makefile is.
+
+In our case, we want to ask GCC to look for files under the `lib` directory. 
+We can add append the option to the end of `CPPFLAGS`:
 
 ```
-#include "lib/attackMove.h"
-#include "lib/pokemon.h"
-#include "lib/battle.h"
+CPPFLAGS = -Wall -g -Ilib
 ```
-
-to:
-
-```
-#include "attackMove.h"
-#include "pokemon.h"
-#include "battle.h"
-```
-
-You can do the same for `src/attackMove.cpp`, `src/battle.cpp`, and `src/pokemon.cpp`.
 
 Technically, this is not a makefile feature, but a compiler option. 
 However, you don't normally group files into different directories unless your have a bigger project, in which case you should be using a Makefile (or IDE) to manage compilation.
@@ -467,11 +474,9 @@ Your final makefile should look something like this.
 Note: if you copy and paste the code from course website and paste it into your makefile, you will need to fix all the spaces and change them into tabs.
 
 ```
-BIN_DIR = bin
-LIB_DIR = lib
-SRC_DIR = src
+BIN_DIR = exe
 CXX = g++
-CPPFLAGS = -g -Wall -I$(LIB_DIR)
+CPPFLAGS = -g -Wall -Ilib
 
 all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
 
@@ -495,7 +500,8 @@ $(BIN_DIR)/.dirstamp:
     mkdir -p $(BIN_DIR)
     touch $(BIN_DIR)/.dirstamp
 ```
-- [ ] Show your final Makefile to a CP or TA for checkoff. Be prepared to answer some of the review questions below! (If you are checking off via piazza, submit a file named `answer.txt` with the answers to the following questions)
+
+- [ ] Show your final Makefile to a CP or TA for checkoff. Be prepared to answer some of the review questions below!
 
 #### 5.1 - Review Questions
 
@@ -518,4 +524,4 @@ This is in no way comprehensive.
 If you see a flag that you do not understand, or if you are curious about other options, you can refer to this [official document from GCC](https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html). 
 Feel free to play around with the flags in your free time.
 
-**IMPORTANT** We will be compiling your code with `-g -Wall -std=c++17`, so you must use the same options to check that your code compiles and produces no warnings.
+**IMPORTANT** We will be compiling your code with `-g -Wall -std=c++11`, so you must use the same options to check that your code compiles and produces no warnings.

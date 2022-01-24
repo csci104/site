@@ -56,15 +56,14 @@ MathJax.Hub.Config({tex2jax: {displayMath: [ ['$$','$$'] ], inlineMath: [['$','$
 <div class='websheet-stub'>cpp/cs104/classes/const_members2</div>
 <div class='websheet-stub'>cpp/cs104/classes/const_return</div>
 
-<h3>Recursion and Helper Functions</h3>
+<h3>Recursion, Linked-lists, and Helper Functions</h3>
+<div class='websheet-stub'>cpp/cs104/linkedlists/llsum_head</div>
+<div class='websheet-stub'>cpp/cs104/linkedlists/llsum_tail</div>
+<div class='websheet-stub'>cpp/cs104/linkedlists/llmax_head</div>
 <div class='websheet-stub'>cpp/recursion/array_max_head</div>
 <div class='websheet-stub'>cpp/recursion/array_max_tail</div>
 <div class='websheet-stub'>cpp/recursion/array_max_tail_void</div>
 
-<h3>Recursion and Linked-lists</h3>
-<div class='websheet-stub'>cpp/cs104/linkedlists/llsum_head</div>
-<div class='websheet-stub'>cpp/cs104/linkedlists/llsum_tail</div>
-<div class='websheet-stub'>cpp/cs104/linkedlists/llmax_head</div>
 
 
 <h3>Array Lists</h3>

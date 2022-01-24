@@ -53,41 +53,41 @@ lectures:
 
   # 4 Wed 1/19
   - topics:
-      - Operator Overloading
+      - Linked Lists (cont.)
+      - Operator Overloading Review (if time)
       - Runtime
-      - Recursion
     chapters:
       - Chapter 1.4
       - Chapter 3.3-3.5    
       - Chapter 1.3
     notes: 
+      - L02e_LinkedLists.pdf
       - L02c_OperatorOverloading.pdf
       - L02d_Runtime.pdf
-      - L03_Recursion.pdf
     recording: 
 
   # 5 Mon 1/24
   - topics:
       - Recursion
-      - Copy Semantics
-      - ADTs
+      - Copy Semantics (self review)
     chapters:
       - Chapter 1.3, 1.5
       - Chapter 3.1-3.3, 4.8
     notes:
       - L03_Recursion.pdf
       - L02f_CopyConstructors.pdf
-      - L04_ADTs.pdf
     recording: 
     
   # 6 Wed 1/26
   - topics:
+      - ADTs
       - STL
       - Inheritance
     chapters:
       - Chapter 3.3,4.8
       - Course Notes
     notes: 
+      - L04_ADTs.pdf
       - L05_STL.pdf
       - L06a_Inheritance.pdf
       - L06b_Polymorphism.pdf

@@ -8,9 +8,7 @@ Some skeleton code has been provided for you in the `{{ page.hwpath }}` folder a
 
 ### Overview
 
-This problem will have you implement a **search engine** (mimicing a toy version of Google or the like) that handles **webpages** stored in an index file, from which **parsers** for different file extensions can pull out useful information such as *text* and *incoming/outgoing links* to other webpages.  We will then implement a text/menu-based user interface that provides **command handlers** for various commands which then calls into the **search engine** to carry out the command. 
-
-As you will see, all of this will require using quite a lot of the object-oriented design principles along with many of the ADTs / data structures you are learning about. You will use C++ STL `vector`, `map`, `set`, etc. 
+This problem will have you implement a search engine (mimicing a toy version of Google or the like). As you will see, it will require using quite a lot of the ADTs / data structures you are learning about. You will use C++ STL `map`, `set`, etc. 
 
 **We may build off of this project in a future homework. We will not provide solutions so anything you do not get working in this HW will need to be fixed in the future. So PLEASE work hard to complete this homework.**
 

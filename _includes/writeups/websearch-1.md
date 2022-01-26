@@ -2,7 +2,7 @@
 ### Skeleton Code
 Some skeleton code has been provided for you in the `{{ page.hwpath }}` folder and has been pushed to the Github repository [`resources`]({{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  
 
-Copy the contents of `{{ page.hwpath }}` (and its subdirectories) over to a `{{ page.hwpath }}` folder under your `hw-username` repository.
+ - [ ] Copy the contents of `{{ page.hwpath }}` (and its subdirectories) over to a `{{ page.hwpath }}` folder under your `hw-username` repository.
 
 ### Overview
 
@@ -191,6 +191,8 @@ We have already written two derived classes to process the `QUIT` command and `P
 HANDLER_STATUS_T handle(SearchEng* eng, const std::string& cmd, std::istream& instr, std::ostream& ostr);
 ```
 
+**Note: Most of the command handlers will simply call a corresponding function in the `SearchEng` class to carry out the actual task. (See the `PRINT` handler)**.
+
 We will pass in the search engine so you have access to all of its public functionality, `cmd` is the identifier of the command (i.e. `QUIT`, `PRINT`, `AND`, `OR`, etc.), and `instr` and `ostr` are the the input and output streams from which you can read in the remaining, expected arguments for the specific command (e.g. search terms, etc.) and output the results (in this way, we can read and print result to files or to `cin`/`cout`).
 
 We included this design approach so you can see how it can make processing cleaner.  If you look at `SearchUI::run()` you'll notice the loop to process commands is very simple and straightforward.  In addition, we achieve more loose coupling because now we can add support for new commands by simply writing a new derived `Handler` class and instantiating it and adding it to the chain in the `SearchUI`.  Nothing in `SearchUI::run()` would need to change. 
@@ -209,7 +211,7 @@ Also, in order to not run into memory problems, you probably do not want to stor
 
 #### Combining Search Results
 
-For the `AND`, `OR`, and `DIFF` commands there is great amount of commonality in the code you would write to implement these searches.  Each of these commands may provide multiple search terms.  Much of the code for implementing these 3 approaches is the same except for how to combine the set of webpages that have one term with the set of webpages for another term.  Thus rather than repeating our code we will use polymorphism.  The `SearchEng::search()` function takes in a generic `WebPageSetCombiner` pointer to use to combine two sets of webpages based on a particular strategy: AND, OR, DIFF.  You will implement 3 derived classes, one for each strategy.  In this way, we not only can avoid duplicate search code but we can potentially come up with additional search strategies in the future.  You are welcome to implement these three classes in the `searcheng.h/cpp` files.  In `SearchEng::search()` you will need to look up the sets of webpages that contain a particular term and then combine them by calling the virtual `WebPageSetCombiner::combine` function.  These `combine` functions must run in **O(m log(m))** and NOT **O(m^2)** where m is the size of a set.
+For the `AND`, `OR`, and `DIFF` commands there is great amount of commonality in the code you would write to implement these searches.  Each of these commands may provide multiple search terms.  Much of the code for implementing these 3 approaches is the same except for how to combine the set of webpages that have one term with the set of webpages for another term.  Thus rather than repeating our code we will use polymorphism.  The `SearchEng::search()` function takes in a generic `WebPageSetCombiner` pointer to use to combine two sets of webpages based on a particular strategy: AND, OR, DIFF.  You will implement 3 derived classes, one for each strategy.  In this way, we not only can avoid duplicate search code but we can potentially come up with additional search strategies in the future.  You should implement these three derived classes in the `combiners.h/cpp` files.  The appropriate command handlers should create and pass in the appropriate `WebPageSetCombiner` to `SearchEng::search()`.  In `SearchEng::search()`, you will need to look up the sets of webpages that contain a particular term and then combine them by calling the virtual `WebPageSetCombiner::combine` function.  These `combine` functions must run in **O(m log(m))** and NOT **O(m^2)** where m is the size of a set.
 
 Furthermore, if we suppose there are `n` total search terms used over all webpages and a user performs a query with `k` search terms, and the maximum number of webpages that match any single term is `m`, then the query/search **MUST** be performed in runtime __`O(k*log(n) + k*m*log(m))`__
 
@@ -273,20 +275,24 @@ All of our `SearchUI` functions use generic `std::istream` or `std::ostream` ref
 
 ### Recommended Ordering of Implementation
 
-1. Complete your `MDParser`.  Consider writing a separate test program (i.e. `.cpp` program with a `main()`) that creates an MDParser and parses a sample MD file.  Examine the output and ensure you have the desired terms and links.
+- [ ] Complete your `MDParser`.  You may consider writing a separate test program (i.e. `.cpp` program with a `main()`) that creates an MDParser and parses a sample MD file, but we have also provided a set of MD parsing tests in `mdparse-tests.cpp`.  
 
-2. Complete the various `WebPageSetCombiner` derived implementations (in `combiners.h/cpp`)
+- [ ] Complete the various `WebPageSetCombiner` derived implementations (in `combiners.h/cpp`)
 
-3. Implement the remainder of the `SearchEng` class.
+- [ ] Implement the remainder of the `SearchEng` class.
 
-4. Implement the derived `Handler` implementations for each UI command in the `cmd_handler.h/cpp` files.
+- [ ] Implement the derived `Handler` implementations for each UI command in the `cmdhandler.h/cpp` files.
 
-5. Complete the `main()` application by creating the various objects, registering them, etc.
+- [ ] Complete the `main()` application by creating the various objects, registering them, etc.
 
 ### Other Requirements
 
 You may not use any algorithms from `<algorithm>` and that includes `set_intersection`, `set_union`, etc.  Also, you may still NOT use the C++ `auto` keyword or ranged loops.
 
-### Review and Test Your Code (0%)
+### Completing your Makefile
 
-Go back and review your code and consider if there are ways to organize it better, separate responsibilities into alternate classes, etc. Be sure to test it thoroughly with some of your own files (write dummy webpages with links, etc.) You are welcome to share those files you create with other students.  Be sure there are no memory errors (not just leaks, but no memory errors like invalid reads, etc.).  You may even consider writing some unit tests for your classes.  That way as you make changes you can re-run those tests and ensure you didn't accidentally break some other aspect of your class.  Also remember to write your `Makefile` correctly to compile the necessary code when changes are made to your source.
+Also remember to complete the provided `Makefile` to ensure all your code compiles correctly.  Follow the sample targets already provided and complete the the remaining targets and target for the executable `search-shell`.  Again, a change in a `.h` or `.cpp` should trigger compilation of only those `.o` files that depend on that `.cpp` and related `.h` files.  The executable should be recompiled if any `.o` file has been updated.
+
+### Testing
+
+While we will provide some unit tests, you can use the data files in the `test-small` folder to run sample queries. Examine the `.md` and `.txt` files provided and consider what AND, OR, DIFF, INCOMING, and OUTGOING commands might be useful to try to validate your implementation.

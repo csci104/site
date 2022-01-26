@@ -39,7 +39,14 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 {% endfor %}
 
+## Checkpoint
+
+For checkpoint credit, commit and push your `hw-username` repo with a `hw1` subfolder that contains:
+
+- Your solution to question 4 (ADTs). You may revise your answer in your final submission but need to show your answers and provide appropriate justification.
+- Your solution to question 5 (Class Organization).  This will ensure you have read and started to consider your class design and approach to the web search programming problem.
+- a version of `md_parser.h/cpp` that can pass the `mdparser-tests` tests in `mdparser-tests.cpp`.  To attempt to compile and run the `mdparser-tests` tests, type `make parse-test` at the command line which will both compile AND run the tests (if the compilation succeeded). 
+
 
 {% include commit-reclone.md %}
-
 

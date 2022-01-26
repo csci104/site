@@ -9,3 +9,5 @@ Then provide an explanation for the following questions.
 Below is an example of the kind of diagram we want you to produce which shows inheritance and composition relationships.  Note: `*` means **many** and helps define a 1-to-many relationship vs. a 1-to-1 relationship.
 
 <img src="{{site.baseurl}}/homework/img/classhierarchy.png">
+
+Provide your answers in a **PDF file named: `

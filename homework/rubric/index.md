@@ -115,3 +115,22 @@ title: Visual Inspection Rubric
         </tbody>
     </table>
 </div>
+
+## Compilation
+<div class="text-align-center">
+    <table class="standard">
+        <thead>
+            <tr>
+                <th>Infraction</th>
+                <th>Deduction</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Compile warnings</td>
+                <td>Up to 5 points</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

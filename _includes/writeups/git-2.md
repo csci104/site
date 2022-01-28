@@ -5,7 +5,7 @@
 >figure courtesy of the [Pro Git](http://git-scm.com/book) book by Scott Chacon
 
 Notes:
-  - Parts (a) through (f) should be done in sequence. In other words, when you get to part (f), you should assume that you already executed the earlier commands (a), (b), ..., (e). You **must** use the terminalogy specified in the lifecycle shown above, for example the output of `git status` is not accepted as a valid answer. 
+  - Parts (a) through (f) should be done in sequence. In other words, when you get to part (f), you should assume that you already executed the earlier commands (a), (b), ..., (e). You **must** use the terminology specified in the lifecycle shown above, for example the output of `git status` is not accepted as a valid answer. 
   - For the purposes of this question, you can assume you have full access (i.e. read/write) to the repository.
   - For this problem you may use online sources to look up information about `make` and Makefiles, but please cite your sources).  
   - **Place your answers in a file named `hw2.txt`**.

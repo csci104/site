@@ -9,6 +9,6 @@ Then provide an explanation for the following questions.
 
 <img src="{{site.baseurl}}/homework/img/classhierarchy.png">
 
-**Provide your answers in `hw2.txt`**
+**Provide your diagram and answers in `q5.pdf`**
 
 You can use any drawing program you wish (hand-drawn and scanned is also fine **if you draw neatly**).  

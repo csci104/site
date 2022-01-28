@@ -40,9 +40,9 @@ The diagram below shows the general class structure and can be referenced as you
 Your first challenge is to complete a simplified MD parser.  We want our search engine to be able to support alternate file formats (TXT, MD, HTML, etc.) so we created an abstract `PageParser` class with a parse method.
 
 ```c++
-  virtual void parse(std::string filename,
-		     std::set<std::string>& allSearchableWords,
-		     std::set<std::string>& allOutgoingLinks) = 0;
+    void parse(std::istream& istr,
+               std::set<std::string>& allSearchableTerms,
+               std::set<std::string>& allOutgoingLinks);
 ```
 
 In general, we want to parse files and find all the searchable terms.  To simplify our definition of *searchable terms*, we will consider text consisting of letters, numbers, and consider all other characters as **special characters**. The interpretation is that any special character (other than letters or numbers) should be used to separate words, but numbers and letters together form words (aka "terms"). For instance, the string `Computer-Science, 104  is    really,really5times,really#great?I don't_know!` should be parsed into the search terms: "Computer", "Science", "104", "is", "really", "really5times", "really", "great", "I", "don", "t", "know".  Thus, during parsing, any contiguous sequence of alphanumeric characters form a search term. All other characters (special characters) will be used to split search terms and, for the sake of searching, can be discarded.  In addition, you may want to convert searchable terms to a standard (canonical) form so that a search for `computer` would match a webpage containing `Computer`. We have provided some functions in `util.h/cpp` that can help you convert to a standard case.
@@ -50,11 +50,11 @@ In general, we want to parse files and find all the searchable terms.  To simpli
 
 #### TXT File Parsing
 
-We have provided an implementation of a `.txt` file parser that you may **use for reference** when completing the following MD parser.  We assume `.txt` file can contain no hyperlinks to other pages, so we only need to parse the text  for search terms. 
+We have provided an implementation of a `.txt` file parser (`txtparser.h/.cpp`) that you may **use for reference** when completing the following MD parser.  We assume `.txt` file can contain no hyperlinks to other pages, so we only need to parse the text for search terms. 
 
 #### Markdown Parsing
 
-You should complete the derived MD parser class in `md_parser.cpp` that implements the `parse` function to parse a simplified MarkDown format.  We will only support normal text and links in our Markdown format and parser.  In addition to text, you should be able to parse MD links of the form `[anchor text](link_to_file)` where `anchor text` is any text that should actually be displayed on the webpage and contains searchable terms while `(link_to_file)` is a hyperlink (or just file path) to the desired webpage file.  A few notes about these links:
+You should complete the derived MD parser class in `md_parser.cpp` that implements the `parse` function to parse a simplified MarkDown format.  If you are unfamiliar with Markdown you may like to read [this webpage](https://www.markdownguide.org/basic-syntax) and especially the [links section](https://www.markdownguide.org/basic-syntax/#links). We will only support normal text and links in our Markdown format and parser.  In addition to text, you should be able to parse MD links of the form `[anchor text](link_to_file)` where `anchor text` is any text that should actually be displayed on the webpage and contains searchable terms while `(link_to_file)` is a hyperlink (or just file path) to the desired webpage file.  A few notes about these links:
 
 + The anchor text inside the `[]` could be anything, except it will not contain any `[`, `]`, `(`, or `)`. It should be parsed like normal text described in the previous paragraph
 + A valid link will have the `(` immediately following the `]`, with no characters between.  If that is not the case, then the text is not a link.

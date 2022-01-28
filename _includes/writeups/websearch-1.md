@@ -54,7 +54,7 @@ We have provided an implementation of a `.txt` file parser (`txtparser.h/.cpp`) 
 
 #### Markdown Parsing
 
-You should complete the derived MD parser class in `md_parser.cpp` that implements the `parse` function to parse a simplified MarkDown format.  If you are unfamiliar with Markdown you may like to read [this webpage](https://www.markdownguide.org/basic-syntax) and especially the [links section](https://www.markdownguide.org/basic-syntax/#links). We will only support normal text and links in our Markdown format and parser.  In addition to text, you should be able to parse MD links of the form `[anchor text](link_to_file)` where `anchor text` is any text that should actually be displayed on the webpage and contains searchable terms while `(link_to_file)` is a hyperlink (or just file path) to the desired webpage file.  A few notes about these links:
+You should complete the derived MD parser class in `md_parser.cpp` that implements the `parse` function to parse a simplified MarkDown format.  If you are unfamiliar with Markdown you may like to read [this tutorial](https://www.markdownguide.org/basic-syntax) and especially the [links section](https://www.markdownguide.org/basic-syntax/#links). We will only support normal text and links in our Markdown format and parser.  In addition to text, you should be able to parse MD links of the form `[anchor text](link_to_file)` where `anchor text` is any text that should actually be displayed on the webpage and contains searchable terms while `(link_to_file)` is a hyperlink (or just file path) to the desired webpage file.  A few notes about these links:
 
 + The anchor text inside the `[]` could be anything, except it will not contain any `[`, `]`, `(`, or `)`. It should be parsed like normal text described in the previous paragraph
 + A valid link will have the `(` immediately following the `]`, with no characters between.  If that is not the case, then the text is not a link.
@@ -62,7 +62,7 @@ You should complete the derived MD parser class in `md_parser.cpp` that implemen
 + There may be text immediately after the closing `)`. You should just treat it as a new word.
 + Text in parentheses that is NOT preceded immediately by `[]` should NOT be considered as a link but just normal text.  So in the text: *"ArrayLists (aka vectors) support O(1) access"*, `aka vectors` and `1` should be considered normal text and not a link. 
 
-The goal of the parser is to extract all unique search terms and identify all the links (i.e. all the `link_to_file`s found in the `(...)` part of a link and return them in the `allSearchableTerms` and `allOutgoingLinks` sets that were passed-by-reference to the function.
+The goal of the parser is to extract all unique search terms and identify all the links (i.e. all the `link_to_file`s) found in the `(...)` part of a link and return them in the `allSearchableTerms` and `allOutgoingLinks` sets that were passed-by-reference to the function.
 
 If the contents of a file are...
 
@@ -72,7 +72,7 @@ If the contents of a file are...
 
 ...then `allSearchableTerms` should contain:  `Hello`, `world`, `hi`, `bye` `Table`, `t`, `bone`, `steak`.  In addition, `allOutgoingLinks` should contain just `data2.txt`.  Note that you can return the words in any normalized case you like that would make case-insensitive searching easier.  
 
-You may implement the Markdown parser as you see fit. However, we recommend using a finite state machine (FSM) approach to read the file character by character and use "states" to determine how to process/handle that character and whether text is a normal term, a link, etc. The diagram below shows a potential FSM for parsing Markdown.  Here we assume we read 1 character (i.e. `c`) at each iteration until we reach the end of the file and process `c` as well as use it to transition between states.  We can use the `isalnum` function from the `cctype` library in C++ to check whether a character is a valid character for a search term.  In addition, we assume we maintain two strings: `term` and `link` where we can append characters until we are ready to split and start a new term/link.  
+You may implement the Markdown parser as you see fit. However, we recommend you consider using a finite state machine (FSM) approach to read the file character by character and use "states" to determine how to process/handle that character and whether text is a normal term, a link, etc. The diagram below shows a potential FSM for parsing Markdown.  Here we assume we read 1 character (i.e. `c`) at each iteration until we reach the end of the file and process `c` as well as use it to transition between states.  We can use the `isalnum` function from the `cctype` library in C++ to check whether a character is a valid character for a search term.  In addition, we assume we maintain two strings: `term` and `link` where we can append characters until we are ready to split and start a new term/link.  
 
 <img src="{{ site.baseurl }}/homework/img/websearch-mdfsm.png" alt="MD Parsing FSM" width="600"/>
 

@@ -108,7 +108,7 @@ would be displayed as:
 [some text](there-is-no-closing-parentheses
 ```
 
-**Example 4**: The example below happens all the time in web pages. Still list the link.  The linked page/file just doesn't exist.
+**Example 4**: The example below happens all the time in web pages. Still list the link.  The linked page/file just doesn't exist on the server.
 
 ```
 [some text](url-to-nonexistent-file)
@@ -126,9 +126,14 @@ Your actual search engine application will need a list of all the webpages to pa
 File: `test-small/index.in`
 
 ```
-test-small/data1.md
-test-small/data2.txt
-test-small/data3.md
+test-small/pga.md
+test-small/pgb.md
+test-small/pgc.md
+test-small/pgd.md
+test-small/pge.md
+test-small/pgf.md
+test-small/pgg.md
+test-small/pgh.txt
 ```
 
 The contents of `index.in` are the file names of the web pages themselves, one per line.  Each web page is stored in its own file. Your program should then read in all the web pages whose file name was listed in the index.  There will be no format errors in the index file other than possibly blank lines, which you should just skip and continue to the next line. If any file cannot be opened you may output an error message but should continue to the next file and try to parse it.
@@ -143,20 +148,20 @@ $ ./search-shell test-small/index.in
 
 **Note:** You may assume that file/page names **are case-sensitive** and may not contain spaces.
 
-### Write a WebPage Class
+### WebPage Class
 After parsing a webpage we need to store the data and prepare it for searching and tracking link relationships.  We have created a `WebPage` class for this.  The code is provided in files `webpage.h/cpp`.  You'll want to understand the data that these objects store and track so you can use and create them when parsing. 
 
 The function `all_terms()` should return all individual searchable terms that the parser found. 
 
 Outgoing links are those that occur in the current webpage (i.e., they point from "this" webpage to some other page).  These are all known immediately after parsing. However you should also store and track (for future assignments) the incoming links which are the page (file) names that link to "this" webpage.  You'll likely need to add these little by little as you parse more pages.  If, as you are parsing a page you encounter a link to another, you may need to create a `WebPage` object for that linked page before you actually parse that page. So you'll need to keep track of whether or not pages exist and ensure you don't make two WebPage objects for the same page. **Note:** We won't use the incoming and outgoing links directly (other than printing them out) in this assignment  but we will test your code to ensure you are identifying and adding them correctly. We just wanted you to parse and store them now so you don't have to add that later on in the next assignment.  These links could form an important part of a future homework.
 
-As an example, if a page named `data/page1.md` has the following contents
+As an example, if a page named `test-small/pg1.md` has the following contents
 
 ```
-Good link to [other page](data/page2.md).
+[another link1](test-small/pg2.md) [link3](test-small/pg3.md)
 ```
 
-then `data/page1.md` would have an **outgoing link** to `data/page2.md` and `data/page2.md` would have an **incoming link** from `data/page1.md`
+then `test-small/pg1.md` would have an **outgoing link** to `test-small/pg2.md` and `test-small/pg3.md`. And they in turn, would have one **incoming link** from `test-small/pg1.md`
 
 ### Create a Command-line UI for Searching and Displaying Page Info
 
@@ -178,9 +183,9 @@ You may assume all commands will be on a single line and NOT span multiple lines
 
 + `QUIT` should quit the program by returning **HANDLER_QUIT**.
 
-+ `AND word1 word2 ... wordN`: the user wants to see all the pages that contain *ALL* of the given words. The number of words here can be arbitrary. There will always be at least one whitespace between each element (`AND` and any of the search term(s)).  If no terms are provide, just return an empty set. If only one term is provided, return all the pages containing that term.  **No errors may occur for an AND command**.
++ `AND word1 word2 ... wordN`: the user wants to see all the pages that contain *ALL* of the given words. The number of words here can be arbitrary. There will always be at least one whitespace between each element (`AND` and any of the search term(s)).  If no terms are provided, just return an empty set. If only one term is provided, return all the pages containing that term.  **No errors may occur for an AND command**.
 
-+ `OR word1 word2 ... wordN`: the user wants to see all the pages that contain ANY (at least one) of the given words. The number of words here can be arbitrary. If no terms are provide, just return an empty set. If only one term is provided, return all the pages containing that term. **No errors may occur for an OR command**.
++ `OR word1 word2 ... wordN`: the user wants to see all the pages that contain ANY (at least one) of the given words. The number of words here can be arbitrary. If no terms are provided, just return an empty set. If only one term is provided, return all the pages containing that term. **No errors may occur for an OR command**.
 
 + `DIFF word1 word2 ... wordN`: the user wants to see all the pages that contain word1 but do NOT contain *ANY* of the following words (i.e. find the pages that have word1 and then remove any of those pages that also contain word2, then remove any of the remaining pages that contain word3, etc.) The number of words here can be arbitrary.  If no terms are provide, just return an empty set. If only one term is provided, return all the pages containing that term.  **No errors may occur for a DIFF command**.
 
@@ -227,10 +232,10 @@ Also, in order to not run into memory problems, you probably do not want to stor
 
 For the `AND`, `OR`, and `DIFF` commands there is great amount of commonality in the code you would write to implement these searches.  Each of these commands may provide multiple search terms.  Much of the code for implementing these 3 approaches is the same except for how to combine the set of webpages that have one term with the set of webpages for another term.  Thus rather than repeating our code we will use polymorphism.  The `SearchEng::search()` function takes in a generic `WebPageSetCombiner` pointer to use to combine two sets of webpages based on a particular strategy: AND, OR, DIFF.  You will implement 3 derived classes, one for each strategy.  In this way, we not only can avoid duplicate search code but we can potentially come up with additional search strategies in the future.  You should implement these three derived classes in the `combiners.h/cpp` files.  The appropriate command handlers should create and pass in the appropriate `WebPageSetCombiner` to `SearchEng::search()`.  In `SearchEng::search()`, you will need to look up the sets of webpages that contain a particular term and then combine them by calling the virtual `WebPageSetCombiner::combine` function.  These `combine` functions must run in **O(m log(m))** and NOT **O(m^2)** where m is the size of a set.
 
-Furthermore, if we suppose there are `n` total search terms used over all webpages and a user performs a query with `k` search terms, and the maximum number of webpages that match any single term is `m`, then the query/search **MUST** be performed in runtime __`O(k*log(n) + k*m*log(m))`__
+Furthermore, if we suppose there are `n` total searchable terms used over all webpages and a user performs a query with `k` search terms, and the maximum number of webpages that match any single term is `m`, then the query/search **MUST** be performed in runtime __`O(k*log(n) + k*m*log(m))`__
 
 
-The `SearchEng` class is also responsible for parsing.  To aid this, we will pass in a parser to the constructor to parse files that don't have any extension. This should be the `TXTParser`.  But we can register other parsers for files with given extensions (e.g. `.md` or `.txt` files). You will need to track the parsers for each extension.  You should assume that once registered, the `SearchEng` class *owns* these parsers and is responsible for their cleanup. Then we will also need the ability to actually read and parse files given an **index** file.  The `SearchEng` class has the following two member functions for this purpose:
+The `SearchEng` class is also responsible for storing the various parsers and applying them when files are read.  We can register parsers for files with given extensions (e.g. `.md` or `.txt` files). You will need to track the parsers for each extension.  You should assume that once registered, the `SearchEng` class *owns* these parsers and is responsible for their cleanup. Then we will also need the ability to actually read and parse files given an **index** file.  The `SearchEng` class has the following two member functions for this purpose:
 
 ```c++
   void register_parser(const std::string& extension, PageParser* parser);

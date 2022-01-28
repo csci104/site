@@ -345,7 +345,7 @@ Be sure to understand the contents of the pages in `test-small` and what the com
 
 Here is an image of the graph that the webpages in the `test-small` directory (i.e. `pga.md`, `pgb.md`, etc.) and their links create.
 
-<img src="{{ site.baseurl }}/homework/img/websearch-testgraph.png" alt="webpage graph" width="640"/>
+<img src="{{ site.baseurl }}/homework/img/websearch-testgraph.png" alt="webpage graph"/>
 
 #### Golden Versions of the Project
 

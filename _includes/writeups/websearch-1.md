@@ -90,7 +90,7 @@ would be displayed as:
 
 #### Edge cases for MD Parsing
 
-**Example 1**:  The below is ill-formed but we will allow it. The link would just be `""`.
+**Example 1**:  The below is an ill-formed link. We will allow parsing to continue, but no link would be returned/added (i.e. the set of outgoing links would be empty).  So **note** that empty strings for search terms and links should just be ignored.
 
 ```
 [empty url afterwards]()
@@ -118,6 +118,7 @@ would be displayed as:
 ```
 [](some-file)
 ```
+
 
 #### Index files
 

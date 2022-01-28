@@ -41,7 +41,7 @@ shape2: shape2.o shape.o
 
 clean:
 	rm -f *.o *~ shape1 shape2 *~
-	``` 
+``` 
 
 Now we run the command 
 

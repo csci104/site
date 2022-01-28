@@ -4,7 +4,7 @@ Some skeleton code has been provided for you in the `{{ page.hwpath }}` folder a
 
  - [ ] Copy the contents of `{{ page.hwpath }}` (and its subdirectories) over to a `{{ page.hwpath }}` folder under your `hw-username` repository.
 
-*Don't worry about the number of source files you see. Many are near complete and others will be short and/or repeat the same pattern of code. So the overall amount of code you have to write will not be TOO large.  The main task is to understand how all the classes fit together and choose the appropriate ADTs in the `SearchEng` class. Read through the contents of this description a few times (even if it seems long).*
+*Don't worry about the number of source files you see. Many are complete and others will be short and/or repeat the same pattern of code. So the overall amount of code you have to write will not be TOO large.  The main task is to understand how all the classes fit together and choose the appropriate ADTs in the `SearchEng` class. Read through the contents of this description a few times (even if it seems long).*
 
 ### Overview
 
@@ -15,6 +15,8 @@ As you will see, all of this will require using quite a lot of the object-orient
 **We may build off of this project in a future homework. We will not provide solutions so anything you do not get working in this HW will need to be fixed in the future. So PLEASE work hard to complete this homework.**
 
 In addition, we provide you a lot of code and structure so that you can see "good" examples of object-oriented design.  Again, recall that your ability to read and understand others' code is on par with being able to write your own.
+
+We also heavily utilize inheritance and polymorphism. Understanding how they work and the benefits of using them is a key learning outcome of doing this assignment.  So please spend some time understanding and considering the given design.
 
 At a high level, a search engine is based on the following components:
 
@@ -291,9 +293,25 @@ Also remember to complete the provided `Makefile` to ensure all your code compil
 
 ### Other Requirements
 
-You may not use any algorithms from `<algorithm>` and that includes `set_intersection`, `set_union`, etc.  Also, you may still NOT use the C++ `auto` keyword or ranged loops.
+- You may not use any algorithms from `<algorithm>` and that includes `set_intersection`, `set_union`, etc.  Also, you may still NOT use the C++ `auto` keyword or ranged loops.
+
+- You may not change any public interface of a provided class. You may add private helper functions as desired, and data members where needed.
+
 
 ### Recommended Ordering of Implementation
+
+The files you will need to complete are:
+
+ - `cmdhandler.h` and `cmdhandler.cpp`
+ - `combiners.h` and `combiners.cpp`
+ - `md_parser.cpp` and potentially `md_parser.h`
+ - `search-shell.cpp`
+ - `searcheng.h` and `searcheng.cpp`
+ - `Makefile`
+
+All other files are complete, though you'll need to read through them carefully to understand what you've been given.
+
+We recommend the following order of implementation:
 
 - [ ] Complete your `MDParser`.  You may consider writing a separate test program (i.e. `.cpp` program with a `main()`) that creates an MDParser and parses a sample MD file, but we have also provided a set of MD parsing tests in `mdparse-tests.cpp`.  
 
@@ -305,9 +323,44 @@ You may not use any algorithms from `<algorithm>` and that includes `set_interse
 
 - [ ] Implement the derived `Handler` implementations for each UI command in the `cmdhandler.h/cpp` files.
 
-- [ ] Complete the `main()` application by creating the various objects, registering them, etc.
+- [ ] Complete the `main()` application in `search-shell.cpp` by creating the various objects, registering them, etc.
+
 
 ### Testing
 
-While we will provide some unit tests, you can use the data files in the `test-small` folder to run sample queries. Examine the `.md` and `.txt` files provided and consider what AND, OR, DIFF, INCOMING, and OUTGOING commands might be useful to try to validate your implementation.
 
+#### Small Data Set
+
+While we will provide unit tests, you can also use the data files in the `test-small` folder to run sample queries. Examine the `.md` and `.txt` files provided and consider what AND, OR, DIFF, INCOMING, and OUTGOING commands might be useful to try to validate your implementation.  To help get started we have provided two sample sets of input commands and the expected output.  
+
+```bash
+./search-shell test-small/index.in test-small/query1.txt test-small/query1.out
+```
+
+You can then compare your output (`test-small/query1.out`) to the expected output (`test-small/query1.exp`).
+
+You can repeat the same for `query2.txt`.  
+
+Be sure to understand the contents of the pages in `test-small` and what the commands in `query1.txt` and `query2.txt` **SHOULD do** and **why the expected outputs are what they are**, so that if your output doesn't match the expected output you can know where to start debugging.
+
+Here is an image of the graph that the webpages in the `test-small` directory (i.e. `pga.md`, `pgb.md`, etc.) and their links create.
+
+<img src="{{ site.baseurl }}/homework/img/websearch-testgraph.png" alt="webpage graph" width="640"/>
+
+#### Golden Versions of the Project
+
+So that you can more easily ensure your program behaviour matches our expected behavior, we have provided a **COMPILED, WORKING** executable of the solution. We have a version for newer M1 Macs and all other laptops running Docker:  `search-shell-m1` (for M1 Macs running Docker) and `search-shell-x86` (for all other laptops running Docker).
+
+So if you like you can run that with some inputs to see what should happen:
+
+```bash
+./search-shell-x86 test-small/index.in
+```
+
+Or regenerate the expected output described above by running:
+
+```bash
+./search-shell-x86 test-small/index.in test-small/query1.txt test-small/query1.out
+```
+
+(If you are on an M1 laptop, replace `x86` with `m1`).

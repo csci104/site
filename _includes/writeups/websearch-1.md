@@ -302,6 +302,9 @@ Also remember to complete the provided `Makefile` to ensure all your code compil
 
 - You may not change any public interface of a provided class. You may add private helper functions as desired, and data members where needed.
 
+- Be sure to meet the runtime requirements for `SearchEng::search()` described above
+
+- Be sure to handle the check for and throw the appropriate exceptions listed in the header file (`searcheng.h`) documentation for various `SearchEng` member functions.
 
 ### Recommended Ordering of Implementation
 

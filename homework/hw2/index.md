@@ -10,7 +10,7 @@ hwpath: hw2
 
 ## {{page.title}}
 
-+ Due: See [assignments page]({{site.url}}/assignments/index.html)
++ Due: See [homework page]({{site.baseurl}}/homework/index.html)
 + Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
 
 ### Skeleton Code

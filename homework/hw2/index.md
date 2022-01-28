@@ -8,7 +8,7 @@ hwpath: hw2
 
 ---
 
-## {{page.hwpath}}
+## {{page.title}}
 
 + Due: See [assignments page]({{site.url}}/assignments/index.html)
 + Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`

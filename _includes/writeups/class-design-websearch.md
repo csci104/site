@@ -1,6 +1,6 @@
 Read the Web Search programming problem desribed in the second half of the assignment carefully (several times), and study the provided skeleton code.  
 
-**Draw an inheritance diagram** (an example of an inheritance diagram is shown below) of all the classes in the skeleton code, as well as all of the classes you need to create for this assignment. Show any inheritance relationship as well as **important** composition (has-a) relationships between the classes we've given (you can ignore composition relationship of basic `string`, `int`, etc. data members) of important data members)
+**Draw an inheritance diagram** (an example of an inheritance diagram is shown below) of all the classes in the skeleton code, as well as all of the classes you need to create for this assignment. Show any inheritance relationship as well as **important** composition (has-a) relationships between the classes we've given (you can ignore composition relationship of basic `string`, `int`, etc. data members) of important data members). **Before you can show composition relationships, you will need to consider what data members might need to be added to various classes (in particular the `SearchEng` and derived `Handlers`).**
 
 **Provide your diagram and answers in `q5.pdf`**.  You can use any drawing program you wish (hand-drawn and scanned is also fine **if you draw neatly**).
 

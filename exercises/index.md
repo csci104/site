@@ -64,29 +64,9 @@ MathJax.Hub.Config({tex2jax: {displayMath: [ ['$$','$$'] ], inlineMath: [['$','$
 <div class='websheet-stub'>cpp/recursion/array_max_tail</div>
 <div class='websheet-stub'>cpp/recursion/array_max_tail_void</div>
 
-
-
-<h3>Array Lists</h3>
-<div class='websheet-stub'>cpp/cs104/arraylist/bounded_array_list</div>
-
-<h3>Operator Overloading</h3>
-<div class='websheet-stub'>cpp/cs104/op_overload/complex_add_nonmember</div>
-<div class='websheet-stub'>cpp/cs104/op_overload/complex_add_member</div>
-<div class='websheet-stub'>cpp/cs104/op_overload/complex_add_int</div>
-<div class='websheet-stub'>cpp/cs104/op_overload/complex_compare_eq</div>
-<div class='websheet-stub'>cpp/cs104/op_overload/int_add_friend</div>
-<div class='websheet-stub'>cpp/cs104/op_overload/ostream_friend</div>
-<div class='websheet-stub'>cpp/cs104/op_overload/str</div>
-
-<h3>Copy Constructors and Assignment Operators</h3>
-<div class='websheet-stub'>cpp/cs104/copyassign/intarray_defaults</div>
-<div class='websheet-stub'>cpp/cs104/copyassign/intarray_destructor</div>
-<div class='websheet-stub'>cpp/cs104/copyassign/intarray_copycon</div>
-<div class='websheet-stub'>cpp/cs104/copyassign/intarray_assign</div>
-<div class='websheet-stub'>cpp/cs104/copyassign/intarray_assign_gotchas</div>
-
 <h3>STL and Maps</h3>
 <div class='websheet-stub'>cpp/cs104/stl/zip_sort</div>
+<div class='websheet-stub'>cpp/cs104/stl/map-example</div>
 <div class='websheet-stub'>cpp/cs104/stl/zip_map</div>
 
 <h3>Inheritance</h3>
@@ -99,6 +79,12 @@ MathJax.Hub.Config({tex2jax: {displayMath: [ ['$$','$$'] ], inlineMath: [['$','$
 <div class='websheet-stub'>cpp/cs104/polymorphism/virtfunc1</div>
 <div class='websheet-stub'>cpp/cs104/polymorphism/virtfunc2</div>
 <div class='websheet-stub'>cpp/cs104/polymorphism/private_inh</div>
+
+
+
+<h3>Array Lists</h3>
+<div class='websheet-stub'>cpp/cs104/arraylist/bounded_array_list</div>
+
 
 <h3>Templates</h3>
 <div class='websheet-stub'>cpp/cs104/templates/func_template_max</div>
@@ -149,3 +135,20 @@ MathJax.Hub.Config({tex2jax: {displayMath: [ ['$$','$$'] ], inlineMath: [['$','$
 <div class='websheet-stub'>cpp/cs104/cpp11/unique_ptr</div>
 <div class='websheet-stub'>cpp/cs104/cpp11/unique_ptr2</div>
 <div class='websheet-stub'>cpp/cs104/cpp11/sharedptr1</div>
+
+<h2>Review from CS 103</h2>
+<h3>Operator Overloading</h3>
+<div class='websheet-stub'>cpp/cs104/op_overload/complex_add_nonmember</div>
+<div class='websheet-stub'>cpp/cs104/op_overload/complex_add_member</div>
+<div class='websheet-stub'>cpp/cs104/op_overload/complex_add_int</div>
+<div class='websheet-stub'>cpp/cs104/op_overload/complex_compare_eq</div>
+<div class='websheet-stub'>cpp/cs104/op_overload/int_add_friend</div>
+<div class='websheet-stub'>cpp/cs104/op_overload/ostream_friend</div>
+<div class='websheet-stub'>cpp/cs104/op_overload/str</div>
+
+<h3>Copy Constructors and Assignment Operators</h3>
+<div class='websheet-stub'>cpp/cs104/copyassign/intarray_defaults</div>
+<div class='websheet-stub'>cpp/cs104/copyassign/intarray_destructor</div>
+<div class='websheet-stub'>cpp/cs104/copyassign/intarray_copycon</div>
+<div class='websheet-stub'>cpp/cs104/copyassign/intarray_assign</div>
+<div class='websheet-stub'>cpp/cs104/copyassign/intarray_assign_gotchas</div>

@@ -46,7 +46,7 @@ hw2:
       points: 10
   programming_parts:
     - writeup: websearch-1.md
-      number: 5
+      number: 6
       title: Websearch (Inheritance, Polymorphism, Sets, Maps)
       points: 60
 

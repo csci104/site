@@ -4,19 +4,15 @@ Some skeleton code has been provided for you in the `{{ page.hwpath }}` folder a
 
  - [ ] Copy the contents of `{{ page.hwpath }}` (and its subdirectories) over to a `{{ page.hwpath }}` folder under your `hw-username` repository.
 
-*Don't worry about the number of source files you see. Many are complete and others will be short and/or repeat the same pattern of code. So the overall amount of code you have to write will not be TOO large.  The main task is to understand how all the classes fit together and choose the appropriate ADTs in the `SearchEng` class. Read through the contents of this description a few times (even if it seems long).*
+*Don't worry about the number of source files you see. Many are near complete and others will be short and/or repeat the same pattern of code. So the overall amount of code you have to write will not be TOO large.  The main task is to understand how all the classes fit together and choose the appropriate ADTs in the `SearchEng` class. Read through the contents of this description a few times (even if it seems long).*
 
 ### Overview
 
-This problem will have you implement a **search engine** (mimicing a toy version of Google or the like) that handles **webpages** stored in an index file, from which **parsers** for different file extensions can pull out useful information such as *text* and *incoming/outgoing links* to other webpages.  We will then implement a text/menu-based user interface that provides **command handlers** for various commands which then calls into the **search engine** to carry out the command. 
-
-As you will see, all of this will require using quite a lot of the object-oriented design principles along with many of the ADTs / data structures you are learning about. You will use C++ STL `vector`, `map`, `set`, etc. 
+This problem will have you implement a search engine (mimicing a toy version of Google or the like). As you will see, it will require using quite a lot of the ADTs / data structures you are learning about. You will use C++ STL `map`, `set`, etc. 
 
 **We may build off of this project in a future homework. We will not provide solutions so anything you do not get working in this HW will need to be fixed in the future. So PLEASE work hard to complete this homework.**
 
 In addition, we provide you a lot of code and structure so that you can see "good" examples of object-oriented design.  Again, recall that your ability to read and understand others' code is on par with being able to write your own.
-
-We also heavily utilize inheritance and polymorphism. Understanding how they work and the benefits of using them is a key learning outcome of doing this assignment.  So please spend some time understanding and considering the given design.
 
 At a high level, a search engine is based on the following components:
 
@@ -40,9 +36,9 @@ The diagram below shows the general class structure and can be referenced as you
 Your first challenge is to complete a simplified MD parser.  We want our search engine to be able to support alternate file formats (TXT, MD, HTML, etc.) so we created an abstract `PageParser` class with a parse method.
 
 ```c++
-    void parse(std::istream& istr,
-               std::set<std::string>& allSearchableTerms,
-               std::set<std::string>& allOutgoingLinks);
+  virtual void parse(std::string filename,
+		     std::set<std::string>& allSearchableWords,
+		     std::set<std::string>& allOutgoingLinks) = 0;
 ```
 
 In general, we want to parse files and find all the searchable terms.  To simplify our definition of *searchable terms*, we will consider text consisting of letters, numbers, and consider all other characters as **special characters**. The interpretation is that any special character (other than letters or numbers) should be used to separate words, but numbers and letters together form words (aka "terms"). For instance, the string `Computer-Science, 104  is    really,really5times,really#great?I don't_know!` should be parsed into the search terms: "Computer", "Science", "104", "is", "really", "really5times", "really", "great", "I", "don", "t", "know".  Thus, during parsing, any contiguous sequence of alphanumeric characters form a search term. All other characters (special characters) will be used to split search terms and, for the sake of searching, can be discarded.  In addition, you may want to convert searchable terms to a standard (canonical) form so that a search for `computer` would match a webpage containing `Computer`. We have provided some functions in `util.h/cpp` that can help you convert to a standard case.
@@ -50,11 +46,11 @@ In general, we want to parse files and find all the searchable terms.  To simpli
 
 #### TXT File Parsing
 
-We have provided an implementation of a `.txt` file parser (`txtparser.h/.cpp`) that you may **use for reference** when completing the following MD parser.  We assume `.txt` file can contain no hyperlinks to other pages, so we only need to parse the text for search terms. 
+We have provided an implementation of a `.txt` file parser that you may **use for reference** when completing the following MD parser.  We assume `.txt` file can contain no hyperlinks to other pages, so we only need to parse the text  for search terms. 
 
 #### Markdown Parsing
 
-You should complete the derived MD parser class in `md_parser.cpp` that implements the `parse` function to parse a simplified MarkDown format.  If you are unfamiliar with Markdown you may like to read [this tutorial](https://www.markdownguide.org/basic-syntax) and especially the [links section](https://www.markdownguide.org/basic-syntax/#links). We will only support normal text and links in our Markdown format and parser.  In addition to text, you should be able to parse MD links of the form `[anchor text](link_to_file)` where `anchor text` is any text that should actually be displayed on the webpage and contains searchable terms while `(link_to_file)` is a hyperlink (or just file path) to the desired webpage file.  A few notes about these links:
+You should complete the derived MD parser class in `md_parser.cpp` that implements the `parse` function to parse a simplified MarkDown format.  We will only support normal text and links in our Markdown format and parser.  In addition to text, you should be able to parse MD links of the form `[anchor text](link_to_file)` where `anchor text` is any text that should actually be displayed on the webpage and contains searchable terms while `(link_to_file)` is a hyperlink (or just file path) to the desired webpage file.  A few notes about these links:
 
 + The anchor text inside the `[]` could be anything, except it will not contain any `[`, `]`, `(`, or `)`. It should be parsed like normal text described in the previous paragraph
 + A valid link will have the `(` immediately following the `]`, with no characters between.  If that is not the case, then the text is not a link.
@@ -62,7 +58,7 @@ You should complete the derived MD parser class in `md_parser.cpp` that implemen
 + There may be text immediately after the closing `)`. You should just treat it as a new word.
 + Text in parentheses that is NOT preceded immediately by `[]` should NOT be considered as a link but just normal text.  So in the text: *"ArrayLists (aka vectors) support O(1) access"*, `aka vectors` and `1` should be considered normal text and not a link. 
 
-The goal of the parser is to extract all unique search terms and identify all the links (i.e. all the `link_to_file`s) found in the `(...)` part of a link and return them in the `allSearchableTerms` and `allOutgoingLinks` sets that were passed-by-reference to the function.
+The goal of the parser is to extract all unique search terms and identify all the links (i.e. all the `link_to_file`s found in the `(...)` part of a link and return them in the `allSearchableTerms` and `allOutgoingLinks` sets that were passed-by-reference to the function.
 
 If the contents of a file are...
 
@@ -72,7 +68,7 @@ If the contents of a file are...
 
 ...then `allSearchableTerms` should contain:  `Hello`, `world`, `hi`, `bye` `Table`, `t`, `bone`, `steak`.  In addition, `allOutgoingLinks` should contain just `data2.txt`.  Note that you can return the words in any normalized case you like that would make case-insensitive searching easier.  
 
-You may implement the Markdown parser as you see fit. However, we recommend you consider using a finite state machine (FSM) approach to read the file character by character and use "states" to determine how to process/handle that character and whether text is a normal term, a link, etc. The diagram below shows a potential FSM for parsing Markdown.  Here we assume we read 1 character (i.e. `c`) at each iteration until we reach the end of the file and process `c` as well as use it to transition between states.  We can use the `isalnum` function from the `cctype` library in C++ to check whether a character is a valid character for a search term.  In addition, we assume we maintain two strings: `term` and `link` where we can append characters until we are ready to split and start a new term/link.  
+You may implement the Markdown parser as you see fit. However, we recommend using a finite state machine (FSM) approach to read the file character by character and use "states" to determine how to process/handle that character and whether text is a normal term, a link, etc. The diagram below shows a potential FSM for parsing Markdown.  Here we assume we read 1 character (i.e. `c`) at each iteration until we reach the end of the file and process `c` as well as use it to transition between states.  We can use the `isalnum` function from the `cctype` library in C++ to check whether a character is a valid character for a search term.  In addition, we assume we maintain two strings: `term` and `link` where we can append characters until we are ready to split and start a new term/link.  
 
 <img src="{{ site.baseurl }}/homework/img/websearch-mdfsm.png" alt="MD Parsing FSM" width="600"/>
 
@@ -90,7 +86,7 @@ would be displayed as:
 
 #### Edge cases for MD Parsing
 
-**Example 1**:  The below is an ill-formed link. We will allow parsing to continue, but no link would be returned/added (i.e. the set of outgoing links would be empty).  So **note** that empty strings for search terms and links should just be ignored.
+**Example 1**:  The below is ill-formed but we will allow it. The link would just be `""`.
 
 ```
 [empty url afterwards]()
@@ -108,7 +104,7 @@ would be displayed as:
 [some text](there-is-no-closing-parentheses
 ```
 
-**Example 4**: The example below happens all the time in web pages. Still list the link.  The linked page/file just doesn't exist on the server.
+**Example 4**: The example below happens all the time in web pages. Still list the link.  The linked page/file just doesn't exist.
 
 ```
 [some text](url-to-nonexistent-file)
@@ -119,7 +115,6 @@ would be displayed as:
 [](some-file)
 ```
 
-
 #### Index files
 
 Your actual search engine application will need a list of all the webpages to parse. This would normally be done with some kind of web crawler application but for now we will just provide a text file (called an **index** file) that will contain the names of all the webpage files you need to parse and be able to search. Here is a sample index file that assumes the pages exist in a subdirectory named `test-small` underneath your {{ page.hwpath }} folder.
@@ -127,14 +122,9 @@ Your actual search engine application will need a list of all the webpages to pa
 File: `test-small/index.in`
 
 ```
-test-small/pga.md
-test-small/pgb.md
-test-small/pgc.md
-test-small/pgd.md
-test-small/pge.md
-test-small/pgf.md
-test-small/pgg.md
-test-small/pgh.txt
+test-small/data1.md
+test-small/data2.txt
+test-small/data3.md
 ```
 
 The contents of `index.in` are the file names of the web pages themselves, one per line.  Each web page is stored in its own file. Your program should then read in all the web pages whose file name was listed in the index.  There will be no format errors in the index file other than possibly blank lines, which you should just skip and continue to the next line. If any file cannot be opened you may output an error message but should continue to the next file and try to parse it.
@@ -149,20 +139,20 @@ $ ./search-shell test-small/index.in
 
 **Note:** You may assume that file/page names **are case-sensitive** and may not contain spaces.
 
-### WebPage Class
+### Write a WebPage Class
 After parsing a webpage we need to store the data and prepare it for searching and tracking link relationships.  We have created a `WebPage` class for this.  The code is provided in files `webpage.h/cpp`.  You'll want to understand the data that these objects store and track so you can use and create them when parsing. 
 
 The function `all_terms()` should return all individual searchable terms that the parser found. 
 
 Outgoing links are those that occur in the current webpage (i.e., they point from "this" webpage to some other page).  These are all known immediately after parsing. However you should also store and track (for future assignments) the incoming links which are the page (file) names that link to "this" webpage.  You'll likely need to add these little by little as you parse more pages.  If, as you are parsing a page you encounter a link to another, you may need to create a `WebPage` object for that linked page before you actually parse that page. So you'll need to keep track of whether or not pages exist and ensure you don't make two WebPage objects for the same page. **Note:** We won't use the incoming and outgoing links directly (other than printing them out) in this assignment  but we will test your code to ensure you are identifying and adding them correctly. We just wanted you to parse and store them now so you don't have to add that later on in the next assignment.  These links could form an important part of a future homework.
 
-As an example, if a page named `test-small/pg1.md` has the following contents
+As an example, if a page named `data/page1.md` has the following contents
 
 ```
-[another link1](test-small/pg2.md) [link3](test-small/pg3.md)
+Good link to [other page](data/page2.md).
 ```
 
-then `test-small/pg1.md` would have an **outgoing link** to `test-small/pg2.md` and `test-small/pg3.md`. And they in turn, would have one **incoming link** from `test-small/pg1.md`
+then `data/page1.md` would have an **outgoing link** to `data/page2.md` and `data/page2.md` would have an **incoming link** from `data/page1.md`
 
 ### Create a Command-line UI for Searching and Displaying Page Info
 
@@ -184,9 +174,9 @@ You may assume all commands will be on a single line and NOT span multiple lines
 
 + `QUIT` should quit the program by returning **HANDLER_QUIT**.
 
-+ `AND word1 word2 ... wordN`: the user wants to see all the pages that contain *ALL* of the given words. The number of words here can be arbitrary. There will always be at least one whitespace between each element (`AND` and any of the search term(s)).  If no terms are provided, just return an empty set. If only one term is provided, return all the pages containing that term.  **No errors may occur for an AND command**.
++ `AND word1 word2 ... wordN`: the user wants to see all the pages that contain *ALL* of the given words. The number of words here can be arbitrary. There will always be at least one whitespace between each element (`AND` and any of the search term(s)).  If no terms are provide, just return an empty set. If only one term is provided, return all the pages containing that term.  **No errors may occur for an AND command**.
 
-+ `OR word1 word2 ... wordN`: the user wants to see all the pages that contain ANY (at least one) of the given words. The number of words here can be arbitrary. If no terms are provided, just return an empty set. If only one term is provided, return all the pages containing that term. **No errors may occur for an OR command**.
++ `OR word1 word2 ... wordN`: the user wants to see all the pages that contain ANY (at least one) of the given words. The number of words here can be arbitrary. If no terms are provide, just return an empty set. If only one term is provided, return all the pages containing that term. **No errors may occur for an OR command**.
 
 + `DIFF word1 word2 ... wordN`: the user wants to see all the pages that contain word1 but do NOT contain *ANY* of the following words (i.e. find the pages that have word1 and then remove any of those pages that also contain word2, then remove any of the remaining pages that contain word3, etc.) The number of words here can be arbitrary.  If no terms are provide, just return an empty set. If only one term is provided, return all the pages containing that term.  **No errors may occur for a DIFF command**.
 
@@ -225,7 +215,7 @@ You will need to complete the rest of `cmd_handlers.cpp` to implement the comman
 
 ### Search Engine
 
-At the heart of this assignment is the search engine (database).  To implement the search operations we have provided a `SearchEng` (Search Engine) class that can be used to store all the webpages objects and indexing data as well as actually performing the search operations and returning the appropriate `WebPage`s.  In order to be able to answer queries, you should use an **appropriate data structure that will allow you to know the set of web pages that contain a particular word/term**. Since you do NOT want to have to scan all webpages on each query, you should build this data structure as you parse all the webpages or update it anytime a webpage is added.   **This data structure is the heart of this assignment, choose it carefully**.  Again, given a term you would want to know the set of webpages that contain that term.
+At the heart of this assignment is the search engine (database).  To implement the search operations we have provided a `SearchEng` (Search Engine) class that can be used to store all the webpages objects and indexing data as well as actually performing the search operations and returning the appropriate `WebPage`s.  In order to be able to answer queries, you should use an **appropriate data structure that will allow you to know the set of web page that contain a particular word/term**. Since you do NOT want to have to scan all webpages on each query, you should build this data structure as you parse all the webpages or update it anytime a webpage is added.   **This data structure is the heart of this assignment, choose it carefully**.  Again, given a term you would want to know the set of webpages that contain that term.
 
 Also, in order to not run into memory problems, you probably do not want to store duplicates of WebPage objects, as that would duplicate huge amounts of text. Instead, depending on where you store the web pages, you may want to use set of indices (i.e. an integer index to a list) or pointers to WebPage objects. The exact choice here is up to you.
 
@@ -233,10 +223,10 @@ Also, in order to not run into memory problems, you probably do not want to stor
 
 For the `AND`, `OR`, and `DIFF` commands there is great amount of commonality in the code you would write to implement these searches.  Each of these commands may provide multiple search terms.  Much of the code for implementing these 3 approaches is the same except for how to combine the set of webpages that have one term with the set of webpages for another term.  Thus rather than repeating our code we will use polymorphism.  The `SearchEng::search()` function takes in a generic `WebPageSetCombiner` pointer to use to combine two sets of webpages based on a particular strategy: AND, OR, DIFF.  You will implement 3 derived classes, one for each strategy.  In this way, we not only can avoid duplicate search code but we can potentially come up with additional search strategies in the future.  You should implement these three derived classes in the `combiners.h/cpp` files.  The appropriate command handlers should create and pass in the appropriate `WebPageSetCombiner` to `SearchEng::search()`.  In `SearchEng::search()`, you will need to look up the sets of webpages that contain a particular term and then combine them by calling the virtual `WebPageSetCombiner::combine` function.  These `combine` functions must run in **O(m log(m))** and NOT **O(m^2)** where m is the size of a set.
 
-Furthermore, if we suppose there are `n` total searchable terms used over all webpages and a user performs a query with `k` search terms, and the maximum number of webpages that match any single term is `m`, then the query/search **MUST** be performed in runtime __`O(k*log(n) + k*m*log(m))`__
+Furthermore, if we suppose there are `n` total search terms used over all webpages and a user performs a query with `k` search terms, and the maximum number of webpages that match any single term is `m`, then the query/search **MUST** be performed in runtime __`O(k*log(n) + k*m*log(m))`__
 
 
-The `SearchEng` class is also responsible for storing the various parsers and applying them when files are read.  We can register parsers for files with given extensions (e.g. `.md` or `.txt` files). You will need to track the parsers for each extension.  You should assume that once registered, the `SearchEng` class *owns* these parsers and is responsible for their cleanup. Then we will also need the ability to actually read and parse files given an **index** file.  The `SearchEng` class has the following two member functions for this purpose:
+The `SearchEng` class is also responsible for parsing.  To aid this, we will pass in a parser to the constructor to parse files that don't have any extension. This should be the `TXTParser`.  But we can register other parsers for files with given extensions (e.g. `.md` or `.txt` files). You will need to track the parsers for each extension.  You should assume that once registered, the `SearchEng` class *owns* these parsers and is responsible for their cleanup. Then we will also need the ability to actually read and parse files given an **index** file.  The `SearchEng` class has the following two member functions for this purpose:
 
 ```c++
   void register_parser(const std::string& extension, PageParser* parser);
@@ -299,28 +289,9 @@ Also remember to complete the provided `Makefile` to ensure all your code compil
 
 ### Other Requirements
 
-- You may not use any algorithms from `<algorithm>` and that includes `set_intersection`, `set_union`, etc.  Also, you may still NOT use the C++ `auto` keyword or ranged loops.
-
-- You may not change any public interface of a provided class. You may add private helper functions as desired, and data members where needed.
-
-- Be sure to meet the runtime requirements for `SearchEng::search()` described above
-
-- Be sure to handle the check for and throw the appropriate exceptions listed in the header file (`searcheng.h`) documentation for various `SearchEng` member functions.
+You may not use any algorithms from `<algorithm>` and that includes `set_intersection`, `set_union`, etc.  Also, you may still NOT use the C++ `auto` keyword or ranged loops.
 
 ### Recommended Ordering of Implementation
-
-The files you will need to complete are:
-
- - `cmdhandler.h` and `cmdhandler.cpp`
- - `combiners.h` and `combiners.cpp`
- - `md_parser.cpp` and potentially `md_parser.h`
- - `search-shell.cpp`
- - `searcheng.h` and `searcheng.cpp`
- - `Makefile`
-
-All other files are complete, though you'll need to read through them carefully to understand what you've been given.
-
-We recommend the following order of implementation:
 
 - [ ] Complete your `MDParser`.  You may consider writing a separate test program (i.e. `.cpp` program with a `main()`) that creates an MDParser and parses a sample MD file, but we have also provided a set of MD parsing tests in `mdparse-tests.cpp`.  
 
@@ -332,44 +303,9 @@ We recommend the following order of implementation:
 
 - [ ] Implement the derived `Handler` implementations for each UI command in the `cmdhandler.h/cpp` files.
 
-- [ ] Complete the `main()` application in `search-shell.cpp` by creating the various objects, registering them, etc.
-
+- [ ] Complete the `main()` application by creating the various objects, registering them, etc.
 
 ### Testing
 
+While we will provide some unit tests, you can use the data files in the `test-small` folder to run sample queries. Examine the `.md` and `.txt` files provided and consider what AND, OR, DIFF, INCOMING, and OUTGOING commands might be useful to try to validate your implementation.
 
-#### Small Data Set
-
-While we will provide unit tests, you can also use the data files in the `test-small` folder to run sample queries. Examine the `.md` and `.txt` files provided and consider what AND, OR, DIFF, INCOMING, and OUTGOING commands might be useful to try to validate your implementation.  To help get started we have provided two sample sets of input commands and the expected output.  
-
-```bash
-./search-shell test-small/index.in test-small/query1.txt test-small/query1.out
-```
-
-You can then compare your output (`test-small/query1.out`) to the expected output (`test-small/query1.exp`).
-
-You can repeat the same for `query2.txt`.  
-
-Be sure to understand the contents of the pages in `test-small` and what the commands in `query1.txt` and `query2.txt` **SHOULD do** and **why the expected outputs are what they are**, so that if your output doesn't match the expected output you can know where to start debugging.
-
-Here is an image of the graph that the webpages in the `test-small` directory (i.e. `pga.md`, `pgb.md`, etc.) and their links create.
-
-<img src="{{ site.baseurl }}/homework/img/websearch-testgraph.png" alt="webpage graph"/>
-
-#### Golden Versions of the Project
-
-So that you can more easily ensure your program behaviour matches our expected behavior, we have provided a **COMPILED, WORKING** executable of the solution. We have a version for newer M1 Macs and all other laptops running Docker:  `search-shell-m1` (for M1 Macs running Docker) and `search-shell-x86` (for all other laptops running Docker).
-
-So if you like you can run that with some inputs to see what should happen:
-
-```bash
-./search-shell-x86 test-small/index.in
-```
-
-Or regenerate the expected output described above by running:
-
-```bash
-./search-shell-x86 test-small/index.in test-small/query1.txt test-small/query1.out
-```
-
-(If you are on an M1 laptop, replace `x86` with `m1`).

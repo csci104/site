@@ -13,36 +13,34 @@ Every *action* line in a makefile must start with a:
 Look at the Makefile below and answer the following question. Assume this Makefile is in the current directory, and all required files are available.
 
 ```
-IDIR =.
-CC=g++
-CFLAGS=-I$(IDIR) -std=c++11 -ggdb
+IDIR=.
+CXX=g++
+CXXFLAGS=-I$(IDIR) -std=c++11 -ggdb
 
-ODIR=.
 LDIR =../lib
 
 LIBS=-lm
 
-_DEPS = shape.h
-DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+DEPS = shape.h
 
-_OBJ = shape.o shape1.o shape2.o
-OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+OBJ = shape.o shape1.o shape2.o
 
-$(ODIR)/%.o: %.cpp $(DEPS)
-	$(CC) $(CFLAGS) -c  $< -o $@ 
+%.o: %.cpp $(DEPS)
+	$(CXX) $(CXXFLAGS) -c  $< -o $@ 
 
 all: shape1 shape2
 
 shape1: shape1.o shape.o
-	$(CC) $(CFLAGS) $^ -o $@   $(LIBS)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
 
 shape2: shape2.o shape.o
-	$(CC) $(CFLAGS) $^ -o $@ $(LIBS)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
+
 
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ shape1 shape2 $(IDIR)/*~
+	rm -f *.o *~ shape1 shape2 *~
 ``` 
 
 Now we run the command 

@@ -11,7 +11,7 @@ title: Inheritance and STL
 
 You've learned in your intro CS classes that copying and pasting code is an indication that you could be doing something better. For example, if you're iterating through an array of three elements, instead of typing:
 
-```
+```c++
 cout << arr[0] << endl;
 
 cout << arr[1] << endl;
@@ -33,10 +33,10 @@ If Class B inherits from Class A, it automatically copies all the data members a
 
 The syntax looks something like this:
 
-```
+```c++
 class B : public A
 {
-...
+	// ...
 }
 
 ```
@@ -81,7 +81,7 @@ This would work, but note the repetition — students and professors both have m
 <div style="text-align:center"><img src="../inheritance/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
 
 
-```
+```c++
 class Person {
 	public:
 		Person(std::string name);
@@ -133,7 +133,7 @@ What does this error message mean? You've probably seen an error message like th
 
 This will look like this: 
 
-```
+```c++
 Student::Student(std::string name, std::string major) : Person(name) {
 	// rest of student constructor
 }
@@ -184,7 +184,7 @@ If a child and base class both implement a function, what code gets executed? Th
 
 Let's say we have a printTitle() function in (a simplified version of) all of our classes. Here's the header file.
 
-```
+```c++
 class Person {
   public:
     printTitle(); // prints "Person"
@@ -216,7 +216,7 @@ u->printTitle(); // will print "USC Student"
 
 But what if we our code looks like this instead?
 
-```
+```c++
 Person* p = new UscStudent();
 p->printTitle();
 ```
@@ -231,7 +231,7 @@ Now, what if we *do* want to print "USC Student"?
 
 We add the **virtual** keyword to the function in the base class. 
 
-```
+```c++
 class Person {
   public:
     virtual void printTitle(); // prints "Person"
@@ -256,7 +256,7 @@ class UscStudent {
 
 Now, when we run the same code snippet, we had earlier, it will print "USC Student".
 
-```
+```c++
 Person* p = new UscStudent();
 p->printTitle(); // USC Student
 ```
@@ -275,7 +275,7 @@ Aditionally, we want the to call getArea() and getPerimeter() functions on the s
 
 But what does the Shape class do for getArea() and getPerimeter()? In this case, we declare these functions in our base class, but we don't implement them, because we don't know which formula to apply for an arbitrary shape. In Shape.h, our functions will look like this:
 
-```
+```c++
 class Shape {
 	public:
 		virtual double getArea() = 0; // = 0 indicates that this class doesn't implement this function
@@ -311,7 +311,7 @@ What if we need to get every item in our map (which you will need to do for chec
 
 Yes! We use an iterator. If we want to loop through every element, our code will look something like this: 
 
-```
+```c++
 std::map<std::string, std::string>::iterator it;
 for(it = myMap.begin(); it != myMap.end(); ++it)   
 {
@@ -335,7 +335,7 @@ We can also insert using the overloaded `operator[]` to index into the map. Unli
 
 Here's an example of both ways to insert.
 
-```
+```c++
 myMap.insert(std::make_pair("Key", "Value")); // Inserts the pair
 myMap["Key"] = "Overwrites Previous Value"; // Overwrites "Value"
 myMap.insert(std::make_pair("Key", "This should do nothing")); // Does nothing, because "Key" was already in the map
@@ -345,7 +345,7 @@ myMap.insert(std::make_pair("Key", "This should do nothing")); // Does nothing, 
 
 To find an element, we can use the `find()` function. This returns an iterator pointing to the key-value pair, if found. If it wasn't found, it returns a pointer to `end()`. For example:
 
-```
+```c++
 std::map<std::string, std::string>::iterator it = myMap.find("Key");
 if (it != myMap.end()) // we found the element
 {
@@ -355,7 +355,7 @@ if (it != myMap.end()) // we found the element
 
 We can also use the `operator[]` to retrieve the element if the key exists. If the key does not exist, this will insert a new element into the map with the given key. For example:
 
-```
+```c++
 std::string var = myMap["Key"];
 ```
 
@@ -365,7 +365,7 @@ To remove a single element, we use the `erase()` function. This accepts an itera
 
 We can remove like this:
 
-```
+```c++
 myMap.erase(myMap.find("Key")); 
 ```
 
@@ -373,7 +373,7 @@ find() returns an iterator pointing to the object containing "Key". There is und
 
 or, we can just do:
 
-```
+```c++
 // This first searches for an object containing "Key", then removes it
 myMap.erase("Key");
 ```
@@ -382,7 +382,7 @@ To remove all elements, use the clear() function.
 
 **NOTE:** Successfully erasing or inserting an item from a map will change the map's internal structure and therefore invalidate the iterator pointing to the removed element. In other words, we can't use an iterator that we passed into erase in order to look at the next element.
 
-```
+```c++
 myMap.insert(std::make_pair("K1", "V1"));
 myMap.insert(std::make_pair("K2", "V2"));
 std::map<std::string, std::string>::iterator it = myMap.find("K1"); // it points to a valid position in myMap
@@ -394,8 +394,7 @@ myMap.erase(it);
 
 The STL set class is similar to a map, but we only have keys (no values). Keys are unique, and again, we can use insert(), erase(), and find(). We can also use iterators to walk through all the elements in a set. Again, find() is logarithmic, and iterating through the set is linear. Here's a code snippet.
 
-```
-
+```c++
 // insert into the set
 set<string> radioStations;
 radioStations.insert("KCRW");
@@ -438,7 +437,7 @@ We have three major classes: Schedule, Assignment, and Course.
 Schedule has a collection of Courses (a map of String -> Course object). Each Course has a set of Assignments, and each Assignment has some basic information.
 The functions in Assignment and Course are all complete (though you will have to make a small change to Assignment in order to pass all the test cases!). You need to implement the following functions in Schedule:
 
-```
+```c++
 bool Schedule::addCourse(Course* c)
 {
     // TO DO: if the course was already in the map, return false
@@ -448,7 +447,7 @@ bool Schedule::addCourse(Course* c)
 }
 ```
 
-```
+```c++
 bool Schedule::dropCourse(std::string name)
 {
     // TO DO: if the course was not already in the map, return false
@@ -458,7 +457,7 @@ bool Schedule::dropCourse(std::string name)
 }
 ```
 
-```
+```c++
 void Schedule::printAllAssignments()
 {
     // TO DO: print out the name of each course, followed by the set of assignments.
@@ -477,7 +476,7 @@ We've learned that we can find elements in a map using 'myMap.find("Key")'.
  
 Take a look at the following code snippet. Let's say we want to return true if a certain key is in the map.
 
-```
+```c++
 std::map<std::string, std::string>::iterator it;
 for(it = myMap.begin(); it != myMap.end(); ++it)   
 {
@@ -491,8 +490,7 @@ return false;
 
 Does this code work? What is the runtime? What are the major problems with this approach? What is a better way to solve this problem?
 
-{% include lab_submit.html %}
+## Checking off
 
-What to submit:
-- screenshot of all tests passing in part 2
-- screenshot of Schedule::printAllAssignments() implementation
+To get checked off for this lab, show your passing test results
+for the scheduler to a CP/TA 

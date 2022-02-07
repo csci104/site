@@ -84,7 +84,7 @@ labs:
   - id: lab5
     week: Week 5
     title: Templates
-    assigned: false
+    assigned: true
     topics:
   - id: lab6
     week: Week 6

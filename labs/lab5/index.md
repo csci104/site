@@ -8,7 +8,8 @@ title: Templates
 
 --------
 
-Due @ 7:00 pm, Sep. 24, 2021
+**This lab requires a checkoff. You need to get checked off before the end of your registered lab section
+from Feb 8, 2022 to Feb 11, 2022.**
 
 --------
 
@@ -18,9 +19,16 @@ At this point in the course, we've created many simple data structures ourselves
 
 ### 1 - Template Motivation
 
-In Homework 2, you implemented `TokenList`, a doubly-linked list of `Token` objects. What if, for example, a user wants to use a doubly-linked list, but for a series of `string`s? In order to use the same kind of data structure for different data types, we'll have to make a copy of the code, change almost every single mention of `Token` to `string`. Doing so creates a lot of code that is repeated unnecsesarily, violating a software engineering principle called [**Don't Repeat Yourself (DRY)**](http://en.wikipedia.org/wiki/Don't_repeat_yourself). It's easy to setup, but comes with a heavy price: if you discover a bug in one set of code, you'll have to apply the patch across multiple files, making your project very prone to mistakes and errors.
+You probably have already used the `std::vector` container a lot till now. You know that you could have vectors that contain different type of elements: `std::vector<int>`, `std::vector<std::string>`, `std::vector<MsgNode*>`, etc.
 
-Through templates, however, we can treat a type as a variable, and use it as the type in class definition. Later, when a user declares a templated object with a particular type, the compiler will substitute in the user-speficied type to generate a version of your implementation with this type.
+One way to implement `std::vector` is to implement it separately for every type: one for `int` (e.g. `int_vector`) and one for `string` (e.g. `string_vector`). Doing this has two problems:
+
+* The code between two vector implementations are going to look similar, just that the stored type is different. This violates the [**Don't Repeat Yourself (DRY)**](http://en.wikipedia.org/wiki/Don't_repeat_yourself) principle.
+
+* You can never accomodate all the types your users create, such as `MsgNode*`, `Cat`, or `StudentRecord`.
+
+To address such limitations, C++ offers an extremely powerful system called **"templates"**.
+Through templates, we can treat a type as a variable, and use it as the type in class definition. Later, when a user declares a templated object with a particular type, the compiler will substitute in the user-speficied type to generate a version of your implementation with this type.
 
 ### 2 - Template Example
 
@@ -52,7 +60,7 @@ Another thing you'll notice is that the class's implementations for all its meth
 
 In a templated class declaration and implementation, since it uses a variable type, there is no information for the compiler to know if a member funciton or data exists.
 
-```
+```c++
 template <typename T>
 class Dummy
 {
@@ -67,7 +75,7 @@ public:
 
 In order to resolve the linking problem, the compiler will generate a version of the templated class implementation by substituting in the type that the users try to use into the variable type.
 
-```
+```c++
 // If a user tries to use Dummy<int> and Dummy<std::string>, the compiler will generate the following two code
 // The actual generated code is not in C++ but some low-level machine code. 
 // C++ code is shown here for illustration purpose only.
@@ -103,7 +111,7 @@ Since the compiler needs to do substitutions based on the use of templated class
 
 In your homework you have seen the use of the inner struct `Item` in `TokenList`. Inner classes work the same way in templated classes, and inner classes share their outer class's templated type variables. However, the syntax for using the inner class is a little different. Wherever you need to refer to the inner class outside of your class definition, you must append `typename` to the front of the type.
 
-```
+```c++
 template<typename T>
 class Outer
 {
@@ -165,4 +173,21 @@ What you need to do:
 146 Moltres
 ```
 
-(Note: if you are checking off via Piazza, please attach your `llist.h` file together with your screenshot after running `make`, togehter with your USC email and 10-digit USC id)
+### Tips for Completing the Lab
+
+* After you templated your code, where should the functions implementations go? Should they
+  be in `llist.cpp` or `llist.h`?
+
+* If you would like to implement the constructor for an inner type like `Item`, you have to use the fully qualified name like this:
+
+```c++
+template <typename T>
+LList<T>::Item::Item(const T& v, Item* p, Item* n)
+```
+
+Notice that you could simply say `Item* p` because by then you are already considered
+to be inside the `Item` class.
+
+### Checking off
+
+To get checked off, show the result after running `make` and your source files to one of your CP/TAs.

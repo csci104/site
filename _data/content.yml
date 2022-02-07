@@ -81,6 +81,7 @@ labs:
     title: Inheritance and STL
     assigned: true
     topics:
+    slides: stl_inh_lab.pdf
   - id: lab5
     week: Week 5
     title: Templates

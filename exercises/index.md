@@ -76,8 +76,8 @@ MathJax.Hub.Config({tex2jax: {displayMath: [ ['$$','$$'] ], inlineMath: [['$','$
 
 <h3>Polymorphism</h3>
 <div class='websheet-stub'>cpp/cs104/polymorphism/shapes</div>
-<div class='websheet-stub'>cpp/cs104/polymorphism/virtfunc1</div>
-<div class='websheet-stub'>cpp/cs104/polymorphism/virtfunc2</div>
+<div class='websheet-stub'>cpp/cs104/polymorphism/virtf1</div>
+<div class='websheet-stub'>cpp/cs104/polymorphism/virtf2</div>
 <div class='websheet-stub'>cpp/cs104/polymorphism/private_inh</div>
 
 

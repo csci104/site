@@ -1,6 +1,6 @@
 
 <div class="showcase">
-    <img src="{{ site.url }}/assignments/img/astar.jpg" alt="A-Star" width="320"/>
+    <img src="{{ site.url }}/homework/img/astar.jpg" alt="A-Star" width="320"/>
 </div>
 
 You are given the above unweighted graph, and want to find the shortest path from **node L** to **node A**, using **A* Search**. 

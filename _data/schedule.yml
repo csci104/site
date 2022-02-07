@@ -80,39 +80,53 @@ lectures:
     
   # 6 Wed 1/26
   - topics:
+      - Recursion
       - ADTs
       - STL
-      - Inheritance
     chapters:
       - Chapter 3.3,4.8
       - Course Notes
     notes: 
       - L04_ADTs.pdf
       - L05_STL.pdf
-      - L06a_Inheritance.pdf
-      - L06b_Polymorphism.pdf
     recording: 
     
   # 7 Mon 1/31
   - topics:
+      - STL
+      - Inheritance
       - Polymorphism
-      - Stacks and Queues
     chapters:
       - Chapter 3.6-3.7
     notes: 
-      - L07_QueueStackDeque.pdf
+      - L05_STL.pdf
+      - L06a_Inheritance.pdf
     recording: 
 
   # 8 Wed 2/2
   - topics:
+      - Polymorphism
+      - ArrayLists 
+    chapters:
+      - Chapter 3.6-3.7
+    notes: 
+      - L06b_Polymorphism.pdf
+      - L07_QueueStackDeque.pdf
+
+  # 8 Mon 2/7
+  - topics:
+      - Stacks and Queues
       - Templates
     chapters:
+      - Chapter 3.6-3.7
       - Chapter 1.6
     notes: 
+      - L07_QueueStackDeque.pdf
       - L08_Templates.pdf
 
-  # 9 Mon 2/7
+  # 10 Wed 2/9
   - topics:
+      - Templates
       - Trees and Heaps 
     chapters:
       - Chapter 4.1-4.2
@@ -120,7 +134,7 @@ lectures:
     notes: 
       - L09_PQHeaps.pdf
 
-  # 10 Wed 2/9
+  # 10 Mon 2/14
   - topics:
       - More Heaps
       - Graphs
@@ -129,21 +143,21 @@ lectures:
     notes: 
       - L10_GraphsAlgorithms.pdf
 
-  # 11 Mon 2/14
-  - topics:
-      - President's Day Holiday
-    chapters:
-    notes: 
-
-  # 12 Wed 2/16
+  # 11 Wed 2/16
   - topics:
       - Graph Algorithms
     chapters:
       - Chapter 9.3
     notes: 
       - L11_GraphTraversals.pdf
+
+  # 12 Mon 2/21
+  - topics:
+      - President's Day Holiday
+    chapters:
+    notes: 
  
-  # 13 Mon 2/21
+  # 13 Wed 2/23
   - topics:
       - Tree Traversals
       - Recursion - All combinations

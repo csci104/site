@@ -52,19 +52,38 @@ hw2:
 
 hw3:
   written_parts:
-    - writeup: heap-trace-1.md
+    - writeup: heap-trace-2.md
       number: 1
       title: Heap Tracing
-      points: 8
+      points: 10
     - writeup: astar-tracing.md
       number: 2
       title: A* Algorithm Tracing
-      points: 7
+      points: 10
   programming_parts:
-    - writeup: ll-recursion.md
+    - writeup: functor-background.md
       number: 3
+      title: Comparator Functor Background
+      points: 0
+    - writeup: ll-recursion.md
+      number: 4
       title: Linked List Recursion Coding
-      points: 20
+      points: 15
+    - writeup: stack-vec.md
+      number: 5
+      title: Stack class
+      points: 10
+    - writeup: heaps.md
+      number: 6
+      title: m-ary Heaps
+      points: 25
+    - writeup: rushhour.md
+      number: 7
+      title: Car Puzzle Game with A* AI
+      points: 30
+
+old_hw3:
+  programming_parts:
     - writeup: llstack.md
       number: 4
       title: Templated Stack Class
@@ -73,18 +92,6 @@ hw3:
       number: 5
       title: Dirty Laundry
       points: 10
-    - writeup: functor-background.md
-      number: 6
-      title: Comparator Functor Background
-      points: 0
-    - writeup: heaps.md
-      number: 7
-      title: m-ary Heaps
-      points: 25
-    - writeup: huffman.md
-      number: 8
-      title: Huffman Codes
-      points: 20
 
 hw4:
   written_parts:

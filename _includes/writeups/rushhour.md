@@ -75,11 +75,30 @@ You win!
 #### Review the A* algorithm
 Recall that A* chooses the move with smallest f-value to explore next.  Note:  `f = g + h` where `g = distance (number of moves made)` from the start state while `h` is a score produced by a heuristic evaluation of the move.  Please take some time to review the algorithm presented in class (slides, notes, etc.).  We will use the following heuristics:
 
-1. Brute-force: returns h=0...this causes A* to degenerate to a Breadth-first search
+1. **Brute-force**: Returns h=0...this causes A* to degenerate to a Breadth-first search
 
-1. Direct blocks: counts the number of vehicles to the right of the escape vehicle (i.e. that are blocking its escape).
+1. **Direct blocking vehicles**: Counts the number of vehicles to the right of the escape vehicle (i.e. that are blocking its escape).
 
-1. Indirect-1 blocks:  counts the **direct** blocking vehicles (defined just above) and the **"1-away" indirect** blocking vehicles.  A "1-away" indirect blocking vehicle is defined as a vehicle which, if deleted from the board (i.e. just plucked out), would allow the **direct** blocking vehicles to slide out of the way of the escape vehicle. In some cases, a **direct** blocking vehicle may have two potential **"1-away" indirect** blocking vehicles, one above and one below.  In this case we will choose...  **NEED TO DEFINE BETTER**
+1. **Single, Indirect-1 blocking vehicles**: (Read this carefully a few times) Counts the **direct** blocking vehicles (defined just above) and the **single "1-away" indirect** blocking vehicles.  A "1-away" indirect blocking vehicle is defined as a vehicle which, if deleted from the board (i.e. just plucked out), would allow a **direct** blocking vehicle to slide out of the way of the escape vehicle, *when no other path for the direct blocking vehicle to slide out of the way exists in the other direction*. Put another way, these are the vehicles above or below the direct blocking vehicles that prevent them from moving out of the way of the escape vehicle.  For reasons you will learn if/when you take CS 360 (AI), heuristics must **underestimate** the number of moves to a solution if A* is to guarantee an optimal solution. When only a single vehicle above or below (but not both) a direct blocking vehicle, it is clear this vehicle MUST be moved and would not be an overestimate of the number of moves required to solve the puzzle. However, when a **direct** blocking vehicle has two **"1-away" indirect** blocking vehicles, one above and one below, which one to move may not be obvious and, if we choose wrong, can lead to an overestimate, thus nullifying the guarantee of an optimal solution. Thus, when a direct blocking vehicle does not have just a **single "1-away" indirect** blocking vheicle but has two, we will not count either of those two and only count that direct blocking vehicle.
+
+```
+Ex 1.         Ex 2.         Ex 3.
+...ee.        ..d...        ..ff..
+......        ..d...        ...gg.
+aabc..        ..b...        aabcde
+..bc..        aabc..        ..bcde
+..d...        ...c..        ..b..i
+..d...        ...ee.        .kk..i
+```
+
+ - **Ex 3:**  `b`, `c`, `d`, and `e` are all direct blocking vehicles (so h=4 at minimum). Now we try to consider 1-away indirect blocking vehicles. 
+   - `b` is blocked by `f` and `k` so we might think this is the case where we have an indirect "1-away" blocking vehicle both above and below `b` (in which case we would not count it). However, it is clear `b` can never legally move up to clear the way for the escape vehicle and, instead, must slide down.  Thus it only has **1** "1-away" indirect blocking vehicle, `k` so we add it to our count (now h=5).  
+   - `c` can slide down to clear the escape so it has NO **indirect "1-away"** blocking vehicles.  We move on (h is still 5).
+   - `d` has a **indirect 1-away** blocking vehicle both above and below it (`g` and `i`) so we don't count them (to ensure an underestimate) and only `d` as a direct blocking vehicle. So we move on (h is still 5).
+   - `e`
+     Neither `d` (for `b`) nor `e` (for `c`) are **indirect 1-away** blocking vehicles since both `b` and `c` can slide out of the way in the opposite direction of `d` and `e`, respectively.  So, here `h=2` would be the result from both the **Direct** and **Single, Indirect "1-away"** heuristics.
+
+ - **Ex 1 and Ex2:**  `b` and `c` are direct blocking vehicles (so h=2 at minimum). Now we try to consider 1-away indirect blocking vehicles.  Neither `d` (for `b`) nor `e` (for `c`) are **indirect 1-away** blocking vehicles since both `b` and `c` can slide out of the way in the opposite direction of `d` and `e`, respectively.  So, here `h=2` would be the result from both the **Direct** and **Single, Indirect "1-away"** heuristics.
 
 
 

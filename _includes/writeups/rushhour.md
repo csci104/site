@@ -161,14 +161,14 @@ You should not change the interface of any member functions unless otherwise spe
     
     `(a,1) (c,-1) (c,-2) (d,-1) (d,-2) (d,1) (d,2)`
 
-```
-...b..
-...b..
-aa.b.d
-..cccd
-......
-......
-```    
+  ```
+  ...b..
+  ...b..
+  aa.b.d
+  ..cccd
+  ......
+  ......
+  ```    
 
   - You will need to implement an `operator<()` to compare `this` board and another.  This will allow you to use `Board`s as keys in a set or map to determine uniqueness. How you decide to compare boards is your choice though you can consider converting the boards to some kind of string and utilize its comparison operators.  
   - We have proivded `operator<<` (`ostream` operator) to output the board to any ostream in a 2D text format. 

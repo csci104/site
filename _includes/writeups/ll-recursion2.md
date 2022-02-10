@@ -15,16 +15,16 @@ Here is the function you should implement:
 
 ```c++
 void llpivot (Node*& in, Node*& smaller, Node*& larger, int pivot);
- /* When this function terminates, the following holds:
-    - smaller is the pointer to the head of a new singly linked list containing
-      all elements of "in" that were less than or equal to the pivot.
-    - larger is the pointer to the head of a new singly linked list containing
-      all elements of "in" that were (strictly) larger than the pivot.
-    - the linked list "in" no longer exists (should be set to NULL).
-    - Note: smaller and larger may be garbage when called (i.e. do NOT need to be NULL)
 ```
 
-You should not `delete` or `new` nodes, but just change the pointers to form the two other lists.
+When this function terminates, the following holds:
+  - `smaller` is the pointer to the head of a new singly linked list containing
+    all elements of `in` that were less than or equal to the pivot.
+  - `larger` is the pointer to the head of a new singly linked list containing
+    all elements of `in` that were (strictly) larger than the pivot.
+  - the linked list `in` no longer exists (`in` should be set to NULL).
+
+Note: `smaller` and `larger` may be garbage when called (i.e. you canNOT assume they are NULL upon entry). Also you should not `delete` or `new` nodes, but just change the pointers to form the two other lists.
 
 See `llrec.h` for more details and description and then place your implementation in `llrec.cpp`.
 

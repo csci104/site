@@ -170,12 +170,12 @@ aa.b.d
 ......
 ```    
 
-    - You will need to implement an `operator<()` to compare `this` board and another.  This will allow you to use `Board`s as keys in a set or map to determine uniqueness. How you decide to compare boards is your choice though you can consider converting the boards to some kind of string and utilize its comparison operators.  
-    - We have proivded `operator<<` (`ostream` operator) to output the board to any ostream in a 2D text format. 
-    - You will need to complete an `undoLastMove()` function to restore the previous state of the `Board`
-    - Other functions which you can see in the provided code.
+  - You will need to implement an `operator<()` to compare `this` board and another.  This will allow you to use `Board`s as keys in a set or map to determine uniqueness. How you decide to compare boards is your choice though you can consider converting the boards to some kind of string and utilize its comparison operators.  
+  - We have proivded `operator<<` (`ostream` operator) to output the board to any ostream in a 2D text format. 
+  - You will need to complete an `undoLastMove()` function to restore the previous state of the `Board`
+  - Other functions which you can see in the provided code.
     
-1. **Move class**
+2. **Move class**
     - Each state in the A* search requires a Board configuration but also some additional metadata.  This struct specifies this metadata.  Since a `struct` is public by default, you can just access the data members from other code entities.  But it would likely help to make some constructors and possibly a destructor.  Feel free to add/change any constructors or other member functions you deem necessary.  
     - We have also setup two functors at the bottom of this file which you need to complete.  One will be used by the open-list (heap) to compare two PuzzleMove's and determine which has the smallest f-score.  Important:  To ensure we get the same answers we need to break ties in a consistent manner.  **You must follow these rules**:
       + If move1 has a smaller f-score than move2, we consider move1 < move2 to be true
@@ -184,14 +184,14 @@ aa.b.d
 
     The other functor is used to determine the uniqueness of two PuzzleMove's based on their boards. This will be used for the closed set so that we don't enter a duplicate move.  This functor should simply compare the the first Move's board to the second's by calling the Board class' `operator<()` and return the result.
     
-1. **Heuristic derived classes**
+3. **Heuristic derived classes**
     - So that the A* algorithm can easily use different heuristics we setup a polymorphic base class PuzzleHeuristic with a pure virtual function 
     
     `int compute(const Board& b)`
     
     This function should compute and return a heuristic score for the given board.  But how it computes this will be up to the derived class.  We have defined 3 heuristics described above.  Implement each derived class and its `compute()` function according to the descriptions above.
     
-1. **Solver class**
+4. **Solver class**
     - This class just implements the A\* search algorithm in the `run()`.  It can be initialized with a given heuristic to be used.  It also maintains a copy of the starting board (the current configuration from which the user asked for the cheat and from which we start our A\* search), an appropriate data structure (your choice) to store the solution (i.e. the sequence of moves that are needed to solve the game), and the number of expansions the search algorithm took. An expansion is simply a PuzzleMove that is entered into the open-list.  It roughly estimates the amount of work the algorithm performs.
 
     At a high level your A\* search algorithm will take the initial board provided, make a PuzzleMove out of it and enter it into the open list and the closed list (so we never duplicate it again).  It will then start the process of dequeuing items from the open-list (i.e. a heap) one at a time, possibly generating new moves (expansions) and, if they aren't already in the closed-list, entering them into the open-list and closed-list (so we never duplicate them again).  To get these potential new moves, you will take the board from the move you just dequeued from the top of the open-list (heap) and call `potentialMoves()`.  This will return new "successor" boards around which you can construct new `Move`s, scoring them, setting up its previous/parent pointer, etc. and then possibly adding them to the open-list.
@@ -199,8 +199,10 @@ aa.b.d
     Think carefully about when you are ready to delete a `Move`.  Once the solution board has been found, you need to walk the move sequence back up to the initial board, collecting which vehicles (and amounts) were moved at each step.  Don't delete `Move`s too early.  Finally, when it is time to delete moves, think carefully where they might exist (are they all in a single data structure, spread over multiple data structures, etc.).   Wherever they are make sure you delete them all to avoid memory leaks.
 
     You should be able to just implement the member functions specified in the header file.  Note:  we have `typedef`'d something we call a `MoveSet`.  Use this type to create your closed-list (i.e. your closed-list will be a C++ set of PuzzleMove's but using the Board comparator functor to determine uniqueness). If you haven't seen a typedef before it is just an alias for a type (do some research on your own to see more examples).  We usually use them to shorten long typenames to something more readable for the user.  So in this case `MoveSet` is simply replaced with `std::set<Move*, MoveBoardComp>`.  Also note that when you instantiate a PuzzleMoveSet you'll need to pass in an instance of your PuzzleMoveBoardComp object that the set will use as the comparator.  
+
+    If no solution exists, `solution()` should return an empty list
     
-1. **Main Application** 
+5. **Main Application** 
     - The main application is written in `rh.cpp` and is **COMPLETE**.
 
 #### Functional Requirements

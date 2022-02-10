@@ -75,7 +75,7 @@ Recall that A* chooses the move with smallest f-value to explore next.  Note:  `
 
 1. **Indirect blocking vehicles**: (Read this carefully a few times) Counts the **direct** blocking vehicles (defined just above) **AND** what we define as  **indirect** blocking vehicles.  At a high level, an **indirect blocking vehicle** is one that blocks a **direct blocking vehicle** from making a **necessary** move to clear the escape row.  To compute **indirect blocking** vehicles, you will need to iterate through each **direct** blocking vehicle and check the following:
 
-To qualify as an indirect blocking vehicle it must satisfy this criterion:
+For a vehicle to qualify as an indirect blocking vehicle it must satisfy this criterion:
 
   - Be above or below a *direct blocking vehicle* that has **ONLY 1** viable path to clear the escape row and is being blocked by this vehicle (i.e. the *direct blocking* vehicle's length precludes it from clearing the escape row in one direction and the *indirect blocking* vehicle blocking its ability to clear the escape row in the other direction). 
 

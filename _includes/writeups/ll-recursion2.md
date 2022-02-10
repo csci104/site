@@ -36,6 +36,6 @@ Since this is a templated function (to allow for different function object types
 
 #### Testing
 
-While we will only test your `llpivot` and `llfilter` functions, you will probably want to write some `main` code to actually test it.  We have provided a skeleton file `llrec-test.cpp` in `homework-resources/{{page.hwpath}}/list-recursion` with some helpful function to read integers into a linked list from a file, print out a linked list, and deallocate the nodes in a linked list.  You may use them as you see fit to test your code.
+We will not provide any **formal** tests for this problem. Instead, you will be required to think through the various input cases that should be tested to ensure your code works in all cases.  We have provided a skeleton file `llrec-test.cpp` in `resources/{{page.hwpath}}` with a `main()` and some helper functions that read in values from a file to create a linked list, print a linked list, and deallocate a linked list.  By filling in contents of input files you can test various situations and run your functions on those inputs.   We have provided a `Makefile` with a target `llrec-test` that will compile the necessary code into an executable named `llrec-test`.
 
-Updated your `Makefile` in your `homework-resources/{{page.hwpath}}` folder to have a target `llrec-test` that will compile the necessary code into an executable named `llrec-test`.  Remember, we never "compile" header files. They get compiled as they get included into actual `.cpp` files.
+**After submission,** we will test your code with our own full test suite and assign points based on those tests. 

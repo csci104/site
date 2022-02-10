@@ -40,12 +40,12 @@ or the client who wants a some custom method of comparison so that they can impl
 or some other alternative using a custom comparator can write:
 
 ```c++
-ObjAComparator c1( /* some arguments as desired */ );
+ObjAComparator c1( /* some constructor arguments as desired */ );
 Heap<ObjA, ObjAComparator> h1(2, c1);
 ```
 
 You should test your heap either using gtest or another test driver program.  Be sure it works as a min-heap and as a max-heap using different comparators.  For reference if your type `T` has a `<` operator, then C++ defines a `less` functor which will compare the type `T` items using the `operator<()`. Similar there is a `greater` functor already defined by C++ that will compare using the `operator>()`.  They are defined in the `functional` header (`#include <functional>`) and you can look up their documentation online for further information.  This is meant to save you time writing functors for types that can easily be compared using built in comparison operators.
 
-We have provided some basic heap tests (`hw3_heap_checker` folder in `resources`) for you to check your heap.  They are not exhaustive and we will run more complete tests for grading but this should help you. Just copy them to your `hw3` folder, `cd hw3_heap_checker`, and run the normal `cmake .`, `make` and run the tests.
+We have provided some basic heap tests (`hw3_heap_checker` folder in `resources`) for you to check your heap.  They are not necessarily exhaustive and we may run more complete tests for grading but this should help you. Just copy them to your `hw3` folder, `cd hw3_heap_checker`, and run the normal `cmake .`, `make` and run the tests.
 
 **Note: You may use this Heap object in Homework 6, so test it well now!**

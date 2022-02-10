@@ -77,7 +77,7 @@ Recall that A* chooses the move with smallest f-value to explore next.  Note:  `
 
 To qualify as an indirect blocking vehicle it must satisfy this criterion:
 
-  - Be above or below a *direct blocking vehicle* that has **ONLY 1** viable path to clear the escape row is being blocked by this vehicle 
+  - Be above or below a *direct blocking vehicle* that has **ONLY 1** viable path to clear the escape row and is being blocked by this vehicle (i.e. the *direct blocking* vehicle's length precludes it from clearing the escape row in one direction and the *indirect blocking* vehicle blocking its ability to clear the escape row in the other direction). 
 
 This implies that if a *direct blocking vehicle* can move up or down to clear the escape row, then by definition there cannot be an *indirect blocking vehicle* associated with that *direct blocking vehicle*. Furthermore if the *direct* blocked vehicle has the option to move BOTH up OR down to clear the escape path but is blocked by vehicles in both directions, then we do not consider those as *indirect* blocking vehicles since it does not have **ONLY 1** viable path to clear the escape row.  This somewhat counterintuitve choice to not count those vehicles above and below the *direct* blocked vehicle is explained further below and pertains to the requirements of the heuristics we use in order for A* to produe an **optimal** solution.  Let's look at some examples to illustrate what vehicles should be counted in this heuristic and which should not.  
 

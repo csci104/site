@@ -203,11 +203,11 @@ You should not change the interface of any member functions unless otherwise spe
     The other functor is used to determine the uniqueness of two PuzzleMove's based on their boards. This will be used for the closed set so that we don't enter a duplicate move.  This functor should simply compare the the first Move's board to the second's by calling the Board class' `operator<()` and return the result.
     
 3. **Heuristic derived classes**
-    - So that the A* algorithm can easily use different heuristics we setup a polymorphic base class PuzzleHeuristic with a pure virtual function 
+    - So that the A* algorithm can easily use different heuristics we setup a polymorphic base class Heuristic with a pure virtual function 
     
-    `int compute(const Board& b)`
+    `size_t compute(const Board& b)`
     
-    This function should compute and return a heuristic score for the given board.  But how it computes this will be up to the derived class.  We have defined 3 heuristics described above.  Implement each derived class and its `compute()` function according to the descriptions above.
+    This function should compute and return a heuristic score for the given board.  But how it computes this will be up to the derived class.  We have defined 3 heuristics described above.  Implement each derived class and its `compute()` function according to the descriptions above.  It will likely be **much easier** to define some helper functions to do subtasks as you compute the heuristic score (like finding a vehicle up or down, etc.).
     
 4. **Solver class**
     - This class just implements the A\* search algorithm in the `run()`.  It can be initialized with a given heuristic to be used.  It also maintains a copy of the starting board (the current configuration from which the user asked for the cheat and from which we start our A\* search), an appropriate data structure (your choice) to store the solution (i.e. the sequence of moves that are needed to solve the game), and the number of expansions the search algorithm took. An expansion is simply a PuzzleMove that is entered into the open-list.  It roughly estimates the amount of work the algorithm performs.
@@ -220,6 +220,8 @@ You should not change the interface of any member functions unless otherwise spe
 
     If no solution exists, `solution()` should return an empty list
     
+    To debug your `run()` function, it may help to add `cout` commands to print a note when you dequeue a `Move` from the PQ (printing out its relevant info) and then add `cout`s to print each successor `Move` that you generate and their relevant info.  Then when you run a program you can see what your code is doing and compare it to what you know it should do (tracking it on paper, etc.).
+
 5. **Main Application** 
     - The main application is written in `rh.cpp` and is **COMPLETE**.
 

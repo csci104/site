@@ -16,26 +16,26 @@ Write a **recursive** function to split the elements of a singly-linked list int
 Here is the function you should implement:
 
 ```c++
-void llpivot (Node*& in, Node*& smaller, Node*& larger, int pivot);
+void llpivot (Node*& head, Node*& smaller, Node*& larger, int pivot);
 ```
 
 When this function terminates, the following holds:
   - `smaller` is the pointer to the head of a new singly linked list containing
-    all elements of `in` that were less than or equal to the pivot.
+    all elements of `head` that were less than or equal to the pivot.
   - `larger` is the pointer to the head of a new singly linked list containing
-    all elements of `in` that were (strictly) larger than the pivot.
-  - the linked list `in` no longer exists (`in` should be set to NULL).
+    all elements of `head` that were (strictly) larger than the pivot.
+  - the linked list `head` no longer exists (`head` should be set to NULL).
 
 Note: `smaller` and `larger` may be garbage when called (i.e. you canNOT assume they are NULL upon entry). Also you should not `delete` or `new` nodes, but just change the pointers to form the two other lists.
 
-As an example, suppose the list pointed to by `in` contained `2 4 8 3`.  If we used `5` as the pivot and called:
+As an example, suppose the list pointed to by `head` contained `2 4 8 3`.  If we used `5` as the pivot and called:
 
 ```c++
-llpivot(in, smaller, larger, 5);
+llpivot(head, smaller, larger, 5);
 ```
 
 Then:
- - `in` should be an empty list
+ - `head` should be an empty list
  - `smaller` should contain `2 4 3`
  - `larger` should contain `8`
 

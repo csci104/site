@@ -71,5 +71,9 @@ For checkpoint credit, commit and push your `hw-username` repo with a `hw1` subf
 
 - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/)
 
+## Submission Files
+
+Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** add push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.
+
 {% include commit-reclone.md %}
 

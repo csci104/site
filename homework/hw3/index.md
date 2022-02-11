@@ -49,7 +49,7 @@ For checkpoint credit, submit your working code for the linked list recursion pr
 
 ## Submission Files
 
-Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** add push any test suite folder/files that we provide from the `resources` repo.
+Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** add push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.
 
 {% include commit-reclone.md %}
 

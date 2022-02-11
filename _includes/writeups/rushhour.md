@@ -3,7 +3,7 @@
 
 In this application you will use the A\* algorithm to "efficiently" solve a puzzle game where **vehicles** in a square 2D grid (aka the **board**) must be **moved** (by sliding) to allow a certain vehicle (vehicle `a` in our program) to **escape** off the right side of the board by moving right along its given row.  To start, a **Board** (i.e. the 2D grid) that shows the initial layout of vehicles (each identified by a character `a`, `b`, `c` and so on...) will be provided and read in by the program.  We guarantee vehicle `a` is always facing horizontally and is the vehicle we want to help **escape** by moving off the right side of the board. Vehicle `a` may start in any row.  Other vehicles must be slid horizontally and vertically in the board to allow vehicle `a` to escape.  Most of the examples we give will be a 6x6 board to match the classic game, but your program should work for LARGER board sizes.  
 
-If you are unfamiliar with the game, an online version is available to try (with ads...sorry) **[at this site](https://www.playit-online.com/puzzle-onlinegames/rush-hour/)**.
+**If you are unfamiliar with the game, an online version is available to try (with ads...sorry) [at this site](https://www.playit-online.com/puzzle-onlinegames/rush-hour/)**.
 
 We've provided a majority of the code to allow the user to play a text-based version of this game on their own.  Your task is to add the ability for the user to:
 
@@ -71,7 +71,23 @@ Recall that A* chooses the move with smallest f-value to explore next.  Note:  `
 
 1. **Brute-force**: Returns h=0...this causes A* to degenerate to a Breadth-first search
 
-1. **Direct blocking vehicles**: Counts the number of vehicles to the right of the escape vehicle (i.e. that are blocking its escape).
+1. **Direct blocking vehicles**: Counts the number of vehicles to the right of the escape vehicle in its row (i.e. number of vehicles directly blocking its escape).
+
+```
+Ex.             Ex.         
+   ee.c..        .ddee.    
+   ...c..        .ffc..    
+-> aabc..        ..bc..    
+   ..b...     -> aabc.g     
+   ..b...        ..b..g     
+   .ddd..        ......     
+
+   h = 2         h = 3
+```
+
+*Note:* the `->` is not printed or part of the input but just shown on this writeup to highlight the escape row.
+
+In the first example (above and to the left), h=2 because `b` and `c` are in `a`'s row and blocking it from escape.  In the next example, `b`, `c`, and `g` are in `a`'s row and blocking it.
 
 1. **Indirect blocking vehicles**: (Read this carefully a few times) Counts the **direct** blocking vehicles (defined just above) **AND** what we define as  **indirect** blocking vehicles.  At a high level, an **indirect blocking vehicle** is one that blocks a **direct blocking vehicle** from making a **necessary** move to clear the escape row.  To compute **indirect blocking** vehicles, you will need to iterate through each **direct** blocking vehicle and check the following:
 

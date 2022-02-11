@@ -54,7 +54,7 @@ As well as:
 
 ## Submission Files
 
-Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** add push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.
+Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** commit/push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.
 
 {% include commit-reclone.md %}
 

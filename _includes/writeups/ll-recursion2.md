@@ -1,5 +1,5 @@
 
-In this problem you will practice implementing recursive functions that process linked lists. Skeleton code is provided in `resources/{{page.hwpath}}`. Copy those files to your `hw-username/{{page.hwpath}}` folder, if you have not already.  Each of the two problems below will use the following `Node` definition.  
+In this problem you will practice implementing recursive functions that process linked lists. Skeleton code is provided in `resources/{{page.hwpath}}`. Copy those files to your `hw-username/{{page.hwpath}}` folder, if you have not already. There are **two separate functions** recursive functions that we will ask you to write. They are unrelated to each other (just part a, and part b of this problem), but each of the two problems below will use the following `Node` definition.  
 
 ```c++
 struct Node {

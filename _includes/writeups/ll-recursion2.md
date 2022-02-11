@@ -1,5 +1,5 @@
 
-In this problem you will practice implementing recursive functions that process linked lists. Skeleton code is provided in `resources/{{page.hwpath}}`. Copy those files to your `hw-username/{{page.hwpath}}` folder.  Each of the two problems below will use the following `Node` definition.  You may declare and use helper functions as you deem necessary.  Remember to handle the cases when an input linked list is empty.  Also, most recursive solutions are *elegant*. If you find yourself writing a lot of code, you likely aren't on the right track.  If you had a recursive linked list **tracing** problem in a prior homework, that might give you an idea of the *elegance* we are referring too.
+In this problem you will practice implementing recursive functions that process linked lists. Skeleton code is provided in `resources/{{page.hwpath}}`. Copy those files to your `hw-username/{{page.hwpath}}` folder, if you have not already.  Each of the two problems below will use the following `Node` definition.  
 
 ```c++
 struct Node {
@@ -8,8 +8,10 @@ struct Node {
 };
 ```
 
+You may declare and use helper functions as you deem necessary.  Remember to handle the cases when an input linked list is empty.  Also, most recursive solutions are *elegant*. If you find yourself writing a lot of code, you likely aren't on the right track.  If you had a recursive linked list **tracing** problem in a prior homework, that might give you an idea of the *elegance* we are referring too.
+
 #### Part 1 - Linked List Split/Pivot
-Write a **recursive** function to split the elements of a singly-linked list into two output lists, one containing the elements less than or equal to a given number, the other containing the elements larger than the number. At the same time, the original list should **not** be preserved (see below). Your function must be recursive - you will get **NO** credit for an iterative solution.  It must also run in O(n), where n is the length of the input list.
+Write a **recursive** function to split the elements of a singly-linked list into two output lists, one containing the elements less than or equal to a given number, the other containing the elements larger than the number.  You must **MAINTAIN the relative ordering** of items from the original list when you split them into the two output lists. The original list should **not** be preserved. Your function must be **recursive** - you will get **NO** credit for an iterative solution.  It must also run in **O(n)**, where n is the length of the input list (and can be done with only one pass/traversal through the list).
 
 Here is the function you should implement:
 
@@ -26,11 +28,28 @@ When this function terminates, the following holds:
 
 Note: `smaller` and `larger` may be garbage when called (i.e. you canNOT assume they are NULL upon entry). Also you should not `delete` or `new` nodes, but just change the pointers to form the two other lists.
 
+As an example, suppose the list pointed to by `in` contained `2 4 8 3`.  If we used `5` as the pivot and called:
+
+```c++
+llpivot(in, smaller, larger, 5);
+```
+
+Then:
+ - `in` should be an empty list
+ - `smaller` should contain `2 4 3`
+ - `larger` should contain `8`
+
 See `llrec.h` for more details and description and then place your implementation in `llrec.cpp`.
 
 #### Part 2 - Linked List Filter
 
-Write a **recursive** function to filter/remove elements of a singly-linked list that meet a specific criteria. The criteria for removal is provided by a comparison (`Comp`) functor/function object that provides an `operator()` that takes in an `int` and returns a `bool` if the node should be removed/filtered.  Filtered nodes should be deallocated. Your function must be recursive - you will get **NO** credit for an iterative solution.   It must also run in O(n), where n is the length of the input list.
+Write a **recursive** function to filter/remove elements of a singly-linked list that meet a specific criteria. The criteria for removal is provided by a comparison (`Comp`) functor/function object that provides an `operator()` that takes in an `int` and returns a `bool` if the node should be removed/filtered.  Filtered nodes should be deallocated. Your function must be recursive - you will get **NO** credit for an iterative solution.   It must also run in **O(n)**, where n is the length of the input list  (and can be done with only one pass/traversal through the list).
+
+```c++
+template <typename Comp>
+Node* llfilter(Node* head, Comp pred);
+```
+As an example, if the list pointed to by `head` contained: `3 6 4 9` and the `Comp` object's `operator()` returns true for an *ODD* integer input, then the function should return a pointer to the list containing just `4` (since all the odd integers would have been filtered out).
 
 Since this is a templated function (to allow for different function object types), you should put your implementation in `llrec.h`.  See `llrec.h` for more details and description.
 

@@ -41,9 +41,11 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 ## Checkpoint
 
-For checkpoint credit, commit and push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
+For checkpoint credit, ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
 
   - Your `Makefile` and **all necessary source code files** so that running `make llrec-test` will compile and create a working executable: `llrec-test` that we can test.  Failure to compile will result in 0 credit for your checkpoint.  There should also be no memory/Valgrind errors of any kind when we run your test on any valid input file. It is fine to push input test files if you like, though we will not grade them.
+
+  - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
 
 ## Submission Files
 

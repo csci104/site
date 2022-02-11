@@ -69,5 +69,7 @@ For checkpoint credit, commit and push your `hw-username` repo with a `hw1` subf
    - `LabelList` constructor, `add()`, and `label()` 
    - `LabelList::MsgToken` member functions `msg()` (both const and non-const version) and operators `==`, `!=` and `bool`
 
+- **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/)
+
 {% include commit-reclone.md %}
 

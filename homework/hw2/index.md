@@ -50,6 +50,8 @@ As well as:
 
 - a working implementation of `md_parser.h/cpp` that can pass the `mdparser-tests` tests in `mdparser-tests.cpp`.  To attempt to compile and run the `mdparser-tests` tests, type `make parser-tests` at the command line which will both compile AND run the tests (if the compilation succeeded). To pass the checkpoint, you'll need to run valgrind on `mdparser-tests` and ensure there are no memory errors.
 
+- **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/)
+
 ## Submission Files
 
 Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** add push any test suite folder/files that we provide from the `resources` repo.

@@ -223,13 +223,9 @@ You should not change the interface of any member functions unless otherwise spe
     To debug your `run()` function, it may help to add `cout` commands to print a note when you dequeue a `Move` from the PQ (printing out its relevant info) and then add `cout`s to print each successor `Move` that you generate and their relevant info.  Then when you run a program you can see what your code is doing and compare it to what you know it should do (tracking it on paper, etc.).
 
 5. **Main Application** 
-    - The main application is written in `rh.cpp` and is **COMPLETE**.
-
-#### Functional Requirements
-
-1. Your program shall accept 2 arguments from the command line
-  - `input-board-file` the text file containing the 2D board (see examples in the `boards/` subfolder)
-  - `heur` selection value (0=BFS, 1=Direct, 2=Indirect)
+    - The main application is written in `rh.cpp` and is **COMPLETE**.  We accept two command line arguments:
+      - `input-board-file` the text file containing the 2D board (we have provided several example boards in the `boards/` subfolder that you can use as input)
+      - `heur` selection value (0=BFS, 1=Direct, 2=Indirect)
 
 
 
@@ -252,8 +248,15 @@ You may use the sample executions below to try out your program.
 
 **Sample 1 - `inboard0.in` (Indirect heuristic)**
 
+If we ran this command line:
+
 ```bash
 ./rh boards/inboard0.in 2
+```
+
+And then we entered `?`, followed by `Z`, followed by `Q`, we would see this:
+
+```bash
 ...b..
 ...bee
 aa.b.d
@@ -284,8 +287,15 @@ Don't give up that easily!
 
 **Sample 2 - `inboard1.in` (Indirect heuristic)**
 
+Running on this input:
+
 ```bash
 ./rh boards/inboard1.in 2
+```
+
+And then entering `?` should yield the solution shown, which we can then enter as moves to solve the game.
+
+```
 ...b..
 ...b..
 aa.b.d

@@ -165,6 +165,8 @@ We have placed skeleton code in the `resources/{{page.hwpath}}` folder.
 
 1. `Heur` (Heuristic Base & Derived classes - A polymorphic interface to compute the heuristic score for a Board as well as the three derived implementations (BFS, Direct, and Indirect).
 
+1. `Stack<T>` class - You will need to use your Stack class from the prior problem to implement some feature of this gameplay. Look for where it would be most appropriately used.
+
 1. Main Application (`rh.cpp`) - Implements the basic gameplay loop and processes commands entered by the user.
 
 #### Class Notes
@@ -187,10 +189,9 @@ You should not change the interface of any member functions unless otherwise spe
   ......
   ......
   ```    
-
   - You will need to implement an `operator<()` to compare `this` board and another.  This will allow you to use `Board`s as keys in a set or map to determine uniqueness. How you decide to compare boards is your choice though you can consider converting the boards to some kind of string and utilize its comparison operators.  
   - We have proivded `operator<<` (`ostream` operator) to output the board to any ostream in a 2D text format. 
-  - You will need to complete an `undoLastMove()` function to restore the previous state of the `Board`
+  - You will need to complete an `undoLastMove()` function to restore the previous state of the `Board`. Follow the documentation in the `board.h` header file.
   - Other functions which you can see in the provided code.
     
 2. **Move class**

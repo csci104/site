@@ -69,9 +69,9 @@ Note the game ends as soon as `a` has an open path to its right to escape.
 #### Review the A* algorithm
 Recall that A* chooses the move with smallest f-value to explore next.  Note:  `f = g + h` where `g = distance (number of moves made)` from the start state while `h` is a score produced by a heuristic evaluation of the move.  Please take some time to review the algorithm presented in class (slides, notes, etc.).  We will use the following heuristics:
 
-1. **Brute-force**: Returns h=0...this causes A* to degenerate to a Breadth-first search
+- **Brute-force**: Returns h=0...this causes A* to degenerate to a Breadth-first search
 
-1. **Direct blocking vehicles**: Counts the number of vehicles to the right of the escape vehicle in its row (i.e. number of vehicles directly blocking its escape).
+- **Direct blocking vehicles**: Counts the number of vehicles to the right of the escape vehicle in its row (i.e. number of vehicles directly blocking its escape).
 
 ```
 Ex.             Ex.         
@@ -89,11 +89,11 @@ Ex.             Ex.
 
 In the first example (above and to the left), h=2 because `b` and `c` are in `a`'s row and blocking it from escape.  In the next example, `b`, `c`, and `g` are in `a`'s row and blocking it.
 
-1. **Indirect blocking vehicles**: (Read this carefully a few times) Counts the **direct** blocking vehicles (defined just above) **AND** what we define as  **indirect** blocking vehicles.  At a high level, an **indirect blocking vehicle** is one that blocks a **direct blocking vehicle** from making a **necessary** move to clear the escape row.  To compute **indirect blocking** vehicles, you will need to iterate through each **direct** blocking vehicle and check the following:
+- **Indirect blocking vehicles**: (Read this carefully a few times) Counts the **direct** blocking vehicles (defined just above) **AND** what we define as  **indirect** blocking vehicles.  At a high level, an **indirect blocking vehicle** is one that blocks a **direct blocking vehicle** from making a **necessary** move to clear the escape row.  To compute **indirect blocking** vehicles, you will need to iterate through each **direct** blocking vehicle and check the following:
 
 For a vehicle to qualify as an indirect blocking vehicle it must satisfy this criterion:
 
-  - Be above or below a *direct blocking vehicle* that has **ONLY 1** viable path to clear the escape row and is being blocked by this vehicle (i.e. the *direct blocking* vehicle's length precludes it from clearing the escape row in one direction and the *indirect blocking* vehicle blocking its ability to clear the escape row in the other direction). 
+  - Be above or below a *direct blocking vehicle* that has **ONLY 1** viable path to clear the escape row and is being blocked by this vehicle (i.e. the *direct blocking* vehicle's length precludes it from clearing the escape row in one direction and the *indirect blocking* vehicle is blocking its ability to clear the escape row in the other direction). 
 
 This implies that if a *direct blocking vehicle* can move up or down to clear the escape row, then by definition there cannot be an *indirect blocking vehicle* associated with that *direct blocking vehicle*. Furthermore if the *direct* blocked vehicle has the option to move BOTH up OR down to clear the escape path but is blocked by vehicles in both directions, then we do not consider those as *indirect* blocking vehicles since it does not have **ONLY 1** viable path to clear the escape row.  This somewhat counterintuitve choice to not count those vehicles above and below the *direct* blocked vehicle is explained further below and pertains to the requirements of the heuristics we use in order for A* to produe an **optimal** solution.  Let's look at some examples to illustrate what vehicles should be counted in this heuristic and which should not.  
 

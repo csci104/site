@@ -49,7 +49,7 @@ Write a **recursive** function to filter/remove elements of a singly-linked list
 template <typename Comp>
 Node* llfilter(Node* head, Comp pred);
 ```
-As an example, if the list pointed to by `head` contained: `3 6 4 9` and the `Comp` object's `operator()` returns true for an *ODD* integer input, then the function should return a pointer to the list containing just `4` (since all the odd integers would have been filtered out).
+As an example, if the list pointed to by `head` contained: `3 6 4 9` and the `Comp` object's `operator()` returns true for an *ODD* integer input, then the function should return a pointer to the list containing `6 4` (since all the odd integers would have been filtered out).
 
 Since this is a templated function (to allow for different function object types), you should put your implementation in `llrec.h`.  See `llrec.h` for more details and description.
 

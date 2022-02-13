@@ -41,18 +41,15 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 ## Checkpoint
 
-For checkpoint credit, commit and push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains your ... files and contains:
+For checkpoint credit, submit your working code for the linked list recursion problem. Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
 
-- Your solution to question 4 (ADTs). You may revise your answer in your final submission but need to show your answers and provide appropriate justification.
-- Your solution to question 5 (Class Organization).  This will ensure you have read and started to consider your class design and approach to the web search programming problem.
+  - Your `Makefile` and **all necessary source code files** so that running `make llrec-test` will compile and create a working executable: `llrec-test` that we can test.  Failure to compile will result in 0 credit for your checkpoint.  There should also be no memory/Valgrind errors of any kind when we run your test on any valid input file. It is fine to push input test files if you like, though we will not grade them.
 
-As well as:
-
-- a working implementation of `md_parser.h/cpp` that can pass the `mdparser-tests` tests in `mdparser-tests.cpp`.  To attempt to compile and run the `mdparser-tests` tests, type `make parser-tests` at the command line which will both compile AND run the tests (if the compilation succeeded). To pass the checkpoint, you'll need to run valgrind on `mdparser-tests` and ensure there are no memory errors.
+  - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
 
 ## Submission Files
 
-Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** add push any test suite folder/files that we provide from the `resources` repo.
+Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** commit/push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.
 
 {% include commit-reclone.md %}
 

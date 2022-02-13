@@ -8,7 +8,7 @@ title: Heaps
 ---
 
 **This lab requires a checkoff. You need to get checked off before the end of your registered lab section
-from Feb 1, 2022 to Feb 4, 2022.**
+from Feb 15, 2022 to Feb 18, 2022.**
 
 ---
 
@@ -70,16 +70,16 @@ Your task is to implement the `pop()` function for the heap (in `max_heap.h`), w
 
 **Tips / Hints:**
 
-* Remember we were talking about storing the heap as an array because it is a complete binary heap? Insides our `MaxHeap`, the member `data` serves as that array! We use an `std::vector` instead of an plain array because:
+- Remember we were talking about storing the heap as an array because it is a complete binary heap? Insides our `MaxHeap`, the member `data` serves as that array! We use an `std::vector` instead of an plain array because:
 
     - We could use `vector.push_back` to push back an item.
     - We could use `vector.pop_back` to remove the last item. (Very useful for heaps)
     - It handles resize automatically.
     - It handles memory allocation automatically (no more manual `new` and `delete`!)
 
-* You could use `std::swap` to swap the value of two elements (e.g. `std::swap(data[parent], data[left])`).
+- You could use `std::swap` to swap the value of two elements (e.g. `std::swap(data[parent], data[left])`).
 
-* When you are trickling down, be careful for whether the node has 0, 1, or 2 children.
+- When you are trickling down, be careful for whether the node has 0, 1, or 2 children.
 
 - [ ] When you are done, run `make heap_test` to test your heap. Make sure all tests pass before moving to Part 2.
 

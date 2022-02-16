@@ -113,7 +113,7 @@ lectures:
       - L06b_Polymorphism.pdf
       - L07_QueueStackDeque.pdf
 
-  # 8 Mon 2/7
+  # 9 Mon 2/7
   - topics:
       - Stacks and Queues
       - Templates
@@ -127,47 +127,49 @@ lectures:
   # 10 Wed 2/9
   - topics:
       - Templates
-      - Trees and Heaps 
+      - Trees
     chapters:
       - Chapter 4.1-4.2
-      - Chapter 6.1-6.5   
     notes: 
       - L09_PQHeaps.pdf
 
-  # 10 Mon 2/14
+  # 11 Mon 2/14
   - topics:
-      - More Heaps
-      - Graphs
+      - Heaps
     chapters:
+      - Chapter 6.1-6.5   
       - Chapter 9.1
     notes: 
-      - L10_GraphsAlgorithms.pdf
+      - L09_PQHeaps.pdf
 
-  # 11 Wed 2/16
+  # 12 Wed 2/16
   - topics:
+      - Heapsort and build-heap
       - Graph Algorithms
     chapters:
       - Chapter 9.3
     notes: 
-      - L11_GraphTraversals.pdf
+      - L10_GraphsAlgorithms.pdf
 
-  # 12 Mon 2/21
+  # 13 Mon 2/21
   - topics:
       - President's Day Holiday
     chapters:
     notes: 
  
-  # 13 Wed 2/23
+  # 14 Wed 2/23
   - topics:
+      - Graph Traversals
       - Tree Traversals
       - Recursion - All combinations
     chapters:
-      - Chapter 4.1-4.2
+      - Chapter 9.2-9.3,9.6
+      - Chapter 4.1-4.2,4.6
     notes: 
       - L11_GraphTraversals.pdf
       - L12_BacktrackingSearch.pdf
 
-  # 14 Wed 2/23
+  # 15 Mon 2/28
   - topics:
       - Recursion - Backtracking
       - Iterators
@@ -177,15 +179,6 @@ lectures:
     notes: 
       - L13_Iterators.pdf
 
-  # 15 Mon 2/28
-  - topics:
-      - Iterators
-      - Binary Search Trees
-    chapters:
-      - Chapter 4.3-4.4
-    notes: 
-      - L14_BalancedBST_AVL.pdf
-
   # 16 Wed 3/2
   - topics:
       - Midterm Review
@@ -194,13 +187,21 @@ lectures:
 
   # 17 Mon 3/7
   - topics:
-      - AVL Trees
+      - Iterators
+      - Binary Search Trees
     chapters:
       - Chapter 4.3-4.4
     notes: 
       - L14_BalancedBST_AVL.pdf
 
   # 18 Wed 3/9
+  - topics:
+      - AVL Trees
+    chapters:
+      - Chapter 4.3-4.4
+    notes: 
+      - L14_BalancedBST_AVL.pdf
+
   - topics:
       - AVL Trees
       - Splay Trees

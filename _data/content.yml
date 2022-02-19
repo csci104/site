@@ -89,42 +89,42 @@ labs:
     topics:
   - id: lab6
     week: Week 6
-    title: Midterm Review
-    assigned: false
-    topics:
+    title: Heaps
+    assigned: true
+    topics: Heaps
   - id: lab7
     week: Week 7
-    title: Heaps
+    title: 
     assigned: false
-    topics: Heaps
+    topics: 
   - id: lab8
     week: Week 8
-    title: Counting and Probability
+    title: 
     assigned: false
-    topics: Counting and Probability
+    topics: 
   - id: lab9
     week: Week 9
-    title: Hash Tables
+    title: 
     assigned: false
-    topics: Hash Tables
+    topics: 
   - id: lab10
     week: Week 10
-    title: Number Theory
+    title: 
     assigned: false
-    topics: Number theory
+    topics: 
   - id: lab11
     week: Week 11
-    title: BST Basics
+    title: 
     assigned: false
-    topics: Binary search tree
+    topics: 
   - id: lab12
     week: Week 12
-    title: More on BST
+    title: 
     assigned: false
     topics: 
   - id: lab13
     week: Week 13
-    title: Final Review
+    title: 
     assigned: false
     topics:
   # - id: lab14

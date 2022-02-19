@@ -69,4 +69,4 @@ Note: We will not grade your `llrec-test.cpp` or any input files you create. The
 
 #### More Explanation
 
-A video overview of how these functions may work and be organized **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-rh-expl/cs104-sp22-hw3-rh-expl.html)**.
+A video overview of how these functions may work and be organized **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-llrec-expl/cs104-sp22-hw3-llrec-expl.html)**.

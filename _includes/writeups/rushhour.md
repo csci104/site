@@ -350,4 +350,4 @@ You can crowd source the output of your A* solutions on various boards and how m
 
 #### More Background
 
-A video overview of some of the relevant object/class relationships and how the A* algorithm works **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-llrec-expl/cs104-sp22-hw3-llrec-expl.html)**.
+A video overview of some of the relevant object/class relationships and how the A* algorithm works **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-rh-expl/cs104-sp22-hw3-rh-expl.html)**.

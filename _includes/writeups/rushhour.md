@@ -342,7 +342,7 @@ cccb..
 You win!
 ```
 
-Note: For `boards/inboard0.in` a **direct** heuristic (1) yields **30** and a **BFS** heuristic (0) yields **72** expansions, respectively, compared to the **19** for the indirect (2) heuristic.  Again, there may be some variation on this number based on how you implemented your Board `operator<` (i.e. how ties are broken).
+Note: For `boards/inboard1.in` a **BFS** heuristic (0) yields **72** expansions and a **direct** heuristic (1) yields **30**.  The **indirect** heuristic (2) yields **19** expansions.  Again, there may be some variation on this number based on how you implemented your Board `operator<` (i.e. how ties are broken).
 
 #### Testing
 

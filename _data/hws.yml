@@ -100,7 +100,7 @@ hw4:
       title: AVL Operations
       points: 10
   programming_parts:
-    - writeup: traversal-intrange.md
+    - writeup: traversal-equal-paths.md
       number: 2
       title: Tree Traversals
       points: 10

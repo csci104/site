@@ -43,6 +43,11 @@ staff:
     image: /assets/img/staff/angela.jpg
     hours: >-
       See Google Calendar
+  - name: Carlos Ramirez
+    email: carlosr5@usc.edu
+    image: /assets/img/staff/carlos.jpeg
+    hours: >-     
+      See Google Calendar
   - name: Carolyn Luo
     email: xluo0963@usc.edu
     image: /assets/img/staff/carolyn.JPG
@@ -153,11 +158,6 @@ staff:
     image: /assets/img/staff/toan.jpg
     hours: >-
       See Google Calendar
-  - name: Tommy Shao
-    email: anntians@usc.edu
-    image: /assets/img/staff/tommy.jpeg
-    hours: >-
-     See Google Calendar
   - name: Trevor Asbery
     email: asbery@usc.edu
     image: /assets/img/staff/trevor.jpg

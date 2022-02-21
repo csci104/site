@@ -6,7 +6,7 @@ nav: assignments
 
 ## Skeleton Code
 
-Skeleton files for the problems below can be [downloaded here]({{site.url}}/resources/mt-su20.zip).  There is a subfolder for each of the two problems below.
+Skeleton files for the problems below can be [downloaded here]({{site.baseurl}}/resources/mt-su20.zip).  There is a subfolder for each of the two problems below.
 
 ## Midterm
 

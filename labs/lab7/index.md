@@ -10,7 +10,7 @@ title: Midterm Review
 ### Introduction
 This lab is just for midterm review, so **there is no checkoff for this lab.**
 
-The midterm will take place on **Friday, October 1st from 7:00-8:50pm** (see [this piazza post](https://piazza.com/class/ksgo211u37k10l?cid=861) for more details). It will cover everything up to Dijkstra and A*.
+The midterm will take place on **Thursday, March 3 from 7:00-8:50pm** (see [the midterm info page](https://bytes.usc.edu/cs104/resources/mt1-info/) for more details). It will cover everything up to Dijkstra and A*.
 
 You won't be tested on any programming tools that you've gone over in lab but not lecture (e.g. gdb, Makefiles). This lab is to help you review and will mostly cover problems taken or modified from the sample midterms and quizzes under the [Resources](https://bytes.usc.edu/cs104/resources) page, as well as labs from previous semesters. If there's a topic you want to skip, or a topic that's not included here that you really want to go over, let us know! As long as this lab is, it is by no means exhaustive, so remember to go back and review lecture slides as well.
 

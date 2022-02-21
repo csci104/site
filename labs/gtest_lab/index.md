@@ -5,10 +5,16 @@ tasks: true
 title: GTest
 ---
 
-## Unit Testing and GTest
-This lab will be covered during lab sections between Feb 5 - Feb 10, 2021.
+---
 
-In this lab we want to dive into the topic of unit testing. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project.
+**This lab requires checkoff.
+It is due at the end of the section you regitered for between Feb 22 and Feb 25, 2022.**
+
+---
+
+## Unit Testing and GTest
+
+In this lab we want to dive into the topic of unit testing. You all have already used unit tests we have provided in your previous assignments. However, in this lab, you will be writing your own unit tests. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project.
 
 ### 0 - Motivation
 
@@ -167,7 +173,7 @@ When we test classes, we often need some initialization before we can test. For 
 
 Open the `test.cpp` in the `part2` folder. You'll notice that this file is slightly longer than the one in the first part. The main difference being a definition of a class `ArrayListTest`. There are several characteristics to this class:
 
-  + It inherits from a Google Test class `testing::Test`. We have not learned what inheritance works yet, but you will understand how it works in a little bit
+  + It inherits from a Google Test class `testing::Test`.
   + The class is largely empty, but it includes a declaration of a member variable of type `ArrayList`. This object is available for use in any of the test cases
   + It has four methods you can insert code in: 
 	- the class constructor and `SetUp()` is largely the same:both will be called before each test case
@@ -179,7 +185,7 @@ You can see all that comes to play in the sample `get()` test. Notice that we ar
 
 ### 3 - More about Testing
 
-A common mistake students make is that they write tests for their program to pass. This is wrong. Your job, when writing test cases, is to try as hard as you can to break your code. Try to think of all possible ways that your program can misbehave. When designing test cases, ask yourself these questions:
+A common mistake students make is that they write tests for their program to pass. This is wrong. Your job, when writing test cases, is to try as hard as you can to break your code. (There is the saying that **"a good test is a test that fails"**) Try to think of all possible ways that your program can misbehave. When designing test cases, ask yourself these questions:
 
   + What promises does the program make in its documentation?
   + If something is supposed to happen after a function call, does it happen?

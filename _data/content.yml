@@ -94,8 +94,8 @@ labs:
     topics: Heaps
   - id: lab7
     week: Week 7
-    title: 
-    assigned: false
+    title: Midterm Review
+    assigned: true
     topics: 
   - id: lab8
     week: Week 8

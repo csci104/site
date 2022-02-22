@@ -227,6 +227,11 @@ You should not change the interface of any member functions unless otherwise spe
     - The main application is written in `rh.cpp` and is **COMPLETE**.  We accept two command line arguments:
       - `input-board-file` the text file containing the 2D board (we have provided several example boards in the `boards/` subfolder that you can use as input)
       - `heur` selection value (0=BFS, 1=Direct, 2=Indirect)
+    - The menu is printed on each turn.  The input options are:
+      - A move given by the vehicle ID and an amount (negative amounts mean up/left while positive amounts mean down/right). An example is `c -1`.
+      - `?` to run the A* algorithm to find an optimal solution and display it to the user.
+      - `Q` to quit the game
+      - `Z` to undo the previous move (and pressing `Z` again will undo the move before that, if it exists)
 
 
 

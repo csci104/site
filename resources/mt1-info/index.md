@@ -13,14 +13,14 @@ The test will be **IN PERSON**
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 50 minutes**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: **THH 101 and THH 201**
-  - If you have **1.5x (no breaks) accommodations** you will be in **THH 212**
-  - If you have **2x or 1.5x (with breaks) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
+- Location: **THH 101 and THH 201** (you may go to either room leaving a blank seat between each student)
+  - If you have **1.5x time accommodations** you will be in **THH 212**
+  - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
-- The test will be taken on Gradescope by logging into our Blackboard section, choose Assignmentments, and click on the Gradescope link. You will then find a **Sp 22 Midterm** assignment where you will be able to see the questions as simple HTML or download a PDF of the questions.  All questions will be answered directly on Gradescope either by directly filling in the blank **OR** writing code on your laptop and then uploading the `.cpp` file.  Skeleton files will be linked directly from Gradescope and you can download them, edit them, and upload your final version.  You can write your code in any editor and even try to compile and run if you like, but we are not expecting you do that and it will take away time from coding the other problems. We will **visually** grade your code and be fairly lenient with **small** syntax errors.  No tests will be provided since we don't expect you to compile and run your code.
+- The test will be taken on Gradescope by logging into our Blackboard section, choose Assignmentments, and click on the Gradescope link. You will then find a **Sp 22 Midterm** assignment where you will be able to see the questions as simple HTML.  We are still writing the exam and thus we may have a handwritten paper portion followed by a coding (on your laptop) portion, **OR** you have an electronic entry only (all input is text based) exam.  For coding questions, you will write code on your laptop and then uploading the `.cpp` file.  Skeleton files will be linked directly from Gradescope and you can download them, edit them, and upload your final code.  You can write your code in any editor and even try to compile and run if you like, but we are not expecting you do that and it will take away time from coding the other problems. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).  No automated tests will be provided since we don't expect you to compile and run your code.
 - For those in person, you will be given a condensed PDF with question text and a sign-off sheet indicating you were present at the exam. 
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, an editor and/or compiler, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
-- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No printed cheat sheets.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
+- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 ### Topics and Style
 

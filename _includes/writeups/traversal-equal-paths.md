@@ -9,6 +9,8 @@ struct Node {
 };
 ```
 
+However, for this application the key (or integer) in the node is not utilized and can be ignored.
+
 The function is prototyped in `equal-paths.h` and should be implemented in the corresponding `.cpp` file.
 
 ```c++

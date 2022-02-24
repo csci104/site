@@ -20,7 +20,7 @@ bool equalPaths(Node * root);
 
 See the images below of trees with equal paths that should return `true` and trees that do not have all equal paths which should return `false`.
 
-<img src=/{{site.baseurl}}/homework/img/bt-equal-paths.png>
+![AVL Tree]({{ site.baseurl}}/homework/img/AVLTree.jpg)
 
 <!--
 ```

@@ -99,9 +99,10 @@ labs:
     topics: 
   - id: lab8
     week: Week 8
-    title: 
+    title: (Optional)
     assigned: false
-    topics: 
+    topics:
+    slides: ll_rec_practice.pdf
   - id: lab9
     week: Week 9
     title: 

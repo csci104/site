@@ -6,7 +6,7 @@
 You are given the above unweighted graph, and want to find the shortest path from **node L** to **node A**, using **A* Search**. 
  Your algorithm has the following properties:
 
-- It uses Manhattan distance for both heuristic (the h-value) and distance from the source (the g-value)
+- It uses Manhattan distance to the target node for the heuristic (the h-value) and distance travelled from the source (through the predecessor nodes for the g-value)
 - If two nodes look equally good, it breaks ties by selecting the node with a smaller heuristic (or, equivalently, the node with the largest distance travelled)
 - If two nodes are still tied, it break ties by choosing the node which comes first alphabetically.
 

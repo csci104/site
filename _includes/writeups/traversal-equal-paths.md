@@ -9,7 +9,9 @@ struct Node {
 };
 ```
 
-The function is prototyped in `internal-range.h` and should be implemented in the corresponding `.cpp` file.
+However, for this application the key (or integer) in the node is not utilized and can be ignored.
+
+The function is prototyped in `equal-paths.h` and should be implemented in the corresponding `.cpp` file.
 
 ```c++
 // Prototype
@@ -20,7 +22,7 @@ bool equalPaths(Node * root);
 
 See the images below of trees with equal paths that should return `true` and trees that do not have all equal paths which should return `false`.
 
-<img src={{site.baseurl}}/homework/img/bt-equal-paths.png>
+<img src="{{site.baseurl}}/homework/img/bt-equal-paths.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 <!--
 ```

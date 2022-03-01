@@ -4,5 +4,5 @@ Try to be specific, e.g., rather than just saying "a list", say "a list of integ
 
  1. a data type to store the text of the steps of a recipe for how to bake a cake
  2. a data type that stores all the TV station identifications (e.g. `KABC`, `KNBC`, etc.) so we can ensure new stations don't reuse the same identification.
- 3. a data type that stores what players (assume names are unique) are on each team (given by the team name) in a league and allows quick checks whether a given player is on a partical team (i.e. given a team name and player name, we can quickly ascertain if that player is on that team).
+ 3. a data type that stores what players (assume names are unique) are on each team (given by the team name) in a league and allows quick lookups of all the players on a team as well as if a given player is on a particular team (i.e. given a team name and player name, we can quickly ascertain if that player is on that team).
  4. a data type that associates a file extension (e.g. `cpp`, `pdf`) with the possible programs that are able to read/open that kind of file

@@ -105,9 +105,9 @@ labs:
     slides: ll_rec_practice.pdf
   - id: lab9
     week: Week 9
-    title: 
-    assigned: false
-    topics: 
+    title: Backtracking
+    assigned: true
+    topics: Backtracking
   - id: lab10
     week: Week 10
     title: 

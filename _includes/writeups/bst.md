@@ -2,7 +2,7 @@
 
 In this homework you will implement a binary search trees and then extend it to build an AVL tree.
 
-We are providing for you a half-finished file `bst.h` (in the homework-resources repository) which implements a simple binary search tree.    We are also providing a complete `print_bst.h` file that allows you to visually see your tree, for help in debugging. **HOWEVER** to use this print function you must have a working iterator implementation.  _If the tree doesn't print correctly you need to **verify your iterator works** and also that **your insertions/removals haven't destroyed parts of the tree**_.  This file is already `#include`'d into your `bst.h` and is invoked by simply calling the public `print()` member function on your tree (e.g. if you are in `main()` and have a BST object named `b`, then just call `b.print();`).
+We are providing for you a half-finished file `bst.h` (in the `resources` repository) which implements a simple binary search tree.    We are also providing a complete `print_bst.h` file that allows you to visually see your tree, for help in debugging. **HOWEVER** to use this print function you must have a working iterator implementation.  _If the tree doesn't print correctly you need to **verify your iterator works** and also that **your insertions/removals haven't destroyed parts of the tree**_.  This file is already `#include`'d into your `bst.h` and is invoked by simply calling the public `print()` member function on your tree (e.g. if you are in `main()` and have a BST object named `b`, then just call `b.print();`).
 
 You will need to complete the implementation for all seven functions that have `TODO` next to their declaration in `bst.h`. We provide additional clarifications for the following functions, where `n` is the number of nodes in the tree, and `h` is the height of the tree:
 
@@ -11,9 +11,9 @@ You will need to complete the implementation for all seven functions that have `
 3. `void clear()` : Deletes all nodes inside the tree, resetting it to the empty tree.   Runtime is `O(n)`.
 4. `Node* internalFind(const Key& key)` : Returns a pointer to the node with the specified key.  Runtime is `O(h)`.
 5. `Node* getSmallestNode()` : Returns a pointer to the node with the smallest key.  This function is used by the iterator.  Runtime is `O(h)`.
-6. `bool isBalanced() const` : Returns true if the BST is an AVL Tree (that is, for every node, the height of its left subtree is within 1 of the height of its right subtree).  It is okay if your algorithm is not particularly efficient, as long as it is `O(n^2)`.  This function may help you debug your AVL Tree in the next part of this problem, but it is mainly given as practice of writing recursive tree traversal algorithms.  Think about how a pre- or post-order traversal can help.
+6. `bool isBalanced() const` : Returns true if the BST is an AVL Tree (that is, for every node, the height of its left subtree is within 1 of the height of its right subtree).  It is okay if your algorithm is not particularly efficient, as long as it is not `O(n^2)`.  This function may help you debug your AVL Tree in the next part of this problem, but it is mainly given as practice of writing recursive tree traversal algorithms.  Think about how a pre- or post-order traversal can help.
 7. Constructor and destructor : Your destructor will probably just call the clear function.  The constructor should take constant time.
-8. You will need to implement the unfinished functions of the iterator class.  Note:  You do **NOT** need to check whether the iteartor is about to dereference a NULL pointer in `operator*()` or `operator->()` of the iterator.  Just let it fault.  It is up to the user to ensure the iterator is not equal to the `end()` iterator.
+8. You will need to implement the unfinished functions of the iterator class.  Note:  You do **NOT** need to check whether the iterator is about to dereference a NULL pointer in `operator*()` or `operator->()` of the iterator.  Just let it fault.  It is up to the user to ensure the iterator is not equal to the `end()` iterator.
 
 #### Notes:
 

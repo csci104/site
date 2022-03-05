@@ -33,7 +33,7 @@ assignments:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-spring2022
     dates:
       assigned: Thursday, March 3
-      checkpoint: Friday, March 11 at 11:59PM PST
+      checkpoint: Friday, March 25 at 11:59PM PST
       due: Thursday, March 31 at 11:59PM PST
   - id: hw5
     title: Counting, Probability, Recursion

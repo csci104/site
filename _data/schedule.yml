@@ -222,6 +222,7 @@ lectures:
       - Counting
     chapters:
       - Chapter 5.1-5.3
+      - Lewis & Zax Chapter 22
     notes: 
       - L16_HashTables.pdf
 
@@ -229,7 +230,7 @@ lectures:
   - topics:
       - Counting
     chapters:
-      - Lewis & Zax Chapter 22
+      - Lewis & Zax Chapter 23
     notes: 
       - L17_Counting.pdf
 

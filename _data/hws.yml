@@ -124,14 +124,14 @@ hw5:
       title: Probability
       points: 25
   programming_parts:
-    - writeup: gridpaths.md
+    - writeup: wordle.md
       number: 3
-      title: Recursion, Counting, and Combinations
-      points: 20
-    - writeup: satsolver.md
+      title: Recursion and Combinations
+      points: 25
+    - writeup: sched.md
       number: 4
-      title: Recursion and Backtracking and Boolean Satisfiability
-      points: 30
+      title: Recursion and Backtracking and Scheduling
+      points: 25
 
 hw6:
   written_parts:

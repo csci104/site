@@ -46,7 +46,8 @@ Use `wordle-driver` to do some sanity tests of your code before moving on to any
 
 ### Requirements and Assumptions
 
- - You MAY define helper functions.
+ - As always you may not change the signautre of the primary function provided.
+ - You MAY define helper functions in `wordle.cpp`.
  - You must use a recursive approach to find all combinations of letters to form the length-n word.  Failure to do so will lead to a 0 on this part of the assignment.  
     - Really you should only have 1 or 2 loops to help set the characters in any given location, and maybe 1 to 2 other loops to help with various constraint checks, etc.  But to ensure you do not somehow brute-force, you may use at most 4 loops in your entire implementation in `wordle.cpp`
  - You may NOT use any functions from the `algorithm` library (nor should you really need to).

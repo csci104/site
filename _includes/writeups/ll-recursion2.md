@@ -67,6 +67,6 @@ We have provided one input test file, `llrec-test1.in` that you can use. Feel fr
 
 Note: We will not grade your `llrec-test.cpp` or any input files you create. They are **SOLELY** for your own benefit to test your code. **After submission,** we will test your code with our own full test suite and assign points based on those tests.  But you will not have access to these tests, so you need to test your own code thoroughly.  We ask that you **NOT SHARE** your test program or input files with other students.  We want everyone to go through the exercise of considering what cases to test and then implementing those tests.
 
-#### More Explanation
+#### Related Videos
 
 A video overview of how these functions may work and be organized **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-llrec-expl/cs104-sp22-hw3-llrec-expl.html)**.

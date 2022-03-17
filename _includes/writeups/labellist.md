@@ -204,5 +204,9 @@ Remember, it is **ALWAYS** a good idea to run your tests through `valgrind`.  Yo
 - You may not alter the public interface of the `MsgToken` or `MsgNode` classes but may add to the public interface as well as adding private data or helper functions.
 - We want you to practice with linked lists and pointers. Thus, no use of any other container is allowed (i.e. no additional `vector`s or any other C++ data structures beyond the already given data members can be used).  **Failure to follow this guideline will result in a 0 since it likely alleviates the need to practice the desired pointer/linked list skills.**
 
+### Related Videos
+
+- A [video tutorial on debugging](https://ee.usc.edu/~redekopp/Streaming/cs104/labellist-debugging/labellist-debugging.html) is available and demonstrates techniques that can be used to debug errors in your labellist.
+
 
 

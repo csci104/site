@@ -14,7 +14,7 @@ std::set<std::string> wordle(
 
 *Note*: We realize that this may be an inefficient approach to finding all the words that match the given constraints. Apart from the fact that we're forcing you to use this approach, then left to your own devices it may be easier to find the words that start with a given letter and iterate through them in the sorted order that the set provides checking to see if the word matches the given constraints.  However, one can see that if the first letter or two are unknown, then this may require iterating through the whole dictionary, and so, in some cases, may be faster to generate all the possible options, as we do here.
 
-### Input format
+#### Input format
 
 To indicate how many letters the selected word has **AND** the **correct, fixed location** letters already guessed, we will use a string of length `n` for an `n`-letter word, using the `-` character to indicate an open blank and characters filling in the **correct, fixed location** characters.  So the input string `-i-` means we want to find all **3 letter** words that have an `i` as the middle character.
 
@@ -44,7 +44,7 @@ wind
 
 Use `wordle-driver` to do some sanity tests of your code before moving on to any of the tests from our grading suite.  Note:  To discourage any attempt to hard-code or game the system, the instructor may run additional tests after submission that were not provided, though they will be similar in format and content.  
 
-### Requirements and Assumptions
+#### Requirements and Assumptions
 
  - As always you may not change the signautre of the primary function provided.
  - You MAY define helper functions in `wordle.cpp`.
@@ -52,8 +52,8 @@ Use `wordle-driver` to do some sanity tests of your code before moving on to any
     - Really you should only have 1 or 2 loops to help set the characters in any given location, and maybe 1 to 2 other loops to help with various constraint checks, etc.  But to ensure you do not somehow brute-force, you may use at most 4 loops in your entire implementation in `wordle.cpp`
  - You may NOT use any functions from the `algorithm` library (nor should you really need to).
  - You do NOT need to implement any kind of backtracking approach where you attempt to determine if a string can possibly be an valid English-language word as you are forming it. Instead, just generate all possible strings and check if each word is in the dictionary once it has the full `n` letters.
- 
-### Hints and Approach
+
+#### Hints and Approach
 
 Recall that when generating all combinations you use recursion to build up a combination 1 piece at a time, with each recursion responsible for 1 location/place/piece.  For that location, each recursion should try all the viable options, recursing after each one, and upon return undoing and trying the next option if a solution has not been found (or if multiple solutions are desired).  Think carefully about what options should be tried at each location.  Can any letter be used at any open place?  What limitaiton do the **floating** letters provide?
 

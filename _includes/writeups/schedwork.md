@@ -14,7 +14,7 @@ bool schedule(
 );
 ```
 
-### Explanation
+#### Explanation
 
 The `avail` matrix is an `n` row by `k` column matrix of booleans. Each row represents one day of the schedule and each column is one workers availability to work on each day. 
 
@@ -52,20 +52,20 @@ You should produce a schedule solution that is and `n` by `d` matrix, where each
 
 The above indicates that on day 0 (top row), worker 1 and 2 will be scheduled. Then on day 1 (next row), worker 0 and 2 will be scheduled and so on. You can verify with the avaialbility matrix that all workers are available on their scheduled days and no worker works more than `m=2` shifts.
 
-### Testing
+#### Testing
 
 We have provided a "driver"/test program (`sched-driver.cpp`) where you can alter an availability matrix and values for `d` (`dailyNeed`) and `m` (`maxShifts`) and then call your algorithm and print the results. 
 
 Use `sched-driver` to do some sanity tests of your code before moving on to any of the tests from our grading suite.  Note:  To discourage any attempt to hard-code or game the system, the instructor may run additional tests after submission that were not provided, though they will be similar in format and content.  
 
-### Requirements and Assumptions
+#### Requirements and Assumptions
 
  - As always you may not change the signautre of the primary function provided.
  - You MAY define helper functions in sched.cpp
  - You must use a recursive approach that follows the general backtracking structure presentedin class.  Failure to use such a recursive approach will lead to a 0 on this part of the assignment.  
  - You MAY use functions from the `algorithm` library such as `std::find` if you desire.
 
-### Hints and Approach
+#### Hints and Approach
 
 Recall that a backtracking search algorithm is a recursive algorithm that is similar to generating all combinations, but skipping the recursion and moving on to another option if the current option violates any of the constraints.  It is likely easiest to recurse over each place in the schedule (think of it as a 2D matrix with the row being the day and the columns being the `d` workers assigned to work that day).  Each recursive call would be responsible for filling in one of the `n*d` schedule openings, ensuring the constraints or availability and the maximum number of shifts allowed for each worker is met.   If you have already done a lab regarding backtracking search, it would likely be beneficial to look it over. 
 

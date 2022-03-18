@@ -115,11 +115,11 @@ hw4:
 
 hw5:
   written_parts:
-    - writeup: counting1.md
+    - writeup: counting2.md
       number: 1
       title: Counting
       points: 25
-    - writeup: probability1.md
+    - writeup: probability2.md
       number: 2
       title: Probability
       points: 25

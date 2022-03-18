@@ -51,7 +51,8 @@ Use `wordle-driver` to do some sanity tests of your code before moving on to any
  - You must use a recursive approach to find all combinations of letters to form the length-n word.  Failure to do so will lead to a 0 on this part of the assignment.  
     - Really you should only have 1 or 2 loops to help set the characters in any given location, and maybe 1 to 2 other loops to help with various constraint checks, etc.  But to ensure you do not somehow brute-force, you may use at most 4 loops in your entire implementation in `wordle.cpp`
  - You may NOT use any functions from the `algorithm` library (nor should you really need to).
-
+ - You do NOT need to implement any kind of backtracking approach where you attempt to determine if a string can possibly be an valid English-language word as you are forming it. Instead, just generate all possible strings and check if each word is in the dictionary once it has the full `n` letters.
+ 
 ### Hints and Approach
 
 Recall that when generating all combinations you use recursion to build up a combination 1 piece at a time, with each recursion responsible for 1 location/place/piece.  For that location, each recursion should try all the viable options, recursing after each one, and upon return undoing and trying the next option if a solution has not been found (or if multiple solutions are desired).  Think carefully about what options should be tried at each location.  Can any letter be used at any open place?  What limitaiton do the **floating** letters provide?

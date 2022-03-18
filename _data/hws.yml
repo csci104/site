@@ -128,7 +128,7 @@ hw5:
       number: 3
       title: Recursion and Combinations
       points: 25
-    - writeup: sched.md
+    - writeup: schedwork.md
       number: 4
       title: Recursion and Backtracking and Scheduling
       points: 25

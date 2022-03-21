@@ -1,125 +1,280 @@
 ---
-layout: asides
+layout: default
 toc: true
 tasks: true
-title: Number Theory
+title: Tree Traversal
 ---
 
-## Number Theory
+## BST Traversal and Searching
 
-**Due Nov 5 @ 7pm**
+### 1 - Binary Search Trees
 
-This lab would be covered in sections on Oct 26, Oct 27, Nov 4, and Nov 5. Please note that sections on Oct 28 and Oct 29 would covering the hashtable lab.
+A *Binary Search Tree* is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
 
-### Quick review
+### 2 - Traversals
 
-(1)
+A traversal is a methodology for stepping through a structure (such as using Breadth-First Traversal as opposed to Depth-First Traversal on a graph). BFS is sometimes called "Level-Order Traversal". In the case of DFS, there are a few different ways we can traverse.
 
-$$m \mid n$$
+The three main DFS traversals are **Pre-Order Traversal, In-Order Traversal, and Post-Order Traversal**. In each of these traversals, we must eventually operate on every node. The difference between these traversals is lies in the *order* nodes are operated on.
 
-The above reads as "$m$ divides $n$", and means that there exists integer $k$ such that $n = km$.
+**Pre-Order Traversal**
 
-(2)
+```
+// Operate on current node
+// Recurse left
+// Recurse right
+// return
+```
 
-$$a \equiv b \pmod{m}$$
+**In-Order Traversal**
 
-The above reads as "$a$ is congruent to $b$ modulo $m$", and means that $m \mid a - b$.
+```
+// Recurse left
+// Operate on current node
+// Recurse right
+// return
+```
 
-If $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$, then:
+**Post-Order Traversal**
 
-$$
-\begin{gather*}
-   ac \equiv bd &\pmod{m} \\
-   a+c \equiv b+d &\pmod{m}
-\end{gather*}
-$$
+```
+// Recurse left
+// Recurse right
+// Operate on current node
+// return
+```
 
-(3)
+Or, in C++, it would look like this:
 
-$$\gcd(a, b)$$
+```c++
+void pre_order(Node* node) {
+    if (node == nullptr) return;
+    print(node);
+    pre_order(node->left);
+    pre_order(node->right);
+}
 
-The above denotes the "greatest common divisor of $a$ and $b$", which is the greatest positive integer $d$ such that $d \mid a$ and $d \mid b$.
+void in_order(Node* node) {
+    if (node == nullptr) return;
+    in_order(node->left);
+    print(node);
+    in_order(node->right);
+}
 
-If $gcd(a, b)=1$, then $a$ and $b$ are said to be "co-prime" or "relatively prime" to each other.
+void post_order(Node* node) {
+    if (node == nullptr) return;
+    post_order(node->left);
+    post_order(node->right);
+    print(node);
+}
+```
 
-$$\text{lcm}(a, b)$$
-
-The above denotes the "least common multiple" of $a$ and $b$, which is the smallest positive integer $m$ such that $a \mid m$ and $b \mid m$. It can be calculated as:
-
-$$\text{lcm}(a, b) = \frac{\vert ab \vert}{\gcd(a, b)}$$
-
-(4)
-
-**The following theorem could be very useful in homework and exams**: If $a \mid bc$ and $\gcd(a, b)=1$, then $a \mid c$.
-
-An important corollary follows from above (which is also extremekly useful): If $p \mid ab$ and $p$ is a prime number, then $p \mid a$ or $p \mid b$.
-
-***Proof.*** If $p \mid a$, then we are done. Otherwise, $\gcd(p, a)=1$ (since $p$ is a prime), therefore $p \mid b$.
-
-
-
-### More examples of proofs
-
-(1) Prove that if $kx \equiv ky \pmod m$ and $\gcd(k, m)=1$, then $x \equiv y \pmod{m}$.
-
-***Proof.*** Since $kx \equiv ky \pmod m$, we have $m \mid k(x-y)$, and since $\gcd(k, m)=1$, we have $m \mid x-y$, which means $x \equiv y \pmod{m}$ by definition.
-
-(2) Prove that given a prime $p$ and integers $m, n, k$ such that $1 \leq m, n, k \leq p-1$ and $m \neq n$, we have $mk \not\equiv nk \pmod{p}$.
-
-***Proof.*** We can do a proof by contradiction. Assume that $mk \equiv nk \pmod p$. Since $1 \leq k \leq p-1$ we have $\gcd(k, p)=1$, and therefore by (1), we have $m \equiv n \pmod p$. But since $1 \leq m, n \leq p-1$, we have $m = n$, which is a contradiction. Therefore $mk \not\equiv nk \pmod{p}$.
-
-(3) Prove that given a prime $p$ and integer $k$ such that $1 \leq k \leq p-1$, we have:
-
-$$k^{p-1}(p-1)! \equiv (p-1)! \pmod p$$
-
-***Proof.*** In (2) we have established that for any $r_1, r_2$ such that $1 \leq r_1, r_2 \leq p - 1$, we have $mk \not\equiv nk \pmod{p}$. Therefore each of $(p-1)k, (p-2)k, \dots, k$ would be congruent to a different integer between $1$ and $p-1$. But since there are exactly $p-1$ integers between $1$ and $p-1$, we have 
-
-$$
-\begin{align*}
-k^{p-1}(p-1)! &\equiv (p-1)k \cdot (p-2)k \cdot \ \dots \ \cdot k \\
-&\equiv (p-1)(p-2)\dots2\cdot 1 \\
-&\equiv (p-1)!  \pmod p
-\end{align*}
-$$
-
-As an example, if $p=5$ and $k=3$, then we have:
-
-$$
-\begin{gather*}
-4k \equiv 2 &\pmod 5 \\
-3k \equiv 4 &\pmod 5 \\
-2k \equiv 1 &\pmod 5 \\
-1k \equiv 3 &\pmod 5
-\end{gather*}
-$$
-
-You would notice that all numbers from $\{1, 2, 3, 4\}$ appear on both sides, so therefore if you multiply the equations together you would get:
-
-$$4k \cdot 3k \cdot 2k \cdot 1k \equiv 2\times 4 \times 1\times 3 \pmod 5$$
-
-### Excercises
-
-(1) Prove that given a prime $p$ and integers $n$ such that $1 \leq n \leq p-1$, we have $n^{p-1} \equiv 1 \pmod{p}$.
+Here is a simple way to remeber this:
+ - "Pre" : visit the parent "pre-" (before) visiting left and right sub-trees.
+ - "In"  : visit the parent "in"-between visiting left and right sub-trees.
+ - "Post": visit the parent "post-" (after) visiting left and right sub-trees.
 
 
-(2) Prove that if $n, p$ are integers and $p$ is a prime number, then
+### 3 - Searching
 
-$$n^p \equiv n \pmod{p}$$
+The **Binary Search Tree Property** (BST) states that all nodes in the left subtree must have key values less than or equal to the root and all of the nodes in the right subtree must have key values greater than the root. Usually, if key values are distinct, we do not worry about equality. BSTs exist to enable (potentially) fast searches. 
 
-(The above is known as Fermat's Little Theorem)
++ For a BST, what is special about operating on elements using an in-order traversal? If we were printing integers using this traversal, what would the output look like? 
 
-(3) Prove that if $n, p$ are integers where $p$ is a prime number, and $n^2 \equiv 1 \pmod{p}$, then $n \equiv 1\pmod{p}$ or $n \equiv -1\pmod{p}$.
++ Why do we say potentially? Can someone think of an example in which the search is really slow, even if we have a valid BST?
 
-- [ ] To get checked off for this lab, show your work for excercises (1), (2), (3) to a CP. If you are checking off via Piazza, please include your 10-digit USC ID and USC email in the post.
+Our search function will simply return true or false depending on whether or not our search parameter exists in the tree. Another reasonable return value of a search function could be an iterator pointing to the found element (see std::map find).
 
-In case you get bored, here is a bonus question:
+To search for key `X` in a BST, we compare *X* to the current node.
 
-(4) Imgaine a new Pac-Man game where there is a $m$-by-$n$ grid, and there is a dot on every cell of the grid. Pac-Man starts at the bottom left cell, and for every step, Pac-Man does the following:
+  - If the current node is null, `X` must not reside in the tree.
+  - If `X`is equal to the current node, simply return the current node.
+  - If it is less than the current node, we check the left subtree.
+  - Else, it must be greater than the current node, so we check the right subtree.
 
-* Eat the dot at his position (if there is any).
+Or, in code:
 
-* Move one unit to the right, unless he is already on the rightmost column of the grid, in which case he is teleported to the leftmost cell of the row he is currently in.
+```c++
+// Finds the node with value == val inside the bst. Returns nullptr if not found
+Node* find(Node* root, int val) {
+    if (root == nullptr) return nullptr;
+    if (root->val == val) return root;
+    if (root->val > val) return find(root->left, val);
+    return find(root->right, val);
+}
+```
 
-* Move one unit to the top, unless he is already on the topmost row of the grid, in which case he is teleported to the bottom-most cell of the column he is currently in.
+#### 3.1 - Example
 
-In what condition (in terms of $m$ and $n$) would Pac-Man be able to eat all the dots on the grid?
+Take a look at this example:
+
+<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" height="250" />
+
+Operation: `find(6)` // We begin at the root 
+
+Let's walk through this:
+
++ Current node = 8, 6 < 8, therefore go left.
++ Current node = 3, 6 > 3, therefore go right.
++ Current node = 6, 6 = 6, we've found the node.
+
+Now, here's an example where we try to find a node that does not exist in the tree:
+
+Operation: `find(0)` // We begin at the root
+
+Let's walk through this one too:
+
++ Current node = 8, 0 < 8, therefore go left.
++ Current node = 3, 0 < 3, therefore go left.
++ Current node = 1, 0 < 1, therefore go left.
++ Current node = null. 0 is not in the tree.
+
+The worst-case runtime for searching in a BST is proportional to the height of the tree. Therefore, you could have a tree that looks like: 
+
+<img src="https://hank.feild.org/courses/2014-sp/csc161/topics/figs/trees/bst-degenerate.png" width="300">
+
+And your binary search tree would have a poor performance (your search runtime would be equivalent to that of a linked list).
+
+For that purpose, we want our binary search trees to be "balanced", defined below.
+
+### What's a balanced Binary Tree?
+
+A balanced  binary trees is a tree that ensures that the height of each subtree differs by no more than 1 node. When binary trees maintain balance, the binary tree keeps its height logarithmic in n where n is the total number of nodes in the tree for a sequence of insertions and deletions. This structure provide efficient implementations for abstract data structures.  *Any binary tree can be balanced or not. You can check this property (as demonstrated in this lab's exercises.)*
+
+A tree is considered balanced if it conforms to the **Height-Balancing Property**: A node in a tree is height-balanced if the heights of its subtrees differ by no more than 1. 
+
+As we will see in a few weeks, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced .
+
+Here is an example of balanced vs. non balanced trees. (A is balanced, while B is not. The numbers next to the nodes are their height)
+
+<div style="text-align:center"><img src="./assets/balanced_and_unbalanced.png" alt="bst" width="550"/> </div>
+
+### How can we maintain these properties at the same time?
+
+We will study these details more carefully in a few weeks. However, this is a good preview to start familiarizing yourself with these ideas. The BST property is maintained by smart insertion and deletion. In an insert, you traverse the tree based on the key to be inserted. Once you encounter a situation where you can't traverse any further, you know that the key can be placed there. Because we are traversing based on the key value, we are inherently upholding the BST property.
+ 
+The same thing can be said about a deletion in a BST. This is done by choosing which node to promote. Either the predecessor, if the node has two children, or the child if the node has 1 child. By doing this, the BST property is being maintained.
+
+A BST that maintains its balance throughout all insertions and deletions is called a  self-balancing BST. These types of trees that auto-balance or self balance inherently with the insertion are called Self-Balancing Binary Search Trees. Examples are:
+
+1. Splay Trees
+2. AVL Trees
+3. Red Black Trees
+4. B-Trees
+5. 2-3 Trees
+
+For all of these self-balancing binary search trees, the height-balancing property is upheld by the nature of an insert or remove. The best way to do so is with rotation, or series of rotations. We're going to briefly review how those rotations work below.
+
+#### 1.1 - Rotations
+
+A rotation changes the local structure of a binary tree without changing its ordering. This means that in between rotations, the BST property is still maintained.
+
+Rotations can be broken up into left and right rotations which are just inversions of each other.
+
+<div style="text-align:center"><img src="./assets/rotations.gif" alt="rotations" width="500" height="200" /></div>
+
+Rotaions make up the foundation of the AVL tree. In your homework, you will need to implement these rotations in a variety of scenarios. There are 4 combinations of rotations: left-left, left-right, right-left, right-right. Sometimes, these rotations are referred to as "zig zig" or "zig zag", or something similar. The point is, during these sequences of rotations, the tree becomes more balanced than it was before.
+
+__If longer subtrees are left and then left__
+
+```
+T1, T2, T3 and T4 are subtrees.
+         z                                      y 
+        / \                                   /   \
+       y   T4      Right Rotate (z)          x      z
+      / \          - - - - - - - - ->      /  \    /  \ 
+     x   T3                               T1  T2  T3  T4
+    / \
+  T1   T2
+```
+
+__If longer subtrees are left and then right__
+
+```
+     z                               z                           x
+    / \                            /   \                        /  \ 
+   y   T4  Left Rotate (y)        x    T4  Right Rotate(z)    y      z
+  / \      - - - - - - - - ->    /  \      - - - - - - - ->  / \    / \
+T1   x                          y    T3                    T1  T2 T3  T4
+    / \                        / \
+  T2   T3                    T1   T2
+```
+
+__If longer subtrees are right and then right__
+
+```
+  z                                y
+ /  \                            /   \ 
+T1   y     Left Rotate(z)       z      x
+    /  \   - - - - - - - ->    / \    / \
+   T2   x                     T1  T2 T3  T4
+       / \
+     T3  T4
+```
+
+__If longer subtrees are right and then left__
+
+```
+   z                            z                            x
+  / \                          / \                          /  \ 
+T1   y   Right Rotate (y)    T1   x      Left Rotate(z)   z      y
+    / \  - - - - - - - - ->     /  \   - - - - - - - ->  / \    / \
+   x   T4                      T2   y                  T1  T2  T3  T4
+  / \                              /  \
+T2   T3                           T3   T4
+```
+
+By using combinations of rotations during insertion and removal, we are able to maintain consistent balance throughout the lifetime of the tree.
+
+#### 1.2 - Inserting
+
+During insertion, we start by inserting the value at its correct location as a normal BST would. Then, we traverse up the tree, evaluating the local height of each node and fixing that portion if the height of the left and right subtrees differ by 2 or more. We only need to traverse up the tree from the inserted node because the subtree containing the new node is the only subtree where height can change and we need to rotate.
+
+We fix the tree beginning with the newly inserted node.
+
+#### 1.3 - Removing
+
+During removal, we remove as normal and then proceed to fix the tree by traversing up, starting with the parent of the deleted node. In the case that we are swapping with the predecessor, you continue to delete the same node until you cannot swap any further, and then begin fixing the tree in the same fashion.
+
+We fix the tree beginning with the parent of the deleted node.
+
+### 2 - Exercise 1 (Concept)
+
+Take some time to confirm your understanding by showing the tree after each of the following operations in a file named `lab12.txt`. 
+
+__Initial Tree__
+
+```
+                13
+        +--------+---+
+        10          15
+    +---+---+        +--+
+    5       11          16
++---+---+
+4       8
+```
++ Insert 14
++ Insert 3 
++ Remove 3
++ Remove 4
+
+- [ ] In `lab11.txt` (or draw it out on paper), show what the tree looks like after each of the above operations. Operations should happen sequentially (ie, Insert 3 happens after Insert 14).
+
+### 3 - Exercise 2 (Coding)
+
+You could find the source files for this exercise in the resources repo. The function you are going to implement is inside `bst.cpp`.
+
+Write a function to determine whether a binary tree is height-balanced or not.
+
++ A binary tree in which the depth of the two subtrees of every node never differs by more than 1.
+
+```c++
+bool isBalanced(Node *root)
+```
+
+### Checking off
+
+To get checked off, show your results for Exercise 1 and 2 to a CP or TA. This should include:
+
+- The AVL tree after every step of insertion/removal
+- The result of running `make BSTTest`.

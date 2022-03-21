@@ -110,8 +110,8 @@ labs:
     topics: Backtracking
   - id: lab10
     week: Week 10
-    title: 
-    assigned: false
+    title: BST and AVL Tree
+    assigned: true
     topics: 
   - id: lab11
     week: Week 11

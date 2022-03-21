@@ -4,6 +4,10 @@ Complete this file by implementing the `insert()` and `remove()` functions for A
 
 When you compile code that includes `avlbst.` you will need to add the option `--std=c++11` to the `g++` compilation command.  This is because of the usage of the `override` keyword for various virtual functions.  You can read about it online but it mainly provides some additional compiler checks to ensure the signatures of a virtual function in the derived class matches the one you are attempting to "override" in the base class (i.e. if your base virtual function is a `const`-member but you forget to add `const` to the derived and thus are creating a whole new member function, the compiler will catch the error).
 
+#### Related Videos
+
+- A [video walkthrough](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-bst-avl-debugging/cs104-sp22-bst-avl-debugging.html) is available and demonstrates techniques that can be used to debug either your BST or AVL tree.
+
 #### Notes and Requirements
 
 1. You know this one already, but you are **NOT** allowed to use online sources to give you the game plan for coding an AVL tree.  Feel free, however, to ask various questions on Piazza, utilize course materials, or ask in office hours.

@@ -353,6 +353,6 @@ Note: For `boards/inboard1.in` a **BFS** heuristic (0) yields **72** expansions 
 
 You can crowd source the output of your A* solutions on various boards and how many expansions were required.  But for the basic boards it should be easy enough to verify the solution.
 
-#### More Background
+#### Related Videos
 
 A video overview of some of the relevant object/class relationships and how the A* algorithm works **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-rh-expl/cs104-sp22-hw3-rh-expl.html)**.

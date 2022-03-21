@@ -37,4 +37,6 @@ See the images below of trees with equal paths that should return `true` and tre
 -->
 
 
-You MAY define helper functions if needed in `equal-paths.cpp`.  We have also provided a **VERY RUDIMENTARY** test program `equal-paths-test.cpp` that you may use and modify as desired to test certain configurations and debug your code.  It will not be graded.
+ - You **MAY** define helper functions if needed in `equal-paths.cpp`.  
+ - You **CANNOT** use a container (like a set, vector, map) to do your work. Do your work during your traversal (this is the learning goal of the problem).
+ - We have also provided a **VERY RUDIMENTARY** test program `equal-paths-test.cpp` that you may use and modify as desired to test certain configurations and debug your code.  It will not be graded.

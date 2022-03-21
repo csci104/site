@@ -161,23 +161,20 @@ lectures:
   - topics:
       - Graph Traversals
       - Tree Traversals
-      - Recursion - All combinations
     chapters:
       - Chapter 9.2-9.3,9.6
       - Chapter 4.1-4.2,4.6
     notes: 
       - L11_GraphTraversals.pdf
-      - L12_BacktrackingSearch.pdf
 
   # 15 Mon 2/28
   - topics:
-      - Recursion - Backtracking
-      - Iterators
+      - Recursion - All combinations
     chapters:
       - Chapter 2
       - Class Notes
     notes: 
-      - L13_Iterators.pdf
+      - L12_BacktrackingSearch.pdf
 
   # 16 Wed 3/2
   - topics:
@@ -187,57 +184,66 @@ lectures:
 
   # 17 Mon 3/7
   - topics:
+      - Recursion - Backtracking
       - Iterators
+    chapters:
+      - Chapter 4.3-4.4
+    notes: 
+      - L13_Iterators.pdf
+
+  # 18 Wed 3/9
+  - topics:
       - Binary Search Trees
     chapters:
       - Chapter 4.3-4.4
     notes: 
       - L14_BalancedBST_AVL.pdf
 
-  # 18 Wed 3/9
-  - topics:
-      - AVL Trees
-    chapters:
-      - Chapter 4.3-4.4
-    notes: 
-      - L14_BalancedBST_AVL.pdf
-
-  - topics:
-      - AVL Trees
-      - Splay Trees
-    chapters:
-      - Chapter 4.4,4.5,4.7
-    notes: 
-      - L15_SplayTrees.pdf
-
   # 19 Mon 3/21
   - topics:
-      - Hash Table introduction
+      - AVL Trees
     chapters:
-      - Chapter 5.1-5.3
+      - Chapter 4.4-4.5,4.7
     notes: 
-      - L16_HashTables.pdf
+      - L14_BalancedBST_AVL.pdf
+      - L14_BalancedBST_AVL_Handout.pdf
 
   # 20 Wed 3/23
   - topics:
-      - Counting
+      - Splay Trees
+      - Hash Table introduction
     chapters:
-      - Lewis & Zax Chapter 22
+      - Chapter 4.7,5.1,5.3
     notes: 
-      - L17_Counting.pdf
+      - L15_SplayTrees.pdf
 
   # 21 Mon 3/28
   - topics:
+      - Hash Table introduction
       - Counting
-      - Probability
     chapters:
-      - Lewis & Zax Chapter 23
-      - Lewis & Zax Chapter 26
+      - Chapter 5.1-5.3
+      - Lewis & Zax Chapter 22
     notes: 
-      - L17_Counting.pdf
-      - L18_Probability.pdf
+      - L16_HashTables.pdf
 
   # 22 Wed 3/30
+  - topics:
+      - Counting
+    chapters:
+      - Lewis & Zax Chapter 23
+    notes: 
+      - L17_Counting.pdf
+
+  # 23 Mon 4/4
+  - topics:
+      - Probability
+    chapters:
+      - Lewis & Zax Chapter 26
+    notes: 
+      - L18_Probability.pdf
+
+  # 24 Wed 4/6
   - topics:
       - Probability
     chapters:
@@ -246,9 +252,8 @@ lectures:
     notes: 
       - L18_Probability.pdf
 
-  # 23 Mon 4/4
+  # 25 Mon 4/11
   - topics:
-      - Probability (cont.)
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 29
@@ -256,45 +261,37 @@ lectures:
     notes: 
       - L19_NumberTheory.pdf
  
-  # 24 Wed 4/6
+  # 26 Wed 4/13
   - topics:
       - Number Theory
+      - Hash Functions
     chapters:
       - Lewis & Zax Chapter 31
     notes: 
       - L19_NumberTheory.pdf
+      - L20_HashFunctions.pdf
  
-  # 25 Mon 4/11
-  - topics:
-      - Hash Tables and Functions 
-    chapters:
-      - Chapter 5
-    notes: 
-      - L20_HashFunctions.pdf
-
-  # 26 Wed 4/13
-  - topics:
-      - Bloom Filters
-      - Tries
-    chapters:
-      - Chapter 5
-      - Chapter 12.4
-    notes: 
-      - L20_HashFunctions.pdf
-      - L22_Tries.pdf
-
   # 27 Mon 4/18
   - topics:
-      - Skip Lists
-      - Amortized Analysis
+      - Hash Functions and Bloom Filters 
     chapters:
-      - Chapter 11.1,11.5
+      - Chapter 5
     notes: 
-      - L21_SkipLists.pdf
-      - L23_AmortizedAnalysis.pdf
+      - L20_HashFunctions.pdf
 
   # 28 Wed 4/20
   - topics:
+      - Tries
+      - Skip Lists
+    chapters:
+      - Chapter 5
+      - Chapter 12.4, 11.1, 11.5
+    notes: 
+      - L22_Tries.pdf
+      - L21_SkipLists.pdf
+
+  # 29 Mon 4/25
+  - topics:
       - Amortized Analysis
       - Merge Trees
     chapters:
@@ -302,149 +299,11 @@ lectures:
     notes: 
       - L23_AmortizedAnalysis.pdf
       - L24_MergeTrees.pdf
-
-  # 29 Mon 4/25
-  - topics:
-      - Merge Trees
-      - Review and Wrapup
-    chapters:
-      - Chapter 11.1,11.5
-    notes: 
-      - L24_MergeTrees.pdf
-      - L25_Review.pdf
 
   # 30 Wed 4/27
   - topics:
       - Final Review
     chapters:
-      - Chapter 12.4.2
+      - Class notes
     notes: 
       - L25_Review.pdf
-
-
-  # # 13
-  # - topics:
-  #     - Binary Search Trees
-  #     - AVL Trees
-  #   chapters:
-  #     - Chapter 4.3-4.4
-  #   recording: https://usc.zoom.us/rec/share/o22rcz4WFx0102JLXpHj8MQy48M29f3bt8nkrFT8tVXRmH4h2ZRaVm-bdssCKcAf.N4ZyWaOuxxD03V2N 
-
-  # # 14
-  # - topics:
-  #     - AVL Trees
-  #     - Balanced Binary Search Trees
-  #   chapters:
-  #     - Chapter 4.4, 4.7
-  #     - Chapter 12.2
-  #   recording: https://usc.zoom.us/rec/share/yiATmYTP0otxMNWE2p7V5TQvjnqzCc9041Eo9qSzRLYglh7nAv-mEzyOLJVUp1R-.ee-IszcYMAbDRgzn 
-
-  # # 15
-  # - topics:
-  #     - Splay Trees
-  #   chapters:
-  #     - Chapter 4.5
-  #   notes: 15-Splay Trees.pptx
-  #   recording: https://usc.zoom.us/rec/share/0EihN4QE4PzciqJdV1n-cMfLGtkxPuvoic_fE2uMHWE-M5p1I0czm8X5bOFIJ5o_.1YvoBNXao2B5u1AM 
-
-  # # 16
-  # - topics:
-  #     - Hash Table introduction
-  #     - Counting
-  #   chapters:
-  #     - Chapter 5.1-5.3
-  #     - Lewis & Zax Chapter 22
-  #   notes: 16-Hash Tables.pptx
-  #   notes2: 17-Counting.pptx
-  #   recording: https://usc.zoom.us/rec/share/K-NjnlF0NltFusRmQ1rRqQUoLY2nJeTkumK-p_Vd_IBkh6mDK7Z2CpG-AOa9LljC.AcllTabq8nOApXJ1 
-      
-  # # 17
-  # - topics:
-  #     - Counting
-  #   chapters:
-  #     - Lewis & Zax Chapter 23
-  #   recording: https://usc.zoom.us/rec/share/cYOsESy45jnxErd56mKA2pyItz1-Ui8IYCDXAUuV0FoqVhjxz7QRmKenBjaqDc0e.wmsWucyPO5CEavLb 
-
-  # # 18
-  # - topics:
-  #     - Probability
-  #   chapters:
-  #     - Lewis & Zax Chapter 26
-  #   notes: 18-Probability.pptx
-  #   recording: https://usc.zoom.us/rec/share/Z2hyVjTTjqYTi8KZgNlpKsAQWw3YFPC-YfzmfwVtwS171hG4GJczXo5lDaY_ue2G.qTahTolDbIoUf7kl 
-
-  # # 19
-  # - topics:
-  #     - Probability
-  #   chapters:
-  #     - Lewis & Zax Chapter 27
-  #   recording: https://usc.zoom.us/rec/share/pPweajXXUJ_ed9H8vgHmZwEGOr1vUtVu94SV9Q-EHq6FdhFJGxCKhGNBzhW45QpS.y1AJ2DNjMcdzb9U4 
-
-  # # 20
-  # - topics:
-  #     - Probability
-  #   chapters:
-  #     - Lewis & Zax Chapter 28
-  #     - Lewis & Zax Chapter 29
-  #   recording: https://usc.zoom.us/rec/share/qL8SaU02u-aubI83LqIeA64eNIiR8FI9nDOEgBVNiIEH9lwIyi8c2Ji9an1bAxq-.755b27gtjrGMhjSF 
-
-  # # 21
-  # - topics:
-  #     - Number Theory
-  #   chapters:
-  #     - Lewis & Zax Chapter 30
-  #   notes: 19-Number Theory.pptx
-  #   recording: https://usc.zoom.us/rec/share/lzs1GJliJYUGDo6YUJH5yO_LP2fEsMZWc5IwoN9S5F5LJpkn0Dv2uVhLWDC5V7fX.MwuSIjXGNuG5-LO2 
-
-  # # 22
-  # - topics:
-  #     - Number Theory
-  #   chapters:
-  #     - Lewis & Zax Chapter 31
-  #   recording: https://usc.zoom.us/rec/share/09KWWeEEEISH98ugwpWlpaZGWMQdgeTHJ_AfkTMKw-GGKefOYjGAiEKXaoL4DOU.1GPbniJuKmi9Olgn 
-
-  # # 23
-  # - topics:
-  #     - Hash Tables
-  #   chapters:
-  #     - Chapter 5
-  #   notes: 20-Hash Functions.pptx
-  #   recording: https://usc.zoom.us/rec/share/1cSzSTVezNJJk-r_yl8zK_VQjqJzPvSYJMMxfq5Io_KigueRb6wQFe5Z9szA4QBp.hZq5NWjaBwC0_nRp 
-
-  # # 24
-  # - topics:
-  #     - Bloom Filters
-  #   chapters:
-  #     - Chapter 5
-  #   recording: https://usc.zoom.us/rec/share/HhLDQwxkEJ5MhSTR3ToYYPJ4VjAUKAbRR1b-CQDSe6v0tZzgQPjwa4oD8jPJwRmw.6kkR8mFDaxlSk9Fv 
-
-  # # 25
-  # - topics:
-  #     - Amortized Analysis
-  #   chapters:
-  #     - Chapters 11.1,11.5
-  #   recording: https://usc.zoom.us/rec/share/XL3wPc2E8LC5ytTru-uSetrFQz8ZC0_F9BuSnWuEF7mjdwdoDaJ-ip8gSjtywSLM.zJjQQP2r3cc6f605 
-
-  # # 26
-  # - topics:
-  #     - Tries
-  #   chapters:
-  #     - Chapter 12.4
-  #   notes: 21-Amortized Analysis.pptx
-  #   notes2: 22-Merge Trees.pptx
-  #   recording: https://usc.zoom.us/rec/share/5FX7HW0gSJSIoMOBOYuf8hpCZIvijOLyuKxWLV3aq5uGQ7zLHJ0ebIhKdTEtQA9b.eQQf2b2baRLT4rDn 
-
-  # # 27
-  # - topics:
-  #     - Extra Topics
-  #   chapters:
-  #     - Chapter 6.8
-  #   notes: 23-Tries.pptx
-  #   recording: https://usc.zoom.us/rec/share/IGWEtSFRetFiP1nfD0r1qfLlnDEy2ncbuvy63xTPD90GXwlizYpvrOWYAGUihl2u.vlt4L-UqialkwL3u 
-
-  # # 28
-  # - topics:
-  #     - Extra Topics
-  #   chapters:
-  #     - Chapter 11.2
-  #   recording: https://usc.zoom.us/rec/share/Bsb6bmJPlWMbKWo3oEv-t8DTInspEy0_ZOECmvnD1XuSGhBjT-KGKvq7iy3U6jvH.w5Z88tQbfB0QRwqn 

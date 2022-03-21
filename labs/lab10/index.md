@@ -5,6 +5,12 @@ tasks: true
 title: Tree Traversal
 ---
 
+---
+
+**This lab is held during Mar 22, 2022 and Mar 25, 2022. You have to get checkedoff during your registered lab section.**
+
+---
+
 ## BST Traversal and Searching
 
 ### 1 - Binary Search Trees

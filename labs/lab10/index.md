@@ -240,9 +240,7 @@ We fix the tree beginning with the newly inserted node.
 
 #### 1.3 - Removing
 
-During removal, we remove as normal and then proceed to fix the tree by traversing up, starting with the parent of the deleted node. In the case that we are swapping with the predecessor, you continue to delete the same node until you cannot swap any further, and then begin fixing the tree in the same fashion.
-
-We fix the tree beginning with the parent of the deleted node.
+During removal, we remove as normal and then proceed to fix the tree by traversing up, starting with the parent of the deleted node. The process of checking balanace and fixing height is the same as outlined in the insertion part.
 
 ### 2 - Exercise 1 (Concept)
 

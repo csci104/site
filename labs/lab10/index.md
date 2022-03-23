@@ -272,6 +272,10 @@ Write a function to determine whether a binary tree is height-balanced or not.
 
 + A binary tree in which the depth of the two subtrees of every node never differs by more than 1.
 
+**IMPORTANT NOTE:** Since this exercise is part of the homework, please refrain from working in groups. You
+are encouraged to work through this during lab (and we are here to help), but you are not required to complete
+it in order to get checked off.
+
 ```c++
 bool isBalanced(Node *root)
 ```
@@ -281,4 +285,4 @@ bool isBalanced(Node *root)
 To get checked off, show your results for Exercise 1 and 2 to a CP or TA. This should include:
 
 - The AVL tree after every step of insertion/removal
-- The result of running `make BSTTest`.
+- ~~The result of running `make BSTTest`.~~

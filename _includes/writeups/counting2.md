@@ -2,7 +2,7 @@ You must show work supporting your answer to receive credit.
 
 Place your answers in a file **`counting.pdf`**.
 
- 1. Consider a 5-character string made up of lower-case, alpha characters, `a`-`z`.  It is known that the second and third letters are `e` and `a`, respectively, and that the letters `s` and `t` appear somewhere in the remaining locations.  How many possible (unique) such strings exist?
+ 1. Consider a 5-character string made up of lower-case, alpha characters, `a`-`z`.  It is known that the second and third letters are `e` and `a`, respectively, and that the letters `s` and `t` appear somewhere in the remaining locations.  How many possible such (unique) strings exist?
 
  1. Alice, Bob, and Carlos enter an elevator on the first floor in a six-story building and start going up. Any one of them can exit on any floor from 2nd to 6th, except we know that Alice definitely won't exit the elevator on the 3rd floor.  How many different events can happen? Two events are different if at least one of the three people ends up on a different floor, but if several people exit on the same floor, it does not matter in what order they do it.
 

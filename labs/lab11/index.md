@@ -2,175 +2,162 @@
 layout: asides
 toc: true
 tasks: true
-title: BST Basics
+title: Hashtables
 ---
 
-**Due Nov 12 @ 7pm**
+---
 
-**Note:** This lab will be covered during sections on Nov 2, Nov 3, Nov 11, and Nov 12.
+This lab requires checkoff. You have to get checked off by a TA/CP during
+your assigned lab section between Mar. 29, 2022 and Apr. 1, 2022
 
-## BST Basics
+---
 
-### 1 - Binary Trees
+### 0 - What is a Map?
 
-What does it mean for a tree to be binary?
+Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
 
-<img src="./tree1.bmp" alt="" width="385" height="343" /> 
+The look up speed and ordering of map elements depends on the data structure we use to implement our map. In previous labs, we reviewed AVL Trees, an implementation of a balanced BST. This lab will go over hashtables and explore how it can be used to implement a map.
 
-A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value.
+### 3 - Let's Talk About Hash Tables
 
-+ Is the above a binary search tree? If not, could you build a binary search tree with the same nodes from the above?
+A Hash Table is like an array in many aspects. However, in order to find the index in the array, we use a special function called a hash function. This converts the input into an index location that the input is then stored into.
 
-### 2 - Traversals
+<div style="text-align:center"><img src="./assets/hashTable.png" alt="bst" width="300" height="250" /> </div>
 
-A traversal is a methodology for stepping through a structure (such as using Breadth-First Traversal as opposed to Depth-First Traversal on a graph). BFS is sometimes called "Level-Order Traversal". In the case of DFS, there are a few different ways we can traverse.
+In the above example, we can see that our hash table stores strings, and those strings are stored in locations within an array specified by the hash function.
 
-The three main DFS traversals are **Pre-Order Traversal, In-Order Traversal, and Post-Order Traversal**. In each of these traversals, we must eventually operate on every node. The difference between these traversals is lies in the *order* nodes are operated on.
+This type of data structure is very useful in terms of accessing data. You could probably think of different applications of this data structure. Maybe a set? Given an input, we first hash it, then look to see if it is inserted in our hash table by checking the index returned by our hash function. Since hashing is just a function, it takes O(1) time. If we have a good hash function that distributes keys uniformly around the table such that there are a small number of keys at each location, the entire check is O(1) on average.
 
-**Pre-Order Traversal**
+There are many different applications of this type of data structure, including sets, maps, and associative arrays (which are pretty much maps).
 
-```
-// Operate on current node
-// Recurse left
-// Recurse right
-// return
-```
+#### 3.1 - Hash Functions
 
-**In-Order Traversal**
+So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array. 
 
-```
-// Recurse left
-// Operate on current node
-// Recurse right
-// return
-```
+What goals should our hash function have?
+1. Easy and fast to compute
+2. Uniformly distributes keys across the hash table
 
-**Post-Order Traversal**
+The first thing we want is for the function to be fast. It should be an easy calculation that takes O(1) time to compute.
+
+Lets first go over a bad example:
 
 ```
-// Recurse left
-// Recurse right
-// Operate on current node
-// return
-```
-
-+ If we wanted to delete an entire tree, which traversal would we use?
-+ What is the third kind of traversal? When would it be useful?
-
-### 3 - Searching
-
-The **Binary Search Tree Property** (BST) states that all nodes in the left subtree must have key values less than or equal to the root and all of the nodes in the right subtree must have key values greater than the root. Usually, if key values are distinct, we do not worry about equality. BSTs exist to enable (potentially) fast searches. 
-
-+ For a BST, what is special about operating on elements using an in-order traversal? If we were printing integers using this traversal, what would the output look like? 
-
-+ Why do we say potentially? Can someone think of an example in which the search is really slow, even if we have a valid BST?
-
-Our search function will simply return true or false depending on whether or not our search parameter exists in the tree. Another reasonable return value of a search function could be an iterator pointing to the found element (see std::map find).
-
-To search for key `X` in a BST, we compare *X* to the current node.
-
-  - If the current node is null, `X` must not reside in the tree.
-  - If `X`is equal to the current node, simply return the current node.
-  - If it is less than the current node, we check the left subtree.
-  - Else, it must be greater than the current node, so we check the right subtree.
-
-#### 3.1 - Example
-
-Take a look at this example:
-
-<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" height="250" />
-
-Operation: `find(6)` // We begin at the root 
-
-Let's walk through this.
-
-Now, here's an example where we try to find a node that does not exist in the tree:
-
-Operation: `find(0)` // We begin at the root 
-
-Let's walk through this one too.
-
-The best-case runtime for searching a value `X` in a BST with *N* elements is `O(logN)`. What is the worst-case runtime?
-
-### What's a balanced Binary Tree?
-
-A balanced  binary trees is a tree that ensures that the height of each subtree differs by no more than 1 node. When binary trees maintain balance, the binary tree keeps its height logarithmic in n where n is the total number of nodes in the tree for a sequence of insertions and deletions. This structure provide efficient implementations for abstract data structures.  *Any binary tree can be balanced or not. You can check this property (as demonstrated in this lab's exercises.)*
-
-A tree is considered balanced if it conforms to the **Height-Balancing Property**: A node in a tree is height-balanced if the heights of its subtrees differ by no more than 1. 
-
-As we will see in a few weeks, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced .
-
-Here is an example of balanced vs. non balanced trees.
-
-<div style="text-align:center"><img src="https://www.ocf.berkeley.edu/~shidi/cs61a/w/images/8/88/Balanced_vs_unbalanced_BST.png" alt="bst" width="642" height="238" /> </div>
-
-### How can we maintain these properties at the same time?
-
-We will study these details more carefully in a few weeks. However, this is a good preview to start familiarizing yourself with these ideas. The BST property is maintained by smart insertion and deletion. In an insert, you traverse the tree based on the key to be inserted. Once you encounter a situation where you can't traverse any further, you know that the key can be placed there. Because we are traversing based on the key value, we are inherently upholding the BST property.
- 
-The same thing can be said about a deletion in a BST. This is done by choosing which node to promote. Either the predecessor, if the node has two children, or the child if the node has 1 child. By doing this, the BST property is being maintained.
-
-A BST that maintains its balance throughout all insertions and deletions is called a  self-balancing BST. These types of trees that auto-balance or self balance inherently with the insertion are called Self-Balancing Binary Search Trees. Examples are:
-
-1. Splay Trees
-2. AVL Trees
-3. Red Black Trees
-4. B-Trees
-5. 2-3 Trees
-
-For all of these self-balancing binary search trees, the height-balancing property is upheld by the nature of an insert or remove. The best way to do so is with rotation, or series of rotations. We're not going to go into how these rotations work now, but this is something you'll have to know for your last homework!
-
-### Checkoff
-
-Given this *binary tree*:
-
-<img src="./bst.png" alt="bst" width="300" height="300" /> 
-
-- [ ] What order will the nodes be printed out with Pre-Order traversal? In-Order? Post-Order?
-Save your answers in a .txt file called `answers.txt` for checkoff.
-
-Next, you'll have to complete the following three binary tree traversal problems. A node is defined in `bst.h` as such: 
-
-```
-class Node {
-    Node *left;
-    Node *right;
-    int key;
+int hash(int data) {
+    return 42 % size;
 }
 ```
 
-#### 2. Range Sum
+This hash function is super fast. It literally just does one operation and then returns. However, it always returns the same number. This means that we are always going to go to the same array index. This doesn't make sense. Shouldn't our hash function result in different outputs with different inputs?
 
-Given the root of a *BST* and two values L and R, return the sum of all the nodes in the tree with values between L and R (inclusive).
-
-For example, if L = 1, R = 3, and your BST has values {1, 2, 3, 4} return 6 (1 + 2 + 3).
-
-- [ ] Implement `rangeSum` in `bst.cpp`
-
-#### 3. Is a Tree Balanced?
-
-Given a *binary tree*, determine if it obeys the height-balancing property.
-
-For this problem, a height-balanced binary tree is defined as:
-
-+ A binary tree in which the depth of the two subtrees of every node never differs by more than 1.
+A good example of this would be:
 
 ```
-bool isBalanced(Node *root)
+int hash(int data){
+    return 31 * 54059 ^ (data * 76963) % size;
+}
 ```
 
-Something to think about: does your solution work even if the tree is not a BST?
+Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different every single timety in our ou. It may be more operations than our first hash function, but it still does a constant amount of work.
 
-- [ ] Implement `isBalanced` in `bst.cpp`
 
-#### 4. Level Order Traversal
+#### 3.2 - Collisions
 
-Given a *binary tree*, return the level order traversal of its nodes' values. (i.e. from left to right, level by level).
+So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches: 
 
-- [ ] Implement `levelOrder` in `bst.cpp`
+ * open addressing such as linear probing, quadratic probing, or double hashing.
+ * closed addressing such as chaining or buckets.
 
-### Check off
+#### 3.3 - Open Addressing
 
-- [ ] Use `make` to run all tests and show a TA/CP to get checked off! 
+The idea with open addressing is that every location in the array can only have 1 thing in it. This means that we will have to find a free spot that we can place the object in. Linear probing is a very simple solution.
 
-(If you are checking off via Piazza, include your `answers.txt`, `bst.cpp` and tests results in your post, as well as your USC email and ten digit USC ID)
+Linear probing is where you just keep incrementing up/looking at the next index until you find a free location.
+
+The algorithm for inserting into a linear probed hashtable is:
+
+ 1. Hash the element, which gives you a position in the table.
+ 2. If the position is already taken, try the next position (if you reach the end of the table, wrap back to the start).
+ 3. Repeat step 2 until you have found an empty spot.
+ 4. Insert the element at that empty spot.
+
+The algorithm for finding a key in a linear probed hashtable is:
+
+ 1. Hash the key you want to find, which gives you a position in the table.
+ 2. If the position contains a key, compare it with the key you want to search. If they are equal, you've found the key; otherwise, move to the next position. If the position is empty (i.e does not contain a key), you know that the key does not exist in the table.
+ 3. Repeat step 2 until the algorithm terminates.
+
+Removing from the hashtable is a little bit more involved:
+
+ 1. First find the position of the key with the method illustrated above.
+ 2. Delete the key there.
+ 3. Move to the next position. If it is not empty, delete the key there and reinsert it.
+ 4. Repeat step 3 until you have reached an empty spot or you have looped back to the position you found in step 1.
+
+
+Here is an example for you to practice with:
+
+Suppose you have three keys with the following hash:
+
+* Key A has hash 0
+* Key B has hash 1
+* Key C has hash 1
+* Key D has hash 1
+* Key E has hash 2
+
+And you have a hash table of size 5.
+
+Try yourself with pen and paper what will the hashtable look like following each of those steps (in sequence):
+
+* Insert B
+* Insert C
+* Insert E
+* Insert A
+* Insert D
+* Remove B
+* Remove E
+
+#### 3.4 - Chaining
+
+For closed addressing we will focus on chaining. Chaining allows for multiple objects to reside within the same array location. The array is changed to be an array of lists or some other data structure, allowing us to store multiple items per index. We often use an array of linked lists, hence the name "chaining."
+
+<div style="text-align:center"><img src="./assets/chaining.png" alt="bst" width="400" height="250" /> </div>
+
+
+Other implementations may use another type of list or even a balanced tree. 
+
+Because chaining allows for buckets, it is probable for `n` objects to all be placed within the same bucket. The worst case runtime is O(n). Chaining may even prevent our goal of O(1) on average. However, a scenario like this should not occur if the hash function is good and the size of the hash table is big enough.
+
+### 4 - OrderedMap vs. UnorderedMap
+
+So let's see a real life example of a hash table. In your homework, you have been using an ordered map. What is an unordered map and how is it different?
+
+#### 4.1 - OrderedMap
+
+An ordered map uses a balanced binary search tree as its underlying data structure. We haven't yet go over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
+
+1. `find(key)` | O(logn)
+2. `insert(key, value)` | O(logn)
+3. `remove(key)` | O(logn)
+
+It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you a ordered traversal of all the keys in the map.
+
+#### 4.1 - UnorderedMap
+
+An unordered map uses a hash table as its underlying data structure. This means that access operations are O(1) on average, but because of this, no order can be inferred. By improving the runtime of operations, we had to sacrifice the ordering property.
+
+You must explicitly create an unordered map using `std::unordered_map`.
+
+1. `find(key)` | O(1) on average
+2. `insert(key, value)` | O(1) on average
+3. `remove(key)` | O(1) on average
+
+### 5 - HashTable Assignment
+
+You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
+
+To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
+- [ ] Implement `remove` in `hashtable.cpp`
+- [ ] Remember to show your passing tests to a TA/CP for checkoff!
+
+NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!

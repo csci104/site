@@ -26,12 +26,16 @@ Place your answers in a file **`probability.pdf`**.
 The secret word is chosen randomly (uniformly) before you start playing. You can use only words from the list as guesses.  The best starting word is the word with the smallest expected number of moves to finish the game under optimal play. You are choosing between NASTY and HASTY for a starting word. What is the expected number of moves for each of them if you play optimally?
 
 **4**. Lewix and Zax 27.5:  A man is accused of robbing a bank. Eyewitnesses testify that the robber was 6 feet tall and had red hair and green eyes; the suspect matches this descirption.  Suppose that only 100 of the 100000 residents in the town are men who are 6 feet tall with red hair and green eyes, and assume that one of them robbed the bank.  
+
   **4.1**. What is the probability that the suspect is innocent, given that he matches the description?
+
   **4.2**. What is the probability that the suspect would match the description, given that he is innocent?
+  
   **4.3**. Suppose the police reviewed images of 1000 potential suspects when investigating the case, and everyone of the 100000 residents were equally likely to appear in this review.  What is the probabilty that at least one of the 1000 would match the description?
 
 **5**. You are an astronomer studying a planetary system of a red dwarf star.
 Over years of research you've discovered that for this type of star the following is true:
+
  - 30% of stars have 2 planets
  - 70% of stars have 3 planets
  - No star of this type has less than 2 or more than 3 planets.

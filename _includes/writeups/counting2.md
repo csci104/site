@@ -8,6 +8,7 @@ Place your answers in a file **`counting.pdf`**.
 
 
  **3**. Consider that one way to categorize Pokemon cards is into water type, fire type, and all other types.
+ 
      **3.1**. You have a total 21 Pokemons, out of which 7 are water type and 5 are fire type. How many combinations of 3 Pokemon cards (the order they are selected does not matter) exist such that none of the following occur: a selection has at least two fire types and a selection has at least two water types.
 
      **3.2**. Your friend sends you 10 random Pokemon cards.  How many different combinations exist of their types: water, fire, and other?

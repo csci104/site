@@ -2,7 +2,7 @@ You must show work supporting your answer to receive credit.
 
 Place your answers in a file **`probability.pdf`**.
 
-1. Suppose a college application asks students to choose, in order, 3 of the following words that best describe them: `leader`, `innovative`, `determined`, `logical`, `outgoing`, `dreamer`, `analytical`.  A college admission officer is lazy and decides to admit any student that chooses `innovative` and `analytical` as two of the three but must have `innovative` **before** `analytical`, **OR** `empathetic` and `innovative` (in any order).
+1. Suppose a college application asks students to choose, in order, 3 of the following words that best describe them: `leader`, `innovative`, `determined`, `logical`, `outgoing`, `dreamer`, `analytical`.  A college admission officer is lazy and decides to admit any student that chooses `innovative` and `analytical` as two of the three as long as `innovative` is **before** `analytical`, **OR** if they choose `empathetic` and `innovative` (in any order).
   1. Supposing that applicants are equally likely to choose any 3 of the 7 words, what is the probability that a student will be admitted by this admission officer?
   1. What is the probability that in the first 10 applications the officer reads, 4 students are admitted.
 
@@ -10,7 +10,17 @@ Place your answers in a file **`probability.pdf`**.
   1. Let A be the event that 2 consecutive flips both yield **heads** and let B be the event that the first **OR** last flip yields **tails**.  Prove or disprove that events A and B are independent.
   1. Let X be the random variable of how many pairs of consecutive flips (of the 4 total flips) both yield **heads**.  What is the expected value of X?
 
-1. You are playing a variant of the famous game WORDLE (find out the rules of this game by clicking on the question mark button here https://www.nytimes.com/games/wordle/).  Suppose the secret word can be any combination of 5 (lower-case) English letters **without** repetitions. Anything from `abcde` to `zyxwv` can be a valid secret word. Your guesses can also be anything from `abcde` to `zyxwv`.You played your first move and got two green squares followed by three gray squares. What is the probability of getting such an outcome on the first turn?
+1. You are playing a very limited variant of the famous game WORDLE (find out the rules of this game by clicking on the question mark button here https://www.nytimes.com/games/wordle/)
+
+    In your version of the game the secret answer can be only one of these words:
+
+    - NASTY
+    - HASTY
+    - BOARD
+    - HOARD
+    - MATHS
+
+The secret word is chosen randomly (uniformly) before you start playing. You can use only words from the list as guesses.  The best starting word is the word with the smallest expected number of moves to finish the game under optimal play. You are choosing between NASTY and HASTY for a starting word. What is the expected number of moves for each of them if you play optimally?
 
 1. Lewix and Zax 27.5:  A man is accused of robbing a bank. Eyewitnesses testify that the robber was 6 feet tall and had red hair and green eyes; the suspect matches this descirption.  Suppose that only 100 of the 100000 residents in the town are men who are 6 feet tall with red hair and green eyes, and assume that one of them robbed the bank.  
   1. What is the probability that the suspect is innocent, given that he matches the description?

@@ -107,7 +107,7 @@ Suppose you have three keys with the following hash:
 
 And you have a hash table of size 5.
 
-Try yourself with pen and paper what will the hashtable look like following each of those steps (in sequence):
+Try yourself with pen and paper. What will the hashtable look like following each of those steps (in sequence):
 
 * Insert B
 * Insert C

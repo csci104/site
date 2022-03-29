@@ -4,8 +4,12 @@ Suppose a company needs to schedule `d` (which stands for `needed`) out of `k` (
 The prototype for the function you will write is given below, along with some `typedef`s for the input and output data structures.
 
 ```c++
+// type for the ID of a worker
 typedef unsigned int Worker_T;
+// n-by-k Matrix of each of the k workers' availability over an n-day period
 typedef std::vector<std::vector<bool>> AvailabilityMatrix;
+// n-by-d matrix with the d worker IDs who are scheduled 
+// to work on each of the n days
 typedef std::vector<std::vector<Worker_T> > DailySchedule;
 
 /**

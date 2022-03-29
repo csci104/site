@@ -13,6 +13,6 @@ Place your answers in a file **`counting.pdf`**.
 
  - **3.2**. Your friend sends you 10 random Pokemon cards.  How many different combinations exist of their types: water, fire, and other?
 
- **4**. In how many ways can 4 identical copiers be used to make 6 additional copies of a document (i.e. assuming we have an original for each copier).  
+ **4**. In how many ways can 4 identical copiers be used to make 6 additional copies of a document (i.e. assuming we have an original for each copier). However, the most copies any single copier can make is **5**.  
 
  **5**. There is a Binary Search Tree with 13 nodes. Each node has a distinct value between 0 and 12. The root has value 8, and its left child has value 5. How many possible Binary Search Trees could this be?  Tip:  *Try to define how many ways there are to form a BST of 2 nodes.  Then try to define how many ways there are to form a BST of 3 nodes (think about the possible insertion order based on rank: smallest, medium, largest) **in terms of 2 node trees** for certain cases.  Continue to do this for 4 node trees (in terms of 3- and 2-node trees for various cases of insertion ordering based on rank) and 5 node trees.*

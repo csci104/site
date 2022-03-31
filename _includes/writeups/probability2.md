@@ -16,7 +16,7 @@ Place your answers in a file **`probability.pdf`**.
 
 **3**. You are playing a very limited variant of the famous game WORDLE (find out the rules of this game by clicking on the question mark button here https://www.nytimes.com/games/wordle/)
 
-    In your version of the game the secret answer can be only one of these words:
+In your version of the game the secret answer can be only one of these words:
 
     ```
     NASTY

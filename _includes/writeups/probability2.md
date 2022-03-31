@@ -18,13 +18,11 @@ Place your answers in a file **`probability.pdf`**.
 
 In your version of the game the secret answer can be only one of these words:
 
-    ```
     NASTY
     HASTY
     BOARD
     HOARD
     MATHS
-    ```
 
 The secret word is chosen randomly (uniformly) before you start playing. You can use only words from the list as guesses.  The best starting word is the word with the smallest expected number of moves to finish the game under optimal play. You are choosing between NASTY and HASTY for a starting word. What is the expected number of moves for each of them if you play optimally?
 

@@ -87,6 +87,7 @@ Use `schedwork-driver` to do some sanity tests of your code before moving on to 
  - You **MAY** define helper functions in `schedworker.cpp`
  - You **MUST** use a recursive approach that follows the general backtracking structure presentedin class.  **Failure to use such a recursive approach will lead to a 0 on this part of the assignment.**  
  - You MAY use functions from the `algorithm` library such as `std::find`, if you desire.
+ - The order in which you list the worker IDs in each row of the final schedule doesn't matter (i.e. if Worker 1, 2, 3 is scheduled to work on a given day, then 3, 2, 1 is also acceptable).
 
 #### Hints and Approach
 

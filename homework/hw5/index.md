@@ -47,7 +47,7 @@ For checkpoint credit, submit your working code for the **Wordle** problem. Ensu
   - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
 
 
-We will use `hw5_tests/wordle-tests/wordle-tests` for the checkpoint.  They must compile, run, and pass all tests with no `valgrind` or other memory errors.  Failure to pass even one test or having 1 valgrind error will result in 0 credit for the checkpoint.  It is fine to push input test files if you like, though we will not grade them.
+We will use `hw5_tests/wordle-tests/wordle-tests` for the checkpoint.  They must compile, run, and pass all tests with no `valgrind` or other memory errors.  Failure to pass even one test or having 1 valgrind error will result in 0 credit for the checkpoint.  It is fine to push other source files or input test files if you like, though we will not grade them.
 
 
 ## Submission Files

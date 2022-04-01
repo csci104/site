@@ -4,8 +4,8 @@ Place your answers in a file **`nt1.pdf`**.
 
 1. Use the recursive patten $$x_n+1 = (a * x_n + c) % m $$ to generatethe first 5 pseudorandom numbers $$x_1,x_2,...,x_5$$ in the sequence given $$a=13, c=7, x_0 = -5, m = 12$$
 1. Compute $$1337^{42} \mod{21}$$. 
-1. Two integers $$ x,y \in \mathbb{Z} $$ are said to be relatively prime if their greatest common divisor is 1. Use (and show the steps to) the Euclidean algorithm to determine if 309 and 112 are relatively prime.
-1. Find the multiplicative inverse of $$ x = 33 \mod{112} $$
+1. Two integers $$x,y \in \mathbb{Z}$$ are said to be relatively prime if their greatest common divisor is 1. Use (and show the steps to) the Euclidean algorithm to determine if 309 and 112 are relatively prime.
+1. Find the multiplicative inverse of $$x = 33 \mod{112}$$
 
 
 ## Summer '21

@@ -20,7 +20,7 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 ## Written Portion
 
 
-{% for part in site.data.hws.hw5.written_parts %}
+{% for part in site.data.hws.hw6.written_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
@@ -31,7 +31,7 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 ## Programming Portion
 
-{% for part in site.data.hws.hw5.programming_parts %}
+{% for part in site.data.hws.hw6.programming_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 

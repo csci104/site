@@ -129,7 +129,7 @@ labs:
     title: Probability?
     assigned: false
     topics:
-    id: lab14
+  - id: lab14
     week: Week 14
     title: Number Theory
     assigned: false

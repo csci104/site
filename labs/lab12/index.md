@@ -164,3 +164,5 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 + (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
 
 - [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during your registered lab section by Friday, Apr. 8**.
+
+If you finished early, here are some extra problems you could try. We would release the solutions on Saturday, Apr. 9: [https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf](https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf)

@@ -14,15 +14,15 @@ Place your answers in a file **`probability.pdf`**.
 
 -  **2.2**. Let X be the random variable of how many pairs of consecutive flips (of the 4 total flips) both yield **heads**.  What is the expected value of X?
 
-**3**. You are playing a very limited variant of the famous game WORDLE (find out the rules of this game by clicking on the question mark button here https://www.nytimes.com/games/wordle/)
+**3**. You are playing a very limited variant of the famous game WORDLE (find out the rules of this game by clicking on the question mark button [at this site](https://www.nytimes.com/games/wordle/)
 
-    In your version of the game the secret answer can be only one of these words:
+In your version of the game the secret answer can be only one of these words:
 
-    - NASTY
-    - HASTY
-    - BOARD
-    - HOARD
-    - MATHS
+    NASTY
+    HASTY
+    BOARD
+    HOARD
+    MATHS
 
 The secret word is chosen randomly (uniformly) before you start playing. You can use only words from the list as guesses.  The best starting word is the word with the smallest expected number of moves to finish the game under optimal play. You are choosing between NASTY and HASTY for a starting word. What is the expected number of moves for each of them if you play optimally?
 

@@ -120,9 +120,10 @@ labs:
     topics: Hashtable
   - id: lab12
     week: Week 12
-    title: 
-    assigned: false
+    title: Counting!
+    assigned: true
     topics: 
+    slides: extra_counting_problems.pdf
   - id: lab13
     week: Week 13
     title: 

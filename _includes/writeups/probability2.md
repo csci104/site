@@ -6,7 +6,7 @@ Place your answers in a file **`probability.pdf`**.
 
 -  **1.1** Supposing that applicants are equally likely to choose any 3 of the 7 words, what is the probability that a student will be admitted by this admission officer?
 
-- **1.2** What is the probability that in the first 10 applications the officer reads, 4 students are admitted.
+- **1.2** What is the probability that in the first 10 applications the officer reads, exactly 4 students are admitted.
 
 **2** Consider 4 sequential flips of a fair coin.
 

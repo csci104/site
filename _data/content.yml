@@ -120,16 +120,22 @@ labs:
     topics: Hashtable
   - id: lab12
     week: Week 12
-    title: 
-    assigned: false
+    title: Counting!
+    assigned: true
     topics: 
+    slides: extra_counting_problems.pdf
   - id: lab13
     week: Week 13
-    title: 
+    title: Probability?
     assigned: false
     topics:
-  # - id: lab14
-  #   week: Week 14
-  #   title: Final Review
-  #   assigned: false
-  #   topics: 
+  - id: lab14
+    week: Week 14
+    title: Number Theory
+    assigned: false
+    topics: 
+  - id: lab15
+    week: Week 15
+    title: Final Review
+    assigned: false
+    topics: 

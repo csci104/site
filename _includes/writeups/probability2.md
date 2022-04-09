@@ -2,11 +2,11 @@ You must show work supporting your answer to receive credit.
 
 Place your answers in a file **`probability.pdf`**.
 
-**1** Suppose a college application asks students to choose, in order, 3 of the following words that best describe them: `leader`, `innovative`, `determined`, `logical`, `outgoing`, `dreamer`, `analytical`.  A college admission officer is lazy and decides to admit any student that chooses `innovative` and `analytical` as two of the three as long as `innovative` is **before** `analytical`, **OR** if they choose `empathetic` and `innovative` (in any order).
+**1** Suppose a college application asks students to choose, in order, 3 of the following words that best describe them: `leader`, `innovative`, `determined`, `logical`, `empathetic`, `dreamer`, `analytical`.  A college admission officer is lazy and decides to admit any student that chooses `innovative` and `analytical` as two of the three as long as `innovative` is **before** `analytical`, **OR** if they choose `empathetic` and `innovative` (in any order).
 
 -  **1.1** Supposing that applicants are equally likely to choose any 3 of the 7 words, what is the probability that a student will be admitted by this admission officer?
 
-- **1.2** What is the probability that in the first 10 applications the officer reads, 4 students are admitted.
+- **1.2** What is the probability that in the first 10 applications the officer reads, exactly 4 students are admitted.
 
 **2** Consider 4 sequential flips of a fair coin.
 

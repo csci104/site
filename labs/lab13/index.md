@@ -137,6 +137,6 @@ $E(X) = 2 \times (1/36) + 3 \times (2/36) + … + 12 \times (1/36) = 7$.
 4. Earlier in March, meerkats Howell and Midra in the Taronga Western Plains Zoo gave birth to 5 meerkat pups. You are told that at least 4 pups are female. Given this information, what is the probability that all 5 are female?
 
 5. Two cookies are pulled out one by one (order matters) and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. 
- * What is the probability distribution of X?
- * What is the expected value of X?
+* What is the probability distribution of X?
+* What is the expected value of X?
 

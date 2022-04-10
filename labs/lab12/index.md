@@ -15,7 +15,6 @@ You need to get checked off by a TA/CP during your assigned lab section.
 
 ## Counting
 
-$LaTeX$
 
 This lab will be covered during lab sections between March 16 - March 19, 2021. **You need to get checked off during a lab sesson on or before March 19th.**
 

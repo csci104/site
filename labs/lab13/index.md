@@ -1,3 +1,10 @@
+---
+layout: asides
+toc: true
+tasks: true
+title: Probability Theory
+---
+
 # Probability Theory
 
 Now we’ll be taking the counting principles we learned from Lab 11 and applying them to probability! Probability is something you’ll be revisiting time and time again both in and outside of computer science. Maybe you’re interested in artificial intelligence or machine learning, or maybe you just want to think more critically about the uncertainty of life. Probability is an important skill you’ll want to carry with you well beyond 104, regardless of what path you take!

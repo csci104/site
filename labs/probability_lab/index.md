@@ -80,7 +80,7 @@ $$\binom{n+m-1}{m-1}$$
 
 ### a) Simplest case
 
-Most of probability problems you have seen so far asks you to find the probability of a certain **event** given a **sample space**. The sample space is a set of potential outcomes (i.e the roll of a die could give you numbers from $1$ to $6$, therefore the sample space is simply $\{1, 2, 3, 4, 5, 6\}$). An event is a subset of that sample space, and therefore, a selected set of "favorable" outcomes (i.e. the event that you rolled the die and get a even number is represented by the set $\{2, 4, 6\}$).
+Most of probability problems you have seen so far asks you to find the probability of a certain **event** given a **sample space**. The sample space is a set of potential outcomes (i.e the roll of a die could give you numbers from $1$ to $6$, therefore the sample space is simply $\\{1, 2, 3, 4, 5, 6\}$). An event is a subset of that sample space, and therefore, a selected set of "favorable" outcomes (i.e. the event that you rolled the die and get a even number is represented by the set $\\{2, 4, 6\}$).
 
 In some problem the sample space would be uniform, meaning: every outcome in the sample space is equally likely to occur. In the above example, this corresponds to a fair die. In such case, the probablity is simply
 

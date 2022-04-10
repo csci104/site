@@ -12,14 +12,14 @@ Now we’ll be taking the counting principles we learned from Lab 11 and applyin
 ## Warm Up, Definitions, and Rules
 Suppose we have a fair coin, and we flip it 2 times. What is the probability of getting at least one head?
 
-Here, flipping a coin 2 times is called a **trial**. Each trial has an outcome, and our **sample space** is the set of all possible outcomes for any trial. Denoting H for heads and T for tails, and assuming each coin flip yields either H or T (and will never land on an edge), our sample space can be written as $\{H, T\}^2$. The size of our sample space is $|\{H,T\}|^2 = 4$. With a small sample space like this, it should be easy enough to list out all the elements:
+Here, flipping a coin 2 times is called a **trial**. Each trial has an outcome, and our **sample space** is the set of all possible outcomes for any trial. Denoting H for heads and T for tails, and assuming each coin flip yields either H or T (and will never land on an edge), our sample space can be written as $\{H, T\\}^2$. The size of our sample space is $|\{H,T\\}|^2 = 4$. With a small sample space like this, it should be easy enough to list out all the elements:
 
 * HH
 * HT
 * TH
 * TT
 
-Any subset of the sample space is called an event. In this example, the event we are interested in is the event of getting at least one head, $\{HH, HT, TH\}$. Assuming that all outcomes are equally likely, we can say that the probability of this event occurring is $3/4$.
+Any subset of the sample space is called an event. In this example, the event we are interested in is the event of getting at least one head, $\{HH, HT, TH\\}$. Assuming that all outcomes are equally likely, we can say that the probability of this event occurring is $3/4$.
 
 More generally, if $S$ is a sample space of equally likely outcomes and $E$ is an event of $S$, the probability of $E$ is:
 

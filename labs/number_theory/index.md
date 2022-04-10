@@ -93,7 +93,7 @@ $$
 \end{gather*}
 $$
 
-You would notice that all numbers from $\{1, 2, 3, 4\}$ appear on both sides, so therefore if you multiply the equations together you would get:
+You would notice that all numbers from $\\{1, 2, 3, 4\}$ appear on both sides, so therefore if you multiply the equations together you would get:
 
 $$4k \cdot 3k \cdot 2k \cdot 1k \equiv 2\times 4 \times 1\times 3 \pmod 5$$
 

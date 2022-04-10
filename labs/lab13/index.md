@@ -124,19 +124,25 @@ Thus:
 
 $E(X) = 2 \times (1/36) + 3 \times (2/36) + … + 12 \times (1/36) = 7$.
 
+But there is really a simpler way to solve this:
+
+Let $X_1, X_2$ be random variables that denote the value on the first and second die, respectively. We can see that $X = X_1 + X_2$, therefore by the linearity of expectation, $E(X) = E(X_1 + X_2) = E(X_1) + E(X_2)$.
+
+We know that $E(X_1) = E(X_2) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)$, hence $E(X) = 7$.
+
 ### Excercises
 
 1. In Charlie and the Chocolate Factory, Willy Wonka invites 5 lucky children to tour his factory. He randomly distributes 5 golden tickets in a batch of 1000 chocolate bars. You purchase 5 chocolate bars, hoping that at least one of them will have a golden ticket.
   * What is the probability of getting at least 1 golden ticket?
   * What is the probability of getting 5 golden tickets?
 
-2. Scrooge is getting ready for the 104 Duck Fashion Show. Scrooge has 3 hats (yellow, black, green), 9 shirts (3 of which are yellow, and 6 of which are green), and 7 bowties (all of which are blue). Scrooge selects his outfit uniformly at random. What is the probability that his hat and shirt will be different colors?
+2. Scrooge is getting ready for the 104 Duck Fashion Show. Scrooge has 3 hats (yellow, black, green), 9 shirts (3 of which are yellow, and 6 of which are green), and 7 bowties (all of which are blue). Scrooge selects each of his outfit uniformly at random and independently. What is the probability that his hat and shirt will be different colors?
 
 3. You roll a fair die 6 times. What is the probability that no number appears twice?
 
-4. Earlier in March, meerkats Howell and Midra in the Taronga Western Plains Zoo gave birth to 5 meerkat pups. You are told that at least 4 pups are female. Given this information, what is the probability that all 5 are female?
+4. Earlier in March, meerkats Howell and Midra in the Taronga Western Plains Zoo gave birth to 5 meerkat pups. You are told that at least 4 pups are female. Given this information, what is the probability that all 5 are female? (Hint: it is not $1/2$)
 
-5. Two cookies are pulled out one by one (order matters) and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. 
+5. Two cookies are pulled out at random and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. 
 * What is the probability distribution of X?
 * What is the expected value of X?
 

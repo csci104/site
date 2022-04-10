@@ -127,7 +127,7 @@ labs:
   - id: lab13
     week: Week 13
     title: Probability?
-    assigned: false
+    assigned: true
     topics:
   - id: lab14
     week: Week 14

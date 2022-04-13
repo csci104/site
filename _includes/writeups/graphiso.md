@@ -1,0 +1,3 @@
+In this problem, you will again use backtracking search to determine if two graphs are isomorphic.  Two graphs, G1 and G2, are said to be isomorphic if there exists a bijection (1-to-1 and onto), $$M$$, (i.e. M(v1) => v2 where v1 is in G1 and v2 is in G2) between the vertices in G1 and the vertices in G2 such that for each edge in G1, $$(u1,v1)$$, the edge $$(M(u1), M(u2))$$ exists in G2 **AND** $$deg(v1) = deg(M(v1))$$ (the degrees of the vertex in G2 that is mapped to a vertex in G1 are equal). 
+
+We have written a basic graph class for you.

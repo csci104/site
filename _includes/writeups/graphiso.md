@@ -55,9 +55,15 @@ Use `graphiso-driver` to do some sanity tests of your code before moving on to a
 
 A few examples of graphs and the results that your function should produce are shown below. We have provided three pairs of graphs in the files: `graph1a/b.in`, `graph2a/b.in`, and `graph3a/b.in` that match the examples shown below.
 
+**Graph 1a/1b**:
+
 <img src="{{site.baseurl}}/homework/img/graphiso-g1-true.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
+**Graph 2a/2b**:
+
 <img src="{{site.baseurl}}/homework/img/graphiso-g2-true.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
+
+**Graph 3a/3b**:
 
 <img src="{{site.baseurl}}/homework/img/graphiso-g2-false.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 

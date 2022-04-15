@@ -72,4 +72,10 @@ A few examples of graphs and the results that your function should produce are s
 
 #### Hints and Approach
 
-Recall that a backtracking search algorithm is a recursive algorithm that is similar to generating all combinations, but skipping the recursion and moving on to another option if the current option violates any of the constraints.  It is likely easiest to recurse over each vertex in graph 1 attempting to find a suitable mapping to a vertex in graph 2 that meets the criteria known (or assigned) at the current time. 
+Recall that a backtracking search algorithm is a recursive algorithm that is similar to generating all combinations, but skipping the recursion and moving on to another option if the current option violates any of the constraints.  It is likely easiest to recurse over each vertex in graph 1 attempting to find a suitable mapping to a vertex in graph 2 that meets the criteria known (or assigned) at the current time. As you map a vertex from G1 to G2, you can check whether the vertices you've mapped are "consistent" and meet the isomorphism requirements. Because not all vertices will be mapped during the intermediate stages of your algorithm, you can only determine if a mapping is NOT valid by finding mapped vertices that have differing degrees **or** if an edge, $$(u1, v1)$$ from G1 where both $$u1$$ and $$v1$$ are mapped to a vertex in G2 has a corresponding edge $$(M(u1), M(v1))$$ in G2.
+
+We have provided the start of a helper function you can use to implement these checks.
+
+```c++
+bool isConsistent(const Graph& g1, const Graph& g2, VERTEX_ID_MAP_T& mapping);
+```

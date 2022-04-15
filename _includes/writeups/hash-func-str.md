@@ -100,4 +100,3 @@ w[4] = 484346964
 h(antidisestablishmentarianism)=1137429692708383810
 ```
 
-You may want to go back and run some of the performance tests but now using your hash function rather than `std::hash` and ensure you still get reasonable performance without errors or faults.  You will likely notice some slowdown using this hash function which is not optimized compared to `std::hash`.

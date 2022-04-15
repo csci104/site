@@ -1,4 +1,7 @@
-In this problem, you will again use backtracking search to determine if two graphs are isomorphic.  Two graphs, G1 and G2, are said to be isomorphic if there exists a bijection (1-to-1 and onto), $$M$$, (i.e. M(v1) => v2 where v1 is in G1 and v2 is in G2) between the vertices in G1 and the vertices in G2 such that for each edge in G1, $$(u1,v1)$$, the edge $$(M(u1), M(u2))$$ exists in G2 **AND** $$deg(v1) = deg(M(v1))$$ (the degrees of the vertex in G2 that is mapped to a vertex in G1 are equal). 
+In this problem, you will again use backtracking search to determine if two graphs are isomorphic.  Two graphs, $$G1$$ and $$G2$$, are said to be isomorphic if:
+  - There exists a bijection (1-to-1 and onto), $$M$$, from the vertices in G1 to the vertices in G2 (i.e. M(v1) => v2 where v1 is in G1 and v2 is in G2), such that:
+    - for each edge $$(u1,v1)$$ in G1, the edge $$(M(u1), M(v1))$$ exists in G2 **AND** 
+    - for each vertex, $$v1$$ in G1, $$deg(v1) = deg(M(v1))$$. 
 
 We have written **and implemented** a basic graph class for you.  It reads in graphs (as adjacency lists) from an input stream (file) and allows you to check if an edge exists, find all the neighbors of a given vertex, and get all the vertices in the graph.  It uses a `std::map` to store the graph information in adjancency list form.
 
@@ -11,14 +14,14 @@ class Graph {
 public:
     Graph(std::istream& istr);
     bool edgeExists(const VERTEX_T& u, const VERTEX_T& v) const;
-    const VERTEX_SET_T neighbors(const VERTEX_T& v) const;
+    const VERTEX_SET_T& neighbors(const VERTEX_T& v) const;
     VERTEX_LIST_T vertices() const;
 private:
     std::map<std::string, VERTEX_SET_T > adj_;
 };
 ```
 
-Your task is to write a function (prototype below) to determine if the two graphs are isomorphic (as defined above) and return `true` if so, and `false`, otherwise, **AND** if you return `true` you must also provide the valid mapping of vertices in graph 1 and their corresponding mapped vertices in graph 2 (i.e. each entry in the result should have a unique vertex from graph 1 as the key and the value will be the corresponding vertex in graph 2) that form the isomorphism.  
+Your task is to write a function (prototyped below) to determine if the two graphs are isomorphic (as defined above) and return `true` if so, and `false`, otherwise, **AND** if you return `true` you must also provide the valid mapping of vertices in graph 1 and their corresponding mapped vertices in graph 2 that form the isomorphism (i.e. you should produce a map where the keys are the vertices from graph 1 and the values are the vertices from graph 2 to which each vertex from graph 1 maps to).  
 
 To create, update, and store this mapping, you **MUST** use your hash table data structure from the previous part of this homework.  If you do not use your hash table implementation, you will **RECEIVE NO CREDIT** on this problem.
 
@@ -61,6 +64,7 @@ A few examples of graphs and the results that your function should produce are s
  - You **MAY** define helper functions in `graphiso.cpp`
  - You **MUST** use a recursive approach that follows the general backtracking structure presentedin class.  **Failure to use such a recursive approach will lead to a 0 on this part of the assignment.**  
  - You MAY use structures such as `std::set` or `std::map` or `std::vector` as necessary to help your implementation.
+ - There is no specific runtime, but you must pass each test in `ctest` with timeout limits of 60 seconds per test.
  - Any valid mapping is acceptable (since many may exist for certain graphs).  Our tests simply verify your solution rather than looking for a hard-coded mapping.
 
 #### Hints and Approach

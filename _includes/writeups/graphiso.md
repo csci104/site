@@ -45,9 +45,13 @@ bool graphIso(  const Graph& g1,
 
 #### Testing
 
-We have provided a "driver"/test program (`graphiso-driver.cpp`) that will read in two files (whose names are given on the command line)  that contain graph descriptions, call your function, and then print the results for you to verify.  
+We have provided a "driver"/test program (`graphiso-driver.cpp`) that will read in two files (whose names are given on the command line)  that contain graph descriptions, call your function, and then print the results for you to verify.  You can compile it with `make` and run it as:
 
-Use `graphiso-driver.cpp` to do some sanity tests of your code before moving on to any of the tests from our grading suite. 
+```bash
+./graphiso-driver graph1a.in graph1b.in
+```
+
+Use `graphiso-driver` to do some sanity tests of your code before moving on to any of the tests from our grading suite. 
 
 A few examples of graphs and the results that your function should produce are shown below. We have provided three pairs of graphs in the files: `graph1a/b.in`, `graph2a/b.in`, and `graph3a/b.in` that match the examples shown below.
 
@@ -56,7 +60,6 @@ A few examples of graphs and the results that your function should produce are s
 <img src="{{site.baseurl}}/homework/img/graphiso-g2-true.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
 <img src="{{site.baseurl}}/homework/img/graphiso-g2-false.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
-
 
 #### Requirements and Assumptions
 

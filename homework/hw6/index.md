@@ -41,14 +41,13 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 ## Checkpoint
 
-For checkpoint credit, submit your working code for the **Hash Table** problem. Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
+For checkpoint credit, submit your working code for the **Hash Function** problem. Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
 
-  - `wordle.h`, `wordle.cpp` (it's fine to include your other **source** files like `wordle-driver.cpp`, `Makefile`, and `sched` files)
+  - `hash.h` and `hash-check.cpp` (it's fine to include your other **source** files like `ht.h` and `str-hash-test.cpp`, `Makefile`, etc)
   - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
 
 
-We will use `hw6_tests/wordle-tests/wordle-tests` for the checkpoint.  They must compile, run, and pass all tests with no `valgrind` or other memory errors.  Failure to pass even one test or having 1 valgrind error will result in 0 credit for the checkpoint.  It is fine to push other source files or input test files if you like, though we will not grade them.
-
+We have provided Google tests for the hash function code in `hash-check.cpp` and the `Makefile` contains a target to compile the test executable `hash-check`. It also contains a target `run-hash-check` which will run the tests through valgrind.  Simply type `make run-hash-check`.  We will run these tests (with valgrind) to grade your checkpoint.  
 
 ## Submission Files
 

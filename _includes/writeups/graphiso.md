@@ -61,11 +61,13 @@ A few examples of graphs and the results that your function should produce are s
 
 <img src="{{site.baseurl}}/homework/img/graphiso-g2-false.png" alt="drawing" width="100%" height="auto" id="responsive-image"/>
 
+During grading, **we will run some additional instructor tests** but they will be similar to the ones we provide in our test suite.
+
 #### Requirements and Assumptions
 
  - As always you may not change the signature of the primary function provided.
  - You **MAY** define helper functions in `graphiso.cpp`
- - You **MUST** use a recursive approach that follows the general backtracking structure presentedin class.  **Failure to use such a recursive approach will lead to a 0 on this part of the assignment.**  
+ - You **MUST** use a recursive approach that follows the general backtracking structure presented in class.  **Failure to use such a recursive approach will lead to a 0 on this part of the assignment.**  
  - You MAY use structures such as `std::set` or `std::map` or `std::vector` as necessary to help your implementation.
  - There is no specific runtime, but you must pass each test in `ctest` with timeout limits of 60 seconds per test.
  - Any valid mapping is acceptable (since many may exist for certain graphs).  Our tests simply verify your solution rather than looking for a hard-coded mapping.
@@ -79,3 +81,5 @@ We have provided the start of a helper function you can use to implement these c
 ```c++
 bool isConsistent(const Graph& g1, const Graph& g2, VERTEX_ID_MAP_T& mapping);
 ```
+
+You should consider completing it and calling it from your main backtracking code.

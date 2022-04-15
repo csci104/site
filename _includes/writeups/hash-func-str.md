@@ -30,7 +30,7 @@ Note:  Make sure you compute using `unsigned long long` variables or cast (const
 
 #### Testing
 
-We have provided a simple test program, `str-hash-test.cpp` where you can provide a string on the command line and it will hash the string and output the hash result. We have provided a compiled *solution* version of this program that is compiled with our solution hash function using the debug `r` values. You may run it on an x86 based laptop running Docker: `./str-hash-test-sol <string>`.  It includes some additional debug output that shows the `w[i]` values computed.
+We have provided a simple test program, `str-hash-test.cpp` where you can provide a string on the command line and it will hash the string and output the hash result. Below is some debug output of the `w[i]` values computed for several test strings using the debug `r` values. 
 
 Below is the output for a few strings:
 
@@ -59,6 +59,33 @@ w[3] = 0
 w[4] = 1808957
 h(abc123)=473827885525100
 ```
+
+`./str-hash-test-sol B`
+
+yields
+
+```
+w[0] = 0
+w[1] = 0
+w[2] = 0
+w[3] = 0
+w[4] = 1
+h(B)=261934300
+```
+
+`./str-hash-test-sol gfedcba`
+
+yields
+
+```
+w[0] = 0
+w[1] = 0
+w[2] = 0
+w[3] = 6
+w[4] = 309191940
+h(gfedcba)=80987980279261566
+```
+
 
 `./str-hash-test antidisestablishmentarianism`
 

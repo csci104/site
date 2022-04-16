@@ -7,7 +7,7 @@ title: Number Theory
 
 ## Number Theory
 
-**Due Nov 5 @ 7pm**
+**WORK IN PROGRESS - NOT THE FINAL LAB**
 
 This lab would be covered in sections on Oct 26, Oct 27, Nov 4, and Nov 5. Please note that sections on Oct 28 and Oct 29 would covering the hashtable lab.
 
@@ -42,84 +42,113 @@ The above denotes the "greatest common divisor of $a$ and $b$", which is the gre
 
 If $gcd(a, b)=1$, then $a$ and $b$ are said to be "co-prime" or "relatively prime" to each other.
 
-$$\text{lcm}(a, b)$$
 
-The above denotes the "least common multiple" of $a$ and $b$, which is the smallest positive integer $m$ such that $a \mid m$ and $b \mid m$. It can be calculated as:
+### A Useful Theorem
 
-$$\text{lcm}(a, b) = \frac{\vert ab \vert}{\gcd(a, b)}$$
+Here is an extremely useful theorem:
 
-(4)
+* If $a \mid bc$ and $\gcd(a, b)=1$, then $a \mid c$.
 
-**The following theorem could be very useful in homework and exams**: If $a \mid bc$ and $\gcd(a, b)=1$, then $a \mid c$.
+#### Exercise 1
 
-An important corollary follows from above (which is also extremekly useful): If $p \mid ab$ and $p$ is a prime number, then $p \mid a$ or $p \mid b$.
+Using the theorem above, prove the following:
 
-***Proof.*** If $p \mid a$, then we are done. Otherwise, $\gcd(p, a)=1$ (since $p$ is a prime), therefore $p \mid b$.
+* If $p$ is a prime and $p \mid ab$, then $p \mid a$ or $p \mid b$.
 
+### Quadratic Probing
 
+Recall that in linear probing, the positions we try to insert an element at are: 
 
-### More examples of proofs
+$$h, h + 1, h + 2, h + 3, \dots$$
 
-(1) Prove that if $kx \equiv ky \pmod m$ and $\gcd(k, m)=1$, then $x \equiv y \pmod{m}$.
+where $h$ is the hash value of the element you want to insert.
 
-***Proof.*** Since $kx \equiv ky \pmod m$, we have $m \mid k(x-y)$, and since $\gcd(k, m)=1$, we have $m \mid x-y$, which means $x \equiv y \pmod{m}$ by definition.
+In quadratic probing, this becomes:
 
-(2) Prove that given a prime $p$ and integers $m, n, k$ such that $1 \leq m, n, k \leq p-1$ and $m \neq n$, we have $mk \not\equiv nk \pmod{p}$.
+$$h, h + 1, h + 4, h + 9, \dots, h + i^2, \dots$$
 
-***Proof.*** We can do a proof by contradiction. Assume that $mk \equiv nk \pmod p$. Since $1 \leq k \leq p-1$ we have $\gcd(k, p)=1$, and therefore by (1), we have $m \equiv n \pmod p$. But since $1 \leq m, n \leq p-1$, we have $m = n$, which is a contradiction. Therefore $mk \not\equiv nk \pmod{p}$.
+Quadratic probing has the nice property that if the size of the hash table is a prime number $p$, then the first $\frac{p-1}{2} + 1$ probed positions are going to be unique (which are $h, h + 1, \dots, h + (\frac{p-1}{2})^2$).
 
-(3) Prove that given a prime $p$ and integer $k$ such that $1 \leq k \leq p-1$, we have:
+We could prove this using contradiction:
 
-$$k^{p-1}(p-1)! \equiv (p-1)! \pmod p$$
-
-***Proof.*** In (2) we have established that for any $r_1, r_2$ such that $1 \leq r_1, r_2 \leq p - 1$, we have $mk \not\equiv nk \pmod{p}$. Therefore each of $(p-1)k, (p-2)k, \dots, k$ would be congruent to a different integer between $1$ and $p-1$. But since there are exactly $p-1$ integers between $1$ and $p-1$, we have 
-
-$$
-\begin{align*}
-k^{p-1}(p-1)! &\equiv (p-1)k \cdot (p-2)k \cdot \ \dots \ \cdot k \\
-&\equiv (p-1)(p-2)\dots2\cdot 1 \\
-&\equiv (p-1)!  \pmod p
-\end{align*}
-$$
-
-As an example, if $p=5$ and $k=3$, then we have:
+Given any two different probes $h + i^2$ and $h + j^2$ where $0 \leq i \le j \leq \frac{p-1}{2}$, we assume that they fall at the same location: $h + i^2 \equiv h + j^2 \pmod p$. Then we would have:
 
 $$
 \begin{gather*}
-4k \equiv 2 &\pmod 5 \\
-3k \equiv 4 &\pmod 5 \\
-2k \equiv 1 &\pmod 5 \\
-1k \equiv 3 &\pmod 5
+h + i^2 \equiv h + j^2 &\pmod p \\
+i^2 \equiv j^2 &\pmod p \\
+i^2 - j^2 \equiv 0 &\pmod p\\
+(i-j)(i+j) \equiv 0 &\pmod p
 \end{gather*}
 $$
 
-You would notice that all numbers from $ \{ 1, 2, 3, 4\}$ appear on both sides, so therefore if you multiply the equations together you would get:
+By the theorem we proved earlier, this means either $p \mid i-j$ or $p \mid i+j$.
 
-$$4k \cdot 3k \cdot 2k \cdot 1k \equiv 2\times 4 \times 1\times 3 \pmod 5$$
+However, we know this is impossible because $0 \leq i \le j \leq \frac{p-1}{2}$. Therefore, $h + i^2 \not \equiv h + j^2 \pmod p$ (i.e. the probes fall at different locations)
 
-### Excercises
+### Double Hashing
 
-(1) Prove that given a prime $p$ and integers $n$ such that $1 \leq n \leq p-1$, we have $n^{p-1} \equiv 1 \pmod{p}$.
+Another useful probing scheme is called double hashing. Similar to quadratic probing, it requires the size of the hash table to be a prime $p$. Furthermore, in addition to the primary hash function, it needs a secondary hash function that returns a number $k$ in the range $[1, p-1]$.
+
+The positions we probe would then be:
+
+$$h, h+k, h+2k, h+3k, \dots$$
+
+The nice property of double hashing is that the first $p$ locations we probe will be all unique. In other words, the first $p$ probes will cover the whole hash table!
+
+As an example, if $h=1$, $p=5$ and $k=3$, then we have:
+
+   * 1st probe: `(1 + 0 * 3) % 5 == 1`
+   * 2nd probe: `(1 + 1 * 3) % 5 == 4`
+   * 3rd probe: `(1 + 2 * 3) % 5 == 2`
+   * 4th probe: `(1 + 3 * 3) % 5 == 0`
+   * 5th probe: `(1 + 4 * 3) % 5 == 3`
+
+As you can see, all the probed locations are unique.
+
+#### Exercise 2
+
+Prove with number theory that the above property of double hashing holds.
 
 
-(2) Prove that if $n, p$ are integers and $p$ is a prime number, then
+### Fermat's Little Theorem and Prime Testing
 
-$$n^p \equiv n \pmod{p}$$
+Fermat's little theorem states that given a prime number $p$, and another number $a$ which is not a multiply of $p$, then we have:
 
-(The above is known as Fermat's Little Theorem)
+$$a^{p-1} \equiv 1 \pmod{p}$$
 
-(3) Prove that if $n, p$ are integers where $p$ is a prime number, and $n^2 \equiv 1 \pmod{p}$, then $n \equiv 1\pmod{p}$ or $n \equiv -1\pmod{p}$.
+This theorem has a useful consequence: if we are given a number $n$ and we can find some $a$ such that $a^{n-1} \not \equiv 1 \pmod{n}$, then we know for sure that $n$ is NOT a prime.
 
-- [ ] To get checked off for this lab, show your work for excercises (1), (2), (3) to a CP. If you are checking off via Piazza, please include your 10-digit USC ID and USC email in the post.
+If we try a lot of values of $a$, and all those values satisfy $a^{n-1} \equiv 1 \pmod{n}$, we could have a high confidence that $n$ is indeed prime. This method is called "Fermat primality test".
 
-In case you get bored, here is a bonus question:
+Note that "high confidence" $\neq$ "100% sure". Just like Bloom Filter, Fermat primality test could yield false positives. However, it is sufficient for the purpose of our lab. If you are interested, there are more robust primality tests out there, such as the [Miller-Rabin test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test).
 
-(4) Imgaine a new Pac-Man game where there is a $m$-by-$n$ grid, and there is a dot on every cell of the grid. Pac-Man starts at the bottom left cell, and for every step, Pac-Man does the following:
+You might be wondering why this is useful. Recall from lecture that the RSA algorithm requires the generation of two large prime numbers (they can be as large as 4096 bits). You actually did this in lab 0 when you [configured your SSH key](https://bytes.usc.edu/cs104/labs/lab0/#configuring-an-ssh-key).
 
-* Eat the dot at his position (if there is any).
+How are those prime numbers generated though? A [popular way](https://crypto.stackexchange.com/q/1970/85400) to do this is extremely straightforward:
 
-* Move one unit to the right, unless he is already on the rightmost column of the grid, in which case he is teleported to the leftmost cell of the row he is currently in.
+ 1. Pick a random 4096 bit odd number.
+ 2. Test if it is prime. If yes, return it.
+ 3. Otherwise, go back to step 1.
 
-* Move one unit to the top, unless he is already on the topmost row of the grid, in which case he is teleported to the bottom-most cell of the column he is currently in.
+Here if we use a naive method to test primes (try dividing it by every number from 1 to its square root), it would take a REALLY REALLY LONG time. Instead, we could use tests like the Fermat Test to calculate a accurate-enough result very quickly.
 
-In what condition (in terms of $m$ and $n$) would Pac-Man be able to eat all the dots on the grid?
+#### Exercise 3 (Coding)
+
+For this exercise, you are going to implement a simple version of the Fermat test.
+
+There are two functions for you to implement, both of which are in `fermat.cpp`:
+
+   * `uint32_t mod_exp(uint32_t base, uint32_t exponent, uint32_t mod)`: Calulate the value of $(base^{exponent}$ % $mod)$. You should use the [squaring technique mentioned in lecture](https://ee.usc.edu/~redekopp/cs104/slides/L19_NumberTheory.pdf) (Slide 19).
+
+   * `bool fermat_test(uint32_t n, const std::vector<uint32_t>& tests)`: Perform Fermat primality test (mentioned above) on $n$. Returns `true` if it passes the test, `false` otherwise (i.e. `false` if you know for sure that $n$ is not prime). The values of $a$ you should use are inside the vector `tests`.
+
+**Some important hints:**
+
+   * In `mod_exp`, you don't have to convert `exponent` to binary. Instead, the least significant bit can be calculated as `exponent % 2`. The next bit is `(exponent / 2) % 2`, and the next is `(exponent / 4) % 2`, etc.
+
+   * You want to use `std::uint64_t` to store intermediate results in `mod_exp`. This is because squaring a 32-bit integer can give you a result as large as 64-bits.
+
+   * You should be using `mod_exp` in your `fermat_test` function.
+
+After you finish your implementation, type `make` in your terminal to run the tests.

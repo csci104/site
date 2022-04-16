@@ -132,7 +132,7 @@ labs:
   - id: lab14
     week: Week 14
     title: Number Theory
-    assigned: false
+    assigned: true
     topics: 
   - id: lab15
     week: Week 15

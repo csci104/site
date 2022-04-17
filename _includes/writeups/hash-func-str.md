@@ -18,7 +18,7 @@ Store these values in an array (of `unsigned long long`). Place zeros in the lea
 
 We will now hash the string. Use the following formula to produce and return the final hash result using the formula below (where `m` is the size of the hashtable and the `r` values are explained below). 
 
-$$h(k) = (r[0]*w[0] + r[1]*w[1] + r[2]*w[2] + r[3]*w[3] + r[4]*w[4]) % m$$
+$$h(k) = (r[0]*w[0] + r[1]*w[1] + r[2]*w[2] + r[3]*w[3] + r[4]*w[4]) \mod m$$
 
 where the $$r[i]$$ values are either:
  - 5 random numbers created when you instantiate the hash function using the current time as your seed (i.e. `srand(time(0))`). Be sure to `#include <ctime>` and `#include <cstdlib>`.

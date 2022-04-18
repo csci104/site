@@ -10,7 +10,7 @@ First translate each letter into a value between `0` and `35`, where `a=0`, `b=1
 
 $$w[i] = 36^5*a1 + 36^4*a2 + 36^3*a3 + 36^2*a4 + 36*a5 + a6$$
 
-Place zeros in the leading positions if your (sub)string is shorter than 6 letters. So `104` would set a1, a2, and a3 all to zero and yield $$36^2*27 + 36*26 + 30$$.  You should use the base conversion approach taught in class to avoid repeated calls to `pow()`.  Note that indexing is a bit tricky here so think carefully.  The digit at the "end" of the string is assigned the power 36^0, and the 2nd to last letter is worth 36^1, etc.  
+Place zeros in the leading positions if your (sub)string is shorter than 6 letters. So an example string like `"104"` would set a1, a2, and a3 all to zero (since we only have a length 3 string) and yield $$36^2*27 + 36*26 + 30$$ (since `'1' : 27`, `'0' : 26`, and `'4' : 30`)  You should use the base conversion approach taught in class to avoid repeated calls to `pow()`.  Note that indexing is a bit tricky here so think carefully.  The digit at the "end" of the string is assigned the power 36^0, and the 2nd to last letter is worth 36^1, etc.  
 
 If an input word is longer than 6 letters, then you should first do the above process for the **last** 6 letters in the word, then repeat the process for each previous group of 6 letters.  Recall, you will never receive a word longer than 28 characters.  The last group may not have 6 letters in which case you would treat it as a substring of less than 6 characters as described above.  Since we have at most 28 characters this process should result in a sequence of no more than 5 integers: w[0] w[1] w[2] w[3] w[4], where w[4] was produced by the last 6 letters of the word.
 

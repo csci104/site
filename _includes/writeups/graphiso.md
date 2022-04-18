@@ -1,5 +1,5 @@
 In this problem, you will again use backtracking search to determine if two graphs are isomorphic.  Two graphs, $$G1$$ and $$G2$$, are said to be isomorphic if:
-  - There exists a bijection (1-to-1 and onto), $$M$$, from the vertices in G1 to the vertices in G2 (i.e. M(v1) => v2 where v1 is in G1 and v2 is in G2), such that:
+  - There exists a bijection (1-to-1), or mapping $$M$$, from the vertices of G1 onto the vertices of G2 where M(v1) => v2 for v1 in G1 and v2 in G2), such that:
     - for each edge $$(u1,v1)$$ in G1, the edge $$(M(u1), M(v1))$$ exists in G2 **AND** 
     - for each vertex, $$v1$$ in G1, $$deg(v1) = deg(M(v1))$$. 
 
@@ -21,7 +21,7 @@ private:
 };
 ```
 
-Your task is to write a function (prototyped below) to determine if the two graphs are isomorphic (as defined above) and return `true` if so, and `false`, otherwise, **AND** if you return `true` you must also provide the valid mapping of vertices in graph 1 and their corresponding mapped vertices in graph 2 that form the isomorphism (i.e. you should produce a map where the keys are the vertices from graph 1 and the values are the vertices from graph 2 to which each vertex from graph 1 maps to).  
+Your task is to write a function (prototyped below) to determine if the two graphs are isomorphic (as defined above) and return `true` if so, and `false`, otherwise, **AND** if you return `true` you must also provide the valid mapping of vertices in graph 1 and their corresponding mapped vertices in graph 2 that form the isomorphism (i.e. you should produce a map where each key represents a vertex v1 in G1 and its corresponding value represents a vertex, v2, in G2 that v1 maps onto).  
 
 To create, update, and store this mapping, you **MUST** use your hash table data structure from the previous part of this homework.  If you do not use your hash table implementation, you will **RECEIVE NO CREDIT** on this problem.
 

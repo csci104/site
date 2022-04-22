@@ -5,13 +5,17 @@ tasks: true
 title: Number Theory
 ---
 
+---
+
+This lab would be covered by lab sections between Apr. 19, 2022 and Apr. 22, 2022.
+
+You need to get checked off by a TA/CP during your assigned lab section.
+
+---
+
 ## Number Theory
 
-**WORK IN PROGRESS - NOT THE FINAL LAB**
-
-This lab would be covered in sections on Oct 26, Oct 27, Nov 4, and Nov 5. Please note that sections on Oct 28 and Oct 29 would covering the hashtable lab.
-
-### Quick review
+### Quick Review of Basic Concepts
 
 (1)
 
@@ -43,9 +47,9 @@ The above denotes the "greatest common divisor of $a$ and $b$", which is the gre
 If $gcd(a, b)=1$, then $a$ and $b$ are said to be "co-prime" or "relatively prime" to each other.
 
 
-### A Useful Theorem
+### A Helpful Theorem
 
-Here is an extremely useful theorem:
+Here is a helpful theorem to remember:
 
 * If $a \mid bc$ and $\gcd(a, b)=1$, then $a \mid c$.
 
@@ -67,7 +71,7 @@ In quadratic probing, this becomes:
 
 $$h, h + 1, h + 4, h + 9, \dots, h + i^2, \dots$$
 
-Quadratic probing has the nice property that if the size of the hash table is a prime number $p$, then the first $\frac{p-1}{2} + 1$ probed positions are going to be unique (which are $h, h + 1, \dots, h + (\frac{p-1}{2})^2$).
+Quadratic probing has the nice property that if the size of the hash table is a prime number $p$, then the first $\frac{p-1}{2} + 1$ probed positions are going to be unique ($h, h + 1, \dots, h + (\frac{p-1}{2})^2$, moduli the size of the hash table).
 
 We could prove this using contradiction:
 
@@ -84,17 +88,17 @@ $$
 
 By the theorem we proved earlier, this means either $p \mid i-j$ or $p \mid i+j$.
 
-However, we know this is impossible because $0 \leq i \le j \leq \frac{p-1}{2}$. Therefore, $h + i^2 \not \equiv h + j^2 \pmod p$ (i.e. the probes fall at different locations)
+However, this is impossible since $0 \leq i \le j \leq \frac{p-1}{2}$. Therefore, $h + i^2 \not \equiv h + j^2 \pmod p$ (i.e. the probes fall at different locations)
 
 ### Double Hashing
 
-Another useful probing scheme is called double hashing. Similar to quadratic probing, it requires the size of the hash table to be a prime $p$. Furthermore, in addition to the primary hash function, it needs a secondary hash function that returns a number $k$ in the range $[1, p-1]$.
+Another common probing scheme is called double hashing. Similar to quadratic probing, it requires the size of the hash table to be a prime number $p$. Furthermore, in addition to the primary hash function, it needs a secondary hash function that returns a number $k$ in the range $[1, p-1]$.
 
 The positions we probe would then be:
 
 $$h, h+k, h+2k, h+3k, \dots$$
 
-The nice property of double hashing is that the first $p$ locations we probe will be all unique. In other words, the first $p$ probes will cover the whole hash table!
+The nice property of double hashing is that the first $p$ locations we probe will all be unique. In other words, the first $p$ probes will cover the whole hash table!
 
 As an example, if $h=1$, $p=5$ and $k=3$, then we have:
 
@@ -108,16 +112,18 @@ As you can see, all the probed locations are unique.
 
 #### Exercise 2
 
-Prove with number theory that the above property of double hashing holds.
+Prove with number theory that the above property of double hashing holds. (Hint: check out the proof for quadratic probing)
 
 
 ### Fermat's Little Theorem and Prime Testing
 
-Fermat's little theorem states that given a prime number $p$, and another number $a$ which is not a multiply of $p$, then we have:
+Here is another practical use of number theory, which involves a theorem called Fermat's little theorem (not to be confused with the other well-known but much complicated Fermat's last theorem).
+
+Fermat's little theorem states that given a prime number $p$, and another number $a$ which is not a multiply of $p$, we have:
 
 $$a^{p-1} \equiv 1 \pmod{p}$$
 
-This theorem has a useful consequence: if we are given a number $n$ and we can find some $a$ such that $a^{n-1} \not \equiv 1 \pmod{n}$, then we know for sure that $n$ is NOT a prime.
+The immediate consequence of the above is that if we are given a number $n$ and we can find some $a$ such that $a^{n-1} \not \equiv 1 \pmod{n}$, then we know for sure that $n$ is NOT a prime.
 
 If we try a lot of values of $a$, and all those values satisfy $a^{n-1} \equiv 1 \pmod{n}$, we could have a high confidence that $n$ is indeed prime. This method is called "Fermat primality test".
 
@@ -131,7 +137,7 @@ How are those prime numbers generated though? A [popular way](https://crypto.sta
  2. Test if it is prime. If yes, return it.
  3. Otherwise, go back to step 1.
 
-Here if we use a naive method to test primes (try dividing it by every number from 1 to its square root), it would take a REALLY REALLY LONG time. Instead, we could use tests like the Fermat Test to calculate a accurate-enough result very quickly.
+Here if we use a naive method to test primes (try dividing it by every number from 1 up until its square root), it would take a REALLY REALLY LONG time. Instead, we could use tests like the Fermat Test to get a accurate-enough result very quickly.
 
 #### Exercise 3 (Coding)
 
@@ -145,7 +151,7 @@ There are two functions for you to implement, both of which are in `fermat.cpp`:
 
 **Some important hints:**
 
-   * In `mod_exp`, you don't have to convert `exponent` to binary. Instead, the least significant bit can be calculated as `exponent % 2`. The next bit is `(exponent / 2) % 2`, and the next is `(exponent / 4) % 2`, etc.
+   * In `mod_exp`, you don't have to convert `exponent` to binary (in lecture you receive a `std::vector<bool>` as input). Instead, the least significant bit can be calculated as `exponent % 2`. The next bit is `(exponent / 2) % 2`, and the next is `(exponent / 4) % 2`, etc.
 
    * You want to use `std::uint64_t` to store intermediate results in `mod_exp`. This is because squaring a 32-bit integer can give you a result as large as 64-bits.
 
@@ -153,3 +159,6 @@ There are two functions for you to implement, both of which are in `fermat.cpp`:
 
 After you finish your implementation, type `make` in your terminal to run the tests.
 
+### Checking Off
+
+To get checked off, complete all three exercises in this lab and show your results to a CP/TA.

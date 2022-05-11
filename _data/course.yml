@@ -1,71 +1,21 @@
-semester: Spring 2022
-short: usc-csci104-spring2022
+semester: Summer 2022
+short: usc-csci104-summer2022
 
 sections:
   lectures:
-    - id: 29968
-      days: Monday, Wednesday
-      time: 10:00 AM to 11:40 PM PST
-      location: SGM 101
-      instructors: Mark Redekopp
-    - id: 30001
-      days: Monday, Wednesday
-      time: 2:00 PM to 3:40 PM PST
-      location: THH 101
+    - id: 29903
+      days: Tuesday, Thursday
+      time: 9:30 AM to 11:45 PM Pacific
+      location: SLH 100
       instructors: Mark Redekopp
   labs:
-    - id: 30294
-      days: Tuesday
-      time: 1:00 PM to 2:50 PM PST
-      location: SAL 126
-      instructors: Eli Morris
-    - id: 30200
-      days: Tuesday
-      time: 3:30 PM to 5:20 PM PST
-      location: SAL 126
-      instructors: Leo Zhuang
-    - id: 30238
-      days: Tuesday
-      time: 5:30 PM to 7:20 PM PST
-      location: SAL 126
-      instructors: Krishna Kadam
-    - id: 29915
+    - id: 29904
       days: Wednesday
-      time: 12:00 PM to 1:50 PM PST
+      time: 10:00 AM to 11:50 AM Pacific
       location: SAL 126
-      instructors: Mila Mathias
-    - id: 30286
+      instructors: Staff
+    - id: 29959
       days: Wednesday
-      time: 12:00 PM to 1:50 PM PST
-      location: SAL 109
-      instructors: Alexander Morgan
-    - id: 30394
-      days: Wednesday
-      time: 2:00 PM to 3:50 PM PST
-      location: SAL 109
-      instructors: Billy Wang
-    - id: 29914
-      days: Wednesday
-      time: 4:00 PM to 5:50 PM PST
+      time: 10:00 AM to 11:50 AM Pacific
       location: SAL 126
-      instructors: Trevor Asbery
-    - id: 29912
-      days: Wednesday
-      time: 5:00 PM to 6:50 PM PST
-      location: SAL 109
-      instructors: Mellissa Zhang
-    - id: 30379
-      days: Thursday
-      time: 2:00 PM to 3:50 PM PST
-      location: SAL 127
-      instructors: Louis Addison
-    - id: 30167
-      days: Friday
-      time: 12:00 PM to 1:50 PM PST
-      location: SAL 109
-      instructors: Anoushka Agrawal
-    - id: 30293
-      days: Friday
-      time: 2:00 PM to 3:50 PM PST
-      location: SAL 126
-      instructors: Olivia Du
+      instructors: Staff

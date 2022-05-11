@@ -7,243 +7,174 @@ show:
 exams:
 
   - name: MT1 
-    time: Thurs, March 3 at 7 PM Pacific
-    location: TBA
-    link: mt1-info/
+    time: Wed, June 29 at 10 AM Pacific
+    location: Online
+    link: mt1-info.html
 
   - name: Final
-    time: Wed, May 4 at 8 AM Pacific
-    location: TBA
-    link: final-info/
+    time: Tues, July 19 at 9:30 AM Pacific
+    location: Online
+    link: final-info.html
 
 lectures:
 
-  # 1 Mon 1/10
+  # 1 Thurs May 20
   - topics:
       - Course overview
       - Motivation for Data Structures
-      - Review (Memory Allocation)
+      - Review (Memory Allocation, Classes, Runtime)
     chapters:
       - Chapter 1.1-1.5
       - Chapter 2
     notes:
       - L01_Overview.pdf
       - L02a_MemAlloc.pdf
+      - L02b_Classes.pdf
+      - L02d_Runtime.pdf
     recording: 
 
-  # 2 Wed 1/12
+  # 2 Tues May 25
   - topics:
       - Classes (Initialization Lists)
+      - Operator Overloading
       - Linked Lists
+      - Recursion
     chapters:
       - Chapter 1.4
       - Chapter 3.3-3.5    
       - Chapter 1.3
     notes: 
       - L02b_Classes.pdf
+      - L02c_OperatorOverloading.pdf
       - L02e_LinkedLists.pdf
+      - L03_Recursion.pdf
     recording: 
     
-  # 3 Mon 1/17
-  - topics:
-      - MLK Holiday
-    chapters:
-    notes: 
-    recording: 
-
-  # 4 Wed 1/19
-  - topics:
-      - Linked Lists (cont.)
-      - Operator Overloading Review (if time)
-      - Runtime
-    chapters:
-      - Chapter 1.4
-      - Chapter 3.3-3.5    
-      - Chapter 1.3
-    notes: 
-      - L02e_LinkedLists.pdf
-      - L02c_OperatorOverloading.pdf
-      - L02d_Runtime.pdf
-    recording: 
-
-  # 5 Mon 1/24
+  # 3 Thurs May 27
   - topics:
       - Recursion
-      - Copy Semantics (self review)
+      - Copy Semantics
+      - ADTs
+      - STL
     chapters:
       - Chapter 1.3, 1.5
       - Chapter 3.1-3.3, 4.8
     notes:
-      - L03_Recursion.pdf
       - L02f_CopyConstructors.pdf
-    recording: 
-    
-  # 6 Wed 1/26
-  - topics:
-      - Recursion
-      - ADTs
-      - STL
-    chapters:
-      - Chapter 3.3,4.8
-      - Course Notes
-    notes: 
       - L04_ADTs.pdf
       - L05_STL.pdf
     recording: 
     
-  # 7 Mon 1/31
+  # 4 Tues Jun 1
   - topics:
       - STL
       - Inheritance
       - Polymorphism
     chapters:
-      - Chapter 3.6-3.7
+      - Chapter 3.3,4.8
+      - Course Notes
     notes: 
       - L05_STL.pdf
       - L06a_Inheritance.pdf
+      - L06b_Polymorphism.pdf
+    recording: 
+    
+  # 5 Thurs Jun 3
+  - topics:
+      - Review (Polymorphism, STL)
+      - Stacks and Queues
+    chapters:
+      - Chapter 3.6-3.7
+    notes: 
+      - L07_QueueStackDeque.pdf
     recording: 
 
-  # 8 Wed 2/2
+  # 6 Tues Jun 8
   - topics:
-      - Polymorphism
-      - ArrayLists 
-    chapters:
-      - Chapter 3.6-3.7
-    notes: 
-      - L06b_Polymorphism.pdf
-      - L07_QueueStackDeque.pdf
-
-  # 9 Mon 2/7
-  - topics:
-      - Stacks and Queues
       - Templates
+      - Trees and Heaps 
     chapters:
-      - Chapter 3.6-3.7
       - Chapter 1.6
-    notes: 
-      - L07_QueueStackDeque.pdf
-      - L08_Templates.pdf
-
-  # 10 Wed 2/9
-  - topics:
-      - Templates
-      - Trees
-    chapters:
       - Chapter 4.1-4.2
-    notes: 
-      - L09_PQHeaps.pdf
-
-  # 11 Mon 2/14
-  - topics:
-      - Heaps
-    chapters:
       - Chapter 6.1-6.5   
+    notes: 
+      - L08_Templates.pdf
+      - L09_PQHeaps.pdf
+      
+  # 7 Thurs Jun 10
+  - topics:
+      - More Heaps
+      - Graphs
+    chapters:
       - Chapter 9.1
     notes: 
-      - L09_PQHeaps.pdf
-
-  # 12 Wed 2/16
-  - topics:
-      - Heapsort and build-heap
-      - Graph Algorithms
-    chapters:
-      - Chapter 9.3
-    notes: 
       - L10_GraphsAlgorithms.pdf
-
-  # 13 Mon 2/21
+         
+  # 8 Tues Jun 15
   - topics:
-      - President's Day Holiday
-    chapters:
-    notes: 
- 
-  # 14 Wed 2/23
-  - topics:
-      - Graph Traversals
+      - Graph Algorithms
       - Tree Traversals
     chapters:
-      - Chapter 9.2-9.3,9.6
-      - Chapter 4.1-4.2,4.6
+      - Chapter 9.3
+      - Chapter 4.1-4.2
     notes: 
       - L11_GraphTraversals.pdf
-
-  # 15 Mon 2/28
+ 
+  # 9 Thurs Jun 17
   - topics:
       - Recursion - All combinations
-    chapters:
-      - Chapter 2
-      - Class Notes
-    notes: 
-      - L12_BacktrackingSearch.pdf
-
-  # 16 Wed 3/2
-  - topics:
-      - Midterm Review
-    chapters:
-    notes: 
-
-  # 17 Mon 3/7
-  - topics:
       - Recursion - Backtracking
       - Iterators
     chapters:
-      - Chapter 4.3-4.4
+      - Class Notes
     notes: 
+      - L12_BacktrackingSearch.pdf
       - L13_Iterators.pdf
+      - L14_BalancedBST_AVL.pdf
 
-  # 18 Wed 3/9
+  # 10 Tues Jun 22
   - topics:
       - Binary Search Trees
+      - AVL Trees
     chapters:
       - Chapter 4.3-4.4
     notes: 
       - L14_BalancedBST_AVL.pdf
 
-  # 19 Mon 3/21
-  - topics:
-      - AVL Trees
-    chapters:
-      - Chapter 4.4-4.5,4.7
-    notes: 
-      - L14_BalancedBST_AVL.pdf
-      - L14_BalancedBST_AVL_Handout.pdf
-
-  # 20 Wed 3/23
+  # 11 Thurs Jun 24
   - topics:
       - Splay Trees
       - Hash Table introduction
     chapters:
-      - Chapter 4.7,5.1,5.3
+      - Chapter 4.5
+      - Chapter 5.1-5.3
     notes: 
       - L15_SplayTrees.pdf
+      - L16_HashTables.pdf
 
-  # 21 Mon 3/28
+  # 12 Tues Jun 29
   - topics:
-      - Hash Table introduction
+      - Midterm Review
       - Counting
     chapters:
       - Chapter 5.1-5.3
       - Lewis & Zax Chapter 22
     notes: 
       - L16_HashingIntro.pdf
+      - L17_Counting.pdf
 
-  # 22 Wed 3/30
+  # 13 Thurs July 1
   - topics:
       - Counting
+      - Probability
     chapters:
+      - Chapter 5.1-5.3
       - Lewis & Zax Chapter 23
+      - Lewis & Zax Chapter 26
     notes: 
       - L17_Counting.pdf
 
-  # 23 Mon 4/4
-  - topics:
-      - Probability
-    chapters:
-      - Lewis & Zax Chapter 26
-    notes: 
-      - L18_Probability.pdf
-
-  # 24 Wed 4/6
+  # 14 Tues July 6
   - topics:
       - Probability
     chapters:
@@ -252,8 +183,9 @@ lectures:
     notes: 
       - L18_Probability.pdf
 
-  # 25 Mon 4/11
+  # 15 Thurs July 8
   - topics:
+      - Probability (cont.)
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 29
@@ -261,49 +193,32 @@ lectures:
     notes: 
       - L19_NumberTheory.pdf
  
-  # 26 Wed 4/13
+  # 16 Tues July 13
   - topics:
-      - Number Theory
-      - Hash Functions
-    chapters:
-      - Lewis & Zax Chapter 31
-    notes: 
-      - L19_NumberTheory.pdf
-      - L20_HashFunctions.pdf
- 
-  # 27 Mon 4/18
-  - topics:
-      - Hash Functions and Bloom Filters 
-    chapters:
-      - Chapter 5
-    notes: 
-      - L20_HashFunctions.pdf
-
-  # 28 Wed 4/20
-  - topics:
+      - Hash Functions & Bloom Filters
       - Tries
-      - Skip Lists
+      - (Skip Lists, if time)
     chapters:
-      - Chapter 5
-      - Chapter 12.4, 11.1, 11.5
+      - Chapter 12.4.2
     notes: 
-      - L22_Tries.pdf
+      - L20_HashFunctions.pdf
       - L21_SkipLists.pdf
+      - L22_Tries.pdf
 
-  # 29 Mon 4/25
+  # 17 Thurs July 15
   - topics:
       - Amortized Analysis
       - Merge Trees
+      - Review and Wrapup
     chapters:
-      - Chapter 11.1,11.5
+      - Chapter 12.4.2
     notes: 
       - L23_AmortizedAnalysis.pdf
       - L24_MergeTrees.pdf
 
-  # 30 Wed 4/27
+  # 18 Tues July 20
   - topics:
-      - Final Review
+      - Final
     chapters:
-      - Class notes
     notes: 
-      - L25_Review.pdf
+

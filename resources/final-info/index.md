@@ -11,13 +11,18 @@ nav: Resources
 - Time/Date: **{{site.data.schedule.exams[1].time}}**
   - The test will be set for **2 hours.**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- The test will be taken on Gradescope by logging into our Blackboard section, choose Assignmentments, and click on the Gradescope link. You will then find a **Final** assignment where you will be able to see the questions as simple HTML or download a PDF of the questions.  The skeleton files will be downloadable (linked) from the PDF and Gradescope page.  All answers need to be entered or uploaded to Gradescope, but you may use scratch paper to work out a problem. You can write your code in an editor and even try to compile and run if you like, but we are not expecting you do that and it will take away time from coding the other problems. While it might be useful to compile, we don't recommend running and debugging unless you have time.
+- Location: **THH 101 and THH 201** (you may go to either room leaving a blank seat between each student)
+  - If you have **1.5x time accommodations** you will be in **THH 116**
+  - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
+  
+- The test will be taken on a combination of paper (for problems requiring diagrams, tracing, or runtime) and Gradescope.  Gradescope can be accessed by logging into our Blackboard section, choose Assignments, and click on the Gradescope link. You will then find a **Final - Coding** assignment (once the exam begins) where you will be able to find, textboxes for some answers to certain questions and links to skeleton files and upload your completed files.  For coding questions, you will write code on your laptop and then uploading the `.cpp` file.  Skeleton files will be linked directly from Gradescope and you can download them, edit them, and upload your final code.  You can write your code in any editor and even try to compile and run if you like, but we are not expecting you do that and it will take away time from coding the other problems. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).  No automated tests will be provided since we don't expect you to compile and run your code.
+- You will be given a paper exam that includes all questions and has room for the written answers
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, an editor and/or compiler, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
-- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No printed cheat sheets.  You will be asked to submit a picture of each side on Gradescope.
+- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 ### Topics and Style
 
-The midterm will include a mix of anlaysis and coding problems.  For anlaysis problems (tracing a recursive routine, describing a class hierarchy or appropriate ADTs), you can just type your answers into Gradescope.  For coding problems you must **upload** completed `.cpp` files.
+The final will include a mix of anlaysis and coding problems.  
 
 #### Unit 11 - Tree and Graph Traversals
  - Breadth- and Depth-first search
@@ -41,6 +46,13 @@ The midterm will include a mix of anlaysis and coding problems.  For anlaysis pr
  - Runtime properties
  - How to splay an element to the top
  - How insert, find, and remove work
+
+#### Unit 16 - Hash Tables
+ - Properties of hash functions
+ - Dealing with collisions
+  - Closed addressing: chaining or buckets
+  - Open addressing: probing (linear, quadratic, double-hashing)
+ - Runtime and relationship to loading factor
 
 #### Unit 17 - Counting
  - All relevant counting rules and approaches taught in lecture and on HW
@@ -66,11 +78,6 @@ The midterm will include a mix of anlaysis and coding problems.  For anlaysis pr
  - Solving Diophantine equations
 
 #### Unit 20 - Hash Tables, Functions, and Bloom Filters
- - Properties of hash functions
- - Dealing with collisions
-  - Closed addressing: chaining or buckets
-  - Open addressing: probing (linear, quadratic, double-hashing)
- - Runtime and relationship to loading factor
  - One-way / cryptographic hash functions
  - Bloom filter pros and cons
  - Bloom filter operations (insert and find)

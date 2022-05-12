@@ -2,9 +2,9 @@
 layout: asides
 toc: true
 tasks: false
-title: Homework 2
+title: Homework 3
 nav: assignments
-hwpath: hw2
+hwpath: hw3
 
 ---
 
@@ -20,7 +20,7 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 ## Written Portion
 
 
-{% for part in site.data.hws.hw2.written_parts %}
+{% for part in site.data.hws.hw3.written_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
@@ -31,7 +31,7 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 ## Programming Portion
 
-{% for part in site.data.hws.hw2.programming_parts %}
+{% for part in site.data.hws.hw3.programming_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
@@ -39,6 +39,13 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 {% endfor %}
 
+## Checkpoint
+
+For checkpoint credit, submit your working code for the linked list recursion problem. Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
+
+  - Your `Makefile` and **all necessary source code files** so that running `make llrec-test` will compile and create a working executable: `llrec-test` that we can test.  Failure to compile will result in 0 credit for your checkpoint.  There should also be no memory/Valgrind errors of any kind when we run your test on any valid input file. It is fine to push input test files if you like, though we will not grade them.
+
+  - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
 
 ## Submission Files
 

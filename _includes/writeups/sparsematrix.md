@@ -8,7 +8,7 @@ In this problem you will apply and deepen your linked list programming skills by
 
 A **sparse matrix** is one where the majority of entries are `0`.  Due to this characteristic, we can save memory (and potentially time) by **only storing non-zero entries**. One approach to doing this is to use linked lists to only store the **non-zero cells**. Since we do not have an entry at every row/column index, each cell must store the row/column coordinates to which it corresponds along with its data value and necessary linked list pointers.  So that we can scan quickly down either a row or a column we will choose to make each cell a member of two linked lists:  a row linked list and a column linked list.  Each list is a doubly-linked list to support faster insertions and removals. (*You may wish to spend a moment considering why a singly-linked list would make insertion/removal less efficient*).  Thus the overall sparse matrix would resemble the diagram below for a **4x4** matrix.  Notice, there is an array of head pointers for the row lists on the far left and another array of head pointers for the column lists on the top.
 
-<img src="{{site.url}}/assignments/img/spmat1.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat1.png" alt="" width="100%"/> 
 
 ### Provided Implementation
 
@@ -71,19 +71,19 @@ For the `SparseMatrix` class, you will need to complete the following operations
 
 Suppose we create the following 4x4 `SparseMatrix` (`n=4`):
 
-<img src="{{site.url}}/assignments/img/spmat1.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat1.png" alt="" width="100%"/> 
 
 If we then perform a **set** operation on coordinate `{0,0}` with value `1.8`, a new `SparseItem` should be created in that location and added to the appropriate linked lists, resulting in the following.
 
-<img src="{{site.url}}/assignments/img/spmat2.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat2.png" alt="" width="100%"/> 
 
 If we then perform a **set** operation on coordinate `{1,2}` to value `0`, the `SparseItem` that in that location should be deleted (since we do not store values of 0).  The resulting matrix is shown below.
 
-<img src="{{site.url}}/assignments/img/spmat3.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat3.png" alt="" width="100%"/> 
 
 Finally, if we perform a `copyDim` operation from **row 3** to **column 2** (i.e. `SparseMatrix::copyDim({3,SparseMatrix::npos}, {SparseMatrix::npos,2})` ) then the old contents of column 2 should be removed (taking care not to delete an item that is also in the source dimension), and the elements from source row 3 should be copied into column 2.  **Note:** the source dimension may be modifed by this operation when copying from one row/column to the opposite (as seen here).
 
-<img src="{{site.url}}/assignments/img/spmat4.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat4.png" alt="" width="100%"/> 
 
 ### Notes and Other Info
 

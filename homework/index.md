@@ -6,12 +6,12 @@ title: Homework
 
 # Homework
 
-Homework will be assigned once every **2 weeks**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homeworks will typically contain a mix of programming exercises and "theory" questions about data structures and their implementation.  
+Homework will be assigned once every **7-10 days**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homeworks will typically contain a mix of programming exercises and "theory" questions about data structures and their implementation.  
 
 
 Each student will receive a private code repository on the course's [GitHub Organization]( {{ site.data.urls.github }}) to use it for the development and submission of all assignments. You will be using the **git** source code management tool to maintain your homework code. 
 
-Please read the submission instructions and policies below **carefully**!
+Please read the submission instructions and policies below **carefully**!  Failure to follow the process (of pushing the appropriate files to Github and submitting your git commit SHA on our website) will result in a 0 on the assignment. 
 
 <h2 id="schedule">Schedule</h2>
 <table class="standard assignments hover click">
@@ -74,19 +74,18 @@ You WILL lose points for submitting unreadable code, or for failing to follow su
 
 ## Policies
 
-There will be **6 assignments** due roughly every **2 weeks**.  In CS 104 we do not accept late submissions (except in the cases outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 2 weeks per assignment should allow you to finish with ample time if you **start early** and **work consistently**, we will provide **5 grace days** to be used over the semester with a **maximum of 2 grace days allowed per assignment**. 48 hours after the due date, no submissions will be allowed.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone. 
+There will be **6 assignments**.  In CS 104 we do not accept late submissions (except in the cases outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 7-10 days per assignment should allow you to finish on time if you **start early** and **work consistently**, we will provide **5 grace days** to be used over the semester with a **maximum of 2 grace days allowed per assignment**. 48 hours after the due date, no submissions will be allowed.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone. 
 
-In this age of COVID, TrojanCheck, etc. we realize that being sick or having sick family may preclude you from working on your assignments as you would be able to otherwise.  If a confirmed COVID-related illness or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}) and make a private note on Piazza to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment.
+In this age of COVID, we realize that being sick or having sick family may preclude you from working on your assignments as you would be able to otherwise.   If a confirmed COVID-related illness or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}) and make a private note on Piazza to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment. **Note:** A minor illness a few days before the deadline  or a trip home to see family does not qualify for an extension. Start early anticipating that things may come up closer to the deadline.  If you have not started early and ask for an extension, your request may be rejected. Commit and push your intermediate work often as a record of your effort on an assignment.
 
 For non-emergency issues (especially those close to the deadline), extensions are generally not applicable. Instead, **your grace days** are available and should be conserved for such circumstances.
 
-In addition, **starting early** can help offset any blocks to working on and completing your assignment.  The most consistent advice from students who have done well in CS 104 is (you guessed it): **start early!**  Thus, we are implementing a **checkpoint** for each assignment.  These are milestones in the assignment that should be relatively easy to achieve but that you must complete by a certain date (usually 4-7 days) BEFORE the full due date (to ensure you start early).  By submitting your checkpoint you earn **5 points extra credit** to be applied to your assignment, though capping at 100%.  So if you completed the checkpoint, and then got 87/100 after the HW is graded, you would be boosted to 92/100.  If you got 97/100, you'd be boosted to 100. However, You do NOT have to do the checkpoint if you so choose. You can still earn 100/100 on the HW. Your will simply keep whatever score you have earned after the grading process. Details of each checkpoint will be described in the assignment writeup.  (Note: that consistently meeting the checkpoints may also be used when weighing borderline grades or other requests).  
-
+The most consistent advice from students who have done well in CS 104 is (you guessed it): **start early!**  
 
 ## Grade Disputes
 We will work hard to post HW scores and feedback within 1-2 weeks of the homework's due date. Exams will typically be graded within at most a few days of the exam date. If you have not received your score on a particular HW even though most other students in the class have (say, 24 hours after the score release date), post a private note on Piazza and someone will then follow up with your grader.
 
-Any disputes with posted grades **must** be raised within **7 days** of the score posting.  Then follow the process below for the type of regrade you are requesting.
+Any disputes with posted grades **must** be raised within **7 days** (unless specifically noted) of the score posting.  Then follow the process below for the type of regrade you are requesting.
 
 ### HW Regrades
 Fill out this [**HW regrade form**]({{site.data.urls.hw_regrade_form}}) and wait for someone to be in touch with you, usually via an issue being posted on your Github repo issue tracker.  You may also visit the designated regrade TA within 1 week of your score posting.  If you do not hear from someone within a few days post a private note on Piazza listing the issue.  Notice that any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  If you do not submit your regrade in **7 days** you are *NOT* eligible for a regrade, even if it is our grading mistake.  Be prompt and do not delay reviewing your HW grades.

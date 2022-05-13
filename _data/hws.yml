@@ -36,7 +36,7 @@ hw2:
       number: 2
       title: Makefiles
       points: 8
-    - writeup: adt.md
+    - writeup: adt-su21.md
       number: 3
       title: ADTs
       points: 6

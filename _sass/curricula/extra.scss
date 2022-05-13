@@ -1,0 +1,67 @@
+@import 'theme';
+
+.paragraph {
+  margin: 1em 0;
+}
+
+.font-bold {
+  font-weight: normal;
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.background-color-primary-light {
+  background-color: var(--color-background-primary-light);
+}
+
+.display-none {
+  display: none !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.float-right {
+  float: right;
+}
+
+.button-navigation {
+  margin-top: 2em;
+}
+
+.bump {
+  margin-top: 4em;
+}
+
+.lines, .line {
+  margin-bottom: 0.25em;
+  display: block
+}
+
+.lines > * {
+  display: block;
+}
+
+.line {
+  display: block;
+}
+
+* + .after-empty {
+  display: none
+}
+
+*:empty + .after-empty {
+  display: block
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+h2.bordered {
+  padding-bottom: 4px;
+  border-bottom: 1px solid gray;
+}

@@ -1,0 +1,26 @@
+@import "theme";
+
+.card {
+  display: block;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  margin-bottom: 0.5em;
+  background-color: var(--color-background-accent);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #DFDFDF;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .description {
+    color: gray;
+    line-height: 1.2;
+    margin-top: 0.35em;
+    margin-bottom: 0.15em;
+  }
+}

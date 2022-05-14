@@ -32,7 +32,7 @@ Do that before proceeding.
 ## Register with Curricula
 
 Curricula is our home-grown classroom software suite that we'll be using to handle things like submission, grading, and office hours.
-Your next link your USC ID and GitHub account via the <a href="{{ site.baseurl }}/account/register/" target="_blank">registration page</a>.
+Your next link your USC ID and GitHub account via the <a href="{{ site.baseurl }}/account/login/?next=/cs104/account/" target="_blank">registration page</a>. If you've take the class in the past and have an account with our "Curricula" system, just login with Github. Otherwise, if this is your first time, just click **Register** and go through the process of creating an account.  Though you'll enter a username and password, you should use the "Login with Github" each subsequent time you need to login.  It will authenticate you automatically when you click that button.
 
 This step is particularly important because it will also kickstart the processes that create your homework repository and add you to the necessary GitHub groups.
 

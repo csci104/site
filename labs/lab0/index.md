@@ -55,7 +55,7 @@ If you have more experience with git or other command line tools, installing git
 ## Virtual Machine
 
 We have two options for running the compiler tools that we will use for grading.
-While you are welcome to use any editor/IDE to develop your homework code, you must run your code (and any of our tests) in a Linux virtual environment using a Linux VM, Docker, or some similar solution of your creation.
+While you are welcome to use any editor/IDE to develop your homework code, you must compile and run your code (and any of our tests) in a Linux virtual environment using a Linux VM, Docker, or some similar solution of your creation.
 
 We offer two solutions: a traditional VM and Docker.
 **We recommend Docker, as it avoids emulating an entire desktop by giving you easy and low-latency command-line access to all the tools you need**.
@@ -111,8 +111,7 @@ Enter file in which to save the key (/home/cs104/.ssh/id_rsa):
 ```
 
 After that, you will be prompted for a passphrase to secure your private key.
-It is a good idea to secure your key with a passphrase, though **it is optional**.
-Note that your password will not show up in terminal as you type it.
+**We recommend you do NOT generate a passphrase (because you'll have to enter it each time you upload your code to Github) and simply hit Enter when prompted for a passphrase**.  If you do decide to enter a passphrase, please note that your password will not show up in terminal as you type it.
 When you are done typing your password (don't enter anything if you do not wish to set a passphrase), press `enter`.
 You will be prompted to verify your passphrase.
 Re-enter your passphrase (or nothing if you did not set one) and press `enter`.
@@ -247,7 +246,7 @@ In your [SSH key settings](https://github.com/settings/ssh):
 - Click `Add SSH Key`.
 - Provide a name for the key, such as "CS104 VM Key" or "MacBook Key".
 - Display the contents of your `id_rsa.pub` file by running `cat ~/.ssh/id_rsa.pub` in your terminal.
-- Copy the contents of your `id_rsa.pub` file and paste them into the key field.
+- Select all the contents of your `id_rsa.pub` file all the way through the end of the last line where your email is displayed and then copy/paste them into the key field.
   Make sure you copy the entire contents of the `id_rsa.pub` file.
   It should start with `ssh-rsa` and end with your email address.
 - Click `Add Key`.

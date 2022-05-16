@@ -19,8 +19,8 @@ hwpath: hw1
 
 ### A Few Notes on Repositories
 
-1. Never clone one repo into another.  If you have a folder `cs104` on your VM, Docker, or laptop (wherever you created your Github keys from Lab 1) and you clone your personal repo `hw-username` under it (i.e. `cs104/hw-username`) then whenever you want to clone some other repo, you need to do it back up in the `cs104` folder or other location, NOT in the `hw-username` folder.
-1. Your repos may not be ready immediately but be sure to create your GitHub account described in Lab 0 on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.urls.piazza}}) to let your instructors know that your repository needs to be created.  Be sure to include your USC username and github username for reference.
+1. Never clone one repo into another.  If you have a folder `cs104` on your laptop (wherever you created your Github keys from Lab 0) and you clone your personal repo `hw-username` under it (i.e. `cs104/hw-username`) then whenever you want to clone some other repo, you need to do it back up in the `cs104` folder or other location, NOT in the `hw-username` folder.
+1. Your repo is created when you register with our website (aka `curricula` system) as outlined in the Lab 0 writeup on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps, accepted the invite to the Github organization that should be generated and emailed to you after you register with our website, and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.urls.piazza}}) to let your instructors know that your repository needs to be created.  Be sure to include your USC username and github username for reference.
 
 ### Skeleton Code
 

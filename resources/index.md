@@ -39,6 +39,9 @@ Switch to a professional-level environment or editor, such as the following:
 
 - [VARC](http://viterbi.usc.edu/varc/) offers tutoring for this class.
 
+<!--
 ## Background Lectures
 
  - Mark Redekopp put together [several lectures](http://ee.usc.edu/~redekopp/csmodules.html) recapping material that you should have learned in CSCI 103. These may be particularly helpful if you are a transfer student and your intro class was not as comprehensive as CSCI 103.
+
+ -->

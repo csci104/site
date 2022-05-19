@@ -52,8 +52,6 @@ lectures:
     
   # 3 Thurs May 27
   - topics:
-      - Recursion
-      - Copy Semantics
       - ADTs
       - STL
     chapters:

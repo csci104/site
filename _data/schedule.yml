@@ -22,7 +22,7 @@ lectures:
   - topics:
       - Course overview
       - Motivation for Data Structures
-      - Review (Memory Allocation, Classes, Runtime)
+      - Review (Memory Allocation, Classes, Linked Lists)
     chapters:
       - Chapter 1.1-1.5
       - Chapter 2
@@ -30,14 +30,14 @@ lectures:
       - L01_Overview.pdf
       - L02a_MemAlloc.pdf
       - L02b_Classes.pdf
-      - L02d_Runtime.pdf
+      - L02e_LinkedLists.pdf
     recording: 
 
   # 2 Tues May 25
   - topics:
       - Classes (Initialization Lists)
       - Operator Overloading
-      - Linked Lists
+      - Runtime
       - Recursion
     chapters:
       - Chapter 1.4
@@ -46,7 +46,7 @@ lectures:
     notes: 
       - L02b_Classes.pdf
       - L02c_OperatorOverloading.pdf
-      - L02e_LinkedLists.pdf
+      - L02d_Runtime.pdf
       - L03_Recursion.pdf
     recording: 
     

@@ -135,7 +135,7 @@ labs:
     assigned: true
     topics:
   - id: lab13
-    week: Week 7
+    week: Week 9
     title: Hashtable
     assigned: true
     topics: Hashtable

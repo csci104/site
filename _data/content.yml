@@ -121,7 +121,7 @@ labs:
   - id: midterm
     week: Week 7
     title: Midterm 
-    assigned: true 
+    assigned: false 
     topics: 
   - id: lab11
     week: Week 8

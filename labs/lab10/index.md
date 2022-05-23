@@ -7,7 +7,7 @@ title: Tree Traversal
 
 ---
 
-**This lab is held during Mar 22, 2022 and Mar 25, 2022. You have to get checkedoff during your registered lab section.**
+**Due at the end of your registered lab section**
 
 ---
 

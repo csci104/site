@@ -7,8 +7,7 @@ title: Hashtables
 
 ---
 
-This lab requires checkoff. You have to get checked off by a TA/CP during
-your assigned lab section between Mar. 29, 2022 and Apr. 1, 2022
+**Due at the end of your registered lab section**
 
 ---
 

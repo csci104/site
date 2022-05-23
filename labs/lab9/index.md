@@ -7,8 +7,7 @@ title: Recursive Backtracking
 
 ---
 
-**This lab requires checkoff, and it is due before the end of your
-registered lab section during Mar. 8 and Mar. 11, 2022.**
+**Due at the end of your registered lab section**
 
 ---
 

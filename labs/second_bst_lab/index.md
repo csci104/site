@@ -5,9 +5,11 @@ tasks: true
 title: BST Basics
 ---
 
-**Due Nov 12 @ 7pm**
+---
 
-**Note:** This lab will be covered during sections on Nov 2, Nov 3, Nov 11, and Nov 12.
+**Due at the end of your registered lab section**
+
+---
 
 ## BST Basics
 

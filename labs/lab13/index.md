@@ -7,9 +7,7 @@ title: Probability Theory
 
 ---
 
-This lab would be covered by lab sections between Apr. 12, 2022 and Apr. 15, 2022.
-
-You need to get checked off by a TA/CP during your assigned lab section.
+**Due at the end of your registered lab section**
 
 ---
 

@@ -55,23 +55,23 @@ assignments:
       due: Sunday, July 17 at 11:59PM Pacific
 
 labs:
-  - id: lab0
+  - id: lab0_setup
     week: Before
     title: Getting Started
     assigned: true
     topics: Github, curricula, registration, setup
-  - id: lab1
+  - id: lab1_git
     week: Week 1
     title: Git Tutorial
     assigned: true
     topics: Git, github
     slides: git_lab.pdf
-  - id: lab2
+  - id: lab2_gdb
     week: Week 1
     title: GDB
     assigned: true
     topics: Debugging, GDB, tooling
-  - id: lab3
+  - id: lab3_makefiles
     week: Week 2
     title: Makefiles
     assigned: true
@@ -81,66 +81,61 @@ labs:
     title: GTest
     assigned: true
     topics: Unit testing
-  - id: lab4
+  - id: lab4_stl
     week: Week 3
     title: Inheritance and STL
     assigned: true
     topics:
     slides: stl_inh_lab.pdf
-  - id: lab5
+  - id: lab5_templates
     week: Week 3
     title: Templates
     assigned: true
     topics:
-  - id: lab6
+  - id: lab6_heaps
     week: Week 4
     title: Heaps
     assigned: true
-    topics: Heaps
-  - id: lab7
+    topics: Heaps 
+  - id: lab7_backtrack
     week: Week 5
-    title: Midterm Review
-    assigned: true
-    topics: 
-  - id: lab8
-    week: Week 5
-    title: (Optional)
-    assigned: false
-    topics:
-    slides: ll_rec_practice.pdf
-  - id: lab9
-    week: Week 6
     title: Backtracking
     assigned: true
     topics: Backtracking
-  - id: lab10
+  - id: lab8_bstavl
     week: Week 6
     title: BST and AVL Tree
     assigned: true
     topics: 
-  - id: lab11
+  - id: lab9_midrev
+    week: Week 6
+    title: Midterm Review
+    assigned: true
+    topics:
+  - id: lab10_opt_lab
+    week: Week 6
+    title: (Optional)
+    assigned: false
+    topics:
+    slides: ll_rec_practice.pdf
+  - id: lab11_hastable
     week: Week 7
     title: Hashtable
     assigned: true
     topics: Hashtable
-  - id: lab12
+  - id: lab12_counting
     week: Week 8
     title: Counting!
     assigned: true
     topics: 
     slides: extra_counting_problems.pdf
-  - id: lab13
+  - id: lab13_probability
     week: Week 8
     title: Probability?
     assigned: true
     topics:
-  - id: lab14
+  - id: lab14_numtheory
     week: Week 9
     title: Number Theory
     assigned: true
-    topics: 
-  - id: lab15
-    week: Week 9
-    title: Final Review
-    assigned: false
     topics: 

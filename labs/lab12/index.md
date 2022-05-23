@@ -2,7 +2,7 @@
 layout: asides
 toc: true
 tasks: true
-title: Counting
+title: Probability Theory
 ---
 
 ---
@@ -11,157 +11,151 @@ title: Counting
 
 ---
 
-## Counting
+# Probability Theory
 
+Now we’ll be taking the counting principles we learned from Lab 11 and applying them to probability! Probability is something you’ll be revisiting time and time again both in and outside of computer science. Maybe you’re interested in artificial intelligence or machine learning, or maybe you just want to think more critically about the uncertainty of life. Probability is an important skill you’ll want to carry with you well beyond 104, regardless of what path you take!
 
-This lab will be covered during lab sections between March 16 - March 19, 2021. **You need to get checked off during a lab sesson on or before March 19th.**
+## Warm Up, Definitions, and Rules
+Suppose we have a fair coin, and we flip it 2 times. What is the probability of getting at least one head?
 
-This week's lecture will go over the fine art of counting! We'll review the concepts covered in lecture, go over a few practice examples, and then give you some exercises to do on your own. As it turns out, counting is not always as easy as 1-2-3!
+Here, flipping a coin 2 times is called a **trial**. Each trial has an outcome, and our **sample space** is the set of all possible outcomes for any trial. Denoting H for heads and T for tails, and assuming each coin flip yields either H or T (and will never land on an edge), our sample space can be written as $ \{ H, T \} ^2$. The size of our sample space is $\mid \{ H,T \} \mid^2 = 4$. With a small sample space like this, it should be easy enough to list out all the elements:
 
-*For this lab, you will need to write down the answers to the practice problems and share your solutions with a CP/TA to get checked off. You are expected to do all the exercises, and your CP/TA will randomly select two questions to check your understanding (this means you have to show your work!)* Don't worry, we'll go through examples together!
+* HH
+* HT
+* TH
+* TT
 
-### Basic Counting
+Any subset of the sample space is called an event. In this example, the event we are interested in is the event of getting at least one head, $ \{ HH, HT, TH \} $. Assuming that all outcomes are equally likely, we can say that the probability of this event occurring is $3/4$.
 
-Recall the Product, Sum, Subtraction, and Division Rules, and use them to solve the following questions.
+More generally, if $S$ is a sample space of equally likely outcomes and $E$ is an event of $S$, the probability of $E$ is:
 
-#### Product Rule
-The **Product Rule** states that if a procedure can be broken up into a sequence of **k** tasks, and there are **n<sub>1</sub>** ways to do the first task, **n<sub>2</sub>** ways to do the second task, ..., and **n<sub>k</sub>** ways to execute the kth task, then there are **n<sub>1</sub> * n<sub>2</sub> * ... * n<sub>k</sub>** ways to do the procedure. 
+$$P(E) = \frac{|E|}{|S|}$$
 
-Another way of thinking about the product rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. The cartesian product &#124;A × B&#124; = &#124;A&#124; × &#124;B&#124;.
+### Probabilty of Complements
 
-#### Example
-There's an old English nursery rhyme that goes like this:
+The **complement** of an event $E$, denoted as $\bar{E}$, is the event that $E$ does not occur.
 
-> As I was going to St Ives,
-> 
-> Upon the road I met seven wives;
-> 
-> Every wife had seven sacks,
-> 
-> Every sack had seven cats,
-> 
-> Every cat had seven kits:
-> 
-> Kits, cats, sacks, and wives,
-> 
-> How many were going to St Ives?
+The **Complement Rule** states that the probability of an event and its complement should sum up to 1:
 
-Spoiler: there was only only one person going to St. Ives--you, the speaker/reader/narrator! But how many kits, cats, sacks, and wives are there coming *from* St. Ives?
+$$P(\bar{E}) = 1 - P(E)$$
 
-**Solution**: 
+Sometimes it is easier to first compute the probability of an event’s complement, in order to compute the probability of an event. For example, rather than asking “what is the probability of getting at least one head” in 2 consecutive coin tosses, we might instead consider the probability of its complement, or “the probability of getting ZERO heads.” The probability of getting zero heads is easy–the only way this can happen is if we get 2 tails, which has a probability of 1/4. Using the complement rule, we can compute the probability of getting at least 1 head as $1 - 1/4 = 3/4$.
 
-+ There are 7 wives 
-+ There are 7 * 7 = 49 sacks
-+ There are 49 * 7 = 343 cats
-+ There are 343 * 7 = 2401 kits 🐈
+### Sum Rule
 
-#### Sum Rule
-The **Sum Rule** states that if a task can be done in one of **n<sub>1</sub>** ways or in one of **n<sub>2</sub>** ways, where none of the set of **n<sub>1</sub>** ways is the same as any of the set of **n<sub>2</sub>** ways, then there are **n<sub>1</sub> + n<sub>2</sub>** ways to do the task.
+The **Sum Rule** states that given a sequence of pairwise disjoint (mutually exclusive) events E1, E2, E3, the probability of these events occurring is the sum of the probability of each event: $P(E_1 \cup E_2 \cup E_3 \cup …) = P(E_1) + P(E_2) + P(E_3) + \dots$
 
-Another way of thinking about the sum rule is to consider two finite and disjoint sets (meaning &#124;A ∩ B&#124; = 0), &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124;.
+* Events $E_i$ and $E_j$ are mutually exclusive if $E_i \cap E_j = \emptyset$. In other words, they cannot occur at the same time.
 
-#### Example
-Remember your trip to St. Ives? Well, on your trip, you decide to adopt not one, but two felines! One of the wives tells you to draw 2 cats out of her sack. Recall that there are 49 felines in the sack (7 cats, and for each cat, 7 kittens). Of the 49 felines, 17 are black, 21 are tabbies, and 11 are calicos. In how many ways can you draw exactly 1 black cat or exactly 1 calico cat? (Using B to denote black, T to denote tabby, and C to denote calico, any one of the following arrangements has exactly 1 black or 1 calico cat: BT, BC, CT.)
+### Example
 
-**Solution**: 
+Suppose we draw a card from a standard deck of cards. What is the probability that the card we draw is a Queen or a King?
 
-+ The number of ways we can get 1 black and 1 tabby cat is: 17 * 21 = 367
-+ The number of ways we can get 1 black and 1 calico cat is: 17 * 11 = 187
-+ The number of ways we can get 1 calico and 1 tabby cat is: 11 * 21 = 231
+Solution: let event $E_1$ be the event of getting a Queen, and event $E_2$ be the event of getting a King. There are 4 Queens and 4 Kings in a standard deck of 52 cards, so $P(E_1) = 4/52$, and $P(E_2) = 4/52$. Thus, the probability of drawing a Queen or King is $4/52 + 4/52 = 8/52$.
 
-The number of ways we can get exactly 1 black or 1 calico cat is: 367 + 187 + 231 = **785**
+### Subtraction Rule (Inclusion-Exclusion Principle)
 
-#### Subtraction Rule
-The **Subtraction Rule** states that if a task can be done in either one of **n<sub>1</sub>** ways or one of **n<sub>2</sub>** ways, and there is an overlap between these two methods of **n<sub>3</sub>** common ways, then the number of ways to do the task is **n<sub>1</sub> + n<sub>2</sub> – n<sub>3</sub>**.
+What if we want to compute the probability of the union of events that are not mutually exclusive? This is where the inclusion-exclusion principle comes in:
 
-Another way of thinking about the subtraction rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124; - &#124;A ∩ B&#124;. 
+$$P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)$$
 
-#### Example
-You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to inspect each cat's paws. Every cat has black or pink paws. 41 cats have black paws, 50 cats have pink paws, and 21 cats have black AND pink paws. How many cats are in the cat cafe?
+### Example
 
-**Solution**: 41 + 50 - 21 = **70 cats** 🐱
+Suppose we draw a card from a standard deck of cards. What is the probability that the card we draw is a Queen or a Heart?
 
-#### Division Rule
-**Division Rule**: there are n/d ways to do a task which can be done in one of n different ways, but for each specific way, it is identical to d-1 other ways.
+*Solution:* let event $E_1$ be the event of getting a Queen, and event $E_2$ be the event of getting a Heart. These two events are no longer mutually exclusive: both events can occur simultaneously if we draw a Queen of hearts. There are 4 Queens, 13 Hearts, and 1 Queen of hearts in a standard deck of 52 cards. Thus, $P(E_1) = 4/52$, $P(E_2) = 13/52$, and $P(E_1 \cap E_2) = 1/52$. Thus, the probability of drawing a Queen or Heart is $4/52 + 13/52 - 1/52 = 16/52$.
 
-#### Example
-How many distinct ways can we arrange the letters in "KITTEN"?
+## Conditional Probability
 
-**Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.) 
+The Conditional Probability of an event B is the probability of B occurring given that another event A has already happened. We write and compute “the probability of B given A” as:
 
-However, "KITTEN" has 2 T's, T<sub>1</sub> and T<sub>2</sub>. This means every arrangment has an identical other arrangement in which T<sub>1</sub> and T<sub>2</sub> are swapped: KIT<sub>1</sub>T<sub>2</sub>EN and KIT<sub>2</sub>T<sub>1</sub>EN are the same word! 
+$$P(B | A) = \frac{P(A \cap B)}{P(A)}$$
 
-Given that there are  2 * 1 = 2! ways to arrange the 2 T's, and that we want DISTINCT arrangements, the answer is **6!/2!**
+We say that events A and B are **independent** if the likelihood of B occurring does not depend on event A, or if $P(B \mid A) = P(B)$.
 
-### Permutations & Combinations
-Recall from lecture that an **r-permutation** is an **ordered** arrangement of r elements from a set of n, denoted as:
-<div style="text-align:center"><img src="./assets/nPr.png" alt="r permutation" height="70"/></div>
+### Example
+We draw a card from a deck. We know the card is a face card. Given this information, what is the probability the card is a King?
 
-An **r-combination** is an **unordered** arrangement of r elements from a set of size n, and is commonly spoken as “n choose r”:
-<div style="text-align:center"><img src="./assets/nCr.png" alt="n choose r" height="60"/></div>
+Let K denote King, and let A be the event that the card is a face card, and B be the event that the card is a K.
 
-#### Example: Permutations
-The Pied Piper Duck Fashion Show takes place in Sydney, Asutralia every year. Since we can't fly to Australia, let's suppose we are hosting our own CS104 exclusive duck fashion show. There are 30 ducks, and 3 prizes: gold, silver, and bronze. How many ways can we award gold, silver, and bronze among our 30 fashionable ducks?
+First, let’s compute P(A). There are 52 cards in a deck. Each deck has 13 ranks, 3 of which have “faces” (Jack, Queen, King). Each rank comes in 4 suits, yielding a total of 3 * 4 = 12 face cards in a deck. Thus, assuming a well shuffled deck where all outcomes are equally likely, the probability of event A is 12/52.
 
-**Solution:** first, we want to ask ourselves: does order matter here? The answer is yes--suppose we had ducks Donald, Daisy, and Scrooge. Donald winning gold, Daisy winning silver, and Scrooge winning bronze is NOT the same as Scrooge winning gold, Donald winning silver, and Daisy winning bronze. 
+Next, we need to compute P(A ∩ B). Of the 12 possible face cards one can draw, 4 are Ks. P(A ∩ B), the probability of drawing a face card AND a K, is 4/52.
 
-Suppose we chose our gold winner first, followed by our silver winner, followed by our bronze winner. 
-+ We have 30 ducks to choose from for gold.
-+ After selecting our golden duck, we have 29 ducks to choose from for silver.
-+ After selecting our silver duck, we have 28 ducks to choose from for bronze.
+Finally, we can compute P(B): (4/52)/(12/52) = 4/12 = 1/3
 
-There are thus **30 * 29 * 28** ways of selecting our winning ducks out of our 30 contestants. This is equivalent to 30!/[(30-3)!]
+## Random Variables
 
-#### Example: Combinations
-There are 10 people in a chess match. How many games do they need to play to guarantee that each person plays with everyone exactly once?
+A **Random Variable** is a mapping from the sample space to the set of real numbers. Consider the earlier example of flipping 2 coins. Our sample space had 4 elements, listed below. We can create a random variable $X$ to denote the number of heads in each outcome:
 
-**Solution**: first, we want to ask ourselves: does order matter here? The answer is no: A playing against B is no different from B playing against A. Given 10 players, there are "10 choose 2" ways of selecting 2 players, so our answer is 10 choose 2 = **45 games**
+  * $X(HH) = 2$
+  * $X(HT) = 1$
+  * $X(TH) = 1$
+  * $X(TT) = 0$
 
-### With or Without Repetition?
-The above two examples are examples of permutations and combinations *without* repetition. Once a duck is selected for gold, we do not reconsider that duck for silver. Player A cannot play against him/herself in a chess match. 
+The probability distribution of a random variable $X$ is the probability of every possible value of $X$. In the above example, the distribution of $X$ is:
 
-However, sometimes we do allow for repetition. Recall from lecture that the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**. 
+  * $P(X = 0) = 1/4$
+  * $P(X = 1) = 2/4$
+  * $P(X = 2) = 1/4$
 
-The number of r-combinations of a set of n objects, where repetition is allowed, is:
-<div style="text-align:center"><img src="./assets/rComboWithRepetition.png" alt="n combinations with repetition" height="60"/></div>
+## Expectation
 
-#### Example: Permutations with Repetition
-How many different 4-digit PINs are possible?
+Given a random variable $X$, the expectation or expected value of $X$, $E(X)$, is the weighted average of $X$:
 
-**Solution**: here, order does matter (1234 is a different PIN from 4321), and repetition is allowed (1111 is a valid PIN.) There are therefore **10<sup>4</sup>** possible PINs.
+$$E(X) = \sum_{s \in S}{P(s) \cdot X(s)}$$
 
-#### Example: Combinations with Repetition
-You walk into a cereal bar and build an epic cereal bowl. You are allowed to choose 3 servings of cereal, and there are 6 cereals to choose from: Apple Jacks, Cinnamon Toast Crunch, Fruit Loops, Honey Nut Cheerios, Lucky Charms, and Rice Krispies. How many different combinations of epic cereal bowls can you make?
+Using the **linearity of expectations**, we can calculate the expectation of a sum of random variables:
 
-**Solution**: here, order does not matter and repetitions are allowed (you might go all in and make a bowl with 3 servings of Lucky Charms, for example.) The number of possible cereal bowls is: **8!/3!5!**
+$$E(X_1 + \dots + X_n) = E(X_1) + \dots + E(X_n)$$
 
-### Indistinguishable Objects Over Distinguishable Boxes
-As it turns out, the number of combinations of **n** objects selected **r** at a time with repetition is equivalent to the number of ways to distribute **r** indistinguishable objects into **n** distinguishable boxes.
+Furthermore, multiplying a random variable by a scalar constant multiplies its expected value by that constant; likewise, adding a constant to a random variable adds that constant to its expected value. For random variable $X$ and constants $a$ and $b$:
 
-#### Example
-How many ways can we distribute 12 cans of dog food among 3 dogs?
+$$E(aX + b) = a \cdot E(X) + b$$
 
-**Solution**: here, n = 3 and r = 12. The answer is: **14!/12!2!**
+**Both of the above holds even if random variables are not independent!**
 
-### Summary of Important Formulas
-<div style="text-align:center"><img src="./assets/table.png" alt="n choose r" width="500"/></div>
+### Example
 
-### Exercises
+Suppose we roll 2 fair dice. Let X be the sum of each roll. What is $E(X)$?
 
-1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select?
+Solution: the probability distribution of $X$ is:
 
-2. How many 32-bit strings have exactly 23 ones and 9 zeros?
+  * $P(X = 2) = 1/36$
+  * $P(X = 3) = 2/36$
+  * $P(X = 4) = 3/36$
+  * $P(X = 5) = 4/36$
+  * $P(X = 6) = 5/36$
+  * $P(X = 7) = 6/36$
+  * $P(X = 8) = 5/36$
+  * $P(X = 9) = 4/36$
+  * $P(X = 10) = 3/36$
+  * $P(X = 11) = 2/36$
+  * $P(X = 12) = 1/36$
 
-3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls? (Denoting B for boy and G for girl, GGBBBB is one "way" and BBBBGG is another "way".)
+Thus:
 
-4. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
+$E(X) = 2 \times (1/36) + 3 \times (2/36) + … + 12 \times (1/36) = 7$.
 
-5. We have 5 *distinct* breakout rooms and 30 *distinct* students in lab. How many ways can we distribute 30 *distinct* students into the 5 breakout rooms? (Breakout rooms can be empty.)
+But there is really a simpler way to solve this:
 
-+ How many ways can we distribute 30 *identical* students into the 5 *distinct* breakout rooms? (If 30 identical students bothers you, an equivalent question would be: how many ways can we distribute 30 *identical* chairs into 5 *distinct* classrooms?)
+Let $X_1, X_2$ be random variables that denote the value on the first and second die, respectively. We can see that $X = X_1 + X_2$, therefore by the linearity of expectation, $E(X) = E(X_1 + X_2) = E(X_1) + E(X_2)$.
 
-+ (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
+We know that $E(X_1) = E(X_2) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)$, hence $E(X) = 7$.
 
-- [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during your registered lab section by Friday, Apr. 8**.
+### Excercises
 
-If you finished early, here are some extra problems you could try. We would release the solutions on Saturday, Apr. 9: [https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf](https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf)
+1. In Charlie and the Chocolate Factory, Willy Wonka invites 5 lucky children to tour his factory. He randomly distributes 5 golden tickets in a batch of 1000 chocolate bars. You purchase 5 chocolate bars, hoping that at least one of them will have a golden ticket.
+  * What is the probability of getting at least 1 golden ticket?
+  * What is the probability of getting 5 golden tickets?
+
+2. Scrooge is getting ready for the 104 Duck Fashion Show. Scrooge has 3 hats (yellow, black, green), 9 shirts (3 of which are yellow, and 6 of which are green), and 7 bowties (all of which are blue). Scrooge selects each of his outfit uniformly at random and independently. What is the probability that his hat and shirt will be different colors?
+
+3. You roll a fair die 6 times. What is the probability that no number appears twice?
+
+4. Earlier in March, meerkats Howell and Midra in the Taronga Western Plains Zoo gave birth to 5 meerkat pups. You are told that at least 4 pups are female. Given this information, what is the probability that all 5 are female? (Hint: it is not $1/2$)
+
+5. Two cookies are pulled out at random and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. 
+* What is the probability distribution of X?
+* What is the expected value of X?
+

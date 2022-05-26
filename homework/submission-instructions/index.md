@@ -11,10 +11,13 @@ nav: homework
 
   + Create a `README.md` in the directory for each assignment.
   + Suppress all debug messages (remove any `cout`/`cerr` statements or other debug output).
-  + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page.
-  + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.
+  + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page and are pushed to Github.  Failure to submit a necessary file will lead to a 0 on that problem or at the least a **-10 point** deduction per missing file. 
+  + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.  If your code has warnings, a **deduction of up to 4 points** may be applied to the problem!  
   + If there are any specific actions and/or commands necessary to compile or run your code, or to access any required documentation for your assignment, include instructions in your `README.md` file.
-  + Your grader will grade the assignment in the course VM. Hence, your grader will use the same compiler as you will in the course VM.
+  + Your grader will grade the assignment in the course VM/Docker. Hence, your grader will use the same compiler as you will in the course VM/Docker.
+  + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 4 points** per programming problem.
+
+  
 
 
 #### Acceptable Document Formats
@@ -29,7 +32,9 @@ The following document formats are accepted:
 No other formats are accepted unless explicitly stated. These include, but are not limited to, Microsoft Word documents (e.g. `.doc`, `.docx`) and Rich Text Format (RTF) files.
 
 ### Step 2. Push your commits to GitHub
-After you have verified that your assignment is ready to be submitted, push your source code and all relevant files. Do not push binary files or "garbage" files. (Use the `.gitignore` file to make this as easy as possible on yourself.) Run `git status` on your repository and make sure that there are no files listed as:
+After you have verified that your assignment is ready to be submitted, push your source code and all relevant files. Do not push binary files or "garbage" files. (Use the `.gitignore` file to make this as easy as possible on yourself as well as `make clean` to delete any object files or executables). You should NOT add/commit/push any of the test suite folders (and files) that may be released before the submission deadline (e.g. `hw1_tests`).  This can easily happen if you use `git add .`. Instead, we recommend adding specific files (e.g. `git add file1.h file1.cpp file2.h file2.cpp Makefile`) or using specific wildcards: `git add *.h *.cpp Makefile` (which will leave out anything in a subfolder).  If you do happen to add/commit/push a test suite, you can remove it by running `git rm -rf hw1_tests` followed by `git commit -m "Removed tests"` followed by `git push`.  
+
+Run `git status` on your repository and make sure that there are no files listed as:
 
   + Changes to be committed,
   + Changes not staged for commit, or
@@ -41,6 +46,8 @@ A `git status` on your master branch must return:
 # On branch master
 nothing to commit, working directory clean
 ```
+
+If files that you do not want to push (i.e. `hw1_tests` or other object files ) appear in the untracked list, add that folder/filename(s) to your `.gitignore`.  (Note: you must add/commit/push you `.gitignore` like any other file).
 
 ### Step 3. Verify your commit **before** the Deadline
 

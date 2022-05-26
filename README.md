@@ -31,3 +31,12 @@ To update remote, use:
 ```
 git push origin 2021/fall:deploy
 ```
+
+Currently, the site is hosted on `bytes.usc.edu`.  If the server is restarted, you may manually need to restart the `curricula` services:
+
+```
+sudo systemctl start curricula_web 
+sudo systemctl start curricula_web_worker
+```
+
+We are trying to enable them automatically on startup: `sudo systemctl enable <service>` on both services.

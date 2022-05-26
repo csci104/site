@@ -7,8 +7,7 @@ title: Heaps
 
 ---
 
-**This lab requires a checkoff. You need to get checked off before the end of your registered lab section
-from Feb 15, 2022 to Feb 18, 2022.**
+**Due at the end of your registered lab section**
 
 ---
 

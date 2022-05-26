@@ -96,51 +96,51 @@ labs:
     week: Week 4
     title: Heaps
     assigned: true
-    topics: Heaps
+    topics: Heaps 
   - id: lab7
     week: Week 5
-    title: Midterm Review
-    assigned: true
-    topics: 
-  - id: lab8
-    week: Week 5
-    title: (Optional)
-    assigned: false
-    topics:
-    slides: ll_rec_practice.pdf
-  - id: lab9
-    week: Week 6
     title: Backtracking
     assigned: true
     topics: Backtracking
-  - id: lab10
+  - id: lab8
     week: Week 6
     title: BST and AVL Tree
     assigned: true
     topics: 
-  - id: lab11
-    week: Week 7
-    title: Hashtable
+  - id: lab9
+    week: Week 6
+    title: Midterm Review
     assigned: true
-    topics: Hashtable
-  - id: lab12
+    topics:
+  - id: lab10
+    week: Week 6
+    title: (Optional)
+    assigned: false
+    topics:
+    slides: ll_rec_practice.pdf
+  - id: midterm
+    week: Week 7
+    title: Midterm 
+    assigned: false 
+    topics: 
+  - id: lab11
     week: Week 8
     title: Counting!
     assigned: true
     topics: 
     slides: extra_counting_problems.pdf
-  - id: lab13
+  - id: lab12
     week: Week 8
     title: Probability?
     assigned: true
     topics:
+  - id: lab13
+    week: Week 9
+    title: Hashtable
+    assigned: true
+    topics: Hashtable
   - id: lab14
     week: Week 9
     title: Number Theory
     assigned: true
-    topics: 
-  - id: lab15
-    week: Week 9
-    title: Final Review
-    assigned: false
     topics: 

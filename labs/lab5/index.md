@@ -6,12 +6,11 @@ title: Templates
 ---
 
 
---------
+---
 
-**This lab requires a checkoff. You need to get checked off before the end of your registered lab section
-from Feb 1, 2022 to Feb 4, 2022.**
+**Due at the end of your registered lab section**
 
---------
+---
 
 ## Templates
 

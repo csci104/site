@@ -7,10 +7,7 @@ title: Jamie's GDB House of Horrors
 
 ---
 
-**Due: 21 Jan, 2022 @4:00 pm**
-
-You are expected to show your work to any CP/TA to get checked off during the lab section
-you registered for.
+**Due at the end of your registered lab section**
 
 ---
 

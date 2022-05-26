@@ -2,162 +2,161 @@
 layout: asides
 toc: true
 tasks: true
-title: Probability Theory
+title: Hashtables
 ---
 
 ---
 
-This lab would be covered by lab sections between Apr. 12, 2022 and Apr. 15, 2022.
-
-You need to get checked off by a TA/CP during your assigned lab section.
+**Due at the end of your registered lab section**
 
 ---
 
-# Probability Theory
+### 0 - What is a Map?
 
-Now we’ll be taking the counting principles we learned from Lab 11 and applying them to probability! Probability is something you’ll be revisiting time and time again both in and outside of computer science. Maybe you’re interested in artificial intelligence or machine learning, or maybe you just want to think more critically about the uncertainty of life. Probability is an important skill you’ll want to carry with you well beyond 104, regardless of what path you take!
+Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
 
-## Warm Up, Definitions, and Rules
-Suppose we have a fair coin, and we flip it 2 times. What is the probability of getting at least one head?
+The look up speed and ordering of map elements depends on the data structure we use to implement our map. In previous labs, we reviewed AVL Trees, an implementation of a balanced BST. This lab will go over hashtables and explore how it can be used to implement a map.
 
-Here, flipping a coin 2 times is called a **trial**. Each trial has an outcome, and our **sample space** is the set of all possible outcomes for any trial. Denoting H for heads and T for tails, and assuming each coin flip yields either H or T (and will never land on an edge), our sample space can be written as $ \{ H, T \} ^2$. The size of our sample space is $\mid \{ H,T \} \mid^2 = 4$. With a small sample space like this, it should be easy enough to list out all the elements:
+### 3 - Let's Talk About Hash Tables
 
-* HH
-* HT
-* TH
-* TT
+A Hash Table is like an array in many aspects. However, in order to find the index in the array, we use a special function called a hash function. This converts the input into an index location that the input is then stored into.
 
-Any subset of the sample space is called an event. In this example, the event we are interested in is the event of getting at least one head, $ \{ HH, HT, TH \} $. Assuming that all outcomes are equally likely, we can say that the probability of this event occurring is $3/4$.
+<div style="text-align:center"><img src="./assets/hashTable.png" alt="bst" width="300" height="250" /> </div>
 
-More generally, if $S$ is a sample space of equally likely outcomes and $E$ is an event of $S$, the probability of $E$ is:
+In the above example, we can see that our hash table stores strings, and those strings are stored in locations within an array specified by the hash function.
 
-$$P(E) = \frac{|E|}{|S|}$$
+This type of data structure is very useful in terms of accessing data. You could probably think of different applications of this data structure. Maybe a set? Given an input, we first hash it, then look to see if it is inserted in our hash table by checking the index returned by our hash function. Since hashing is just a function, it takes O(1) time. If we have a good hash function that distributes keys uniformly around the table such that there are a small number of keys at each location, the entire check is O(1) on average.
 
-### Probabilty of Complements
+There are many different applications of this type of data structure, including sets, maps, and associative arrays (which are pretty much maps).
 
-The **complement** of an event $E$, denoted as $\bar{E}$, is the event that $E$ does not occur.
+#### 3.1 - Hash Functions
 
-The **Complement Rule** states that the probability of an event and its complement should sum up to 1:
+So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array. 
 
-$$P(\bar{E}) = 1 - P(E)$$
+What goals should our hash function have?
+1. Easy and fast to compute
+2. Uniformly distributes keys across the hash table
 
-Sometimes it is easier to first compute the probability of an event’s complement, in order to compute the probability of an event. For example, rather than asking “what is the probability of getting at least one head” in 2 consecutive coin tosses, we might instead consider the probability of its complement, or “the probability of getting ZERO heads.” The probability of getting zero heads is easy–the only way this can happen is if we get 2 tails, which has a probability of 1/4. Using the complement rule, we can compute the probability of getting at least 1 head as $1 - 1/4 = 3/4$.
+The first thing we want is for the function to be fast. It should be an easy calculation that takes O(1) time to compute.
 
-### Sum Rule
+Lets first go over a bad example:
 
-The **Sum Rule** states that given a sequence of pairwise disjoint (mutually exclusive) events E1, E2, E3, the probability of these events occurring is the sum of the probability of each event: $P(E_1 \cup E_2 \cup E_3 \cup …) = P(E_1) + P(E_2) + P(E_3) + \dots$
+```
+int hash(int data) {
+    return 42 % size;
+}
+```
 
-* Events $E_i$ and $E_j$ are mutually exclusive if $E_i \cap E_j = \emptyset$. In other words, they cannot occur at the same time.
+This hash function is super fast. It literally just does one operation and then returns. However, it always returns the same number. This means that we are always going to go to the same array index. This doesn't make sense. Shouldn't our hash function result in different outputs with different inputs?
 
-### Example
+A good example of this would be:
 
-Suppose we draw a card from a standard deck of cards. What is the probability that the card we draw is a Queen or a King?
+```
+int hash(int data){
+    return 31 * 54059 ^ (data * 76963) % size;
+}
+```
 
-Solution: let event $E_1$ be the event of getting a Queen, and event $E_2$ be the event of getting a King. There are 4 Queens and 4 Kings in a standard deck of 52 cards, so $P(E_1) = 4/52$, and $P(E_2) = 4/52$. Thus, the probability of drawing a Queen or King is $4/52 + 4/52 = 8/52$.
+Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different every single timety in our ou. It may be more operations than our first hash function, but it still does a constant amount of work.
 
-### Subtraction Rule (Inclusion-Exclusion Principle)
 
-What if we want to compute the probability of the union of events that are not mutually exclusive? This is where the inclusion-exclusion principle comes in:
+#### 3.2 - Collisions
 
-$$P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)$$
+So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches: 
 
-### Example
+ * open addressing such as linear probing, quadratic probing, or double hashing.
+ * closed addressing such as chaining or buckets.
 
-Suppose we draw a card from a standard deck of cards. What is the probability that the card we draw is a Queen or a Heart?
+#### 3.3 - Open Addressing
 
-*Solution:* let event $E_1$ be the event of getting a Queen, and event $E_2$ be the event of getting a Heart. These two events are no longer mutually exclusive: both events can occur simultaneously if we draw a Queen of hearts. There are 4 Queens, 13 Hearts, and 1 Queen of hearts in a standard deck of 52 cards. Thus, $P(E_1) = 4/52$, $P(E_2) = 13/52$, and $P(E_1 \cap E_2) = 1/52$. Thus, the probability of drawing a Queen or Heart is $4/52 + 13/52 - 1/52 = 16/52$.
+The idea with open addressing is that every location in the array can only have 1 thing in it. This means that we will have to find a free spot that we can place the object in. Linear probing is a very simple solution.
 
-## Conditional Probability
+Linear probing is where you just keep incrementing up/looking at the next index until you find a free location.
 
-The Conditional Probability of an event B is the probability of B occurring given that another event A has already happened. We write and compute “the probability of B given A” as:
+The algorithm for inserting into a linear probed hashtable is:
 
-$$P(B | A) = \frac{P(A \cap B)}{P(A)}$$
+ 1. Hash the element, which gives you a position in the table.
+ 2. If the position is already taken, try the next position (if you reach the end of the table, wrap back to the start).
+ 3. Repeat step 2 until you have found an empty spot.
+ 4. Insert the element at that empty spot.
 
-We say that events A and B are **independent** if the likelihood of B occurring does not depend on event A, or if $P(B \mid A) = P(B)$.
+The algorithm for finding a key in a linear probed hashtable is:
 
-### Example
-We draw a card from a deck. We know the card is a face card. Given this information, what is the probability the card is a King?
+ 1. Hash the key you want to find, which gives you a position in the table.
+ 2. If the position contains a key, compare it with the key you want to search. If they are equal, you've found the key; otherwise, move to the next position. If the position is empty (i.e does not contain a key), you know that the key does not exist in the table.
+ 3. Repeat step 2 until the algorithm terminates.
 
-Let K denote King, and let A be the event that the card is a face card, and B be the event that the card is a K.
+Removing from the hashtable is a little bit more involved:
 
-First, let’s compute P(A). There are 52 cards in a deck. Each deck has 13 ranks, 3 of which have “faces” (Jack, Queen, King). Each rank comes in 4 suits, yielding a total of 3 * 4 = 12 face cards in a deck. Thus, assuming a well shuffled deck where all outcomes are equally likely, the probability of event A is 12/52.
+ 1. First find the position of the key with the method illustrated above.
+ 2. Delete the key there.
+ 3. Move to the next position. If it is not empty, delete the key there and reinsert it.
+ 4. Repeat step 3 until you have reached an empty spot or you have looped back to the position you found in step 1.
 
-Next, we need to compute P(A ∩ B). Of the 12 possible face cards one can draw, 4 are Ks. P(A ∩ B), the probability of drawing a face card AND a K, is 4/52.
 
-Finally, we can compute P(B): (4/52)/(12/52) = 4/12 = 1/3
+Here is an example for you to practice with:
 
-## Random Variables
+Suppose you have three keys with the following hash:
 
-A **Random Variable** is a mapping from the sample space to the set of real numbers. Consider the earlier example of flipping 2 coins. Our sample space had 4 elements, listed below. We can create a random variable $X$ to denote the number of heads in each outcome:
+* Key A has hash 0
+* Key B has hash 1
+* Key C has hash 1
+* Key D has hash 1
+* Key E has hash 2
 
-  * $X(HH) = 2$
-  * $X(HT) = 1$
-  * $X(TH) = 1$
-  * $X(TT) = 0$
+And you have a hash table of size 5.
 
-The probability distribution of a random variable $X$ is the probability of every possible value of $X$. In the above example, the distribution of $X$ is:
+Try yourself with pen and paper. What will the hashtable look like following each of those steps (in sequence):
 
-  * $P(X = 0) = 1/4$
-  * $P(X = 1) = 2/4$
-  * $P(X = 2) = 1/4$
+* Insert B
+* Insert C
+* Insert E
+* Insert A
+* Insert D
+* Remove B
+* Remove E
 
-## Expectation
+#### 3.4 - Chaining
 
-Given a random variable $X$, the expectation or expected value of $X$, $E(X)$, is the weighted average of $X$:
+For closed addressing we will focus on chaining. Chaining allows for multiple objects to reside within the same array location. The array is changed to be an array of lists or some other data structure, allowing us to store multiple items per index. We often use an array of linked lists, hence the name "chaining."
 
-$$E(X) = \sum_{s \in S}{P(s) \cdot X(s)}$$
+<div style="text-align:center"><img src="./assets/chaining.png" alt="bst" width="400" height="250" /> </div>
 
-Using the **linearity of expectations**, we can calculate the expectation of a sum of random variables:
 
-$$E(X_1 + \dots + X_n) = E(X_1) + \dots + E(X_n)$$
+Other implementations may use another type of list or even a balanced tree. 
 
-Furthermore, multiplying a random variable by a scalar constant multiplies its expected value by that constant; likewise, adding a constant to a random variable adds that constant to its expected value. For random variable $X$ and constants $a$ and $b$:
+Because chaining allows for buckets, it is probable for `n` objects to all be placed within the same bucket. The worst case runtime is O(n). Chaining may even prevent our goal of O(1) on average. However, a scenario like this should not occur if the hash function is good and the size of the hash table is big enough.
 
-$$E(aX + b) = a \cdot E(X) + b$$
+### 4 - OrderedMap vs. UnorderedMap
 
-**Both of the above holds even if random variables are not independent!**
+So let's see a real life example of a hash table. In your homework, you have been using an ordered map. What is an unordered map and how is it different?
 
-### Example
+#### 4.1 - OrderedMap
 
-Suppose we roll 2 fair dice. Let X be the sum of each roll. What is $E(X)$?
+An ordered map uses a balanced binary search tree as its underlying data structure. We haven't yet go over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
 
-Solution: the probability distribution of $X$ is:
+1. `find(key)` | O(logn)
+2. `insert(key, value)` | O(logn)
+3. `remove(key)` | O(logn)
 
-  * $P(X = 2) = 1/36$
-  * $P(X = 3) = 2/36$
-  * $P(X = 4) = 3/36$
-  * $P(X = 5) = 4/36$
-  * $P(X = 6) = 5/36$
-  * $P(X = 7) = 6/36$
-  * $P(X = 8) = 5/36$
-  * $P(X = 9) = 4/36$
-  * $P(X = 10) = 3/36$
-  * $P(X = 11) = 2/36$
-  * $P(X = 12) = 1/36$
+It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you a ordered traversal of all the keys in the map.
 
-Thus:
+#### 4.1 - UnorderedMap
 
-$E(X) = 2 \times (1/36) + 3 \times (2/36) + … + 12 \times (1/36) = 7$.
+An unordered map uses a hash table as its underlying data structure. This means that access operations are O(1) on average, but because of this, no order can be inferred. By improving the runtime of operations, we had to sacrifice the ordering property.
 
-But there is really a simpler way to solve this:
+You must explicitly create an unordered map using `std::unordered_map`.
 
-Let $X_1, X_2$ be random variables that denote the value on the first and second die, respectively. We can see that $X = X_1 + X_2$, therefore by the linearity of expectation, $E(X) = E(X_1 + X_2) = E(X_1) + E(X_2)$.
+1. `find(key)` | O(1) on average
+2. `insert(key, value)` | O(1) on average
+3. `remove(key)` | O(1) on average
 
-We know that $E(X_1) = E(X_2) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)$, hence $E(X) = 7$.
+### 5 - HashTable Assignment
 
-### Excercises
+You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
 
-1. In Charlie and the Chocolate Factory, Willy Wonka invites 5 lucky children to tour his factory. He randomly distributes 5 golden tickets in a batch of 1000 chocolate bars. You purchase 5 chocolate bars, hoping that at least one of them will have a golden ticket.
-  * What is the probability of getting at least 1 golden ticket?
-  * What is the probability of getting 5 golden tickets?
+To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
+- [ ] Implement `remove` in `hashtable.cpp`
+- [ ] Remember to show your passing tests to a TA/CP for checkoff!
 
-2. Scrooge is getting ready for the 104 Duck Fashion Show. Scrooge has 3 hats (yellow, black, green), 9 shirts (3 of which are yellow, and 6 of which are green), and 7 bowties (all of which are blue). Scrooge selects each of his outfit uniformly at random and independently. What is the probability that his hat and shirt will be different colors?
-
-3. You roll a fair die 6 times. What is the probability that no number appears twice?
-
-4. Earlier in March, meerkats Howell and Midra in the Taronga Western Plains Zoo gave birth to 5 meerkat pups. You are told that at least 4 pups are female. Given this information, what is the probability that all 5 are female? (Hint: it is not $1/2$)
-
-5. Two cookies are pulled out at random and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. 
-* What is the probability distribution of X?
-* What is the expected value of X?
-
+NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!

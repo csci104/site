@@ -32,12 +32,12 @@ Here is how the Huffman codes would be generated using the string `mississippi`.
 
 **Note**: In these images we are not explicitly showing the heap but the construction of the "Huffman" tree.  To understand what is happening the heap, we color code the items below.  The two yellow nodes are the nodes popped from the heap in that iteration, and the green nodes are what remains at the end of that iteration.    
 
-<img src="{{site.url}}/homework/img/huffman-ex1.png" alt="drawing" id="responsive-image"/>
+<img src="{{site.baseurl}}/homework/img/huffman-ex1.png" alt="drawing" id="responsive-image"/>
 
 #### Example 2
 
 Here is how the Huffman codes would be generated using the string `i boo big bruins`.
-<img src="{{site.url}}/homework/img/huffman-ex2.png" alt="drawing" id="responsive-image"/>
+<img src="{{site.baseurl}}/homework/img/huffman-ex2.png" alt="drawing" id="responsive-image"/>
 
 #### Using the Huffman Codes
 

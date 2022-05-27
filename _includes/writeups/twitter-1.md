@@ -2,13 +2,13 @@
 
 Note: You may use the C++ STL version of all data structures (i.e. `vector<>`, `map<>`, `set<>`, etc.) in this problem.
 
-Our project (will be used in 2 homeworks) for the semester will be to model a microblog site such as Twitter. As you will see, it will require using quite a lot of the data structures you are learning about. At a high level, a microblog site is based on the following components:
+Our project (may be used in another homework) for the semester will be to model a microblog site such as Twitter. As you will see, it will require using quite a lot of the data structures you are learning about. At a high level, a microblog site is based on the following components:
 
 1. Users that follow other users (this forms a graph with users as vertices and follow relationships as **directed** edges)
 1. A timeline for each user (user x) that shows their posts as well as others' posts from those that user x follows and (potentially later) posts with appropriate @ mentions
 1. Quick lookup/indexing of tagged keywords (hashtags)
 
-For this (first) part of the project, we focus on parsing users and their feeds and searching for tweets based on hashtags.  You will want to keep an eye on making your code well documented and easy to expand, as you will be adding to it later. (That said, you will also be allowed to rewrite your code later.)
+For this (first) part of the project, we focus on parsing users and their feeds and searching for tweets based on hashtags.  You will want to keep an eye on making your code well documented and easy to extend, as you may be adding to it later. (That said, you will also be allowed to rewrite your code later, if necessary.)
 
 For now, while tweets may contain `@username` mentions you don't have to do any special processing of these and can simply show that as text in the tweet.
 
@@ -20,9 +20,9 @@ Your program will be run at the command line as:
 ./twitter twitter.dat
 ```
 
-This will initially parse the provided databased file for users and tweets.  We have supplied a few "database" (`.dat` files of various sizes).  There will then be a menu system for users to perform searches and enter new tweets. Finally, when the program quits, it should first write out a "feed" file for each user.  All of this is described below.
+This will initially parse the provided database file for users and tweets.  We have supplied a few "database" (`.dat` files of various sizes).  There will then be a menu system for users to perform searches and enter new tweets. Finally, when the program quits, it should first write out a "feed" file for each user.  All of this is described below.
 
-C++ Guidelines: You should **NOT** use the `auto` keyword or ranged `for` loops for this assignment.  We want you to know what the actual types are because you may see compile errors and you should be able to determine what types are needed. Later in the semester we may allow you to use those features.
+**C++ Guidelines**: You should **NOT** use the `auto` keyword or ranged `for` loops for this assignment.  We want you to know what the actual types are because you may see compile errors and you should be able to determine what types are needed. Later in the semester we may allow you to use those features.
 
 ### Step 1 (Classes)
 
@@ -42,9 +42,9 @@ Each tweet contains:
 + the actual text of the tweet (we won't impose the 140 character limit in this project)
 + a set of hashtagged words (i.e. if the tweet contains `#cs104` and `#usc`, then this set should contain the string `cs104` and `usc`)
 
-A `DateTime` class will model a timestamp.  It stores the time stamp info and provides comparison operators and insertion (`<<`) / extraction (`>>`) operators. For the extraction operator, you can take the input stream and read the corresponding pieces (month, day, year, etc.) into member variables (discarding the punctuation).  It may be easiest to extract the text of the date and then the time from the file and then place it in a `stringstream` for extraction into its parts. After you try to extract a variable you should check if the stream **failed** by calling the `.fail()` function on the input stream.  If it does, set the date and time to the current system time (see details below) and return.  Also you do not need to verify valid ranges for year, month, day values (e.g. we'll only give you months between 1-12).
+A `DateTime` class will model a timestamp.  It stores the time stamp info and provides comparison operators and insertion (`<<`) / extraction (`>>`) operators. For the extraction operator (`>>`), you can take the input stream and read the corresponding pieces (month, day, year, etc.) into member variables (discarding the punctuation).  It may be easiest to extract the text of the date and then the time from the file and then place it in a `stringstream` for extraction into its parts. After you try to extract a variable you should check if the stream **failed** by calling the `.fail()` function on the input stream.  If it does, set the date and time to the current system time (see details below) and return.  Also you do not need to verify valid ranges for year, month, day values (e.g. we'll only give you months between 1-12).
 
-The `TwitEng` class is the main interface to the application. It should store data related to your microblog engine and perform all the high level operations.  Good design would separate the user interface of this application (described later) and only provide member functions to carry out the desired operations. In this way we can remove the current command line/text interface and exchange it for a GUI interface but still use the operations provided by TwitEng.
+The `TwitEng` class is the main interface to the application. It should store data related to your microblog engine and perform all the high level operations.  Good design would separate the user interface of this application (described later) and only provide member functions to carry out the desired operations. In this way we can remove the current command line/text interface and exchange it for a GUI interface but still use the operations provided by `TwitEng`.
 
 You may add other classes as needed and any other required member functions to the given classes, but **must** maintain the **public** interfaces of the classes provided in the skeleton.
 
@@ -131,7 +131,7 @@ Sam
 
 Note:  These feeds should be generated by `TwitEng::dumpfeeds()`.
 
-**Your program must meet this output format or you will lose significant points as this helps our grading scripts!**
+**Your program must meet this output format to pass our automated tests!**
 
 Notice that the tweets are listed in sorted order (newest to oldest) based on the timestamp.  You should use the `User::getFeed()` function to get the tweets for each User's feed.  This function returns a `vector<Tweet*>`.  To sort its contents you can use the std::sort algorithm provided in the `<algorithm>` library.  Call it like this:
 

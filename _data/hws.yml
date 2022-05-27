@@ -40,7 +40,7 @@ hw2:
       number: 3
       title: ADTs
       points: 6
-    - writeup: class-design.md
+    - writeup: class-design-restaurant.md
       number: 4
       title: Class Structures and OO Design
       points: 10

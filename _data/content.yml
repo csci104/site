@@ -88,7 +88,7 @@ labs:
     topics:
     slides: stl_inh_lab.pdf
   - id: lab5
-    week: Week 3
+    week: Week 4
     title: Templates
     assigned: true
     topics:

@@ -3,7 +3,7 @@ hw1:
     - writeup: policies.md
       number: 1
       title: Course Policies
-      points: 12
+      points: 6
     - writeup: git-1.md
       number: 2
       title: Git
@@ -11,11 +11,11 @@ hw1:
     - writeup: runtime-1.md
       number: 3
       title: Runtime Analysis
-      points: 25
+      points: 24
     - writeup: ll-rec-tracing-1.md
       number: 4
       title: Linked List Recursion Tracing
-      points: 13
+      points: 14
     - writeup: constructors.md
       number: 5
       title: NOT GRADED (PRACTICE ONLY) - Constructors and Destructors

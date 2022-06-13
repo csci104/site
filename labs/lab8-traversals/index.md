@@ -175,4 +175,4 @@ bool isBalanced(Node *root)
 
 To get checked off, show your results for the exercise to a CP or TA. This should include:
 
-- ~~The result of running `make BSTTest`.~~
+- The result of running `make BSTTest`.

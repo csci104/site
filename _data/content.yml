@@ -99,25 +99,30 @@ labs:
     topics: Heaps 
   - id: lab7
     week: Week 5
-    title: Backtracking
+    title: LList Recursion
+    assigned: false
+    topics: LinkedList Recursion
+    slides: ll_rec_practice.pdf
+  - id: lab8-traversals
+    week: Week 5
+    title: BST and Traversal
     assigned: true
-    topics: Backtracking
-  - id: lab8
+    topics: 
+  - id: lab8-avl
     week: Week 6
-    title: BST and AVL Tree
+    title: AVL Trees
     assigned: true
     topics: 
   - id: lab9
     week: Week 6
+    title: Backtracking
+    assigned: true
+    topics: Backtracking
+  - id: lab10
+    week: Week 6
     title: Midterm Review
     assigned: true
     topics:
-  - id: lab10
-    week: Week 6
-    title: (Optional)
-    assigned: false
-    topics:
-    slides: ll_rec_practice.pdf
   - id: midterm
     week: Week 7
     title: Midterm 

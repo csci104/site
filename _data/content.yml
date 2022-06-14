@@ -25,7 +25,7 @@ assignments:
     dates:
       assigned: Thursday, June 9
 #      checkpoint: Friday, Februrary 18 at 11:59PM PST
-      due: Friday, June 17 at 11:59PM PST
+      due: Saturday, June 18 at 11:59PM PST
   - id: hw4
     title: AVL Trees
     assigned: true
@@ -34,14 +34,14 @@ assignments:
     dates:
       assigned: Friday, June 17
 #      checkpoint: Friday, March 25 at 11:59PM PST
-      due: Thursday, June 30 at 11:59PM Pacific
+      due: Sunday, July 3 at 11:59PM Pacific
   - id: hw5
     title: Counting, Probability, Recursion
     assigned: true
     regrade_form: 
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
     dates:
-      assigned: Thursday, July 1
+      assigned: Thursday, June 30
 #      checkpoint: Friday, April 8 at 11:59PM PST
       due: Monday, July 11 at 11:59PM Pacific
   - id: hw6

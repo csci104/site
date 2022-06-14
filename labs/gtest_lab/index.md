@@ -1,20 +1,12 @@
 ---
-layout: asides
+layout: default
 toc: true
 tasks: true
 title: GTest
 ---
 
----
-
-**This lab requires checkoff.
-It is due at the end of the section you regitered for between Feb 22 and Feb 25, 2022.**
-
----
-
 ## Unit Testing and GTest
-
-In this lab we want to dive into the topic of unit testing. You all have already used unit tests we have provided in your previous assignments. However, in this lab, you will be writing your own unit tests. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project.
+In this lab we want to dive into the topic of unit testing. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project.
 
 ### 0 - Motivation
 
@@ -133,7 +125,7 @@ For the sake of this testing demonstration, let's assume that any invalid input 
 
 #### 1.4 - Run the tests now
 
-Now that we have a complete test suite, we can see if our program works fully to our specs by running `make tests` on the terminal. Because our dependencies are set up properly, this will attempt to compile the `fib` object, and then the test executable. After all the compiling is done, it will then attempt to run the test executable.
+Now that we have a complete test suite, we can see if our program works fully to our specs by running `make tests` on the terminal **in Docker**. Because our dependencies are set up properly, this will attempt to compile the `fib` object, and then the test executable. After all the compiling is done, it will then attempt to run the test executable.
 
 You should now see a fancy test runner output, that says the output is unexpected, followed by a segfault. It's okay, we'll fix them one by one.
 
@@ -144,7 +136,7 @@ return 0;
 return 1;
 ```
 
-Run the tests again by calling `make tests`. That nominal test case now passes successful, but the segfaults are still there in the Off-Nominal Case. Well, that's unexpected. As always, try to debug using gdb.
+Run the tests again by calling `make tests` from your Docker shell. That nominal test case now passes successful, but the segfaults are still there in the Off-Nominal Case. Well, that's unexpected. As always, try to debug using gdb.
 
 ```
 gdb fibTest
@@ -155,7 +147,7 @@ Run until the segfault happens, and then run `bt` to see how the error occurred.
 ```
 // Add after Line 3:
 if (n <= 0) { 
-	return 0;
+    return 0; 
 }
 ```
 
@@ -173,10 +165,10 @@ When we test classes, we often need some initialization before we can test. For 
 
 Open the `test.cpp` in the `part2` folder. You'll notice that this file is slightly longer than the one in the first part. The main difference being a definition of a class `ArrayListTest`. There are several characteristics to this class:
 
-  + It inherits from a Google Test class `testing::Test`.
+  + It inherits from a Google Test class `testing::Test`. We have not learned what inheritance works yet, but you will understand how it works in a little bit
   + The class is largely empty, but it includes a declaration of a member variable of type `ArrayList`. This object is available for use in any of the test cases
   + It has four methods you can insert code in: 
-	- the class constructor and `SetUp()` is largely the same:both will be called before each test case
+	- the class constructor and `SetUp()` is largely the same; both will be called before each test case
 	- similarly, the class destructor and `TearDown()` will be called after each test
 
 In order to have access to the fixture, tests need to be declared using the `TEST_F` fixture instead of `TEST`. The test suite name should also be the same as the class name.
@@ -185,7 +177,7 @@ You can see all that comes to play in the sample `get()` test. Notice that we ar
 
 ### 3 - More about Testing
 
-A common mistake students make is that they write tests for their program to pass. This is wrong. Your job, when writing test cases, is to try as hard as you can to break your code. (There is the saying that **"a good test is a test that fails"**) Try to think of all possible ways that your program can misbehave. When designing test cases, ask yourself these questions:
+A common mistake students make is that they write tests for their program to pass. This is wrong. Your job, when writing test cases, is to try as hard as you can to break your code. Try to think of all possible ways that your program can misbehave. When designing test cases, ask yourself these questions:
 
   + What promises does the program make in its documentation?
   + If something is supposed to happen after a function call, does it happen?
@@ -197,7 +189,7 @@ Remember - the harsher you are when testing your own program, the less bugs will
 
 ### 4 - Assignment: Identify Two of the Bugs
 
-**TL;DR: Find 2 out of 3 bugs by writing tests, and ask a CP to check you off.**
+**TL;DR: Find 2 out of 3 bugs by writing tests, and follow the submission protocol at the bottom of this page.**
 
 In the `part2` folder, we have provided an implementation of ArrayList for you - there is a header file `arraylist.h`, with the specification of the expected function in the comments, and a pre-compiled `ArrayList` implementation. You do not have access to the source code. We do this because again, we do not want you to think about test cases in terms of the source, but in a wider perspective of "how things should work".
 
@@ -213,7 +205,7 @@ Some tips:
   + What are the execution paths in each function?
   + Big Hint: look at the test names we give you
 
- - [ ] Find two of the three bugs. Then, show a CP your tests and describe the bugs you found to get checked off.
+ - [ ] Find two of the three bugs. Then, submit screenshots of your tests and describe the bugs you found to get checked off.
 
 ### Appendix: A little bit more on the Makefile
 
@@ -233,5 +225,13 @@ You can probably safely copy this variable everywhere.
 **fibTest** - The main test rule. It has two dependencies: the compiled fib object, and the test suite itself. For the command, we simply take all the dependencies and compile them, with the `GTEST_LL` variable. It's important that the libraries are loaded after the source files, or else the linker will likely throw an error.
 
 **tests** - A rule that just runs the tests. Optional. Notice that this is a phony rule, because it doesn't actually create any file.
+
+{% include lab_submit.html %}
+
+What to submit:
+- fib.cpp and test.cpp from part1 folder
+- test.cpp from part2 folder
+- a .txt file describing at least 2 bugs you found in part2
+
 
 

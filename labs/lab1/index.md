@@ -20,12 +20,6 @@ In this course, we will be using GitHub to host our git repositories and we will
 
 In order to complete this lab, make sure you are using the correct terminal to run commands:
 
-* If you are running the course VM (through Virtual Box), then **all commands** from this lab shall be ran from
-  the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
-  Alternatively, you could open it by searching for "terminal" in the quick launcher:
-
-<div style="text-align:center;"> <img src="assets/vm-terminal.png" width="50%" /> </div>
-
 * If you are running Docker, then there are two types of terminals you are going to interact with:
   - The **native terminal** refers to the terminal provided by your native OS, not docker. On Windows, type
     `Win + R` and then `powershell` to start it. On Mac, open you app launcher and search for "terminal".
@@ -39,7 +33,7 @@ ch shell csci104
 From now on, every sequence of command we show you would be annotated with either *`[native]`* or *`[docker]`*. This denotes the
 terminal you should be running the command from if you are using Docker. (If you are using the VM, then always use the VM terminal).
 
-Examples:
+Examples (You do **NOT** need to run these commands):
 
 *`[native]`*
 ```shell
@@ -54,6 +48,12 @@ vim cat.txt
 ```
 
 The above command shall be ran from your **Docker terminal**.
+
+* If you are running the course VM (through Virtual Box), then **all commands** from this lab shall be ran from
+  the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
+  Alternatively, you could open it by searching for "terminal" in the quick launcher:
+
+<div style="text-align:center;"> <img src="assets/vm-terminal.png" width="50%" /> </div>
 
 ## Cloning the `resource` and `hw-username` repositories
 

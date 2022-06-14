@@ -3,24 +3,28 @@ hw1:
     - writeup: policies.md
       number: 1
       title: Course Policies
-      points: 12
+      points: 6
     - writeup: git-1.md
       number: 2
       title: Git
       points: 6
-    - writeup: runtime-1b.md
+    - writeup: runtime-1.md
       number: 3
       title: Runtime Analysis
       points: 24
-    - writeup: constructors.md
+    - writeup: ll-rec-tracing-1.md
       number: 4
+      title: Linked List Recursion Tracing
+      points: 14
+    - writeup: constructors.md
+      number: 5
       title: NOT GRADED (PRACTICE ONLY) - Constructors and Destructors
       points: 0
   programming_parts:
-    - writeup: labellist.md
-      number: 5
-      title: LabelList (Classes, Pointers, LinkedLists)
-      points: 58
+    - writeup: sparsematrix.md
+      number: 6
+      title: Sparse Matrix (Classes, Pointers, LinkedLists)
+      points: 50
 
 hw2:
   written_parts:
@@ -32,58 +36,35 @@ hw2:
       number: 2
       title: Makefiles
       points: 8
-    - writeup: ll-rec-tracing-1.md
+    - writeup: adt-su21.md
       number: 3
-      title: Linked List Recursion Tracing
-      points: 8
-    - writeup: adt-sp22.md
-      number: 4
       title: ADTs
-      points: 8
-    - writeup: class-design-websearch.md
-      number: 5
+      points: 6
+    - writeup: class-design-restaurant.md
+      number: 4
       title: Class Structures and OO Design
       points: 10
   programming_parts:
-    - writeup: websearch-1.md
-      number: 6
-      title: Websearch (Inheritance, Polymorphism, Sets, Maps)
-      points: 60
+    - writeup: twitter-1.md
+      number: 5
+      title: Twitter (Inheritance, Polymorphism, Sets, Maps)
+      points: 70
 
 hw3:
   written_parts:
-    - writeup: heap-trace-2.md
+    - writeup: heap-trace-1.md
       number: 1
       title: Heap Tracing
-      points: 10
+      points: 8
     - writeup: astar-tracing.md
       number: 2
       title: A* Algorithm Tracing
-      points: 10
+      points: 7
   programming_parts:
-    - writeup: functor-background.md
+    - writeup: ll-recursion.md
       number: 3
-      title: Comparator Functor Background
-      points: 0
-    - writeup: ll-recursion2.md
-      number: 4
       title: Linked List Recursion Coding
-      points: 15
-    - writeup: stack-vec.md
-      number: 5
-      title: Stack class
-      points: 10
-    - writeup: heaps.md
-      number: 6
-      title: m-ary Heaps
-      points: 25
-    - writeup: rushhour.md
-      number: 7
-      title: Car Puzzle Game with A* AI
-      points: 30
-
-old_hw3:
-  programming_parts:
+      points: 20
     - writeup: llstack.md
       number: 4
       title: Templated Stack Class
@@ -92,6 +73,18 @@ old_hw3:
       number: 5
       title: Dirty Laundry
       points: 10
+    - writeup: functor-background.md
+      number: 6
+      title: Comparator Functor Background
+      points: 0
+    - writeup: heaps.md
+      number: 7
+      title: m-ary Heaps
+      points: 25
+    - writeup: huffman.md
+      number: 8
+      title: Huffman Codes
+      points: 20
 
 hw4:
   written_parts:
@@ -100,7 +93,7 @@ hw4:
       title: AVL Operations
       points: 10
   programming_parts:
-    - writeup: traversal-equal-paths.md
+    - writeup: traversal-intrange.md
       number: 2
       title: Tree Traversals
       points: 10
@@ -115,23 +108,23 @@ hw4:
 
 hw5:
   written_parts:
-    - writeup: counting2.md
+    - writeup: counting1.md
       number: 1
       title: Counting
       points: 25
-    - writeup: probability2.md
+    - writeup: probability1.md
       number: 2
       title: Probability
       points: 25
   programming_parts:
-    - writeup: wordle.md
+    - writeup: gridpaths.md
       number: 3
-      title: Recursion and Combinations
-      points: 25
-    - writeup: schedwork.md
+      title: Recursion, Counting, and Combinations
+      points: 20
+    - writeup: satsolver.md
       number: 4
-      title: Recursion and Backtracking and Scheduling
-      points: 25
+      title: Recursion and Backtracking and Boolean Satisfiability
+      points: 30
 
 hw6:
   written_parts:
@@ -139,20 +132,24 @@ hw6:
       number: 0
       title: Complete the Course Evalutions
       points: 0
-    - writeup: number-theory2.md
+    - writeup: number-theory1.md
       number: 1
       title: Number Thoery
       points: 30
   programming_parts:
-    - writeup: hash-func-str.md
+    - writeup: hashtable.md
       number: 2
-      title: Write Your Own String Hash Function
-      points: 15
-    - writeup: hashtable-dh.md
+      title: Hash Table with Quadratic Probing and Performance
+      points: 40
+    - writeup: hashtable-analysis.md
       number: 3
-      title: Hash Table with Double-Hash Probing
-      points: 35
-    - writeup: graphiso.md
+      title: Hash Table Analysis
+      points: 10
+    - writeup: hash-func-str.md
       number: 4
-      title: Subgraph Isomorphism
-      points: 20
+      title: Write Your Own String Hash Function
+      points: 10
+    - writeup: pairless-hash.md
+      number: 5
+      title: Lost Pairs
+      points: 10

@@ -1,5 +1,5 @@
 
-This problem has nothing to do with the programming problem(s) below, but it will separately test your understanding of class structures and inheritance. **Place your answers in PDF file named `hw2_q2.pdf`** (Use your phone to convert hand-drawn results to a PDF, if necessary).
+This problem has nothing to do with the programming problem(s) below, but it will separately test your understanding of class structures and inheritance. **Place your answers in PDF file named `hw2_q4.pdf`** (Use your phone to convert hand-drawn results to a PDF, if necessary).
 
 Imagine that you are writing a simulation of a restaurant to help make decisions about number of employees, ensure appropriate crowding levels both in the restaurant and kitchen, etc.
 

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+$font-size: 16px;
+$font-family: "Lato", "Arial", sans-serif;
+$font-weight: 300;
+
+strong {
+  font-weight: normal;
+}
+
+html {
+  $color-primary: #990000;
+  $color-secondary: #FFCC00;
+  $color-navigation: $color-primary;
+  $color-primary-text: white;
+  $color: black;
+  $color-background: white;
+  $color-background-accent: #EFEFEF;
+  $color-background-selected: #EEE;
+  $color-background-code: rgba(27, 31, 35, 0.05);
+  $color-background-primary-light: mix($color-primary, white, 10%);
+  $color-background-sidebar-hover: mix($color-primary, $color-background, 5%);
+  $color-background-sidebar-selected: mix($color-primary, $color-background, 10%);
+  $icon-filter: none;
+  $icon-filter-navigation: invert(100%);
+
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-navigation: #{$color-navigation};
+  --color-primary-text: #{$color-primary-text};
+  --color: #{$color};
+  --color-background: #{$color-background};
+  --color-background-accent: #{$color-background-accent};
+  --color-background-selected: #{$color-background-selected};
+  --color-background-code: #{$color-background-code};
+  --color-background-primary-light: #{$color-background-primary-light};
+  --color-background-sidebar-hover: #{$color-background-sidebar-hover};
+  --color-background-sidebar-selected: #{$color-background-sidebar-selected};
+  --icon-filter: #{$icon-filter};
+  --icon-filter-navigation: #{$icon-filter-navigation};
+
+  .theme-toggle { display: none; }
+  .theme-toggle.dark { display: inline-block; }
+}
+
+html[data-theme="dark"] {
+  $color-primary: #1d7185;
+  $color-secondary: #549F93;
+  $color-navigation: $color-primary;
+  $color-primary-text: #F7F7F7;
+  $color: #F7F7F7;
+  $color-background: #121212;
+  $color-background-accent: #1B1B1B;
+  $color-background-selected: #3B3B3B;
+  $color-background-code: rgba(230, 234, 240, 0.05);
+  $color-background-primary-light: mix($color-primary, white, 10%);
+  $color-background-sidebar-hover: mix($color-primary, $color-background, 5%);
+  $color-background-sidebar-selected: mix($color-primary, $color-background, 10%);
+  $icon-filter: invert(100%);
+  $icon-filter-navigation: invert(100%);
+
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-navigation: #{$color-navigation};
+  --color-primary-text: #{$color-primary-text};
+  --color: #{$color};
+  --color-background: #{$color-background};
+  --color-background-accent: #{$color-background-accent};
+  --color-background-selected: #{$color-background-selected};
+  --color-background-code: #{$color-background-code};
+  --color-background-primary-light: #{$color-background-primary-light};
+  --color-background-sidebar-hover: #{$color-background-sidebar-hover};
+  --color-background-sidebar-selected: #{$color-background-sidebar-selected};
+  --icon-filter: #{$icon-filter};
+  --icon-filter-navigation: #{$icon-filter-navigation};
+
+  .theme-toggle { display: none; }
+  .theme-toggle.light { display: inline-block; }
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  color: var(--color);
+  background-color: var(--color-background);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight;
+  color: var(--color-primary);
+  margin-top: 1em;
+  margin-bottom: 0.25em;
+}
+
+h5, h6 {
+  color: var(--color);
+}
+
+h3 {
+  font-size: 1.35em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}

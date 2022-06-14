@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300');
+@import 'theme.scss';
+
+code {
+  display: inline-block;
+  padding: 0 3px;
+  border-radius: 5px;
+  background-color: var(--color-background-code);
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  font-size: 80%;
+  font-weight: inherit;
+  line-height: 1.5;
+}
+
+pre {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--color-background-code);
+  border-radius: 5px;
+
+  code {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    padding: 7px 12px;
+  }
+}

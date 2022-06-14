@@ -8,7 +8,7 @@ In this problem you will apply and deepen your linked list programming skills by
 
 A **sparse matrix** is one where the majority of entries are `0`.  Due to this characteristic, we can save memory (and potentially time) by **only storing non-zero entries**. One approach to doing this is to use linked lists to only store the **non-zero cells**. Since we do not have an entry at every row/column index, each cell must store the row/column coordinates to which it corresponds along with its data value and necessary linked list pointers.  So that we can scan quickly down either a row or a column we will choose to make each cell a member of two linked lists:  a row linked list and a column linked list.  Each list is a doubly-linked list to support faster insertions and removals. (*You may wish to spend a moment considering why a singly-linked list would make insertion/removal less efficient*).  Thus the overall sparse matrix would resemble the diagram below for a **4x4** matrix.  Notice, there is an array of head pointers for the row lists on the far left and another array of head pointers for the column lists on the top.
 
-<img src="{{site.url}}/assignments/img/spmat1.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat1.png" alt="" width="100%"/> 
 
 ### Provided Implementation
 
@@ -34,7 +34,7 @@ We have provided the following **completed** functions which you should **NOT** 
 
  - `void SparseMatrix::print(std::ostream& ostr) const` will output the matrix in a 2-dimensional format to the provided `ostream`
 
- - `SparseMatrix::SparseItem* SparseMatrix::lowerBound(size_t list, Coord target_coord ) const` can be used to find the `SparseItem` with the given "target" coordinates by iterating through either the ROW(0) or COL(1) list.  If no `SparseItem` with the given coordinates exists in the specified list, either the Item that would come **before** the given coordinates will be returned, or `nullptr` if the list is empty of the target coordinate would come before the first item in the list.
+ - `SparseMatrix::SparseItem* SparseMatrix::lowerBound(size_t list, Coord target_coord ) const` can be used to find the `SparseItem` with the given "target" coordinates by iterating through either the ROW(0) or COL(1) list.  If no `SparseItem` with the given coordinates exists in the specified list, either the Item that would come **before** the given coordinates will be returned, or `nullptr` if the list is empty or the target coordinate would come before the first item in the list.
 
 #### Additional Learning: Exceptions
 
@@ -53,11 +53,11 @@ Study the class definition in the header file and the functions already implemen
 
 For the `SparseMatrix` class, you will need to complete the following operations:
 
- - `size_t& SparseMatrix::Coord::operator[](size_t index)` (both const and non-const versions) which are easy accessors to retrieve either the `r` member if `index` is `0` (or `ROW`) or the `c` member if index is `1` (or `COL`).
+ - `size_t& SparseMatrix::Coord::operator[](size_t index)` (both const and non-const versions) which are easy accessors for the `Coord` struct to retrieve either the `r` member if `index` is `0` (or `ROW`) or the `c` member if index is `1` (or `COL`).
  - `bool SparseMatrix::Coord::operator==(const Coord& rhs) const` to compare `Coord` objects if necessary 
  - `SparseMatrix(size_t n)` constructor should allocate memory for the arrays of head pointers and intiailze them as well as other data members
  - `~SparseMatrix()` destructor should deallocate all memory correctly without leaks
- - `set(coord, val)` should set the cell with given `coord` coordinates to the value, `val`.  If the cell at the given coordinates does not exist (i.e. it is currently `0`), create and insert the new cell provided the value is not zero.  If the cell at the given coordinates does exists, update its value unless the value is 0 in which case the cell should be removed from the lists. Attempting to set a non-existent cell (i.e. that is already implicitly 0) with an explicit value of 0 should simply have no effect.  Read and comply with the corresponding header file description of exception cases to handle.  Ensure no memory is leaked.  This will likely be one of the more difficult functions to implement. Consider how `lower_bound()` can be used to help find the location to insert a new cell, if necessary.  Also, note that you should call `createSparseItem` to dynamically allocate a `SparseItem` rather than using `new` yourself.  This aides the DebugHelper described later on to verify your implementation.
+ - `set(coord, val)` should set the cell with given `coord` coordinates to the value, `val`.  If the cell at the given coordinates does not exist (i.e. it is currently `0`), create and insert the new cell provided the value is not zero.  If the cell at the given coordinates does exist, update its value unless the value is 0 in which case the cell should be removed from the lists. Attempting to set a non-existent cell (i.e. that is already implicitly 0) with an explicit value of 0 should simply have no effect.  Read and comply with the corresponding header file description of exception cases to handle.  Ensure no memory is leaked.  This will likely be one of the more difficult functions to implement. Consider how `lower_bound()` can be used to help find the location to insert a new cell, if necessary.  Also, note that you should call `createSparseItem` to dynamically allocate a `SparseItem` rather than using `new` yourself.  This aides the DebugHelper described later on to verify your implementation.
  - `double sumDim(const Coord& coord) const` returns the sum of the values in the specified dimension. Exactly one of the row or column coordinates must be `SparseMatrix::npos`. For example, a `Coord` of `{SparseMatrix::npos, 2}` specifies all entries in column 2 should be summed.
  - `void copyDim(size_t srcCoord[], size_t destCoord[])` copies one row or column to another (may be a transpose...row to column or vice versa).  Each argument should have exactly one of the row or column coordinates be `SparseMatrix::npos`.  For example, `copyDim({5,SparseMatrix::npos}, {SparseMatrix::npos,3})` would copy row 5 to column 3.
  
@@ -71,19 +71,19 @@ For the `SparseMatrix` class, you will need to complete the following operations
 
 Suppose we create the following 4x4 `SparseMatrix` (`n=4`):
 
-<img src="{{site.url}}/assignments/img/spmat1.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat1.png" alt="" width="100%"/> 
 
 If we then perform a **set** operation on coordinate `{0,0}` with value `1.8`, a new `SparseItem` should be created in that location and added to the appropriate linked lists, resulting in the following.
 
-<img src="{{site.url}}/assignments/img/spmat2.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat2.png" alt="" width="100%"/> 
 
 If we then perform a **set** operation on coordinate `{1,2}` to value `0`, the `SparseItem` that in that location should be deleted (since we do not store values of 0).  The resulting matrix is shown below.
 
-<img src="{{site.url}}/assignments/img/spmat3.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat3.png" alt="" width="100%"/> 
 
 Finally, if we perform a `copyDim` operation from **row 3** to **column 2** (i.e. `SparseMatrix::copyDim({3,SparseMatrix::npos}, {SparseMatrix::npos,2})` ) then the old contents of column 2 should be removed (taking care not to delete an item that is also in the source dimension), and the elements from source row 3 should be copied into column 2.  **Note:** the source dimension may be modifed by this operation when copying from one row/column to the opposite (as seen here).
 
-<img src="{{site.url}}/assignments/img/spmat4.png" alt="" width="100%"/> 
+<img src="{{site.baseurl}}/homework/img/spmat4.png" alt="" width="100%"/> 
 
 ### Notes and Other Info
 
@@ -94,6 +94,8 @@ Finally, if we perform a `copyDim` operation from **row 3** to **column 2** (i.e
 ### Testing
  
  - We have provided a simple test driver in `spmat-test.cpp` that will create a few different matrices and exercise some of the member functions.  It does not perform automated testing so you will need to read the code and examine the output to verify that your code is producing correct, expected output. 
+  
+  Many students try to rush this step.  It is far easier to find bugs in your code for small test cases that you create (and understand) than with the larger test suites that we often provide.  We **strongly encourage** you to read the test program `spmat-test.cpp` and sketch on paper what the matrix would look like and then run the code (adding additional print statements) to verify the operation of your implementation.  If your code crashes or generates valgrind, that's probably a GOOD thing initially because the small cases tested here will make solving your bugs easier.  We **ALWAYS** encourage you to think of some simple, basic tests you can write for any data structure or problem you code in this class.  And in doing so, think through what the **expected** output should be.  Then if your code does not produce that, think about why (use `gdb` or add print statements).  This is especially true when we release test suites.  You **MUST** read over the test code and get an idea in your head of WHAT it is **trying** to do and WHAT the **expected** outputs are.  Then when your code doesn't produce the expected outputs, you'll have an idea of where to start.  **PLEASE, taking testing seriously**.  The better you develop your debugging skills, the easier the following assignments will be.
 
  - We have, however, provided a helper, debug class: `SparseMatrixDebugHelper`.  It performs consistency checks regarding your linked list pointers and will output error message. For it to work, you must use `createSparseItem` and `deleteNode` to dynamically allocate and delete SparseItems. These functions have calls to the DebugHelper to track which nodes exist currently.  Hooks to call the consistencyChecker are already inserted in `set` and `copyDim`. To enable those calles, you should compile by using:
 

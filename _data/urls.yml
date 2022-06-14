@@ -1,21 +1,22 @@
-piazza: https://piazza.com/class/ky4usd024l43mm
-calendar: https://calendar.google.com/calendar/u/2?cid=Y19wcHBrZWxpbHVzanVzNXRudXFlNWJtM2pmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-github: https://github.com/usc-csci104-spring2022
-github_ssh: git@github.com:usc-csci104-spring2022
-github_org: 'usc-csci104-spring2022'
-discord: https://discord.gg/YNAzZkF
+qa_tool: EdStem
+piazza: https://edstem.org/us/courses/22162/discussion/
+calendar: https://calendar.google.com/calendar/u/2?cid=Y191MmxxczkzdHNrazB0a2ttMWIyYTBlNmFlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+github: https://github.com/usc-csci104-summer2022
+github_ssh: git@github.com:usc-csci104-summer2022
+github_org: 'usc-csci104-summer2022'
+# discord: https://discord.gg/YNAzZkF
 vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 
 blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
-regrades: https://docs.google.com/forms/d/e/1FAIpQLScPX0FygBxw6jLqrOFNFzMfowgM-6sYxyIhFiANLR-zpih4YA/viewform?usp=sf_link
-slug: cs104-sp22
+regrades: https://docs.google.com/forms/d/e/1FAIpQLSdBzRIMUwNIkMfrhfmIarIyEMgoYiyVHuOHaaLKgTWEBHKM7Q/viewform?usp=sf_link
+slug: cs104-su22
 slide_location: http://ee.usc.edu/~redekopp/cs104/slides
-extension_form: https://forms.gle/L3381uqHutpkfeVx6
+extension_form: https://docs.google.com/forms/d/e/1FAIpQLScBsskr-OIcI6zdb0GM64iCZVwReyO6cGl-M4c62ERqDDltpw/viewform?usp=sf_link
 visual_code: https://code.visualstudio.com/download
 docker_repo: https://github.com/csci104/docker
 lab_form: 
 git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
-osas_dsp_form: https://forms.gle/SezcgxMRrXSYreC77
-account_ta_name: Krishna Kadam
-account_ta_email: kjkadam@usc.edu
+osas_dsp_form: https://docs.google.com/forms/d/e/1FAIpQLSfK21SJZ3HM35uVElL04StHLitzbmiWgs8pIjDfP8BrToOQeQ/viewform?usp=sf_link
+account_ta_name: Nathan Bartley
+account_ta_email: nbartley@usc.edu

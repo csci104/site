@@ -2,162 +2,166 @@
 layout: asides
 toc: true
 tasks: true
-title: Hashtables
+title: Counting
 ---
 
 ---
 
-This lab requires checkoff. You have to get checked off by a TA/CP during
-your assigned lab section between Mar. 29, 2022 and Apr. 1, 2022
+**Due at the end of your registered lab section**
 
 ---
 
-### 0 - What is a Map?
-
-Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
-
-The look up speed and ordering of map elements depends on the data structure we use to implement our map. In previous labs, we reviewed AVL Trees, an implementation of a balanced BST. This lab will go over hashtables and explore how it can be used to implement a map.
-
-### 3 - Let's Talk About Hash Tables
-
-A Hash Table is like an array in many aspects. However, in order to find the index in the array, we use a special function called a hash function. This converts the input into an index location that the input is then stored into.
-
-<div style="text-align:center"><img src="./assets/hashTable.png" alt="bst" width="300" height="250" /> </div>
-
-In the above example, we can see that our hash table stores strings, and those strings are stored in locations within an array specified by the hash function.
-
-This type of data structure is very useful in terms of accessing data. You could probably think of different applications of this data structure. Maybe a set? Given an input, we first hash it, then look to see if it is inserted in our hash table by checking the index returned by our hash function. Since hashing is just a function, it takes O(1) time. If we have a good hash function that distributes keys uniformly around the table such that there are a small number of keys at each location, the entire check is O(1) on average.
-
-There are many different applications of this type of data structure, including sets, maps, and associative arrays (which are pretty much maps).
-
-#### 3.1 - Hash Functions
-
-So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array. 
-
-What goals should our hash function have?
-1. Easy and fast to compute
-2. Uniformly distributes keys across the hash table
-
-The first thing we want is for the function to be fast. It should be an easy calculation that takes O(1) time to compute.
-
-Lets first go over a bad example:
-
-```
-int hash(int data) {
-    return 42 % size;
-}
-```
-
-This hash function is super fast. It literally just does one operation and then returns. However, it always returns the same number. This means that we are always going to go to the same array index. This doesn't make sense. Shouldn't our hash function result in different outputs with different inputs?
-
-A good example of this would be:
-
-```
-int hash(int data){
-    return 31 * 54059 ^ (data * 76963) % size;
-}
-```
-
-Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different every single timety in our ou. It may be more operations than our first hash function, but it still does a constant amount of work.
+## Counting
 
 
-#### 3.2 - Collisions
+This lab will be covered during lab sections between March 16 - March 19, 2021. **You need to get checked off during a lab sesson on or before March 19th.**
 
-So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches: 
+This week's lecture will go over the fine art of counting! We'll review the concepts covered in lecture, go over a few practice examples, and then give you some exercises to do on your own. As it turns out, counting is not always as easy as 1-2-3!
 
- * open addressing such as linear probing, quadratic probing, or double hashing.
- * closed addressing such as chaining or buckets.
+*For this lab, you will need to write down the answers to the practice problems and share your solutions with a CP/TA to get checked off. You are expected to do all the exercises, and your CP/TA will randomly select two questions to check your understanding (this means you have to show your work!)* Don't worry, we'll go through examples together!
 
-#### 3.3 - Open Addressing
+### Basic Counting
 
-The idea with open addressing is that every location in the array can only have 1 thing in it. This means that we will have to find a free spot that we can place the object in. Linear probing is a very simple solution.
+Recall the Product, Sum, Subtraction, and Division Rules, and use them to solve the following questions.
 
-Linear probing is where you just keep incrementing up/looking at the next index until you find a free location.
+#### Product Rule
+The **Product Rule** states that if a procedure can be broken up into a sequence of **k** tasks, and there are **n<sub>1</sub>** ways to do the first task, **n<sub>2</sub>** ways to do the second task, ..., and **n<sub>k</sub>** ways to execute the kth task, then there are **n<sub>1</sub> * n<sub>2</sub> * ... * n<sub>k</sub>** ways to do the procedure. 
 
-The algorithm for inserting into a linear probed hashtable is:
+Another way of thinking about the product rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. The cartesian product &#124;A × B&#124; = &#124;A&#124; × &#124;B&#124;.
 
- 1. Hash the element, which gives you a position in the table.
- 2. If the position is already taken, try the next position (if you reach the end of the table, wrap back to the start).
- 3. Repeat step 2 until you have found an empty spot.
- 4. Insert the element at that empty spot.
+#### Example
+There's an old English nursery rhyme that goes like this:
 
-The algorithm for finding a key in a linear probed hashtable is:
+> As I was going to St Ives,
+> 
+> Upon the road I met seven wives;
+> 
+> Every wife had seven sacks,
+> 
+> Every sack had seven cats,
+> 
+> Every cat had seven kits:
+> 
+> Kits, cats, sacks, and wives,
+> 
+> How many were going to St Ives?
 
- 1. Hash the key you want to find, which gives you a position in the table.
- 2. If the position contains a key, compare it with the key you want to search. If they are equal, you've found the key; otherwise, move to the next position. If the position is empty (i.e does not contain a key), you know that the key does not exist in the table.
- 3. Repeat step 2 until the algorithm terminates.
+Spoiler: there was only only one person going to St. Ives--you, the speaker/reader/narrator! But how many kits, cats, sacks, and wives are there coming *from* St. Ives?
 
-Removing from the hashtable is a little bit more involved:
+**Solution**: 
 
- 1. First find the position of the key with the method illustrated above.
- 2. Delete the key there.
- 3. Move to the next position. If it is not empty, delete the key there and reinsert it.
- 4. Repeat step 3 until you have reached an empty spot or you have looped back to the position you found in step 1.
++ There are 7 wives 
++ There are 7 * 7 = 49 sacks
++ There are 49 * 7 = 343 cats
++ There are 343 * 7 = 2401 kits 🐈
 
+#### Sum Rule
+The **Sum Rule** states that if a task can be done in one of **n<sub>1</sub>** ways or in one of **n<sub>2</sub>** ways, where none of the set of **n<sub>1</sub>** ways is the same as any of the set of **n<sub>2</sub>** ways, then there are **n<sub>1</sub> + n<sub>2</sub>** ways to do the task.
 
-Here is an example for you to practice with:
+Another way of thinking about the sum rule is to consider two finite and disjoint sets (meaning &#124;A ∩ B&#124; = 0), &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124;.
 
-Suppose you have three keys with the following hash:
+#### Example
+Remember your trip to St. Ives? Well, on your trip, you decide to adopt not one, but two felines! One of the wives tells you to draw 2 cats out of her sack. Recall that there are 49 felines in the sack (7 cats, and for each cat, 7 kittens). Of the 49 felines, 17 are black, 21 are tabbies, and 11 are calicos. In how many ways can you draw exactly 1 black cat or exactly 1 calico cat? (Using B to denote black, T to denote tabby, and C to denote calico, any one of the following arrangements has exactly 1 black or 1 calico cat: BT, BC, CT.)
 
-* Key A has hash 0
-* Key B has hash 1
-* Key C has hash 1
-* Key D has hash 1
-* Key E has hash 2
+**Solution**: 
 
-And you have a hash table of size 5.
++ The number of ways we can get 1 black and 1 tabby cat is: 17 * 21 = 367
++ The number of ways we can get 1 black and 1 calico cat is: 17 * 11 = 187
++ The number of ways we can get 1 calico and 1 tabby cat is: 11 * 21 = 231
 
-Try yourself with pen and paper. What will the hashtable look like following each of those steps (in sequence):
+The number of ways we can get exactly 1 black or 1 calico cat is: 367 + 187 + 231 = **785**
 
-* Insert B
-* Insert C
-* Insert E
-* Insert A
-* Insert D
-* Remove B
-* Remove E
+#### Subtraction Rule
+The **Subtraction Rule** states that if a task can be done in either one of **n<sub>1</sub>** ways or one of **n<sub>2</sub>** ways, and there is an overlap between these two methods of **n<sub>3</sub>** common ways, then the number of ways to do the task is **n<sub>1</sub> + n<sub>2</sub> – n<sub>3</sub>**.
 
-#### 3.4 - Chaining
+Another way of thinking about the subtraction rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124; - &#124;A ∩ B&#124;. 
 
-For closed addressing we will focus on chaining. Chaining allows for multiple objects to reside within the same array location. The array is changed to be an array of lists or some other data structure, allowing us to store multiple items per index. We often use an array of linked lists, hence the name "chaining."
+#### Example
+You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to inspect each cat's paws. Every cat has black or pink paws. 41 cats have black paws, 50 cats have pink paws, and 21 cats have black AND pink paws. How many cats are in the cat cafe?
 
-<div style="text-align:center"><img src="./assets/chaining.png" alt="bst" width="400" height="250" /> </div>
+**Solution**: 41 + 50 - 21 = **70 cats** 🐱
 
+#### Division Rule
+**Division Rule**: there are n/d ways to do a task which can be done in one of n different ways, but for each specific way, it is identical to d-1 other ways.
 
-Other implementations may use another type of list or even a balanced tree. 
+#### Example
+How many distinct ways can we arrange the letters in "KITTEN"?
 
-Because chaining allows for buckets, it is probable for `n` objects to all be placed within the same bucket. The worst case runtime is O(n). Chaining may even prevent our goal of O(1) on average. However, a scenario like this should not occur if the hash function is good and the size of the hash table is big enough.
+**Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.) 
 
-### 4 - OrderedMap vs. UnorderedMap
+However, "KITTEN" has 2 T's, T<sub>1</sub> and T<sub>2</sub>. This means every arrangment has an identical other arrangement in which T<sub>1</sub> and T<sub>2</sub> are swapped: KIT<sub>1</sub>T<sub>2</sub>EN and KIT<sub>2</sub>T<sub>1</sub>EN are the same word! 
 
-So let's see a real life example of a hash table. In your homework, you have been using an ordered map. What is an unordered map and how is it different?
+Given that there are  2 * 1 = 2! ways to arrange the 2 T's, and that we want DISTINCT arrangements, the answer is **6!/2!**
 
-#### 4.1 - OrderedMap
+### Permutations & Combinations
+Recall from lecture that an **r-permutation** is an **ordered** arrangement of r elements from a set of n, denoted as:
+<div style="text-align:center"><img src="./assets/nPr.png" alt="r permutation" height="70"/></div>
 
-An ordered map uses a balanced binary search tree as its underlying data structure. We haven't yet go over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
+An **r-combination** is an **unordered** arrangement of r elements from a set of size n, and is commonly spoken as “n choose r”:
+<div style="text-align:center"><img src="./assets/nCr.png" alt="n choose r" height="60"/></div>
 
-1. `find(key)` | O(logn)
-2. `insert(key, value)` | O(logn)
-3. `remove(key)` | O(logn)
+#### Example: Permutations
+The Pied Piper Duck Fashion Show takes place in Sydney, Asutralia every year. Since we can't fly to Australia, let's suppose we are hosting our own CS104 exclusive duck fashion show. There are 30 ducks, and 3 prizes: gold, silver, and bronze. How many ways can we award gold, silver, and bronze among our 30 fashionable ducks?
 
-It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you a ordered traversal of all the keys in the map.
+**Solution:** first, we want to ask ourselves: does order matter here? The answer is yes--suppose we had ducks Donald, Daisy, and Scrooge. Donald winning gold, Daisy winning silver, and Scrooge winning bronze is NOT the same as Scrooge winning gold, Donald winning silver, and Daisy winning bronze. 
 
-#### 4.1 - UnorderedMap
+Suppose we chose our gold winner first, followed by our silver winner, followed by our bronze winner. 
++ We have 30 ducks to choose from for gold.
++ After selecting our golden duck, we have 29 ducks to choose from for silver.
++ After selecting our silver duck, we have 28 ducks to choose from for bronze.
 
-An unordered map uses a hash table as its underlying data structure. This means that access operations are O(1) on average, but because of this, no order can be inferred. By improving the runtime of operations, we had to sacrifice the ordering property.
+There are thus **30 * 29 * 28** ways of selecting our winning ducks out of our 30 contestants. This is equivalent to 30!/[(30-3)!]
 
-You must explicitly create an unordered map using `std::unordered_map`.
+#### Example: Combinations
+There are 10 people in a chess match. How many games do they need to play to guarantee that each person plays with everyone exactly once?
 
-1. `find(key)` | O(1) on average
-2. `insert(key, value)` | O(1) on average
-3. `remove(key)` | O(1) on average
+**Solution**: first, we want to ask ourselves: does order matter here? The answer is no: A playing against B is no different from B playing against A. Given 10 players, there are "10 choose 2" ways of selecting 2 players, so our answer is 10 choose 2 = **45 games**
 
-### 5 - HashTable Assignment
+### With or Without Repetition?
+The above two examples are examples of permutations and combinations *without* repetition. Once a duck is selected for gold, we do not reconsider that duck for silver. Player A cannot play against him/herself in a chess match. 
 
-You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
+However, sometimes we do allow for repetition. Recall from lecture that the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**. 
 
-To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
-- [ ] Implement `remove` in `hashtable.cpp`
-- [ ] Remember to show your passing tests to a TA/CP for checkoff!
+The number of r-combinations of a set of n objects, where repetition is allowed, is:
+<div style="text-align:center"><img src="./assets/rComboWithRepetition.png" alt="n combinations with repetition" height="60"/></div>
 
-NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!
+#### Example: Permutations with Repetition
+How many different 4-digit PINs are possible?
+
+**Solution**: here, order does matter (1234 is a different PIN from 4321), and repetition is allowed (1111 is a valid PIN.) There are therefore **10<sup>4</sup>** possible PINs.
+
+#### Example: Combinations with Repetition
+You walk into a cereal bar and build an epic cereal bowl. You are allowed to choose 3 servings of cereal, and there are 6 cereals to choose from: Apple Jacks, Cinnamon Toast Crunch, Fruit Loops, Honey Nut Cheerios, Lucky Charms, and Rice Krispies. How many different combinations of epic cereal bowls can you make?
+
+**Solution**: here, order does not matter and repetitions are allowed (you might go all in and make a bowl with 3 servings of Lucky Charms, for example.) The number of possible cereal bowls is: **8!/3!5!**
+
+### Indistinguishable Objects Over Distinguishable Boxes
+As it turns out, the number of combinations of **n** objects selected **r** at a time with repetition is equivalent to the number of ways to distribute **r** indistinguishable objects into **n** distinguishable boxes.
+
+#### Example
+How many ways can we distribute 12 cans of dog food among 3 dogs?
+
+**Solution**: here, n = 3 and r = 12. The answer is: **14!/12!2!**
+
+### Summary of Important Formulas
+<div style="text-align:center"><img src="./assets/table.png" alt="n choose r" width="500"/></div>
+
+### Exercises
+
+1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select?
+
+2. How many 32-bit strings have exactly 23 ones and 9 zeros?
+
+3. The average pig litter consists of 7 piglets. In how many ways can a mother pig of 7 piglets have exactly 2 girls? (Denoting B for boy and G for girl, GGBBBB is one "way" and BBBBGG is another "way".)
+
+4. How many anagrams can we make from the word "BOOKKEEPERS"? (Fun trivia fact: bookkeeper(s) is the only word in the English language with three consecutive repeated letters!) How does this change if we require S to always follow R?
+
+5. We have 5 *distinct* breakout rooms and 30 *distinct* students in lab. How many ways can we distribute 30 *distinct* students into the 5 breakout rooms? (Breakout rooms can be empty.)
+
++ How many ways can we distribute 30 *identical* students into the 5 *distinct* breakout rooms? (If 30 identical students bothers you, an equivalent question would be: how many ways can we distribute 30 *identical* chairs into 5 *distinct* classrooms?)
+
++ (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
+
+- [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during your registered lab section by Friday, Apr. 8**.
+
+If you finished early, here are some extra problems you could try. We would release the solutions on Saturday, Apr. 9: [https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf](https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf)

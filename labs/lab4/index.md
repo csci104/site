@@ -7,8 +7,7 @@ title: Inheritance and STL
 
 ---
 
-**This lab requires a checkoff. You need to get checked off before the end of your registered lab section
-from Feb 8, 2022 to Feb 11, 2022.**
+**Due at the end of your registered lab section**
 
 ---
 

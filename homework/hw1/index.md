@@ -19,8 +19,8 @@ hwpath: hw1
 
 ### A Few Notes on Repositories
 
-1. Never clone one repo into another.  If you have a folder `cs104` on your VM, Docker, or laptop (wherever you created your Github keys from Lab 1) and you clone your personal repo `hw-username` under it (i.e. `cs104/hw-username`) then whenever you want to clone some other repo, you need to do it back up in the `cs104` folder or other location, NOT in the `hw-username` folder.
-1. Your repos may not be ready immediately but be sure to create your GitHub account described in Lab 0 on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.urls.piazza}}) to let your instructors know that your repository needs to be created.  Be sure to include your USC username and github username for reference.
+1. Never clone one repo into another.  If you have a folder `cs104` on your laptop (wherever you created your Github keys from Lab 0) and you clone your personal repo `hw-username` under it (i.e. `cs104/hw-username`) then whenever you want to clone some other repo, you need to do it back up in the `cs104` folder or other location, NOT in the `hw-username` folder.
+1. Your repo is created when you register with our website (aka `curricula` system) as outlined in the Lab 0 writeup on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps, accepted the invite to the Github organization that should be generated and emailed to you after you register with our website, and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.urls.piazza}}) to let your instructors know that your repository needs to be created.  Be sure to include your USC username and github username for reference.
 
 ### Skeleton Code
 
@@ -59,17 +59,6 @@ Again be sure to replace `hw-username` with your USC username (e.g. `hw-ttrojan`
 
 {% endfor %}
 
-## Checkpoint
-
-For checkpoint credit, commit and push your `hw-username` repo with a `hw1` subfolder that contains:
-
-- `hw1.txt` with your answers to question 1 and 2
-- `q3_answers.pdf` or `hw1.pdf` that AT least contains your answer and justification to runtime question **3a**
-- a version of `labellist.h/cpp` that can pass the `hw1-checkpt` tests in `hw1-checkpt.cpp`.  To attempt to compile and run the `hw1-checkpt` tests, type `make check` at the command line which will both compile AND run the tests (if the compilation succeeded). To pass the checkpoint tests you must have implementation of the
-   - `LabelList` constructor, `add()`, and `label()` 
-   - `LabelList::MsgToken` member functions `msg()` (both const and non-const version) and operators `==`, `!=` and `bool`
-
-- **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/)
 
 ## Submission Files
 

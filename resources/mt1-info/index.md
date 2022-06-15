@@ -13,8 +13,8 @@ The test will be **IN PERSON**
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 50 minutes**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: **THH 101 and THH 201** (you may go to either room leaving a blank seat between each student)
-  - If you have **1.5x time accommodations** you will be in **THH 212**
+- Location: **SAL 126** 
+  - If you have **1.5x time accommodations** contact your professor for room details.
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
 - The test will be taken on a combination of paper (for problems requiring diagrams, tracing, or runtime) and Gradescope.  Gradescope can be accessed by logging into our Blackboard section, choose Assignments, and click on the Gradescope link. You will then find a **MT - Coding** assignment (once the exam begins) where you will be able to find, textboxes for some answers to certain questions and links to skeleton files and upload your completed files.  For coding questions, you will write code on your laptop and then uploading the `.cpp` file.  Skeleton files will be linked directly from Gradescope and you can download them, edit them, and upload your final code.  You can write your code in any editor and even try to compile and run if you like, but we are not expecting you do that and it will take away time from coding the other problems. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).  No automated tests will be provided since we don't expect you to compile and run your code.

@@ -8,13 +8,13 @@ exams:
 
   - name: MT1 
     time: Wed, June 29 at 10 AM Pacific
-    location: Online
-    link: mt1-info.html
+    location: In-Person
+    link: mt1-info/
 
   - name: Final
     time: Tues, July 19 at 9:30 AM Pacific
-    location: Online
-    link: final-info.html
+    location: In-Person
+    link: final-info/
 
 lectures:
 

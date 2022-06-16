@@ -24,7 +24,7 @@ Below is the pseudocode for the compression algorithm that we require you to imp
 
 A step by step visualization of how the Huffman tree is built is shown below.
 
- <img src="https://en.wikipedia.org/wiki/File:HuffmanCodeAlg.png">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/HuffmanCodeAlg.png">
 
 Most online references construct a tree using pointers, etc.  We will not do that (and if you do so, it will be an indicator that you inappropriately used online code).  Instead, we will take a potentially less efficient approach and use nodes that store the collection of all keys that would be in the leaves of the subtree rooted at that node, and we will build up the code strings as we join two nodes (sub-trees).
 

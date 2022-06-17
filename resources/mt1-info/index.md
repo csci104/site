@@ -93,6 +93,7 @@ The midterm will include a mix of anlaysis and coding problems. Most analysis qu
 #### Sample Midterms
 
  - [Sample Midterm]({{site.baseurl}}/resources/midterm-b.pdf) (no solutions)
+    - Q7: A good problem to focus on
  - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (no solutions)
  - [Summer 2020 Midterm (Programming)]({{site.baseurl}}/resources/mt-su20.html) (no solutions)
  - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
@@ -100,8 +101,8 @@ The midterm will include a mix of anlaysis and coding problems. Most analysis qu
  
 #### Practice Quizzes
 
- - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) (no solutions)
- - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) (no solutions)
- - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) (no solutions)
- - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) (no solutions)
- - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)
+ - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)
+ - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-streams-recursion-sol.cpp)
+ - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) | [No Solutions]
+ - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
+ - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)

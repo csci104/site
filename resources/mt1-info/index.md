@@ -101,8 +101,8 @@ The midterm will include a mix of anlaysis and coding problems. Most analysis qu
  
 #### Practice Quizzes
 
- - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)
- - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-streams-recursion-sol.cpp)
- - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) | [No Solutions]
- - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
- - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) | [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)
+ - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)
+ - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-streams-recursion-sol.cpp)
+ - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) - [No Solutions]
+ - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
+ - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)

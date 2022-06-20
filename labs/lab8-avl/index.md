@@ -100,7 +100,7 @@ During removal, we remove as normal and then proceed to fix the tree by traversi
 
 ### 4 - Exercise
 
-Take some time to confirm your understanding by showing the tree after each of the following operations in a file named `lab8-avl.txt`. 
+Take some time to confirm your understanding by showing the tree after each of the following operations in a new file named `lab8-avl.txt`. 
 
 __Initial Tree__
 

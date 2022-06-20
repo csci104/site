@@ -137,19 +137,15 @@ hw6:
       title: Number Thoery
       points: 30
   programming_parts:
-    - writeup: hashtable.md
-      number: 2
-      title: Hash Table with Quadratic Probing and Performance
-      points: 40
-    - writeup: hashtable-analysis.md
-      number: 3
-      title: Hash Table Analysis
-      points: 10
     - writeup: hash-func-str.md
       number: 4
       title: Write Your Own String Hash Function
-      points: 10
-    - writeup: pairless-hash.md
+      points: 15
+    - writeup: hashtable.md
+      number: 2
+      title: Hash Table with Quadratic Probing
+      points: 35
+    - writeup: graphiso.md
       number: 5
-      title: Lost Pairs
-      points: 10
+      title: Subgraph Isomorphism
+      points: 20

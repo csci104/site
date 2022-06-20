@@ -94,7 +94,7 @@ The midterm will include a mix of anlaysis and coding problems. Most analysis qu
 
  - [Sample Midterm]({{site.baseurl}}/resources/midterm-b.pdf) - [Solutions]({{site.baseurl}}/resources/midterm-b-sol.pdf)
     - Copy construction, operator overloading are not a major focus of CS104 but were in previous years.
- - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (no solutions)
+ - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (No solutions)
  - [Summer 2020 Midterm (Programming)]({{site.baseurl}}/resources/mt-su20.html) (no solutions)
  - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
    - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)

@@ -45,7 +45,7 @@ Switch to a professional-level environment or editor, such as the following:
 - C++ FAQ. [Link](https://isocpp.org/faq)
 - Google C++ Style Guide. [Link](https://google.github.io/styleguide/cppguide.html)
 - C++ Style Guide Links. [Link](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines)
-- SEI CERT C++ Secure Coding Guideline. Link(https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88046682)
+- SEI CERT C++ Secure Coding Guideline. [Link](https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88046682)
 - Issues with floating point and floating-point comparison. [Link](https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/)
 - Design Patterns and Refactoring Strategies. [Link](https://sourcemaking.com/)
 

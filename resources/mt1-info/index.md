@@ -98,6 +98,7 @@ The midterm will include a mix of anlaysis and coding problems. Most analysis qu
  - [Summer 2020 Midterm (Programming)]({{site.baseurl}}/resources/mt-su20.html) (no solutions)
  - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
    - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
+   - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
  
 #### Practice Quizzes
 

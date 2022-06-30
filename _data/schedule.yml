@@ -149,7 +149,7 @@ lectures:
       - Chapter 5.1-5.3
     notes: 
       - L15_SplayTrees.pdf
-      - L16_HashTables.pdf
+      - L16_HashingIntro.pdf
 
   # 12 Tues Jun 29
   - topics:

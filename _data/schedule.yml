@@ -142,8 +142,8 @@ lectures:
 
   # 11 Thurs Jun 24
   - topics:
+      - AVL Trees
       - Splay Trees
-      - Hash Table introduction
     chapters:
       - Chapter 4.5
       - Chapter 5.1-5.3
@@ -153,23 +153,19 @@ lectures:
 
   # 12 Tues Jun 29
   - topics:
+      - Hash Table introduction
       - Midterm Review
-      - Counting
     chapters:
       - Chapter 5.1-5.3
-      - Lewis & Zax Chapter 22
     notes: 
       - L16_HashingIntro.pdf
-      - L17_Counting.pdf
 
   # 13 Thurs July 1
   - topics:
       - Counting
-      - Probability
     chapters:
-      - Chapter 5.1-5.3
+      - Lewis & Zax Chapter 22
       - Lewis & Zax Chapter 23
-      - Lewis & Zax Chapter 26
     notes: 
       - L17_Counting.pdf
 
@@ -177,6 +173,7 @@ lectures:
   - topics:
       - Probability
     chapters:
+      - Lewis & Zax Chapter 26
       - Lewis & Zax Chapter 27
       - Lewis & Zax Chapter 28
     notes: 

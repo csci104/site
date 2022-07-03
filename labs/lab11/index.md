@@ -14,8 +14,6 @@ title: Counting
 ## Counting
 
 
-This lab will be covered during lab sections between March 16 - March 19, 2021. **You need to get checked off during a lab sesson on or before March 19th.**
-
 This week's lecture will go over the fine art of counting! We'll review the concepts covered in lecture, go over a few practice examples, and then give you some exercises to do on your own. As it turns out, counting is not always as easy as 1-2-3!
 
 *For this lab, you will need to write down the answers to the practice problems and share your solutions with a CP/TA to get checked off. You are expected to do all the exercises, and your CP/TA will randomly select two questions to check your understanding (this means you have to show your work!)* Don't worry, we'll go through examples together!
@@ -162,6 +160,4 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 
 + (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
 
-- [ ] Share your answers with a CP/TA to get checked off. **You need to get checked off during your registered lab section by Friday, Apr. 8**.
-
-If you finished early, here are some extra problems you could try. We would release the solutions on Saturday, Apr. 9: [https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf](https://bytes.usc.edu/cs104/labs/lab12/assets/extra_counting_problems.pdf)
+If you finished early, here are some extra problems you could try from the labs main page under slides. 

@@ -16,6 +16,7 @@ hwpath: hw5
 ### Skeleton Code
 Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and has been pushed to the Github repository [`resources`](https://github.com/{{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  Otherwise you'll need to clone it.
 
+If no `Makefile` is provided with the skeleton code, you will need to create one yourself.  It should have a target for each of the executables in the programming portion.
 
 ## Written Portion
 

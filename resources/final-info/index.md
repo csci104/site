@@ -11,15 +11,23 @@ nav: Resources
 - Time/Date: **{{site.data.schedule.exams[1].time}}**
   - The test will be set for **2 hours.**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: **THH 101 and THH 201** (you may go to either room leaving a blank seat between each student)
-  - If you have **1.5x time accommodations** you will be in **THH 116**
+- Location: **SSL 202** (leave a blank seat between you and your neighbor, if possible)
+  - If you have **1.5x time accommodations** please talk to your instructor.
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
-  
+
+- The final is likely to be an **ALL paper/pen** exam.  For coding problems, you will write code by hand (no laptops) though we will be forgiving about simply syntax issues, and focus on the core of your approach to each.
+- You will be given a paper exam that includes all questions and has room for the written answers
+- The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, an editor and/or compiler, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
+- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
+
+<!--
+
 - The test will be taken on a combination of paper (for problems requiring diagrams, tracing, or runtime) and Gradescope.  Gradescope can be accessed by logging into our Blackboard section, choose Assignments, and click on the Gradescope link. You will then find a **Final - Coding** assignment (once the exam begins) where you will be able to find, textboxes for some answers to certain questions and links to skeleton files and upload your completed files.  For coding questions, you will write code on your laptop and then uploading the `.cpp` file.  Skeleton files will be linked directly from Gradescope and you can download them, edit them, and upload your final code.  You can write your code in any editor and even try to compile and run if you like, but we are not expecting you do that and it will take away time from coding the other problems. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).  No automated tests will be provided since we don't expect you to compile and run your code.
 - You will be given a paper exam that includes all questions and has room for the written answers
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, an editor and/or compiler, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
+-->
 ### Topics and Style
 
 The final will include a mix of anlaysis and coding problems.  

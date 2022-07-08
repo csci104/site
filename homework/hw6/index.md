@@ -39,16 +39,6 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 {% endfor %}
 
-## Checkpoint
-
-For checkpoint credit, submit your working code for the **Hash Function** problem. Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
-
-  - `hash.h` and `hash-check.cpp` (it's fine to include your other **source** files like `ht.h` and `str-hash-test.cpp`, `Makefile`, etc)
-  - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
-
-
-We have provided Google tests for the hash function code in `hash-check.cpp` and the `Makefile` contains a target to compile the test executable `hash-check`. It also contains a target `run-hash-check` which will run the tests through valgrind.  Simply type `make run-hash-check`.  We will run these tests (with valgrind) to grade your checkpoint.  
-
 ## Submission Files
 
 Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** commit/push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.  Then submit your SHA on our submission site.  

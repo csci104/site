@@ -192,7 +192,7 @@ lectures:
   # 16 Tues July 13
   - topics:
       - Hash Functions & Bloom Filters
-      - Tries
+      - Tries (During lab?)
       - (Skip Lists, if time)
     chapters:
       - Chapter 12.4.2

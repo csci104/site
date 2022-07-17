@@ -110,3 +110,6 @@ The final will include a mix of anlaysis and coding problems.
 
  - [Final Practice (Summer 2020)]({{site.baseurl}}/resources/cs104-su20-final-prac.pdf) 
  - [Final Practice Solutions (Summer 2020)]({{site.baseurl}}/resources/cs104-su20-final-prac-sol.pdf)
+
+ - [Final Practice (Summer 2021)]({{site.baseurl}}/resources/cs104-su21-final-practice.pdf) 
+ - [Final Practice Solutions (Summer 2021)]({{site.baseurl}}/resources/cs104-su21-final-practice-sol.pdf)

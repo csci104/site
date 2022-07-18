@@ -17,7 +17,7 @@ nav: Resources
 
 - The final is likely to be an **ALL paper/pen** exam.  For coding problems, you will write code by hand (no laptops) though we will be forgiving about simply syntax issues, and focus on the core of your approach to each.
 - You will be given a paper exam that includes all questions and has room for the written answers
-- The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, an editor and/or compiler, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
+- The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind and blank scratch paper but nothing else.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 <!--

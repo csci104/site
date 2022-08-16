@@ -21,8 +21,10 @@ In this course, we will be using GitHub to host our git repositories and we will
 In order to complete this lab, make sure you are using the correct terminal to run commands:
 
 * If you are running Docker, then there are two types of terminals you are going to interact with:
-  - The **native terminal** refers to the terminal provided by your native OS, not docker. On Windows, type
-    `Win + R` and then `powershell` to start it. On Mac, open you app launcher and search for "terminal".
+  - The **Windows terminal** refers to the terminal provided by Windows, not docker. On Windows, type
+    `Win + R` and then `powershell` to start it.
+  - On **MacOS** you can use the built in Terminal app (search Terminal), or install an app like [https://iterm2.com/](iTerm2){:target="_blank"}. At this time, on MacOS we assume you are using Docker. (Fully native development **is** possible, just not supported by the course staff)
+  - If the instructions specify **native** terminal, these commands are to be issued in either the MacOS or Windows terminal. 
   - The **docker terminal** refers to the terminal you obtain by typing the following in your **native terminal**:
 
 ```shell
@@ -49,13 +51,13 @@ vim cat.txt
 
 The above command shall be ran from your **Docker terminal**.
 
-* If you are running the course VM (through Virtual Box), then **all commands** from this lab shall be ran from
+* If you are running the course VM (through Virtual Box), then **all commands** (both native and docker) from this lab shall be ran from
   the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
   Alternatively, you could open it by searching for "terminal" in the quick launcher:
 
 <div style="text-align:center;"> <img src="assets/vm-terminal.png" width="50%" /> </div>
 
-## Cloning the `resource` and `hw-username` repositories
+## Creating a GitHub repo and obtaining the example files
 
 ### The Concept of the *working directory*
 
@@ -104,7 +106,56 @@ Name:   csci104
         Port:   :2222
 ```
 
-The path after `Volume: ` (excluding `:/work`) is what you are looking for.
+The path after `Volume: ` (excluding `:/work`) is what you are looking for. The idea is that when you open and edit files in your native editor (VSCode, Xcode, Notepad++, TextMate, etc.) they will be saved in the working directory of the Docker image. Then when you run commands in Docker the files will be there.
+
+If you're using the VM or Codio, it's like always being inside Docker.
+
+#### Step 1b: Codio Only
+
+If you want to code this lab fully inside Codio, go to "My Projects" then "New Project". Choose "C++" as your starting point and give the project a name (e.g "example" or "lab1").
+ 
+### Step 2: Creating a GitHub repo and downloading the example resources
+
+These step assumes that you have already finished the git, GitHub, Codio integration and SSH key setup from Lab 0. If you haven't done [lab 0](../lab0/) yet, do it now.
+
+#### Step 2.1 Create a GitHub repo for this lab
+
+This semester we are **not** managing a GitHub organization for the course. Rather **you** will be responsible for creating a repo for each homework and/or lab.
+
+Navigate to [GitHub](https://github.com){:target="_blank"} and click the green "New" button. Or you can link there [directly](https://github.com/new){:target="_blank"}
+
+- Make sure the "Owner" is set to your GitHub user and **not** any GitHub organizations you might be part of.
+- Give the repo a good name like "lab1" or "example".
+- Make the repo private
+- Don't add a README, a .gitignore or a license
+
+Click "Create Repository"
+
+When the repo is created GitHub will show the repo "URL" (either HTTPS or SSH). Copy the SSH version to your clipboard (there is a button for that).
+
+#### Step 2.2 Creating an new repo on you development environment and connecting to GitHub
+
+Once you are inside the correct working directory, type the following commands (**replace the `GHUSERNAME` with your GitHub username**)
+
+*`[native]`*
+```shell
+mkdir lab1
+cd lab1
+echo "# lab1" > README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:GHUSERNAME/lab1.git
+git push -u origin main
+```
+If you didn't call the repo "lab1", you will need to replace "lab1" with the name of your repo. This will create a new directory called `lab1` and connect it to the GitHub repo named "lab1".
+
+#### Step 2.3 Adding code to your repo
+
+This semester we will be providing skeleton code and other resources through compressed files.
+
+- Windows or MacOS: download the [example file](https://bytes.usc.edu/files/cs104/resources/example.tar.gz) and save it in the lab1 repo directory we created above in step 2.2
 
 ### Step 2. Obtaining clones of the `hw-username` and `resources` repositories
 
@@ -141,6 +192,7 @@ Checking connectivity... done.
 A few notes about cloning:
  - **Never clone a Git repository** into a Dropbox or other sync'ed folder (Google Drive, etc.).
  - **Never clone a Git repository** under another repository folder. They should be at the same level.
+
  
 ## Running the Example Project
 

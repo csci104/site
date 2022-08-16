@@ -67,85 +67,85 @@ labs:
     topics: Git, github
     slides: git_lab.pdf
   - id: lab2
-    week: Week 1
+    week: Week 2
     title: GDB
-    assigned: true
+    assigned: false
     topics: Debugging, GDB, tooling
   - id: lab3
-    week: Week 2
+    week: Week 3
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, makefiles, build systems
   - id: gtest_lab
-    week: Week 2
+    week: Week 3
     title: GTest
-    assigned: true
+    assigned: false
     topics: Unit testing
   - id: lab4
-    week: Week 3
+    week: Week 4
     title: Inheritance and STL
-    assigned: true
+    assigned: false
     topics:
     slides: stl_inh_lab.pdf
   - id: lab5
-    week: Week 4
+    week: Week 5
     title: Templates
-    assigned: true
+    assigned: false
     topics:
   - id: lab6
-    week: Week 4
+    week: Week 6
     title: Heaps
-    assigned: true
-    topics: Heaps 
-  - id: lab7
-    week: Week 5
-    title: LList Recursion
     assigned: false
-    topics: LinkedList Recursion
-    slides: ll_rec_practice.pdf
-  - id: lab8-traversals
-    week: Week 5
-    title: BST and Traversal
-    assigned: true
-    topics: 
-  - id: lab8-avl
-    week: Week 6
-    title: AVL Trees
-    assigned: true
-    topics: 
-  - id: lab9
-    week: Week 6
-    title: Backtracking
-    assigned: true
-    topics: Backtracking
-  - id: lab10
-    week: Week 6
-    title: Midterm Review
-    assigned: true
-    topics:
+    topics: Heaps
   - id: midterm
     week: Week 7
     title: Midterm 
     assigned: false 
     topics: 
-  - id: lab11
+  - id: lab7
     week: Week 8
+    title: LList Recursion
+    assigned: false
+    topics: LinkedList Recursion
+    slides: ll_rec_practice.pdf
+  - id: lab8-traversals
+    week: Week 9
+    title: BST and Traversal
+    assigned: false
+    topics: 
+  - id: lab8-avl
+    week: Week 9
+    title: AVL Trees
+    assigned: false
+    topics: 
+  - id: lab9
+    week: Week 10
+    title: Backtracking
+    assigned: false
+    topics: Backtracking
+  - id: lab10
+    week: Week 11
+    title: Midterm Review
+    assigned: false
+    topics: 
+  - id: lab11
+    week: Week 12
     title: Counting!
-    assigned: true
+    assigned: false
     topics: 
     slides: extra_counting_problems.pdf
   - id: lab12
-    week: Week 8
+    week: Week 13
     title: Probability?
-    assigned: true
+    assigned: false
     topics:
   - id: lab13
-    week: Week 9
+    week: Week 14
     title: Hashtable
-    assigned: true
+    assigned: false
     topics: Hashtable
   - id: lab14
-    week: Week 9
+    week: Week 15
     title: Number Theory
-    assigned: true
+    assigned: false
     topics: 

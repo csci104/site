@@ -45,9 +45,8 @@ Introduces the student to standard data structures (linear structures such as li
 ## Course Websites
 
 - [All content & info]({{ site.baseurl }}/)
-- [Blackboard]({{ site.data.urls.blackboard }})
-- [CSCI 104 GitHub Organization]({{ site.data.urls.github }})
-- [Piazza]({{ site.data.urls.piazza }})
+- [Blackboard]({{ site.data.urls.blackboard }}){:target="_blank"}
+- [EdStem]({{ site.data.urls.piazza }}){:target="_blank"}
 
 ## Grading Weights and Scale
 

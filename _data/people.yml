@@ -1,50 +1,12 @@
 instructors:
-  - name: Mark Redekopp
-    email: redekopp@usc.edu
-    image: /assets/img/staff/redekopp-crop.jpg
-    hours: 'T: 8-9am (Zoom + RTH cafe courtyard)<br>T,Th: 12:30-1:15pm (Zoom only)<br>W: 1-2:30 (Gerontology Courtyard (prioritizing in-person) + Zoom)'
-    location:  (Zoom) https://usc.zoom.us/j/307718126
+  - name: Andrew Goodney
+    email: goodney@usc.edu
+    image: /assets/img/staff/goodney.jpg
+    hours: 'TBD'
+    location:  PHE 406
 
 assistants:
-  - name: Nathan Bartley
-    email: nbartley@usc.edu
-    image: /assets/img/staff/nbartley.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Hannes Leipold
-    email: leipold@usc.edu
-    image: /assets/img/staff/leipold.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
-  - name: Kyle Reing
-    email: reing@usc.edu
-    image: /assets/img/staff/reing.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
 
 staff:
-  - name: Louis Addison
-    email: laddison@usc.edu
-    image: /assets/img/staff/louis.jpg
-    hours: >-
-      See Google Calendar
-  - name: Jarret Spino
-    email: spino@usc.edu
-    image: /assets/img/staff/spino.jpg
-    hours: >-
-      See Google Calendar
-  - name: Marina Lin
-    email: qlin3628@usc.edu
-    image: /assets/img/staff/marina.jpg
-    hours: >-
-      See Google Calendar
-  - name: David Zhang
-    email: davidz@usc.edu
-    image: /assets/img/staff/davidz.jpg
-    hours: >-
-      See Google Calendar
 
 graders:

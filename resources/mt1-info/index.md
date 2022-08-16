@@ -5,6 +5,7 @@ nav: Resources
 ---
 
 ## MT1 Info
+Fall 2022 Canary: The following information has not been updated for Fall 2022 (yet!)
 
 ### Overview and Process
 

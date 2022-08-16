@@ -34,3 +34,5 @@ gem "jekyll-toc"
 
 # Syntax highlighting
 gem "rouge"
+
+gem "webrick", "~> 1.7"

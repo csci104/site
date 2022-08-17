@@ -48,7 +48,7 @@ Use the same GitHub account from the first step above. If in doubt, use a GitHub
  
 - [ ] Connect Codio to GitHub
 
-## Virtual Machine
+## Local Development Environment
 
 We have two options for running the compiler tools that we will use for grading.
 While you are welcome to use any editor/IDE to develop your homework code, you must compile and run your code (and any of our tests) in a Linux virtual environment using the Codio terminal, Linux VM, Docker, or some similar solution of your creation.

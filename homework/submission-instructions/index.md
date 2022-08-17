@@ -14,7 +14,7 @@ nav: homework
   + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page and are pushed to Github.  Failure to submit a necessary file will lead to a 0 on that problem or at the least a **-10 point** deduction per missing file. 
   + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.  If your code has warnings, a **deduction of up to 4 points** may be applied to the problem!  
   + If there are any specific actions and/or commands necessary to compile or run your code, or to access any required documentation for your assignment, include instructions in your `README.md` file.
-  + Your grader will grade the assignment in the course VM/Docker. Hence, your grader will use the same compiler as you will in the course VM/Docker.
+  + Your grader will grade the assignment in Codio.
   + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 4 points** per programming problem.
 
   
@@ -47,29 +47,25 @@ A `git status` on your master branch must return:
 nothing to commit, working directory clean
 ```
 
-If files that you do not want to push (i.e. `hw1_tests` or other object files ) appear in the untracked list, add that folder/filename(s) to your `.gitignore`.  (Note: you must add/commit/push you `.gitignore` like any other file).
+If files that you do not want to push (i.e. `hw1_tests` or other object files ) appear in the untracked list, add that folder/filename(s) to your `.gitignore`.  (Note: you must add/commit/push your `.gitignore` like any other file).
 
 ### Step 3. Verify your commit **before** the Deadline
 
 Before the deadline and after pushing your submission to GitHub, you **must** ( **MUST** ) follow the verification steps listed at the end of each assignment page to clone your repo to a separate folder and follow the process you list in your own `README.md` to ensure your code compiles and works as you expect. We cannot emphasize enough how many bugs you will discover (and how many points you can avoid losing) by doing this simple 5-minute step.
 
-Our reference grading environment is the Virtual Machine we provide for the course. You should test your code on the VM to ensure that it works properly in the environment we will test it in.
+Our reference grading environment is Codio. You should test your code on Codio to ensure that it works properly in the environment we will test it in.
 
-### Step 4. Fill out the Homework Submission Form
-The submission form is available for each respective assignment on the [assignments page]({{ site.url }}/assignments/index.html). Make sure you are using the proper link. To complete the form, you will need to get the (long) SHA from your commit. 
+### Step 4. Submit the hash to Codio and mark your assignment as complete
 
-It is easiest to obtain that SHA by executing the `git log` command on your terminal and select/copy the SHA that is listed for the (likely latest) commit that you just pushed.  You can then paste that SHA into our form.
+To-do
 
-You can also obtain the SHA from your repository's commit page on github.com as shown in the following screenshot:
-
-![SHA of latest commit]({{site.baseurl}}/homework/img/github_commit-sha.png)
-
-Make sure to use the **long** SHA (about 20+ digits/letters), not the short one (less than 10 digits)! If you use the short SHA, the submission script may work, but the actual scraping script in the background likely will not. This will make it appear as though you hadn't submitted the assignment, which would be pretty bad.
-
-When you submit your assignments, make sure to click on the "Check My Submission" button. Our script will perform a few quick checks to make sure your submission is valid. For instance, it will alert you to (some) missing files, and might also catch some compilation errors. (Of course, it cannot read your `README.txt`, so if compilation requires special instructions, it will not follow those.) You can resubmit as often as you want -- we will grade the submission with the most recently submitted SHA.
+You can resubmit as often as you want -- we will grade the submission with the most recently submitted SHA.
 
 ### Late Submissions
-Provided you have grace days, you can make a late submission even if you previously submitted on time. The late submission will then replace the on-time submission. After completing your (late) assignment, follow steps 1-4 from above. When you get to step 4, before you can successfully submit your homework, you will be prompted to confirm your late submission. Doing so will use a late day (unless you have already made other arrangements with your professor).  If you have no late days remaining, then you will get a 0 for the assignment. No exceptions will be made to this policy except for University approved medical reasons. Interviews, conferences, or other trips are not valid reasons to obtain an extension.
+
+To-do
+
+No exceptions will be made to this policy except for University approved medical reasons. Interviews, conferences, or other trips are not valid reasons to obtain an extension.
 
 
 ### Submission FAQs

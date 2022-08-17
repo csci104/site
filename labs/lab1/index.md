@@ -164,7 +164,9 @@ This semester we will be providing skeleton code and other resources through com
 wget https://bytes.usc.edu/files/cs104/resources/example.tar.gz
 tar xvfz example.tar.gz
 ```
- 
+
+The end result of this step should be the "example" folder inside your "lab1" folder (repo).
+
 ## Running the Example Project
 
 We have provided an `example` project to test whether you have the correct environment setup to compile our homeworks. Make sure you follow the steps below and the output on your terminal matches the ones on this page.

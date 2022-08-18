@@ -16,6 +16,7 @@ nav: homework
   + If there are any specific actions and/or commands necessary to compile or run your code, or to access any required documentation for your assignment, include instructions in your `README.md` file.
   + Your grader will grade the assignment in Codio.
   + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 4 points** per programming problem.
+  + On homeworks where tests were provided, if you have downloaded those tests you **must** update your .gitignore so that the tests are not uploaded to your GitHub repo
 
   
 

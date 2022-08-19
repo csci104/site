@@ -476,10 +476,11 @@ match the one on GitHub.
 If you did this lab natively inside Codio, you do not need to perform this step. This step will copy your repo to Codio and will give you some practice with connecting and copying a repo to Codio, something you'll be doing for the homeworks (but not labs generally). This step also assumes you connected your Codio to GitHub in Lab 0.
 
 - On Codio, go to "My Projects" then "New Project". Choose "C++" as your starting point and give the project a name (e.g "lab1").
-- We need to remove the automatically generated README.md that Codio creates. Open the terminal:
+- We first need to make a directory for our code. (We **DO NOT** want the top-level of our Codio project to be a git repo!). When then `cd` to that directory:
 
 ```shell
-rm README.md
+mkdir lab1
+cd lab1
 ```
 
 - Now we need to init the git repository and connect it to the remote repo:

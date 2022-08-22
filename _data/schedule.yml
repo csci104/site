@@ -62,7 +62,7 @@ lectures:
   # 4 Thur 9/1
   - topics:
       - Recursion
-      - Copy Semantics (self review)
+      - Copy Semantics
     chapters:
       - Chapter 1.3, 1.5
       - Chapter 3.1-3.3, 4.8

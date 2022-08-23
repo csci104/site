@@ -100,7 +100,7 @@ staff:
       See Google Calendar
   - name: Mila Mathias
     email: memathia@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/mila.jpg
     hours: >-
       See Google Calendar
   - name: Zach McNulty
@@ -155,7 +155,7 @@ staff:
       See Google Calendar
   - name: Yuxing Zhou
     email: yuxingz@usc.edu
-    image: /assets/img/staff/yuxing.jpeg
+    image: /assets/img/staff/yuxing.jpg
     hours: >-
       See Google Calendar
   - name: Leo Zhuang
@@ -163,15 +163,3 @@ staff:
     image: /assets/img/staff/leo.JPG
     hours: >-
       See Google Calendar
-
-graders:
-  - name: Ashutosh Sharma
-    email: asharma7@usc.edu
-  - name: Samuel Vara
-    email: svara@usc.edu
-  - name: Divya Khetan
-    email: khetan@usc.edu
-  - name: Smit Kadvani
-    email: kadvani@usc.edu
-  - name: Rashim Goyal
-    email: rashimgo@usc.edu

@@ -249,12 +249,12 @@ which points to exactly the same issue.
 
 Therefore, change the return value to `37` and run `make run` again. This time every test should pass.
 
-### Step 5. Committing and pushing to your homework repository
+### Step 5. Committing and pushing your changes
 
 Now that you have finished the work locally, you would also want to push the changes to GitHub.
 
 To do so, open your **native** terminal (or the VM terminal is you are using the course VM) and change
-the working directory to `hw-username`. Then type
+the working directory to `lab1`. Then type
 
 *`[native]`*
 ```
@@ -426,12 +426,12 @@ someone else (or even you from another machine) modified the remote repo.
 This is the case when we release the skeleton code in the `resources` repo
 for a new assignment and you would like to download it.
 
-This won't happen until assignment 1 of course, so let's do this to your `hw-username`
+This won't happen until assignment 1 of course, so let's do this to your `lab1`
 repo instead.
 
 ### Step 8. Modifying a file on GitHub
 
-First navigate to the `example/README.md` file in your `hw-username` GitHub repo page, and
+First navigate to the `example/README.md` file in your `lab1` GitHub repo page, and
 click the pencil icon (see the image below):
 
 <div style="text-align:center;"><img src="assets/github-edit-pencil.png" width="80%" /></div>
@@ -445,7 +445,7 @@ here just for demonstration purposes**
 
 ### Step 9. Pulling the change
 
-Now change your directory into `hw-username` in your local terminal, and then type:
+Now change your directory into `lab1` in your local terminal, and then type:
 
 *`[native]`*
 ```

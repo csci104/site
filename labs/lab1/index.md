@@ -492,6 +492,19 @@ git pull
 git checkout main
 ```
 
+- We need to install a few packages (run these command one-at-a-time and answer 'y' to any prompts):
+
+```
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install googletest
+sudo apt-get install libgtest-dev
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt 
+sudo make && sudo make install
+cd ~/workspace
+```
+
 - On the left hand side the file tree should now show your files. You should be able to compile and run the same code and tests as on your local dev environment.
 
 ## In Closing

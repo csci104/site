@@ -21,9 +21,11 @@ Do you dare take it on?
     <img src="./assets/gdb_house_of_horrors.png" alt="GDB House of Horrors" class="no-shadow" />
 </div>
 
-## Lab Materials
+## Lab Materials and Preparing Your Lab
 
-The files we'll be using for this lab are posted in the `resources` repository, which you've probably already cloned for the homework skeleton code.
+- You should make a `lab2` directory in the main CSCI104 working directory of your preferred development environment. One easy way to do this is to make an empty Github repo named `lab2` and then clone that repo to your local (or Codio) development environment. Regardless, make sure you have a `lab2` directory connected to a Github repo.
+- The files we'll be using for this lab are posted [here](https://bytes.usc.edu/files/cs104/resources/lab2.tar.gz){:target="_blank"}. Download this `tar.gz` file and extract it inside of `lab2`.
+
 In the `lab2` directory you should see the following files:
 
 1. `answers.txt`
@@ -36,6 +38,8 @@ In the `lab2` directory you should see the following files:
 8. `output1.check`
 9. `output2.check`
 10. `output3.check`
+
+- Do a `git add`, `git commit` and `git push` to add these files to your Github repo. Even though you may not need git for this activity, this is good practice.
 
 ## What is a debugger?
 
@@ -167,10 +171,11 @@ For each problem below, answer in `answers.txt` with:
 Okay, so let's check out the first student's program.
 Open a terminal in the assignment directory, and run the simulation with `make test_game1`. 
 
-If you are using Docker, please first move the `resources` directory into the directory you mounted to the Docker container in Lab 0, if it is not already in there. Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
+If you are using Docker, ensure that the `lab2` directory and files are in the Docker working directory you mounted to the Docker container in Lab 0. Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
 
-- [ ] Double check that `resources` is in the directory you mounted to the Docker container in Lab 0.
+- [ ] Double check that `lab2` is in the directory you mounted to the Docker container in Lab 0.
 - [ ] Start/open a shell.
+- [ ] Run `make test_game1`
 
 You should get something like:
 
@@ -182,8 +187,6 @@ You should get something like:
 Makefile:15: recipe for target 'test_game1' failed
 make: *** [test_game1] Segmentation fault (core dumped)
 ```
-
-- [ ] Run `make test_game1`.
 
 Uh-oh.
 That's not good.
@@ -477,4 +480,5 @@ Think, which call to `Skirmish()` does the program output the wrong thing on?  G
 You have stood fast in the face of overwhelming peril, and banished the bugs back to whence they came!
 <del>The world</del> <del>the town</del> your computer is safe once again!
 
+- [ ] `git [add,commit,push]` to save your work to Github
 - [ ] Show a CP or TA  `answers.txt` to get checked off!!

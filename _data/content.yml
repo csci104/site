@@ -75,78 +75,79 @@ labs:
   - id: lab3
     week: Week 3
     title: Makefiles
-    assigned: false
+    assigned: true
     topics: Make, makefiles, build systems
+    slides: makefile_lab.pdf
   - id: gtest_lab
-    week: Week 3
+    week: Week 4
     title: GTest
     assigned: false
     topics: Unit testing
   - id: lab4
-    week: Week 4
+    week: Week 5
     title: Inheritance and STL
     assigned: false
     topics:
     slides: stl_inh_lab.pdf
   - id: lab5
-    week: Week 5
+    week: Week 6
     title: Templates
     assigned: false
     topics:
   - id: lab6
-    week: Week 6
+    week: Week 7
     title: Heaps
     assigned: false
     topics: Heaps
   - id: midterm
-    week: Week 7
+    week: Week 8
     title: Midterm 
     assigned: false 
     topics: 
   - id: lab7
-    week: Week 8
+    week: Week 9
     title: LList Recursion
     assigned: false
     topics: LinkedList Recursion
     slides: ll_rec_practice.pdf
   - id: lab8-traversals
-    week: Week 9
+    week: Week 10
     title: BST and Traversal
     assigned: false
     topics: 
   - id: lab8-avl
-    week: Week 9
+    week: Week 11
     title: AVL Trees
     assigned: false
     topics: 
   - id: lab9
-    week: Week 10
+    week: Week 12
     title: Backtracking
     assigned: false
     topics: Backtracking
   - id: lab10
-    week: Week 11
+    week: Week 13
     title: Midterm Review
     assigned: false
     topics: 
   - id: lab11
-    week: Week 12
+    week: Week 14
     title: Counting!
     assigned: false
     topics: 
     slides: extra_counting_problems.pdf
   - id: lab12
-    week: Week 13
+    week: Week 15
     title: Probability?
     assigned: false
     topics:
   - id: lab13
-    week: Week 14
+    week: Week 16
     title: Hashtable
     assigned: false
     topics: Hashtable
   - id: lab14
-    week: Week 15
+    week: Week 17
     title: Number Theory
     assigned: false
     topics: 

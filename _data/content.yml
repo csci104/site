@@ -78,15 +78,15 @@ labs:
     assigned: true
     topics: Make, makefiles, build systems
     slides: makefile_lab.pdf
-  - id: gtest_lab
+  - id: lab4
     week: Week 4
     title: GTest
     assigned: false
     topics: Unit testing
-  - id: lab4
+  - id: lab5
     week: Week 5
     title: Inheritance and STL
-    assigned: false
+    assigned: true
     topics:
     slides: stl_inh_lab.pdf
   - id: lab5

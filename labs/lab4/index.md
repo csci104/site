@@ -409,7 +409,7 @@ string stationName = "KPWR";
 radioStations.insert(stationName);
 
 // iterating through the set
-for(set<string>::iterator it=radioStations.begin(); it != radioStations.end(); ++it)
+for(set<string>::iterator it = radioStations.begin(); it != radioStations.end(); ++it)
 {
   // note that we don't have the concept of it->first or it->second, because there are no values, only keys
   cout << "Station: " << *it << endl;

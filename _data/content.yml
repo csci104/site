@@ -16,7 +16,7 @@ assignments:
     dates:
       assigned:
       checkpoint: Friday, September 16th at 11:59PM PDT
-      due: Friday, September 23rd 11:59PM PDT
+      due: Friday, September 30th 11:59PM PDT
   - id: hw3
     title: Heaps
     assigned: true

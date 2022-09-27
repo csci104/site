@@ -89,10 +89,10 @@ labs:
     assigned: true
     topics:
     slides: stl_inh_lab.pdf
-  - id: lab5
+  - id: lab6
     week: Week 6
     title: Templates
-    assigned: false
+    assigned: true
     topics:
   - id: lab6
     week: Week 7

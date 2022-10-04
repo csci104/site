@@ -94,22 +94,16 @@ labs:
     title: Templates
     assigned: true
     topics:
+  - id: lab7
+    week: Week 7
+    title: Midterm Review
+    assigned: true 
+    topics: 
   - id: lab6
     week: Week 7
     title: Heaps
     assigned: false
     topics: Heaps
-  - id: midterm
-    week: Week 8
-    title: Midterm 
-    assigned: false 
-    topics: 
-  - id: lab7
-    week: Week 9
-    title: LList Recursion
-    assigned: false
-    topics: LinkedList Recursion
-    slides: ll_rec_practice.pdf
   - id: lab8-traversals
     week: Week 10
     title: BST and Traversal

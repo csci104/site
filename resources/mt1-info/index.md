@@ -5,7 +5,7 @@ nav: Resources
 ---
 
 ## MT1 Info
-Fall 2022 Canary: The following information has not been updated for Fall 2022 (yet!)
+Fall 2022 Canary: The following information HAS NOW been updated for Fall 2022!
 
 ### Overview and Process
 
@@ -13,19 +13,18 @@ The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 50 minutes**
-  - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: **SAL 126** 
-  - If you have **1.5x time accommodations** contact your professor for room details.
+  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday October 6th, otherwise you will not be able to use your accomodations.  
+- Location: **THH 101 (8am and 2pm sections) or THH 201 (11am section)** 
+  - If you have **1.5x time accommodations**: THH 121
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
-- The test will be taken on a combination of paper (for problems requiring diagrams, tracing, or runtime) and Gradescope.  Gradescope can be accessed by logging into our Blackboard section, choose Assignments, and click on the Gradescope link. You will then find a **MT - Coding** assignment (once the exam begins) where you will be able to find, textboxes for some answers to certain questions and links to skeleton files and upload your completed files.  For coding questions, you will write code on your laptop and then uploading the `.cpp` file.  Skeleton files will be linked directly from Gradescope and you can download them, edit them, and upload your final code.  You can write your code in any editor and even try to compile and run if you like, but we are not expecting you do that and it will take away time from coding the other problems. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).  No automated tests will be provided since we don't expect you to compile and run your code.
-- You will be given a paper exam that includes all questions and has room for the written answers
-- The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, an editor and/or compiler, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
+- The test will be taken on Gradescope. You will be added to this course on Gradescope automatically, but you should test your Gradescope login sometime before the exam.
+- The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 ### Topics and Style
 
-The midterm will include a mix of anlaysis and coding problems. Most analysis questions will have room for you to write your answer directly on the paper exam. For coding problems you must **upload** completed `.cpp` files.
+The exam is a mix of short answer, multiple choice and coding snippets. We will **visually** grade your code snipets and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
 
 #### Unit 2a-2f - Review of CS 103 and CS 170
  - Memory allocation (when to use dynamic allocation)
@@ -77,17 +76,6 @@ The midterm will include a mix of anlaysis and coding problems. Most analysis qu
  - Implementation of a priority queue
  - Heap implementation and operations (push, pop, top) and runtime
  - `build-heap` (`make-heap`) algorithm and runtime
-
-#### Unit 10 - Graphs and Graph Algorithms
- - Graph representation (adjacency list vs. matrix, directed vs. undirected, etc.)
- - Dijkstra's algorithm
- - A* algorithm
-
-#### Unit 11 - Tree and Graph Traversals
- - Depth-first search
- - In-, pre-, post-order tree traversals
- - Breadth-first search
-
 
 ### Practice Materials
 

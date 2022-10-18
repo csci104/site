@@ -25,7 +25,7 @@ assignments:
     dates:
       assigned: 
       checkpoint: Friday, October 7th at 11:59PM PDT
-      due: Friday, October 14th at 11:59PM PDT 
+      due: Monday, October 17th at 11:59PM PDT 
   - id: hw4
     title: AVL Trees
     assigned: true

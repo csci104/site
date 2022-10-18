@@ -18,6 +18,15 @@ $aside-max-width: 300px;
       margin-top: 0;
     }
   }
+  #content2 {
+    max-width: 1000;
+    margin: 6em auto 4em auto;
+    padding: 0 1em;
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+  }
 }
 
 .asides {

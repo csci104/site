@@ -99,10 +99,10 @@ labs:
     title: Midterm Review
     assigned: true 
     topics: 
-  - id: lab6
+  - id: heap_lab
     week: Week 7
     title: Heaps
-    assigned: false
+    assigned: true
     topics: Heaps
   - id: lab8-traversals
     week: Week 10

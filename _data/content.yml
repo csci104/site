@@ -104,24 +104,24 @@ labs:
     title: Heaps
     assigned: true
     topics: Heaps
-  - id: lab8-traversals
-    week: Week 10
-    title: BST and Traversal
-    assigned: false
-    topics: 
+  - id: bst_lab
+    week: Week 8
+    title: BST and AVL
+    assigned: true
+    topics: BST and AVL Tree
   - id: lab8-avl
     week: Week 11
-    title: AVL Trees
+    title: TBD
     assigned: false
-    topics: 
+    topics: TBD
   - id: lab9
     week: Week 12
-    title: Backtracking
+    title: TBD
     assigned: false
-    topics: Backtracking
+    topics: TBD
   - id: lab10
     week: Week 13
-    title: Midterm Review
+    title: TBD
     assigned: false
     topics: 
   - id: lab11

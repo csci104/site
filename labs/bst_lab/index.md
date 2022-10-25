@@ -153,11 +153,9 @@ We fix the tree beginning with the parent of the deleted node.
 
 #### 1. Range Sum
 
-Given the root of a *BST* and two values L and R, return the sum of all the nodes in the tree with values between L and R (inclusive).
+Given the root of a binary tree, determine if the binary tree is height balanced. A binary tree is balanced if and only if both of its subtrees are height-balanced and have the same height.
 
-For example, if L = 1, R = 3, and your BST has values {1, 2, 3, 4} return 6 (1 + 2 + 3).
-
-- [ ] Implement `rangeSum` in `bst.cpp`
+- [ ] Implement `isBalanced` in `bst.cpp`
 
 ### 2. AVL Insertion & Removal
 

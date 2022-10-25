@@ -104,11 +104,13 @@ labs:
     title: Heaps
     assigned: true
     topics: Heaps
+    slides: heap_lab.pdf
   - id: bst_lab
     week: Week 8
     title: BST and AVL
     assigned: true
     topics: BST and AVL Tree
+    slides: bst_and_avl_lab.pdf
   - id: lab8-avl
     week: Week 11
     title: TBD

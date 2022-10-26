@@ -33,8 +33,8 @@ assignments:
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Friday, November 4th at 11:59PM PDT
-      due: Friday, November 11th at 11:59PM PDT
+      checkpoint: Monday, November 7th at 11:59PM PDT
+      due: Monday, November 14th at 11:59PM PDT
   - id: hw5
     title: Counting, Probability, Recursion
     assigned: true
@@ -42,8 +42,8 @@ assignments:
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Friday, November 18th at 11:59PM PST
-      due: Friday, Wednesday, November 23th at 11:59PM PST
+      checkpoint: Monday, November 21st at 11:59PM PST
+      due: Monday, November 28th at 11:59PM PST
   - id: hw6
     title: Hash tables
     assigned: true
@@ -51,7 +51,7 @@ assignments:
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Friday, December 2nd at 11:59 PST
+      checkpoint: Monday, December 5th at 11:59 PST
       due: Monday, December 12th at 11:59PM PST
 
 labs:

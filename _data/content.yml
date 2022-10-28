@@ -110,7 +110,7 @@ labs:
     title: BST and AVL
     assigned: true
     topics: BST and AVL Tree
-    slides: bst_and_avl_lab.pdf
+    slides: bst_lab.pdf
   - id: lab8-avl
     week: Week 11
     title: TBD

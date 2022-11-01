@@ -25,10 +25,24 @@ Last week, we went over backtracking in lecture. Here's a quick review of the N-
 
 One algorithmic solution to this problem is to use recursive backtracking.
 
+A sample implementation of N-Queens is presented [here](https://godbolt.org/z/Y3WvqPK8e).
+
+
 ### 1 - Recursive Backtracking
-You should be familiar with some of the uses of recursion at this point. We typically use recursion to split a problem into one or a small number of simple, repeatable steps. One popular way to implement a recursive search is to search one step at a time until you hit a dead end (or impossible situation) or find a solution. If you've successfully found a solution, you're done. If your recursive call returns unsuccessful, remove that value from the list of potential solutions and continue to search until you've exhausted all possibilities.
+
+You should be familiar with some of the uses of recursion at this point. We typically use recursion to split a problem into one or a small number of simple, repeatable steps (or "stages"). One popular way to implement a recursive search is to search one step at a time until you hit a dead end (or impossible situation) or find a solution. If you've successfully found a solution, you're done. If your recursive call returns unsuccessful, remove that value from the list of potential solutions and continue to search until you've exhausted all possibilities.
 
 Recursive backtracking is a ordered method for searching a **solution space**. Worst case time complexity wise it's often on par with a brute-force search - but in reality it's much faster. This is because in backtracking when we reach an arrangement where no possible solutions could exist with the current selection (a **dead end**) we forget about testing further options down this path and **backtrack** - undo the last setting and try something else. 
+
+Think of trying to unlock a 3-digit number lock of which you have forgotten the password.
+
+- You start by setting the first digit to 0.
+- You move to the second digit and set to 0.
+- You move to the third digit and try all 10 combinations.
+- If none worked, you go back to the second digit and set to 1.
+- ...
+
+Here our "step" is trying out the number for a specific digit.
 
 Recursive Backtracing solutions often look like this:
 

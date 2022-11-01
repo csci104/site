@@ -111,11 +111,11 @@ labs:
     assigned: true
     topics: BST and AVL Tree
     slides: bst_lab.pdf
-  - id: lab8-avl
+  - id: backtracking
     week: Week 11
-    title: TBD
-    assigned: false
-    topics: TBD
+    title: Backtracking
+    assigned: true
+    topics: Backtracking
   - id: lab9
     week: Week 12
     title: TBD

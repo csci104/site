@@ -116,11 +116,11 @@ labs:
     title: Backtracking
     assigned: true
     topics: Backtracking
-  - id: lab9
+  - id: counting_lab
     week: Week 12
-    title: TBD
-    assigned: false
-    topics: TBD
+    title: Counting
+    assigned: true
+    topics: Counting
   - id: lab10
     week: Week 13
     title: TBD

@@ -139,6 +139,7 @@ As it turns out, the number of combinations of **n** objects selected **r** at a
 How many ways can we distribute 12 cans of dog food among 3 dogs?
 
 **Solution**: here, n = 3 and r = 12. The answer is: **14!/12!2!**
+
 ### Exercises
 
 1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select?
@@ -151,8 +152,8 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 
 5. We have 5 *distinct* breakout rooms and 30 *distinct* students in lab. How many ways can we distribute 30 *distinct* students into the 5 breakout rooms? (Breakout rooms can be empty.)
 
-+ How many ways can we distribute 30 *identical* students into the 5 *distinct* breakout rooms? (If 30 identical students bothers you, an equivalent question would be: how many ways can we distribute 30 *identical* chairs into 5 *distinct* classrooms?)
+6. How many ways can we distribute 30 *identical* students into the 5 *distinct* breakout rooms? (If 30 identical students bothers you, an equivalent question would be: how many ways can we distribute 30 *identical* chairs into 5 *distinct* classrooms?)
 
-+ (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
+7. (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
 
 If you finished early, here are some extra problems you could try from the labs main page under slides.

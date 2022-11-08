@@ -159,4 +159,4 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 
 + (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
 
-If you finished early, here are some extra problems you could try from the labs main page under slides. 
+If you finished early, here are some extra problems you could try from the labs main page under slides.

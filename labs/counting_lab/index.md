@@ -139,10 +139,6 @@ As it turns out, the number of combinations of **n** objects selected **r** at a
 How many ways can we distribute 12 cans of dog food among 3 dogs?
 
 **Solution**: here, n = 3 and r = 12. The answer is: **14!/12!2!**
-
-### Summary of Important Formulas
-<div style="text-align:center"><img src="./assets/table.png" alt="n choose r" width="500"/></div>
-
 ### Exercises
 
 1. You are making another trek to St. Ives, but this time, you want to bring 5 friends, including at least 2 Computer Science majors. Let's say you have 21 friends to choose from, and exactly 7 of them are CS majors. How many different groups of 5 can you select?

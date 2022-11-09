@@ -121,7 +121,7 @@ labs:
     title: Counting
     assigned: true
     topics: Counting
-    slides: extra_counting_problems.pdf
+    slides: Extra_Counting_Problems.pdf
   - id: lab10
     week: Week 13
     title: TBD

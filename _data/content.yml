@@ -136,6 +136,6 @@ labs:
   - id: old_probability_lab
     week: Not Used
     title: N/A
-    assigned: false
+    assigned: true
     topics:
 

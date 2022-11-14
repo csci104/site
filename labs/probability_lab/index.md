@@ -15,7 +15,7 @@ title: Probability Theory
 
 Now we’ll be taking the counting principles we learned from Lab 11 and applying them to probability! Probability is something you’ll be revisiting time and time again both in and outside of computer science. Maybe you’re interested in artificial intelligence or machine learning, or maybe you just want to think more critically about the uncertainty of life. Probability is an important skill you’ll want to carry with you well beyond 104, regardless of what path you take!
 
-**Additional resources:** There is a different version of this lab that covers some additional formulas and example problems (and some review practices for counting). It was for a semester where we did counting and probablity in a single lab (you can imagine how intense it was). The materials are available [here](https://bytes.usc.edu/cs104/labs/old_probablity_lab). You are not required to finish those problems for checkoff, but we highly recommend going over the excercises provided in those labs for exam preperation.
+**Additional resources:** There is a different version of this lab that covers some additional formulas and example problems (and some review practices for counting). It was for a semester where we did counting and probablity in a single lab (you can imagine how intense it was). The materials are available [here](https://bytes.usc.edu/cs104/labs/old_probablity_lab/). You are not required to finish those problems for checkoff, but we highly recommend going over the excercises provided in those labs for exam preperation.
 
 ## Warm Up, Definitions, and Rules
 Suppose we have a fair coin, and we flip it 2 times. What is the probability of getting at least one head?

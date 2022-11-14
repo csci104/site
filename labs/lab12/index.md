@@ -59,6 +59,8 @@ What if we want to compute the probability of the union of events that are not m
 
 $$P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)$$
 
+This follows the inclusion-exclusion principle (which was covered in the counting lab).
+
 ### Example
 
 Suppose we draw a card from a standard deck of cards. What is the probability that the card we draw is a Queen or a Heart?

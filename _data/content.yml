@@ -122,28 +122,20 @@ labs:
     assigned: true
     topics: Counting
     slides: Extra_Counting_Problems.pdf
-  - id: lab10
+  - id: probability_lab
     week: Week 13
-    title: TBD
-    assigned: false
-    topics: 
+    title: Probablity
+    assigned: true
+    topics: Probability
+    slides: probability_lab.pdf
   - id: lab11
     week: Week 14
-    title: Counting!
-    assigned: false
-    topics: 
-  - id: lab12
-    week: Week 15
-    title: Probability?
-    assigned: false
-    topics:
-  - id: lab13
-    week: Week 16
     title: Hashtable
     assigned: false
     topics: Hashtable
-  - id: lab14
-    week: Week 17
-    title: Number Theory
+  - id: old_probablity_lab
+    week: Not Used
+    title: N/A
     assigned: false
-    topics: 
+    topics:
+

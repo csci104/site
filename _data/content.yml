@@ -116,6 +116,7 @@ labs:
     title: Backtracking
     assigned: true
     topics: Backtracking
+    slides: Backtracking_Lab.pdf
   - id: counting_lab
     week: Week 12
     title: Counting

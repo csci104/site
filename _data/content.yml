@@ -128,10 +128,10 @@ labs:
     assigned: true
     topics: Probability
     slides: probability_lab.pdf
-  - id: lab11
+  - id: hashtable_lab
     week: Week 14
     title: Hashtable
-    assigned: false
+    assigned: true
     topics: Hashtable
   - id: old_probability_lab
     week: Not Used

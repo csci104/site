@@ -139,4 +139,8 @@ labs:
     title: N/A
     assigned: true
     topics:
+  - id: number_theory
+    week: for review only
+    assigned: true
+    topics: NOT DUE
 

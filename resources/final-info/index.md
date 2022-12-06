@@ -11,12 +11,11 @@ nav: Resources
 - Time/Date: **{{site.data.schedule.exams[1].time}}**
   - The test will be set for **2 hours.**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: **SSL 202** (leave a blank seat between you and your neighbor, if possible)
+- Location: **TBD** (leave a blank seat between you and your neighbor, if possible)
   - If you have **1.5x time accommodations** please talk to your instructor.
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
-- The final is likely to be an **ALL paper/pen** exam.  For coding problems, you will write code by hand (no laptops) though we will be forgiving about simply syntax issues, and focus on the core of your approach to each.
-- You will be given a paper exam that includes all questions and has room for the written answers
+- The final will be on Gradescope
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind and blank scratch paper but nothing else.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
@@ -30,7 +29,7 @@ nav: Resources
 -->
 ### Topics and Style
 
-The final will include a mix of anlaysis and coding problems.  
+All topics covered on the midterm are also fair game in addition to the following:  
 
 #### Unit 11 - Tree and Graph Traversals
  - Breadth- and Depth-first search
@@ -49,11 +48,6 @@ The final will include a mix of anlaysis and coding problems.
  - BST operations: find, insert, remove and their runtimes
  - AVL tree property (using height or balance values)
  - AVL operations: insert and remove (be able to perform these yourself on paper) but you do not need to memorize the pseudocode
-
-#### Unit 15 - Splay trees
- - Runtime properties
- - How to splay an element to the top
- - How insert, find, and remove work
 
 #### Unit 16 - Hash Tables
  - Properties of hash functions
@@ -96,9 +90,8 @@ The final will include a mix of anlaysis and coding problems.
  - Ways of structure nodes (arrays vs. linked lists for sparse implementations)
  - Compressed prefix trees
 
-#### Unit 23-24 - Amortized Analysis and Merge Trees
+#### Unit 23 - Amortized Analysis
  - Approaches to performing amortized analysis
- - General structure of a merge tree
 
 
 ### Practice Materials

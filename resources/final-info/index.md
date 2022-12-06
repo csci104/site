@@ -77,7 +77,6 @@ All topics covered on the midterm are also fair game in addition to the followin
  - Modular exponentiation techniques
  - Euclid's algorithm for finding `gcd`
  - Finding multiplicative inverses for modulo-n systems
- - Solving Diophantine equations
 
 #### Unit 20 - Hash Tables, Functions, and Bloom Filters
  - One-way / cryptographic hash functions

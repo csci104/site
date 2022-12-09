@@ -11,13 +11,13 @@ nav: Resources
 - Time/Date: **{{site.data.schedule.exams[1].time}}**
   - The test will be set for **2 hours.**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: **TBD** (leave a blank seat between you and your neighbor, if possible)
-  - If you have **1.5x time accommodations** please talk to your instructor.
+- Location: **SGM 123 (8am and 2pm section), SGM 124 (11am section)** (leave a blank seat between you and your neighbor, if possible)
+  - If you have 1.5x time accommodations: **GFS 104**
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
 - The final will be on Gradescope
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind and blank scratch paper but nothing else.
-- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
+- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **typed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 <!--
 

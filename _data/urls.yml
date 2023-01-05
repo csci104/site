@@ -1,7 +1,9 @@
 qa_tool: EdStem
-piazza: https://edstem.org/us/courses/24759/discussion/
-discussion: https://edstem.org/us/courses/24759/discussion/
-discussion-join: https://edstem.org/us/join/cdQ967
+piazza: https://edstem.org/us/courses/32694/discussion/
+admin_piazza: https://edstem.org/us/courses/32843/discussion/
+discussion: https://edstem.org/us/courses/32694/discussion/
+discussion-join: https://edstem.org/us/join/8gVhAf
+admin_discussion-join: https://edstem.org/us/join/QfkS49
 calendar: https://calendar.google.com/calendar/embed?src=c_719cef00borqimhoifnopko60k%40group.calendar.google.com&ctz=America%2FLos_Angeles
 github: https://github.com/usc-csci104-summer2022
 github_ssh: git@github.com:usc-csci104-summer2022
@@ -14,7 +16,7 @@ notes: http://david-kempe.com/teaching/DataStructures.pdf
 # these are the same, the html and md files should be searched and fixed
 regrades: https://forms.gle/Jj742f1EbM3vEdVcA
 regrade_form: https://forms.gle/Jj742f1EbM3vEdVcA
-slug: cs104-su22
+slug: cs104-sp23
 slide_location: http://bytes.usc.edu/files/cs104/slides
 extension_form: https://forms.gle/GBi6FR7wp31hYFtq7
 visual_code: https://code.visualstudio.com/download
@@ -25,6 +27,6 @@ osas_dsp_form: https://forms.gle/q4sUNnMMpaUEmXyT8
 account_ta_name: Nathan Bartley
 account_ta_email: nbartley@usc.edu
 ooqueue: https://immasignup.com/q/puuh/
-codio_course: https://codio.com/home/student?course_id=8d41cbc88df9411fc2d887f565335c7a
-codio_join: https://codio.com/p/signup?courseToken=sonar-stadium
+codio_course: https://codio.com/home/student?course_id=840256c1505b0176dc1e1af66a1e992b
+codio_join: https://codio.com/p/signup?courseToken=pacific-lily
 covid_lab: https://forms.gle/GuyuVfw33ehAx68S9

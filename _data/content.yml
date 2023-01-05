@@ -6,53 +6,53 @@ assignments:
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Friday, September 2nd at 11:59PM PDT
-      due: Friday, September 9th 11:59PM PDT
+      checkpoint: 
+      due: Friday, January 20th 11:59PM PST
   - id: hw2
     title: Inheritance, Polymorphism, and STL
-    assigned: true
+    assigned: false
     regrade_form: 
     submit_link: 
     dates:
       assigned:
-      checkpoint: Friday, September 16th at 11:59PM PDT
-      due: Friday, September 30th 11:59PM PDT
+      checkpoint: 
+      due: Friday, February 3rd 11:59PM PST
   - id: hw3
     title: Heaps
-    assigned: true
+    assigned: false
     regrade_form: 
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Friday, October 7th at 11:59PM PDT
-      due: Monday, October 17th at 11:59PM PDT 
+      checkpoint: 
+      due: Friday, February 17th at 11:59PM PST 
   - id: hw4
     title: AVL Trees
-    assigned: true
+    assigned: false
     regrade_form: 
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Monday, November 7th at 11:59PM PDT
-      due: Monday, November 14th at 11:59PM PDT
+      checkpoint: 
+      due: Friday, March 24th at 11:59PM PDT
   - id: hw5
     title: Counting, Probability, Recursion
-    assigned: true
+    assigned: false
     regrade_form: 
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Monday, November 21st at 11:59PM PST
-      due: Monday, November 28th at 11:59PM PST
+      checkpoint: 
+      due: Friday, April 7th at 11:59PM PST
   - id: hw6
     title: Hash tables
-    assigned: true
+    assigned: false
     regrade_form: 
     submit_link: 
     dates:
       assigned: 
-      checkpoint: Monday, December 5th at 11:59 PST
-      due: Monday, December 12th at 11:59PM PST
+      checkpoint: 
+      due: Friday, April 28th at 11:59PM PST
 
 labs:
   - id: lab0

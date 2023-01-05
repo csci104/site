@@ -5,6 +5,10 @@ instructors:
     hours: '<table><tr><td>10am - 12pm M/W</td></tr><tr><td>1pm - 3pm M</td></tr></table>'
     location:  PHE 406
 
+administrators:
+  - name: Tallulah Winston-Schrader
+    email: winstons@usc.edu
+
 assistants:
   - name: Ömer Faruk Akgül
     email: akgul@usc.edu

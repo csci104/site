@@ -11,8 +11,8 @@ nav: Resources
 - Time/Date: **{{site.data.schedule.exams[1].time}}**
   - The test will be set for **2 hours.**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: **SGM 123 (8am and 2pm section), SGM 124 (11am section)** (leave a blank seat between you and your neighbor, if possible)
-  - If you have 1.5x time accommodations: **GFS 104**
+- Location: TBD (leave a blank seat between you and your neighbor, if possible)
+  - If you have 1.5x time accommodations: TBD
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
 - The final will be on Gradescope

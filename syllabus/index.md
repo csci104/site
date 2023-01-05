@@ -131,8 +131,7 @@ These are based on teaching of CSCI 104 in past semesters, and cover the materia
 However, the lecture notes may be out of order and cover different topics, as we have changed the schedule significantly.
 We will also be providing detailed lecture slides and recorded videos that you may also use.
 
-We want to provide you with additional references that may enhance study and may be cited during video recordings.
-In addition to the textbook used for CSCI 103, for the C++ Language the following references are available for free online from the USC Library:
+We want to provide you with additional references that may enhance study so in addition to the textbook used for CSCI 103, for the C++ Language the following references are available for free online from the USC Library:
 
 - [Lippman, Stanley, Barbara Moo, and Josee Lajoie. C++ Primer](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/273cgt/cdi_askewsholts_vlebooks_9780133053036). Addison-Wesley Professional, 2012.
 - [Stroustrup, Bjarne. A Tour of C++](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/hs9vaa/alma991043008444003731). Upper Saddle River, NJ: Addison-Wesley, 2014.
@@ -160,12 +159,13 @@ If you have USC approved (OSAS) accommodations, you **MUST** upload your OSAS ge
 ## Statement on Academic Conduct
 
 Below is USC's official language.
- However, **we have specific rules in CS 104 which are outlined on the [assignments & grading page]({{ site.url }}/homework/)**.
+ However, **we have specific rules in CS 104 which are outlined on the [assignments & grading page]({{ site.baseurl }}/homework/)**.
 
 Plagiarism - presenting someone else's ideas as your own, either verbatim or recast in your own words - is a serious academic offense with serious consequences.
-Please familiarize yourself with the discussion of plagiarism in *SCampus* in Part B, Section 11, *Behavior Violating University Standards* [https://policy.usc.edu/scampus-part-b/](https://policy.usc.edu/scampus-part-b/).
+Please familiarize yourself with the discussion of plagiarism in the USC Student Handbook, Integrity and Accountability: Acadmic Integrity (page 11): 
+ [https://policy.usc.edu/studenthandbook/](https://policy.usc.edu/studenthandbook/).
 Other forms of academic dishonesty are equally unacceptable.
-See additional information in SCampus and university policies on scientific misconduct, [http://policy.usc.edu/scientific-misconduct/](http://policy.usc.edu/scientific-misconduct/).
+See additional information in the USC Student Handbook and university policies on scientific misconduct, [http://policy.usc.edu/scientific-misconduct/](http://policy.usc.edu/scientific-misconduct/).
 
 ## Support Systems
 

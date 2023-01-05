@@ -13,9 +13,9 @@ The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 50 minutes**
-  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday October 6th, otherwise you will not be able to use your accomodations.  
-- Location: **THH 101 (8am and 2pm sections) or THH 201 (11am section)** 
-  - If you have **1.5x time accommodations**: THH 121
+  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 9th, otherwise you will not be able to use your accomodations.  
+- Location: TBD
+  - If you have **1.5x time accommodations**: TBD
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
 - The test will be taken on Gradescope. You will be added to this course on Gradescope automatically, but you should test your Gradescope login sometime before the exam.

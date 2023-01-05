@@ -7,12 +7,12 @@ show:
 exams:
 
   - name: MT 
-    time: Friday October 7th at 7 PM Pacific
+    time: Thursday February 23th at 7 PM Pacific
     location: TBA
     link: mt1-info/
 
   - name: Final
-    time: Saturday, December 10th, 11 AM (Yes, Saturday!)
+    time: Wednesday, May 3rd, 8 AM
     location: TBA
     link: final-info/
 
@@ -163,12 +163,6 @@ lectures:
     notes: 
       - L12_BacktrackingSearch.pdf
 
-  # 14 Thur 10/6
-  - topics:
-      - Midterm Review
-    chapters:
-    notes: 
-
   # 15 Tue 10/11
   - topics:
       - Recursion - Backtracking
@@ -177,13 +171,6 @@ lectures:
       - Chapter 4.3-4.4
     notes: 
       - L13_Iterators.pdf
-
-  # 16 Thur 10/13
-  - topics:
-      - Fall Break
-    chapters:
-    notes: 
-    recording: 
   
   # 17 Tue 10/18
   - topics:

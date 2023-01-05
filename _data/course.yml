@@ -1,67 +1,71 @@
-semester: Fall 2022
-short: usc-csci104-fall2022
+semester: Spring 2023
+short: usc-csci104-spring2023
 
 sections:
   lectures:
-    - id: 29917
+    - id: 29989
       days: Tuesday, Thursday
       time: 8:00 AM to 9:20 AM Pacific
-      location: THH 202
+      location: SGM 101
       instructors: Andrew Goodney
-    - id: 29931
+    - id: 29905
       days: Tuesday, Thursday
       time: 11:00 AM to 12:20 PM Pacific
-      location: THH 101
-      instructors: Andrew Goodney
-    - id: 29930
-      days: Tuesday, Thursday
-      time: 2:00pm to 3:20 PM Pacific
-      location: ZHS 252
+      location: THH 201
       instructors: Andrew Goodney
   labs:
-    - id: 29905
-      days: Tuesday
-      time: 2:00-3:50pm
-      location: SAL109
-      instructors: Bryce Blinn
-    - id: 29907
-      days: Tuesday
-      time: 4:00-5:50pm
-      location: SAL109
-      instructors: Siddhant Gupta
-    - id: 29932
-      days: Friday
-      time: 12:00-1:50pm
-      location: SAL109
-      instructors: Omer Faruk Akgul
-    - id: 29933
+    - id: 29912
       days: Wednesday
-      time: 2:00-3:50pm
-      location: SAL109
-      instructors: Charles Bickham
-    - id: 29937
-      days: Thursday
       time: 5:00-6:50pm
+      location: SAL109
+      instructors: TBD
+    - id: 29914
+      days: Wednesday
+      time: 3:00-4:50pm
       location: SAL126
-      instructors: Charles Bickham
-    - id: 29938
+      instructors: TBD	  
+    - id: 29915
+      days: Wednesday
+      time: 12:00-1:50pm
+      location: SAL126
+      instructors: TBD
+    - id: 30167
       days: Friday
       time: 12:00-1:50pm
-      location: SAL127
-      instructors: Robert Winn
-    - id: 30210
-      days: Wednesday
-      time: 10:00-11:50am
-      location: SAL127
-      instructors: Linghao Jin
-    - id: 30251
-      days: Wednesday
-      time: 4:00-5:50pm
+      location: SAL109
+      instructors: TBD
+    - id: 30200
+      days: Tuesday
+      time: 3:30-5:20pm
       location: SAL126
-      instructors: Siddhant Gupta
-    - id: 30252
+      instructors: TBD
+    - id: 30238
+      days: Tuesday
+      time: 5:30-7:20pm
+      location: SAL126
+      instructors: TBD
+    - id: 30286
       days: Wednesday
       time: 12:00-1:50pm
+      location: SAL109
+      instructors: TBD
+    - id: 30293
+      days: Friday
+      time: 2:00-3:50pm
       location: SAL126
-      instructors: Linghao Jin
-    
+      instructors: TBD
+    - id: 30294
+      days: Tuesday
+      time: 1:00-2:50pm
+      location: SAL126
+      instructors: TBD
+    - id: 30379
+      days: Thursday
+      time: 2:00-3:50pm
+      location: SAL127
+      instructors: TBD
+    - id: 30394
+      days: Wednesday
+      time: 2:00-3:50pm
+      location: SAL109
+      instructors: TBD

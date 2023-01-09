@@ -7,9 +7,73 @@ title: BST and AVL Trees
 
 ## BST and AVL Trees
 
-A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
+### 1 - Tree Traversals
 
-### BSTs
+A traversal is a methodology for stepping through a structure (such as using Breadth-First Traversal as opposed to Depth-First Traversal on a graph). BFS is sometimes called "Level-Order Traversal". In the case of DFS, there are a few different ways we can traverse.
+
+The three main DFS traversals are **Pre-Order Traversal, In-Order Traversal, and Post-Order Traversal**. In each of these traversals, we must eventually operate on every node. The difference between these traversals is lies in the *order* nodes are operated on.
+
+**Pre-Order Traversal**
+
+```
+// Operate on current node
+// Recurse left
+// Recurse right
+// return
+```
+
+**In-Order Traversal**
+
+```
+// Recurse left
+// Operate on current node
+// Recurse right
+// return
+```
+
+**Post-Order Traversal**
+
+```
+// Recurse left
+// Recurse right
+// Operate on current node
+// return
+```
+
+Or, in C++, it would look like this:
+
+```c++
+void pre_order(Node* node) {
+    if (node == nullptr) return;
+    print(node);
+    pre_order(node->left);
+    pre_order(node->right);
+}
+
+void in_order(Node* node) {
+    if (node == nullptr) return;
+    in_order(node->left);
+    print(node);
+    in_order(node->right);
+}
+
+void post_order(Node* node) {
+    if (node == nullptr) return;
+    post_order(node->left);
+    post_order(node->right);
+    print(node);
+}
+```
+
+Here is a simple way to remeber this:
+ - "Pre" : visit the parent "pre-" (before) visiting left and right sub-trees.
+ - "In"  : visit the parent "in"-between visiting left and right sub-trees.
+ - "Post": visit the parent "post-" (after) visiting left and right sub-trees.
+
+
+### 2 - Binary Search Trees
+
+A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
 
 The **Binary Search Tree Property** (BST) states that all nodes in the left subtree must have key values less than or equal to the root and all of the nodes in the right subtree must have key values greater than the root. Usually, if key values are distinct, we do not worry about equality. BSTs exist to enable (potentially) fast searches. 
 
@@ -44,7 +108,7 @@ Let's walk through this one too.
 
 The best-case runtime for searching a value `X` in a BST with *N* elements is `O(logN)`. What is the worst-case runtime?
 
-### What's a balanced Binary Tree?
+#### What's a balanced Binary Tree?
 
 A balanced  binary trees is a tree that ensures that the height of each subtree differs by no more than 1 node. When binary trees maintain balance, the binary tree keeps its height logarithmic in n where n is the total number of nodes in the tree for a sequence of insertions and deletions. This structure provide efficient implementations for abstract data structures. 
 
@@ -56,7 +120,7 @@ Here is an example of balanced vs. non balanced trees.
 
 <div style="text-align:center"><img src="./assets/examples.gif" alt="bst" width="550" height="250" /> </div>
 
-### How can we maintain these properties at the same time?
+#### How can we maintain these properties at the same time?
 
 We will study these details more carefully in the next section. However, this is a good preview to start familiarizing yourself with these ideas. The BST property is maintained by smart insertion and deletion. In an insert, you traverse the tree based on the key to be inserted. Once you encounter a situation where you can't traverse any further, you know that the key can be placed there. Because we are traversing based on the key value, we are inherently upholding the BST property.
  
@@ -72,7 +136,7 @@ A BST that maintains its balance throughout all insertions and deletions is call
 
 For all of these self-balancing binary search trees, the height-balancing property is upheld by the nature of an insert or remove. The best way to do so is with rotation, or series of rotations. 
 
-### AVL Trees
+### 3 - AVL Trees
 
 An AVL tree is a type of balanced Binary Search Tree that uses the height of substrees and rotations to maintain balance.
 
@@ -151,15 +215,18 @@ We fix the tree beginning with the parent of the deleted node.
 
 ### Checkoff
 
-#### 1. Range Sum
+#### 1. Tree Traversals
 
-Given the root of a binary tree, determine if the binary tree is height balanced. A binary tree is balanced if and only if both of its subtrees are height-balanced and have the same height.
+Given this *binary tree*:
 
-- [ ] Implement `isBalanced` in `bst.cpp`
+<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" height="250" />
 
-### 2. AVL Insertion & Removal
+- [ ] What order will the nodes be printed out with Pre-Order traversal? In-Order? Post-Order?
+Save your answers in a .txt file called `answers.txt` for checkoff.
 
-Take some time to confirm your understanding by showing the tree after each of the following operations in a file named `lab8.txt` (or whatever file format you can show your CP). 
+#### 2. AVL Insertion & Removal
+
+Take some time to confirm your understanding by showing the tree after each of the following operations in `answers.txt` or whatever file format you can show your CP. 
 
 __Initial Tree__
 
@@ -179,7 +246,9 @@ __Initial Tree__
 
 - [ ] Show what the tree looks like after each of the above operations. Operations should happen sequentially (ie, Insert 3 happens after Insert 14). 
 
+#### 3. Range Sum
 
-### Check off
+Given the root of a binary tree, determine if the binary tree is height balanced. A binary tree is balanced if and only if both of its subtrees are height-balanced and have the same height.
 
+- [ ] Implement `isBalanced` in `bst.cpp`
 - [ ] Use `make` to run tests. Show a TA/CP your passed tests and AVL tree to get checked off! 

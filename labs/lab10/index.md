@@ -2,222 +2,163 @@
 layout: asides
 toc: true
 tasks: true
-title: Midterm Review
+title: Hashtables
 ---
 
-## Midterm Review
+---
 
-### Introduction
-This lab is just for midterm review, so **there is no checkoff for this lab.**
+**Due at the end of your registered lab section**
 
-You won't be tested on any programming tools that you've gone over in lab but not lecture (e.g. gdb, Makefiles). This lab is to help you review and will mostly cover problems taken or modified from the sample midterms and quizzes under the [Resources](https://bytes.usc.edu/cs104/resources) page, as well as labs from previous semesters. If there's a topic you want to skip, or a topic that's not included here that you really want to go over, let us know! As long as this lab is, it is by no means exhaustive, so remember to go back and review lecture slides as well.
+---
 
-### Runtime
+## Hashtables
 
-**[Runtime and Recursion Quiz](https://bytes.usc.edu/cs104/resources/quiz-runtime.pdf)**: 
-```c++
-bool ispowertwo(double x){
-  if (x == 1) return true;
-  if (x < 1) return false;
-  if (x > 1) return ispowertwo(x/2);
-}
-void function1(int x){
-  if (ispowertwo(x)){
-    for (int i = 0; i < x ; i++)
-      cout << i << endl;
-  } else {
-    cout << x << endl;
-  }
-}
-void function2(int x){
-  if (!(x & (x-1))){ /*condition is true if and only if x is a power of 2. Checks using bitwise and */
-    for (int i = 0; i < x ; i++)
-      cout << i << endl;
-  } else {
-    cout << x << endl;
-  }
-}
-void function3(int n){
-  for (int i = 1; i <= n; i++){
-    function1(i);
-  }
-}
-void function4(int n){
-  for (int i = 1; i <= n; i++){
-    function2(i);
-  }
+### 0 - What is a Map?
+
+Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
+
+The look up speed and ordering of map elements depends on the data structure we use to implement our map. In previous labs, we reviewed AVL Trees, an implementation of a balanced BST. This lab will go over hashtables and explore how it can be used to implement a map.
+
+### 3 - Let's Talk About Hash Tables
+
+A Hash Table is like an array in many aspects. However, in order to find the index in the array, we use a special function called a hash function. This converts the input into an index location that the input is then stored into.
+
+<div style="text-align:center"><img src="./assets/hashTable.png" alt="bst" width="300" height="250" /> </div>
+
+In the above example, we can see that our hash table stores strings, and those strings are stored in locations within an array specified by the hash function.
+
+This type of data structure is very useful in terms of accessing data. You could probably think of different applications of this data structure. Maybe a set? Given an input, we first hash it, then look to see if it is inserted in our hash table by checking the index returned by our hash function. Since hashing is just a function, it takes O(1) time. If we have a good hash function that distributes keys uniformly around the table such that there are a small number of keys at each location, the entire check is O(1) on average.
+
+There are many different applications of this type of data structure, including sets, maps, and associative arrays (which are pretty much maps).
+
+#### 3.1 - Hash Functions
+
+So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array. 
+
+What goals should our hash function have?
+1. Easy and fast to compute
+2. Uniformly distributes keys across the hash table
+
+The first thing we want is for the function to be fast. It should be an easy calculation that takes O(1) time to compute.
+
+Lets first go over a bad example:
+
+```
+int hash(int data) {
+    return 42 % size;
 }
 ```
 
-- [ ] What is the worst case runtime analysis of `function3`?
-- [ ] What is the worst case runtime analysis of `function4`?
+This hash function is super fast. It literally just does one operation and then returns. However, it always returns the same number. This means that we are always going to go to the same array index. This doesn't make sense. Shouldn't our hash function result in different outputs with different inputs?
 
-### Recursion
-
-#### Reversing a Singly Linked List
-
-You are given the head pointer to a linked list. Implement a function that returns a Linked List in the reverse order (e.g. 1->3->5 becomes 5->3->1). You should not declare new items but instead modifying pointers of existing elements.
+A good example of this would be:
 
 ```
-struct Node {
-  int val; 
-  Node* next; 
-
-  Node(int v) : val(v), next(NULL) {}
-  Node() : val(0), next(NULL) {}
-}; 
-
-Node* reverse (Node* head) {
-  // TODO 
-}
-
-// Example usage
-int main() {
-  Node* head = new Node(1); 
-  head->next = new Node(3); 
-  head->next->next = new Node(5); 
-
-  Node* new_head = reverse(head); // should get 5->3->1
-}
-```
-- [ ] Implement `Node* reverse (Node* head)`.
-
-### ADTs
-
-Abstract Data type (ADT) is a type (or class) whose behavior is defined by a set of operations.
-
-The definition of ADT only mentions what operations are to be performed but not how these operations will be implemented. It does not specify how data will be organized in memory and what algorithms will be used for implementing the operations. It is called “abstract” because it gives an implementation independent view. The process of providing only the essentials and hiding the details is known as abstraction.
-
-There are 5 main Abstract Data Types that you will need to know (for now): List, Stack, Queue, Map, Set.
-
-- [ ] What are the generic operations supported by lists, stacks, queues, maps, and sets?
-- [ ] What are their associated runtimes?
-
-#### Choosing the Right ADT
-
-**[Sample Midterm](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 2**: For each of these descriptions, indicate what ADT is appropriate to store the following information and show what types would be used for the template arguments (e.g. `map<string, int>` or `list<double>`). If you think that there are multiple equally good options, feel free to justify the choice you make. 
-
-1. Data structure allowing you to find a book's title from its ISBN number (13 characters, mostly digits, but could contain the letter 'X'). 
-
-2. Data structure storing the type of obstacle at each square of a 40 x 40 level of an arcade game. 
-
-3. Waitlist of students who want to enroll in CS104, but couldn't get in yet. 
-
-4. Data structure to store the content of each line of code in a possibly long C++ program. 
-
-5. A data structure that allows you to input an academic semester and find all students who earned an A in CS104 that semester. 
-
-### STL
-
-STL stands for Standard Template Library. The C++ STL is a set of classes that include common data structures like maps, sets, lists, queues, stacks and more. In addition to data structures, STL also has some pre-implemented algorithms, that do things like fill an array with zeros, or sort a vector. 
-
-There are several STL container classes that you'll use in this class and beyond. You can find the names of their member functions, as well as comprehensive examples of how to use them at [C++ Reference](http://www.cplusplus.com/reference/).
-
-Here's a fun problem to work on. Using STL, think carefully about which data structure makes the most sense for the problem:
-
-```c++
-#include <string>
-/*
-One day, you decided to design a new keyboard, and you put all of the keys in one row.
-Instead of using both hands, you decided to just use one finger at a time.
-You place the keys such that it takes you one second to get from one key to each of its direct neighbors.
-Given the layout of your keyboard (of 26 letters), calculate how long it will take to type a given word.
-You start with your finger is at index 0.
-To type a character, you have to move your finger to the index of the desired character.
-The time taken to move your finger from index i to index j is |i - j| seconds.
-Example 1:
-Input: keyboard = "abcdefghijklmnopqrstuvwxyz", word = "cba"
-Output: 4
-Explanation: The index moves from 0 to 2 to write 'c' then to 1 to write 'b' then to 0 again to write 'a'.
-Total time = 2 + 1 + 1 = 4.
-Example 2:
-Input: keyboard = "pqrstuvwxyzabcdefghijklmno", word = "csci"
-Output: 39
- 
-Constraints:
-keyboard.length == 26
-keyboard contains each English lowercase letter exactly once in some order.
-word[i] is an English lowercase letter.
-*/
-
-int calculateTime(std::string keyboard, std::string word);
-```
-- [ ] Implement `calculateTime`. We've provided skeleton code and tests for you in `resources/lab6`.
-
-### Polymorphism & Inheritance
-
-**[Sample Midterm](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 5**: Here is a piece of code. Tell us what it outputs. (You will get partial credit for partially correct answers.)
-
-```c++
-class Question {
-public:
-  Question(int v) : val(v) { }
-  virtual ~Question() { cout << "d1" << endl; }
-  virtual string studentResponse() = 0;
-  int getValue() { return val; }
-private:
-  int val;
-};
-
-class NonTrivialQuestion : public Question {
-public:
-  NonTrivialQuestion() : Question(10) { }
-  NonTrivialQuestion(int v) : Question(v) { }
-  ~NonTrivialQuestion() { cout << "d2" << endl; }
-  string studentResponse() { return "I got this!"; }
-  int getValue() { return 15 + Question::getValue(); }
-};
-
-class DifficultQuestion : public NonTrivialQuestion {
-public:
-  DifficultQuestion() : NonTrivialQuestion() { }
-  ~DifficultQuestion() { cout << "d3" << endl; }
-  string studentResponse()
-  { return "When are office hours?"; }
-};
-
-int main()
-{
-  Question* p[2];
-  p[0] = new NonTrivialQuestion(15);
-  p[1] = new DifficultQuestion;
-  for(int i=0; i < 2; i++){
-    cout << p[i]->getValue() << endl;
-    cout << p[i]->studentResponse() << endl;
-  }
-  NonTrivialQuestion* q[2];
-  q[0] = new NonTrivialQuestion(15);
-  q[1] = new DifficultQuestion;
-  for(int i=0; i < 2; i++){
-    cout << q[i]->getValue() << endl;
-    cout << q[i]->studentResponse() << endl;
-  }
-  delete p[1];
-  return 0;
+int hash(int data){
+    return 31 * 54059 ^ (data * 76963) % size;
 }
 ```
 
-### Deep Copy Constructors
-**[Sample Midterm](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 6**: Consider the following code: 
+Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different every single timety in our ou. It may be more operations than our first hash function, but it still does a constant amount of work.
 
-```c++
-class IntArray {
-public:
-  IntArray(const IntArray &other);
-  //other class functions are here, which you don’t need to worry about
-private:
-  int *myarray; //data
-  int used; //number of elements in myarray
-  int alloc; //number of allocated indices. Unused indices have garbage values.
-};
-class ArrayOfArrays {
-public:
-  ArrayOfArrays(const ArrayOfArrays &other);
-  //other class functions are here, which you don’t need to worry about
-private:
-  IntArray **myarray; //an array of IntArray pointers.
-  int used; //number of arrays in myarray
-  int alloc; //number of allocated indices. Unused indices have garbage values.
-};
-```
-- [ ] Implement deep copy constructors for both `IntArray` and `ArrayOfArray`
+
+#### 3.2 - Collisions
+
+So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches: 
+
+ * open addressing such as linear probing, quadratic probing, or double hashing.
+ * closed addressing such as chaining or buckets.
+
+#### 3.3 - Open Addressing
+
+The idea with open addressing is that every location in the array can only have 1 thing in it. This means that we will have to find a free spot that we can place the object in. Linear probing is a very simple solution.
+
+Linear probing is where you just keep incrementing up/looking at the next index until you find a free location.
+
+The algorithm for inserting into a linear probed hashtable is:
+
+ 1. Hash the element, which gives you a position in the table.
+ 2. If the position is already taken, try the next position (if you reach the end of the table, wrap back to the start).
+ 3. Repeat step 2 until you have found an empty spot.
+ 4. Insert the element at that empty spot.
+
+The algorithm for finding a key in a linear probed hashtable is:
+
+ 1. Hash the key you want to find, which gives you a position in the table.
+ 2. If the position contains a key, compare it with the key you want to search. If they are equal, you've found the key; otherwise, move to the next position. If the position is empty (i.e does not contain a key), you know that the key does not exist in the table.
+ 3. Repeat step 2 until the algorithm terminates.
+
+Removing from the hashtable is a little bit more involved:
+
+ 1. First find the position of the key with the method illustrated above.
+ 2. Delete the key there.
+ 3. Move to the next position. If it is not empty, delete the key there and reinsert it.
+ 4. Repeat step 3 until you have reached an empty spot or you have looped back to the position you found in step 1.
+
+
+Here is an example for you to practice with:
+
+Suppose you have three keys with the following hash:
+
+* Key A has hash 0
+* Key B has hash 1
+* Key C has hash 1
+* Key D has hash 1
+* Key E has hash 2
+
+And you have a hash table of size 5.
+
+Try yourself with pen and paper. What will the hashtable look like following each of those steps (in sequence):
+
+* Insert B
+* Insert C
+* Insert E
+* Insert A
+* Insert D
+* Remove B
+* Remove E
+
+#### 3.4 - Chaining
+
+For closed addressing we will focus on chaining. Chaining allows for multiple objects to reside within the same array location. The array is changed to be an array of lists or some other data structure, allowing us to store multiple items per index. We often use an array of linked lists, hence the name "chaining."
+
+<div style="text-align:center"><img src="./assets/chaining.png" alt="bst" width="400" height="250" /> </div>
+
+
+Other implementations may use another type of list or even a balanced tree. 
+
+Because chaining allows for buckets, it is probable for `n` objects to all be placed within the same bucket. The worst case runtime is O(n). Chaining may even prevent our goal of O(1) on average. However, a scenario like this should not occur if the hash function is good and the size of the hash table is big enough.
+
+### 4 - OrderedMap vs. UnorderedMap
+
+So let's see a real life example of a hash table. In your homework, you have been using an ordered map. What is an unordered map and how is it different?
+
+#### 4.1 - OrderedMap
+
+An ordered map uses a balanced binary search tree as its underlying data structure. We haven't yet go over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
+
+1. `find(key)` | O(logn)
+2. `insert(key, value)` | O(logn)
+3. `remove(key)` | O(logn)
+
+It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you a ordered traversal of all the keys in the map.
+
+#### 4.1 - UnorderedMap
+
+An unordered map uses a hash table as its underlying data structure. This means that access operations are O(1) on average, but because of this, no order can be inferred. By improving the runtime of operations, we had to sacrifice the ordering property.
+
+You must explicitly create an unordered map using `std::unordered_map`.
+
+1. `find(key)` | O(1) on average
+2. `insert(key, value)` | O(1) on average
+3. `remove(key)` | O(1) on average
+
+### 5 - HashTable Assignment
+
+You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
+
+To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
+- [ ] Implement `remove` in `hashtable.cpp`
+- [ ] Remember to show your passing tests to a TA/CP for checkoff!
+
+NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!

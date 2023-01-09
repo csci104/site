@@ -2,184 +2,111 @@
 layout: asides
 toc: true
 tasks: true
-title: Templates
+title: Heaps
 ---
 
-## Templates
 
-At this point in the course, we've created many simple data structures ourselves, as well as used a number of already-templated STL classes. The first goal of this lab is to learn how to actually create these templated classes ourselves. By the end of this lab, you will learn to convert one of the type-specific lists into a generic, templated one.
+## Heaps & Priority Queues
 
-### 1 - Template Motivation
+In today's lab, we're going to focus on priority queues, an important data structure that you'll need to understand for the next assignment and beyond.
 
-You probably have already used the `std::vector` container a lot till now. You know that you could have vectors that contain different type of elements: `std::vector<int>`, `std::vector<std::string>`, `std::vector<MsgNode*>`, etc.
+### Heaps Introduction
 
-One way to implement `std::vector` is to implement it separately for every type: one for `int` (e.g. `int_vector`) and one for `string` (e.g. `string_vector`). Doing this has two problems:
+In office hours, we use a standard FIFO queue system, where the student waiting the longest is called next. But what if we wanted to apply a more complicated calculation to found who was next? Maybe the person with the shortest question? The person who started the assignment the earliest? The person who's asked the fewest questions? We still want the popping functionality of a queue, where we just care about who's on top, and don't need to access anyone in the middle. However, we no longer want to process items in order of the arrival.
 
-* The code between two vector implementations are going to look similar, just that the stored type is different. This violates the [**Don't Repeat Yourself (DRY)**](http://en.wikipedia.org/wiki/Don't_repeat_yourself) principle.
+How do we add, return, and remove items based on their assigned priority?
+ 
+Heaps are an implementation of a **priority queue**, an ADT that allows us to add items to their appropriate location (based on their priority), return the item of highest priority, and remove the item of highest priority. You can visualize a heap as a complete d-ary tree (usually, d = 2) that satisfies the heap property: 
 
-* You can never accomodate all the types your users create, such as `MsgNode*`, `Cat`, or `StudentRecord`.
+Every parent is better than both of its children. 
 
-To address such limitations, C++ offers an extremely powerful system called **"templates"**.
-Through templates, we can treat a type as a variable, and use it as the type in class definition. Later, when a user declares a templated object with a particular type, the compiler will substitute in the user-speficied type to generate a version of your implementation with this type.
+In a min heap, a node is less than or equal to all its children. In a max heap, a node is greater than or equal to all its children. 
 
-### 2 - Template Example
+- [ ] So, **where in the tree is the “best” (maximum or minimum) item at any given time?**
 
-One of the simplest templated examples we've encountered so far is the `std::pair` class. It is declared with two "types", and values of the sepcified types are passed in to the constructor. In a templated class, functions signatures and parameters can be defined "programatically". For example:
+- [ ] **For a binary heap, does it matter which child is on the left and which child is on the right? Why or why not?**
 
-```
-std::pair<int, std::string> student(1234567890, "Tommy Trojan");
-std::pair<std::string, int> question("What is the answer to life, universe, and everything?", 104);
-```
+- [ ] **In what data structure is there an ordering property between the left and right children, and why is it necessary for that data structure and not in heaps?**
+ 
+Since a complete tree is one where the first (h-1) levels are full AND the bottom level is filled from left to right, we can store our heaps in a single array. Suppose we index our array starting at index 1. For any node i, parent(i) = i/2. For any parent p, left_child(p) = 2p and right_child(p) = 2p + 1.
 
-Similarly, the return values of its functions can be defined "programmatically" as well. For example:
+- [ ] How does this change if we index our array starting at index 0?
 
-```
-int studentId = student.first; // returns an int
-std::string answer = question.first; // returns a string
-```
+If we start at index 0, for any node i, parent(i) = (i - 1)/2. For any parent p, left_child(p) = 2p + 1 and right_child(p) = 2p + 2.
 
-Let's open the file `pair.h` and take a closer look.
+- [ ] How does that change if we have a 3-ary heap, 4-ary heap, 5-ary heap, etc.?
 
-#### 2.1 - Declare the types with `template < >`
+That's for you to figure out in the homework!
+ 
+Thankfully, implementing the functions of a priority queue is not as hard as it sounds. Let’s say our heap is stored in an array a, and the variable size returns the number of items in the heap at a given time.
+ 
+**Pushing an Item:** to add an item, we need to think about where to add it. In what location should we add our new item if we want to keep our tree complete? What index of our array does this correspond to? Adding the item is the easy part; after adding, we need to think about maintaining the heap property as well. If our newly added leaf is worse than its parent, does our heap property still hold?  This is where “trickling up” comes in: to maintain the heap property, we need to recursively promote our new leaf up. How do we know when to stop “trickling up?”
 
-We list the number of programatically declared types that we'll use in a templated class with a simple `template < >` tag before the class declaration and before each implementation of the class's functions. This is important — a templated `Pair` class with two dynamic types is an entirely different class from a non-templated `Pair` class, even if they share the same name. Therefore, every time we mention a templated class, we must refer to it with `template < >`.
+**Popping an Item:** recall that when we remove from a heap, we are removing the best item. However, the best item is stored in the root, and we can’t just delete our root from the tree! In fact, the only item we can remove while maintaining a complete tree is the leaf node that is as far right as possible. Removing an item is going to involve three main steps:
 
-Notice that with Pair, we are listing that two classes can be specified with `template <typename FirstType, typename SecondType>`. It means we're going to name the first type `FirstType` and the second type `SecondType`. These names act as variable names — wherever in this class, `FirstType` and `SecondType` refer to the specific types that the user of the templated class specified in declaration. Think of `typename` as their type, `FirstType` or `SecondType` as their name, just like when you declare `int counter`, `int` is the type and `counter` is the name, which you can later refer to in your program.
+a.     Swap the “best” node with the very last leaf node. Where are these stored in our array?
 
-#### 2.2 Do not pre-compile!
+b.     Delete the very last leaf node (which now stores our “best” item.)
 
-Another thing you'll notice is that the class's implementations for all its methods are included in this header file. This is not a bad practice; in fact, it is required for templated class to do so, since templated classes cannot be pre-compiled, and the reason is rather complex:
+c.     Since the root now contains what was previously our very last leaf node, we are going to have to put it in its right place to maintain our heap property. The last step of removing involves “trickling down”: recursively swapping our new root with its best child. How do we know when to stop “trickling down?”
 
-In a templated class declaration and implementation, since it uses a variable type, there is no information for the compiler to know if a member funciton or data exists.
+**Top/Returning Best Value:** to return the best value, all we have to do is return a[0]. The runtime of top() is clearly constant. What are the runtimes of adding/removing an item? (Hint: what is the height of a complete d-ary tree?)
 
-```c++
-template <typename T>
-class Dummy
-{
-public:
-	void SomeFunction() 
-	{
-		T name;
-		std::cout << name.length(); // Does T have a member function length()?
-	}
-}
-```
+### Assignment Part 1 - Implementing `pop()` for a max heap
 
-In order to resolve the linking problem, the compiler will generate a version of the templated class implementation by substituting in the type that the users try to use into the variable type.
+In this part, you are given a partially finished version of a binary max heap (i.e. a heap where each element is larger than its two children).
 
-```c++
-// If a user tries to use Dummy<int> and Dummy<std::string>, the compiler will generate the following two code
-// The actual generated code is not in C++ but some low-level machine code. 
-// C++ code is shown here for illustration purpose only.
+Your task is to implement the `pop()` function for the heap (in `max_heap.h`), which removes the top element from the heap (and to keep the heap property intact at the same time). This would (hopefully) prepare you for PA3.
 
-class DummyInt
-{
-public:
-	void SomeFunction() 
-	{
-		int name; // Notice T is replaced with int
-		std::cout << name.length(); // This should not compile
-	}
-}
+**Tips / Hints:**
 
-class DummyStdString
-{
-public:
-	void SomeFunction() 
-	{
-		std::string name; // Notice T is replaced with std::string
-		std::cout << name.length(); // This should compile
-	}
-}
-```
+- Remember we were talking about storing the heap as an array because it is a complete binary heap? Insides our `MaxHeap`, the member `data` serves as that array! We use an `std::vector` instead of an plain array because:
 
-From the above example, you can see that the compiler doesn't know whether the code should compile until it sees how the user is using the code. In addition, where the class definition is and when it's needed also depends on when and where the users use the templated class. All of these make it impossible for the compiler to compile templated class into object files ahead of time. 
+    - We could use `vector.push_back` to push back an item.
+    - We could use `vector.pop_back` to remove the last item. (Very useful for heaps)
+    - It handles resize automatically.
+    - It handles memory allocation automatically (no more manual `new` and `delete`!)
 
-Since the compiler needs to do substitutions based on the use of templated class, it will do it while it's in the user's program, where the templated class is use, based on the implementation of the class referenced by `#include`. Therefore it needs to know all implementations from the header file, so we should not separate out the implementations into a `.cpp` file.
+- You could use `std::swap` to swap the value of two elements (e.g. `std::swap(data[parent], data[left])`).
 
-**TL;DR: Always put your templated class implementations in the header file. Never compile a templated class into `.o` files. Always include the header file in the dependency list but never list it in the compile command.**
+- When you are trickling down, be careful for whether the node has 0, 1, or 2 children.
 
-### 3 - Using Inner Class of Templated Class
+- [ ] When you are done, run `make heap_test` to test your heap. Make sure all tests pass before moving to Part 2.
 
-In your homework you have seen the use of the inner struct `Item` in `TokenList`. Inner classes work the same way in templated classes, and inner classes share their outer class's templated type variables. However, the syntax for using the inner class is a little different. Wherever you need to refer to the inner class outside of your class definition, you must append `typename` to the front of the type.
 
-```c++
-template<typename T>
-class Outer
-{
-private:
-	// We don't need template<typename T> here. Inner will get it from Outer.
-	struct Inner
-	{
-		T val; // Inner class will share outer class's template variable name
-	};
-	
-public:
-	T GetValue();
-private:
-	Inner GetInner(); // We are in class definition, so we can refer to the inner class without Inner<T>, though that will work just fine.
+### Assignment Part 2 - **ROCK BATTLE**
 
-private:
-	Inner mInner;
-};
+In this part we will utilize the heap we have just created to solve a problem!
 
-// The first template<typename T> tells the compiler that we need to use T as a type variable.
-// Outer<T>::GetValue is the function name. Since Outer is templated, Outer<int>::GetValue is 
-// very different from Outer<double>::GetValue, so must include <T> after Outer.
+We have a collection of stones. Each stone has a positive integer weight. The stones are represented as a vector of ints, where each int is the stone's weight.
 
-template<typename T>
-T Outer<T>::GetValue()
-{
-	return mInner.val;
-}
+We want our rocks to battle. Each turn, we choose the two heaviest rocks and smash them together. Suppose the stones have weights x and y, where x <= y.  The result of the smash is:
 
-// The typename in second line at the front of function signature tells the compiler Outer<T>::Inner 
-// is a class or struct name, not a static variable name and Outer<T>::Inner is the return type. Again, 
-// since Outer is templated, we must include <T> after Outer.
+If x == y, both stones are totally destroyed.
 
-template<typename T>
-typename Outer<T>::Inner Outer<T>::GetInner()
-{
-	return mInner;
-}
-```
+If x != y, the stone of weight x is totally destroyed, and the stone of weight y now has weight y-x.
 
-### Check Off: Templated Linked List 
+At the end, there is at most 1 stone left.  Return the weight of this stone (or 0 if there are no stones left.)
 
-We have included a simplified version of a linked list of integers,`LList`, in `resources`. Your job is to template it and make it usable with any class, not just ints.
+Your task is to implement the `int lastStoneWeight(vector<int>& stones)` function inside `stones.cpp` to simulate the process described above with the `MaxHeap` you just implemented.
 
-What you need to do:
+- [ ] When you are done, run `make test` to test your function.
 
-- [ ] Template the LList class. Include `template < >` tags wherever the class is mentioned. Since there is only one generic type - convention the name is `T` (instead of `FirstType`, `SecondType`).
-- [ ] Fix the inner classes Item. Item is setup to store an int variable.
-- [ ] Change approriate mentions of `int` to `T`. References to inner classes need to be changed as well - remember that they are now templated.
-- [ ] Copy the contents from `llist.cpp` into the bottom of `llist.h`, and fix these functions.
-- [ ] Make and run the program using `make`. It should produce the following output without valgrind errors:
+### (Optional) Replacing `MaxHeap<int>` with `std::priority_queue<int>`
 
-```
-1 Bulbasaur
-4 Charmander
-7 Squirtle
-144 Articuno
-145 Zapdos
-146 Moltres
-```
+Fortunately, you don't have to reinvent the wheel by implementing a heap
+in practice (here we do it for the sake of exercise).
 
-### Tips for Completing the Lab
+The C++ standard library offers us the type `std::priority_queue`, which is also a max-heap (you could though customize it to be a min-heap).
 
-* After you templated your code, where should the functions implementations go? Should they
-  be in `llist.cpp` or `llist.h`?
+The functions in `MaxHeap` are designed to match those in `std::priority_queue`, so
+if you just replace `MaxHeap<int>` in your `stones.cpp` with `std::priority_queue` (and also include the `#include <queue>` header), your code should continue to work.
 
-* If you would like to implement the constructor for an inner type like `Item`, you have to use the fully qualified name like this:
+For more information about priority queues, check [cppreference](https://en.cppreference.com/w/cpp/container/priority_queue).
 
-```c++
-template <typename T>
-LList<T>::Item::Item(const T& v, Item* p, Item* n)
-```
+ - [ ] Replace `MaxHeap<int>` in your `stones.cpp` with `std::priority_queue`, and rerun your tests.
 
-Notice that you could simply say `Item* p` because by then you are already considered
-to be inside the `Item` class.
+### Checkoff Policy
 
-### Checking off
+To get checked off, show your passing result of `make test_heap` and `make test` to a CP/TA.
 
-To get checked off, show the result after running `make` and your source files to one of your CP/TAs.

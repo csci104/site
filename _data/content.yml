@@ -75,72 +75,73 @@ labs:
   - id: lab3
     week: Week 3
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, makefiles, build systems
     slides: makefile_lab.pdf
   - id: lab4
     week: Week 4
-    title: GTest
-    assigned: false
-    topics: Unit testing
-  - id: lab5
-    week: Week 5
     title: Inheritance and STL
-    assigned: true
+    assigned: false
     topics:
     slides: stl_inh_lab.pdf
+  - id: lab5
+    week: Week 5
+    title: Templates
+    assigned: false
+    topics:
   - id: lab6
     week: Week 6
-    title: Templates
-    assigned: true
-    topics:
+    title: Heaps
+    assigned: false
+    topics: Heaps
+    slides: heap_lab.pdf
   - id: lab7
     week: Week 7
     title: Midterm Review
-    assigned: true 
-    topics: 
-  - id: heap_lab
-    week: Week 7
-    title: Heaps
-    assigned: true
-    topics: Heaps
-    slides: heap_lab.pdf
-  - id: bst_lab
+    assigned: false
+    topics:
+  - id: lab8
     week: Week 8
-    title: BST and AVL
-    assigned: true
-    topics: BST and AVL Tree
-    slides: bst_lab.pdf
-  - id: backtracking
-    week: Week 11
     title: Backtracking
-    assigned: true
+    assigned: false
     topics: Backtracking
     slides: Backtracking_Lab.pdf
-  - id: counting_lab
-    week: Week 12
+  - id: lab9
+    week: Week 9
+    title: BST and AVL
+    assigned: false
+    topics: BST and AVL Trees
+    slides: bst_lab.pdf
+  - id: lab10
+    week: Week 10
+    title: Hashtables
+    assigned: false
+    topics: Hashtables
+  - id: lab11
+    week: Week 11
     title: Counting
-    assigned: true
+    assigned: false
     topics: Counting
     slides: Extra_Counting_Problems.pdf
-  - id: probability_lab
-    week: Week 13
-    title: Probablity
-    assigned: true
+  - id: lab12
+    week: Week 12
+    title: Probability
+    assigned: false
     topics: Probability
     slides: probability_lab.pdf
-  - id: hashtable_lab
-    week: Week 14
-    title: Hashtable
-    assigned: true
-    topics: Hashtable
-  - id: old_probability_lab
-    week: Not Used
-    title: N/A
-    assigned: true
+  - id: lab13
+    title: Number Theory
+    week: Week 13
+    assigned: false
     topics:
-  - id: number_theory
-    week: for review only
-    assigned: true
-    topics: NOT DUE
+  - id: gtest_lab
+    title: GTest
+    week: Week 14
+    assigned: false
+    topics: Unit Testing, GTest
+  - id:
+    title: Final Review
+    week: Week 15
+    assigned: false
+    topics:
 

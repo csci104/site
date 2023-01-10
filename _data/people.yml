@@ -107,7 +107,7 @@ staff:
     email: sidqian@usc.edu
     image: /assets/img/staff/temp.png
     hours: >-
-      See Google Calendar
+      Ed Discussion Only
   - name: Nicole Russack
     email: russack@usc.edu
     image: /assets/img/staff/nicole.jpg
@@ -171,8 +171,8 @@ graders:
   - name: Prakash Parajuli
     email: parajuli@usc.edu
     image: /assets/img/staff/temp.png
-  - name: Prakash Parajuli
-    email: parajuli@usc.edu
+  - name: Raj Patel
+    email: rajashif@usc.edu
     image: /assets/img/staff/temp.png
   - name: Ashutosh Sharma
     email: asharma7@usc.edu

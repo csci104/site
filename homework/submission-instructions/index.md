@@ -11,11 +11,10 @@ nav: homework
 
   + Create a `README.md` in the directory for each assignment.
   + Suppress all debug messages (remove any `cout`/`cerr` statements or other debug output).
-  + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page and are pushed to Github.  Failure to submit a necessary file will lead to a 0 on that problem or at the least a **-10 point** deduction per missing file. 
+  + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page and are pushed to Github.  Failure to submit a necessary file will lead to your code failing all or part of the test suite. 
   + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.  If your code has warnings, a **deduction of up to 4 points** may be applied to the problem!  
   + If there are any specific actions and/or commands necessary to compile or run your code, or to access any required documentation for your assignment, include instructions in your `README.md` file.
-  + Your grader will grade the assignment in Codio.
-  + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 4 points** per programming problem.
+  + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 0.5 points** per failed test.
   + On homeworks where tests were provided, if you have downloaded those tests you **must** update your .gitignore so that the tests are not uploaded to your GitHub repo
 
   
@@ -42,7 +41,7 @@ Run `git status` on your repository and make sure that there are no files listed
 A `git status` on your master branch must return:
     
 ```
-# On branch master
+# On branch main
 nothing to commit, working directory clean
 ```
 
@@ -71,7 +70,9 @@ Our reference grading environment is Codio. You should test your code on Codio t
 
 When you're ready to submit (and you're 100% the commit at the desired hash is ready-to-go) you paste the hash into the box on the Codio guide. This will run structural checks on your GitHub repo (can the hash be checked out, do the required files exist, etc.). If the script passes, then your assignment has been submitted! If the script detects any problems it will give you some feedback on how to fix the problem. Once you are able to submit a clean hash, mark the assignment as complete.
 
-You can resubmit as often as you want -- we will grade the submission with the most recently submitted SHA.
+When you mark the assignment as complete a background grading script will grade the assignment using the provided test suite against the code at your submitted SHA.
+
+You can resubmit as often as you want -- the backgrund script will grade the most recently submitted SHA.
 
 ### Late Submissions
 

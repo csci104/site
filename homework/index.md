@@ -75,17 +75,19 @@ For non-emergency issues (especially those close to the deadline), extensions ar
 
 As a reward for starting early coding assignments turned in early will receive a 5% bonus. "Turned in early" means the assignment was marked-as-complete on Codio and the autograding script awarded full marks **before** the day of the deadline. Said another way, if you finish your assignment with full marks before the due date (not time) you will receive the bonus. This means you can earn up to 105% of the points on the homework portion of the course.
 
+Late days and the 1% per day penalty apply **only** to the coding portion of the assignments. The written portions must be completed on-time by uploading your written answers to Codio before the deadline.
+
 The most consistent advice from students who have done well in CS 104 is (you guessed it): **start early!**  
 
 ### HW Grades and Regrades
 
-We will work hard to post HW scores and feedback within 1-2 weeks of the homework's due date. Exams will typically be graded within at most a few days of the exam date. Only the written portion of the homework is graded by a human. The score for the programming portion is determined by a grading script and is not avilable for regrading.
+We will work hard to post HW scores and feedback within 1 week of the homework's due date. Exams will typically be graded within at most a few days of the exam date. Only the written portion of the homework is graded by a human. The score for the programming portion is determined by a grading script and is not avilable for regrading.
 
 Any disputes with posted grades **must** be raised within **7 days** (unless specifically noted) of the score posting.  Then follow the process below for the type of regrade you are requesting.  
 
-Fill out this [**HW regrade form**]({{site.data.urls.regrade_form}}) **within 7 days** of grades being released. The graders will review your regrade request and if appropriate make any updates to your score on Codio. They should also respond via e-mail with a reply whether or not your score changed.
+Fill out this [**HW regrade form**]({{site.data.urls.regrade_form}}) **within 7 days** of grades being released. The graders will review your regrade request and if appropriate make any updates to your score on Codio. They will also respond via the Admin and Grading discussion board with a reply whether or not your score changed.
 
-Any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  Finally, please note that regrades are not for "fixing" your code.  For example: If there was just one line off that caused all the tests to fail, that might be a viable reason for a regrade but we have a standard policy that each expression change on a regrade is a -10 deduction, because it was really your responsibility (especially if the test suite was released before submission) to ensure your code compiled, tested, and all files were submitted on Github which can be verified by the "Verification" process outlined at the end of each homework.
+Any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  Finally, please note that regrades are not for "fixing" your code.  For example: If there was just one line off that caused all the tests to fail, that might be a viable reason for a regrade but with the Codio submission process you will know that your code fails when you submit. It is your responsibility (especially if the test suite was released before submission) to ensure your code compiled, tested, and all files were submitted on Github which can be verified by the "Verification" process outlined at the end of each homework.
 
 ### Exam Regrades
 Exams may or may not have regrades enabled. If they do, then regrades will be handled through Gradescope.  

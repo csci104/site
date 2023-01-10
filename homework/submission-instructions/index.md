@@ -15,7 +15,7 @@ nav: homework
   + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.  If your code has warnings, a **deduction of up to 4 points** may be applied to the problem!  
   + If there are any specific actions and/or commands necessary to compile or run your code, or to access any required documentation for your assignment, include instructions in your `README.md` file.
   + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 0.5 points** per failed test.
-  + On homeworks where tests were provided, if you have downloaded those tests you **must** update your .gitignore so that the tests are not uploaded to your GitHub repo
+  + On homeworks where tests were provided, you **must** ensure the .gitignore is configured so that the tests are not uploaded to your GitHub repo.
 
   
 #### Acceptable Document Formats

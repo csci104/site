@@ -110,7 +110,12 @@ staff:
       See Google Calendar
   - name: Mila Mathias
     email: memathia@usc.edu
-    image: /assets/img/staff/mila2.jpg
+    image: /assets/img/staff/mila.jpg
+    hours: >-
+      See Google Calendar
+  - name: Denis Mistrick
+    email: mistrik@usc.edu
+    image: /assets/img/staff/denis.jpg
     hours: >-
       See Google Calendar
   - name: David Morales

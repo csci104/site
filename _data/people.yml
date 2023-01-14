@@ -8,7 +8,7 @@ instructors:
 administrators:
   - name: Tallulah Winston-Schrader
     email: winstons@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/tallulah.jpg
 
 assistants:
   - name: Charles Bickham
@@ -31,6 +31,11 @@ staff:
   - name: Louis Addison
     email: laddison@usc.edu
     image: /assets/img/staff/louis.jpg
+    hours: >-
+      See Google Calendar
+  - name: Ishu Agrawal
+    email: ishuagra@usc.edu
+    image: /assets/img/staff/ishu.jpeg
     hours: >-
       See Google Calendar
   - name: Anahita Ahmadi
@@ -68,6 +73,11 @@ staff:
     image: /assets/img/staff/james.jpg
     hours: >-
       See Google Calendar
+  - name: Jason Gao
+    email: jasongao@usc.edu
+    image: /assets/img/staff/jasongao.jpg
+    hours: >-
+      See Google Calendar
   - name: Isaac Gerstmann
     email: ig_707@usc.edu
     image: /assets/img/staff/isaac.jpg
@@ -86,6 +96,16 @@ staff:
   - name: Matt Leslie
     email: mtleslie@usc.edu
     image: /assets/img/staff/matt.jpg
+    hours: >-
+      See Google Calendar
+  - name: Kathleen Luo
+    email: krluo@usc.edu
+    image: /assets/img/staff/kathleen.jpg
+    hours: >-
+      See Google Calendar
+  - name: Jacob Ma
+    email: jingzema@usc.edu
+    image: /assets/img/staff/jacobma.jpg
     hours: >-
       See Google Calendar
   - name: Mila Mathias
@@ -108,14 +128,39 @@ staff:
     image: /assets/img/staff/temp.png
     hours: >-
       Ed Discussion Only
+  - name: Amy Rong
+    email: shiqingr@usc.edu
+    image: /assets/img/staff/amy.jpg
+    hours: >-
+      Ed Discussion Only
   - name: Nicole Russack
     email: russack@usc.edu
     image: /assets/img/staff/nicole.jpg
     hours: >-
       See Google Calendar
+  - name: Nicholas Schumacher
+    email: naschuma@usc.edu
+    image: /assets/img/staff/nicolas.jpg
+    hours: >-
+      See Google Calendar
+  - name: Sam Sommerer
+    email: sommerer@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
   - name: Monil Sorathia
     email: msorathi@usc.edu
     image: /assets/img/staff/monil2.jpg
+    hours: >-
+      See Google Calendar
+  - name: Madhu Suraj
+    email: msuraj@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+  - name: Winfred Wang
+    email: wzwang@usc.edu
+    image: /assets/img/staff/temp.png
     hours: >-
       See Google Calendar
   - name: Crystal Wu

@@ -125,7 +125,7 @@ staff:
       See Google Calendar
   - name: Sid Qian
     email: sidqian@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/sid.jpg
     hours: >-
       Ed Discussion Only
   - name: Amy Rong
@@ -160,7 +160,7 @@ staff:
       See Google Calendar
   - name: Winfred Wang
     email: wzwang@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/winfred.jpg
     hours: >-
       See Google Calendar
   - name: Crystal Wu

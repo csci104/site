@@ -69,9 +69,9 @@ labs:
   - id: lab2
     week: Week 2
     title: GDB
-    assigned: true
+    assigned: false
     topics: Debugging, GDB, tooling
-    slides: gdb_lab.pdf
+    slides: Lab2_slides.pdf
   - id: lab3
     week: Week 3
     title: Makefiles

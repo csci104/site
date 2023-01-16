@@ -69,7 +69,7 @@ labs:
   - id: lab2
     week: Week 2
     title: GDB
-    assigned: false
+    assigned: true
     topics: Debugging, GDB, tooling
     slides: Lab2_slides.pdf
   - id: lab3

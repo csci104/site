@@ -18,7 +18,7 @@ assistants:
       See Google Calendar
   - name: Satyaki Das
     email: satyakid@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/satyaki.jpg
     hours: >-
       See Google Calendar
   - name: Elan Markowitz
@@ -145,7 +145,7 @@ staff:
       See Google Calendar
   - name: Sam Sommerer
     email: sommerer@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/sam.jpg
     hours: >-
       See Google Calendar
   - name: Monil Sorathia
@@ -197,19 +197,19 @@ staff:
 graders:
   - name: Deepa Avhad
     email: davhad@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/deepa.jpg
   - name: Harshali Bedmutha
     email: hbedmuth@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/harshali.jpg
   - name: Suryakant Kashyap
     email: suryakan@usc.edu
     image: /assets/img/staff/temp.png
   - name: Sarthak Mishra
     email: sarthakm@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/sarthak.jpg
   - name: Kishan Murthy
     email: knarasim@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/kishan.jpeg
   - name: Avanti Panchani
     email: apanchan@usc.edu
     image: /assets/img/staff/temp.png
@@ -218,7 +218,7 @@ graders:
     image: /assets/img/staff/temp.png
   - name: Raj Patel
     email: rajashif@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/raj.jpg
   - name: Ashutosh Sharma
     email: asharma7@usc.edu
     image: /assets/img/staff/ashutosh.jpeg

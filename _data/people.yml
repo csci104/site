@@ -11,6 +11,11 @@ administrators:
     image: /assets/img/staff/tallulah.jpg
 
 assistants:
+  - name: Sumeet Batra
+    email: ssbatra@usc.edu
+    image: /assets/img/staff/sumeet.jpg
+    hours: >-
+      See Google Calendar
   - name: Charles Bickham
     email: cbickham@usc.edu
     image: /assets/img/staff/charles.jpg
@@ -23,7 +28,7 @@ assistants:
       See Google Calendar
   - name: Elan Markowitz
     email: esmarkow@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/elan.jpeg
     hours: >-
       See Google Calendar
 
@@ -203,7 +208,7 @@ graders:
     image: /assets/img/staff/harshali.jpg
   - name: Suryakant Kashyap
     email: suryakan@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/suryakant.jpg
   - name: Sarthak Mishra
     email: sarthakm@usc.edu
     image: /assets/img/staff/sarthak.jpg
@@ -212,7 +217,7 @@ graders:
     image: /assets/img/staff/kishan.jpeg
   - name: Avanti Panchani
     email: apanchan@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/avanti.jpg
   - name: Prakash Parajuli
     email: parajuli@usc.edu
     image: /assets/img/staff/temp.png

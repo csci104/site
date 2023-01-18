@@ -291,8 +291,16 @@ Invader killed
 Invader killed
 Winner: protectors
 ```
+or
 
-Clearly there is some sort of logic error affecting the result of the second duel.
+```
+2c2
+< Duel ends in draw
+---
+> Invader killed
+```
+
+Clearly there is some sort of logic error affecting this.
 To debug this, we will need to trace the issue back through the code.
 It looks like `"Invader killed"` is being output inside skirmish() at line 135:
 

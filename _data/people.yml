@@ -206,6 +206,9 @@ graders:
   - name: Harshali Bedmutha
     email: hbedmuth@usc.edu
     image: /assets/img/staff/harshali.jpg
+  - name: Smit Kadvani
+    email: kadvani@usc.edu
+    image: /assets/img/staff/smit.jpg
   - name: Suryakant Kashyap
     email: suryakan@usc.edu
     image: /assets/img/staff/suryakant.jpg
@@ -224,6 +227,9 @@ graders:
   - name: Raj Patel
     email: rajashif@usc.edu
     image: /assets/img/staff/raj.jpg
+  - name: Sudhanshu Rai
+    email: sudhansh@usc.edu
+    image: /assets/img/staff/temp.png
   - name: Ashutosh Sharma
     email: asharma7@usc.edu
     image: /assets/img/staff/ashutosh.jpeg

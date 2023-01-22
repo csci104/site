@@ -15,7 +15,7 @@ title: Makefiles
 
 In this lab, we will review Makefiles, how they work, and how to write them.
 In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration.
-We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger. This material is also available on Codio.
+We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger. This material is also available on Codio. [Here] (./assets/resources.zip) is the zip file with all required files.
 
 ## GCC and Makefiles
 
@@ -497,7 +497,7 @@ exe/pokemon
 
 to see a marvelous battle between pokemons!
 
-- [ ] For checkoff, create a .txt file and write your answers to the review questions below inside it. Show a CP the pokemon battle using `make` and your answers to the questions. 
+- [ ] For checkoff, create a .txt file and write your answers to the review questions below inside it. Show a CP the pokemon battle using `make` and your answers to the questions.
 
 #### 5.1 - Review Questions
 

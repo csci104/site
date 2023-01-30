@@ -9,9 +9,12 @@ title: Inheritance and STL
 
 **Due at the end of your registered lab section**
 
+[Here](assets/resources.zip) is the zip file with all required files. You can also find the lab on Codio.
+
 ---
 
 ## Inheritance and STL
+
 
 ### Why do we use inheritance?
 
@@ -84,7 +87,7 @@ class Professor {
 
 This would work, but note the repetition — students and professors both have mName data members and getName functions. Every person has a name, so instead of writing the same function in both classes, we can have Student and Professor inherit from a third class, a Person class. We're also going to add some additional functions and data members, so that our classes looks like this diagram.
 
-<div style="text-align:center"><img src="resources/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
+<div style="text-align:center"><img src="assets/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
 
 
 ```c++

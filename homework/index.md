@@ -35,7 +35,7 @@ Please read the submission instructions and policies below **carefully**!  Failu
       <td>{{ forloop.index }}</td>
       <td>
         {% if assignment.assigned %}
-        <a href="foo">Codio</a>
+        <a href="{{ site.data.urls.codio_course }}">Codio</a>
         {% else %}
         
         {% endif %}

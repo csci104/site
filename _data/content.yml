@@ -82,13 +82,13 @@ labs:
     week: Week 4
     title: Inheritance and STL
     assigned: true
-    topics: Object Oriented Programming 
+    topics: Object Oriented Programming
     slides: stl_inh_lab.pdf
   - id: lab5
     week: Week 5
     title: Templates
-    assigned: false
-    topics:
+    assigned: true
+    topics: Object Oriented Programming
   - id: lab6
     week: Week 6
     title: Heaps

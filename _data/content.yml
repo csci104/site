@@ -92,7 +92,7 @@ labs:
   - id: lab6
     week: Week 6
     title: Heaps
-    assigned: false
+    assigned: true
     topics: Heaps
     slides: heap_lab.pdf
   - id: lab7

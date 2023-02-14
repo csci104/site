@@ -110,5 +110,5 @@ For more information about priority queues, check [cppreference](https://en.cppr
 
 ### Checkoff Policy
 
-To get checked off, show your passing result of `make test_heap` and `make test` to a CP/TA.
+To get checked off, show your passing result of `make heap_test` and `make test` to a CP/TA.
 

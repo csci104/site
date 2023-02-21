@@ -97,15 +97,15 @@ labs:
     slides: heap_lab.pdf
   - id: lab7
     week: Week 7
-    title: Midterm Review
-    assigned: false
-    topics:
-  - id: lab8
-    week: Week 8
     title: Backtracking
-    assigned: false
-    topics: Backtracking
+    assigned: true
+    topics: Recursive Backtracking
     slides: Backtracking_Lab.pdf
+  - id: NO LAB
+    week: Week 8
+    title: Optional Midterm Review
+    assigned: true
+    topics:
   - id: lab9
     week: Week 9
     title: BST and AVL

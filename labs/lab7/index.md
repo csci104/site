@@ -22,9 +22,9 @@ The lecture slides on backtracking has the solution code for N-Queens and a gene
 (which you will implement today). You could access the slides [here](https://ee.usc.edu/~redekopp/cs104/slides/L12_BacktrackingSearch.pdf).
 The code is accessible [here](assets/resources.zip), as well as on Codio.
 
-### 0 - N-Queens
+### 0: N-Queens
 
-Last week, we went over backtracking in lecture. Here's a quick review of the N-Queens problem:
+While backtracking hasn't been covered in lecture quite yet (or you are covering it right now). Here's a quick review of (or introduction to!)  the N-Queens problem:
 + You want to arrange 8 queens on an 8x8 chessboard such that each queen is unable to capture any other queens. Now, this can be trivial on a regular-sized chessboard, but what if you wanted to place 100 queens on a 100x100 chessboard? It quickly becomes more complicated.
 
 One algorithmic solution to this problem is to use recursive backtracking.
@@ -32,7 +32,7 @@ One algorithmic solution to this problem is to use recursive backtracking.
 A sample implementation of N-Queens is presented [here](https://godbolt.org/z/Y3WvqPK8e).
 
 
-### 1 - Recursive Backtracking
+### 1: Recursive Backtracking
 
 You should be familiar with some of the uses of recursion at this point. We typically use recursion to split a problem into one or a small number of simple, repeatable steps (or "stages"). One popular way to implement a recursive search is to search one step at a time until you hit a dead end (or impossible situation) or find a solution. If you've successfully found a solution, you're done. If your recursive call returns unsuccessful, remove that value from the list of potential solutions and continue to search until you've exhausted all possibilities.
 
@@ -55,7 +55,7 @@ Recursive Backtracing solutions often look like this:
 	+ In N-Queens, this domain is a row. After checking if an option `is_valid()`, `recursive_helper()` calls itself on the next row after to test each option. It returns true if it has reached the end OR if its child call returns true. It returns false otherwise to tell the caller it has reached a dead end. If a child call returns false, undo whatever option was tested.
 3. `is_valid()` function : Tells you whether or not an option is viable for a specific arrangement.
 
-### 1.1 - Example
+### 1.1: N-Queens Example
 
 Let's take a look at an example. Consider a 4x4 chessboard for simplicity.
 
@@ -119,13 +119,13 @@ etc.
 The first correct solution we will hit is 1, 3, 0, 2.
 
 
-#### 3.1 - Sudoku
+#### 2: Sudoku
 
 [Sudoku](http://www.websudoku.com/) is a popular puzzle game involving a 9x9 grid and the numbers 1-9. The goal of the game is to fill board such that each row, column, and 3x3 box have the numbers 1-9 with no repeats. We will be programming a sudoku solver for lab.
 
 Sudoku boards always start with some numbers in place, but mostly 0's which represent squares we need to solve for.
 
-In `lab9/sudoku.cpp`, you will find some functions to get you started. Your task is to implement `solveHelper()` called by `solve()`. You may change the parameters as you like. We suggest taking in the row and column of the grid space you're trying to solve.
+In `sudoku.cpp`, you will find some functions to get you started. Your task is to implement `solveHelper()` called by `solve()`. You may change the parameters as you like. We suggest taking in the row and column of the grid space you're trying to solve.
 
 The basic strategy is as follows:
 

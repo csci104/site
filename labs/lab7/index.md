@@ -14,13 +14,13 @@ title: Recursive Backtracking
 ## Recursive Backtracking
 
 ### A Note About the Midterm
-WHile this was a last minute change, we've flipped the order around a bit to hopefully lessen the load on all of you! There will be NO LAB next week, and instead we will be holding an optional midterm review session on Monday at 7pm, location TBA. There is checkoff for this lab, but you will NOT be seeing recursive backtracking on the midterm!!!
+WHhile this was a last minute change, we've flipped the order around a bit to hopefully lessen the load on all of you! There will be NO LAB next week, and instead we will be holding an optional midterm review session on Monday at 7pm, location TBA. There is checkoff for this lab, but you will NOT be seeing recursive backtracking on the midterm!!!
 
 ### Tips for this Lab
 
 The lecture slides on backtracking has the solution code for N-Queens and a general outline for the Soduku solver
 (which you will implement today). You could access the slides [here](https://ee.usc.edu/~redekopp/cs104/slides/L12_BacktrackingSearch.pdf).
-The code is accessible [here](assets/resources.zip), as well as on Codio. 
+The code is accessible [here](assets/resources.zip), as well as on Codio.
 
 ### 0 - N-Queens
 

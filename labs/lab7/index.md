@@ -20,6 +20,7 @@ WHile this was a last minute change, we've flipped the order around a bit to hop
 
 The lecture slides on backtracking has the solution code for N-Queens and a general outline for the Soduku solver
 (which you will implement today). You could access the slides [here](https://ee.usc.edu/~redekopp/cs104/slides/L12_BacktrackingSearch.pdf).
+The code is accessible [here](assets/resources.zip), as well as on Codio. 
 
 ### 0 - N-Queens
 

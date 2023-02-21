@@ -89,6 +89,7 @@ labs:
     title: Templates
     assigned: true
     topics: Object Oriented Programming
+    slides: templates_lab.pdf
   - id: lab6
     week: Week 6
     title: Heaps
@@ -104,7 +105,7 @@ labs:
   - id: NO LAB
     week: Week 8
     title: Optional Midterm Review
-    assigned: true
+    assigned: false
     topics:
   - id: lab9
     week: Week 9

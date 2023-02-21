@@ -14,7 +14,12 @@ The test will be **IN PERSON**
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 50 minutes**
   - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 9th, otherwise you will not be able to use your accomodations.  
-- Location: TBD
+- Location: THH
+  - 11AM section: 
+    - THH 101
+  - 8AM section:
+    - Last Name starts with A-K: THH 102
+	- Last Name starts with L-Z: THH 301
   - If you have **1.5x time accommodations**: TBD
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
@@ -76,7 +81,13 @@ The exam is a mix of short answer, multiple choice and coding snippets. We will 
  - Implementation of a priority queue
  - Heap implementation and operations (push, pop, top) and runtime
  - `build-heap` (`make-heap`) algorithm and runtime
+ - heap-sort
 
+#### Units 10 and 11 - Graph Algorithms and Graph Traversals
+ - Graph representations and the graph ADT
+ - Pagerank, BFS, Dijikstra's, A*, DFS
+ - Traversals (pre/in/post order)
+ 
 ### Practice Materials
 
 #### Sample Midterms

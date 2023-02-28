@@ -20,7 +20,7 @@ The test will be **IN PERSON**
   - 8AM section:
     - Last Name starts with A-K: THH 102
 	- Last Name starts with L-Z: THH 301
-  - If you have **1.5x time accommodations**: TBD
+  - If you have **1.5x time accommodations**: THH 213 (starting at 7pm running to 9:45pm)
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
 - The test will be taken on Gradescope. You will be added to this course on Gradescope automatically, but you should test your Gradescope login sometime before the exam.

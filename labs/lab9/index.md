@@ -5,7 +5,7 @@ tasks: true
 title: BST and AVL Trees
 ---
 
-Congrats on making it through the midterm last week! Back to your usual 104 programming (get it hehe). The three parts of the lab listed down below are due at the end of your lab section. You may also find this material on Codio.
+Congrats on making it through the midterm last week! Back to your usual 104 programming (get it hehe). The three parts of the lab listed down below are due at the end of your lab section. You may also find this material on Codio. The code can be downloaded [here](assets/resources.zip). 
 
 ## BST and AVL Trees
 
@@ -248,7 +248,7 @@ __Initial Tree__
 
 - [ ] Show what the tree looks like after each of the above operations. Operations should happen sequentially (ie, Insert 3 happens after Insert 14).
 
-- [ ] Get checked off by a CP! 
+- [ ] Get checked off by a CP!
 
 #### 3. isBalanced()
 

@@ -112,7 +112,7 @@ labs:
     title: BST and AVL
     assigned: true
     topics: BST and AVL Trees
-    slides: bst_lab.pdf
+    slides: Lab9_BST_AVL.pdf
   - id: lab10
     week: Week 10
     title: Hashtables

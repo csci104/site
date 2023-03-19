@@ -9,6 +9,8 @@ title: Hashtables
 
 **Due at the end of your registered lab section**
 
+As per usual, instructions/materials can be found on Codio. Code is also available [here](assets/resources.zip).
+
 ---
 
 ## Hashtables
@@ -33,7 +35,7 @@ There are many different applications of this type of data structure, including 
 
 #### 3.1 - Hash Functions
 
-So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array. 
+So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array.
 
 What goals should our hash function have?
 1. Easy and fast to compute
@@ -59,12 +61,12 @@ int hash(int data){
 }
 ```
 
-Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different every single timety in our ou. It may be more operations than our first hash function, but it still does a constant amount of work.
+Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different for the majority of cases. It may be more operations than our first hash function, but it still does a constant amount of work.
 
 
 #### 3.2 - Collisions
 
-So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches: 
+So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches:
 
  * open addressing such as linear probing, quadratic probing, or double hashing.
  * closed addressing such as chaining or buckets.
@@ -125,13 +127,13 @@ For closed addressing we will focus on chaining. Chaining allows for multiple ob
 <div style="text-align:center"><img src="./assets/chaining.png" alt="bst" width="400" height="250" /> </div>
 
 
-Other implementations may use another type of list or even a balanced tree. 
+Other implementations may use another type of list or even a balanced tree.
 
 Because chaining allows for buckets, it is probable for `n` objects to all be placed within the same bucket. The worst case runtime is O(n). Chaining may even prevent our goal of O(1) on average. However, a scenario like this should not occur if the hash function is good and the size of the hash table is big enough.
 
 ### 4 - OrderedMap vs. UnorderedMap
 
-So let's see a real life example of a hash table. In your homework, you have been using an ordered map. What is an unordered map and how is it different?
+So let's see a real life example of a hash table. In the AVL tree homework, you use an ordered map. What is an unordered map and how is it different?
 
 #### 4.1 - OrderedMap
 
@@ -158,7 +160,8 @@ You must explicitly create an unordered map using `std::unordered_map`.
 You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
 
 To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
-- [ ] Implement `remove` in `hashtable.cpp`
-- [ ] Remember to show your passing tests to a TA/CP for checkoff!
+
+- Implement `remove` in `hashtable.cpp`
+- Show your passing tests to a TA/CP for checkoff!
 
 NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!

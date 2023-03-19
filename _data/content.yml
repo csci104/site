@@ -116,7 +116,7 @@ labs:
   - id: lab10
     week: Week 10
     title: Hashtables
-    assigned: false
+    assigned: true
     topics: Hashtables
   - id: lab11
     week: Week 11

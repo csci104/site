@@ -15,13 +15,13 @@ As per usual, instructions/materials can be found on Codio. Code is also availab
 
 ## Hashtables
 
-### 0 - What is a Map?
+### 1 - What is a Map?
 
 Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
 
 The look up speed and ordering of map elements depends on the data structure we use to implement our map. In previous labs, we reviewed AVL Trees, an implementation of a balanced BST. This lab will go over hashtables and explore how it can be used to implement a map.
 
-### 3 - Let's Talk About Hash Tables
+### 2 - Let's Talk About Hash Tables
 
 A Hash Table is like an array in many aspects. However, in order to find the index in the array, we use a special function called a hash function. This converts the input into an index location that the input is then stored into.
 
@@ -33,7 +33,7 @@ This type of data structure is very useful in terms of accessing data. You could
 
 There are many different applications of this type of data structure, including sets, maps, and associative arrays (which are pretty much maps).
 
-#### 3.1 - Hash Functions
+#### 2.1 - Hash Functions
 
 So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array.
 
@@ -64,14 +64,14 @@ int hash(int data){
 Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different for the majority of cases. It may be more operations than our first hash function, but it still does a constant amount of work.
 
 
-#### 3.2 - Collisions
+#### 2.2 - Collisions
 
 So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches:
 
  * open addressing such as linear probing, quadratic probing, or double hashing.
  * closed addressing such as chaining or buckets.
 
-#### 3.3 - Open Addressing
+#### 2.3 - Open Addressing
 
 The idea with open addressing is that every location in the array can only have 1 thing in it. This means that we will have to find a free spot that we can place the object in. Linear probing is a very simple solution.
 
@@ -120,7 +120,7 @@ Try yourself with pen and paper. What will the hashtable look like following eac
 * Remove B
 * Remove E
 
-#### 3.4 - Chaining
+#### 2.4 - Chaining
 
 For closed addressing we will focus on chaining. Chaining allows for multiple objects to reside within the same array location. The array is changed to be an array of lists or some other data structure, allowing us to store multiple items per index. We often use an array of linked lists, hence the name "chaining."
 
@@ -131,11 +131,11 @@ Other implementations may use another type of list or even a balanced tree.
 
 Because chaining allows for buckets, it is probable for `n` objects to all be placed within the same bucket. The worst case runtime is O(n). Chaining may even prevent our goal of O(1) on average. However, a scenario like this should not occur if the hash function is good and the size of the hash table is big enough.
 
-### 4 - OrderedMap vs. UnorderedMap
+### 3 - OrderedMap vs. UnorderedMap
 
 So let's see a real life example of a hash table. In the AVL tree homework, you use an ordered map. What is an unordered map and how is it different?
 
-#### 4.1 - OrderedMap
+#### 3.1 - OrderedMap
 
 An ordered map uses a balanced binary search tree as its underlying data structure. We haven't yet go over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
 
@@ -145,7 +145,7 @@ An ordered map uses a balanced binary search tree as its underlying data structu
 
 It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you a ordered traversal of all the keys in the map.
 
-#### 4.1 - UnorderedMap
+#### 3.2 - UnorderedMap
 
 An unordered map uses a hash table as its underlying data structure. This means that access operations are O(1) on average, but because of this, no order can be inferred. By improving the runtime of operations, we had to sacrifice the ordering property.
 
@@ -155,7 +155,7 @@ You must explicitly create an unordered map using `std::unordered_map`.
 2. `insert(key, value)` | O(1) on average
 3. `remove(key)` | O(1) on average
 
-### 5 - HashTable Assignment
+### 4 - HashTable Assignment
 
 You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
 

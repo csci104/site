@@ -121,9 +121,9 @@ labs:
   - id: lab11
     week: Week 11
     title: Counting
-    assigned: false
+    assigned: true
     topics: Counting
-    slides: Extra_Counting_Problems.pdf
+    slides: counting_lab.pdf
   - id: lab12
     week: Week 12
     title: Probability

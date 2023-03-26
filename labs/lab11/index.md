@@ -7,7 +7,7 @@ title: Counting
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your registered lab section.** As a reminder, the lab is also available on Codio. There is no coding this week, jsut some counting exercises!
 
 ---
 
@@ -22,7 +22,7 @@ This week's lecture will go over the fine art of counting! We'll review the conc
 Recall the Product, Sum, Subtraction, and Division Rules, and use them to solve the following questions.
 
 #### Product Rule
-The **Product Rule** states that if a procedure can be broken up into a sequence of **k** tasks, and there are **n<sub>1</sub>** ways to do the first task, **n<sub>2</sub>** ways to do the second task, ..., and **n<sub>k</sub>** ways to execute the kth task, then there are **n<sub>1</sub> * n<sub>2</sub> * ... * n<sub>k</sub>** ways to do the procedure. 
+The **Product Rule** states that if a procedure can be broken up into a sequence of **k** tasks, and there are **n<sub>1</sub>** ways to do the first task, **n<sub>2</sub>** ways to do the second task, ..., and **n<sub>k</sub>** ways to execute the kth task, then there are **n<sub>1</sub> * n<sub>2</sub> * ... * n<sub>k</sub>** ways to do the procedure.
 
 Another way of thinking about the product rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. The cartesian product &#124;A × B&#124; = &#124;A&#124; × &#124;B&#124;.
 
@@ -30,24 +30,24 @@ Another way of thinking about the product rule is to consider two finite sets, &
 There's an old English nursery rhyme that goes like this:
 
 > As I was going to St Ives,
-> 
+>
 > Upon the road I met seven wives;
-> 
+>
 > Every wife had seven sacks,
-> 
+>
 > Every sack had seven cats,
-> 
+>
 > Every cat had seven kits:
-> 
+>
 > Kits, cats, sacks, and wives,
-> 
+>
 > How many were going to St Ives?
 
 Spoiler: there was only only one person going to St. Ives--you, the speaker/reader/narrator! But how many kits, cats, sacks, and wives are there coming *from* St. Ives?
 
-**Solution**: 
+**Solution**:
 
-+ There are 7 wives 
++ There are 7 wives
 + There are 7 * 7 = 49 sacks
 + There are 49 * 7 = 343 cats
 + There are 343 * 7 = 2401 kits 🐈
@@ -60,7 +60,7 @@ Another way of thinking about the sum rule is to consider two finite and disjoin
 #### Example
 Remember your trip to St. Ives? Well, on your trip, you decide to adopt not one, but two felines! One of the wives tells you to draw 2 cats out of her sack. Recall that there are 49 felines in the sack (7 cats, and for each cat, 7 kittens). Of the 49 felines, 17 are black, 21 are tabbies, and 11 are calicos. In how many ways can you draw exactly 1 black cat or exactly 1 calico cat? (Using B to denote black, T to denote tabby, and C to denote calico, any one of the following arrangements has exactly 1 black or 1 calico cat: BT, BC, CT.)
 
-**Solution**: 
+**Solution**:
 
 + The number of ways we can get 1 black and 1 tabby cat is: 17 * 21 = 367
 + The number of ways we can get 1 black and 1 calico cat is: 17 * 11 = 187
@@ -71,7 +71,7 @@ The number of ways we can get exactly 1 black or 1 calico cat is: 367 + 187 + 23
 #### Subtraction Rule
 The **Subtraction Rule** states that if a task can be done in either one of **n<sub>1</sub>** ways or one of **n<sub>2</sub>** ways, and there is an overlap between these two methods of **n<sub>3</sub>** common ways, then the number of ways to do the task is **n<sub>1</sub> + n<sub>2</sub> – n<sub>3</sub>**.
 
-Another way of thinking about the subtraction rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124; - &#124;A ∩ B&#124;. 
+Another way of thinking about the subtraction rule is to consider two finite sets, &#124;A&#124; and &#124;B&#124;. &#124;A ∪ B&#124; = &#124;A&#124; + &#124;B&#124; - &#124;A ∩ B&#124;.
 
 #### Example
 You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to inspect each cat's paws. Every cat has black or pink paws. 41 cats have black paws, 50 cats have pink paws, and 21 cats have black AND pink paws. How many cats are in the cat cafe?
@@ -84,9 +84,9 @@ You've arrived at St. Ives and now visit the local cat cafe. Here, you decide to
 #### Example
 How many distinct ways can we arrange the letters in "KITTEN"?
 
-**Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.) 
+**Solution**: there are 6 characters in "KITTEN", and 6! ways to arrange 6 characters (we have 6 choices for the first character, 5 for the second, 4 for the third, etc.)
 
-However, "KITTEN" has 2 T's, T<sub>1</sub> and T<sub>2</sub>. This means every arrangment has an identical other arrangement in which T<sub>1</sub> and T<sub>2</sub> are swapped: KIT<sub>1</sub>T<sub>2</sub>EN and KIT<sub>2</sub>T<sub>1</sub>EN are the same word! 
+However, "KITTEN" has 2 T's, T<sub>1</sub> and T<sub>2</sub>. This means every arrangment has an identical other arrangement in which T<sub>1</sub> and T<sub>2</sub> are swapped: KIT<sub>1</sub>T<sub>2</sub>EN and KIT<sub>2</sub>T<sub>1</sub>EN are the same word!
 
 Given that there are  2 * 1 = 2! ways to arrange the 2 T's, and that we want DISTINCT arrangements, the answer is **6!/2!**
 
@@ -100,9 +100,9 @@ An **r-combination** is an **unordered** arrangement of r elements from a set of
 #### Example: Permutations
 The Pied Piper Duck Fashion Show takes place in Sydney, Asutralia every year. Since we can't fly to Australia, let's suppose we are hosting our own CS104 exclusive duck fashion show. There are 30 ducks, and 3 prizes: gold, silver, and bronze. How many ways can we award gold, silver, and bronze among our 30 fashionable ducks?
 
-**Solution:** first, we want to ask ourselves: does order matter here? The answer is yes--suppose we had ducks Donald, Daisy, and Scrooge. Donald winning gold, Daisy winning silver, and Scrooge winning bronze is NOT the same as Scrooge winning gold, Donald winning silver, and Daisy winning bronze. 
+**Solution:** first, we want to ask ourselves: does order matter here? The answer is yes--suppose we had ducks Donald, Daisy, and Scrooge. Donald winning gold, Daisy winning silver, and Scrooge winning bronze is NOT the same as Scrooge winning gold, Donald winning silver, and Daisy winning bronze.
 
-Suppose we chose our gold winner first, followed by our silver winner, followed by our bronze winner. 
+Suppose we chose our gold winner first, followed by our silver winner, followed by our bronze winner.
 + We have 30 ducks to choose from for gold.
 + After selecting our golden duck, we have 29 ducks to choose from for silver.
 + After selecting our silver duck, we have 28 ducks to choose from for bronze.
@@ -115,9 +115,9 @@ There are 10 people in a chess match. How many games do they need to play to gua
 **Solution**: first, we want to ask ourselves: does order matter here? The answer is no: A playing against B is no different from B playing against A. Given 10 players, there are "10 choose 2" ways of selecting 2 players, so our answer is 10 choose 2 = **45 games**
 
 ### With or Without Repetition?
-The above two examples are examples of permutations and combinations *without* repetition. Once a duck is selected for gold, we do not reconsider that duck for silver. Player A cannot play against him/herself in a chess match. 
+The above two examples are examples of permutations and combinations *without* repetition. Once a duck is selected for gold, we do not reconsider that duck for silver. Player A cannot play against him/herself in a chess match.
 
-However, sometimes we do allow for repetition. Recall from lecture that the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**. 
+However, sometimes we do allow for repetition. Recall from lecture that the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**.
 
 The number of r-combinations of a set of n objects, where repetition is allowed, is:
 <div style="text-align:center"><img src="./assets/rComboWithRepetition.png" alt="n combinations with repetition" height="60"/></div>
@@ -156,4 +156,4 @@ How many ways can we distribute 12 cans of dog food among 3 dogs?
 
 7. (Optional, since this one is significantly harder) How many ways can we distribute 30 *identical* students into the 5 *identical* breakout rooms?
 
-If you finished early, here are some extra problems you could try from the labs main page under slides.
+To get checked off, show your answers to the 6 questions above to a CP. You can find additional counting problems [here](assets/Extra_Counting_Problems.pdf).

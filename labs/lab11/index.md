@@ -7,7 +7,7 @@ title: Counting
 
 ---
 
-**Due at the end of your registered lab section.** As a reminder, the lab is also available on Codio. There is no coding this week, jsut some counting exercises!
+**Due at the end of your registered lab section.** As a reminder, the lab is also available on Codio. There is no coding this week, just some counting exercises!
 
 ---
 
@@ -15,7 +15,7 @@ title: Counting
 
 This week's lecture will go over the fine art of counting! We'll review the concepts covered in lecture, go over a few practice examples, and then give you some exercises to do on your own. As it turns out, counting is not always as easy as 1-2-3!
 
-*For this lab, you will need to write down the answers to the practice problems and share your solutions with a CP/TA to get checked off. You are expected to do all the exercises, and your CP/TA will randomly select two questions to check your understanding (this means you have to show your work!)* Don't worry, we'll go through examples together!
+*For this lab, you will need to write down the answers to the practice problems and share your solutions with a CP/TA to get checked off. You are expected to do all the exercises.* Don't worry, we'll go through examples together!
 
 ### Basic Counting
 

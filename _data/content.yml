@@ -121,7 +121,7 @@ labs:
   - id: lab11
     week: Week 11
     title: Counting
-    assigned: true
+    assigned: false
     topics: Counting
     slides: counting_lab.pdf
   - id: lab12

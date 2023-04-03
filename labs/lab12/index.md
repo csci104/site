@@ -7,7 +7,7 @@ title: Probability Theory
 
 ---
 
-**Due at the end of your registered lab section.** As per usual, this amterial is also avaiable on Codio.
+**Due at the end of your registered lab section.** As per usual, this material is also available on Codio.
 
 ---
 
@@ -163,5 +163,5 @@ We know that $E(X_1) = E(X_2) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)$, hence $E(X)
 * What is the probability distribution of X?
 * What is the expected value of X?
 
-To get checked off, show your answers to all of these questions to a CP. 
+To get checked off, show your answers to all of these questions to a CP.
 

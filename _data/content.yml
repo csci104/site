@@ -127,7 +127,7 @@ labs:
   - id: lab12
     week: Week 12
     title: Probability
-    assigned: false
+    assigned: true
     topics: Probability
     slides: probability_lab.pdf
   - id: lab13

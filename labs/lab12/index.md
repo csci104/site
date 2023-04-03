@@ -7,7 +7,7 @@ title: Probability Theory
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your registered lab section.** As per usual, this amterial is also avaiable on Codio.
 
 ---
 
@@ -159,7 +159,9 @@ We know that $E(X_1) = E(X_2) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)$, hence $E(X)
 
 4. Earlier in March, meerkats Howell and Midra in the Taronga Western Plains Zoo gave birth to 5 meerkat pups. You are told that at least 4 pups are female. Given this information, what is the probability that all 5 are female? (Hint: it is not $1/2$)
 
-5. Two cookies are pulled out at random and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. 
+5. Two cookies are pulled out at random and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out.
 * What is the probability distribution of X?
 * What is the expected value of X?
+
+To get checked off, show your answers to all of these questions to a CP. 
 

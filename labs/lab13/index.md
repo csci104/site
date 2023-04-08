@@ -7,7 +7,7 @@ title: Number Theory
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your registered lab section.** Material and questions are also available on Codio. The coding materials for exercise 3 can be downloaded [here](./resources/resources.zip).
 
 ---
 
@@ -51,15 +51,15 @@ Here is a helpful theorem to remember:
 
 * If $a \mid bc$ and $\gcd(a, b)=1$, then $a \mid c$.
 
-#### Exercise 1
+## Exercise 1
 
 Using the theorem above, prove the following:
 
 * If $p$ is a prime and $p \mid ab$, then $p \mid a$ or $p \mid b$.
-
+---
 ### Quadratic Probing
 
-Recall that in linear probing, the positions we try to insert an element at are: 
+Recall that in linear probing, the positions we try to insert an element at are:
 
 $$h, h + 1, h + 2, h + 3, \dots$$
 
@@ -108,11 +108,11 @@ As an example, if $h=1$, $p=5$ and $k=3$, then we have:
 
 As you can see, all the probed locations are unique.
 
-#### Exercise 2
+## Exercise 2
 
 Prove with number theory that the above property of double hashing holds. (Hint: check out the proof for quadratic probing)
 
-
+---
 ### Fermat's Little Theorem and Prime Testing
 
 Here is another practical use of number theory, which involves a theorem called Fermat's little theorem (not to be confused with the other well-known but much complicated Fermat's last theorem).
@@ -137,7 +137,7 @@ How are those prime numbers generated though? A [popular way](https://crypto.sta
 
 Here if we use a naive method to test primes (try dividing it by every number from 1 up until its square root), it would take a REALLY REALLY LONG time. Instead, we could use tests like the Fermat Test to get a accurate-enough result very quickly.
 
-#### Exercise 3 (Coding)
+## Exercise 3 (Coding)
 
 For this exercise, you are going to implement a simple version of the Fermat test.
 
@@ -157,6 +157,7 @@ There are two functions for you to implement, both of which are in `fermat.cpp`:
 
 After you finish your implementation, type `make` in your terminal to run the tests.
 
-### Checking Off
+---
+## Checking Off
 
 To get checked off, complete all three exercises in this lab and show your results to a CP/TA.

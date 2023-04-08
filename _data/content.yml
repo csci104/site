@@ -133,7 +133,7 @@ labs:
   - id: lab13
     title: Number Theory
     week: Week 13
-    assigned: false
+    assigned: true
     topics:
   - id: gtest_lab
     title: GTest

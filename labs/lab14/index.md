@@ -6,21 +6,21 @@ title: GTest
 ---
 
 ## Unit Testing and GTest
-In this lab we want to dive into the topic of unit testing. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project.
+In this lab we want to dive into the topic of unit testing. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project. Code is available [here](./resources.zip), and can also be found on Codio.
 
 ### 0 - Motivation
 
 Testing is absolutely essential to a typical development process. Having a complete test suite can ensure that the code that you spent hours building works, fits specification, and is bug-free.
 
 Suppose you have just finished homework and you think you have a pretty good implementation of a doubly linked list. How do you know, for sure, that this list behaves like how you intended it to be? You can manually read through the code a million times, but you might still miss something.
- 
+
 A good test case program should:
 
   + Use your newly created data structure
   + Perform simple operations with your data structure's methods
   + Make sure that each method performs the way you intended it to be
- 
-There are several advantages for having a well-crafted test program: 
+
+There are several advantages for having a well-crafted test program:
 
   + Help you think about edge cases - ones that you might not have thought of when implementing the data structure itself.
   + Help you make sure each subpart of a problem works correctly. For example, when you implement a new data structure with your new LinkedList, and you encounter a problem, it's very hard to know whose fault it is - the new data structure or the underlying LinkedList. By thoroughly testing your LinkedList in its corresponding test, you will be able to nail down where to hunt for problems fast.
@@ -34,11 +34,11 @@ The [Google Test documentation](https://code.google.com/p/googletest/wiki/Primer
 
 Let's first begin writing tests for a simple function that computes the nth Fibonacci number. But before you open the code for the Fibonacci program, ask yourself - what are some test cases that we'll need to test?
 
-**Nominal Cases** - You can always start with the most basic cases - that 5th fibonacci should be 5, 7th should be 13. It's a good idea to include a few basic cases so to be sure you weren't just lucky, but you shouldn't need anything more than that. 
+**Nominal Cases** - You can always start with the most basic cases - that 5th fibonacci should be 5, 7th should be 13. It's a good idea to include a few basic cases so to be sure you weren't just lucky, but you shouldn't need anything more than that.
 
 **Boundary or Special Cases** - What are the boundaries for this function? For a Fibonacci calculation, it seems that there is only a "lower-bound", namely when n = 1. For some data structures that are slightly more complex, there might be multiple boundaries, like the resize limit ("`capacity`") for an array based implementation of a list.
 
-**Off-nominal Cases** - Your program should be completely fool-proof. That means your program should handle even input that does not make sense. For example, asking for the -2th Fibonacci number, or asking to insert at the 5th position for a 2 element array. Note that things that do not compile are not part of off-nominal cases. If your compiler cannot compile the code, you won't even have an executable to run. 
+**Off-nominal Cases** - Your program should be completely fool-proof. That means your program should handle even input that does not make sense. For example, asking for the -2th Fibonacci number, or asking to insert at the 5th position for a 2 element array. Note that things that do not compile are not part of off-nominal cases. If your compiler cannot compile the code, you won't even have an executable to run.
 
 Notice that we came up with these cases **without the need of looking at code** - all we did was think about how a Fibonacci program should behave, and how a user would be using such a function. In fact, it's very common for industry software engineers to write the test cases first _before_ writing a single line of code; they call this [Test-Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development).
 
@@ -53,13 +53,13 @@ if (fib.get(5) == 5) {
 }
 ```
 
-However, a long list of these cases can get out of hand very quickly - it's annoying to read and even more so to write repetitive code. We can use a library called Google Test to help us out. 
+However, a long list of these cases can get out of hand very quickly - it's annoying to read and even more so to write repetitive code. We can use a library called Google Test to help us out.
 
 #### What is enough, and how much is too much?
 
-Generally speaking, there should be at least one test case for each code execution path in a function. For example, if a function has 3 branch conditions, test at least each path once, to ensure all use cases are covered. There is no need to test a single path more than a few times - it doesn't hurt, but it's generally unnecessary as it increases testing time. This is only a rule of thumb, as some edge cases just cannot be predicted by looking at the code. 
+Generally speaking, there should be at least one test case for each code execution path in a function. For example, if a function has 3 branch conditions, test at least each path once, to ensure all use cases are covered. There is no need to test a single path more than a few times - it doesn't hurt, but it's generally unnecessary as it increases testing time. This is only a rule of thumb, as some edge cases just cannot be predicted by looking at the code.
 
-When testing a class implementation, each public function should be tested. For example, an array implemntation of a list, `ArrayList`, should have test cases for functions `add()`, `set()`, `remove()`, `get()`, and so on. More on class testing in a little bit! 
+When testing a class implementation, each public function should be tested. For example, an array implemntation of a list, `ArrayList`, should have test cases for functions `add()`, `set()`, `remove()`, `get()`, and so on. More on class testing in a little bit!
 
 #### 1.2 - Our First Google Test Case
 
@@ -73,9 +73,9 @@ TEST(FibTest, Nominal) {
 }
 ```
 
-You should notice that this is not standard C++ syntax. We're using a **C++ Macro** here that is supplied by the framework. C++, when compiling, will automatically replace this code with some appropriate C++ code defined in the framework. It is likely a much longer chunk of code that Google Test wants to hide and save the user from an unnecessary amount of copy pasting. 
+You should notice that this is not standard C++ syntax. We're using a **C++ Macro** here that is supplied by the framework. C++, when compiling, will automatically replace this code with some appropriate C++ code defined in the framework. It is likely a much longer chunk of code that Google Test wants to hide and save the user from an unnecessary amount of copy pasting.
 
-A test case is defined by calling this `TEST` macro. Two more things are important here: `FibTest` and `Nominal`, the two "parameters" that are "passed into" the Macro. The first parameter specifies the name of the test suite. As a rule of thumb, all tests in a file should belong to the same test suite, and in this case, FibTest. The second parameter is the name of this test. We're testing the trivial cases right now, so we're just going to call it the "Nominal" case. 
+A test case is defined by calling this `TEST` macro. Two more things are important here: `FibTest` and `Nominal`, the two "parameters" that are "passed into" the Macro. The first parameter specifies the name of the test suite. As a rule of thumb, all tests in a file should belong to the same test suite, and in this case, FibTest. The second parameter is the name of this test. We're testing the trivial cases right now, so we're just going to call it the "Nominal" case.
 
 ```
 EXPECT_EQ(5, f.get(5));
@@ -83,11 +83,11 @@ EXPECT_EQ(5, f.get(5));
 
 Another macro here - `EXPECT_EQ`. The name of this macro is not too surprising - test cases are but a long list of expected results under different circumstances. In here, by calling `EXPECT_EQ`, you're saying: "When I call f.get(5), the value it returns should equal to 5."
 
-You can find the list of GTest Macros [here](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md). 
+You can find the list of GTest Macros [here](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md).
 
 #### 1.3 - Adding some more test cases
 
-As we've mentioned, there are more test cases worthy to be tested. Let's add them together to our `test.cpp` file. 
+As we've mentioned, there are more test cases worthy to be tested. Let's add them together to our `test.cpp` file.
 
 **Boundary or Special Case**
 
@@ -115,9 +115,9 @@ When you're done - _don't run the tests yet_! Finish the entire test suite first
 
 **Off-Nominal Case**
 
-What else can go wrong? A rule of thumb is: never trust the user. If something can go wrong, it will; so it's essential that your program handles correctly. 
+What else can go wrong? A rule of thumb is: never trust the user. If something can go wrong, it will; so it's essential that your program handles correctly.
 
-For the sake of this testing demonstration, let's assume that any invalid input should return a value of 0. Some invalid inputs in this case could be 0, -1. 
+For the sake of this testing demonstration, let's assume that any invalid input should return a value of 0. Some invalid inputs in this case could be 0, -1.
 
 - [ ] Write a test case for this and include it in `test.cpp`.
 
@@ -146,8 +146,8 @@ Run until the segfault happens, and then run `bt` to see how the error occurred.
 
 ```
 // Add after Line 3:
-if (n <= 0) { 
-    return 0; 
+if (n <= 0) {
+    return 0;
 }
 ```
 
@@ -167,7 +167,7 @@ Open the `test.cpp` in the `part2` folder. You'll notice that this file is sligh
 
   + It inherits from a Google Test class `testing::Test`. We have not learned what inheritance works yet, but you will understand how it works in a little bit
   + The class is largely empty, but it includes a declaration of a member variable of type `ArrayList`. This object is available for use in any of the test cases
-  + It has four methods you can insert code in: 
+  + It has four methods you can insert code in:
 	- the class constructor and `SetUp()` is largely the same; both will be called before each test case
 	- similarly, the class destructor and `TearDown()` will be called after each test
 
@@ -185,15 +185,15 @@ A common mistake students make is that they write tests for their program to pas
   + What edge cases might a programmer easily overlook?
   + What input might cause the program to crash?
 
-Remember - the harsher you are when testing your own program, the less bugs will make it to the hands of your end users. 
+Remember - the harsher you are when testing your own program, the less bugs will make it to the hands of your end users.
 
 ### 4 - Assignment: Identify Two of the Bugs
 
-**TL;DR: Find 2 out of 3 bugs by writing tests, and follow the submission protocol at the bottom of this page.**
+**TL;DR: Find 2 out of 3 bugs by writing tests.**
 
 In the `part2` folder, we have provided an implementation of ArrayList for you - there is a header file `arraylist.h`, with the specification of the expected function in the comments, and a pre-compiled `ArrayList` implementation. You do not have access to the source code. We do this because again, we do not want you to think about test cases in terms of the source, but in a wider perspective of "how things should work".
 
-There are **three** bugs in the source code, and it is your task to find the problems by writing a good suite of test. Write a good set of tests for each of `add()`, `set()`, and `remove()` according to the specification provided in the header file, and thinking about edge cases. Find two of these bugs and you're good to go. 
+There are **three** bugs in the source code, and it is your task to find the problems by writing a good suite of test. Write a good set of tests for each of `add()`, `set()`, and `remove()` according to the specification provided in the header file, and thinking about edge cases. Find two of these bugs and you're good to go.
 
 We have written a sample test case for you for the `get()` function, although it is by no means an exhaustive test case. There is also a simple Makefile included for you, simply compile and run the test with `make tests`.
 
@@ -205,7 +205,10 @@ Some tips:
   + What are the execution paths in each function?
   + Big Hint: look at the test names we give you
 
- - [ ] Find two of the three bugs. Then, submit screenshots of your tests and describe the bugs you found to get checked off.
+What to show to a TA or CP:
+- fib.cpp and test.cpp from part1 folder
+- test.cpp from part2 folder
+- a .txt file describing at least 2 bugs you found in part2
 
 ### Appendix: A little bit more on the Makefile
 
@@ -220,18 +223,12 @@ You might be a little more confused about the `GTEST_LL` variable and how we are
 
 You can probably safely copy this variable everywhere.
 
-**fib.o** - This is the rule to compile the Fibonacci class by itself. Notice that the `-c` flag is used - when we compile the class by itself, we can include the compiled object everywhere - in an actual program, or in the test suite. 
+**fib.o** - This is the rule to compile the Fibonacci class by itself. Notice that the `-c` flag is used - when we compile the class by itself, we can include the compiled object everywhere - in an actual program, or in the test suite.
 
 **fibTest** - The main test rule. It has two dependencies: the compiled fib object, and the test suite itself. For the command, we simply take all the dependencies and compile them, with the `GTEST_LL` variable. It's important that the libraries are loaded after the source files, or else the linker will likely throw an error.
 
 **tests** - A rule that just runs the tests. Optional. Notice that this is a phony rule, because it doesn't actually create any file.
 
-{% include lab_submit.html %}
-
-What to submit:
-- fib.cpp and test.cpp from part1 folder
-- test.cpp from part2 folder
-- a .txt file describing at least 2 bugs you found in part2
 
 
 

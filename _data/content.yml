@@ -135,10 +135,10 @@ labs:
     week: Week 13
     assigned: true
     topics:
-  - id: gtest_lab
+  - id: lab14
     title: GTest
     week: Week 14
-    assigned: false
+    assigned: true
     topics: Unit Testing, GTest
   - id:
     title: Final Review

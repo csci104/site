@@ -11,8 +11,8 @@ nav: Resources
 - Time/Date: **{{site.data.schedule.exams[1].time}}**
   - The test will be set for **2 hours.**
   - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: TBD (leave a blank seat between you and your neighbor, if possible)
-  - If you have 1.5x time accommodations: TBD
+- Location: {{site.data.schedule.exams[1].location}} (leave a blank seat between you and your neighbor, if possible)
+  - If you have 1.5x time accommodations: ZHS 360
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
 - The final will be on Gradescope
@@ -49,6 +49,8 @@ All topics covered on the midterm are also fair game in addition to the followin
  - AVL tree property (using height or balance values)
  - AVL operations: insert and remove (be able to perform these yourself on paper) but you do not need to memorize the pseudocode
 
+#### Unit 15 - Splay Trees
+
 #### Unit 16 - Hash Tables
  - Properties of hash functions
  - Dealing with collisions
@@ -83,6 +85,8 @@ All topics covered on the midterm are also fair game in addition to the followin
  - Bloom filter pros and cons
  - Bloom filter operations (insert and find)
 
+#### Unit 21- Skip Lists
+
 #### Unit 22 - Prefix Trees and Compressed Prefix Trees
  - Construction and insertion
  - Finding elements
@@ -92,6 +96,7 @@ All topics covered on the midterm are also fair game in addition to the followin
 #### Unit 23 - Amortized Analysis
  - Approaches to performing amortized analysis
 
+#### Unit 24 - Log Structured Merge Trees
 
 ### Practice Materials
 

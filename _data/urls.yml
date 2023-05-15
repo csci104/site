@@ -1,24 +1,18 @@
 qa_tool: EdStem
-piazza: https://edstem.org/us/courses/32694/discussion/
-admin_piazza: https://piazza.com/usc/spring2023/csci104/home
-discussion: https://edstem.org/us/courses/32694/discussion/
-discussion-join: https://edstem.org/us/join/8gVhAf
-admin_discussion-join: https://piazza.com/usc/spring2023/csci104
-calendar: https://calendar.google.com/calendar/embed?src=c_719cef00borqimhoifnopko60k%40group.calendar.google.com&ctz=America%2FLos_Angeles
-github: https://github.com/usc-csci104-summer2022
-github_ssh: git@github.com:usc-csci104-summer2022
-github_org: 'usc-csci104-summer2022'
+piazza: https://edstem.org/us/courses/22162/discussion/
+calendar: https://calendar.google.com/calendar/u/2?cid=Y191MmxxczkzdHNrazB0a2ttMWIyYTBlNmFlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+github: https://github.com/usc-csci104-summer2023
+github_ssh: git@github.com:usc-csci104-summer2023
+github_org: 'usc-csci104-summer2023'
 # discord: https://discord.gg/YNAzZkF
 vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 
 blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
-# these are the same, the html and md files should be searched and fixed
-regrades: https://forms.gle/Jj742f1EbM3vEdVcA
-regrade_form: https://forms.gle/Jj742f1EbM3vEdVcA
-slug: cs104-sp23
-slide_location: http://bytes.usc.edu/files/cs104/slides
-extension_form: https://forms.gle/GBi6FR7wp31hYFtq7
+regrades: https://docs.google.com/forms/d/e/1FAIpQLSdBzRIMUwNIkMfrhfmIarIyEMgoYiyVHuOHaaLKgTWEBHKM7Q/viewform?usp=sf_link
+slug: cs104-su23
+slide_location: http://ee.usc.edu/~redekopp/cs104/slides
+extension_form: https://docs.google.com/forms/d/e/1FAIpQLScBsskr-OIcI6zdb0GM64iCZVwReyO6cGl-M4c62ERqDDltpw/viewform?usp=sf_link
 visual_code: https://code.visualstudio.com/download
 docker_repo: https://github.com/csci104/docker
 lab_form: 

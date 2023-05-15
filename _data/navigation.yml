@@ -1,6 +1,6 @@
 items:
   - title: Office hours queue
-    url: /q/
+    url: /queue/
     menubar: false
     icon: /assets/img/icon/duration.svg
   - title: Staff and hours

@@ -1,16 +1,16 @@
 qa_tool: EdStem
 piazza: https://edstem.org/us/courses/22162/discussion/
 calendar: https://calendar.google.com/calendar/u/2?cid=Y191MmxxczkzdHNrazB0a2ttMWIyYTBlNmFlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-github: https://github.com/usc-csci104-summer2022
-github_ssh: git@github.com:usc-csci104-summer2022
-github_org: 'usc-csci104-summer2022'
+github: https://github.com/usc-csci104-summer2023
+github_ssh: git@github.com:usc-csci104-summer2023
+github_org: 'usc-csci104-summer2023'
 # discord: https://discord.gg/YNAzZkF
 vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 
 blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
 regrades: https://docs.google.com/forms/d/e/1FAIpQLSdBzRIMUwNIkMfrhfmIarIyEMgoYiyVHuOHaaLKgTWEBHKM7Q/viewform?usp=sf_link
-slug: cs104-su22
+slug: cs104-su23
 slide_location: http://ee.usc.edu/~redekopp/cs104/slides
 extension_form: https://docs.google.com/forms/d/e/1FAIpQLScBsskr-OIcI6zdb0GM64iCZVwReyO6cGl-M4c62ERqDDltpw/viewform?usp=sf_link
 visual_code: https://code.visualstudio.com/download

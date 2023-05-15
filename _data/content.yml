@@ -5,54 +5,54 @@ assignments:
     regrade_form: 
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
     dates:
-      assigned: Thursday, May 19
+      assigned: Thursday, May 18
 #      checkpoint: Friday, January 21 at 11:59PM PST
-      due: Tuesday, May 31 at 11:59PM Pacific
+      due: Tuesday, May 30 at 11:59PM Pacific
   - id: hw2
     title: Inheritance, Polymorphism, and STL
     assigned: true
     regrade_form: 
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
     dates:
-      assigned: Sunday, May 29
+      assigned: Sunday, May 28
 #      checkpoint: Friday, Februrary 4 at 11:59PM PST
-      due: Thursday, June 9 at 11:59PM PST
+      due: Thursday, June 8 at 11:59PM PST
   - id: hw3
     title: Heaps
     assigned: true
     regrade_form: 
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
     dates:
-      assigned: Thursday, June 9
+      assigned: Thursday, June 8
 #      checkpoint: Friday, Februrary 18 at 11:59PM PST
-      due: Saturday, June 18 at 11:59PM PST
+      due: Saturday, June 17 at 11:59PM PST
   - id: hw4
     title: AVL Trees
     assigned: true
     regrade_form: 
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
     dates:
-      assigned: Friday, June 17
+      assigned: Friday, June 30
 #      checkpoint: Friday, March 25 at 11:59PM PST
-      due: Sunday, July 3 at 11:59PM Pacific
+      due: Sunday, July 2 at 11:59PM Pacific
   - id: hw5
     title: Counting, Probability, Recursion
     assigned: true
     regrade_form: 
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
     dates:
-      assigned: Thursday, June 30
+      assigned: Thursday, June 29
 #      checkpoint: Friday, April 8 at 11:59PM PST
-      due: Monday, July 11 at 11:59PM Pacific
+      due: Monday, July 10 at 11:59PM Pacific
   - id: hw6
     title: Hash tables
     assigned: true
     regrade_form: 
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
     dates:
-      assigned: Friday, July 8
+      assigned: Friday, July 7
 #      checkpoint: Friday, April 22 at 11:59PM PST
-      due: Sunday, July 17 at 11:59PM Pacific
+      due: Sunday, July 16 at 11:59PM Pacific
 
 labs:
   - id: lab0

@@ -30,14 +30,14 @@ Lab sessions are held every week and will be conducted by a team of TAs and Cour
     {% for lab in site.data.content.labs %}
     <tr
       {% if lab.assigned %}
-      onclick="window.location = '{{ site.baseurl }}/labs/{{ lab.id }}'"
+      onclick="window.location = '{{ site.baseurl }}/labs/{{ lab.folder }}'"
       {% else %}
       class="disabled"
       {% endif %}
     >
       <td>
         {% if lab.assigned %}
-        <a href="{{ site.baseurl }}/labs/{{ lab.id }}">{{ lab.id }}</a>
+        <a href="{{ site.baseurl }}/labs/{{ lab.folder }}">{{ lab.id }}</a>
         {% else %}
         {{ lab.id }}
         {% endif %}

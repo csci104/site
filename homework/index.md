@@ -38,11 +38,10 @@ Please read the submission instructions and policies below **carefully**!  Failu
         {% if assignment.assigned %}
         <a href="./{{ assignment.id }}/">Writeup</a>
         {% else %}
-        Write
+        Writeup
         {% endif %}
       </td>
       <td>{{ assignment.title }}</td>
-      <td>{{ assignment.dates.checkpoint }}</td>
       <td>{{ assignment.dates.due }}</td>
       <td><a href="{{ assignment.submit_link }}">Submit</a></td>
       <td><a href="{{ site.data.urls.regrades }}">Regrade</a></td>

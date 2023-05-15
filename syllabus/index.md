@@ -129,7 +129,7 @@ We will be using **"Data Structures and Algorithm Analysis in C++" by Mark Weiss
 You may also find the course lecture notes useful.  You may download (and possibly print) the [lecture notes]({{ site.data.urls.notes }}).
 These are based on teaching of CSCI 104 in past semesters, and cover the material quite accurately as presented in class.
 However, the lecture notes may be out of order and cover different topics, as we have changed the schedule significantly.
-We will also be providing detailed lecture slides and recorded videos that you may also use.
+We will also be providing detailed lecture slides that you may also use.
 
 We want to provide you with additional references that may enhance study so in addition to the textbook used for CSCI 103, for the C++ Language the following references are available for free online from the USC Library:
 
@@ -139,7 +139,6 @@ We want to provide you with additional references that may enhance study so in a
 
 For data structures specifically: 
 
-- Weiss.  Data Structures and Algorithm Analysis in C++ 4th Ed. Pearson, 2014.
 - Carrano, Frank and Thomas Henry. Data Abstraction & Problem Solving with C++ 6th Ed. Pearson, 2013.
 - [Goodrich, Michael T, Roberto Tamassia, and David M Mount. Data Structures and Algorithms in C](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/hs9vaa/alma991043327161803731). Wiley, 2011.
 
@@ -150,7 +149,7 @@ These readings contain theoretical concepts, examples and usable code that will 
 
 ## Exams
 
-Exams will involve analysis and coding.  Questions require students to demonstrate their mastery over the material. Exams are currently expected to be in person but will likely be given via Gradescope and require you to bring a laptop. More details will be posted at least 1 week before the exam.
+Exams will involve analysis and coding.  Questions require students to demonstrate their mastery over the material. Exams will likely be given via Gradescope and require you to bring a laptop. More details will be posted at least 1 week before the exam.
 
 ## Accommodations
 

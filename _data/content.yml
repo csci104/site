@@ -62,7 +62,7 @@ labs:
     assigned: true
     topics: Github, curricula, registration, setup
   - id: 1
-    folder: lab 1
+    folder: lab1
     week: Week 1
     title: Git Tutorial
     assigned: true
@@ -172,7 +172,7 @@ labs:
     title: Number Theory
     week: Week 9
     assigned: true
-    topics:
+    topics: Number Theory
 #  - id:
 #    title: Final Review
 #    week: Week 15

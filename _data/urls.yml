@@ -1,7 +1,7 @@
 qa_tool: EdStem
-piazza: https://edstem.org/us/courses/22162/discussion/
-discussion: https://edstem.org/us/courses/22162/discussion/
-calendar: https://calendar.google.com/calendar/u/1?cid=Y191MmxxczkzdHNrazB0a2ttMWIyYTBlNmFlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+#piazza: https://edstem.org/us/courses/39168/discussion/
+discussion: https://edstem.org/us/courses/39168/discussion/
+calendar: https://calendar.google.com/calendar/embed?src=c_u2lqs93tskk0tkkm1b2a0e6ae4%40group.calendar.google.com&ctz=America%2FLos_Angeles
 github: https://github.com/usc-csci104-summer2023
 github_ssh: git@github.com:usc-csci104-summer2023
 github_org: 'usc-csci104-summer2023'

@@ -62,7 +62,7 @@ labs:
     assigned: true
     topics: Github, curricula, registration, setup
   - id: 1
-    folder: lab1
+    folder: su-lab1
     week: Week 1
     title: Git Tutorial
     assigned: true

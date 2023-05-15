@@ -77,7 +77,7 @@ labs:
     slides: Lab2_slides.pdf
   - id: 3
     folder: su-lab3
-    week: Week 3
+    week: Week 2
     title: Makefiles
     assigned: true
     topics: Make, makefiles, build systems

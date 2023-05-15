@@ -26,24 +26,24 @@ assistants:
     location: Zoom
 
 staff:
-  - name: Louis Addison
-    email: laddison@usc.edu
-    image: /assets/img/staff/louis.jpg
+  - name: Raymond Liu
+    email: liuraymo@usc.edu
+    image: /assets/img/staff/raymond.jpg
     hours: >-
       See Google Calendar
-  - name: Jarret Spino
-    email: spino@usc.edu
-    image: /assets/img/staff/spino.jpg
+  - name: Jonathan Ong
+    email: ongjd@usc.edu
+    image: /assets/img/staff/ongjd.jpg
     hours: >-
       See Google Calendar
-  - name: Marina Lin
-    email: qlin3628@usc.edu
-    image: /assets/img/staff/marina.jpg
+  - name: Linda Tam
+    email: lindatam@usc.edu
+    image: /assets/img/staff/linda.jpg
     hours: >-
       See Google Calendar
-  - name: David Zhang
-    email: davidz@usc.edu
-    image: /assets/img/staff/davidz.jpg
+  - name: Iman Arfa-Zanganeh
+    email: arfazang@usc.edu
+    image: /assets/img/staff/iman.jpg
     hours: >-
       See Google Calendar
 

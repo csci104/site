@@ -20,6 +20,7 @@ Please read the submission instructions and policies below **carefully**!  Failu
       <th>#</th>
       <th>Link</th>
       <th>Title</th>
+      <th>Checkpoint</th>
       <th>Due</th>
       <th>Submit</th>
       <th>Regrade</th>
@@ -29,6 +30,7 @@ Please read the submission instructions and policies below **carefully**!  Failu
     {% for assignment in site.data.content.assignments %}
     <tr
       {% if assignment.assigned %}
+      onclick="window.location = './{{ assignment.id }}/'"
       {% else %}
       class="disabled"
       {% endif %}
@@ -72,46 +74,35 @@ You WILL lose points for submitting unreadable code, or for failing to follow su
 
 ## Policies
 
-There will be **6 assignments**.  In CS 104 we do not accept late submissions (except in the cases outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 7-10 days per assignment should allow you to finish on time if you **start early** and **work consistently**, we will provide **5 grace days** to be used over the semester with a **maximum of 2 grace days allowed per assignment**. 48 hours after the due date, no submissions will be allowed.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone.
+There will be **6 assignments**.  In CS 104 we do not accept late submissions (except in the cases outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 7-10 days per assignment should allow you to finish on time if you **start early** and **work consistently**, we will provide **5 grace days** to be used over the semester with a **maximum of 2 grace days allowed per assignment**. 48 hours after the due date, no submissions will be allowed.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone. 
 
-**Extensions:** With the lifting of pandemic restrictions and health orders, we will return to normal expectations for assignment submission, which is that you **save your grace days** for occasions of illness.  Only emergencies cleared through [campus support services]({{site.data.urls.uscsupport}}) or [student accessibility services]({{site.data.urls.osas}}) will be granted extensions.  Similarly, while we appreciate the mental health needs of our students, extensions will generally not be granted without cammpus support direction.  The best strategy to reduce stress and give yourself the best chance of scuces, you should **start your assignments on the DAY THEY ARE RELEASED** and working at an even pace throughout the duration.  By leaving the work for just a few days before the due date, you will increase your stress levels!  With that said, if a true emergency does occur, you may fill out [this form]({{site.data.urls.extension_form}}) and make a private note on [edStem]({{site.data.urls.discussion}}) to inform the course staff. **Again**, start early anticipating that things may come up closer to the deadline.  If you have not started early and something comes up, you may be denied since you chose to leave your work until the deadeline. Commit and push your intermediate work often as a record of your effort on an assignment.
+In this age of COVID, we realize that being sick or having sick family may preclude you from working on your assignments as you would be able to otherwise.   If a confirmed COVID-related illness or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}) and make a private note on {{site.data.urls.qa_tool}} to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment. **Note:** A minor illness a few days before the deadline  or a trip home to see family does not qualify for an extension. Start early anticipating that things may come up closer to the deadline.  If you have not started early and ask for an extension, your request may be rejected. Commit and push your intermediate work often as a record of your effort on an assignment.
 
+For non-emergency issues (especially those close to the deadline), extensions are generally not applicable. Instead, **your grace days** are available and should be conserved for such circumstances.
 
 The most consistent advice from students who have done well in CS 104 is (you guessed it): **start early!**  
 
 ### HW Grades and Regrades
-
-We will work hard to post HW scores and feedback within 1 week of the homework's due date. Exams will typically be graded within at most a few days of the exam date. 
-
-Homework grades will normally be posted back as **ISSUES** on your `hw-username` Github repository and their release will be announced on {{site.data.urls.qa_tool}}. If you have not received your score (no issue was posted to your repo webpage) on a particular HW even though most other students in the class have (say, 24 hours after the score release date), post a private note on {{site.data.urls.qa_tool}} and someone will then follow up with your grader.
-
-Only the written portion of the homework is graded by a human. The score for the programming portion is determined by a grading script and is not available for regrading.
+We will work hard to post HW scores and feedback within 1-2 weeks of the homework's due date. Exams will typically be graded within at most a few days of the exam date. Homework grades will normally be posted back as **ISSUES** on your `hw-username` Github repository and their release will be announced on {{site.data.urls.qa_tool}}. If you have not received your score (no issue was posted to your repo webpage) on a particular HW even though most other students in the class have (say, 24 hours after the score release date), post a private note on {{site.data.urls.qa_tool}} and someone will then follow up with your grader.
 
 Any disputes with posted grades **must** be raised within **7 days** (unless specifically noted) of the score posting.  Then follow the process below for the type of regrade you are requesting.  
 
-Fill out this [**HW regrade form**]({{site.data.urls.regrade_form}}) **within 7 days** of grades being released. The TAs will review the request. If they can deal with it themselves, then they will do so and email you the result.  If they cannot address it or you don't hear from them, please attend the special HW regrade office hours that the TAs will announce on {{site.data.urls.qa_tool}} for each homework.  Again you must submit your regrade request within 7 days and **after 7 days no regrade requests will be considered** for any reason, even if it is our grading mistake.  Be prompt and do not delay reviewing your HW grades. [Note: The regrades don't have to be resolved within 7 days, though hopefully they will; we just need you to raise the issue on the regrade form within 7 days].
+Fill out this [**HW regrade form**]({{site.data.urls.hw_regrade_form}}) **within 7 days** of grades being released.  The TAs will review the request. If they can deal with it themselves, then they will do so and email you the result.  If they cannot address it or you don't hear from them, please attend the special HW regrade office hours that the TAs will announce on {{site.data.urls.qa_tool}} for each homework.  Again you must submit your regrade request within 7 days and **after 7 days no regrade requests will be considered** for any reason, even if it is our grading mistake.  Be prompt and do not delay reviewing your HW grades. [Note: The regrades don't have to be resolved within 7 days, though hopefully they will; we just need you to raise the issue on the regrade form within 7 days].
 
 Any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  Finally, please note that regrades are not for "fixing" your code.  For example: If there was just one line off that caused all the tests to fail, that might be a viable reason for a regrade but we have a standard policy over the years that each expression change on a regrade is a -10 deduction, because it was really your responsibility (especially if the test suite was released before submission) to ensure your code compiled, tested, and all files were submitted on Github which can be verified by the "Verification" process outlined at the end of each homework.
 
 ### Exam Regrades
-Exams will likely be conducted via Gradescope and its regrade feature is the only method you may use for requesting an exam regrade. 
+See your registered instructor.  Only instructors can determine exam regrades.  
 
 
 ## Academic Integrity
 We take academic integrity very seriously in our CS courses to ensure that your grades reflect your mastery of the material presented in this class as well as to provide fairness to fellow students, to ensure the reputation of USC, and the expectations of our constituencies are met.  
 
-**Collaboration**:  Your homework assignments and exams should be individual efforts unless explictly stated otherwise. While collaboration and online searches are common in the workplace, taking code from those sources is usually not allowed due to licensing and can have legal ramifications.  Similarly, while collaboration in a company is common, we are training you to be capable computer scientists and, thus, you need to develop the skills for yourself.  You will have higher levels of collaboration for team-based projects in future courses and in the workplace.  For homework assignments, you may only have **CONCEPTUAL** discussions with classmates. Any discussion that includes specific code (describing variables, loops, functions, etc.) and implementation details is an **inappropriate level** of collaboration and a **violation of academic integrity**.    **Copying (and then modification) or just "viewing for reference"** any (**even small**) portion(s) of code from Internet sources or fellow students is prohibited unless explicitly cleared with the instructor.  Simiarly, **ANY use of chatGPT or similar AI-generators** to generate ANY amount of code is a violation. Similarly you should NOT verbally describe your code at any level of detail.  Instead, draw (non-code) pictures, ask questions that consider possible inputs or other scenarios, or provide advice on how to debug.  Violations of this policy **will likely** result in an **F in the course**.
+Your homework assignments and exams should be individual efforts unless explictly stated otherwise. While collaboration and online searches are common in the workplace, taking code from those sources is usually not allowed due to licensing and can have legal ramifications.  Similarly, while collaboration in a company is common, we are training you to be capable computer scientists and, thus, you need to develop the skills for yourself.  You will have higher levels of collaboration for team-based projects in future courses and in the workplace.  For homework assignments, you may only have high level discussions with classmates. Any discussion that includes specific code (describing variables, loops, functions, etc.) and implementation details is an **inappropriate level** of collaboration. **Looking for similar examples of code online is also a likely violation if you model your code after those online examples.**.  We run all submissions through code similarity tools that compares every student to every other student from this semester and past semesters.  If you are suspected of violating the academic integrity code of conduct you will:
 
- If you are suspected of violating the academic integrity code of conduct the process will be as outlined at the [Office of Academic Integrity](https://academicintegrity.usc.edu/what-should-i-expect/process/):
-
-<!--
-1. If the violation minor (i.e limited to one assignment and not an exam) the instructor will opt for the FSR process.
-1. Through the FSR process the instructor will propose a penalty and if the student accepts reponsibility, the case will close after the FSR agreement is submitted to OAI.
-1. If the violation is major (i.e on an exam), or the student does not accept responsibility, the instructor will submit the case to OAI for the AR process.
-1. The OAI will acts as an impartial 3rd party to determine if a violation has occurred.
-1. If a violation is deemed to have occurred, the OAI will recommend a sanction.  
-1. If OAI determines this is not your first violation, they may initiate a review that could lead to suspension from the school.
--->
+1. Be reported to SJACS which will acts as an impartial 3rd party to determine if a violation has occurred.
+1. If a violation is deemed to have occurred, the recommended sanction is a 0 on the assignment and 1 letter grade deduction (i.e. if you would have gotten a B+ you would receive a B).  
+1. If SJACS determines this is not your first violation, they may initiate a review that could lead to suspension from the school.
 
 The official language on academic integrity is on the [**syllabus**]({{ site.url }}/syllabus.html), but what is written below acts as an additional, binding policy for this course:
 
@@ -133,7 +124,7 @@ Collaboration is important in an academic environment. We want to be sure that y
 
 **In summary, any time that you are trying to get higher grades for work that you did not earn is not acceptable. Any behavior by which you are attempting to receive or grant an unfair advantage that your classmates who are following the rules do not have is not acceptable.** Please act with the integrity that is expected of USC Trojans.
 
-We run code similarity tools on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported to [OSAS](http://osas.usc.edu/), no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
+We run MOSS on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported to [SJACS](http://sjacs.usc.edu/), no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
 
 In order to make sure that an appropriate level of collaboration is used between you and your classmates, please do not keep notes,  pictures, or any records from your discussions. This will ensure that your work reflects only your understanding when you create it. Please do not sit coding next to each other while discussing the work. If you are concerned that an inappropriate level of collaboration has occured, please do the following:
 

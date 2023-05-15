@@ -55,7 +55,7 @@ assignments:
       due: Sunday, July 16 at 11:59PM Pacific
 
 labs:
-  - id: lab0
+  - id: su-lab0-curricula
     week: Before
     title: Getting Started
     assigned: true

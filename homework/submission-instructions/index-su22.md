@@ -11,13 +11,15 @@ nav: homework
 
   + Create a `README.md` in the directory for each assignment.
   + Suppress all debug messages (remove any `cout`/`cerr` statements or other debug output).
-  + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page and are pushed to Github.  Failure to submit a necessary file will lead to your code failing all or part of the test suite. 
+  + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page and are pushed to Github.  Failure to submit a necessary file will lead to a 0 on that problem or at the least a **-10 point** deduction per missing file. 
   + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.  If your code has warnings, a **deduction of up to 4 points** may be applied to the problem!  
   + If there are any specific actions and/or commands necessary to compile or run your code, or to access any required documentation for your assignment, include instructions in your `README.md` file.
-  + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 0.5 points** per failed test.
-  + On homeworks where tests were provided, you **must** ensure the .gitignore is configured so that the tests are not uploaded to your GitHub repo.
+  + Your grader will grade the assignment in the course VM/Docker. Hence, your grader will use the same compiler as you will in the course VM/Docker.
+  + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 4 points** per programming problem.
 
   
+
+
 #### Acceptable Document Formats
 In many assignments, you will be required to submit documentation and/or textual answers. Your documentation should be in the base directory of the assignment.
 
@@ -41,24 +43,11 @@ Run `git status` on your repository and make sure that there are no files listed
 A `git status` on your master branch must return:
     
 ```
-# On branch main
+# On branch master
 nothing to commit, working directory clean
 ```
 
-If files that you do not want to push (i.e. `hw1_tests` or other object files ) appear in the untracked list, add that folder/filename(s) to your `.gitignore`.  (Note: you must add/commit/push your `.gitignore` like any other file).
-
-If you need the full hash of your current commit, first make sure `git status` outputs as above, then run:
-
-```shell
-git log|head -n 1
-```
-
-This will output something like:
-```shell
-commit 36448c9f45d1c4de770ce4c65a6db1fb964714d8
-``` 
-
-The long string of hexadecimal digits is your hash. Copy it to your clipboard.
+If files that you do not want to push (i.e. `hw1_tests` or other object files ) appear in the untracked list, add that folder/filename(s) to your `.gitignore`.  (Note: you must add/commit/push you `.gitignore` like any other file).
 
 ### Step 3. Verify your commit **before** the Deadline
 

@@ -1,5 +1,6 @@
 qa_tool: EdStem
 piazza: https://edstem.org/us/courses/22162/discussion/
+discussion: https://edstem.org/us/courses/22162/discussion/
 calendar: https://calendar.google.com/calendar/u/2?cid=Y191MmxxczkzdHNrazB0a2ttMWIyYTBlNmFlNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t
 github: https://github.com/usc-csci104-summer2023
 github_ssh: git@github.com:usc-csci104-summer2023
@@ -20,3 +21,5 @@ git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
 osas_dsp_form: https://docs.google.com/forms/d/e/1FAIpQLSfK21SJZ3HM35uVElL04StHLitzbmiWgs8pIjDfP8BrToOQeQ/viewform?usp=sf_link
 account_ta_name: Nathan Bartley
 account_ta_email: nbartley@usc.edu
+osas: https://osas.usc.edu/
+uscsupport: https://campussupport.usc.edu/

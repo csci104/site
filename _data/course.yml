@@ -1,71 +1,21 @@
-semester: Spring 2023
-short: usc-csci104-spring2023
+semester: Summer 2023
+short: usc-csci104-summer2023
 
 sections:
   lectures:
-    - id: 29989
+    - id: 29903
       days: Tuesday, Thursday
-      time: 8:00 AM to 9:20 AM Pacific
-      location: SGM 101
-      instructors: Andrew Goodney
-    - id: 29905
-      days: Tuesday, Thursday
-      time: 11:00 AM to 12:20 PM Pacific
-      location: THH 201
-      instructors: Andrew Goodney
+      time: 9:30 AM to 11:45 AM Pacific
+      location: SLH 100
+      instructors: Mark Redekopp
   labs:
-    - id: 29912
+    - id: 29904
       days: Wednesday
-      time: 5:00-6:50pm
-      location: SAL109
-      instructors: Charles Bickham
-    - id: 29914
+      time: 10:00 AM to 11:50 AM Pacific
+      location: SAL 126
+      instructors: Staff
+    - id: 29959
       days: Wednesday
-      time: 3:00-4:50pm
-      location: SAL126
-      instructors: Elan Markowitz
-    - id: 29915
-      days: Wednesday
-      time: 12:00-1:50pm
-      location: SAL126
-      instructors: Satyaki Das
-    - id: 30167
-      days: Friday
-      time: 12:00-1:50pm
-      location: SAL109
-      instructors: Leo Zhuang
-    - id: 30200
-      days: Tuesday
-      time: 3:30-5:20pm
-      location: SAL126
-      instructors: Matt Leslie
-    - id: 30238
-      days: Tuesday
-      time: 5:30-7:20pm
-      location: SAL126
-      instructors: Bridget Bell
-    - id: 30286
-      days: Wednesday
-      time: 12:00-1:50pm
-      location: SAL109
-      instructors: Nicole Russack
-    - id: 30293
-      days: Friday
-      time: 2:00-3:50pm
-      location: SAL126
-      instructors: Nicholas Schumacher
-    - id: 30294
-      days: Tuesday
-      time: 1:00-2:50pm
-      location: SAL126
-      instructors: Mila Mathias
-    - id: 30379
-      days: Thursday
-      time: 2:00-3:50pm
-      location: SAL127
-      instructors: Charles Bickham
-    - id: 30394
-      days: Wednesday
-      time: 2:00-3:50pm
-      location: SAL109
-      instructors: Skylar Kim
+      time: 10:00 AM to 11:50 AM Pacific
+      location: SAL 126
+      instructors: Staff

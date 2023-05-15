@@ -8,7 +8,6 @@ title: Jamie's GDB House of Horrors
 ---
 
 **Due at the end of your registered lab section**
-
 ---
 
 # Jamie's GDB House of Horrors
@@ -23,8 +22,8 @@ Do you dare take it on?
 
 ## Lab Materials
 
-The files we'll be using for this lab are posted in the `resources` repository, which you've probably already cloned for the homework skeleton code.
-In the `lab2` directory you should see the following files:
+The files we'll be using for this lab can be found on Codio, or if you prefer
+you may download them from [here](./assets/lab-2.zip). Wherever you are accessing the lab from, make sure all these files are present:
 
 1. `answers.txt`
 2. `game_of_pointers_student1.cpp`
@@ -54,7 +53,7 @@ But first, let's go over some common tips and tricks for debugging.
 The most common two ways your code will terminate (besides a successful execution) is by a Segmentation Fault (`SIGSEGV`) or by an Abort (`SIGABRT`).
 These will automatically trigger the debugger to break, so you don't have to.
 
-- **Segfault**: when a program tries to read or write outside the memory that is allocated for it, or to write memory that can only be read. 
+- **Segfault**: when a program tries to read or write outside the memory that is allocated for it, or to write memory that can only be read.
 - **Abort**: indicates an error detected by the program itself.
 
 The other issues could be:
@@ -79,11 +78,11 @@ In order to successfully find the issue, you need to be able to answer a few que
       This can help you see the bigger picture for certain memory issues.
     - You can also use break points and `cerr` statements to find what line the problem is occurring on.
 
-2. When does this bug occur? 
-    - Are their certain situations where the issue presents itself? 
+2. When does this bug occur?
+    - Are their certain situations where the issue presents itself?
     - Is it only when I am using a certain function or trying to do a specific action.
 
-3. Can I reliably produce this bug over and over again? 
+3. Can I reliably produce this bug over and over again?
     - Create a separate test case to make the problem clear.
 
 ### Why is the Issue Occurring?
@@ -97,7 +96,7 @@ To answer, understand what your function/code is trying to and then use `cerr` s
   If your error is happening on the 12,000th loop through a giant algorithm, you might want to refactor your code to give you someplace to put a breakpoint.
 - Print important variables.
   Use the `print` GDB command to check the values of any suspicious variables.
-  Don't forget that by calling print with a struct or class, it will print out all the member variables of that class. 
+  Don't forget that by calling print with a struct or class, it will print out all the member variables of that class.
 - Use `cerr` statements.
   For localizing a fault to a specific area of the code, or tracing the flow of an entire program, it's invaluable to just print out important values and messages throughout your program.
   Remember to use `cerr` rather than `cout` so your output is guaranteed to be flushed to the terminal before the program terminates.
@@ -115,10 +114,10 @@ This cheatsheet is also available on the [wiki]({{ site.baseurl }}/wiki/gdb/) fo
 - `clear [function name]` removes the breakpoint on the given function.
   Note: function breakpoints will not work on functions that take strings as arguments (it's complicated) on your course VM due to an incompatibility between GCC and GDB.
   However, this will work properly on newer systems.
-- `layout next` From the begining of GDB, entering 'layout next' once the program is running will show you source code around your current location in the program. 
-  This view can be helpful to those who are new to gdb, and especially helpful when working with source code you are not farmiliar with. 
+- `layout next` From the begining of GDB, entering 'layout next' once the program is running will show you source code around your current location in the program.
+  This view can be helpful to those who are new to gdb, and especially helpful when working with source code you are not farmiliar with.
   Repeating 'layout next' shows your program in assembly language.
-- `layout prev` Takes you back to the previous layout mode. 
+- `layout prev` Takes you back to the previous layout mode.
 - `bt` shows the function call stack, every function that you've run through since the line you've arrived at.
 - `frame [number]` goes to the selected frame in the call stack.
 - `continue/c` continues the program after being stopped by a breakpoint.
@@ -151,7 +150,7 @@ Think of it like matrix multiplication, but with more violence!
 </div>
 
 Two students (whose names have been omitted to protect the guilty) attempted this problem, but didn't get it quite right.
-We're now going to find the bugs in their programs with GDB.  
+We're now going to find the bugs in their programs with GDB.
 
 ### Directions
 
@@ -165,12 +164,12 @@ For each problem below, answer in `answers.txt` with:
 ## Problem 1 (Guided)
 
 Okay, so let's check out the first student's program.
-Open a terminal in the assignment directory, and run the simulation with `make test_game1`. 
+Open a terminal in the assignment directory, and run the simulation with `make test_game1`.
 
-If you are using Docker, please first move the `resources` directory into the directory you mounted to the Docker container in Lab 0, if it is not already in there. Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
+If you are using Docker, remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell! Also, you will need to download the zip file with all files, found on the bytes website!
 
-- [ ] Double check that `resources` is in the directory you mounted to the Docker container in Lab 0.
-- [ ] Start/open a shell.
+- [ ] Double check that you're using a Docker shell (if you plan on using Docker this semester).
+- [ ] Check that you have all of the files.
 
 You should get something like:
 
@@ -232,7 +231,7 @@ However, it would take forever to search through the entire program this way.
 Instead, let's just head straight to the segfault.
 Luckily, GDB automatically breaks on segfaults, so we don't have to worry about breakpoint positioning right now.
 Enter `c` to continue straight to the issue.
-You should get: 
+You should get:
 
 ```
 (gdb) c
@@ -269,9 +268,9 @@ invaders[invaderRow][invaderRow] = new Warrior();
 ```
 
 See anything suspicious on that line?
-Perhaps, with the array indices of `invaders`? 
+Perhaps, with the array indices of `invaders`?
 Compare the indices on that line to the ones used on line 252.
-The issue should be fairly clear.  
+The issue should be fairly clear.
 
 - [ ] Fix the mistake and describe your solution in `answers.txt` as outlined above.
 
@@ -292,8 +291,16 @@ Invader killed
 Invader killed
 Winner: protectors
 ```
+or
 
-Clearly there is some sort of logic error affecting the result of the second duel.
+```
+2c2
+< Duel ends in draw
+---
+> Invader killed
+```
+
+Clearly there is some sort of logic error affecting this.
 To debug this, we will need to trace the issue back through the code.
 It looks like `"Invader killed"` is being output inside skirmish() at line 135:
 
@@ -308,10 +315,10 @@ else if (result == result_protector)
 
 `result`, meanwhile, comes from the call to `getDuelResult()` on line 99.
 
-That if statement looks like a good place to start our investigation. 
+That if statement looks like a good place to start our investigation.
 We can check if the result really is set wrong, or if there is some sort of logic error causing `result` to be interpreted incorrectly.
 
-Again, run GDB on the `game_student1` executable.  
+Again, run GDB on the `game_student1` executable.
 Since we want to investigate the if statement in skirmish, let's set a breakpoint on line 101: `break game_of_pointers_student1.cpp:101`
 Next, run the program from GDB like you did in Problem 1.
 
@@ -319,8 +326,8 @@ Next, run the program from GDB like you did in Problem 1.
 (gdb) run input1.txt output1-stu1.txt
 Starting program: ./game_student1 input1.txt output1-stu1.txt
 
-Breakpoint 1, skirmish (protectors=protectors@entry=0x61a0a0, 
-    invaders=invaders@entry=0x61a0c0, skirmish_col=0, rows=2, columns=3, 
+Breakpoint 1, skirmish (protectors=protectors@entry=0x61a0a0,
+    invaders=invaders@entry=0x61a0c0, skirmish_col=0, rows=2, columns=3,
     reserves=@0x7fffffffd724: 1, output=...)
     at game_of_pointers_student1.cpp:101
 101			if (result == result_invader)
@@ -337,8 +344,8 @@ Continue the program once with `c`.
 (gdb) c
 Continuing.
 
-Breakpoint 1, skirmish (protectors=protectors@entry=0x61a0a0, 
-    invaders=invaders@entry=0x61a0c0, skirmish_col=0, rows=2, columns=3, 
+Breakpoint 1, skirmish (protectors=protectors@entry=0x61a0a0,
+    invaders=invaders@entry=0x61a0c0, skirmish_col=0, rows=2, columns=3,
     reserves=@0x7fffffffd724: 1, output=...)
     at game_of_pointers_student1.cpp:101
 101			if (result == result_invader)
@@ -385,7 +392,7 @@ Hit `ctrl-c` now to break the infinite loop.
 Starting program: ./game_student1 input2.txt output2-stu1.txt
 ^C
 Program received signal SIGINT, Interrupt.
-0x000000000040142f in findOpenInvaderPos (invaders=invaders@entry=0x61a0c0, 
+0x000000000040142f in findOpenInvaderPos (invaders=invaders@entry=0x61a0c0,
     numRows=numRows@entry=5, numCols=numCols@entry=2)
     at game_of_pointers_student1.cpp:64
 64				if (invaders[rowIdx][colIdx] == nullptr)
@@ -398,7 +405,7 @@ To find out, use the backtrace command: `bt`
 
 ```
 (gdb) bt
-#0  0x000000000040142f in findOpenInvaderPos (invaders=invaders@entry=0x61a0c0, numRows=numRows@entry=5, numCols=numCols@entry=2) 
+#0  0x000000000040142f in findOpenInvaderPos (invaders=invaders@entry=0x61a0c0, numRows=numRows@entry=5, numCols=numCols@entry=2)
     at game_of_pointers_student1.cpp:64
 #1  0x0000000000401a55 in skirmish (protectors=protectors@entry=0x61a0a0, invaders=invaders@entry=0x61a0c0, skirmish_col=1, rows=2, columns=5, reserves=@0x7fffffffd724: 1, output=...)
     at game_of_pointers_student1.cpp:103
@@ -441,21 +448,21 @@ $2 = 2
 
 Those numbers match the dimensions in input2.txt, so they seem legitimate.
 Your job, now, is to figure out why the code is getting in a loop.
-I highly suggest changing back to frame 0 and stepping the code forward with `n` to figure out where exactly it is looping. 
+I highly suggest changing back to frame 0 and stepping the code forward with `n` to figure out where exactly it is looping.
 
 - [ ] Figure out the cause of the loop and describe your solution in `answers.txt`.
 
 ## Problem 4
 
 Now, run the second student's program by running `make test_game2` in the terminal.
-You'll find that the code won't finish executing because of a segmentation fault. 
+You'll find that the code won't finish executing because of a segmentation fault.
 
 When debugging this error, keep in mind that the invader and protector arrays are different sizes.
 Try to find out what those sizes are, and determine whether they're used consistently in the `AllocateWarriors` and `DeallocateWarriors` functions.
 
 - [ ] Fix the mistake, and describe your solution in `answers.txt`.
 
-After you've fixed it, you should be passing two of the three tests. 
+After you've fixed it, you should be passing two of the three tests.
 
 ## Problem 5
 

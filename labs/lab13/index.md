@@ -2,161 +2,162 @@
 layout: asides
 toc: true
 tasks: true
-title: Hashtables
+title: Number Theory
 ---
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your registered lab section.** Material and questions are also available on Codio. The coding materials for exercise 3 can be downloaded [here](./resources/resources.zip).
 
 ---
 
-### 0 - What is a Map?
+## Number Theory
 
-Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
+### Quick Review of Basic Concepts
 
-The look up speed and ordering of map elements depends on the data structure we use to implement our map. In previous labs, we reviewed AVL Trees, an implementation of a balanced BST. This lab will go over hashtables and explore how it can be used to implement a map.
+(1)
 
-### 3 - Let's Talk About Hash Tables
+$$m \mid n$$
 
-A Hash Table is like an array in many aspects. However, in order to find the index in the array, we use a special function called a hash function. This converts the input into an index location that the input is then stored into.
+The above reads as "$m$ divides $n$", and means that there exists integer $k$ such that $n = km$.
 
-<div style="text-align:center"><img src="./assets/hashTable.png" alt="bst" width="300" height="250" /> </div>
+(2)
 
-In the above example, we can see that our hash table stores strings, and those strings are stored in locations within an array specified by the hash function.
+$$a \equiv b \pmod{m}$$
 
-This type of data structure is very useful in terms of accessing data. You could probably think of different applications of this data structure. Maybe a set? Given an input, we first hash it, then look to see if it is inserted in our hash table by checking the index returned by our hash function. Since hashing is just a function, it takes O(1) time. If we have a good hash function that distributes keys uniformly around the table such that there are a small number of keys at each location, the entire check is O(1) on average.
+The above reads as "$a$ is congruent to $b$ modulo $m$", and means that $m \mid a - b$.
 
-There are many different applications of this type of data structure, including sets, maps, and associative arrays (which are pretty much maps).
+If $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$, then:
 
-#### 3.1 - Hash Functions
+$$
+\begin{gather*}
+   ac \equiv bd &\pmod{m} \\
+   a+c \equiv b+d &\pmod{m}
+\end{gather*}
+$$
 
-So the whole idea of a hash table relies on the hash function. A hash function is a function that converts an object into an index location within our array. 
+(3)
 
-What goals should our hash function have?
-1. Easy and fast to compute
-2. Uniformly distributes keys across the hash table
+$$\gcd(a, b)$$
 
-The first thing we want is for the function to be fast. It should be an easy calculation that takes O(1) time to compute.
+The above denotes the "greatest common divisor of $a$ and $b$", which is the greatest positive integer $d$ such that $d \mid a$ and $d \mid b$.
 
-Lets first go over a bad example:
-
-```
-int hash(int data) {
-    return 42 % size;
-}
-```
-
-This hash function is super fast. It literally just does one operation and then returns. However, it always returns the same number. This means that we are always going to go to the same array index. This doesn't make sense. Shouldn't our hash function result in different outputs with different inputs?
-
-A good example of this would be:
-
-```
-int hash(int data){
-    return 31 * 54059 ^ (data * 76963) % size;
-}
-```
-
-Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different every single timety in our ou. It may be more operations than our first hash function, but it still does a constant amount of work.
+If $gcd(a, b)=1$, then $a$ and $b$ are said to be "co-prime" or "relatively prime" to each other.
 
 
-#### 3.2 - Collisions
+### A Helpful Theorem
 
-So what happens if the hash function outputs the same index for multiple objects? This is called a **collision**. In general, collisions are not completely avoidable, so we will need ways to handle them. There are two approaches: 
+Here is a helpful theorem to remember:
 
- * open addressing such as linear probing, quadratic probing, or double hashing.
- * closed addressing such as chaining or buckets.
+* If $a \mid bc$ and $\gcd(a, b)=1$, then $a \mid c$.
 
-#### 3.3 - Open Addressing
+## Exercise 1
 
-The idea with open addressing is that every location in the array can only have 1 thing in it. This means that we will have to find a free spot that we can place the object in. Linear probing is a very simple solution.
+Using the theorem above, prove the following:
 
-Linear probing is where you just keep incrementing up/looking at the next index until you find a free location.
+* If $p$ is a prime and $p \mid ab$, then $p \mid a$ or $p \mid b$.
+---
+### Quadratic Probing
 
-The algorithm for inserting into a linear probed hashtable is:
+Recall that in linear probing, the positions we try to insert an element at are:
 
- 1. Hash the element, which gives you a position in the table.
- 2. If the position is already taken, try the next position (if you reach the end of the table, wrap back to the start).
- 3. Repeat step 2 until you have found an empty spot.
- 4. Insert the element at that empty spot.
+$$h, h + 1, h + 2, h + 3, \dots$$
 
-The algorithm for finding a key in a linear probed hashtable is:
+where $h$ is the hash value of the element you want to insert.
 
- 1. Hash the key you want to find, which gives you a position in the table.
- 2. If the position contains a key, compare it with the key you want to search. If they are equal, you've found the key; otherwise, move to the next position. If the position is empty (i.e does not contain a key), you know that the key does not exist in the table.
- 3. Repeat step 2 until the algorithm terminates.
+In quadratic probing, this becomes:
 
-Removing from the hashtable is a little bit more involved:
+$$h, h + 1, h + 4, h + 9, \dots, h + i^2, \dots$$
 
- 1. First find the position of the key with the method illustrated above.
- 2. Delete the key there.
- 3. Move to the next position. If it is not empty, delete the key there and reinsert it.
- 4. Repeat step 3 until you have reached an empty spot or you have looped back to the position you found in step 1.
+Quadratic probing has the nice property that if the size of the hash table is a prime number $p$, then the first $\frac{p-1}{2} + 1$ probed positions are going to be unique ($h, h + 1, \dots, h + (\frac{p-1}{2})^2$, moduli the size of the hash table).
 
+We could prove this using contradiction:
 
-Here is an example for you to practice with:
+Given any two different probes $h + i^2$ and $h + j^2$ where $0 \leq i \le j \leq \frac{p-1}{2}$, we assume that they fall at the same location: $h + i^2 \equiv h + j^2 \pmod p$. Then we would have:
 
-Suppose you have three keys with the following hash:
+$$
+\begin{gather*}
+h + i^2 \equiv h + j^2 &\pmod p \\
+i^2 \equiv j^2 &\pmod p \\
+i^2 - j^2 \equiv 0 &\pmod p\\
+(i-j)(i+j) \equiv 0 &\pmod p
+\end{gather*}
+$$
 
-* Key A has hash 0
-* Key B has hash 1
-* Key C has hash 1
-* Key D has hash 1
-* Key E has hash 2
+By the theorem we proved earlier, this means either $p \mid i-j$ or $p \mid i+j$.
 
-And you have a hash table of size 5.
+However, this is impossible since $0 \leq i \le j \leq \frac{p-1}{2}$. Therefore, $h + i^2 \not \equiv h + j^2 \pmod p$ (i.e. the probes fall at different locations)
 
-Try yourself with pen and paper. What will the hashtable look like following each of those steps (in sequence):
+### Double Hashing
 
-* Insert B
-* Insert C
-* Insert E
-* Insert A
-* Insert D
-* Remove B
-* Remove E
+Another common probing scheme is called double hashing. Similar to quadratic probing, it requires the size of the hash table to be a prime number $p$. Furthermore, in addition to the primary hash function, it needs a secondary hash function that returns a number $k$ in the range $[1, p-1]$.
 
-#### 3.4 - Chaining
+The positions we probe would then be:
 
-For closed addressing we will focus on chaining. Chaining allows for multiple objects to reside within the same array location. The array is changed to be an array of lists or some other data structure, allowing us to store multiple items per index. We often use an array of linked lists, hence the name "chaining."
+$$h, h+k, h+2k, h+3k, \dots$$
 
-<div style="text-align:center"><img src="./assets/chaining.png" alt="bst" width="400" height="250" /> </div>
+The nice property of double hashing is that the first $p$ locations we probe will all be unique. In other words, the first $p$ probes will cover the whole hash table!
 
+As an example, if $h=1$, $p=5$ and $k=3$, then we have:
 
-Other implementations may use another type of list or even a balanced tree. 
+   * 1st probe: `(1 + 0 * 3) % 5 == 1`
+   * 2nd probe: `(1 + 1 * 3) % 5 == 4`
+   * 3rd probe: `(1 + 2 * 3) % 5 == 2`
+   * 4th probe: `(1 + 3 * 3) % 5 == 0`
+   * 5th probe: `(1 + 4 * 3) % 5 == 3`
 
-Because chaining allows for buckets, it is probable for `n` objects to all be placed within the same bucket. The worst case runtime is O(n). Chaining may even prevent our goal of O(1) on average. However, a scenario like this should not occur if the hash function is good and the size of the hash table is big enough.
+As you can see, all the probed locations are unique.
 
-### 4 - OrderedMap vs. UnorderedMap
+## Exercise 2
 
-So let's see a real life example of a hash table. In your homework, you have been using an ordered map. What is an unordered map and how is it different?
+Prove with number theory that the above property of double hashing holds. (Hint: check out the proof for quadratic probing)
 
-#### 4.1 - OrderedMap
+---
+### Fermat's Little Theorem and Prime Testing
 
-An ordered map uses a balanced binary search tree as its underlying data structure. We haven't yet go over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
+Here is another practical use of number theory, which involves a theorem called Fermat's little theorem (not to be confused with the other well-known but much complicated Fermat's last theorem).
 
-1. `find(key)` | O(logn)
-2. `insert(key, value)` | O(logn)
-3. `remove(key)` | O(logn)
+Fermat's little theorem states that given a prime number $p$, and another number $a$ which is not a multiply of $p$, we have:
 
-It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you a ordered traversal of all the keys in the map.
+$$a^{p-1} \equiv 1 \pmod{p}$$
 
-#### 4.1 - UnorderedMap
+The immediate consequence of the above is that if we are given a number $n$ and we can find some $a$ such that $a^{n-1} \not \equiv 1 \pmod{n}$, then we know for sure that $n$ is NOT a prime.
 
-An unordered map uses a hash table as its underlying data structure. This means that access operations are O(1) on average, but because of this, no order can be inferred. By improving the runtime of operations, we had to sacrifice the ordering property.
+If we try a lot of values of $a$, and all those values satisfy $a^{n-1} \equiv 1 \pmod{n}$, we could have a high confidence that $n$ is indeed prime. This method is called "Fermat primality test".
 
-You must explicitly create an unordered map using `std::unordered_map`.
+Note that "high confidence" $\neq$ "100% sure". Just like Bloom Filter, Fermat primality test could yield false positives. However, it is sufficient for the purpose of our lab. If you are interested, there are more robust primality tests out there, such as the [Miller-Rabin test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test).
 
-1. `find(key)` | O(1) on average
-2. `insert(key, value)` | O(1) on average
-3. `remove(key)` | O(1) on average
+You might be wondering why this is useful. Recall from lecture that the RSA algorithm requires the generation of two large prime numbers (they can be as large as 4096 bits). You actually did this in lab 0 when you [configured your SSH key](https://bytes.usc.edu/cs104/labs/lab0/#configuring-an-ssh-key).
 
-### 5 - HashTable Assignment
+How are those prime numbers generated though? A [popular way](https://crypto.stackexchange.com/q/1970/85400) to do this is extremely straightforward:
 
-You will be implementing an unordered set with `string` keys using linear probing. The hash function is already implemented so you will be using the array of vector pointers to do the required functions.
+ 1. Pick a random 4096 bit odd number.
+ 2. Test if it is prime. If yes, return it.
+ 3. Otherwise, go back to step 1.
 
-To run the tests, run `make` to compile the hashtable binary, then run the program. It should print out all "Good", and of course not segfault or anything.
-- [ ] Implement `remove` in `hashtable.cpp`
-- [ ] Remember to show your passing tests to a TA/CP for checkoff!
+Here if we use a naive method to test primes (try dividing it by every number from 1 up until its square root), it would take a REALLY REALLY LONG time. Instead, we could use tests like the Fermat Test to get a accurate-enough result very quickly.
 
-NOTE: as a bonus, there is an optional, commented-out test called `TestRemoveSUPERSTRESS_AGHHHHHHHHH`. If you've implemented everything correctly, you should be able to run this test pretty quickly! Otherwise, it takes a very long time to run (though you might have success running the `HashtableTest` executable faster without Valgrind.) Regardless, you do not need to wait for/pass this test to pass to get checked off!
+## Exercise 3 (Coding)
+
+For this exercise, you are going to implement a simple version of the Fermat test.
+
+There are two functions for you to implement, both of which are in `fermat.cpp`:
+
+   * `uint32_t mod_exp(uint32_t base, uint32_t exponent, uint32_t mod)`: Calulate the value of $(base^{exponent}$ % $mod)$. You should use the [squaring technique mentioned in lecture](https://ee.usc.edu/~redekopp/cs104/slides/L19_NumberTheory.pdf) (Slide 19).
+
+   * `bool fermat_test(uint32_t n, const std::vector<uint32_t>& tests)`: Perform Fermat primality test (mentioned above) on $n$. Returns `true` if it passes the test, `false` otherwise (i.e. `false` if you know for sure that $n$ is not prime). The values of $a$ you should use are inside the vector `tests`.
+
+**Some important hints:**
+
+   * In `mod_exp`, you don't have to convert `exponent` to binary (in lecture you receive a `std::vector<bool>` as input). Instead, the least significant bit can be calculated as `exponent % 2`. The next bit is `(exponent / 2) % 2`, and the next is `(exponent / 4) % 2`, etc.
+
+   * You want to use `std::uint64_t` to store intermediate results in `mod_exp`. This is because squaring a 32-bit integer can give you a result as large as 64-bits.
+
+   * You should be using `mod_exp` in your `fermat_test` function.
+
+After you finish your implementation, type `make` in your terminal to run the tests.
+
+---
+## Checking Off
+
+To get checked off, complete all three exercises in this lab and show your results to a CP/TA.

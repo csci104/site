@@ -5,14 +5,15 @@ tasks: true
 title: Templates
 ---
 
-
 ---
+### Due at the end of your registered lab section
 
-**Due at the end of your registered lab section**
+[Here](assets/resources/resources.zip) is the zip file with all required files. You can also find the lab on Codio.
 
 ---
 
 ## Templates
+
 
 At this point in the course, we've created many simple data structures ourselves, as well as used a number of already-templated STL classes. The first goal of this lab is to learn how to actually create these templated classes ourselves. By the end of this lab, you will learn to convert one of the type-specific lists into a generic, templated one.
 
@@ -64,7 +65,7 @@ template <typename T>
 class Dummy
 {
 public:
-	void SomeFunction() 
+	void SomeFunction()
 	{
 		T name;
 		std::cout << name.length(); // Does T have a member function length()?
@@ -76,13 +77,13 @@ In order to resolve the linking problem, the compiler will generate a version of
 
 ```c++
 // If a user tries to use Dummy<int> and Dummy<std::string>, the compiler will generate the following two code
-// The actual generated code is not in C++ but some low-level machine code. 
+// The actual generated code is not in C++ but some low-level machine code.
 // C++ code is shown here for illustration purpose only.
 
 class DummyInt
 {
 public:
-	void SomeFunction() 
+	void SomeFunction()
 	{
 		int name; // Notice T is replaced with int
 		std::cout << name.length(); // This should not compile
@@ -92,7 +93,7 @@ public:
 class DummyStdString
 {
 public:
-	void SomeFunction() 
+	void SomeFunction()
 	{
 		std::string name; // Notice T is replaced with std::string
 		std::cout << name.length(); // This should compile
@@ -100,7 +101,7 @@ public:
 }
 ```
 
-From the above example, you can see that the compiler doesn't know whether the code should compile until it sees how the user is using the code. In addition, where the class definition is and when it's needed also depends on when and where the users use the templated class. All of these make it impossible for the compiler to compile templated class into object files ahead of time. 
+From the above example, you can see that the compiler doesn't know whether the code should compile until it sees how the user is using the code. In addition, where the class definition is and when it's needed also depends on when and where the users use the templated class. All of these make it impossible for the compiler to compile templated class into object files ahead of time.
 
 Since the compiler needs to do substitutions based on the use of templated class, it will do it while it's in the user's program, where the templated class is use, based on the implementation of the class referenced by `#include`. Therefore it needs to know all implementations from the header file, so we should not separate out the implementations into a `.cpp` file.
 
@@ -120,7 +121,7 @@ private:
 	{
 		T val; // Inner class will share outer class's template variable name
 	};
-	
+
 public:
 	T GetValue();
 private:
@@ -131,7 +132,7 @@ private:
 };
 
 // The first template<typename T> tells the compiler that we need to use T as a type variable.
-// Outer<T>::GetValue is the function name. Since Outer is templated, Outer<int>::GetValue is 
+// Outer<T>::GetValue is the function name. Since Outer is templated, Outer<int>::GetValue is
 // very different from Outer<double>::GetValue, so must include <T> after Outer.
 
 template<typename T>
@@ -140,8 +141,8 @@ T Outer<T>::GetValue()
 	return mInner.val;
 }
 
-// The typename in second line at the front of function signature tells the compiler Outer<T>::Inner 
-// is a class or struct name, not a static variable name and Outer<T>::Inner is the return type. Again, 
+// The typename in second line at the front of function signature tells the compiler Outer<T>::Inner
+// is a class or struct name, not a static variable name and Outer<T>::Inner is the return type. Again,
 // since Outer is templated, we must include <T> after Outer.
 
 template<typename T>
@@ -151,7 +152,7 @@ typename Outer<T>::Inner Outer<T>::GetInner()
 }
 ```
 
-### Check Off: Templated Linked List 
+### Check Off: Templated Linked List
 
 We have included a simplified version of a linked list of integers,`LList`, in `resources`. Your job is to template it and make it usable with any class, not just ints.
 

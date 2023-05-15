@@ -34,6 +34,7 @@ layout: default
   </tbody>
 </table>
 <h2>Lectures</h2>
+Note: If the first page of a slide deck does not show "Updated for Fall 2022" or similar, then that deck has not been reposted for Fall 2022. We are leaving the decks up from previous semesters for students that would like to read aheah, however please replace or update your copy as soon as a newer version is posted.
 <table class="standard lectures">
   <thead>
     <tr>
@@ -67,7 +68,7 @@ layout: default
       <td>
         <ul>
           {% for note in lecture.notes %}
-          <li><a href="{{ site.data.urls.slide_location }}/{{ note }}">{{ note }}</a></li>
+          <li><a href="{{ site.data.urls.slide_location }}/{{ note }}" target=_blank>{{ note }}</a></li>
           {% endfor %}
         </ul>
       </td>

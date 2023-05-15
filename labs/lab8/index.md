@@ -1,288 +1,372 @@
 ---
-layout: default
+layout: asides
 toc: true
 tasks: true
-title: Tree Traversal
+title: Midterm Review
 ---
 
----
+## Midterm Review
 
-**Due at the end of your registered lab section**
+### Introduction
 
----
+The midterm will take place on **Friday, October 7th , 7-9 PM PDT**. and will cover all material from weeks 1 - 5, up to and including templates and exceptions. More details will be posted on Piazza.
 
-## BST Traversal and Searching
+You won't be tested on any programming tools that you've gone over in lab but not lecture (e.g. gdb, Makefiles). This lab is to help you review and will mostly cover problems taken or modified from the sample midterms under the [Resources](https://bytes.usc.edu/cs104/resources) page. If there's a topic you want to skip, or a topic that's not included here that you really want to go over, let us know! As long as this lab is, it is by no means exhaustive, so remember to go back and review lecture slides and weekly group exercises as well.
 
-### 1 - Binary Search Trees
+### Operator Overloading and `const` Keyword
 
-A *Binary Search Tree* is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value. 
+**[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 1d**: Consider the following function signature. Explain the rationale behind the choice of return value.
+`ostream& operator<< (ostream& o, const LinkedList &ll);`
 
-### 2 - Traversals
+- [ ] Explain the rationale behind the choice of return value.
 
-A traversal is a methodology for stepping through a structure (such as using Breadth-First Traversal as opposed to Depth-First Traversal on a graph). BFS is sometimes called "Level-Order Traversal". In the case of DFS, there are a few different ways we can traverse.
-
-The three main DFS traversals are **Pre-Order Traversal, In-Order Traversal, and Post-Order Traversal**. In each of these traversals, we must eventually operate on every node. The difference between these traversals is lies in the *order* nodes are operated on.
-
-**Pre-Order Traversal**
+**[Sample Midterm A](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 1a**: Consider the declaration of the following `Map<K,V>` class member function:
 
 ```
-// Operate on current node
-// Recurse left
-// Recurse right
-// return
+template <class K, class V>
+V const & Map<K,V>::get(const K& key) const
+{ ... }
 ```
 
-**In-Order Traversal**
+- [ ] Explain what each of the 3 `const` keywords (ordered from left to right) will cause the compiler to check/enforce:
+
+### Rule of 3
+
+Recall that the rule of 3 is used when we have an object that uses dynamically allocated memory. This rule is a good way to maintain good memory management and ensures that objects are correctly using their own memory and not sharing. This rule consists of 3 functions: Copy Constructor, Destructor, Assignment Operator. If you need to refresh your memory, you can revisit [Lab 3](https://bytes.usc.edu/cs104/labs/lab3/).
+
+#### Conceptual
+
+**[Sample Midterm A](https://bytes.usc.edu/cs104/resources/midterm-a.pdf), Question 1c**: Suppose that you have a class which requires a deep copy. Which functions must you define? (Mark all that apply.)
+
+1. Copy constructor
+2. Destructor
+3. Assignment operator
+- [ ] Select which functions you must define.
+
+#### Implementing Deep Copy Constructors
+
+**[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 6**: Consider the following code:
 
 ```
-// Recurse left
-// Operate on current node
-// Recurse right
-// return
+class IntArray {
+  public:
+    IntArray(const IntArray& other);
+    // other class functions are here, which you don't need to worry about
+  private:
+    int* myarray; // data
+    int used; // number of elements in the array
+    int alloc; // number of allocated indices. Unused indices have garbage values
+};
+class ArrayOfArrays {
+  public:
+    ArrayOfArrays(const ArrayOfArrays& other);
+    // other class functions are here, which you don't need to worry about
+  private:
+    IntArray** myarray; // an array of IntArray pointers
+    int used; // number of arrays in myarray
+    int alloc; // number of allocated indices. Unused indices have garbage values
+};
 ```
 
-**Post-Order Traversal**
+- [ ] Implement deep copy constructors for both `IntArray` and `ArrayOfArrays`.
+
+### ADTs
+
+Abstract Data type (ADT) is a type (or class) whose behavior is defined by a set of operations.
+
+The definition of ADT only mentions what operations are to be performed but not how these operations will be implemented. It does not specify how data will be organized in memory and what algorithms will be used for implementing the operations. It is called “abstract” because it gives an implementation independent view. The process of providing only the essentials and hiding the details is known as abstraction.
+
+There are 5 main Abstract Data Types that you will need to know (for now): List, Stack, Queue, Map, Set.
+
+- [ ] What are the generic operations supported by lists, stacks, queues, maps, and sets?
+- [ ] What are their associated runtimes?
+
+#### Choosing the Right ADT
+
+**[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 2**: For each of these descriptions, indicate what ADT is appropriate to store the following information and show what types would be used for the template arguments (e.g. `map<string, int>` or `list<double>`). If you think that there are multiple equally good options, feel free to justify the choice you make.
+
+1. Data structure allowing you to find a book's title from its ISBN number (13 characters, mostly digits, but could contain the letter 'X').
+
+2. Data structure storing the type of obstacle at each square of a 40 x 40 level of an arcade game.
+
+3. Waitlist of students who want to enroll in CS104, but couldn't get in yet.
+
+4. Data structure to store the content of each line of code in a possibly long C++ program.
+
+5. A data structure that allows you to input an academic semester and find all students who earned an A in CS104 that semester.
+- [ ] Indicate which ADT is appropriate for each of the above scenarios. Remember to justify your answer!
+
+### STL
+
+STL stands for Standard Template Library. The C++ STL is a set of classes that include common data structures like maps, sets, lists, queues, stacks and more. In addition to data structures, STL also has some pre-implemented algorithms, that do things like fill an array with zeros, or sort a vector.
+
+There are several STL container classes that you'll use in this class and beyond. You can find the names of their member functions, as well as comprehensive examples of how to use them at [C++ Reference](http://www.cplusplus.com/reference/).
+
+#### Example of Using STL Stack
+
+**[Sample Midterm A](https://bytes.usc.edu/cs104/resources/midterm-a.pdf), Question 5**: Imagine that you are writing a simple game for young children to learn to recognize and match shapes. For our purposes, shapes are restricted to squares and circles. Shapes arrive over time and fall on a stack of items.
+
+At each point, the child may press one of two buttons, 'L' and 'R'. 'L' should be the button to press if there is a square on top, and 'R' if there is a circle on top. More precisely, the rules are as follows:
+
+- If the child presses the correct button ('L' when the top shape is a square, 'R' when it is a circle), the child gets a point, and the top shape disappears.
+- If the child presses the wrong button ('L' when the top shape is a circle, 'R' when it is a square), the chold loses a point (the points could become negative), and no shape disappears.
+- If the child presses a button when the stack is empty, nothing happens.
+- The game starts at 0 points.
+- Items appear at a regular pace, and their appearance has nothing to do with what buttons are pressed.
+- The game may end even when there are still items left.
+
+You will be given a sequence consisting of the letters 'L', 'R', 'S', 'C' (representing the pressing of the two buttons, and the arrival of the two shapes, respectively), and are to determine from it the final score of the child. We promise that the sequence will only contain only those four letters, and nothing else.
+
+As an example, for the sequence "SCLLR", the final score will be -1, and there will be a square left in the end. The two presses of the 'L' button are wrong, so each incurs a penalty of 1 point and changes nothing. The press of 'R' is correct, so it earns a point and makes the circle disappear, but the square remains.
+
+Hint: the use of a stack is strongly recommended. So much that we already enter `#include<stack>` for you. That gives you a templated `stack<T>` class, which provides the functions `void push(T), void pop(), T top()`, and `bool isEmpty()`. You can use this without defining your own stack.
+
+Insert your code in the following:
 
 ```
-// Recurse left
-// Recurse right
-// Operate on current node
-// return
+#include <stack>
+#include <iostream>
+using namespace std;
+
+int main() {
+  string s; // the sequence of characters describing the game's events
+  int score = 0;
+  cin >> s;
+  // your code goes here
+  cout << "The score is " << score << endl;
+  return 0;
+}
 ```
 
-Or, in C++, it would look like this:
+- [ ] Implement `main`
 
-```c++
-void pre_order(Node* node) {
-    if (node == nullptr) return;
-    print(node);
-    pre_order(node->left);
-    pre_order(node->right);
+### Recursion
+
+Past midterms have almost always included problems on linked list recursion. There are many variations of linked list recursion problems you can find online, but here are a couple to get you started.
+
+#### Printing a Singly Linked List
+
+**[Sample Midterm A](https://bytes.usc.edu/cs104/resources/midterm-a.pdf), Question 2**: In this problem, we will work on a singly linked list of integers. The items are of the following type:
+
+```
+struct IntItem {
+  int value;
+  IntItem* next;
+  IntItem (int v, IntItem* n) { value = v, next = n; }
+};
+```
+
+Write a *recursive* function `printLL` to print all items in the linked list in the order in which they appear in the list, on one line. For full credit, you should print an endline after the last number, but you will get most of the credit if you do not print it. Your function *must* be recursive, and it must fit the following definition: `void printLL (IntItem* head)`
+
+- [ ] Implement `void printLL (IntItem* head)`
+
+#### Reversing a Singly Linked List
+
+You are given the head pointer to a linked list. Implement a function that returns a Linked List in the reverse order (e.g. 1->3->5 becomes 5->3->1). You should not declare new items but instead modifying pointers of existing elements.
+
+```
+struct Node {
+  int val;
+  Node* next;
+
+  Node(int v) : val(v), next(NULL) {}
+  Node() : val(0), next(NULL) {}
+};
+
+Node* reverse (Node* head) {
+  // TODO
 }
 
-void in_order(Node* node) {
-    if (node == nullptr) return;
-    in_order(node->left);
-    print(node);
-    in_order(node->right);
-}
+// Example usage
+int main() {
+  Node* head = new Node(1);
+  head->next = new Node(3);
+  head->next->next = new Node(5);
 
-void post_order(Node* node) {
-    if (node == nullptr) return;
-    post_order(node->left);
-    post_order(node->right);
-    print(node);
+  Node* new_head = reverse(head); // should get 5->3->1
 }
 ```
 
-Here is a simple way to remeber this:
- - "Pre" : visit the parent "pre-" (before) visiting left and right sub-trees.
- - "In"  : visit the parent "in"-between visiting left and right sub-trees.
- - "Post": visit the parent "post-" (after) visiting left and right sub-trees.
+- [ ] Implement `Node* reverse (Node* head)`
 
+#### Additional Linked List Recursion Exercises
 
-### 3 - Searching
+We are providing you with some additional linked list recursion exercises. The writeup can be found [here](./assets/ll_rec_practice.pdf),
+the skeleton code [here](./assets/llrec.zip) and the solutions [here](./assets/llrec_sol.zip). Try solving the problems yourself before looking
+at the solutions.
 
-The **Binary Search Tree Property** (BST) states that all nodes in the left subtree must have key values less than or equal to the root and all of the nodes in the right subtree must have key values greater than the root. Usually, if key values are distinct, we do not worry about equality. BSTs exist to enable (potentially) fast searches. 
+### Design Problems, Exceptions, Templates, and Inheritance
 
-+ For a BST, what is special about operating on elements using an in-order traversal? If we were printing integers using this traversal, what would the output look like? 
+What should you do when something goes wrong in your functions? In the past, we've done things like returning a special value (like -1), couting an error message, and more.
 
-+ Why do we say potentially? Can someone think of an example in which the search is really slow, even if we have a valid BST?
+The best way to handle errors it to use exceptions. Exceptions let the function caller (the code that calls the function) decide how they want to handle the error, and they let you have cleaner code.
 
-Our search function will simply return true or false depending on whether or not our search parameter exists in the tree. Another reasonable return value of a search function could be an iterator pointing to the found element (see std::map find).
-
-To search for key `X` in a BST, we compare *X* to the current node.
-
-  - If the current node is null, `X` must not reside in the tree.
-  - If `X`is equal to the current node, simply return the current node.
-  - If it is less than the current node, we check the left subtree.
-  - Else, it must be greater than the current node, so we check the right subtree.
-
-Or, in code:
-
-```c++
-// Finds the node with value == val inside the bst. Returns nullptr if not found
-Node* find(Node* root, int val) {
-    if (root == nullptr) return nullptr;
-    if (root->val == val) return root;
-    if (root->val > val) return find(root->left, val);
-    return find(root->right, val);
+```
+try {
+    cout << L->get(3);
+}
+catch (OutOfBoundsException &e) {
+       cout << "Array Index was out of Bounds" << endl;
+    }
+// specific treatment when index is out of bounds
+catch (exception &e) {
+cout << "General Type of exception" << endl;
 }
 ```
 
-#### 3.1 - Example
+A try block can have multiple catch blocks for different exceptions. The first catch block that matches the exception will execute first, so more specific exceptions should come before more general exceptions. What would happen if we reversed the order?
 
-Take a look at this example:
+- [ ] Understand how to use `throw`, `try`, and `catch` statements.
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" height="250" />
+#### Implementing LimitedList, using Exceptions
 
-Operation: `find(6)` // We begin at the root 
-
-Let's walk through this:
-
-+ Current node = 8, 6 < 8, therefore go left.
-+ Current node = 3, 6 > 3, therefore go right.
-+ Current node = 6, 6 = 6, we've found the node.
-
-Now, here's an example where we try to find a node that does not exist in the tree:
-
-Operation: `find(0)` // We begin at the root
-
-Let's walk through this one too:
-
-+ Current node = 8, 0 < 8, therefore go left.
-+ Current node = 3, 0 < 3, therefore go left.
-+ Current node = 1, 0 < 1, therefore go left.
-+ Current node = null. 0 is not in the tree.
-
-The worst-case runtime for searching in a BST is proportional to the height of the tree. Therefore, you could have a tree that looks like: 
-
-<img src="https://hank.feild.org/courses/2014-sp/csc161/topics/figs/trees/bst-degenerate.png" width="300">
-
-And your binary search tree would have a poor performance (your search runtime would be equivalent to that of a linked list).
-
-For that purpose, we want our binary search trees to be "balanced", defined below.
-
-### What's a balanced Binary Tree?
-
-A balanced  binary trees is a tree that ensures that the height of each subtree differs by no more than 1 node. When binary trees maintain balance, the binary tree keeps its height logarithmic in n where n is the total number of nodes in the tree for a sequence of insertions and deletions. This structure provide efficient implementations for abstract data structures.  *Any binary tree can be balanced or not. You can check this property (as demonstrated in this lab's exercises.)*
-
-A tree is considered balanced if it conforms to the **Height-Balancing Property**: A node in a tree is height-balanced if the heights of its subtrees differ by no more than 1. 
-
-As we will see in a few weeks, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced .
-
-Here is an example of balanced vs. non balanced trees. (A is balanced, while B is not. The numbers next to the nodes are their height)
-
-<div style="text-align:center"><img src="./assets/balanced_and_unbalanced.png" alt="bst" width="550"/> </div>
-
-### How can we maintain these properties at the same time?
-
-We will study these details more carefully in a few weeks. However, this is a good preview to start familiarizing yourself with these ideas. The BST property is maintained by smart insertion and deletion. In an insert, you traverse the tree based on the key to be inserted. Once you encounter a situation where you can't traverse any further, you know that the key can be placed there. Because we are traversing based on the key value, we are inherently upholding the BST property.
- 
-The same thing can be said about a deletion in a BST. This is done by choosing which node to promote. Either the predecessor, if the node has two children, or the child if the node has 1 child. By doing this, the BST property is being maintained.
-
-A BST that maintains its balance throughout all insertions and deletions is called a  self-balancing BST. These types of trees that auto-balance or self balance inherently with the insertion are called Self-Balancing Binary Search Trees. Examples are:
-
-1. Splay Trees
-2. AVL Trees
-3. Red Black Trees
-4. B-Trees
-5. 2-3 Trees
-
-For all of these self-balancing binary search trees, the height-balancing property is upheld by the nature of an insert or remove. The best way to do so is with rotation, or series of rotations. We're going to briefly review how those rotations work below.
-
-#### 1.1 - Rotations
-
-A rotation changes the local structure of a binary tree without changing its ordering. This means that in between rotations, the BST property is still maintained.
-
-Rotations can be broken up into left and right rotations which are just inversions of each other.
-
-<div style="text-align:center"><img src="./assets/rotations.gif" alt="rotations" width="500" height="200" /></div>
-
-Rotaions make up the foundation of the AVL tree. In your homework, you will need to implement these rotations in a variety of scenarios. There are 4 combinations of rotations: left-left, left-right, right-left, right-right. Sometimes, these rotations are referred to as "zig zig" or "zig zag", or something similar. The point is, during these sequences of rotations, the tree becomes more balanced than it was before.
-
-__If longer subtrees are left and then left__
+Modified from **[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 7**: A `LimitedList` is a modified version of a `List` that has a capacity it should not exceed. Given the below header file, complete the implementation for `LimitedList::insert (int i, const T & item)`. Some of it has already been completed for you. Just for fun, let's make a custom exception class that will print out an interesting error message when you try to insert into a full list. You will need to write and use a custom exception, `CapacityException(int capacity)`.
 
 ```
-T1, T2, T3 and T4 are subtrees.
-         z                                      y 
-        / \                                   /   \
-       y   T4      Right Rotate (z)          x      z
-      / \          - - - - - - - - ->      /  \    /  \ 
-     x   T3                               T1  T2  T3  T4
-    / \
-  T1   T2
+#include <stdexcept>
+
+class CapacityException : public std::exception
+{
+public:
+  /* When an instance of the CapacityException is created,
+   * it constructs a string that stores the error message
+   * that we need to display. */
+  CapacityException(int capacity)
+  : msg(/* What would be a meaningful message? */)
+  {
+  }
+
+  /* It is important that when you declare `what()` for a class
+   * that inherits from `std::exception`, its signature looks exactly
+   * like `const char* what() const noexcept`
+   * (with optional `virtual` at the front). */
+  virtual const char* what() const noexcept
+  {
+    return msg.c_str();
+  }
+private:
+  std::string msg;
+};
+
+class LimitedList {
+  public:
+    LimitedList(int capacity);
+    /* creates a list fixed to this capacity. It can still grow and shrink with insert/remove, but if an insert would make the size exceed the capacity, it will throw an exception. */
+
+    void set (int i, const string& item); // Exactly the same as standard set
+    const string& get (int i) const; // Exactly the same as standard get
+    void remove (int i); // Exactly the same as standard remove
+
+    void insert (int i, const string& item) {
+      /* almost the same as standard insert, except that if the list is full, it will throw an exception rather than resizing. In the case of the exception being thrown, it will not alter the list. */
+      if ( /* TODO - condition to check if exception should be thrown */ ) {
+        /* TODO - throw custom CapacityException */
+
+
+
+      }
+
+      standardInsertHelper (int i, const string& item);
+    }
+
+  protected:
+    int find (const string& item) const;
+    /* returns the first location at which item is stored in the list. Returns -1 if the item isn't in the list */
+
+  private:
+    void standardInsertHepler (int i, const string& item); // Exactly the same as standard insert
+    int capacity;
+    int size;
+};
 ```
 
-__If longer subtrees are left and then right__
+#### Templating LimitedList
+
+What if a user wants to use a `LimitedList` of `int`s? In order to use the same kind of data structure for different data types, we'll have to make a copy of the code, change almost every single mention of `string` to `int`. Doing so creates a lot of code that is repeated unnecsesarily, violating a software engineering principle called [**Don't Repeat Yourself (DRY)**](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
+
+Through templates, however, we can treat a type as a variable, and use it as the type in class definition. Later, when a user declares a templated object with a particular type, the compiler will substitute in the user-speficied type to generate a version of your implementation with this type.
+
+To write a templated class, you must:
+
+- Precede the class with ` template <typename T> ` or ` template <class T> `.
+- Use T wherever you want to use your generic type
+- Precede the definition of each function with
+  template ` <typename T> `
+- In the scope portion of the class member
+  function, add `<T>`
+
+Templated functions must have their implementations in header files! This is different from what we normally do, as we typically put our implementations in a .cpp file.
+
+- [ ] Given the above header file for `LimitedList`, modify it to make `LimitedList` a templated class such that the elements in the list are of type `T`. You do not need to modify the implementations of any functions; just rewrite their function signatures if needed.
+
+#### Implementing a Forgetful Brain
+
+Modified from **[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 7**: In this problem, you will be implementing a data structure for a "forgetful brain". The way a forgetful brain works is as follows: it has a fixed and limited capacity for facts (which for our purposes are just strings). Initially, your brain is empty. As you learn more facts, they are added to the brain. When the brain is full, any newly added fact displaces one that was previously there, meaning that you forget the previous fact. Which fact gets displaced? The one that was used least recently. There are two ways in which your brain can use a fact: (1) Learning a new fact is using it; that is, you remember the things you learned recently. (2) You can deliberately recall a fact.
+
+As an example, suppose that your brain has a capacity of 3 facts, and you learn A, B, C in order. Then, you recall A, and then you learn D. At this point, B is the least recently used fact, so you forget B in order to learn D. When you learn E, you next forget C, and if you learn F, you forget A. If instead, you recalled A again before learning F, then you would next forget D. The `Brain` class thus looks as follows:
 
 ```
-     z                               z                           x
-    / \                            /   \                        /  \ 
-   y   T4  Left Rotate (y)        x    T4  Right Rotate(z)    y      z
-  / \      - - - - - - - - ->    /  \      - - - - - - - ->  / \    / \
-T1   x                          y    T3                    T1  T2 T3  T4
-    / \                        / \
-  T2   T3                    T1   T2
+class Brain {
+  public:
+    Brain (int capacity);
+      // Create a new Brain with the given fixed capacity
+    void remember (const string& fact);
+      /* access the fact, i.e., mark it as freshly remembered.
+         We will never ask you to remember a fact that you haven't learned */
+    void learn (const string& fact);
+      /* add the given fact to the brain, and mark it as freshly remembered.
+         If the brain is full, throw out the least recently used fact
+         to make room for the newly added fact. */
+};
 ```
 
-__If longer subtrees are right and then right__
+In order to implement `Brain`, you should use your *templated* `LimitedList<T>` class.
+
+- [ ] How should you use `LimitedList` to build `Brain`? Inheritance (if so, what type), composition, or other? Why?
+
+- [ ] Give an implementation of the `Brain` class by adding your code in the following piece of code.
 
 ```
-  z                                y
- /  \                            /   \ 
-T1   y     Left Rotate(z)       z      x
-    /  \   - - - - - - - ->    / \    / \
-   T2   x                     T1  T2 T3  T4
-       / \
-     T3  T4
+class Brain
+// relevant code here if you want
+{
+  public:
+    Brain (int capacity)
+    {
+
+    }
+
+    void remember (const string & fact)
+    {
+
+    }
+
+    void learn (const string & fact)
+    {
+
+    }
+
+  private: // any data or methods you would like to add
+};
 ```
 
-__If longer subtrees are right and then left__
+#### Static vs. Dynamic Binding
+
+**[Sample Midterm B](https://bytes.usc.edu/cs104/resources/midterm-b.pdf), Question 1b**:
 
 ```
-   z                            z                            x
-  / \                          / \                          /  \ 
-T1   y   Right Rotate (y)    T1   x      Left Rotate(z)   z      y
-    / \  - - - - - - - - ->     /  \   - - - - - - - ->  / \    / \
-   x   T4                      T2   y                  T1  T2  T3  T4
-  / \                              /  \
-T2   T3                           T3   T4
+#include <iostream>
+class BaseClass {
+  public:
+    virtual ~BaseClass() {};
+};
+class SubClass : public BaseClass {};
+int main() {
+  SubClass* s = new BaseClass;
+  delete s;
+  return 0;
+}
 ```
 
-By using combinations of rotations during insertion and removal, we are able to maintain consistent balance throughout the lifetime of the tree.
+- [ ] Identify and explain any errors you see in the above code.
 
-#### 1.2 - Inserting
-
-During insertion, we start by inserting the value at its correct location as a normal BST would. Then, we traverse up the tree, evaluating the local height of each node and fixing that portion if the height of the left and right subtrees differ by 2 or more. We only need to traverse up the tree from the inserted node because the subtree containing the new node is the only subtree where height can change and we need to rotate.
-
-We fix the tree beginning with the newly inserted node.
-
-#### 1.3 - Removing
-
-During removal, we remove as normal and then proceed to fix the tree by traversing up, starting with the parent of the deleted node. The process of checking balanace and fixing height is the same as outlined in the insertion part.
-
-### 2 - Exercise 1 (Concept)
-
-Take some time to confirm your understanding by showing the tree after each of the following operations in a file named `lab12.txt`. 
-
-__Initial Tree__
-
-```
-                13
-        +--------+---+
-        10          15
-    +---+---+        +--+
-    5       11          16
-+---+---+
-4       8
-```
-+ Insert 14
-+ Insert 3 
-+ Remove 3
-+ Remove 4
-
-- [ ] In `lab11.txt` (or draw it out on paper), show what the tree looks like after each of the above operations. Operations should happen sequentially (ie, Insert 3 happens after Insert 14).
-
-### 3 - Exercise 2 (Coding)
-
-You could find the source files for this exercise in the resources repo. The function you are going to implement is inside `bst.cpp`.
-
-Write a function to determine whether a binary tree is height-balanced or not.
-
-+ A binary tree in which the depth of the two subtrees of every node never differs by more than 1.
-
-**IMPORTANT NOTE:** Since this exercise is part of the homework, please refrain from working in groups. You
-are encouraged to work through this during lab (and we are here to help), but you are not required to complete
-it in order to get checked off.
-
-```c++
-bool isBalanced(Node *root)
-```
-
-### Checking off
-
-To get checked off, show your results for Exercise 1 and 2 to a CP or TA. This should include:
-
-- The AVL tree after every step of insertion/removal
-- ~~The result of running `make BSTTest`.~~

@@ -21,8 +21,10 @@ In this course, we will be using GitHub to host our git repositories and we will
 In order to complete this lab, make sure you are using the correct terminal to run commands:
 
 * If you are running Docker, then there are two types of terminals you are going to interact with:
-  - The **native terminal** refers to the terminal provided by your native OS, not docker. On Windows, type
-    `Win + R` and then `powershell` to start it. On Mac, open you app launcher and search for "terminal".
+  - The **Windows terminal** refers to the terminal provided by Windows, not docker. On Windows, type
+    `Win + R` and then `powershell` to start it.
+  - On **MacOS** you can use the built in Terminal app (search Terminal), or install an app like [https://iterm2.com/](iTerm2){:target="_blank"}. At this time, on MacOS we assume you are using Docker. (Fully native development **is** possible, just not supported by the course staff)
+  - If the instructions specify **native** terminal, these commands are to be issued in either the MacOS or Windows terminal. 
   - The **docker terminal** refers to the terminal you obtain by typing the following in your **native terminal**:
 
 ```shell
@@ -49,13 +51,13 @@ vim cat.txt
 
 The above command shall be ran from your **Docker terminal**.
 
-* If you are running the course VM (through Virtual Box), then **all commands** from this lab shall be ran from
+* If you are running the course VM (through Virtual Box), then **all commands** (both native and docker) from this lab shall be ran from
   the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
   Alternatively, you could open it by searching for "terminal" in the quick launcher:
 
 <div style="text-align:center;"> <img src="assets/vm-terminal.png" width="50%" /> </div>
 
-## Cloning the `resource` and `hw-username` repositories
+## Creating a GitHub repo and obtaining the example files
 
 ### The Concept of the *working directory*
 
@@ -104,90 +106,81 @@ Name:   csci104
         Port:   :2222
 ```
 
-The path after `Volume: ` (excluding `:/work`) is what you are looking for.
+The path after `Volume: ` (excluding `:/work`) is what you are looking for. The idea is that when you open and edit files in your native editor (VSCode, Xcode, Notepad++, TextMate, etc.) they will be saved in the working directory of the Docker image. Then when you run commands in Docker the files will be there.
 
-### Step 2. Obtaining clones of the `hw-username` and `resources` repositories
+If you're using the VM or Codio, it's like always being inside Docker.
 
-This step assumes that you have already finished the git, GitHub, and SSH key setup from Lab 0.
+#### Step 1b: Codio Only
 
-Once you are inside the correct working directory, type the following commands (**replace the `username` in `hw-username` with your actual USC Net Id, the same goes for everything that follows. Your USC NetId is your USC email address without the "@usc.edu" part, not the 10-digit Student ID**):
+If you want to code this lab fully inside Codio, go to "My Projects" then "New Project". Choose "C++" as your starting point and give the project a name (e.g "lab1").
+ 
+### Step 2: Creating a GitHub repo and downloading the example resources
 
+These step assumes that you have already finished the git, GitHub, Codio integration and SSH key setup from Lab 0. If you haven't done [lab 0](../lab0/) yet, do it now.
+
+#### Step 2.1 Create a GitHub repo for this lab
+
+This semester we are **not** managing a GitHub organization for the course. Rather **you** will be responsible for creating a repo for each homework and/or lab.
+
+Navigate to [GitHub](https://github.com){:target="_blank"} and click the green "New" button. Or you can link there [directly](https://github.com/new){:target="_blank"}
+
+- Make sure the "Owner" is set to your GitHub user and **not** any GitHub organizations you might be part of.
+- Give the repo a good name like "lab1" or "example".
+- Make the repo private
+- Don't add a README, a .gitignore or a license
+
+Click "Create Repository"
+
+When the repo is created GitHub will show the repo "URL" (either HTTPS or SSH). Copy the SSH version to your clipboard (there is a button for that).
+
+#### Step 2.2 Creating an new repo on your development environment and connecting to GitHub
+
+Once you are inside the correct working directory, type the following commands (**replace the `GHUSERNAME` with your GitHub username**)
 
 *`[native]`*
 ```shell
-git clone git@github.com:{{site.data.urls.github_org}}/hw-username.git
-git clone git@github.com:{{site.data.urls.github_org}}/resources.git
+mkdir lab1
+cd lab1
+echo "# lab1" > README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:GHUSERNAME/lab1.git
+git push -u origin main
+```
+If you didn't call the repo "lab1", you will need to replace "lab1" with the name of your repo. This will create a new directory called `lab1` and connect it to the GitHub repo named "lab1".
+
+#### Step 2.3 Adding code to your repo
+
+This semester we will be providing skeleton code and other resources through compressed files.
+
+- Windows or MacOS: download the [example file](https://bytes.usc.edu/files/cs104/resources/example.tar.gz) and save it in the lab1 repo directory we created above in step 2.2
+- MacOS: double click the .tar.gz to open it. On Windows you might need to install a program like 7zip to extract the archive.
+- Inside Docker you can do the following:
+
+*`[docker]`*
+```shell
+wget https://bytes.usc.edu/files/cs104/resources/example.tar.gz
+tar xvfz example.tar.gz
 ```
 
-If you see the following dialog in your command line, type `yes` and press `enter`.
-It's basically asking if you want to trust `github.com` as an SSH server.
+The end result of this step should be the "example" folder inside your "lab1" folder (repo).
 
-```
-The authenticity of host 'github.com (192.30.255.112)' can't be established.
-RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-Are you sure you want to continue connecting (yes/no)?
-```
-
-After every clone command, you should see something like this (exact output might be different):
-
-```
-remote: Counting objects: 4, done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
-Receiving objects: 100% (4/4), done.
-Checking connectivity... done.
-```
-
-A few notes about cloning:
- - **Never clone a Git repository** into a Dropbox or other sync'ed folder (Google Drive, etc.).
- - **Never clone a Git repository** under another repository folder. They should be at the same level.
- 
 ## Running the Example Project
 
 We have provided an `example` project to test whether you have the correct environment setup to compile our homeworks. Make sure you follow the steps below and the output on your terminal matches the ones on this page.
 
-### Step 3. Copy the `example` dirctory to your `hw-username` directory
 
-For every assignment from this class, we would provide the it's skeleton code inside the `resources` repository, and you need to copy it into your
-`hw-username` directory when you start the assignment. You should then do all of your work in your `hw-username` repo instead of the 
-`resources` repo.
+### Step 3. Building the example project
 
-The `example` project is also provided in the `resources` repo. To copy it, first start the **docker terminal** if you are using Docker:
-
-*`[native]`*
-```
-ch start csci104
-ch shell csci104
-```
-
-Then, make sure your working directory is where you put the `hw-username` and `resources` clones. You could check this by typing:
+Now, go into your `lab1/example` directory by typing:
 
 *`[docker]`*
 ```
-ls
+cd lab1/example
 ```
-
-and you should see `hw-username` and `resources` in the output.
-
-If not, you have to use `cd` to change to the correct working directory.
-
-To copy the directory, type:
-
-*`[docker]`*
-```
-cp -r resources/example hw-username/example
-```
-
-where `cp` stands for "copy" and the `-r` standard for "recursive" which allows copying of directories.
-
-### Step 4. Building the example project
-
-Now, go into your `hw-username/example` directory by typing:
-
-*`[docker]`*
-```
-cd hw-username/example
-```
+**Note:** this assumes your lab1 directory is at the root where your shell launches. If you get a error like `no such file or directory` then your shell isn't in the right place. Practice navigating around on the command line using `cd` to get to the right place.
 
 Then, run the following command:
 
@@ -232,7 +225,7 @@ make: *** [Makefile:8: run] Error 1
 You **don't** have to worry about the red `[FAILED]` message as long as it shows up (it is intentional), 
 but in case it does not show up, please ask for help from your lab instructor.
 
-### Step 5. Fixing the FAILED test case
+### Step 4. Fixing the FAILED test case
 
 What you have just seen above is an example of an automated test. We run automated tests to grade your
 assignments, and you will learn more about them in later labs. For now, you could just think of them
@@ -256,12 +249,12 @@ which points to exactly the same issue.
 
 Therefore, change the return value to `37` and run `make run` again. This time every test should pass.
 
-### Step 6. Committing and pushing to your homework repository
+### Step 5. Committing and pushing your changes
 
 Now that you have finished the work locally, you would also want to push the changes to GitHub.
 
 To do so, open your **native** terminal (or the VM terminal is you are using the course VM) and change
-the working directory to `hw-username`. Then type
+the working directory to `lab1`. Then type
 
 *`[native]`*
 ```
@@ -340,24 +333,23 @@ git push
 ```
 
 Now, if you everything runs successfully, the changes you have made would be synced to GitHub. Go to
-the repo page on GitHub (it should be at https://github.com/usc-csci104-spring2022/hw-username, with `username`
-replaced with your actual Net ID), and navigate to `example`, you should see the following files:
+the repo page on GitHub, and navigate to `example`, you should see the following files:
 
 <div style="text-align:center;"><img src="assets/github-example-first-commit.png" width="80%"></div>
 
 If you read the `library.cpp` file, you should be able to see the code you have just modified.
 
-However, if you look at the `example` directory (in the image above), you would see the file `test`. Those are the binary files created by the `make run` command while building
+However, if you look at the `example` directory (in the image above), you would see the file `test`. That is the binary files created by the `make run` command while building
 the project. As a good practice you should never push anything generated by a build process. We would deduct
 points if you submitted your assignment with those files (unless otherwise specified).
 
 **NOTE: You may not be able to see the `library.o` file on GitHub, that is to be expected
 with the homework repository.**
 
-### Step 7. Removing the extra files from your repo
+### Step 6. Removing the extra files from your repo
 
-To tell git to remove those files from the repo, first go back to your native terminal and change directory
-to `hw-username/example`. Then type the following:
+To tell git to remove the file from the repo, first go back to your native terminal and change directory
+to `lab1/example`. Then type the following:
 
 ```
 git rm test
@@ -365,13 +357,13 @@ git rm test
 
 This will remove the two files from the directory and ask git to track the removal.
 
-### Step 8. Prevent accidentally adding files with .gitignore
+### Step 7. Prevent accidentally adding files with .gitignore
 
 The `git rm` command only solves the problem temporarily. What if in the future you run `make run` again and
 generated the files again? It would be an annoyance to run `git rm` every time you push.
 
 Fortunately, git offers a way to prevent files from being tracked by the `git add` command. To achieve this,
-create a file called `.gitignore` (with no extensions) in your `hw-username/example` directory, and open it in a text editor.
+create a file called `.gitignore` (with no extensions) in your `lab1/example` directory, and open it in a text editor.
 
 **NOTE: a file or directory starting with `.` is hidden by default on most systems. To make your system show
 those files, follow these instructions:**
@@ -434,12 +426,12 @@ someone else (or even you from another machine) modified the remote repo.
 This is the case when we release the skeleton code in the `resources` repo
 for a new assignment and you would like to download it.
 
-This won't happen until assignment 1 of course, so let's do this to your `hw-username`
+This won't happen until assignment 1 of course, so let's do this to your `lab1`
 repo instead.
 
-### Step 9. Modifying a file on GitHub
+### Step 8. Modifying a file on GitHub
 
-First navigate to the `example/README.md` file in your `hw-username` GitHub repo page, and
+First navigate to the `example/README.md` file in your `lab1` GitHub repo page, and
 click the pencil icon (see the image below):
 
 <div style="text-align:center;"><img src="assets/github-edit-pencil.png" width="80%" /></div>
@@ -451,9 +443,9 @@ Then make an edit to the markdown file (any edit will do), and click `Commit Cha
 **Note in general we do not recommend modifying files directly on GitHub, it is used
 here just for demonstration purposes**
 
-### Step 10. Pulling the change
+### Step 9. Pulling the change
 
-Now change your directory into `hw-username` in your local terminal, and then type:
+Now change your directory into `lab1` in your local terminal, and then type:
 
 *`[native]`*
 ```
@@ -476,8 +468,44 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
-Now if you read the `hw-username/example/README.md` file on your local machine, it should
+Now if you read the `lab1/example/README.md` file on your local machine, it should
 match the one on GitHub.
+
+### Step 10: Pulling your code to Codio
+
+If you did this lab natively inside Codio, you do not need to perform this step. This step will copy your repo to Codio and will give you some practice with connecting and copying a repo to Codio, something you'll be doing for the homeworks (but not labs generally). This step also assumes you connected your Codio to GitHub in Lab 0.
+
+- On Codio, go to "My Projects" then "New Project". Choose "C++" as your starting point and give the project a name (e.g "lab1").
+- We first need to make a directory for our code. (We **DO NOT** want the top-level of our Codio project to be a git repo!). When then `cd` to that directory:
+
+```shell
+mkdir lab1
+cd lab1
+```
+
+- Now we need to init the git repository and connect it to the remote repo:
+
+```shell
+git init
+git remote add origin git@github.com:GHUSERNAME/lab1.git
+git pull
+git checkout main
+```
+
+- We need to install a few packages (run these command one-at-a-time and answer 'y' to any prompts):
+
+```
+sudo apt-get update
+sudo apt-get install cmake
+sudo apt-get install googletest
+sudo apt-get install libgtest-dev
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt 
+sudo make && sudo make install
+cd ~/workspace
+```
+
+- On the left hand side the file tree should now show your files. You should be able to compile and run the same code and tests as on your local dev environment.
 
 ## In Closing
 

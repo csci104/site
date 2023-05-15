@@ -9,9 +9,12 @@ title: Inheritance and STL
 
 **Due at the end of your registered lab section**
 
+[Here](assets/resources.zip) is the zip file with all required files. You can also find the lab on Codio.
+
 ---
 
 ## Inheritance and STL
+
 
 ### Why do we use inheritance?
 
@@ -27,13 +30,13 @@ cout << arr[2] << endl;
 
 you would use a for loop. Not only is this a lot cleaner, it's also easier to make changes. For example, if you decide later on that you want to print out both the value and its index, you would only have to change one line of code to ```cout << i + " : " + arr[i]```, instead of three.
 
-Similarly, if you're doing a task multiple times with different inputs, you'll want to abstract out the repeated code into a function, and pass in different parameters. 
+Similarly, if you're doing a task multiple times with different inputs, you'll want to abstract out the repeated code into a function, and pass in different parameters.
 
 You already have a lot of experience with loops and functions, and today we're going to talk about another aspect of code reuse that's just as fundamental: inheritance.
 
 ### What is inheritance?
 
-Inheritance is the major principle of object orientated programming. 
+Inheritance is the major principle of object orientated programming.
 
 If Class B inherits from Class A, it automatically copies all the data members and functions. Class B, which is called the child class, can create new functions and data members, as well as overwrite functions defined in Class A, which is called the parent or base class.
 
@@ -51,11 +54,11 @@ Think about how you could you could implement this without using inheritance. Wh
 
 ### What does inheritance look like?
 
-Let's take a look at a more concrete example. Imagine you have a database of different people, and you want to print some information about them. 
+Let's take a look at a more concrete example. Imagine you have a database of different people, and you want to print some information about them.
 
-We have two types of people in our database: students and professors. For the students, we'd like to print out their majors, and for the professors, we'd like to print out their department. For everyone, we'd like to print out their name. 
+We have two types of people in our database: students and professors. For the students, we'd like to print out their majors, and for the professors, we'd like to print out their department. For everyone, we'd like to print out their name.
 
-We could write our classes like this: 
+We could write our classes like this:
 
 **NOTE:** Normally, we would only have one class per header file for better organization, but for this simple example, we're going to keep everything together.
 
@@ -84,7 +87,7 @@ class Professor {
 
 This would work, but note the repetition — students and professors both have mName data members and getName functions. Every person has a name, so instead of writing the same function in both classes, we can have Student and Professor inherit from a third class, a Person class. We're also going to add some additional functions and data members, so that our classes looks like this diagram.
 
-<div style="text-align:center"><img src="inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
+<div style="text-align:center"><img src="assets/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
 
 
 ```c++
@@ -125,7 +128,7 @@ class UscStudent : public Student {
 
 ```
 
-Now, Professor, Student and UscStudent all have the function getName(), and the data member mName, but we didn't have to write those out three times, because these classes inherit from Person. 
+Now, Professor, Student and UscStudent all have the function getName(), and the data member mName, but we didn't have to write those out three times, because these classes inherit from Person.
 
 In this example, we have both Professor and Student inheriting from Person, but we only have one class inheriting from Student. What's the point of the student class? Shouldn't we just have a UscStudent class?
 
@@ -135,9 +138,9 @@ Let's try to compile this code. Run ``` make ``` in the part1 folder and see wha
 
 We get a ton of errors. Let's start with this one: `"no matching function for call to 'Person::Person()'"`.
 
-What does this error message mean? You've probably seen an error message like this before, like if you passed in the wrong argument to a function. Here, the compiler is confused because when you inherit from the Person object, you need to call a constructor, and since we didn't do that, the default constructor is implicitly called. But there is no default constructor for Person! To fix this error, we need to explicitly call our Person constructor, which takes in a name. 
+What does this error message mean? You've probably seen an error message like this before, like if you passed in the wrong argument to a function. Here, the compiler is confused because when you inherit from the Person object, you need to call a constructor, and since we didn't do that, the default constructor is implicitly called. But there is no default constructor for Person! To fix this error, we need to explicitly call our Person constructor, which takes in a name.
 
-This will look like this: 
+This will look like this:
 
 ```c++
 Student::Student(std::string name, std::string major) : Person(name) {
@@ -149,9 +152,9 @@ Make these changes (to Student, Professor, and UscStudent), and now your code sh
 
 #### Private, protected, public
 
-Now, let's add some additional functionality to our UscStudent class. 
+Now, let's add some additional functionality to our UscStudent class.
 
-Write a public function called printTranscript(), which will print out (and nicely format) the name of the school, the student's name, their GPA, and their major. 
+Write a public function called printTranscript(), which will print out (and nicely format) the name of the school, the student's name, their GPA, and their major.
 
 What problem pops up when you try to compile this function?
 
@@ -163,18 +166,18 @@ What's another way we could solve this problem while leaving mGpa private?
 
 #### Inheritance and visibility
 
-Private, protected and public also apply to the type of inheritance. Look back at this line: 
+Private, protected and public also apply to the type of inheritance. Look back at this line:
 
 `class Student : public Person {`
 
-Putting the word public in front of Person means that we are using **public inheritance**. That is, every function and data member in Person has the same level of protection in Student. This will *not* make every element in A public — if an element was protected in A, it will be protected in B, and if an element was private in A, it will be private in B. 
+Putting the word public in front of Person means that we are using **public inheritance**. That is, every function and data member in Person has the same level of protection in Student. This will *not* make every element in A public — if an element was protected in A, it will be protected in B, and if an element was private in A, it will be private in B.
 
 **Protected inheritance** means that all private and protected elements in A will remain at the same access level in B, but all public elements will now be protected in B. This means that every element in B that was in inherited from A is now either protected or private.
 
 
-Finally, **private inheritance** means that all elements inherited from A in B are private. 
+Finally, **private inheritance** means that all elements inherited from A in B are private.
 
-When would you use these types of inheritance? Let's take a look back at our UscStudent class. A UscStudent is a type of Student, and needs to have the same data members as Student. However, imagine that is someone is using our UscStudent class, we only want them to have access to a few functions, like printTranscript() and getUscEmail(), and we don't want them to have access to the setGPA() function. We can make UscStudent protectedly inherit from Student. 
+When would you use these types of inheritance? Let's take a look back at our UscStudent class. A UscStudent is a type of Student, and needs to have the same data members as Student. However, imagine that is someone is using our UscStudent class, we only want them to have access to a few functions, like printTranscript() and getUscEmail(), and we don't want them to have access to the setGPA() function. We can make UscStudent protectedly inherit from Student.
 
 `class UscStudent : protected Student {`
 
@@ -215,8 +218,8 @@ class UscStudent {
 
 If we call printTitle() on the object UscStudent, it will print out "USC Student".
 
-``` 
-UscStudent* u = new UscStudent(); 
+```
+UscStudent* u = new UscStudent();
 u->printTitle(); // will print "USC Student"
 ```
 
@@ -227,7 +230,7 @@ Person* p = new UscStudent();
 p->printTitle();
 ```
 
-What gets printed? This time it's less clear. 
+What gets printed? This time it's less clear.
 
 Does "USC Student" get printed, or "Person"?
 
@@ -235,7 +238,7 @@ In this case, it will print "Person", because the compile time type of the objec
 
 Now, what if we *do* want to print "USC Student"?
 
-We add the **virtual** keyword to the function in the base class. 
+We add the **virtual** keyword to the function in the base class.
 
 ```c++
 class Person {
@@ -267,15 +270,15 @@ Person* p = new UscStudent();
 p->printTitle(); // USC Student
 ```
 
-This is called **dynamic binding**, because the function that is called is based on the type of object that is being pointed to, which can change. 
+This is called **dynamic binding**, because the function that is called is based on the type of object that is being pointed to, which can change.
 
 All base classes should have a virtual destructor. Why do you think this is?
 
 #### Abstract classes
 
-Let's take a look at another classic example of inheritance: shapes. 
+Let's take a look at another classic example of inheritance: shapes.
 
-Consider the following shapes: square, rectangle, circle, and triangle. All of these shapes should have a getName() function, and a name data member, which indicates that they should probably inherit from a Shape base class that implements this function. 
+Consider the following shapes: square, rectangle, circle, and triangle. All of these shapes should have a getName() function, and a name data member, which indicates that they should probably inherit from a Shape base class that implements this function.
 
 Aditionally, we want the to call getArea() and getPerimeter() functions on the shapes, but these values are not calculated the same way for each type. We're going to need a different implementation for square, rectangle, circle, and triangle.
 
@@ -285,7 +288,7 @@ But what does the Shape class do for getArea() and getPerimeter()? In this case,
 class Shape {
 	public:
 		virtual double getArea() = 0; // = 0 indicates that this class doesn't implement this function
-		virtual double getPerimeter() = 0; 
+		virtual double getPerimeter() = 0;
 }
 ```
 
@@ -305,7 +308,7 @@ To get checked off this week, you're going to add some functionality to an assig
 
 #### STL Maps
 
-C++ STL stands for Standard Template Library. STL is a set of classes that provide common data structures like lists, arrays, stacks and more. We've written stacks from scratch in this class, but in practice, you would just use STL stack. 
+C++ STL stands for Standard Template Library. STL is a set of classes that provide common data structures like lists, arrays, stacks and more. We've written stacks from scratch in this class, but in practice, you would just use STL stack.
 
 Today, we're going to be using the STL map and set.
 
@@ -315,11 +318,11 @@ As you know, maps are data structures that contain key-value pairs of items, whe
 
 What if we need to get every item in our map (which you will need to do for checkoff today)? We could do n searches, but then we would need to know all the keys ahead of time. And even if we do have all the keys, our runtime would be ```nlog(n)```. Can we iterate through every element in linear time if we don't have all the keys?
 
-Yes! We use an iterator. If we want to loop through every element, our code will look something like this: 
+Yes! We use an iterator. If we want to loop through every element, our code will look something like this:
 
 ```c++
 std::map<std::string, std::string>::iterator it;
-for(it = myMap.begin(); it != myMap.end(); ++it)   
+for(it = myMap.begin(); it != myMap.end(); ++it)
 {
   std::cout << it->first << std::endl;
   std::cout << it->second << std::endl;
@@ -329,15 +332,15 @@ This for loop will take linear time.
 
 Note that this isn't too different from the for loop you'd write to iterate through an array. Instead of starting at index 0, though, we start at the first element in the map data structure by using the `begin()` function.
 
-STL Iterators also overload the operator '++', which moves an iterator to the next element. 
+STL Iterators also overload the operator '++', which moves an iterator to the next element.
 
-Note that our terminate condition of the for loop is ``` it != myMap.end() ```. myMap.end() points past the last element in your map so that your loop stops at the last element. Incrementing or deferencing `end()` will cause undefined behavior, because it's not pointing at an actual element in your map. 
+Note that our terminate condition of the for loop is ``` it != myMap.end() ```. myMap.end() points past the last element in your map so that your loop stops at the last element. Incrementing or deferencing `end()` will cause undefined behavior, because it's not pointing at an actual element in your map.
 
 #### Inserting into a Map
 
 There are two basic ways we can insert into a map. There is `insert()` , which only adds the specified element if the key is not already in the map. If the key does exist, insert() does nothing.
 
-We can also insert using the overloaded `operator[]` to index into the map. Unlike `insert()`, using `operator[]` will overwrite the value if the key exists. 
+We can also insert using the overloaded `operator[]` to index into the map. Unlike `insert()`, using `operator[]` will overwrite the value if the key exists.
 
 Here's an example of both ways to insert.
 
@@ -345,7 +348,7 @@ Here's an example of both ways to insert.
 myMap.insert(std::make_pair("Key", "Value")); // Inserts the pair
 myMap["Key"] = "Overwrites Previous Value"; // Overwrites "Value"
 myMap.insert(std::make_pair("Key", "This should do nothing")); // Does nothing, because "Key" was already in the map
-``` 
+```
 
 #### Finding Elements in a Map
 
@@ -355,7 +358,7 @@ To find an element, we can use the `find()` function. This returns an iterator p
 std::map<std::string, std::string>::iterator it = myMap.find("Key");
 if (it != myMap.end()) // we found the element
 {
-  std::cout << it->first << " has value " << it->second << std::endl; 
+  std::cout << it->first << " has value " << it->second << std::endl;
 }
 ```
 
@@ -367,12 +370,12 @@ std::string var = myMap["Key"];
 
 #### Removing Elements in a Map
 
-To remove a single element, we use the `erase()` function. This accepts an iterator or a key as a parameter. 
+To remove a single element, we use the `erase()` function. This accepts an iterator or a key as a parameter.
 
 We can remove like this:
 
 ```c++
-myMap.erase(myMap.find("Key")); 
+myMap.erase(myMap.find("Key"));
 ```
 
 find() returns an iterator pointing to the object containing "Key". There is undefined behavior if iterator is invalid (i.e. end()), so don't call erase unless you know that the key is in the set.
@@ -409,7 +412,7 @@ string stationName = "KPWR";
 radioStations.insert(stationName);
 
 // iterating through the set
-for(set<string>::iterator it=radioStations.begin(); it != radioStations.end(); ++it)
+for(set<string>::iterator it = radioStations.begin(); it != radioStations.end(); ++it)
 {
   // note that we don't have the concept of it->first or it->second, because there are no values, only keys
   cout << "Station: " << *it << endl;
@@ -434,7 +437,7 @@ radioStations.erase("KCRW"); // remove KCRW from the set of names
 
 That was a lot of information! Let's apply it.
 
-Take a look at the files in part 2. 
+Take a look at the files in part 2.
 
 **Tip: If you're using Sublime Text, and you want to open the whole folder at once, you can type ```subl directoryName``` into terminal (in this case, subl part2).**
 
@@ -472,19 +475,19 @@ void Schedule::printAllAssignments()
 }
 ```
 
-``` make ``` will run the tests for you. 
+``` make ``` will run the tests for you.
 
 ## Additional info about maps and runtime
 
 At this point, you don't need to know how to find the runtime of maps — just understand that maps are the best way to find key/value pairs. For now, assume that the find function is `O(log(n))` — later in the semester, you'll learn how to we can reduce that `O(1)`!
 
 We've learned that we can find elements in a map using 'myMap.find("Key")'.
- 
+
 Take a look at the following code snippet. Let's say we want to return true if a certain key is in the map.
 
 ```c++
 std::map<std::string, std::string>::iterator it;
-for(it = myMap.begin(); it != myMap.end(); ++it)   
+for(it = myMap.begin(); it != myMap.end(); ++it)
 {
   if (it->first == "myKey") {
   	return true;

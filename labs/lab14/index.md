@@ -1,162 +1,234 @@
 ---
-layout: asides
+layout: default
 toc: true
 tasks: true
-title: Number Theory
+title: GTest
 ---
 
----
+## Unit Testing and GTest
+In this lab we want to dive into the topic of unit testing. The goal of this lab is to give you an overview of how to use the Google Test framework to build and run test cases for any C++ project. Code is available [here](./resources.zip), and can also be found on Codio.
 
-**Due at the end of your registered lab section**
+### 0 - Motivation
 
----
+Testing is absolutely essential to a typical development process. Having a complete test suite can ensure that the code that you spent hours building works, fits specification, and is bug-free.
 
-## Number Theory
+Suppose you have just finished homework and you think you have a pretty good implementation of a doubly linked list. How do you know, for sure, that this list behaves like how you intended it to be? You can manually read through the code a million times, but you might still miss something.
 
-### Quick Review of Basic Concepts
+A good test case program should:
 
-(1)
+  + Use your newly created data structure
+  + Perform simple operations with your data structure's methods
+  + Make sure that each method performs the way you intended it to be
 
-$$m \mid n$$
+There are several advantages for having a well-crafted test program:
 
-The above reads as "$m$ divides $n$", and means that there exists integer $k$ such that $n = km$.
+  + Help you think about edge cases - ones that you might not have thought of when implementing the data structure itself.
+  + Help you make sure each subpart of a problem works correctly. For example, when you implement a new data structure with your new LinkedList, and you encounter a problem, it's very hard to know whose fault it is - the new data structure or the underlying LinkedList. By thoroughly testing your LinkedList in its corresponding test, you will be able to nail down where to hunt for problems fast.
+  + When you make a change to your code, you can make sure that it did not break anything.
 
-(2)
+The [Google Test documentation](https://code.google.com/p/googletest/wiki/Primer) has further guidelines for what constitute good test suites.
 
-$$a \equiv b \pmod{m}$$
+### 1 - Testing a Fibonacci Program
 
-The above reads as "$a$ is congruent to $b$ modulo $m$", and means that $m \mid a - b$.
+#### 1.1 - Introduction to Testing
 
-If $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$, then:
+Let's first begin writing tests for a simple function that computes the nth Fibonacci number. But before you open the code for the Fibonacci program, ask yourself - what are some test cases that we'll need to test?
 
-$$
-\begin{gather*}
-   ac \equiv bd &\pmod{m} \\
-   a+c \equiv b+d &\pmod{m}
-\end{gather*}
-$$
+**Nominal Cases** - You can always start with the most basic cases - that 5th fibonacci should be 5, 7th should be 13. It's a good idea to include a few basic cases so to be sure you weren't just lucky, but you shouldn't need anything more than that.
 
-(3)
+**Boundary or Special Cases** - What are the boundaries for this function? For a Fibonacci calculation, it seems that there is only a "lower-bound", namely when n = 1. For some data structures that are slightly more complex, there might be multiple boundaries, like the resize limit ("`capacity`") for an array based implementation of a list.
 
-$$\gcd(a, b)$$
+**Off-nominal Cases** - Your program should be completely fool-proof. That means your program should handle even input that does not make sense. For example, asking for the -2th Fibonacci number, or asking to insert at the 5th position for a 2 element array. Note that things that do not compile are not part of off-nominal cases. If your compiler cannot compile the code, you won't even have an executable to run.
 
-The above denotes the "greatest common divisor of $a$ and $b$", which is the greatest positive integer $d$ such that $d \mid a$ and $d \mid b$.
+Notice that we came up with these cases **without the need of looking at code** - all we did was think about how a Fibonacci program should behave, and how a user would be using such a function. In fact, it's very common for industry software engineers to write the test cases first _before_ writing a single line of code; they call this [Test-Driven Development (TDD)](http://en.wikipedia.org/wiki/Test-driven_development).
 
-If $gcd(a, b)=1$, then $a$ and $b$ are said to be "co-prime" or "relatively prime" to each other.
+A very simple test program might include a long list of test cases made of if statements that looks like this:
 
+```
+Fibonacci fib;
+if (fib.get(5) == 5) {
+	std::cout << "OK" << std::endl;
+} else {
+	std::cerr << "FAIL | 5th Fibonacci number should be 5."
+}
+```
 
-### A Helpful Theorem
+However, a long list of these cases can get out of hand very quickly - it's annoying to read and even more so to write repetitive code. We can use a library called Google Test to help us out.
 
-Here is a helpful theorem to remember:
+#### What is enough, and how much is too much?
 
-* If $a \mid bc$ and $\gcd(a, b)=1$, then $a \mid c$.
+Generally speaking, there should be at least one test case for each code execution path in a function. For example, if a function has 3 branch conditions, test at least each path once, to ensure all use cases are covered. There is no need to test a single path more than a few times - it doesn't hurt, but it's generally unnecessary as it increases testing time. This is only a rule of thumb, as some edge cases just cannot be predicted by looking at the code.
 
-#### Exercise 1
+When testing a class implementation, each public function should be tested. For example, an array implemntation of a list, `ArrayList`, should have test cases for functions `add()`, `set()`, `remove()`, `get()`, and so on. More on class testing in a little bit!
 
-Using the theorem above, prove the following:
+#### 1.2 - Our First Google Test Case
 
-* If $p$ is a prime and $p \mid ab$, then $p \mid a$ or $p \mid b$.
+Navigate to the `part1` directory, and open the `test.cpp` file included for you. The meat of the test suite provided to you in this file is in these four lines:
 
-### Quadratic Probing
+```
+TEST(FibTest, Nominal) {
+	Fibonacci f;
+	EXPECT_EQ(5, f.get(5));
+	EXPECT_EQ(13, f.get(7));
+}
+```
 
-Recall that in linear probing, the positions we try to insert an element at are: 
+You should notice that this is not standard C++ syntax. We're using a **C++ Macro** here that is supplied by the framework. C++, when compiling, will automatically replace this code with some appropriate C++ code defined in the framework. It is likely a much longer chunk of code that Google Test wants to hide and save the user from an unnecessary amount of copy pasting.
 
-$$h, h + 1, h + 2, h + 3, \dots$$
+A test case is defined by calling this `TEST` macro. Two more things are important here: `FibTest` and `Nominal`, the two "parameters" that are "passed into" the Macro. The first parameter specifies the name of the test suite. As a rule of thumb, all tests in a file should belong to the same test suite, and in this case, FibTest. The second parameter is the name of this test. We're testing the trivial cases right now, so we're just going to call it the "Nominal" case.
 
-where $h$ is the hash value of the element you want to insert.
+```
+EXPECT_EQ(5, f.get(5));
+```
 
-In quadratic probing, this becomes:
+Another macro here - `EXPECT_EQ`. The name of this macro is not too surprising - test cases are but a long list of expected results under different circumstances. In here, by calling `EXPECT_EQ`, you're saying: "When I call f.get(5), the value it returns should equal to 5."
 
-$$h, h + 1, h + 4, h + 9, \dots, h + i^2, \dots$$
+You can find the list of GTest Macros [here](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md).
 
-Quadratic probing has the nice property that if the size of the hash table is a prime number $p$, then the first $\frac{p-1}{2} + 1$ probed positions are going to be unique ($h, h + 1, \dots, h + (\frac{p-1}{2})^2$, moduli the size of the hash table).
+#### 1.3 - Adding some more test cases
 
-We could prove this using contradiction:
+As we've mentioned, there are more test cases worthy to be tested. Let's add them together to our `test.cpp` file.
 
-Given any two different probes $h + i^2$ and $h + j^2$ where $0 \leq i \le j \leq \frac{p-1}{2}$, we assume that they fall at the same location: $h + i^2 \equiv h + j^2 \pmod p$. Then we would have:
+**Boundary or Special Case**
 
-$$
-\begin{gather*}
-h + i^2 \equiv h + j^2 &\pmod p \\
-i^2 \equiv j^2 &\pmod p \\
-i^2 - j^2 \equiv 0 &\pmod p\\
-(i-j)(i+j) \equiv 0 &\pmod p
-\end{gather*}
-$$
+In our Fibonacci calculation, we have a base case of "1" and "2" - they return special values unlike the nominal cases. We should add a test that makes sure this happens.
 
-By the theorem we proved earlier, this means either $p \mid i-j$ or $p \mid i+j$.
+We first start with a call to the macro, with the test suite name staying the same (`FibTest`), and the test case name something like ("Boundary").
 
-However, this is impossible since $0 \leq i \le j \leq \frac{p-1}{2}$. Therefore, $h + i^2 \not \equiv h + j^2 \pmod p$ (i.e. the probes fall at different locations)
+```
+TEST(FibTest, Boundary) {
+	Fibonacci f;
+	...
+}
+```
 
-### Double Hashing
+What goes inside? Expectation statements. What do you expect `f.get(1)` return? `f.get(2)`?
 
-Another common probing scheme is called double hashing. Similar to quadratic probing, it requires the size of the hash table to be a prime number $p$. Furthermore, in addition to the primary hash function, it needs a secondary hash function that returns a number $k$ in the range $[1, p-1]$.
+```
+	EXPECT_EQ(??, ??)
+	EXPECT_EQ(??, ??)
+```
 
-The positions we probe would then be:
+When you're done - _don't run the tests yet_! Finish the entire test suite first, before you try to see if anything's wrong. This is to prevent us tailoring our test cases to the code - you would be able to think about edge cases much more easily from a different perspective.
 
-$$h, h+k, h+2k, h+3k, \dots$$
+- [ ] Write a test for the boundary case in `test.cpp`.
 
-The nice property of double hashing is that the first $p$ locations we probe will all be unique. In other words, the first $p$ probes will cover the whole hash table!
+**Off-Nominal Case**
 
-As an example, if $h=1$, $p=5$ and $k=3$, then we have:
+What else can go wrong? A rule of thumb is: never trust the user. If something can go wrong, it will; so it's essential that your program handles correctly.
 
-   * 1st probe: `(1 + 0 * 3) % 5 == 1`
-   * 2nd probe: `(1 + 1 * 3) % 5 == 4`
-   * 3rd probe: `(1 + 2 * 3) % 5 == 2`
-   * 4th probe: `(1 + 3 * 3) % 5 == 0`
-   * 5th probe: `(1 + 4 * 3) % 5 == 3`
+For the sake of this testing demonstration, let's assume that any invalid input should return a value of 0. Some invalid inputs in this case could be 0, -1.
 
-As you can see, all the probed locations are unique.
+- [ ] Write a test case for this and include it in `test.cpp`.
 
-#### Exercise 2
+**Bonus**: There is one more edge case. Can you think what it is? (Hint: What's the type of the input?)
 
-Prove with number theory that the above property of double hashing holds. (Hint: check out the proof for quadratic probing)
+#### 1.4 - Run the tests now
 
+Now that we have a complete test suite, we can see if our program works fully to our specs by running `make tests` on the terminal **in Docker**. Because our dependencies are set up properly, this will attempt to compile the `fib` object, and then the test executable. After all the compiling is done, it will then attempt to run the test executable.
 
-### Fermat's Little Theorem and Prime Testing
+You should now see a fancy test runner output, that says the output is unexpected, followed by a segfault. It's okay, we'll fix them one by one.
 
-Here is another practical use of number theory, which involves a theorem called Fermat's little theorem (not to be confused with the other well-known but much complicated Fermat's last theorem).
+```
+// Line 5: Change from:
+return 0;
+// to:
+return 1;
+```
 
-Fermat's little theorem states that given a prime number $p$, and another number $a$ which is not a multiply of $p$, we have:
+Run the tests again by calling `make tests` from your Docker shell. That nominal test case now passes successful, but the segfaults are still there in the Off-Nominal Case. Well, that's unexpected. As always, try to debug using gdb.
 
-$$a^{p-1} \equiv 1 \pmod{p}$$
+```
+gdb fibTest
+```
 
-The immediate consequence of the above is that if we are given a number $n$ and we can find some $a$ such that $a^{n-1} \not \equiv 1 \pmod{n}$, then we know for sure that $n$ is NOT a prime.
+Run until the segfault happens, and then run `bt` to see how the error occurred. It seems that the program crashed because we ran out of stack space by calling too many recursions. Fix this by modifying our `fib.cpp`:
 
-If we try a lot of values of $a$, and all those values satisfy $a^{n-1} \equiv 1 \pmod{n}$, we could have a high confidence that $n$ is indeed prime. This method is called "Fermat primality test".
+```
+// Add after Line 3:
+if (n <= 0) {
+    return 0;
+}
+```
 
-Note that "high confidence" $\neq$ "100% sure". Just like Bloom Filter, Fermat primality test could yield false positives. However, it is sufficient for the purpose of our lab. If you are interested, there are more robust primality tests out there, such as the [Miller-Rabin test](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test).
+Run the test again, and it should now pass with flying colors - green, that is.
 
-You might be wondering why this is useful. Recall from lecture that the RSA algorithm requires the generation of two large prime numbers (they can be as large as 4096 bits). You actually did this in lab 0 when you [configured your SSH key](https://bytes.usc.edu/cs104/labs/lab0/#configuring-an-ssh-key).
+- [ ] Fix the segfault as instructed.
 
-How are those prime numbers generated though? A [popular way](https://crypto.stackexchange.com/q/1970/85400) to do this is extremely straightforward:
+### 2 - Testing a Class
 
- 1. Pick a random 4096 bit odd number.
- 2. Test if it is prime. If yes, return it.
- 3. Otherwise, go back to step 1.
+Now that we understand how to run tests, we're going to practice testing on a class implementation. We'll be writing tests for an `ArrayList` class.
 
-Here if we use a naive method to test primes (try dividing it by every number from 1 up until its square root), it would take a REALLY REALLY LONG time. Instead, we could use tests like the Fermat Test to get a accurate-enough result very quickly.
+#### 2.1 - Understanding Fixtures
 
-#### Exercise 3 (Coding)
+When we test classes, we often need some initialization before we can test. For example, initializing classes with the correct constructor parameters, populating an array, etc. Because these setup are usually repeated across multiple test cases, we put them in "Fixtures"
 
-For this exercise, you are going to implement a simple version of the Fermat test.
+Open the `test.cpp` in the `part2` folder. You'll notice that this file is slightly longer than the one in the first part. The main difference being a definition of a class `ArrayListTest`. There are several characteristics to this class:
 
-There are two functions for you to implement, both of which are in `fermat.cpp`:
+  + It inherits from a Google Test class `testing::Test`. We have not learned what inheritance works yet, but you will understand how it works in a little bit
+  + The class is largely empty, but it includes a declaration of a member variable of type `ArrayList`. This object is available for use in any of the test cases
+  + It has four methods you can insert code in:
+	- the class constructor and `SetUp()` is largely the same; both will be called before each test case
+	- similarly, the class destructor and `TearDown()` will be called after each test
 
-   * `uint32_t mod_exp(uint32_t base, uint32_t exponent, uint32_t mod)`: Calulate the value of $(base^{exponent}$ % $mod)$. You should use the [squaring technique mentioned in lecture](https://ee.usc.edu/~redekopp/cs104/slides/L19_NumberTheory.pdf) (Slide 19).
+In order to have access to the fixture, tests need to be declared using the `TEST_F` fixture instead of `TEST`. The test suite name should also be the same as the class name.
 
-   * `bool fermat_test(uint32_t n, const std::vector<uint32_t>& tests)`: Perform Fermat primality test (mentioned above) on $n$. Returns `true` if it passes the test, `false` otherwise (i.e. `false` if you know for sure that $n$ is not prime). The values of $a$ you should use are inside the vector `tests`.
+You can see all that comes to play in the sample `get()` test. Notice that we are able to read elements from the list right away without any other code inside the test. In fact, for every test in this test suite will inherit these setup instructions as well. This helps to keep the actual test code simple.
 
-**Some important hints:**
+### 3 - More about Testing
 
-   * In `mod_exp`, you don't have to convert `exponent` to binary (in lecture you receive a `std::vector<bool>` as input). Instead, the least significant bit can be calculated as `exponent % 2`. The next bit is `(exponent / 2) % 2`, and the next is `(exponent / 4) % 2`, etc.
+A common mistake students make is that they write tests for their program to pass. This is wrong. Your job, when writing test cases, is to try as hard as you can to break your code. Try to think of all possible ways that your program can misbehave. When designing test cases, ask yourself these questions:
 
-   * You want to use `std::uint64_t` to store intermediate results in `mod_exp`. This is because squaring a 32-bit integer can give you a result as large as 64-bits.
+  + What promises does the program make in its documentation?
+  + If something is supposed to happen after a function call, does it happen?
+  + If nothing should happen, how can you make sure nothing happened?
+  + What edge cases might a programmer easily overlook?
+  + What input might cause the program to crash?
 
-   * You should be using `mod_exp` in your `fermat_test` function.
+Remember - the harsher you are when testing your own program, the less bugs will make it to the hands of your end users.
 
-After you finish your implementation, type `make` in your terminal to run the tests.
+### 4 - Assignment: Identify Two of the Bugs
 
-### Checking Off
+**TL;DR: Find 2 out of 3 bugs by writing tests.**
 
-To get checked off, complete all three exercises in this lab and show your results to a CP/TA.
+In the `part2` folder, we have provided an implementation of ArrayList for you - there is a header file `arraylist.h`, with the specification of the expected function in the comments, and a pre-compiled `ArrayList` implementation. You do not have access to the source code. We do this because again, we do not want you to think about test cases in terms of the source, but in a wider perspective of "how things should work".
+
+There are **three** bugs in the source code, and it is your task to find the problems by writing a good suite of test. Write a good set of tests for each of `add()`, `set()`, and `remove()` according to the specification provided in the header file, and thinking about edge cases. Find two of these bugs and you're good to go.
+
+We have written a sample test case for you for the `get()` function, although it is by no means an exhaustive test case. There is also a simple Makefile included for you, simply compile and run the test with `make tests`.
+
+Some tips:
+
+  + [Google Test documentation](https://code.google.com/p/googletest/wiki/V1_7_Primer) has a lot more macros you can use: `EXPECT_NE`, `EXPECT_LT`, `EXPECT_TRUE` etc.
+  + When you call a method, how should the state of the object change?
+  + What are the "boundaries" of this class? What happens there?
+  + What are the execution paths in each function?
+  + Big Hint: look at the test names we give you
+
+What to show to a TA or CP:
+- fib.cpp and test.cpp from part1 folder
+- test.cpp from part2 folder
+- a .txt file describing at least 2 bugs you found in part2
+
+### Appendix: A little bit more on the Makefile
+
+You might be a little more confused about the `GTEST_LL` variable and how we are able to use Google Test. There are several key parts to understand here:
+
+  + The complete compile command is: `g++ -Wall -g test.cpp arraylist.o -I /usr/include/gtest/ -l gtest -l gtest_main -o arrayTest` The important files are `test.cpp` and `arraylist.o`, the rest are just flags.
+  + `GTEST_LL` - This is variable that contains the necessary flags to compile a Google Test program. There are several flags in here:
+  + `-I /usr/include/gtest/`: `-I` means "look up includes in this directory". This is how `#include "gtest/gtest.h"` worked in the test program - when C++ tries to look up a file, it looks not only in the current directory, but in whatever directories specified by `-I` as well. Including the gtest header ensures all necessary functions are imported. This is similar to how `-Ilib` works.
+  + `-l gtest`: Use the library called "gtest". This includes all extra dependencies not included in the header file
+  + `-l gtest_main`: Use the library called "gtest_main". Notice that there are no main functions at all in our test suite program. THat's because the `gtest_main` library comes with one. When we run the test, we're running a main function included in the Google Test framework that automatically detects all tests and execute them accordingly.
+  + `-pthread`: Because Google Test runs tests in parallelize, enable threading support.
+
+You can probably safely copy this variable everywhere.
+
+**fib.o** - This is the rule to compile the Fibonacci class by itself. Notice that the `-c` flag is used - when we compile the class by itself, we can include the compiled object everywhere - in an actual program, or in the test suite.
+
+**fibTest** - The main test rule. It has two dependencies: the compiled fib object, and the test suite itself. For the command, we simply take all the dependencies and compile them, with the `GTEST_LL` variable. It's important that the libraries are loaded after the source files, or else the linker will likely throw an error.
+
+**tests** - A rule that just runs the tests. Optional. Notice that this is a phony rule, because it doesn't actually create any file.
+
+
+
+

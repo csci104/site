@@ -7,13 +7,15 @@ title: Probability Theory
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your registered lab section.** As per usual, this material is also available on Codio.
 
 ---
 
 # Probability Theory
 
 Now we’ll be taking the counting principles we learned from Lab 11 and applying them to probability! Probability is something you’ll be revisiting time and time again both in and outside of computer science. Maybe you’re interested in artificial intelligence or machine learning, or maybe you just want to think more critically about the uncertainty of life. Probability is an important skill you’ll want to carry with you well beyond 104, regardless of what path you take!
+
+**Additional resources:** There is a different version of this lab that covers some additional formulas and example problems (and some review practices for counting). It was for a semester where we did counting and probablity in a single lab (you can imagine how intense it was). The materials are available [here](https://bytes.usc.edu/cs104/labs/old_probability_lab/). You are not required to finish those problems for checkoff, but we highly recommend going over the excercises provided in those labs for exam preperation.
 
 ## Warm Up, Definitions, and Rules
 Suppose we have a fair coin, and we flip it 2 times. What is the probability of getting at least one head?
@@ -58,6 +60,8 @@ Solution: let event $E_1$ be the event of getting a Queen, and event $E_2$ be th
 What if we want to compute the probability of the union of events that are not mutually exclusive? This is where the inclusion-exclusion principle comes in:
 
 $$P(E_1 \cup E_2) = P(E_1) + P(E_2) - P(E_1 \cap E_2)$$
+
+This follows the inclusion-exclusion principle (which was covered in the counting lab).
 
 ### Example
 
@@ -155,7 +159,9 @@ We know that $E(X_1) = E(X_2) = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6)$, hence $E(X)
 
 4. Earlier in March, meerkats Howell and Midra in the Taronga Western Plains Zoo gave birth to 5 meerkat pups. You are told that at least 4 pups are female. Given this information, what is the probability that all 5 are female? (Hint: it is not $1/2$)
 
-5. Two cookies are pulled out at random and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out. 
+5. Two cookies are pulled out at random and eaten from a jar containing 7 chocolate chip cookies and 6 snickerdoodles. Let X be a random variable denoting the number of snickerdoodles pulled out.
 * What is the probability distribution of X?
 * What is the expected value of X?
+
+To get checked off, show your answers to all of these questions to a CP.
 

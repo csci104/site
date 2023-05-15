@@ -2,53 +2,53 @@ assignments:
   - id: hw1
     title: Linked Lists and Recursion
     assigned: true
-    regrade_form: 
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
+    regrade_form:
+    submit_link:
     dates:
       assigned: Thursday, May 18
 #      checkpoint: Friday, January 21 at 11:59PM PST
       due: Tuesday, May 30 at 11:59PM Pacific
   - id: hw2
     title: Inheritance, Polymorphism, and STL
-    assigned: true
-    regrade_form: 
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
+    assigned: false
+    regrade_form:
+    submit_link:
     dates:
       assigned: Sunday, May 28
 #      checkpoint: Friday, Februrary 4 at 11:59PM PST
       due: Thursday, June 8 at 11:59PM PST
   - id: hw3
     title: Heaps
-    assigned: true
-    regrade_form: 
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
+    assigned: false
+    regrade_form:
+    submit_link:
     dates:
       assigned: Thursday, June 8
 #      checkpoint: Friday, Februrary 18 at 11:59PM PST
       due: Saturday, June 17 at 11:59PM PST
   - id: hw4
     title: AVL Trees
-    assigned: true
-    regrade_form: 
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
+    assigned: false
+    regrade_form:
+    submit_link:
     dates:
       assigned: Friday, June 30
 #      checkpoint: Friday, March 25 at 11:59PM PST
       due: Sunday, July 2 at 11:59PM Pacific
   - id: hw5
     title: Counting, Probability, Recursion
-    assigned: true
-    regrade_form: 
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
+    assigned: false
+    regrade_form:
+    submit_link:
     dates:
       assigned: Thursday, June 29
 #      checkpoint: Friday, April 8 at 11:59PM PST
       due: Monday, July 10 at 11:59PM Pacific
   - id: hw6
     title: Hash tables
-    assigned: true
-    regrade_form: 
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2022
+    assigned: false
+    regrade_form:
+    submit_link:
     dates:
       assigned: Friday, July 7
 #      checkpoint: Friday, April 22 at 11:59PM PST
@@ -67,85 +67,82 @@ labs:
     topics: Git, github
     slides: git_lab.pdf
   - id: lab2
-    week: Week 1
+    week: Week 2
     title: GDB
     assigned: true
     topics: Debugging, GDB, tooling
+    slides: Lab2_slides.pdf
   - id: lab3
-    week: Week 2
+    week: Week 3
     title: Makefiles
     assigned: true
     topics: Make, makefiles, build systems
-  - id: gtest_lab
-    week: Week 2
-    title: GTest
-    assigned: true
-    topics: Unit testing
+    slides: makefile_lab.pdf
   - id: lab4
-    week: Week 3
+    week: Week 4
     title: Inheritance and STL
     assigned: true
-    topics:
+    topics: Object Oriented Programming
     slides: stl_inh_lab.pdf
   - id: lab5
-    week: Week 4
+    week: Week 5
     title: Templates
     assigned: true
-    topics:
+    topics: Object Oriented Programming
+    slides: templates_lab.pdf
   - id: lab6
-    week: Week 4
+    week: Week 6
     title: Heaps
     assigned: true
-    topics: Heaps 
+    topics: Heaps
+    slides: heap_lab.pdf
   - id: lab7
-    week: Week 5
-    title: LList Recursion
-    assigned: false
-    topics: LinkedList Recursion
-    slides: ll_rec_practice.pdf
-  - id: lab8-traversals
-    week: Week 5
-    title: BST and Traversal
-    assigned: true
-    topics: 
-  - id: lab8-avl
-    week: Week 6
-    title: AVL Trees
-    assigned: true
-    topics: 
-  - id: lab9
-    week: Week 6
+    week: Week 7
     title: Backtracking
     assigned: true
-    topics: Backtracking
+    topics: Recursive Backtracking
+    slides: Backtracking_Lab.pdf
+  - id: NO LAB
+    week: Week 8
+    title: Optional Midterm Review
+    assigned: false
+    topics:
+  - id: lab9
+    week: Week 9
+    title: BST and AVL
+    assigned: true
+    topics: BST and AVL Trees
+    slides: Lab9_BST_AVL.pdf
   - id: lab10
-    week: Week 6
-    title: Midterm Review
+    week: Week 10
+    title: Hashtables
     assigned: true
-    topics:
-  - id: midterm
-    week: Week 7
-    title: Midterm 
-    assigned: false 
-    topics: 
+    topics: Hashtables
   - id: lab11
-    week: Week 8
-    title: Counting!
+    week: Week 11
+    title: Counting
     assigned: true
-    topics: 
-    slides: extra_counting_problems.pdf
+    topics: Counting
+    slides: counting_lab.pdf
   - id: lab12
-    week: Week 8
-    title: Probability?
+    week: Week 12
+    title: Probability
+    assigned: true
+    topics: Probability
+    slides: probability_lab.pdf
+  - id: lab13
+    title: Number Theory
+    week: Week 13
     assigned: true
     topics:
-  - id: lab13
-    week: Week 9
-    title: Hashtable
-    assigned: true
-    topics: Hashtable
   - id: lab14
-    week: Week 9
-    title: Number Theory
+    title: GTest
+    week: Week 14
     assigned: true
-    topics: 
+    topics: Unit Testing, GTest
+  - id:
+    title: Final Review
+    week: Week 15
+    assigned: false
+    topics:
+

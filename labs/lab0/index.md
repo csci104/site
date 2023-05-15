@@ -26,41 +26,37 @@ Likewise, you are welcome to any email, just **remember which email you use as y
 You will be sent an email to verify your email address.
 Do that before proceeding.
 
+If in doubt, use a GitHub account with your @usc.edu e-mail address.
+
 - [ ] Create or have a GitHub account
 
 
-## Register with Curricula
+## Sign Up with Codio
 
-Curricula is our home-grown classroom software suite that we'll be using to handle things like submission, grading, and office hours.
-Your next link your USC ID and GitHub account via the <a href="{{ site.baseurl }}/account/login/?next=/cs104/account/" target="_blank">registration page</a>. If you've take the class in the past and have an account with our "Curricula" system, just login with Github. Otherwise, if this is your first time, just click **Register** and go through the process of creating an account.  Though you'll enter a username and password, you should use the "Login with Github" each subsequent time you need to login.  It will authenticate you automatically when you click that button.
+We'll be using Codio as part of our workflow. Some of you may be familar with Codio as the coding platform from CSCI 103L. While you may still do your coding in Codio, we suggest setting up a local coding environment as well. More on that later. Then why use Codio? Primarily it makes the course administration eaiser regarding assignment creation, grading, plagarism and etc. Codio features GitHub integration we'll take advantage of as well.
 
-This step is particularly important because it will also kickstart the processes that create your homework repository and add you to the necessary GitHub groups.
+Please [join the Codio Course]({{site.data.urls.codio_join}}){:target="_blank"}
 
-- [ ] Register with Curricula Web
-
-
-## Install Git
-
-You can skip this section if you have git installed or are using the VM, which has git installed.
-
-In order to actually install the git command line tools, go to the [git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and follow the instructions for your operating system.
-
-### Special Notes for Windows
-
-If you are using Windows, we recommend installing [git bash](https://git-scm.com/download/win), which will be provided as an option in the installer.
-Git bash is a separate shell that provides access to git as well as other command line utilities.
-If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
+- [ ] Register with Codio
 
 
-## Virtual Machine
+## Connect Your Codio Account to Your GitHub Account
+
+Login to Codio and follow the instructions on this page: [Connect to GitHub](https://docs.codio.com/common/settings/github.html){:target="_blank"}
+
+Use the same GitHub account from the first step above. If in doubt, use a GitHub account with your @usc.edu e-mail address.
+ 
+- [ ] Connect Codio to GitHub
+
+## Local Development Environment
 
 We have two options for running the compiler tools that we will use for grading.
-While you are welcome to use any editor/IDE to develop your homework code, you must compile and run your code (and any of our tests) in a Linux virtual environment using a Linux VM, Docker, or some similar solution of your creation.
+While you are welcome to use any editor/IDE to develop your homework code, you must compile and run your code (and any of our tests) in a Linux virtual environment using the Codio terminal, Linux VM, Docker, or some similar solution of your creation.
 
-We offer two solutions: a traditional VM and Docker.
+We offer two solutions in addition to Codio: a traditional VM and Docker.
 **We recommend Docker, as it avoids emulating an entire desktop by giving you easy and low-latency command-line access to all the tools you need**.
 Plus, you can use your own local editor to develop and write code.
-To set this up, please follow the <a href="https://github.com/csci104/docker" target="_blank">directions in the repository</a>. **Before you start, you might want to [configure an SSH key for your github account](#configuring-an-ssh-key) first.**
+To set this up, please follow the [directions in the repository](https://github.com/csci104/docker){:target="_blank"}. **Before you start, you might want to [configure an SSH key for your github account](#configuring-an-ssh-key) first.**
 
 Alternatively, you can download and install the Course VM, the instructions for which are available [in the wiki]({{ site.baseurl }}/wiki/vm/). 
 This provides a full-featured virtual OS with graphical interface, etc.
@@ -72,6 +68,19 @@ If you want more information on how Docker works and how to use it, you can read
 
 - [ ] Read the additional guide or promise you know what you're doing.
 
+## Install Git
+
+You can skip this section if you have git installed or are using the VM, which has git installed.
+
+In order to actually install the git command line tools, go to the [git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} and follow the instructions for your operating system.
+
+If you're installing on MacOS, installing the Homebrew package manager should also get you there: [brew.sh](https://brew.sh/){:target="_blank"}
+
+### Special Notes for Windows
+
+If you are using Windows, we recommend installing [git bash](https://git-scm.com/download/win), which will be provided as an option in the installer.
+Git bash is a separate shell that provides access to git as well as other command line utilities.
+If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
 
 ## Configuring an SSH Key
 
@@ -200,6 +209,14 @@ git config --global core.editor "nano"
 ```
 
 - [ ] Set your git editor to the text editor command of your choice
+
+### Default branch name
+
+Recently GitHub has changed to `main` as the default branch. We need our local git command to respect that:
+
+```shell
+git config --global init.defaultBranch main
+```
 
 ### Miscellaneous Settings
 

@@ -18,12 +18,6 @@ assistants:
     hours: >-
       See Google Calendar
     location: Zoom
-  - name: Joshua Palmer
-    email: jhpalmer@usc.edu
-    image: /assets/img/staff/jhpalmer.jpg
-    hours: >-
-      See Google Calendar
-    location: Zoom
   - name: Tingting Tang	
     email: tangting@usc.edu
     image: /assets/img/staff/tangting.jpg

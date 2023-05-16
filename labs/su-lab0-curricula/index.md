@@ -64,17 +64,24 @@ While you are welcome to use any editor/IDE to develop your homework code, you m
 We offer two solutions: a traditional VM and Docker.
 **We recommend Docker, as it avoids emulating an entire desktop by giving you easy and low-latency command-line access to all the tools you need**.
 Plus, you can use your own local editor to develop and write code.
-To set this up, please follow the [directions in the repository](https://github.com/csci104/docker){:target="_blank"}. **Before you start, you might want to [configure an SSH key for your github account](#configuring-an-ssh-key) first.**
+
+### Docker
+Follow the directions in this Github **[repository](https://github.com/csci104/docker){:target="_blank"}.**
+
+You might want to [configure an SSH key for your github account](#configuring-an-ssh-key) first, but it is not necessary.
+
+If you want more information on how Docker works and how to use it, you can read the <a href="https://github.com/csci104/docker/wiki/Usage">additional guide</a>.
+
+- [ ] Read the additional guide or promise you know what you're doing.
+
+
+### VM
 
 Alternatively, you can download and install the Course VM, the instructions for which are available [in the wiki]({{ site.baseurl }}/wiki/vm/). 
 This provides a full-featured virtual OS with graphical interface, etc.
 It is larger, stores your files on a separate "virtual disk" that is not directly accessible from your computer's host OS, and can sometimes get corrupted, so please push your work to Github often.
 
 - [ ] Install Docker or a virtual machine.
-
-If you want more information on how Docker works and how to use it, you can read the <a href="https://github.com/csci104/docker/wiki/Usage">additional guide</a>.
-
-- [ ] Read the additional guide or promise you know what you're doing.
 
 
 ## Configuring an SSH Key

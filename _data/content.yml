@@ -67,9 +67,11 @@ labs:
     title: Git Tutorial
     assigned: true
     topics: Git, github
-    slides: git_lab.pdf
+    slides: 
+      - git_lab.pdf
+      - AppendixA_Git.pdf
   - id: 2
-    folder: lab2
+    folder: su-lab2
     week: Week 1
     title: GDB
     assigned: true

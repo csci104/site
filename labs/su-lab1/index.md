@@ -478,6 +478,10 @@ Fast-forward
 Now if you read the `hw-username/example/README.md` file on your local machine, it should
 match the one on GitHub.
 
+## Checkoff
+
+Show your TA both your local version of the changed `example` code and your updated repository on github.com.
+
 ## In Closing
 
 There are tons of git cheatsheets all over the web.

@@ -71,8 +71,7 @@ create the directory `/usr/root/parent/sub`.
 
 ### Step 1. Changing working directory to Docker's assigned `/work` directory
 
-First open your **native terminal**. Then, change the working directory to the
-directory you [assigned to Docker during setup](https://github.com/csci104/docker#step-5-set-your-working-directory).
+First open your **native (Mac/Windows) terminal**. Then, change the working directory to the directory you [assigned to Docker during setup](https://github.com/csci104/docker#step-5-set-your-working-directory).
 
 If you are working on the course VM, you may use any directory you like on the VM (e.g. `~/csci104`).
 

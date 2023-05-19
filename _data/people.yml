@@ -24,6 +24,12 @@ assistants:
     hours: >-
       See Google Calendar
     location: Zoom
+  - name: Gozde Sahin	
+    email: gsahin@usc.edu
+    image: /assets/img/staff/gozde_sahin.jpg
+    hours: >-
+      See Google Calendar
+    location: Zoom
 
 staff:
   - name: Raymond Liu

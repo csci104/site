@@ -205,7 +205,7 @@ Some tips:
   + What are the execution paths in each function?
   + Big Hint: look at the test names we give you
 
- - [ ] Find two of the three bugs. Then, submit screenshots of your tests and describe the bugs you found to get checked off.
+  - [ ] Find two of the three bugs. Describe them in a .txt file for credit. 
 
 ### Appendix: A little bit more on the Makefile
 
@@ -226,9 +226,8 @@ You can probably safely copy this variable everywhere.
 
 **tests** - A rule that just runs the tests. Optional. Notice that this is a phony rule, because it doesn't actually create any file.
 
-{% include lab_submit.html %}
-
-What to submit:
+### Checking off
+To get credit please show a CP/TA the following:
 - fib.cpp and test.cpp from part1 folder
 - test.cpp from part2 folder
 - a .txt file describing at least 2 bugs you found in part2

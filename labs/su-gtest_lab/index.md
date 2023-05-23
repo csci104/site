@@ -189,7 +189,7 @@ Remember - the harsher you are when testing your own program, the less bugs will
 
 ### 4 - Assignment: Identify Two of the Bugs
 
-**TL;DR: Find 2 out of 3 bugs by writing tests, and follow the submission protocol at the bottom of this page.**
+**TL;DR: Find 2 out of 3 bugs by writing tests, and describe them in a .txt file for credit..**
 
 In the `part2` folder, we have provided an implementation of ArrayList for you - there is a header file `arraylist.h`, with the specification of the expected function in the comments, and a pre-compiled `ArrayList` implementation. You do not have access to the source code. We do this because again, we do not want you to think about test cases in terms of the source, but in a wider perspective of "how things should work".
 

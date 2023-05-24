@@ -90,6 +90,7 @@ labs:
     week: Week 2
     assigned: true
     topics: Unit Testing, GTest
+    slides: gtest_slides.pdf
   - id: 5
     folder: lab4
     week: Week 3

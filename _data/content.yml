@@ -10,7 +10,7 @@ assignments:
       due: Tuesday, May 30 at 11:59PM Pacific
   - id: hw2
     title: Inheritance, Polymorphism, and STL
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
     dates:

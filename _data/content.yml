@@ -97,7 +97,7 @@ labs:
     title: Inheritance and STL
     assigned: true
     topics: Object Oriented Programming
-      #slides: stl_inh_lab.pdf
+    slides: stl_inh_lab.pdf
   - id: 6
     folder: lab5
     week: Week 4

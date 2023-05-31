@@ -5,13 +5,8 @@ tasks: true
 title: Inheritance and STL
 ---
 
----
 
-**Due at the end of your registered lab section**
 
-[Here](assets/resources.zip) is the zip file with all required files. You can also find the lab on Codio.
-
----
 
 ## Inheritance and STL
 

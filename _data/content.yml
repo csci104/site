@@ -78,7 +78,7 @@ labs:
     topics: Debugging, GDB, tooling
     slides: Lab2_slides.pdf
   - id: 3
-    folder: su-lab3
+    folder: lab3
     week: Week 2
     title: Makefiles
     assigned: true

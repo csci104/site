@@ -10,8 +10,6 @@ title: Heaps
 
 In today's lab, we're going to focus on priority queues, an important data structure that you'll need to understand for the next assignment and beyond.
 
-Code can be downloaded [here](assets/resources.zip), as well as viewed/edited on Codio.
-
 ### Heaps Introduction
 
 In office hours, we use a standard FIFO queue system, where the student waiting the longest is called next. But what if we wanted to apply a more complicated calculation to found who was next? Maybe the person with the shortest question? The person who started the assignment the earliest? The person who's asked the fewest questions? We still want the popping functionality of a queue, where we just care about who's on top, and don't need to access anyone in the middle. However, we no longer want to process items in order of the arrival.

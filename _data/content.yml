@@ -115,44 +115,45 @@ labs:
   - id: 8
     folder: su-llrec
     week: Week 5
-    title: LList Recursion
+    title: LList Recursion + Makeup Lecture
     assigned: false
     topics: LinkedList Recursion
     slides: ll_rec_practice.pdf
   - id: 9
-    folder: bst-lab8
-    week: Week 5
-    title: BST and Traversal
-    assigned: true
-    topics: 
-  - id: 10
-    folder: su-lab8-avl
-    week: Week 6
-    title: BST and AVL
-    assigned: true
-    topics: BST and AVL Trees
-    slides: Lab9_BST_AVL.pdf
-  - id: 11
     folder: lab7
     week: Week 6
     title: Backtracking
     assigned: true
     topics: Recursive Backtracking
     slides: Backtracking_Lab.pdf
-  - id: 12
+  - id: 10
+    folder: bst-lab8
+    week: Week 6
+    title: BST and Traversal
+    assigned: true
+    topics: BST and AVL Trees
+    slides: Lab9_BST_AVL.pdf
+#  - id: 10
+#    folder: su-lab8-avl
+#    week: Week 6
+#    title: BST and AVL
+#    assigned: true
+#    topics: BST and AVL Trees
+#    slides: Lab9_BST_AVL.pdf
+  - id: 11
     folder: mt
     week: Week 7
     title: Midterm 
     assigned: false 
     topics: 
-  - id: 13
+  - id: 12
     folder: lab11
     week: Week 8
     title: Counting!
     assigned: true
     topics: Counting
     slides: counting_lab.pdf
-  - id: 14
+  - id: 13
     folder: lab12
     week: Week 8
     title: Probability?
@@ -164,13 +165,13 @@ labs:
 #    title: Optional Midterm Review
 #    assigned: false
 #    topics:
-  - id: 15
+  - id: 14
     folder: lab10
     week: Week 9
     title: Hashtables
     assigned: true
     topics: Hashtables
-  - id: 16
+  - id: 15
     folder: lab13
     title: Number Theory
     week: Week 9

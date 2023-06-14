@@ -118,7 +118,9 @@ labs:
     title: LList Recursion + Makeup Lecture
     assigned: false
     topics: LinkedList Recursion
-    slides: ll_rec_practice.pdf
+    slides: 
+      - ll_rec_practice.pdf
+      - ll_rec_practice_soln.cpp
   - id: 9
     folder: lab7
     week: Week 6

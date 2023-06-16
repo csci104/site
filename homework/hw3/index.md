@@ -40,7 +40,6 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 {% endfor %}
 
 
-
 ## Submission Files
 
 Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** commit/push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.

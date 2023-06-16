@@ -28,11 +28,11 @@ assignments:
       due: Saturday, June 17 at 11:59PM PST
   - id: hw4
     title: AVL Trees
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
     dates:
-      assigned: Friday, June 30
+      assigned: Friday, June 16
 #      checkpoint: Friday, March 25 at 11:59PM PST
       due: Sunday, July 2 at 11:59PM Pacific
   - id: hw5

@@ -14,16 +14,11 @@ The test will be **IN PERSON**
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 50 minutes**
   - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 9th, otherwise you will not be able to use your accomodations.  
-- Location: THH
-  - 11AM section: 
-    - THH 101
-  - 8AM section:
-    - Last Name starts with A-K: THH 102
-	- Last Name starts with L-Z: THH 301
-  - If you have **1.5x time accommodations**: THH 213 (starting at 7pm running to 9:45pm)
+- Location: Lab room
+  - If you have **1.5x time accommodations**: TBA
   - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
 
-- The test will be taken on Gradescope. You will be added to this course on Gradescope automatically, but you should test your Gradescope login sometime before the exam.
+- The test will be taken on Paper and Gradescope. You will be added to this course on Gradescope automatically, but you should test your Gradescope login sometime before the exam.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 

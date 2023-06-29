@@ -34,7 +34,8 @@ assignments:
     dates:
       assigned: Friday, June 16
 #      checkpoint: Friday, March 25 at 11:59PM PST
-      due: Sunday, July 2 at 11:59PM Pacific
+#      due: Sunday, July 2 at 11:59PM Pacific
+      due: Wednesday, July 5 at 11:59PM Pacific
   - id: hw5
     title: Counting, Probability, Recursion
     assigned: false
@@ -43,7 +44,7 @@ assignments:
     dates:
       assigned: Thursday, June 29
 #      checkpoint: Friday, April 8 at 11:59PM PST
-      due: Monday, July 10 at 11:59PM Pacific
+      due: Tuesday, July 11 at 11:59PM Pacific
   - id: hw6
     title: Hash tables
     assigned: false

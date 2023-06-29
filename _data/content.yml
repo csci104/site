@@ -128,14 +128,17 @@ labs:
     title: Backtracking
     assigned: true
     topics: Recursive Backtracking
-    slides: Backtracking_Lab.pdf
+    slides:
+      - Backtracking_BST_AVL.pdf
+      - Backtracking_Lab_su22.pdf
   - id: 10
     folder: bst-lab8
     week: Week 6
     title: BST and Traversal
     assigned: true
     topics: BST and AVL Trees
-    slides: Lab9_BST_AVL.pdf
+    slides: 
+      - Backtracking_BST_AVL.pdf
 #  - id: 10
 #    folder: su-lab8-avl
 #    week: Week 6

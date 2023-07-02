@@ -38,7 +38,7 @@ assignments:
       due: Wednesday, July 5 at 11:59PM Pacific
   - id: hw5
     title: Counting, Probability, Recursion
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
     dates:
@@ -47,7 +47,7 @@ assignments:
       due: Tuesday, July 11 at 11:59PM Pacific
   - id: hw6
     title: Hash tables
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
     dates:

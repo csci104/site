@@ -177,12 +177,14 @@ labs:
     title: Hashtables
     assigned: true
     topics: Hashtables
+    slides: hashtable_lab.pdf
   - id: 15
     folder: lab13
     title: Number Theory
     week: Week 9
     assigned: true
     topics: Number Theory
+    slides: number_theory_lab.pdf
 #  - id:
 #    title: Final Review
 #    week: Week 15

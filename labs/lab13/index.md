@@ -56,6 +56,7 @@ Here is a helpful theorem to remember:
 Using the theorem above, prove the following:
 
 * If $p$ is a prime and $p \mid ab$, then $p \mid a$ or $p \mid b$.
+
 ---
 ### Quadratic Probing
 

@@ -7,7 +7,7 @@ title: Number Theory
 
 ---
 
-**Due at the end of your registered lab section.** Material and questions are also available on Codio. The coding materials for exercise 3 can be downloaded [here](./resources/resources.zip).
+**Due at the end of your registered lab section.** 
 
 ---
 
@@ -56,6 +56,7 @@ Here is a helpful theorem to remember:
 Using the theorem above, prove the following:
 
 * If $p$ is a prime and $p \mid ab$, then $p \mid a$ or $p \mid b$.
+
 ---
 ### Quadratic Probing
 

@@ -9,7 +9,6 @@ title: Hashtables
 
 **Due at the end of your registered lab section**
 
-As per usual, instructions/materials can be found on Codio. Code is also available [here](assets/resources.zip).
 
 ---
 

@@ -69,16 +69,17 @@ Your final grade will depend solely on your own performance, graded according to
         <td>Lab Exercises</td>
       </tr>
       <tr>
-        <td>28%</td>
+        <td>30%</td>
         <td>Midterm Exams</td>
       </tr>
       <tr>
-        <td>30%</td>
+        <td>28%</td>
         <td>Final Exam</td>
       </tr>
     </tbody>
   </table>
 </div>
+
 
 ### Grading Scale
 
@@ -168,15 +169,15 @@ Below is USC's official language.
 
 ### Academic Integrity:
 The University of Southern California is a learning community committed to developing successful scholars and researchers dedicated to the pursuit of knowledge and the dissemination of ideas. Academic misconduct, which includes any act of dishonesty in the production or submission of academic work, comprises the integrity of the person who commits the act and can impugn the perceived integrity of the entire university community. It stands in opposition to the university’s mission to research, educate, and contribute productively to our community and the world. 
- 
+
 All students are expected to submit assignments that represent their own original work, and that have been prepared specifically for the course or section for which they have been submitted. You may not submit work written by others or “recycle” work prepared for other courses without obtaining written permission from the instructor(s).
- 
+
 Other violations of academic integrity include, but are not limited to, cheating, plagiarism, fabrication (e.g., falsifying data), collusion, knowingly assisting others in acts of academic dishonesty, and any act that gains or is intended to gain an unfair academic advantage.
- 
+
 The impact of academic dishonesty is far-reaching and is considered a serious offense against the university. All incidences of academic misconduct will be reported to the Office of Academic Integrity and could result in outcomes such as failure on the assignment, failure in the course, suspension, or even expulsion from the university.
- 
+
 For more information about academic integrity see the [student handbook](https://policy.usc.edu/studenthandbook/) or the [Office of Academic Integrity’s website](http://academicintegrity.usc.edu/), and university policies on [Research and Scholarship Misconduct](https://policy.usc.edu/research-and-scholarship-misconduct/).
- 
+
 Please ask your instructor if you are unsure what constitutes unauthorized assistance on an exam or assignment, or what information requires citation and/or attribution.
 
 Students and Disability Accommodations: 

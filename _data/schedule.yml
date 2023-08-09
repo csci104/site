@@ -115,30 +115,29 @@ lectures:
       - Counting
     chapters:
       - Lewis & Zax Chapter 22
+      - Lewis & Zax Chapter 23
     notes: 
 
   # 13 Tues Oct 3
   - topics:
       - Probability
     chapters:
-      - Lewis & Zax Chapter 22
-      - Lewis & Zax Chapter 23
+      - Lewis & Zax Chapter 26
+      - Lewis & Zax Chapter 27
     notes: 
 
   # 14 Thurs Oct 5
   - topics:
       - Probability
     chapters:
-      - Lewis & Zax Chapter 26
-      - Lewis & Zax Chapter 27
       - Lewis & Zax Chapter 28
+      - Lewis & Zax Chapter 29
     notes: 
 
   # 15 Tues Oct 10
   - topics:
       - Number Theory
     chapters:
-      - Lewis & Zax Chapter 29
       - Lewis & Zax Chapter 30
     notes: 
  
@@ -146,7 +145,7 @@ lectures:
   - topics:
       - Number Theory
     chapters:
-      - Lewis & Zax Chapter
+      - Lewis & Zax Chapter 31
     notes: 
 
   # 17 Thurs Oct 19

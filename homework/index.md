@@ -20,6 +20,7 @@ Please read the submission instructions and policies below **carefully**!  Failu
       <th>#</th>
       <th>Link</th>
       <th>Title</th>
+      <th>Written</th>
       <th>Due</th>
       <th>Submit</th>
       <th>Regrade</th>
@@ -42,6 +43,7 @@ Please read the submission instructions and policies below **carefully**!  Failu
         {% endif %}
       </td>
       <td>{{ assignment.title }}</td>
+      <td>{{ assignment.dates.written }}</td>
       <td>{{ assignment.dates.due }}</td>
       <td><a href="{{ assignment.submit_link }}">Submit</a></td>
       <td><a href="{{ site.data.urls.regrades }}">Regrade</a></td>
@@ -49,6 +51,7 @@ Please read the submission instructions and policies below **carefully**!  Failu
     {% endfor %}
   </tbody>
 </table>
+
 
 ## Editors, Debuggers, and Git Help
 

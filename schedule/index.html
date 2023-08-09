@@ -18,7 +18,6 @@ layout: default
       <th>Exam</th>
       <th>Time</th>
       <th>Location</th>
-      <th>Resources</th>
     </tr>
   </thead>
   <tbody>
@@ -28,7 +27,6 @@ layout: default
       <td>{{ exam.name }}</td>
       <td>{{ exam.time }}</td>
       <td>{{ exam.location }}</td>
-      <td><a href="{{site.baseurl}}/resources/{{ exam.link }}">Info, Topics, Practice </a></td>
     </tr>
     {% endfor %}
   </tbody>

@@ -46,7 +46,7 @@ Introduces the student to standard data structures (linear structures such as li
 
 - [All content & info]({{ site.baseurl }}/)
 - [Blackboard]({{ site.data.urls.blackboard }}){:target="_blank"}
-- [EdStem]({{ site.data.urls.discussion }}){:target="_blank"}
+- [Piazza]({{ site.data.urls.discussion }}){:target="_blank"}
 
 ## Grading Weights and Scale
 

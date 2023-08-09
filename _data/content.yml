@@ -1,59 +1,57 @@
 assignments:
   - id: hw1
-    title: Linked Lists and Recursion
-    assigned: true
+    title: Linked Lists, RUntime, and Recursion
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Thursday, May 18
-#      checkpoint: Friday, January 21 at 11:59PM PST
-      due: Tuesday, May 30 at 11:59PM Pacific
+      assigned: Thursday, Aug 24
+      written: Friday, Sep 1 at 11:59PM PST
+      due: Friday, Sep 8 at 11:59PM Pacific
   - id: hw2
-    title: Inheritance, Polymorphism, and STL
-    assigned: true
+    title: Inheritance, Polymorphism, and Class Design
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Sunday, May 28
-#      checkpoint: Friday, Februrary 4 at 11:59PM PST
-      due: Thursday, June 8 at 11:59PM PST
+      assigned: Saturday, Sep 9
+      written: Friday, Sep 15 at 11:59PM PST
+      due: Friday, Sep 22 at 11:59PM PST
   - id: hw3
-    title: Heaps
-    assigned: true
+    title: Heaps, A*, and Counting
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Thursday, June 8
-#      checkpoint: Friday, Februrary 18 at 11:59PM PST
-      due: Saturday, June 17 at 11:59PM PST
+      assigned: Saturday, Sep 30
+      written: Friday, Oct 6 at 11:59PM PST
+      due: Wednesday, Oct 11 at 11:59PM PST
   - id: hw4
-    title: AVL Trees
-    assigned: true
+    title: Probability and Number Theory
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Friday, June 16
-#      checkpoint: Friday, March 25 at 11:59PM PST
-#      due: Sunday, July 2 at 11:59PM Pacific
-      due: Wednesday, July 5 at 11:59PM Pacific
+      assigned: Thursday, Oct 12
+      written: Friday, Oct 20 at 11:59PM PST
+      due: Friday, Oct 27 at 11:59PM Pacific
   - id: hw5
-    title: Counting, Probability, Recursion
-    assigned: true
+    title: Amortized Analysis and Hash Tables
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Thursday, June 29
-#      checkpoint: Friday, April 8 at 11:59PM PST
-      due: Tuesday, July 11 at 11:59PM Pacific
+      assigned: Saturday, Nov 4
+      written: Friday, Nov 10 at 11:59PM PST
+      due: Friday, Nov 17 at 11:59PM Pacific
   - id: hw6
-    title: Hash tables
-    assigned: true
+    title: AVL Trees
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-summer2023
+    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Friday, July 7
-#      checkpoint: Friday, April 22 at 11:59PM PST
-      due: Sunday, July 16 at 11:59PM Pacific
+      assigned: Saturday, Nov 18
+      due: Friday, Dec 1 at 11:59PM Pacific
 
 labs:
   - id: 0

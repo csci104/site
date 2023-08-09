@@ -6,7 +6,7 @@ title: Homework
 
 # Homework
 
-Homework will be assigned once every **7-10 days**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homeworks will typically contain a mix of programming exercises and "theory" questions about data structures and their implementation.  
+Homework will be assigned once every **2-3 weeks**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homeworks will typically contain a mix of programming exercises and "theory" questions about data structures and their implementation.  
 
 
 Each student will receive a private code repository on the course's [GitHub Organization]( {{ site.data.urls.github }}) to use it for the development and submission of all assignments. You will be using the **git** source code management tool to maintain your homework code. 
@@ -71,20 +71,20 @@ You WILL lose points for submitting unreadable code, or for failing to follow su
 
 ## Policies
 
-There will be **6 assignments**.  In CS 104 we do not accept late submissions (except in the cases outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 7-10 days per assignment should allow you to finish on time if you **start early** and **work consistently**, we will provide **5 grace days** to be used over the semester with a **maximum of 2 grace days allowed per assignment**. 48 hours after the due date, no submissions will be allowed.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone.
+There will be **6 assignments**.  In CS 104 we do not accept late submissions (except in the cases outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 2  weeks per assignment should allow you to finish on time if you **start early** and **work consistently**, we will provide **5 grace days** to be used over the semester with a **maximum of 2 grace days allowed per assignment**.  The use of a grace day extends your due date by 24 hours.  48 hours after the due date, no submissions will be allowed.  Once you have used your grace days, any late submission will not be accepted for any reason; thus, it will be graded as a 0.  Our online submission system will automatically deduct and track late days, so you do NOT need to alert anyone.
 
-**Extensions:** With the lifting of pandemic restrictions and health orders, we will return to normal expectations for assignment submission, which is that you **save your grace days** for occasions of illness.  Only emergencies cleared through [campus support services]({{site.data.urls.uscsupport}}) or [student accessibility services]({{site.data.urls.osas}}) will be granted extensions.  Similarly, while we appreciate the mental health needs of our students, extensions will generally not be granted without campus support direction.  The best strategy to reduce stress and give yourself the best chance of success, you should **start your assignments on the DAY THEY ARE RELEASED** and working at an even pace throughout the duration.  By leaving the work for just a few days before the due date, you will increase your stress levels!  With that said, if a true emergency does occur, you may fill out [this form]({{site.data.urls.extension_form}}) and make a private note on [edStem]({{site.data.urls.discussion}}) to inform the course staff. **Again**, start early anticipating that things may come up closer to the deadline.  If you have not started early and something comes up, you may be denied since you chose to leave your work until the deadline. Commit and push your intermediate work often as a record of your effort on an assignment.
+**Extensions:** **Save your grace days** for extreme situations.  Only emergencies cleared through [campus support services]({{site.data.urls.uscsupport}}) or [student accessibility services]({{site.data.urls.osas}}) will be granted extensions.  Similarly, while we appreciate the mental health needs of our students, extensions will generally not be granted without campus support direction.  The best strategy to reduce stress and give yourself the best chance of success, you should **start your assignments on the DAY THEY ARE RELEASED** and working at an even pace throughout the duration.  By leaving the work for just a few days before the due date, you will increase your stress levels!  With that said, if a true emergency does occur, you may fill out [this form]({{site.data.urls.extension_form}}) and make a private note on [Piazza]({{site.data.urls.discussion}}) to inform the course staff. **Again**, start early anticipating that things may come up closer to the deadline.  If you have not started early and something comes up, you may be denied since you chose to leave your work until the deadline. Commit and push your intermediate work often as a record of your effort on an assignment.
 
 
 The most consistent advice from students who have done well in CS 104 is (you guessed it): **start early!**  
 
 ### HW Grades and Regrades
 
-We will work hard to post HW scores and feedback within 1 week of the homework's due date. Exams will typically be graded within at most a few days of the exam date. 
+We will work hard to post HW scores and feedback within 2 weeks of the homework's due date. Exams will typically be graded within a few days of the exam date. 
 
 Homework grades will normally be posted back as **ISSUES** on your `hw-username` Github repository and their release will be announced on {{site.data.urls.qa_tool}}. If you have not received your score (no issue was posted to your repo webpage) on a particular HW even though most other students in the class have (say, 24 hours after the score release date), post a private note on {{site.data.urls.qa_tool}} and someone will then follow up with your grader.
 
-Only the written portion of the homework is graded by a human. The score for the programming portion is determined by a grading script and is not available for regrading.
+Only the written portion of the homework is graded by a human. The score for the programming portion is determined by a grading script.
 
 Any disputes with posted grades **must** be raised within **7 days** (unless specifically noted) of the score posting.  Then follow the process below for the type of regrade you are requesting.  
 
@@ -93,7 +93,7 @@ Fill out this [**HW regrade form**]({{site.data.urls.regrades}}) **within 7 days
 Any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  Finally, please note that regrades are not for "fixing" your code.  For example: If there was just one line off that caused all the tests to fail, that might be a viable reason for a regrade but we have a standard policy over the years that each expression change on a regrade is a -10 deduction, because it was really your responsibility (especially if the test suite was released before submission) to ensure your code compiled, tested, and all files were submitted on Github which can be verified by the "Verification" process outlined at the end of each homework.
 
 ### Exam Regrades
-Exams will likely be conducted via Gradescope and its regrade feature is the only method you may use for requesting an exam regrade. 
+Give your exam to the instructor within 1 week after the exams were returned.  Your entire exam will be regraded, which may cause scores to go up or down.
 
 
 ## Academic Integrity
@@ -132,7 +132,7 @@ Collaboration is important in an academic environment. We want to be sure that y
 
 **In summary, any time that you are trying to get higher grades for work that you did not earn is not acceptable. Any behavior by which you are attempting to receive or grant an unfair advantage that your classmates who are following the rules do not have is not acceptable.** Please act with the integrity that is expected of USC Trojans.
 
-We run code similarity tools on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported to [OSAS](http://osas.usc.edu/), no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
+We run code similarity tools on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported tothe [OAI](https://academicintegrity.usc.edu/), no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
 
 In order to make sure that an appropriate level of collaboration is used between you and your classmates, please do not keep notes,  pictures, or any records from your discussions. This will ensure that your work reflects only your understanding when you create it. Please do not sit coding next to each other while discussing the work. If you are concerned that an inappropriate level of collaboration has occured, please do the following:
 

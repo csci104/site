@@ -9,17 +9,14 @@ exams:
   - name: MT1 
     time: Fri, Sep 29 at 7 PM Pacific
     location: In-Person
-    link: mt1-info/
 
   - name: MT2
     time: Fri, Nov 3 at 7 PM Pacific
     location: In-Person
-    link: mt2-info/
 
   - name: Final
     time: Sat, Dec 9 at 11 AM Pacific
     location: In-Person
-    link: final-info/
 
 lectures:
 

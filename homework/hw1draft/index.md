@@ -9,7 +9,7 @@ title: Homework 1 Written
 
 + Due: Friday, September 1st, 11:59pm PST
 + You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .txt, .jpg, or .pdf)
-+ To access the programming portion of this assignment, click [here](../hw1/programming/)
++ To access the programming portion of this assignment, click [here](./programming/)
 
 ### Problem 1 - Course Policies (8%)
 

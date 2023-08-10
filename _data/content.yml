@@ -3,7 +3,7 @@ assignments:
     title: Linked Lists, Runtime, and Recursion
     assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link: # https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
       assigned: Thursday, Aug 24
       written: Friday, Sep 1 at 11:59PM PST
@@ -12,7 +12,7 @@ assignments:
     title: Inheritance, Polymorphism, and Class Design
     assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link: # https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
       assigned: Saturday, Sep 9
       written: Friday, Sep 15 at 11:59PM PST
@@ -21,7 +21,7 @@ assignments:
     title: Heaps, A*, and Counting
     assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link: # https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
       assigned: Saturday, Sep 30
       written: Friday, Oct 6 at 11:59PM PST
@@ -30,7 +30,7 @@ assignments:
     title: Probability and Number Theory
     assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link: # https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
       assigned: Thursday, Oct 12
       written: Friday, Oct 20 at 11:59PM PST
@@ -39,7 +39,7 @@ assignments:
     title: Amortized Analysis and Hash Tables
     assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link: # https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
       assigned: Saturday, Nov 4
       written: Friday, Nov 10 at 11:59PM PST
@@ -48,7 +48,7 @@ assignments:
     title: AVL Trees
     assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link: # https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
       assigned: Saturday, Nov 18
       due: Friday, Dec 1 at 11:59PM Pacific

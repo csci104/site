@@ -174,7 +174,7 @@ recursiveFunc(0, n-1);
 
 void recursiveFunc(int left, int right) {
     // A is an array of sufficiently large size.
-    if (right-1 <= left) return;
+    if (right <= left) return;
     int mid = (left+right)/2;
     recursiveFunc(left, mid);
     recursiveFunc(mid+1, right);

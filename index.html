@@ -21,9 +21,9 @@ layout: default
     </div>
     <h2>External</h2>
     <div class="links">
-      <a href="{{ site.data.urls.piazza }}" target="_blank"><img src="{{ site.baseurl }}/assets/img/icon/discussion.svg">EdStem</a>
+      <a href="{{ site.data.urls.discussion }}" target="_blank"><img src="{{ site.baseurl }}/assets/img/icon/discussion.svg">EdStem</a>
       <!-- <a href="{{ site.data.urls.discord }}" target="_blank"><img src="{{ site.baseurl }}/assets/img/icon/users.svg">Discord</a> -->
-      <!-- ><a href="{{ site.data.urls.github }}" target="_blank"><img src="{{ site.baseurl }}/assets/img/icon/github.svg">GitHub organization</a> -->
+      <a href="{{ site.data.urls.github }}" target="_blank"><img src="{{ site.baseurl }}/assets/img/icon/github.svg">GitHub organization</a> 
       <a href="{{ site.data.urls.calendar }}" target="_blank"><img src="{{ site.baseurl }}/assets/img/icon/google-calendar.svg">Office hours calendar</a>
     </div>
   </div>
@@ -31,17 +31,13 @@ layout: default
   <div>
     <h2>Useful Links</h2>
       <ul>
-		<li><a href="{{site.data.urls.codio_course}}" target="_blank">Codio Course Link</a>&nbsp/&nbsp<a href="{{site.data.urls.codio_join}}" target="_blank">Codio Join Link</a></li>
         <li><a href="{{site.data.urls.osas_dsp_form}}" target="_blank">OSAS Accommodation Letter Upload</a></li>
         <li><a href="{{site.data.urls.extension_form}}" target="_blank">Emergency HW Extension Form</a></li>
-		<li><a href="{{site.data.urls.covid_lab}}" target="_blank">COVID Lab Absence Form</a></li>
-        <li><a href="{{site.data.urls.piazza}}" target="_blank">EdStem Discussion Board</a>&nbsp/&nbsp<a href="{{site.data.urls.discussion-join}}" target="_blank">EdStem Join Link</a></li>
-		<li><a href="{{site.data.urls.admin_piazza}}" target="_blank">Admin and Grading discussion board</a>&nbsp/&nbsp<a href="{{site.data.urls.admin_discussion-join}}" target="_blank">Admin and Grading Join Link</a></li>
-		<li><a href="{{site.data.urls.regrades}}" target=_blank>Homework Regrade Form</a></li>
+     		<li><a href="{{site.data.urls.regrades}}" target=_blank>Homework Regrade Form</a></li>
       </ul>
       
     <h2>Announcements</h2>
-    {% for post in site.posts limit:2 %}
+    {% for post in site.posts limit:1 %}
     <div class="post">
       <h3 class="black">{{ post.title }}</h3>
       {{ post }}

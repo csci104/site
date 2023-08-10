@@ -7,7 +7,6 @@ title: Number Theory
 
 ---
 
-This lab would be covered by lab sections between Apr. 19, 2022 and Apr. 22, 2022.
 
 You need to get checked off by a TA/CP during your assigned lab section.
 

@@ -64,21 +64,23 @@ The long string of hexadecimal digits is your hash. Copy it to your clipboard.
 
 Before the deadline and after pushing your submission to GitHub, you **must** ( **MUST** ) follow the verification steps listed at the end of each assignment page to clone your repo to a separate folder and follow the process you list in your own `README.md` to ensure your code compiles and works as you expect. We cannot emphasize enough how many bugs you will discover (and how many points you can avoid losing) by doing this simple 5-minute step.
 
-Our reference grading environment is Codio. You should test your code on Codio to ensure that it works properly in the environment we will test it in.
+Our reference grading environment is the Virtual Machine we provide for the course. You should test your code on the VM to ensure that it works properly in the environment we will test it in.
 
-### Step 4. Submit the hash to Codio and mark your assignment as complete
+### Step 4. Fill out the Homework Submission Form
+The submission form is available for each respective assignment on the [assignments page]({{ site.url }}/assignments/index.html). Make sure you are using the proper link. To complete the form, you will need to get the (long) SHA from your commit. 
 
-When you're ready to submit (and you're 100% the commit at the desired hash is ready-to-go) you paste the hash into the box on the Codio guide. This will run structural checks on your GitHub repo (can the hash be checked out, do the required files exist, etc.). If the script passes, then your assignment has been submitted! If the script detects any problems it will give you some feedback on how to fix the problem. Once you are able to submit a clean hash, mark the assignment as complete.
+It is easiest to obtain that SHA by executing the `git log` command on your terminal and select/copy the SHA that is listed for the (likely latest) commit that you just pushed.  You can then paste that SHA into our form.
 
-When you mark the assignment as complete a background grading script will grade the assignment using the provided test suite against the code at your submitted SHA.
+You can also obtain the SHA from your repository's commit page on github.com as shown in the following screenshot:
 
-You can resubmit as often as you want -- the backgrund script will grade the most recently submitted SHA.
+![SHA of latest commit]({{site.baseurl}}/homework/img/github_commit-sha.png)
+
+Make sure to use the **long** SHA (about 20+ digits/letters), not the short one (less than 10 digits)! If you use the short SHA, the submission script may work, but the actual scraping script in the background likely will not. This will make it appear as though you hadn't submitted the assignment, which would be pretty bad.
+
+When you submit your assignments, make sure to click on the "Check My Submission" button. Our script will perform a few quick checks to make sure your submission is valid. For instance, it will alert you to (some) missing files, and might also catch some compilation errors. (Of course, it cannot read your `README.txt`, so if compilation requires special instructions, it will not follow those.) You can resubmit as often as you want -- we will grade the submission with the most recently submitted SHA.
 
 ### Late Submissions
-
-As outlined on the top-level [homework](../) page, late submissions are accepted for the first five days after the due date. After that, the assignment will close and no further submissions are allowed.
-
-No exceptions will be made to this policy except for University approved medical reasons. Interviews, conferences, or other trips are not valid reasons to obtain an extension.
+Provided you have grace days, you can make a late submission even if you previously submitted on time. The late submission will then replace the on-time submission. After completing your (late) assignment, follow steps 1-4 from above. When you get to step 4, before you can successfully submit your homework, you will be prompted to confirm your late submission. Doing so will use a late day (unless you have already made other arrangements with your professor).  If you have no late days remaining, then you will get a 0 for the assignment. No exceptions will be made to this policy except for University approved medical reasons. Interviews, conferences, or other trips are not valid reasons to obtain an extension.
 
 
 ### Submission FAQs
@@ -89,10 +91,10 @@ If you want to check out a specific version of your code, such as the commit use
 1. Delete your old `verify` folder if it exists: `$ rm -rf verify`
 1. Create a `verify` directory: `$ mkdir verify`
 1. Go into that directory: `$ cd verify`
-1. Clone your `hw1` repo: `$ git clone git@github.com:GHUSERNAME/hw1.git`
-1. Go into the appropriate `hw1` folder `$ cd hw1`
+1. Clone your `hw-ttrojan` repo: `$ git clone git@github.com:{{site.data.urls.github_org}}/hw-ttrojan.git`
+1. Go into the appropriate `hw` folder `$ cd hw-ttrojan/hw1`
 1. Checkout your paritcular commit:  `$ git checkout d8da410b19cf0a9f5a3003120204a114b8496942`
-1. Recompile and rerun your programs and tests to ensure that what you submitted works. If tests were provided you'll need to copy or extract the tests into this folder.
+1. Recompile and rerun your programs and tests to ensure that what you submitted works.
  
-This creates a new directory with the specific version of your code. While there are ways to make edits to this version and then merge those edits suitably, we recommend a more pedestrian version (unless you are a git expert, in which case feel free to do what you want - just don't expect us to be able to fix things if you really screw them up). We recommend that you delete the `verify` folder and go back to your main development repo to make any changes. Once that is working, repeat the above process with a the new ha 
-You should do this in either the root-level of the Codio assignment for the homework, or inside a private Codio project to verify that your assignment works on Codio.
+
+This creates a new directory with the specific version of your code. While there are ways to make edits to this version and then merge those edits suitably, we recommend a more pedestrian version (unless you are a git expert, in which case feel free to do what you want - just don't expect us to be able to fix things if you really screw them up). We recommend that you carefully go through your edits and your old version, and copy whatever you wanted to recover from the old version **into** the version that is in the most recent state. Once you've produced the new version you want, commit it, and simply delete the `verify` directory you created.

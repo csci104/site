@@ -5,10 +5,6 @@ tasks: true
 title: Templates
 ---
 
----
-### Due at the end of your registered lab section
-
-[Here](assets/resources/resources.zip) is the zip file with all required files. You can also find the lab on Codio.
 
 ---
 

@@ -39,16 +39,6 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 {% endfor %}
 
-## Checkpoint
-
-For checkpoint credit, submit your working code for the BST/iterator implementation (though not necessarily the AVL tree). Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
-
-  - `bst.h`, `print_bst.h` (it's fine to include your other **source** files like `avlbst.h`, `Makefile`, `bst-test.cpp`)
-  - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
-
-
-We will use `hw4_tests/bst_tests/bst_tests` for the checkpoint.  They must compile, run, and pass all tests with no `valgrind` or other memory errors.  Failure to pass even one test or having 1 valgrind error will result in 0 credit for the checkpoint.  It is fine to push input test files if you like, though we will not grade them.
-
 
 ## Submission Files
 

@@ -1,235 +1,56 @@
 instructors:
-  - name: Andrew Goodney
-    email: goodney@usc.edu
-    image: /assets/img/staff/goodney.jpg
-    hours: '<table><tr><td>10am - 12pm M/W</td></tr><tr><td>1pm - 3pm M</td></tr></table>'
-    location:  PHE 406
-
-administrators:
-  - name: Tallulah Winston-Schrader
-    email: winstons@usc.edu
-    image: /assets/img/staff/tallulah.jpg
+  - name: Mark Redekopp
+    email: redekopp@usc.edu
+    image: /assets/img/staff/redekopp-crop.jpg
+    hours: "T,Th: 8-9 am and 12:30-1:30 pm, W: 1:30-2:30 pm" 
+    location:  EEB-222 
 
 assistants:
-  - name: Sumeet Batra
-    email: ssbatra@usc.edu
-    image: /assets/img/staff/sumeet.jpg
+  - name: Nathan Bartley
+    email: nbartley@usc.edu
+    image: /assets/img/staff/nbartley.jpg
     hours: >-
       See Google Calendar
-  - name: Charles Bickham
-    email: cbickham@usc.edu
-    image: /assets/img/staff/charles.jpg
+    location: Zoom
+  - name: Yuliang Cai
+    email: caiyulia@usc.edu
+    image: /assets/img/staff/caiyulia.jpg
     hours: >-
       See Google Calendar
-  - name: Satyaki Das
-    email: satyakid@usc.edu
-    image: /assets/img/staff/satyaki.jpg
+    location: Zoom
+  - name: Tingting Tang	
+    email: tangting@usc.edu
+    image: /assets/img/staff/tangting.jpg
     hours: >-
       See Google Calendar
-  - name: Elan Markowitz
-    email: esmarkow@usc.edu
-    image: /assets/img/staff/elan.jpeg
+    location: Zoom
+  - name: Gozde Sahin	
+    email: gsahin@usc.edu
+    image: /assets/img/staff/gozde_sahin.jpg
     hours: >-
       See Google Calendar
+    location: Zoom
 
 staff:
-  - name: Louis Addison
-    email: laddison@usc.edu
-    image: /assets/img/staff/louis.jpg
+  - name: Raymond Liu
+    email: liuraymo@usc.edu
+    image: /assets/img/staff/raymond.jpg
     hours: >-
       See Google Calendar
-  - name: Ishu Agrawal
-    email: ishuagra@usc.edu
-    image: /assets/img/staff/ishu.jpeg
+  - name: Jonathan Ong
+    email: ongjd@usc.edu
+    image: /assets/img/staff/ongjd.jpg
     hours: >-
       See Google Calendar
-  - name: Anahita Ahmadi
-    email: anahitaa@usc.edu
-    image: /assets/img/staff/anahita.jpg
+  - name: Linda Tam
+    email: lindatam@usc.edu
+    image: /assets/img/staff/lindatam.jpg
     hours: >-
       See Google Calendar
-  - name: Joshua Argote
-    email: argoteme@usc.edu
-    image: /assets/img/staff/joshua.jpg
-    hours: >-
-      See Google Calendar
-  - name: Siddhant Bajaj
-    email: bajajs@usc.edu
-    image: /assets/img/staff/siddhantbajaj.jpg
-    hours: >-
-      See Google Calendar
-  - name: Bridget Bell
-    email: bgbell@usc.edu
-    image: /assets/img/staff/bridget.jpg
-    hours: >-
-      See Google Calendar
-  - name: Nic Buxbaum
-    email: nbuxbaum@usc.edu
-    image: /assets/img/staff/nic.jpg
-    hours: >-
-      See Google Calendar
-  - name: Jessica Cheung
-    email: cheungje@usc.edu
-    image: /assets/img/staff/jessica.jpg
-    hours: >-
-      See Google Calendar
-  - name: James Fan
-    email: jlfan@usc.edu
-    image: /assets/img/staff/james.jpg
-    hours: >-
-      See Google Calendar
-  - name: Jason Gao
-    email: jasongao@usc.edu
-    image: /assets/img/staff/jasongao.jpg
-    hours: >-
-      See Google Calendar
-  - name: Isaac Gerstmann
-    email: ig_707@usc.edu
-    image: /assets/img/staff/isaac.jpg
-    hours: >-
-      See Google Calendar
-  - name: Paul Kim
-    email: pbkim@usc.edu
-    image: /assets/img/staff/paul.jpg
-    hours: >-
-      See Google Calendar
-  - name: Skylar Kim
-    email: kimsooye@usc.edu
-    image: /assets/img/staff/skylar.png
-    hours: >-
-      See Google Calendar
-  - name: Matt Leslie
-    email: mtleslie@usc.edu
-    image: /assets/img/staff/matt.jpg
-    hours: >-
-      See Google Calendar
-  - name: Kathleen Luo
-    email: krluo@usc.edu
-    image: /assets/img/staff/kathleen.jpg
-    hours: >-
-      See Google Calendar
-  - name: Jacob Ma
-    email: jingzema@usc.edu
-    image: /assets/img/staff/jacobma.jpg
-    hours: >-
-      See Google Calendar
-  - name: Mila Mathias
-    email: memathia@usc.edu
-    image: /assets/img/staff/mila2.jpg
-    hours: >-
-      See Google Calendar
-  - name: David Morales
-    email: davidm62@usc.edu
-    image: /assets/img/staff/davidmorales.jpg
-    hours: >-
-      See Google Calendar
-  - name: Nick Prestine
-    email: prestine@usc.edu
-    image: /assets/img/staff/nick.jpeg
-    hours: >-
-      See Google Calendar
-  - name: Sid Qian
-    email: sidqian@usc.edu
-    image: /assets/img/staff/sid.jpg
-    hours: >-
-      Ed Discussion Only
-  - name: Amy Rong
-    email: shiqingr@usc.edu
-    image: /assets/img/staff/amy.jpg
-    hours: >-
-      Ed Discussion Only
-  - name: Nicole Russack
-    email: russack@usc.edu
-    image: /assets/img/staff/nicole.jpg
-    hours: >-
-      See Google Calendar
-  - name: Nicholas Schumacher
-    email: naschuma@usc.edu
-    image: /assets/img/staff/nicolas.jpg
-    hours: >-
-      See Google Calendar
-  - name: Sam Sommerer
-    email: sommerer@usc.edu
-    image: /assets/img/staff/sam.jpg
-    hours: >-
-      See Google Calendar
-  - name: Monil Sorathia
-    email: msorathi@usc.edu
-    image: /assets/img/staff/monil2.jpg
-    hours: >-
-      See Google Calendar
-  - name: Madhu Suraj
-    email: msuraj@usc.edu
-    image: /assets/img/staff/madhu.jpg
-    hours: >-
-      See Google Calendar
-  - name: Winfred Wang
-    email: wzwang@usc.edu
-    image: /assets/img/staff/winfred.jpg
-    hours: >-
-      See Google Calendar
-  - name: Crystal Wu
-    email: wucrysta@usc.edu
-    image: /assets/img/staff/crystal.jpg
-    hours: >-
-      See Google Calendar
-  - name: David Xu
-    email: davidx@usc.edu
-    image: /assets/img/staff/david.jpg
-    hours: >-
-      See Google Calendar
-  - name: Xiaoqian Xu
-    email: xuxiaoqi@usc.edu
-    image: /assets/img/staff/xiaoqian.jpg
-    hours: >-
-      See Google Calendar
-  - name: Daniel Zeng
-    email: zengd@usc.edu
-    image: /assets/img/staff/danielzeng.jpeg
-    hours: >-
-      See Google Calendar
-  - name: Zuoning Zhang
-    email: zuoningz@usc.edu
-    image: /assets/img/staff/zuoning.jpeg
-    hours: >-
-      See Google Calendar
-  - name: Leo Zhuang
-    email: llzhuang@usc.edu
-    image: /assets/img/staff/leo.JPG
+  - name: Iman Arfa-Zanganeh
+    email: arfazang@usc.edu
+    image: /assets/img/staff/iman.jpeg
     hours: >-
       See Google Calendar
 
 graders:
-  - name: Deepa Avhad
-    email: davhad@usc.edu
-    image: /assets/img/staff/deepa.jpg
-  - name: Harshali Bedmutha
-    email: hbedmuth@usc.edu
-    image: /assets/img/staff/harshali.jpg
-  - name: Smit Kadvani
-    email: kadvani@usc.edu
-    image: /assets/img/staff/smit.jpg
-  - name: Suryakant Kashyap
-    email: suryakan@usc.edu
-    image: /assets/img/staff/suryakant.jpg
-  - name: Sarthak Mishra
-    email: sarthakm@usc.edu
-    image: /assets/img/staff/sarthak.jpg
-  - name: Kishan Murthy
-    email: knarasim@usc.edu
-    image: /assets/img/staff/kishan.jpeg
-  - name: Avanti Panchani
-    email: apanchan@usc.edu
-    image: /assets/img/staff/avanti.jpg
-  - name: Prakash Parajuli
-    email: parajuli@usc.edu
-    image: /assets/img/staff/temp.png
-  - name: Raj Patel
-    email: rajashif@usc.edu
-    image: /assets/img/staff/raj.jpg
-  - name: Sudhanshu Rai
-    email: sudhansh@usc.edu
-    image: /assets/img/staff/temp.png
-  - name: Ashutosh Sharma
-    email: asharma7@usc.edu
-    image: /assets/img/staff/ashutosh.jpeg

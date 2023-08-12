@@ -65,13 +65,13 @@ staff:
 
   - name: Trevor Asbery
     email: asbery@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/trevor.jpeg
     hours: >-
       See Google Calendar
 
   - name: Aayushi Agrawal
     email: aayushia@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/aayushi.jpg
     hours: >-
       See Google Calendar
 
@@ -95,13 +95,13 @@ staff:
 
   - name: Yikai Yang
     email: yikaiyan@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/yikai.jpeg
     hours: >-
       See Google Calendar
 
   - name: Junu Song
     email: junusong@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/junu.jpg
     hours: >-
       See Google Calendar
 
@@ -125,7 +125,7 @@ staff:
 
   - name: Brice Carter
     email: bncarter@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/brice.jpg
     hours: >-
       See Google Calendar      
 
@@ -149,7 +149,7 @@ staff:
 
   - name: James Li
     email: jli51468@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/james_li.jpg
     hours: >-
       See Google Calendar
 

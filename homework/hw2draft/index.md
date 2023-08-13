@@ -88,7 +88,7 @@ What is the status of `README.md` after performing the following operation:
 echo "Fancy git move" >> README.md
 ```
 
-### Problem 2 - Makefiles (8%)
+### Problem 2 - Makefiles (6%)
 
 - For this problem you may use online sources to look up information about `make` and Makefiles, but please cite your sources.
 
@@ -159,7 +159,7 @@ What are acceptable names for a makefile? Select all that applies.
 3. makefile.sh
 4. makefile
 
-## Inheritance Diagram (10%)
+## Inheritance Diagram (8%)
 
 Read the programming assignment carefully, and study the provided skeleton code.  Then, draw an inheritance diagram of all the classes in the skeleton code, as well as all of the classes you plan to create for this assignment.  As best you can, explain the reasoning for why the code is structured this way.  For example, you should explain:
 

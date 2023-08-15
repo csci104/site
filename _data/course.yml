@@ -19,43 +19,59 @@ sections:
       time: 10:00 AM to 11:50 AM Pacific
       location: SAL 127
       instructors: Staff
+
     - id: 30251
       days: Wednesday
       time: 4:00 PM to 5:50 PM Pacific
       location: SAL 126
       instructors: Staff
+
     - id: 30252
       days: Wednesday
       time: 12:00 PM to 1:50 PM Pacific
+      location: SAL 126
       instructors: Staff
+
     - id: 29905
       days: Tuesday
       time: 2:00 PM to 3:50 PM Pacific
+      location: SAL 109
       instructors: Staff
+
     - id: 29907
       days: Tuesday
       time: 4:00 PM to 5:50 PM Pacific
+      location: SAL 109
       instructors: Staff
+
     - id: 29932
       days: Friday
       time: 12:00 PM to 1:50 PM Pacific
+      location: SAL 109
       instructors: Staff
+
     - id: 29933
       days: Wednesday
       time: 2:00 PM to 3:50 PM Pacific
+      location: SAL 109
       instructors: Staff
+
     - id: 29937
       days: Thursday
       time: 5:00 PM to 6:50 PM Pacific
+      location: SAL 126
       instructors: Staff
+
     - id: 29938
       days: Friday
       time: 12:00 PM to 1:50 PM Pacific
+      location: SAL 127
       instructors: Staff
+
   quiz:
     - id: 30025
       days: Friday
       time: 7:00 PM to 8:50 PM Pacific
-      instructors: Staff 
+      instructors: Staff
 
 

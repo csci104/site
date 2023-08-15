@@ -102,7 +102,7 @@ labs:
     folder: lab4
     week: Week 6
     date: 9/26
-    title: Midterm Review
+    title: Midterm I Review
     assigned: false
     # slides: stl_inh_lab.pdf
 
@@ -150,7 +150,7 @@ labs:
     folder: bst-lab8
     week: Week 11
     date: 10/31
-    title: Midterm Review
+    title: Midterm II Review
     assigned: false
     # slides:
     #   - Backtracking_BST_AVL.pdf

@@ -111,12 +111,6 @@ staff:
     hours: >-
       See Google Calendar
 
-  - name: Jordan Cahoon
-    email: jcahoon@usc.edu
-    image: /assets/img/staff/temp.png
-    hours: >-
-      See Google Calendar
-
   - name: Josheta Srinivasan
     email: jsriniva@usc.edu
     image: /assets/img/staff/temp.png
@@ -137,7 +131,7 @@ staff:
 
   - name: Yunrong Ma
     email: yunrongm@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/yunrong.jpg
     hours: >-
       See Google Calendar
 
@@ -159,7 +153,11 @@ staff:
     hours: >-
       See Google Calendar
 
-
+  - name: Raymond Liu
+    email: 
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
 
 
 graders:

@@ -87,8 +87,6 @@ We will work hard to post HW scores and feedback within 2 weeks of the homework'
 
 Homework grades will normally be posted back as **ISSUES** on your `hw-username` Github repository and their release will be announced on {{site.data.urls.qa_tool}}. If you have not received your score (no issue was posted to your repo webpage) on a particular HW even though most other students in the class have (say, 24 hours after the score release date), post a private note on {{site.data.urls.qa_tool}} and someone will then follow up with your grader.
 
-Only the written portion of the homework is graded by a human. The score for the programming portion is determined by a grading script.
-
 Any disputes with posted grades **must** be raised within **7 days** (unless specifically noted) of the score posting.  Then follow the process below for the type of regrade you are requesting.  
 
 Fill out this [**HW regrade form**]({{site.data.urls.regrades}}) **within 7 days** of grades being released. The TAs will review the request. If they can deal with it themselves, then they will do so and email you the result.  If they cannot address it or you don't hear from them, please attend the special HW regrade office hours that the TAs will announce on {{site.data.urls.qa_tool}} for each homework.  Again you must submit your regrade request within 7 days and **after 7 days no regrade requests will be considered** for any reason, even if it is our grading mistake.  Be prompt and do not delay reviewing your HW grades. [Note: The regrades don't have to be resolved within 7 days, though hopefully they will; we just need you to raise the issue on the regrade form within 7 days].

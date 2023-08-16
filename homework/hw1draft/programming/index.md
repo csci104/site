@@ -131,15 +131,24 @@ A company is captured by the following
 
 ```c++
 struct Company {
-  Company *parent;   // the parent company, or nullptr if it has no parent
-  Company *merge1, *merge2;
-  /* the subcompanies that were merged to obtain this company, or
-     nullptr if this is a 1-student company */
+  // the parent company, or nullptr if it has no parent.
+  Company *parent;
 
-  Company ()
-  { parent = nullptr; merge1 = nullptr; merge2 = nullptr; }
-  Company (Company *m1, Company *m2)
-  { parent = nullptr; merge1 = m1; merge2 = m2; }
+  // the subcompanies that were merged to obtain this company.
+  // nullptr if this is a 1-student company.
+  Company *merge1, *merge2;
+
+  Company()
+    : parent(nullptr)
+    , merge1(nullptr)
+    , merge2(nullptr)
+  {}
+
+  Company(Company *m1, Company *m2)
+    : parent(nullptr)
+    , merge1(m1)
+    , merge2(m2)
+  {}
 };
 ```
 
@@ -148,49 +157,55 @@ Your task is to implement the following data structure:
 ```c++
 class CompanyTracker {
 public:
-  CompanyTracker (int n);
   // initializes the tracker with n students and their 1-person companies
+  CompanyTracker(int n);
 
-  ~CompanyTracker (); // deallocates all dynamically allocated memory
+  // deallocates all dynamically allocated memory
+  ~CompanyTracker();
 
-  void merge (int i, int j);
-  /* Merges the largest companies containing students i and j,
-     according to the rules described above.
-     That is, it generates a new Company object which will
-     become the parent company of the largest companies currently
-     containing students i and j.
-     If i and j already belong to the same company (or are the same),
-     merge doesn't do anything.
-     If either i or j are out of range, merge doesn't do anything. */
+  /** Merges the largest companies containing students i and j.
+   *
+   * Generates a new Company object which will become the parent company of
+   * the largest companies currently containing students i and j. If i and j
+   * already belong to the same company (or are the same), merge doesn't do
+   * anything. If either i or j are out of range, merge doesn't do anything.
+   */
+  void merge(int i, int j);
 
-  void split (int i);
-  /* Splits the largest company that student i belongs to,
-     according to the rules described above.
-     That is, it deletes that Company object, and makes sure that
-     the two subcompanies have no parent afterwards.
-     If i's largest company is a 1-person company, split doesn't do anything.
-     If i is out of range, split doesn't do anything. */
-     
-  bool inSameCompany (int i, int j);
-  /* Returns whether students i and j are currently in the same company.
-     Returns true if i==j.
-     Returns false if i or j (or both) is out of range. */
-     
+  /** Splits the largest company that student i belongs to.
+   *
+   * Deletes that Company object, and makes sure that the two subcompanies
+   * have no parent afterwards. If i's largest company is a 1-person company,
+   * split doesn't do anything. If i is out of range, split doesn't do
+   * anything.
+   */
+  void split(int i);
+
+  /** Returns whether students i and j are currently in the same company.
+   *
+   * Returns true if i == j. Returns false if i or j (or both) is out of range.
+   */
+  bool inSameCompany(int i, int j);
+
 private:
-  int numCompanies;  // the number of companies you are tracking
+  // The number of companies you are tracking
+  int numCompanies;
 
-  Company** companies; 
-  /* an array (allocated once in the constructor)
-     to keep pointers to all the 1-person companies.
-     Will not contain the merged companies. */
-     
-  /* Feel free to add private helper functions as you see fit.
-     In particular, you may want a function to find the largest company
-     that a student i is part of. */
+  /** An array of pointers to all the 1-person companies.
+   *
+   * Allocated in the constructor. Will not contain the merged companies.
+   */
+  Company** companies;
+
+  /** Feel free to add private helper functions as you see fit.
+   *
+   * In particular, you may want a function to find the largest company
+   * that a student i is part of.
+   */
 };
 ```
 
-The signature above is given to you as a file `company.h` in the `resources/hw1` repo.  You can update/pull the `resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo.  There, we also give you a bit of skeleton code that you are welcome to use to simplify your life a little bit. You may add **private** helper functions to `CompanyTracker`, but you cannot change the signatures of any of the functions we gave you - otherwise, we cannot test your solution, and that would be bad for your score.  Each of your functions should run in no worse than O(n) time.
+The signature above is given to you as a file `company.hpp` in the `resources/hw1` repo.  You can update/pull the `resources` folder to obtain it and then copy it to your own hw1 directory in your own `hw-username` repo.  There, we also give you a bit of skeleton code that you are welcome to use to simplify your life a little bit. You may add **private** helper functions to `CompanyTracker`, but you cannot change the signatures of any of the functions we gave you - otherwise, we cannot test your solution, and that would be bad for your score.  Each of your functions should run in no worse than O(n) time.
 
 You may not use any containers from the STL in this problem, other than the vector (if you so choose).
 

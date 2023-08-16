@@ -53,6 +53,29 @@ layout: default
     {% endfor %}
   </tbody>
 </table>
+<h2>Quiz</h2>
+<table class="standard sections">
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th>Days</th>
+      <th>Time</th>
+      <th>Location</th>
+      <th>Instructors</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for section in site.data.course.sections.quiz %}
+    <tr>
+      <td>{{ section.id }}</td>
+      <td>{{ section.days }}</td>
+      <td>{{ section.time }}</td>
+      <td>{{ section.location }}</td>
+      <td>{{ section.instructors }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 <h2>Exams</h2>
 <p>
   Check the <a href="{{ site.baseurl }}/schedule/">semester schedule</a> for exam dates and times.

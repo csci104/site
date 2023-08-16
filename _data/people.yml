@@ -27,12 +27,6 @@ staff:
     hours: >-
       See Google Calendar
 
-  - name: Anahita Ahmadi
-    email: anahitaa@usc.edu
-    image: /assets/img/staff/anahita.jpg
-    hours: >-
-      See Google Calendar
-
   - name: David Morales
     email: davidm62@usc.edu
     image: /assets/img/staff/davidmorales.jpg
@@ -111,12 +105,6 @@ staff:
     hours: >-
       See Google Calendar
 
-  - name: Jordan Cahoon
-    email: jcahoon@usc.edu
-    image: /assets/img/staff/temp.png
-    hours: >-
-      See Google Calendar
-
   - name: Josheta Srinivasan
     email: jsriniva@usc.edu
     image: /assets/img/staff/temp.png
@@ -137,7 +125,7 @@ staff:
 
   - name: Yunrong Ma
     email: yunrongm@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/yunrong.jpg
     hours: >-
       See Google Calendar
 
@@ -159,7 +147,11 @@ staff:
     hours: >-
       See Google Calendar
 
-
+  - name: Raymond Liu
+    email: liuraymo@usc.edu
+    image: /assets/img/staff/raymond.jpg
+    hours: >-
+      See Google Calendar
 
 
 graders:

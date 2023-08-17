@@ -153,5 +153,10 @@ staff:
     hours: >-
       See Google Calendar
 
+  - name: Jessica Cheung
+    email: 
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar  
 
 graders:

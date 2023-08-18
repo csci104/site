@@ -55,11 +55,11 @@ assignments:
 
 labs:
   - id: 0
-    folder: su-lab0-curricula
+    folder: lab0-github
     week: Week 1
     date: 8/22
-    title: Docker, GitHub
-    assigned: false
+    title: GitHub Setup
+    assigned: true
     topics: Github, Docker, Curricula
 
   - id: 1

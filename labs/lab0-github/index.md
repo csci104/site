@@ -55,7 +55,6 @@ If you are using Windows, we recommend installing [git bash](https://git-scm.com
 Git bash is a separate shell that provides access to git as well as other command line utilities.
 If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
 
-
 ## Virtual Machine
 
 We have two options for running the compiler tools that we will use for grading.
@@ -68,7 +67,6 @@ Plus, you can use your own local editor to develop and write code.
 ### Docker
 Follow the directions in this Github **[repository](https://github.com/csci104/docker){:target="_blank"}.**
 
-You might want to [configure an SSH key for your github account](#configuring-an-ssh-key) first, but it is not necessary.
 
 If you want more information on how Docker works and how to use it, you can read the <a href="https://github.com/csci104/docker/wiki/Usage">additional guide</a>.
 
@@ -82,7 +80,6 @@ This provides a full-featured virtual OS with graphical interface, etc.
 It is larger, stores your files on a separate "virtual disk" that is not directly accessible from your computer's host OS, and can sometimes get corrupted, so please push your work to Github often.
 
 - [ ] Install Docker or a virtual machine.
-
 
 ## Configuring an SSH Key
 
@@ -118,7 +115,7 @@ The path may look slightly different than the one below, but that's fine.
 
 ```
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/cs104/.ssh/id_rsa):
+Enter file in which to save the key (/home/csci104/.ssh/id_rsa):
 ```
 
 After that, you will be prompted for a passphrase to secure your private key.
@@ -131,8 +128,8 @@ Upon success, you should receive confirmation that your key was generated.
 It will most likely look something like this:
 
 ```
-Your identification has been saved in /home/cs104/.ssh/id_rsa.
-Your public key has been saved in /home/cs104/.ssh/id_rsa.pub.
+Your identification has been saved in /home/csci104/.ssh/id_rsa.
+Your public key has been saved in /home/csci104/.ssh/id_rsa.pub.
 The key fingerprint is:
 SHA256:vC+4OG2u1PIeE0OKX9jiFFHuLnkYCBSsvIW8ybD873H ttrojan@usc.edu
 The key's randomart image is:
@@ -150,7 +147,6 @@ The key's randomart image is:
 ```
 
 - [ ] Save the key to the default location
-
 
 ## Git Configuration
 

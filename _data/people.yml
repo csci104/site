@@ -77,7 +77,7 @@ staff:
 
   - name: Lin She
     email: linshe@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/lin_she.jpg
     hours: >-
       See Google Calendar
 
@@ -154,8 +154,8 @@ staff:
       See Google Calendar
 
   - name: Jessica Cheung
-    email: 
-    image: /assets/img/staff/temp.png
+    email: cheungje@usc.edu
+    image: /assets/img/staff/jessica.jpg
     hours: >-
       See Google Calendar  
 

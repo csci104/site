@@ -1,6 +1,6 @@
 qa_tool: Piazza
-#piazza: https://piazza.com/class
-discussion: https://edstem.org/us/courses/39168/discussion/
+piazza: https://piazza.com/class/llffl7oxfurrl
+# discussion: https://edstem.org/us/courses/39168/discussion/
 calendar: https://calendar.google.com/calendar/embed?src=c_781d7048d218ef3e56182a288bb7ba29035baf0f01204e4c5d7d6c7b15c6e328%40group.calendar.google.com&ctz=America%2FLos_Angeles
 github: https://github.com/usc-csci104-summer2023
 github_ssh: git@github.com:usc-csci104-summer2023
@@ -13,12 +13,12 @@ notes: http://david-kempe.com/teaching/DataStructures.pdf
 # regrades: https://docs.google.com/forms/d/e/1FAIpQLSdlNBkRADp72r79-mN2HbjCpYV18fmxnfDIoyRAuDMNry912Q/viewform?usp=sf_link
 slug: cs104-su23
 slide_location: http://ee.usc.edu/~redekopp/cs104/slides
-extension_form: https://docs.google.com/forms/d/e/1FAIpQLSfK3DCfSHyumVF8X0hNN3cYVj5NAk1ZEu30QbMuETbhJMdIjg/viewform?usp=sf_link
+# extension_form: https://docs.google.com/forms/d/e/1FAIpQLSfK3DCfSHyumVF8X0hNN3cYVj5NAk1ZEu30QbMuETbhJMdIjg/viewform?usp=sf_link
 visual_code: https://code.visualstudio.com/download
 docker_repo: https://github.com/csci104/docker
 lab_form: 
 git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
-osas_dsp_form: https://docs.google.com/forms/d/e/1FAIpQLSe7qclvtY3MvTYodIPDGjapkwKSlnaHJ4r0JeQxv4Z5kyQ0mw/viewform?usp=sf_link
+# osas_dsp_form: https://docs.google.com/forms/d/e/1FAIpQLSe7qclvtY3MvTYodIPDGjapkwKSlnaHJ4r0JeQxv4Z5kyQ0mw/viewform?usp=sf_link
 account_ta_name: Nathan Bartley
 account_ta_email: nbartley@usc.edu
 osas: https://osas.usc.edu/

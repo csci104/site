@@ -157,6 +157,12 @@ staff:
     email: cheungje@usc.edu
     image: /assets/img/staff/jessica.jpg
     hours: >-
-      See Google Calendar  
+      See Google Calendar
+
+  - name: Nic Buxbaum
+    email: nbuxbaum@usc.edu
+    image: /assets/img/staff/nic_buxbaum.jpg
+    hours: >-
+      See Google Calendar
 
 graders:

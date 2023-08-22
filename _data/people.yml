@@ -6,13 +6,26 @@ instructors:
     location:  # EEB-222 (Redekopp's)
 
 assistants:
-  # - name: 
-  #   email: 
-  #   image: /assets/img/staff/temp.png
-  #   hours: >-
-  #     See Google Calendar
-  #   location: Zoom
+  - name: Tingting Tang
+    email: tangting@usc.edu
+    image: /assets/img/staff/tangting.jpg
+    hours: >-
+      See Google Calendar
+    # location: Zoom
 
+  - name: Rebecca Dorn
+    email: rdorn@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+    # location: Zoom
+
+  - name: Meryem M'Hamdi
+    email: mmhamdi@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+    # location: Zoom
 
 staff:
   - name: Bridget Bell

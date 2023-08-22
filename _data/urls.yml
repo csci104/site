@@ -12,7 +12,7 @@ blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
 regrades: https://docs.google.com/forms/d/e/1FAIpQLSfJTINRyy4DJvCvovyKTboa-PIP8sO439oMBQfTAQ2btlI9Dw/viewform?usp=sf_link
 slug: cs104-fa23
-slide_location: http://bytes.usc.edu/cs104/schedule/notes/
+slide_location: http://bytes.usc.edu/cs104/schedule/notes
 extension_form: https://docs.google.com/forms/d/e/1FAIpQLSfju2eUKzAwvvDSLzshIXjZ0iKckDM3MYI_KLfXBwrwxyyRfQ/viewform?usp=sf_link
 visual_code: https://code.visualstudio.com/download
 docker_repo: https://github.com/csci104/docker

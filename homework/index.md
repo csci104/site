@@ -133,7 +133,7 @@ Collaboration is important in an academic environment. We want to be sure that y
 
 **In summary, any time that you are trying to get higher grades for work that you did not earn is not acceptable. Any behavior by which you are attempting to receive or grant an unfair advantage that your classmates who are following the rules do not have is not acceptable.** Please act with the integrity that is expected of USC Trojans.
 
-We run code similarity tools on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported tothe [OAI](https://academicintegrity.usc.edu/), no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
+We run code similarity tools on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported to the [OAI](https://academicintegrity.usc.edu/), no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
 
 In order to make sure that an appropriate level of collaboration is used between you and your classmates, please do not keep notes,  pictures, or any records from your discussions. This will ensure that your work reflects only your understanding when you create it. Please do not sit coding next to each other while discussing the work. If you are concerned that an inappropriate level of collaboration has occured, please do the following:
 

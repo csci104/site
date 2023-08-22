@@ -1,0 +1,4 @@
+LET ALL 15
+IF ALL = 15 THEN 10
+END
+.

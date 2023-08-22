@@ -6,13 +6,26 @@ instructors:
     location:  # EEB-222 (Redekopp's)
 
 assistants:
-  # - name: 
-  #   email: 
-  #   image: /assets/img/staff/temp.png
-  #   hours: >-
-  #     See Google Calendar
-  #   location: Zoom
+  - name: Tingting Tang
+    email: tangting@usc.edu
+    image: /assets/img/staff/tangting.jpg
+    hours: >-
+      See Google Calendar
+    # location: Zoom
 
+  - name: Rebecca Dorn
+    email: rdorn@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+    # location: Zoom
+
+  - name: Meryem M'Hamdi
+    email: mmhamdi@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+    # location: Zoom
 
 staff:
   - name: Bridget Bell
@@ -83,7 +96,7 @@ staff:
 
   - name: Letian Zhang
     email: letianz@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/letian_zhang_2.jpg
     hours: >-
       See Google Calendar
 
@@ -107,7 +120,7 @@ staff:
 
   - name: Josheta Srinivasan
     email: jsriniva@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/josheta.jpg
     hours: >-
       See Google Calendar
 
@@ -157,6 +170,12 @@ staff:
     email: cheungje@usc.edu
     image: /assets/img/staff/jessica.jpg
     hours: >-
-      See Google Calendar  
+      See Google Calendar
+
+  - name: Nic Buxbaum
+    email: nbuxbaum@usc.edu
+    image: /assets/img/staff/nic_buxbaum.jpg
+    hours: >-
+      See Google Calendar
 
 graders:

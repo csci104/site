@@ -27,6 +27,20 @@ assistants:
       See Google Calendar
     # location: Zoom
 
+  - name: Satyaki Das
+    email: satyakid@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+    # location: Zoom
+
+  - name: Sina Shaham
+    email: sshaham@usc.edu
+    image: /assets/img/staff/temp.png
+    hours: >-
+      See Google Calendar
+    # location: Zoom
+
 staff:
   - name: Bridget Bell
     email: bgbell@usc.edu

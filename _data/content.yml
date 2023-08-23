@@ -61,7 +61,7 @@ labs:
     title: GitHub Setup
     assigned: true
     topics: Github, Docker, Curricula
-    # slides: lab0.pdf
+    slides: lab0.pdf
 
 
   - id: 1

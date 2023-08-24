@@ -18,7 +18,8 @@ Please read the submission instructions and policies below **carefully**!  Failu
   <thead>
     <tr>
       <th>#</th>
-      <th>Link</th>
+      <th>Written</th>
+      <th>Programming</th>
       <th>Title</th>
       <th>Written</th>
       <th>Due</th>
@@ -37,7 +38,14 @@ Please read the submission instructions and policies below **carefully**!  Failu
       <td>{{ forloop.index }}</td>
       <td>
         {% if assignment.assigned %}
-        <a href="./{{ assignment.id }}/">Writeup</a>
+        <a href="./{{ assignment.id }}/">Written</a>
+        {% else %}
+        Writeup
+        {% endif %}
+      </td>
+      <td>
+        {% if assignment.assigned %}
+        <a href="./{{ assignment.id }}/programming/">Programming</a>
         {% else %}
         Writeup
         {% endif %}

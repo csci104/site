@@ -21,8 +21,8 @@ Please read the submission instructions and policies below **carefully**!  Failu
       <th>Written</th>
       <th>Programming</th>
       <th>Title</th>
-      <th>Written</th>
-      <th>Due</th>
+      <th>Written Due</th>
+      <th>Programming Due</th>
       <th>Submit</th>
       <th>Regrade</th>
     </tr>
@@ -40,14 +40,14 @@ Please read the submission instructions and policies below **carefully**!  Failu
         {% if assignment.assigned %}
         <a href="./{{ assignment.id }}/">Written</a>
         {% else %}
-        Writeup
+        Written
         {% endif %}
       </td>
       <td>
         {% if assignment.assigned %}
         <a href="./{{ assignment.id }}/programming/">Programming</a>
         {% else %}
-        Writeup
+        Programming
         {% endif %}
       </td>
       <td>{{ assignment.title }}</td>

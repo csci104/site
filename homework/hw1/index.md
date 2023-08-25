@@ -1,68 +1,215 @@
 ---
 layout: asides
 toc: true
-tasks: false
-title: Homework 1
-nav: assignments
-hwpath: hw1
-
+tasks: true
+title: Homework 1 Written
 ---
 
-## {{page.title}}
+# HW1: Written Assignment
 
-+ Due: See [assignments page]({{site.url}}/homework/index.html)
-+ Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
-   - Once you have cloned your `hw-username` repo, create this `{{page.hwpath}}` folder underneath it (i.e. `hw-username/{{page.hwpath}}`)
-   - If your `hw-username` repo has not been created yet, please do your work in a separate folder and you can copy over relevant files before submitting
++ Due: Friday, September 1st, 11:59pm PST
++ You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .txt, .jpg, or .pdf)
++ To access the programming portion of this assignment, click [here](./programming/)
 
-## Written Portion
+### Problem 1 - Course Policies (8%)
 
-### A Few Notes on Repositories
+Carefully study the information on the [course web site](https://bytes.usc.edu/), then answer the following questions about course policies:
 
-1. Never clone one repo into another.  If you have a folder `cs104` on your laptop (wherever you created your Github keys from Lab 0) and you clone your personal repo `hw-username` under it (i.e. `cs104/hw-username`) then whenever you want to clone some other repo, you need to do it back up in the `cs104` folder or other location, NOT in the `hw-username` folder.
-1. Your repo is created when you register with our website (aka `curricula` system) as outlined in the Lab 0 writeup on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps, accepted the invite to the Github organization that should be generated and emailed to you after you register with our website, and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.urls.discussion}}) to let your instructors know that your repository needs to be created.  Be sure to include your USC username and github username for reference.
+#### Part (a):
 
-### Skeleton Code
+Which of the following are acceptable behaviors in solving homeworks/projects (list all that apply)?
 
-On many occasions we will want to distribute skeleton code, tests, and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.urls.github}}/resources ), under our class GitHub site.  You should clone this repository to your laptop (**but only if you have not already done this as part of lab**) and do a `git pull` regularly to check for updates. 
+1. Looking up relevant C++ reference information online.
+2. Looking up or asking for sample solutions online from sites like Chegg, Github, etc.
+3. Talking to my classmates about general approaches about the problems (but no specific coding statements or description of your own code or someone else’s code).
+4. Copying code from my classmates or an online source, and then editing it significantly.
+5. Asking the course staff for help.
+6. Sitting next to my classmate and coding together as a team or with significant conversation about approach.
+7. Sharing my code with a classmate, even if he/she just wants to read over it and learn from it
+8. Using chatGPT to help write ANY part of my code.
+
+#### Part (b):
+
+Which of the following are true regarding regrades and wrong submissions (indicate True/False):
+
+1. *True/False*: If you forget to submit a file via GITHUB you can still apply for a regrade after the deadline and submit the missing file.
+2. *True/False*: Email the professor when you want a regrade.
+3. *True/False*: Complete the regrade request form within 7 days of receiving the grade and wait for an email. Or if you don’t hear back attend the designated regrade TA.
+4. *True/False*: Regrades submitted after 7 days of the HW score posting will NOT BE ACCEPTED for any reason.
+
+#### Part(c):
+
+What is the late submission policy (list all that apply)?
+
+1. One hour late submission is acceptable for each assignment.
+2. Each assignment can be submitted up to two days late for 50% credit.
+3. Each student has 5 late days of which only 2 can be used per HW
+4. Students need to get an approval before submitting an assignment late.
+
+#### Part(d):
+
+After pushing your code to Github you should… (indicate True/False)
+
+1. *True/False*: Do nothing. Once you push your code you are done.
+2. *True/False*: Clone your repo to a temporary folder to ensure all the files you desire are pushed and that your code compiles.
+3. *True/False*: Complete the online submission page using your FULL (30 or more digit) SHA.
+
+#### Part (e):
+
+What are the penalties if we find your code is TOO similar to another students (past or current) or an online source?
+
+### Problem 2 - Git (7%)
+
+Carefully review and implement the steps discussed in [Lab1](https://bytes.usc.edu/labs/lab1/). Then, answer the following questions:
+
+#### Part (a):
+
+When cloning a Git repo, which of the following should you avoid:
+
+1. Cloning into a folder that itself is a git repo
+2. Cloning into a sync’ed folder like Dropbox or Google Drive
+3. Cloning into the `Desktop` folder of your VM
+
+#### Part (b):
+
+Provide the appropriate git command to perform the following operations:
+
+1. Stage an untracked file to be committed. The file is called ‘hw1q2b.cpp’.
+2. Display the details of the last three commits in the repository (hint: checkout this [webpage](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History) )
+
+#### Part (c)
+
+What is the full command to re-clone your private CSCI104 repo to your VM? Assume you are in an appropriate folder.
+
+## 3. Runtime Analysis (25%)
+
+In Big-&Theta; notation, analyze the running time of the following pieces of code/pseudo-code. Describe the running time as a function of the input size (here, `n`).  You should **always** explain your work when solving mathematics problems.
+
+### Part A
+
+```c++
+for (int i = 0; i < n; i ++)
+{  // A is an array of integers of sufficient size
+   if (A[i] == 0) {
+      for (int j = 0; j <= i; j++) {
+          if (A[i] == 0) {
+             for (int k = 0; k <= j; k++) {
+                 A[i] = 1;   // this is not a typo
+             }
+          }
+      }
+   }
+}
+```
+
+### Part B
+```c++
+for (int i = 1; i < n; i *= 2)
+{
+   func(i);
+}
+
+void func(int x) {
+  if (x <= 1) return;
+  func(x-1);
+}
 
 ```
-$ git clone git@github.com:{{ site.data.urls.github_org }}/resources
+
+### Part C
+
+```c++
+// This problem uses the same singly linked list Node structure you've seen a lot
+// A is an array of integers of sufficiently large size
+Node *head = new Node;
+Node *curr = head;
+head->data = 0;
+head->next = nullptr;
+for (int i = 1; i < n; i++)
+{
+   curr->next = new Node;
+   curr = curr->next;
+   curr->data = i;
+   curr->next = nullptr;
+}
+for (int i = 1; i <= n; i++) {
+   curr = head;
+   while (curr != nullptr) {
+      if (curr->data % i == 0) {
+         for (int j = 0; j < n; j++) {
+             A[j] ++;
+         }
+      }
+      curr = curr->next;
+   }
+}
 ```
 
-Again, be sure you don't clone this repo into your `hw-username` repo but at some higher up point like in a `cs104` folder on your laptop.  You can then manually copy (in your OS's GUI or at the command line) the skeleton files from `resources/{{page.hwpath}}` to `hw-username/{{page.hwpath}}`.
+### Part D
 
-For example if you are in the folder containing both the `resources` and `hw-username` folders/repos, you could enter the following command at the terminal:
+Notice that this code is similar to what happens if you keep inserting into a vector.
 
-```bash
-$ cp -rf resources/{{page.hwpath}} hw-username/
+```c++
+double *a = new double [3];
+int size = 3;
+for (int i = 0; i < n; i ++) 
+{
+   if (i == size)
+   {  
+       int newsize = 3 * size;
+       double *b = new double [newsize];
+       for (int j = 0; j < size; j++) b[j] = a[j];
+       delete [] a;
+       a = b;
+       size = newsize;
+   }
+   a[i] = sqrt(i);
+}
 ```
 
-Again be sure to replace `hw-username` with your USC username (e.g. `hw-ttrojan`)
+### Part E
 
-{% for part in site.data.hws.hw1.written_parts %}
+```c++
+recursiveFunc(0, n-1);
 
-### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
-
-{% include writeups/{{ part.writeup }} %}
-
-{% endfor %}
-
-
-## Programming Portion
-
-{% for part in site.data.hws.hw1.programming_parts %}
-
-### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
-
-{% include writeups/{{ part.writeup }} %}
-
-{% endfor %}
+void recursiveFunc(int left, int right) {
+    // A is an array of sufficiently large size.
+    if (right <= left) return;
+    int mid = (left+right)/2;
+    recursiveFunc(left, mid);
+    recursiveFunc(mid+1, right);
+}
+```
 
 
-## Submission Files
 
-Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** commit/push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.
+## 4. Linked Lists, Recursion (10%)
 
-{% include commit-reclone.md %}
+Consider the following C++ code.  What linked list is returned if funcA is called with the input linked list `1,2,3,4,5`?  All of the points for this problem will be assigned based on your explanation, since we have full faith in your ability to run this program and copy down the answer.  We **strongly** recommend solving this by hand, and only using a compiler to verify your answer.
 
+```c++
+struct Node {
+    int value;
+    Node *next;
+};
+
+Node* funcA(Node* in) {
+    Node *out = in;
+    while (out->next != nullptr) {
+	out = out->next;
+    }
+    funcB(in)->next = NULL;
+    return out;
+}
+
+Node* funcB(Node* in) {
+   if (in->next != nullptr) {
+	funcB(in->next)->next = in;
+   }
+   return in;
+}
+```
+
+## Programming Assignment
+
+To access the programming portion of this assignment, click [here](./programming/)

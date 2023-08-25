@@ -1,7 +1,7 @@
 assignments:
   - id: hw1
     title: Linked Lists, Runtime, and Recursion
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link: # https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
@@ -61,7 +61,7 @@ labs:
     title: GitHub Setup
     assigned: true
     topics: Github, Docker, Curricula
-    # slides: lab0.pdf
+    slides: lab0.pdf
 
 
   - id: 1

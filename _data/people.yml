@@ -66,12 +66,6 @@ staff:
     hours: >-
       See Google Calendar
 
-  - name: Daniel Zeng
-    email: zengd@usc.edu
-    image: /assets/img/staff/danielzeng.jpeg
-    hours: >-
-      See Google Calendar
-
   - name: Zuoning Zhang
     email: zuoningz@usc.edu
     image: /assets/img/staff/zuoning.jpeg
@@ -140,7 +134,7 @@ staff:
 
   - name: Russell Rodriguez
     email: rar72397@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/russell.jpg
     hours: >-
       See Google Calendar     
 

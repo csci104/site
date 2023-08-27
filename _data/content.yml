@@ -65,13 +65,13 @@ labs:
 
 
   - id: 1
-    folder: su-lab1
+    folder: lab1-gdb
     week: Week 2
     date: 8/29
     title: GDB
-    assigned: false
+    assigned: true
     topics: GDB, Debugging
-    # slides:
+    slides: GDBLab.pdf
 
   - id: 2
     folder: su-lab2

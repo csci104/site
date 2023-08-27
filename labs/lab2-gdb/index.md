@@ -7,7 +7,11 @@ title: Jamie's GDB House of Horrors
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your lab section**
+
+You are expected to show your work to any CP/TA to get checked off during the lab section
+you registered for. Check off will ential filling out a Google Form. If you are sick or cannot make it for some reason, please post on Piazza.
+
 ---
 
 # Jamie's GDB House of Horrors
@@ -22,8 +26,8 @@ Do you dare take it on?
 
 ## Lab Materials
 
-The files we'll be using for this lab can be found on Codio, or if you prefer
-you may download them from [here](./assets/lab-2.zip). Wherever you are accessing the lab from, make sure all these files are present:
+The files we'll be using for this lab are posted in the `resources` repository, which you've hopefully already cloned for the homework skeleton code.
+In the `lab` directory you should see the following files:
 
 1. `answers.txt`
 2. `game_of_pointers_student1.cpp`
@@ -166,10 +170,10 @@ For each problem below, answer in `answers.txt` with:
 Okay, so let's check out the first student's program.
 Open a terminal in the assignment directory, and run the simulation with `make test_game1`.
 
-If you are using Docker, remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell! Also, you will need to download the zip file with all files, found on the bytes website!
+If you are using Docker, please first move the `resources` directory into the directory you mounted to the Docker container in Lab 0, if it is not already in there. Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
 
-- [ ] Double check that you're using a Docker shell (if you plan on using Docker this semester).
-- [ ] Check that you have all of the files.
+- [ ] Double check that `resources` is in the directory you mounted to the Docker container in Lab 0.
+- [ ] Start/open a shell.
 
 You should get something like:
 
@@ -291,16 +295,8 @@ Invader killed
 Invader killed
 Winner: protectors
 ```
-or
 
-```
-2c2
-< Duel ends in draw
----
-> Invader killed
-```
-
-Clearly there is some sort of logic error affecting this.
+Clearly there is some sort of logic error affecting the result of the second duel.
 To debug this, we will need to trace the issue back through the code.
 It looks like `"Invader killed"` is being output inside skirmish() at line 135:
 

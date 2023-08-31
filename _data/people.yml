@@ -15,21 +15,21 @@ assistants:
 
   - name: Rebecca Dorn
     email: rdorn@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/rebecca.jpg
     hours: >-
       See Google Calendar
     # location: Zoom
 
   - name: Meryem M'Hamdi
     email: mmhamdi@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/meryem.png
     hours: >-
       See Google Calendar
     # location: Zoom
 
   - name: Satyaki Das
     email: satyakid@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/satyaki_das.JPG
     hours: >-
       See Google Calendar
     # location: Zoom
@@ -68,7 +68,7 @@ staff:
 
   - name: Zuoning Zhang
     email: zuoningz@usc.edu
-    image: /assets/img/staff/zuoning.jpeg
+    image: /assets/img/staff/zuoning_zhang_new.jpg
     hours: >-
       See Google Calendar
 
@@ -179,5 +179,30 @@ staff:
     image: /assets/img/staff/nic_buxbaum.jpg
     hours: >-
       See Google Calendar
+  
+  - name: Ania Ahsan
+    email: aahsan@usc.edu
+    image: /assets/img/staff/ania_ahsan.jpg
+    hours: >-
+      See Google Calendar
 
 graders:
+  - name: Cecil Kong
+    email: clkong@usc.edu
+    image: /assets/img/staff/temp.png
+
+  - name: Bill Ouyang
+    email: wlouyang@usc.edu
+    image: /assets/img/staff/temp.png
+
+  - name: Hong Wang
+    email: hongwang@usc.edu
+    image: /assets/img/staff/temp.png
+
+  - name: Hongyi Li
+    email: lihongyi@usc.edu
+    image: /assets/img/staff/temp.png
+
+  - name: Angela Chen
+    email: achen088@usc.edu
+    image: /assets/img/staff/temp.png

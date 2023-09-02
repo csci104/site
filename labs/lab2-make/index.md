@@ -500,13 +500,8 @@ exe/pokemon
 
 to see a marvelous battle between pokemons!
 
-- [ ] Show your final Makefile to a CP or TA for checkoff. Be prepared to answer some of the review questions below!
+- [ ] Run `make clean` and `make` in front of a CP and show them the awesome Pokemon battle to get checked off!
 
-#### 5.1 - Review Questions
-
-1. What is the purpose of the `-c` flag?
-1. What is the advantage of compiling to .o files via makefile compared to compiling the executable together in one step?
-1. What files should be in a rule's dependency list?
 
 ### 6 - More about Makefiles
 

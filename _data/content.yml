@@ -120,7 +120,7 @@ labs:
   - id: 7
     week: Week 8
     date: 10/10
-    title: No Lab
+    title: No Lab!
     assigned: false
     # slides: heap_lab.pdf
 

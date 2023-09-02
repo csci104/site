@@ -71,16 +71,16 @@ labs:
     title: GDB
     assigned: true
     topics: GDB, Debugging
-    slides: GDBLab.pdf
+    slides: lab1.pdf
 
   - id: 2
-    folder: su-lab2
+    folder: lab2-make
     week: Week 3
     date: 9/5
     title: Makefiles
-    assigned: false
+    assigned: true
     topics: Make, Build Systems
-    # slides: Lab2_slides.pdf
+    slides: lab2.pdf
 
   - id: 3
     folder: lab3
@@ -112,18 +112,16 @@ labs:
     folder: lab5
     week: Week 7
     date: 10/3
-    title: Counting
+    title: Counting & Probability
     assigned: false
-    topics: Counting
+    topics: Counting, Probability
     # slides: templates_lab.pdf
 
   - id: 7
-    folder: lab6
     week: Week 8
     date: 10/10
-    title: Probability
+    title: No Lab
     assigned: false
-    topics: Probability
     # slides: heap_lab.pdf
 
   - id: 8

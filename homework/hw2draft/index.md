@@ -161,11 +161,15 @@ What are acceptable names for a makefile? Select all that applies.
 
 ## Inheritance Diagram (8%)
 
-Read the programming assignment carefully, and study the provided skeleton code.  Then, draw an inheritance diagram of all the classes in the skeleton code, as well as all of the classes you plan to create for this assignment.  As best you can, explain the reasoning for why the code is structured this way.  For example, you should explain:
+Read the programming assignment carefully, and study the provided skeleton code.  Then, draw an inheritance diagram of all the classes in the skeleton code, as well as all of the classes you plan to create for this assignment.  As best you can, explain the reasoning for why the code is structured this way.  You should **at least** explain:
 
 1. Why do we have an abstract `Statement` class?
 2. Why do we have a pure virtual `execute` function inside the `Statement` class?
 3. What is the purpose of each of the classes you added?
+
+Here is an example of how you might format your inheritance diagram:
+
+![Class Hierarchy Diagram](https://bytes.usc.edu/cs104/homework/img/classhierarchy.png)
 
 ## Programming Assignment
 

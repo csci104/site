@@ -67,7 +67,7 @@ Before the deadline and after pushing your submission to GitHub, you **must** ( 
 Our reference grading environment is the Virtual Machine we provide for the course. You should test your code on the VM to ensure that it works properly in the environment we will test it in.
 
 ### Step 4. Fill out the Homework Submission Form
-The submission form is available for each respective assignment on the [assignments page]({{ site.url }}/assignments/index.html). Make sure you are using the proper link. To complete the form, you will need to get the (long) SHA from your commit. 
+The submission form is available for each respective assignment on the [assignments page](https://bytes.usc.edu/cs104/homework/). Make sure you are using the proper link. To complete the form, you will need to get the (long) SHA from your commit. 
 
 It is easiest to obtain that SHA by executing the `git log` command on your terminal and select/copy the SHA that is listed for the (likely latest) commit that you just pushed.  You can then paste that SHA into our form.
 

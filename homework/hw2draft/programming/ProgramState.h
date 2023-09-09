@@ -21,7 +21,7 @@
 #ifndef PROGRAM_STATE_INCLUDED
 #define PROGRAM_STATE_INCLUDED
 
-#include "stackint.h"
+#include <stack>
 
 class ProgramState
 {
@@ -34,7 +34,7 @@ public:
 
 
 private:
-	int m_numLines
+	int m_numLines;
 };
 
 #endif

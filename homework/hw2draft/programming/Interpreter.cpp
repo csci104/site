@@ -6,6 +6,7 @@
 #include <sstream> 
 #include <fstream>
 #include <cstdlib>
+#include <iostream>
 
 
 using namespace std;
@@ -27,16 +28,16 @@ void interpretProgram(istream& inf, ostream& outf);
 
 int main()
 {
-        cout << "Enter BASIC program file name: ";
-        string filename;
-        getline(cin, filename);
-        ifstream infile(filename.c_str());
-        if (!infile)
-        {
-                cout << "Cannot open " << filename << "!" << endl;
-                return 1;
-        }
-        interpretProgram(infile, cout);
+	cout << "Enter BASIC program file name: ";
+	string filename;
+	getline(cin, filename);
+	ifstream infile(filename.c_str());
+	if (!infile)
+	{
+			cout << "Cannot open " << filename << "!" << endl;
+			return 1;
+	}
+	interpretProgram(infile, cout);
 }
 
 
@@ -84,7 +85,7 @@ Statement * parseLine(string line)
 }
 
 
-void interpretProgram(istream& inf, ostream& outf);
+void interpretProgram(istream& inf, ostream& outf)
 {
 	vector<Statement *> program;
 	parseProgram( inf, program );

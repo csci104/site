@@ -34,7 +34,7 @@ public:
 
 
 private:
-	int m_numLines
+	int m_numLines;
 };
 
 #endif

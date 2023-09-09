@@ -1,2 +1,2 @@
-PRINT TRUMP
-.
+1 PRINT TRUMP
+2 .

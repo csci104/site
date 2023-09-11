@@ -83,13 +83,13 @@ labs:
     slides: lab2.pdf
 
   - id: 3
-    folder: lab3
+    folder: lab3-stl
     week: Week 4
     date: 9/12
-    title: GTest, STL
-    assigned: false
-    topics: Unit Testing, GTest, OOP
-    # slides: makefile_lab.pdf
+    title: STL & Inheritance
+    assigned: true
+    topics: OOP
+    slides: lab3.pdf
 
   - id: 4
     folder: su-gtest_lab

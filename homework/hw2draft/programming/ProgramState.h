@@ -1,6 +1,6 @@
 // ProgramState.h
 //
-// CS 104 / Fall 2021
+// CS 104
 //
 // The ProgramState class encapsulates the state of an executing Facile
 // program.  The state of a BASIC program consists of three parts:
@@ -21,7 +21,7 @@
 #ifndef PROGRAM_STATE_INCLUDED
 #define PROGRAM_STATE_INCLUDED
 
-#include "stackint.h"
+#include <stack>
 
 class ProgramState
 {
@@ -34,7 +34,7 @@ public:
 
 
 private:
-	int m_numLines
+	int m_numLines;
 };
 
 #endif

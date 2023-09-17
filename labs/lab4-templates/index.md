@@ -10,8 +10,7 @@ title: Templates
 
 ## Templates
 
-
-At this point in the course, we've created many simple data structures ourselves, as well as used a number of already-templated STL classes. The first goal of this lab is to learn how to actually create these templated classes ourselves. By the end of this lab, you will learn to convert one of the type-specific lists into a generic, templated one.
+At this point in the course, we've used a number of STL classes, which all employ tempates! Templates are how we're able to define sets/maps/vectors/etc. of various types—ex. a set of ints versus a set of strings. Templates are great because they make our code significantly more usable, especially across different contexts.
 
 ### 1 - Template Motivation
 
@@ -105,8 +104,6 @@ Since the compiler needs to do substitutions based on the use of templated class
 
 ### 3 - Using Inner Class of Templated Class
 
-In your homework you have seen the use of the inner struct `Item` in `TokenList`. Inner classes work the same way in templated classes, and inner classes share their outer class's templated type variables. However, the syntax for using the inner class is a little different. Wherever you need to refer to the inner class outside of your class definition, you must append `typename` to the front of the type.
-
 ```c++
 template<typename T>
 class Outer
@@ -186,4 +183,4 @@ to be inside the `Item` class.
 
 ### Checking off
 
-To get checked off, show the result after running `make` and your source files to one of your CP/TAs.
+To get checked off, show the result after running `make` to one of your CPs.

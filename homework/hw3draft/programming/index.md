@@ -16,7 +16,7 @@ title: Homework 3 Programming
 + Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
 + Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
 
-### Problem 1 (Build a templated d-ary heap, 40%)
+### Problem 1 (Build a templated d-ary heap, 35%)
 
 Build your own d-ary `MinHeap` class in `MinHeap.h` with the interface given below.  You learned in class how to build a binary `MinHeap`, where each node had 2 children.  For a d-ary `MinHeap`, each node will have d children.
 

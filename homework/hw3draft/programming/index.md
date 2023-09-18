@@ -146,7 +146,7 @@ You should output the following two lines **exactly** to cout:
 
 Where `<steps>` is the fewest number of transformations to get from the start word to the end word, and `<expansions>` is the number of expansions your algorithm required to find the solution.
 
-A small `steps` value mean you found a good solution.  A small `expansions` value means you found the answer quickly.  While small `expansions` values are good, we asked you to implement your algorithm a *specific* way, so you should get the same value as our tests.
+A small `steps` value means you found a good solution.  A small `expansions` value means you found the answer quickly.  While small `expansions` values are good, we asked you to implement your algorithm a *specific* way, so you should get the same value as our tests.
 
 If there is no way to get from the starting word to the ending word, you should instead just print
 
@@ -176,7 +176,7 @@ BBBBB
 2. Expanding `AAAAB` (because it comes first according to operator<), we would add `AAABB`.
 3. Expanding `AAABB`, we would add `AABBB`.
 4. Expanding `AABBB` (because it has the smaller h-value), we would add `AABBA`.
-5. Expanding `AABAA` (because it has the smaller f-value), we would re-add `AABBA`.
+5. Expanding `AABAA` (because it has the smaller f-value), we would re-add (or update) `AABBA`.
 6. Expanding `AABBA`, we would add `ABBBA`.
 7. Expanding `ABBBA`, we would add `BBBBA`.
 8. Expanding `BBBBA`, we would add `BBBBB`.

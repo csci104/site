@@ -67,7 +67,7 @@ Lastly, you may break ties however you wish, but you may want to break ties a sp
 
 ### Problem 2 (A* Search, 40%)
 
-The word game "Doublet" was invented by Lewis Carroll, and is a word transformation puzzle.  Two words of identical length are given.  The objective is to transform the first word into the second word by forming successive words of the same length, changing only one letter at a time.  Here is an example from HEAD to TAIL:
+The word game "Doublet" was invented by Lewis Carroll, and is a word transformation puzzle.  Two words of identical length are given.  The objective is to transform the first word into the second word by forming successive valid words of the same length, changing only one letter at a time.  The list of valid words will be provided to you.  Here is an example from HEAD to TAIL:
 
 ```
 HEAD

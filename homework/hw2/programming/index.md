@@ -14,7 +14,7 @@ title: Homework 2 Programming
     - In this project we have provided a code base.  Do a `git pull` in your `resources` repo.
     - Then copy the `resources/hw2` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw2` folder.
 
-    - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `interpreter`
+    - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `Interpreter`
     - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
     -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
     - **You may use any STL classes you like**

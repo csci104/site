@@ -21,6 +21,13 @@ Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
 - [The legacy 104 C++ guide](./guide-coding.pdf) has a bunch of useful information about how you can code for this class. 
 - [The unofficial 104 textbook](./textbook-data-structures.pdf) has extensive notes on all 104 topics by David Kempe.
 
+## Practice Midterm
+
+- [Practice Midterm A](./midterm-b.pdf)
+- [Practice Midterm A Solution](./midterm-b-sol.pdf) 
+- [Practice Midterm B](./midterm-c.pdf)
+- [Practice Midterm B Solution](./midterm-c-sol.pdf)
+
 ## Editors and IDEs
 
 We strongly advise you against using gedit, notepad, or other primitive editors.

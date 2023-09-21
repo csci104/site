@@ -26,7 +26,9 @@ Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
 - [Practice Midterm A](./midterm-b.pdf)
 - [Practice Midterm A Solution](./midterm-b-sol.pdf) 
 - [Practice Midterm B](./midterm-c.pdf)
-- [Practice Midterm B Solution](./midterm-c-sol.pdf)
+- [Practice Midterm B q1 Solution](./midterm-c-q1sol.png)
+- [Practice Midterm B q2,3 Solution](./midterm-c-q2q3sol.jpg)
+- [Practice Midterm B q4,6 Solution](./midterm-c-q4q6sol.jpg)
 
 ## Editors and IDEs
 

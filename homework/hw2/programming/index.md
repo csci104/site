@@ -16,7 +16,7 @@ title: Homework 2 Programming
 
     - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `Interpreter`
     - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
-    -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
+    <!-- -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of. -->
     - **You may use any STL classes you like**
 
 **Please read the entire assignment through once before you start to perform any tasks.**
@@ -321,10 +321,10 @@ Its your choice where to go from here, but we strongly recommend that you implem
 
 + Directory name for this homework (case sensitive): `hw2`
   - This directory should be in your `hw-username` repository
-  - This directory needs its own `README.md` file briefly describing your work
+  <!-- - This directory needs its own `README.md` file briefly describing your work -->
   - `Interpreter.cpp`, `LetStatement.h`, `LetStatement.cpp`, `PrintStatement.h`, `PrintStatement.cpp`, `ProgramState.h`, and `Statement.h`
   - Any files you created
-  - Your `Makefile`
+  - Your `Makefile` and `Interpreter` exe in your `hw2` directory (other files can be in sub-directories)
 
 + Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md unless you have special instructions we should know to run your program. The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties.
 

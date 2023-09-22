@@ -14,7 +14,7 @@ title: Homework 3 Programming
 + There is no skeleton code for PA3
 + You should provide a `Makefile` to compile your doublet program.  While you should test your heap, you won't submit your testing code, and thus will not need to provide a compilation command for it.
 + Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
-+ Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
+<!-- + Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of. -->
 
 ### Problem 1 (Build a templated d-ary heap, 35%)
 
@@ -195,9 +195,10 @@ It would output:
 
 + Directory name for this homework (case sensitive): `hw3`
   - This directory should be in your `hw-username` repository
-  - This directory needs its own `README.md` file briefly describing your work
+  <!-- - This directory needs its own `README.md` file briefly describing your work -->
   - `doublet.cpp`, `MinHeap.h`
   - Your `Makefile`
++ Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md unless you have special instructions we should know to run your program. The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties.
 
 ### Commit then Re-clone your Repository
 

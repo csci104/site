@@ -326,7 +326,7 @@ Its your choice where to go from here, but we strongly recommend that you implem
   - Any files you created
   - Your `Makefile` and `Interpreter` exe in your `hw2` directory (other files can be in sub-directories)
 
-+ Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md unless you have special instructions we should know to run your program. The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties.
++ Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md. The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties.
 
 ### Commit then Re-clone your Repository
 

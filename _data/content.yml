@@ -101,12 +101,12 @@ labs:
     slides: lab4.pdf
 
   - id: 5
-    folder: lab4
+    folder: lab5-midterm
     week: Week 6
     date: 9/26
     title: Midterm I Review
     assigned: false
-    # slides: stl_inh_lab.pdf
+    slides: midterm1_review_nsolutions.pdf
 
   - id: 6
     folder: lab5

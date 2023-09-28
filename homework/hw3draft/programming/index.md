@@ -197,7 +197,7 @@ It would output:
   - This directory should be in your `hw-username` repository
   <!-- - This directory needs its own `README.md` file briefly describing your work -->
   - `doublet.cpp`, `MinHeap.h`
-  - Your `Makefile`
+  - Your `Makefile`, make sure it will create a `doublet` exe file in the hw3 direcotry (same as where Makefile should be) and not in a sub-directory like BIN_DIR. This does not mean to include the exe file in your submission. Failure to have this exe as instructed will result in a 10 point penalty.
 + Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md. The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties.
 
 ### Commit then Re-clone your Repository

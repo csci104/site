@@ -12,7 +12,7 @@ title: Homework 3 Programming
 + To access the written portion of this assignment, click [here](..)
 + Directory name in your github repository for this homework (case sensitive): `hw3`
 + There is no skeleton code for PA3
-+ You should provide a `Makefile` to compile your doublet program.  While you should test your heap, you won't submit your testing code, and thus will not need to provide a compilation command for it.
++ You should use the `Makefile` from the resources repo to compile your doublet program.  While you should test your heap, you won't submit your testing code, and thus will not need to provide a compilation command for it.
 + Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
 <!-- + Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of. -->
 

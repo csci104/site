@@ -109,13 +109,13 @@ labs:
     slides: midterm1_review_nsolutions.pdf
 
   - id: 6
-    folder: lab5
+    folder: lab6-counting
     week: Week 7
     date: 10/3
-    title: Counting & Probability
-    assigned: false
-    topics: Counting, Probability
-    # slides: templates_lab.pdf
+    title: Counting
+    assigned: true
+    topics: Counting
+    slides: lab6.pdf
 
   - id: 7
     week: Week 8

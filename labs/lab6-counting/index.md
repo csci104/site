@@ -91,11 +91,9 @@ However, "KITTEN" has 2 T's, T<sub>1</sub> and T<sub>2</sub>. This means every a
 Given that there are  2 * 1 = 2! ways to arrange the 2 T's, and that we want DISTINCT arrangements, the answer is **6!/2!**
 
 ### Permutations & Combinations
-Recall from lecture that an **r-permutation** is an **ordered** arrangement of r elements from a set of n, denoted as:
-<div style="text-align:center"><img src="./assets/nPr.png" alt="r permutation" height="70"/></div>
+Recall from lecture that an **r-permutation** is an **ordered** arrangement of r elements from a set of n.
 
-An **r-combination** is an **unordered** arrangement of r elements from a set of size n, and is commonly spoken as “n choose r”:
-<div style="text-align:center"><img src="./assets/nCr.png" alt="n choose r" height="60"/></div>
+An **r-combination** is an **unordered** arrangement of r elements from a set of size n, and is commonly spoken as “n choose r”.
 
 #### Example: Permutations
 The Pied Piper Duck Fashion Show takes place in Sydney, Asutralia every year. Since we can't fly to Australia, let's suppose we are hosting our own CS104 exclusive duck fashion show. There are 30 ducks, and 3 prizes: gold, silver, and bronze. How many ways can we award gold, silver, and bronze among our 30 fashionable ducks?
@@ -119,8 +117,6 @@ The above two examples are examples of permutations and combinations *without* r
 
 However, sometimes we do allow for repetition. Recall from lecture that the number of r-permutations of a set of n objects, where repetition is allowed, is **n<sup>r</sup>**.
 
-The number of r-combinations of a set of n objects, where repetition is allowed, is:
-<div style="text-align:center"><img src="./assets/rComboWithRepetition.png" alt="n combinations with repetition" height="60"/></div>
 
 #### Example: Permutations with Repetition
 How many different 4-digit PINs are possible?

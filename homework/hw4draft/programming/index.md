@@ -74,6 +74,7 @@ The **extended Euclidean Algorithm** is as follows:
 13. Update `old_t = temp`.  Note that `old_r = e * old_t + L * old_s`
 14. Repeat steps 4-13 until r == 0
 15. The gcd is `old_r`, and d is `old_t` (and y is `old_s`, but we don't need that).
+16. If `d` is negative, add `e*L` to it until it is a positive integer smaller than `e*L`
 
 The extended Euclidean Algorithm is explained [here](https://www.youtube.com/watch?v=6KmhCKxFWOs).
 

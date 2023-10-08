@@ -23,7 +23,7 @@ title: Homework 4 Programming
 
 You will create an executable called `rsa` which takes in 2 command-line parameters: `p` and `q` (in either order).  Your program will assume that p and q are large primes (if they are not prime, your algorithm should still run and not crash, but we cannot promise the decryption process will be secure or accurate).  A list of prime numbers (for testing) can be found [here](http://compoasso.free.fr/primelistweb/page/prime/liste_online_en.php), or you can write your own prime-finding algorithm.
 
-When run, your program should immediately prompt the user for a command (via cin) and, after having executed that command, should loop and prompt the user again.  If the user enters an invalid command, you may do anything except crash (including gracefully terminating the program, or asking for another command).  The list of valid commands are as follows:
+When run, your program should immediately prompt the user for a command (via cin) and, after having executed that command, should loop and prompt the user again.  If the user enters an invalid command, output an error message and ask for another command.  The list of valid commands are as follows:
 
 1. `EXIT`  Gracefully terminate the program.
 2. `DECRYPT [input] [output]`  Opens the file at [input], reads the contents of the file, decrypts the message, and creates/overwrites the file at [output] with the decrypted message.
@@ -36,13 +36,13 @@ If Alice and Bob wanted to use this program for its intended purpose, Alice woul
 1. Set e = 65537 (a common choice of e, but there are other specific choices of e that also work)
 2. Calculate x = 1+log_100 (n/27), rounding down.  If n is smaller than 27, your program should output some type of error message and prompt the user for a new command.
 3. Convert the first x characters in [message] to an integer M: space is 00, a is 01, b is 02, and z is 26.    If there are less than x characters remaining, pretend there is an appropriate amount of whitespace at the end of the message.  So if x=5, then `trojan` would produce M = 2,018,151,001, and in the next iteration, M would be 1,400,000,000.
-4. Calculate C = M^e mod n, and write this number to the output file.  Due to the large value of e, you will need to implement the **Modular Exponentiation Algorithm** to calculate this.  Review the relevant lecture handout for this algorithm.
+4. Calculate C = M^e mod n (stored as a `long long`), and write this number to the output file.  Due to the large value of e, you will need to implement the **Modular Exponentiation Algorithm** to calculate this.  Review the relevant lecture handout for this algorithm.
 5. Repeat steps 3 and 4 for the next x characters, until the entire message is encrypted.  Each number in the output file should be separated by a single whitespace.
 
 #### Decryption
 
 1. Calculate the decryption key d at program start (rather than repeating it every time you decrypt something).  The process for how to do this is detailed in the next section.
-2. Take the first long C in the file, and calculate M = C^d mod n, again using the **Modular Exponentiation Algorithm**
+2. Take the first `long long` C in the file, and calculate M = C^d mod n, again using the **Modular Exponentiation Algorithm**
 3. Convert M to x letters and spaces, and write them to the output file in lower-case.
 4. Repeat steps 2 and 3 for the next long, until the entire message is decrypted.  The input file should not be altered.
 
@@ -79,9 +79,18 @@ The extended Euclidean Algorithm is explained [here](https://www.youtube.com/wat
 
 #### A note on data sizes
 
-We will only run your program on inputs that fit inside a long, for simplicity.  Inside your modular exponentiation algorithm, you will need to deal with values as large as (n-1)^2 (make sure your algorithm does not require you to store values any larger than this).  When you are testing your program, make sure to choose p and q values such that (p*q-1)^2 is no bigger than about 10^18, and we will do the same.
+We will only run your program on inputs that fit inside a `long long`, for simplicity.  Inside your modular exponentiation algorithm, you will need to deal with values as large as (n-1)^2 (make sure your algorithm does not require you to store values any larger than this).  When you are testing your program, make sure to choose p and q values such that (p*q-1)^2 is no bigger than about `9 x 10^15`, and we will do the same.
 
-Note that this program would be a totally viable encryption/decryption mechanism if you expanded it to allow for larger p and q values.  It is possible to add this functionality by storing single large values in an array (similar to how we split M up), but this would make the entire program significantly more fiddly and complicated.
+#### Using your program (Optional)
+
+If you would like to use this program for its intended purpose, here is how you would do that:
+
+1. Select a `p` and `q`, calculate `n`, and provide your value `n` to students in the class via an unsecure channel (such as Piazza).
+2. Students can now use your value `n` to encrypt a message `M` for you, and post them in an unsecure channel, along with their own different public key `n'`
+3. Using `p` and `q`, decrypt and read `M`.
+4. Use `n'` to encrypt a reply message, and post it in an unsecure channel.
+
+Note that the use of this program is only limited by the small cap for `p` and `q` values (which means your "private" messages will be weak to a brute-force search).  It is possible to improve this functionality by storing single large values in an array (similar to how we split M up).  This would be fiddly and tedious, however, so it is not a required element of this assignment.  If you implemented this improvement and started using 200-digit primes for `p` and `q`, you would have a totally secure encryption mechanism!
 
 ### Finishing Up
 

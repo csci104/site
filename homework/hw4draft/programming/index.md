@@ -16,7 +16,7 @@ title: Homework 4 Programming
   - There is no skeleton code for this assignment.
   - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should, among other compilation commands, produce an executable `rsa`
 - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
-  - Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
+  <!-- - Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of. -->
   
 
 ### Implement the RSA encryption/decryption algorithm (50%)
@@ -99,8 +99,10 @@ Note that the use of this program is only limited by the small cap for `p` and `
 
 + Directory name for this homework (case sensitive): `hw4`
   - This directory should be in your `hw-username` repository
-  - This directory needs its own `README.md` file briefly describing your work
   - Any `.cpp` and `.h` files you created.
-  - Your `Makefile`
-+ The submission link will be posted on Piazza a few days before the due date.
+  - Your `Makefile` in your `hw4` directory
+  - Successful compilation of a `rsa` executable in your `hw4` directory after typing `make` and garbage file cleaning with `make clean`
+    - Don't turn in executable/object/garbage files!
+  <!-- - This directory needs its own `README.md` file briefly describing your work -->
++ Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md (but it may help graders give you a better score in case something goes wrong). The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties. The submission link will be posted on [`Curricula`](https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023) a few days before the due date.
 

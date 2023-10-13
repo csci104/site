@@ -25,7 +25,7 @@ title: Homework 4 Written
 Answer the following questions:
 
 1. The following message has been encrypted with the Caesar cipher: what was the original message?  `ILJKW RQ, WURMDQV!`
-2. You receive the following bit strings over a communication link, where the last bit is a partiy check.  In which string(s) must there be an error?
+2. You receive the following bit strings over a communication link, where the last bit is a parity check.  In which string(s) must there be an error?
    - 00000111111
    - 10101010101
    - 11111100000

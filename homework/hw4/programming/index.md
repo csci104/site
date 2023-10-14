@@ -80,7 +80,7 @@ The extended Euclidean Algorithm is explained [here](https://www.youtube.com/wat
 
 #### A note on data sizes
 
-We will only run your program on inputs that fit inside a `long long`, for simplicity.  Inside your modular exponentiation algorithm, you will need to deal with values as large as (n-1)^2 (make sure your algorithm does not require you to store values any larger than this).  When you are testing your program, make sure to choose p and q values such that (p*q-1)^2 is no bigger than about `9 x 10^15`, and we will do the same.
+We will only run your program on inputs that fit inside a `long long`, for simplicity.  Inside your modular exponentiation algorithm, you will need to deal with values as large as (n-1)^2 (make sure your algorithm does not require you to store values any larger than this).  When you are testing your program, make sure to choose p and q values such that (p*q-1)^2 is no bigger than `9 x 10^18`, and we will do the same.
 
 #### Using your program (Optional)
 
@@ -103,6 +103,6 @@ Note that the use of this program is only limited by the small cap for `p` and `
   - Your `Makefile` in your `hw4` directory
   - Successful compilation of a `rsa` executable in your `hw4` directory after typing `make` and garbage file cleaning with `make clean`
     - Don't turn in executable/object/garbage files!
-  <!-- - This directory needs its own `README.md` file briefly describing your work -->
+    <!-- - This directory needs its own `README.md` file briefly describing your work -->
 + Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md (but it may help graders give you a better score in case something goes wrong). The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties. The submission link will be posted on [`Curricula`](https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023) a few days before the due date.
 

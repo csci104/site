@@ -60,7 +60,7 @@ Using the theorem above, prove the following:
 
 ### Quadratic Probing
 
-Recall that in linear probing, the positions we try to insert an element at are: 
+Recall that in linear probing, the positions we try to insert an element at are:
 
 $$h, h + 1, h + 2, h + 3, \dots$$
 
@@ -140,11 +140,11 @@ Here if we use a naive method to test primes (try dividing it by every number fr
 
 #### Exercise 3 (Coding)
 
-For this exercise, you are going to implement a simple version of the Fermat test.
+For this exercise, you are going to implement a simple version of the Fermat test. The skeleton code lives in the resources repo under lab 7. 
 
 There are two functions for you to implement, both of which are in `fermat.cpp`:
 
-   * `uint32_t mod_exp(uint32_t base, uint32_t exponent, uint32_t mod)`: Calulate the value of $(base^{exponent}$ % $mod)$. You should use the [squaring technique mentioned in lecture](https://ee.usc.edu/~redekopp/cs104/slides/L19_NumberTheory.pdf) (Slide 19).
+   * `uint32_t mod_exp(uint32_t base, uint32_t exponent, uint32_t mod)`: Calulate the value of $(base^{exponent}$ % $mod)$. You should use the [squaring technique mentioned here](https://ee.usc.edu/~redekopp/cs104/slides/L19_NumberTheory.pdf) (Slide 19).
 
    * `bool fermat_test(uint32_t n, const std::vector<uint32_t>& tests)`: Perform Fermat primality test (mentioned above) on $n$. Returns `true` if it passes the test, `false` otherwise (i.e. `false` if you know for sure that $n$ is not prime). The values of $a$ you should use are inside the vector `tests`.
 

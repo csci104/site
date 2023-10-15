@@ -125,15 +125,13 @@ labs:
     # slides: heap_lab.pdf
 
   - id: 8
-    folder: su-llrec
+    folder: lab7-probability-numtheory
     week: Week 9
     date: 10/17
-    title: Number Theory
-    assigned: false
-    topics: Number Theaory
-    # slides:
-    #   - ll_rec_practice.pdf
-    #   - ll_rec_practice_soln.cpp
+    title: Probability & Number Theory
+    assigned: true
+    topics: Probability, Number Theory
+    slides: lab7.pdf
 
   - id: 9
     folder: lab7

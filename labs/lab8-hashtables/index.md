@@ -7,7 +7,7 @@ title: Hashtables
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your registered lab section.**
 
 
 ---
@@ -18,7 +18,7 @@ title: Hashtables
 
 Recall that a map is a data structure used mostly for fast look ups or searching data. It stores data in the form of key, value pairs, where every key is unique. Each key maps to a value, hence the name "map."
 
-The look up speed and ordering of map elements depends on the data structure we use to implement our map. In previous labs, we reviewed AVL Trees, an implementation of a balanced BST. This lab will go over hashtables and explore how it can be used to implement a map.
+The look up speed and ordering of map elements depends on the data structure we use to implement our map. Generally, we've learned in past lectures that lookup is an O(logn) function, assuming we use a tree structure to organize the underlying data. But what if we wanted this lookup operation to be faster? Is there an underlying data structure that could allow for constant time access?
 
 ### 2 - Let's Talk About Hash Tables
 
@@ -60,7 +60,9 @@ int hash(int data){
 }
 ```
 
-Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different for the majority of cases. It may be more operations than our first hash function, but it still does a constant amount of work.
+Wow, I literally have no idea what the number is going to be! In this example, the output hash will likely be different for the majority of cases. It may be more operations than our first hash function, but it still does a constant amount of work. Now it also accomplishes our second goal of uniformly distributing keys, since it's very likely that different inputs will result in different outputs.
+
+Finally, an important note is that even though we want hashtables to have a good distribution over the size of our hashtable, it must always be *deterministic*. This means that if we pass the hash function the same input multiple times, it will always result in the same output. This means no random number generators! It's critical that a hash function is deterministic because if we ever need to lookup a value in our hashtable, then we need to find where we put it!
 
 
 #### 2.2 - Collisions
@@ -132,17 +134,17 @@ Because chaining allows for buckets, it is probable for `n` objects to all be pl
 
 ### 3 - OrderedMap vs. UnorderedMap
 
-So let's see a real life example of a hash table. In the AVL tree homework, you use an ordered map. What is an unordered map and how is it different?
+So let's see a real life example of a hash table.
 
 #### 3.1 - OrderedMap
 
-An ordered map uses a balanced binary search tree as its underlying data structure. We haven't yet go over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
+An ordered map uses a balanced binary search tree as its underlying data structure. We haven't gone over it in lecture yet, but for now, it is sufficiently to know that it is used in the implementation of `std::map` (it usually uses a version of balanced binary search tree called a Red-Black Tree), and it has the time complexity of:
 
 1. `find(key)` | O(logn)
 2. `insert(key, value)` | O(logn)
 3. `remove(key)` | O(logn)
 
-It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you a ordered traversal of all the keys in the map.
+It is called a "ordered map" because doing an in-order traversal of a binary search tree would give you an ordered traversal of all the keys in the map (ex. if the keys strings, they would be printed in alphabetical order).
 
 #### 3.2 - UnorderedMap
 

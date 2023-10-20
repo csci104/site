@@ -134,15 +134,15 @@ labs:
     slides: lab7.pdf
 
   - id: 9
-    folder: lab7
+    folder: lab8-hashtables
     week: Week 10
     date: 10/24
     title: Hashtables
-    assigned: false
+    assigned: true
     topics: Hashtables
-    # slides:
-    #   - Backtracking_BST_AVL.pdf
-    #   - Backtracking_Lab_su22.pdf
+    slides: lab8.pdf
+      # - Backtracking_BST_AVL.pdf
+      # - Backtracking_Lab_su22.pdf
 
   - id: 10
     folder: bst-lab8
@@ -174,9 +174,8 @@ labs:
     folder: lab12
     week: Week 14
     date: 11/21
-    title: AVL Trees
+    title: No Lab!
     assigned: false
-    topics: Trees
     # slides: probability_lab.pdf
 
   - id: 14

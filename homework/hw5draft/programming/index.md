@@ -72,7 +72,7 @@ Any two of the above ideas, or similar ideas of your own, are sufficient for thi
   - This directory should be in your `hw-username` repository
   - Any `.cpp` and `.h` files you created.
   - Your `Makefile` in your `hw5` directory
+  - Your `README` file
   - Successful compilation of a problem 2 executable in your `hw5` directory after typing `make` and garbage file cleaning with `make clean`
     - Don't turn in executable/object/garbage files!
-      <!-- - This directory needs its own `README.md` file briefly describing your work -->
-+ Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md (but it may help graders give you a better score in case something goes wrong). The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties. The submission link will be posted on [`Curricula`](https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023) a few days before the due date.
++ Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/). The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties. The submission link will be posted on [`Curricula`](https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023) a few days before the due date.

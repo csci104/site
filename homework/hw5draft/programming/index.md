@@ -7,7 +7,7 @@ title: Homework 5 Programming
 
 # HW5: Programming Assignment
 
-+ Due: Friday, November 12th, 11:59pm PST
++ Due: Friday, November 17th, 11:59pm PST
 
 + To access the written portion of this assignment, click [here](..)
 
@@ -56,10 +56,10 @@ We will now hash the word. Use the following formula to produce the result, and 
 
 ### Problem 2 (Collect Data, 10%)
 
-Does your Hashtable live up to its hype?  Now you can find out!  Using variable initial Hashtable sizes, the return value for your add function, and whatever test cases you want to run on, collect data you are interested in, and report on your results in your README file.  Unsure what to do?  Here are some suggestions:
+Does your Hashtable live up to its hype?  Now you can find out!  Using variable initial Hashtable sizes, the return value for your add function, and whatever test cases you want to run on, collect data you are interested in, and report on your results README file.  Unsure what to do?  Here are some suggestions:
 
 1. **Confirm the Birthday Paradox:**  With an initial size of 365, add items until the first probe occurs or (very unlikely) you resize the array.  Run this a bunch of times (at least 1000).  You should find that approximately 50.7% of the time you insert 23 things or less, and the rest of the time you insert 24 things or more.
-2. **Probe Rate:** How many probes occur, on average, when inserting n elements into the Hashtable?  When the Hashtable is (almost) half full, you should expect 1 probe on average.  When the Hashtable is about a quarter full, you should expect 1/3 probes on average.  Since your Hashtable oscillates between these loading factors when resizing, you should probably find something a bit smaller than 2n/3.
+2. **Probe Rate:** How many probes occur, on average, when inserting n elements into the Hashtable?  When the Hashtable is (almost) half full, you should expect 1 probe on average.  When the Hashtable is about a quarter full, you should expect 1/3 probes on average.  Since your Hashtable oscillates between these loading factors when resizing, you should probably find approximately 2n/3 (probably smaller).  Run this a bunch of times to get a good average.  Additionally keep track of the largest number of probes for a single insert, for each run.  You should find this to be on the order of log n.
 3. **Ruin Quadratic Probing:** Start with an intial Hashtable size that is non-prime, and find a sequence of inputs that causes your program to hang (or trigger a failsafe if you programmed one in).  It may be easier to randomly generate a lot of test cases and run them until something fails than to systematically try and find a test case by hand.  You should be able to do this for a Hashtable size of 12 or larger.
 
 Any two of the above ideas, or similar ideas of your own, are sufficient for this part of the assignment.
@@ -70,8 +70,9 @@ Any two of the above ideas, or similar ideas of your own, are sufficient for thi
 
 + Directory name for this homework (case sensitive): `hw5`
   - This directory should be in your `hw-username` repository
-  - This directory needs its own `README.md` file briefly describing your work
-  - `Hashtable.h`, and any `.cpp` files created for problem 2.
-  - Your `Makefile`
-+ The submission link will be posted on Piazza a few days before the due date.
-
+  - Any `.cpp` and `.h` files you created.
+  - Your `Makefile` in your `hw5` directory
+  - Successful compilation of a problem 2 executable in your `hw5` directory after typing `make` and garbage file cleaning with `make clean`
+    - Don't turn in executable/object/garbage files!
+      <!-- - This directory needs its own `README.md` file briefly describing your work -->
++ Please follow the [`submission instructions`](https://bytes.usc.edu/cs104/homework/submission-instructions/), you do not have to do the README.md (but it may help graders give you a better score in case something goes wrong). The TLDR is to push to GitHub and submit the SHA of the commit you want graded to Curricula. Failure to follow these instructions without a valid excuse may result in late days being used, a 0 on the PA, or other penalties. The submission link will be posted on [`Curricula`](https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023) a few days before the due date.

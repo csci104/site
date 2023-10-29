@@ -29,6 +29,10 @@ Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
   - [Practice Midterm B q1 Solution](./midterm-c-q1sol.png)
   - [Practice Midterm B q2,3 Solution](./midterm-c-q2q3sol.pdf)
   - [Practice Midterm B q4,6 Solution](./midterm-c-q4q6sol.pdf)
+- [Practice Final](final-b.pdf) (Problems 1a, 1c, 2, 3, 5, 6, and 7 are good midterm 2 practice)
+- [Probability Practice](Practice.pdf) (Homework style questions that are harder than will be on the exam)
+  - [Probability Practice Solutions](PracticeSol.pdf)
+
 
 ## Editors and IDEs
 

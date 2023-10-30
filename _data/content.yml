@@ -106,7 +106,7 @@ labs:
     date: 9/26
     title: Midterm I Review
     assigned: false
-    slides: midterm1_review_nsolutions.pdf
+    slides: mt1_review_student.pdf
 
   - id: 6
     folder: lab6-counting
@@ -141,17 +141,15 @@ labs:
     assigned: true
     topics: Hashtables
     slides: lab8.pdf
-      # - Backtracking_BST_AVL.pdf
-      # - Backtracking_Lab_su22.pdf
 
   - id: 10
-    folder: bst-lab8
+    folder: lab9-midterm
     week: Week 11
     date: 10/31
     title: Midterm II Review
     assigned: false
-    # slides:
-    #   - Backtracking_BST_AVL.pdf
+    slides:
+      - mt2_review_student.pdf
 
   - id: 11
     folder: mt

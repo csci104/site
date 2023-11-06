@@ -55,27 +55,28 @@ Could we find this amortized cost another way? The idea behind the accounting (p
 
 Continuing with the binary counter example, let's use the accounting method to determine the amortized runtime.
 
-First, we need to set our fixed cost at the beginning that is high enough for low-cost operations to have a little left over. Let's start with a fixed cost of \$2, and say that flipping a bit costs \$1.
+First, we need to set our fixed cost at the beginning that is high enough for low-cost operations to have a little left over.
+Let's start with a fixed cost of \$2.
 
-For our first increment from 00000 -> 00001, then we pay \$2
-to do the operation, and we get to save
-\$1
-since the flip was only \$1.
+Flipping a bit costs \$1.
 
-For the next increment 00001 -> 00010, we deposit \$2
-to do the operation, and end up using both of those dollars to do 2 flips; we still have \$1
-saved from our first cheap operation.
+For our first increment from 00000 -> 00001, then we pay \$2 to do the operation.
 
-For the next increment 00010 -> 00011, we pay our \$2
-, and end up only having to use \$1
- for a flip; we now have \$2
-  saved.
+We get to save \$1, since the flip was only \$1.
 
-For the next increment 00011 -> 00100, we pay \$2
-, and end up having to use \$3
- to execute the number of flips we need. Luckily, we have \$2
-  saved from cheap operations, so we're left with \$1
-   in the bank.
+For the next increment 00001 -> 00010, we deposit \$2 to do the operation.
+
+We end up using both of those dollars to do 2 flips; we still have \$1 saved from our first cheap operation.
+
+For the next increment 00010 -> 00011, we pay our \$2.
+
+We end up only having to use \$1 for a flip; we now have \$2 saved.
+
+For the next increment 00011 -> 00100, we pay \$2.
+
+For this increment, we end up having to use \$3 to execute the number of flips we need. Luckily, we have \$2 saved from cheap operations.
+
+We're left with \$1 in the bank.
 
 <div style="text-align:center"><img src="./assets/PiggyBank.png" alt="piggy bank example" width="300" height="250" /> </div>
 

@@ -62,7 +62,9 @@ Flipping a bit costs \$1.
 
 For our first increment from 00000 -> 00001, then we pay \$2 to do the operation.
 
-We get to save \$1, since the flip was only \$1.
+We get to save \$1,
+
+since the flip was only \$1.
 
 For the next increment 00001 -> 00010, we deposit \$2 to do the operation.
 
@@ -70,11 +72,15 @@ We end up using both of those dollars to do 2 flips; we still have \$1 saved fro
 
 For the next increment 00010 -> 00011, we pay our \$2.
 
-We end up only having to use \$1 for a flip; we now have \$2 saved.
+We end up only having to use \$1
+
+for a flip; we now have \$2 saved.
 
 For the next increment 00011 -> 00100, we pay \$2.
 
-For this increment, we end up having to use \$3 to execute the number of flips we need. Luckily, we have \$2 saved from cheap operations.
+For this increment, we end up having to use \$3
+
+ to execute the number of flips we need. Luckily, we have \$2 saved from cheap operations.
 
 We're left with \$1 in the bank.
 

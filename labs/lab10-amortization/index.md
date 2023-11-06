@@ -78,7 +78,7 @@ WIth this method, we define a function Φ that maps the state of our data struct
 
 If the operation costs *c*, then the amortized cost *A* will be:
 
-$A := c + (Φ(S1) - Φ(S0))
+A := c + (Φ(S1) - Φ(S0))
 
 Where Φ(S1) is the value of the potential function for the state we moved to, and Φ(S1) is the value of the potential function we were originally in.
 
@@ -88,7 +88,7 @@ Great! We have our potential function- now what? We calculate the amortized cost
 
 The amortized cost will then be:
 
-$A = *f* - *(f-2)* = 2
+A = *f* - *(f-2)* = 2
 
 Which is a constant, so the amortized runtime is constant! The potential method is one of the trickiest methods to understand because of how abstract it is. For more help on this topic, I have personally found these [notes](https://www.cs.cmu.edu/~15750/notes/amortization.pdf) to be very helpful (it is where I pulled this explanation from!).
 

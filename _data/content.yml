@@ -152,11 +152,11 @@ labs:
       - mt2_review_student.pdf
 
   - id: 11
-    folder: mt
+    folder: lab10-amortization
     week: Week 12
     date: 11/7
     title: Amortized Analysis
-    assigned: false
+    assigned: true
     topics: Runtime
 
   - id: 12

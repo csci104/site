@@ -55,19 +55,19 @@ Could we find this amortized cost another way? The idea behind the accounting (p
 
 Continuing with the binary counter example, let's use the accounting method to determine the amortized runtime.
 
-First, we need to set our fixed cost at the beginning that is high enough for low-cost operations to have a little left over. Let's start with a fixed cost of $2, and say that flipping a bit costs \$1.
+First, we need to set our fixed cost at the beginning that is high enough for low-cost operations to have a little left over. Let's start with a fixed cost of \$2, and say that flipping a bit costs \$1.
 
-For our first increment from 00000 -> 00001, then we pay $2 to do the operation, and we get to save \$1 since the flip was only \$1.
+For our first increment from 00000 -> 00001, then we pay \$2 to do the operation, and we get to save \$1 since the flip was only \$1.
 
 For the next increment 00001 -> 00010, we deposit \$2 to do the operation, and end up using both of those dollars to do 2 flips; we still have \$1 saved from our first cheap operation.
 
-For the next increment 00010 -> 00011, we pay our \$2, and end up only having to use $1 for a flip; we now have \$2 saved.
+For the next increment 00010 -> 00011, we pay our \$2, and end up only having to use \$1 for a flip; we now have \$2 saved.
 
 For the next increment 00011 -> 00100, we pay \$2, and end up having to use \$3 to execute the number of flips we need. Luckily, we have \$2 saved from cheap operations, so we're left with \$1 in the bank.
 
 <div style="text-align:center"><img src="./assets/PiggyBank.png" alt="piggy bank example" width="300" height="250" /> </div>
 
-Because we never overspend our savings (i.e. our fixed cost of $2 is always enough, no matter what) then we can see that our increment function will have a constant time amortized cost! If instead the amount of money per operation was linear and not a fixed value (ex. the amount we had to pay was dependent on what number of increments we were doing), then we'd be able to determine that the amortized runtime is linear.
+Because we never overspend our savings (i.e. our fixed cost of \$2 is always enough, no matter what) then we can see that our increment function will have a constant time amortized cost! If instead the amount of money per operation was linear and not a fixed value (ex. the amount we had to pay was dependent on what number of increments we were doing), then we'd be able to determine that the amortized runtime is linear.
 
 Basically, with this method, you want to find the smallest amount of money possible that always keeps your savings >= 0. If that value is constant, then the amortized cost of the function is constant; if that value is a variable like *n*, then the amortized cost of the function is linear; if that value is a variable like *n^2*, then the amortized cost of the function is quadratic, etc.
 

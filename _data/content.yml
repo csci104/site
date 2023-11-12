@@ -160,13 +160,13 @@ labs:
     topics: Runtime
 
   - id: 12
-    folder: lab11
+    folder: lab11-avl
     week: Week 13
     date: 11/14
-    title: BSTs
-    assigned: false
+    title: AVL Trees
+    assigned: true
     topics: Trees
-    # slides: counting_lab.pdf
+    slides: lab11.pdf
 
   - id: 13
     folder: lab12

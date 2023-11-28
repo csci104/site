@@ -93,7 +93,7 @@ title: Visual Inspection Rubric
                 <td>100 points</td>
             </tr>
             <tr>
-                <td>Extra files (binary files, temp files, etc.)</td>
+                <td>Extra files (binary files, temp files, .vscode etc.)</td>
                 <td>1 point per file, max 5</td>
                 <td>We will ignore test files</td>
             </tr>

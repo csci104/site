@@ -51,137 +51,146 @@ assignments:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
       assigned: Saturday, Nov 18
-      due: Friday, Dec 1 at 11:59PM Pacific 
+      due: Friday, Dec 1 at 11:59PM Pacific
 
 labs:
   - id: 0
     folder: lab0-github
     week: Week 1
-    date: 8/22
-    title: GitHub Setup
-    assigned: true
-    topics: Github, Docker, Curricula
-    slides: lab0.pdf
+    date: 1/8
+    title: Class Setup
+    assigned: false
+    topics: GitHub, Docker, Codio
+    # slides: lab0.pdf
 
 
   - id: 1
     folder: lab1-gdb
     week: Week 2
-    date: 8/29
-    title: GDB
-    assigned: true
-    topics: GDB, Debugging
-    slides: lab1.pdf
+    date: 1/15
+    title: Git
+    assigned: false
+    topics: Git, GitHub
+    # slides: lab1.pdf
 
   - id: 2
     folder: lab2-make
     week: Week 3
-    date: 9/5
+    date: 1/22
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, Build Systems
-    slides: lab2.pdf
+    # slides: lab2.pdf
 
   - id: 3
     folder: lab3-stl
     week: Week 4
-    date: 9/12
-    title: STL & Inheritance
-    assigned: true
-    topics: OOP
-    slides: lab3.pdf
+    date: 1/29
+    title: GDB
+    assigned: false
+    topics: Debugging
+    # slides: lab3.pdf
 
   - id: 4
     folder: lab4-templates
-    title: Templates
+    title: Week 5 Lab
     week: Week 5
-    date: 9/19
-    assigned: true
-    topics: OOP
-    slides: lab4.pdf
+    date: 2/5
+    assigned: false
+    topics:
+    # slides: lab4.pdf
 
   - id: 5
     folder: lab5-midterm
     week: Week 6
-    date: 9/26
-    title: Midterm I Review
+    date: 2/12
+    title: Week 6 Lab
     assigned: false
-    slides: mt1_review_student.pdf
+    # slides: mt1_review_student.pdf
 
   - id: 6
     folder: lab6-counting
     week: Week 7
-    date: 10/3
-    title: Counting
-    assigned: true
-    topics: Counting
-    slides: lab6.pdf
+    date: 2/19
+    title: Week 7 Lab
+    assigned: false
+    topics:
+    # slides: lab6.pdf
 
   - id: 7
     week: Week 8
-    date: 10/10
-    title: No Lab!
+    date: 2/26
+    title: Week 8 Lab
     assigned: false
     # slides: heap_lab.pdf
 
   - id: 8
     folder: lab7-probability-numtheory
     week: Week 9
-    date: 10/17
-    title: Probability & Number Theory
+    date: 3/4
+    title: Week 9 Lab
     assigned: true
-    topics: Probability, Number Theory
-    slides: lab7.pdf
+    # topics: Probability, Number Theory
+    # slides: lab7.pdf
 
   - id: 9
     folder: lab8-hashtables
-    week: Week 10
-    date: 10/24
-    title: Hashtables
-    assigned: true
-    topics: Hashtables
-    slides: lab8.pdf
+    # week: Week 10
+    date: 3/11
+    title: Spring Break
+    assigned: false
+    # topics: Hashtables
+    # slides: lab8.pdf
 
   - id: 10
     folder: lab9-midterm
-    week: Week 11
-    date: 10/31
-    title: Midterm II Review
-    assigned: false
-    slides:
-      - mt2_review_student.pdf
+    week: Week 10
+    date: 3/18
+    title: Week 10 Lab
+    # assigned: false
+    # slides:
+    #   - mt2_review_student.pdf
 
   - id: 11
     folder: lab10-amortization
-    week: Week 12
-    date: 11/7
-    title: Amortized Analysis
-    assigned: true
-    topics: Runtime
+    week: Week 11
+    date: 3/25
+    title: Week 11 Lab
+    assigned: false
+    # topics: Runtime
 
   - id: 12
     folder: lab11-avl
-    week: Week 13
-    date: 11/14
-    title: AVL Trees
-    assigned: true
-    topics: Trees
-    slides: lab11.pdf
+    week: Week 12
+    date: 4/1
+    title: Week 12 Lab
+    assigned: false
+    # topics: Trees
+    # slides: lab11.pdf
 
   - id: 13
     folder: lab12
-    week: Week 14
-    date: 11/21
-    title: No Lab!
+    week: Week 13
+    date: 4/8
+    title: Week 13 Lab
     assigned: false
     # slides: probability_lab.pdf
 
   - id: 14
     folder: lab12-finallab
+    week: Week 14
+    date: 4/15
+    title: Week 14 Lab
+    assigned: false
+    # slides: final_review.pdf
+
+  - id: 15
+    folder: lab12-finallab
     week: Week 15
+    date: 4/22
     title: Final Review
     assigned: false
-    slides: final_review.pdf
+    # slides: final_review.pdf
 
 
 

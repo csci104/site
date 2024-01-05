@@ -2,7 +2,7 @@ instructors:
   - name: Andrew Goodney
     email: goodney@usc.edu
     image: /assets/img/staff/goodney.jpg
-    hours: '<table><tr><td>10am - 12pm M/W</td></tr><tr><td>1pm - 3pm M</td></tr></table>'
+    hours: 'TBD'
     location:  PHE 406
 
 administrators:

@@ -14,8 +14,8 @@ vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
 # these are the same, the html and md files should be searched and fixed
-regrades: httpx://forms.gle/Jj742f1EbM3vEdVcA
-regrade_form: httpx://forms.gle/Jj742f1EbM3vEdVcA
+regrades: https://forms.gle/ybjyBzdUNTGgqTur9
+regrade_form: https://forms.gle/ybjyBzdUNTGgqTur9
 slug: cs104-sp24
 slide_location: http://bytes.usc.edu/files/cs104/slides
 extension_form: https://forms.gle/Xjpc6kLTkKDr59qC9

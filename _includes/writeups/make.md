@@ -1,7 +1,5 @@
 Continue your answers in `hw2.txt`.
 
-  - For this problem you may use online sources to look up information about `make` and Makefiles, but please cite your sources.  
-
 #### Part (a): 
 Every *action* line in a makefile must start with a:
 

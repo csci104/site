@@ -1,39 +1,58 @@
 ---
 layout: asides
 toc: true
-tasks: true
-title: Homework 4 Written
+tasks: false
+title: Homework 4
+nav: homework
+hwpath: hw4
+
 ---
 
-# HW4: Written Assignment
+## {{page.title}}
 
-+ Due: Friday, October 20th, 11:59pm PST
-+ You will submit this homework through Blackboard, by uploading your answers.  Please submit with a common file extension (such as .jpg, or .pdf)
-+ For all your answers, you will primarily be graded on **your work**.  Only putting a final numerical answer will yield very little credit.  Instead, give the formula you used, and explain your answers.  You do **not** need to provide a final numerical answer for any of these problems, but it might help your graders out a bit if you do.
-+ To access the programming portion of this assignment, click [here](./programming/)
++ Due: See [homework page]({{site.baseurl}}/homework/index.html)
++ Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
 
-### Problem 1 (Probability, 25%)
+### Skeleton Code
+Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and has been pushed to the Github repository [`resources`](https://github.com/{{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  Otherwise you'll need to clone it.
 
-1. An elevator starts with 7 passengers and can make stops at 10 floors.  Each passenger will get off the elevator independently of each other and are equally likely to get off the elevator at any floor.  What is the probability that no two passengers get off the elevator at the same floor?
-2. A family has 4 children, where each child is equally likely to be a boy or a girl.  E is the event where, if the children are lined up in increasing order of age, then at least two consecutive children are girls.  F is the event where the youngest child is a girl.  Are these events independent?
-3. Urn 1 contains 3 red balls and 5 white balls and urn 2 contains 7 red balls and 9 white balls. We select urn 1 with probability 1/3 and urn 2 with probability 2/3.  A ball is then chosen from the selected urn, uniformly at random.  We draw a red ball: what is the probability that it came from urn 1?
-4. There are n pieces of mail in a communal box for an apartment building. Tina Trojan has a letter in that box. Tina will take one letter from the box at a time, until she finds the one addressed to her.  Once she finds her letter, she will return the other letters to the box.  What is the expected number of letters Tina will draw?
-5. There are 2n people that enter a housing lottery to win a free mobile service for one year.  The 2n people consist of n pairs of roommates. There are m people that win the year of mobile service, the others win nothing.  What is the expected number of pairs of roommates where neither win anything?
 
-### Problem 2 (Number Theory, 25%)
+## Written Portion
 
-Answer the following questions:
 
-1. The following message has been encrypted with the Caesar cipher: what was the original message?  `ILJKW RQ, WURMDQV!`
-2. You receive the following bit strings over a communication link, where the last bit is a parity check.  In which string(s) must there be an error?
-   - 00000111111
-   - 10101010101
-   - 11111100000
-   - 10111101111
-3. Which positive integers less than `30` are relatively prime to `30`?
-4. What is `gcd(21n+4, 14n+3)`, where `n > 0`?
-5. How many 0's are there at the end of `100!`?
+{% for part in site.data.hws.hw4.written_parts %}
 
-### Programming Assignment
+### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
-To access the programming portion of this assignment, click [here](./programming/)
+{% include writeups/{{ part.writeup }} %}
+
+{% endfor %}
+
+
+## Programming Portion
+
+{% for part in site.data.hws.hw4.programming_parts %}
+
+### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
+
+{% include writeups/{{ part.writeup }} %}
+
+{% endfor %}
+
+## Checkpoint
+
+For checkpoint credit, submit your working code for the BST/iterator implementation (though not necessarily the AVL tree). Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
+
+  - `bst.h`, `print_bst.h` (it's fine to include your other **source** files like `avlbst.h`, `Makefile`, `bst-test.cpp`)
+  - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
+
+
+We will use `hw4_tests/bst_tests/bst_tests` for the checkpoint.  They must compile, run, and pass all tests with no `valgrind` or other memory errors.  Failure to pass even one test or having 1 valgrind error will result in 0 credit for the checkpoint.  It is fine to push input test files if you like, though we will not grade them.
+
+
+## Submission Files
+
+Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** commit/push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.  Then submit your SHA on our submission site.
+
+{% include commit-reclone.md %}
+

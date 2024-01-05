@@ -46,7 +46,7 @@ Introduces the student to standard data structures (linear structures such as li
 
 - [All content & info]({{ site.baseurl }}/)
 - [Blackboard]({{ site.data.urls.blackboard }}){:target="_blank"}
-- [Piazza]({{ site.data.urls.discussion }}){:target="_blank"}
+- [EdStem]({{ site.data.urls.piazza }}){:target="_blank"}
 
 ## Grading Weights and Scale
 
@@ -69,17 +69,16 @@ Your final grade will depend solely on your own performance, graded according to
         <td>Lab Exercises</td>
       </tr>
       <tr>
-        <td>30%</td>
+        <td>28%</td>
         <td>Midterm Exams</td>
       </tr>
       <tr>
-        <td>28%</td>
+        <td>30%</td>
         <td>Final Exam</td>
       </tr>
     </tbody>
   </table>
 </div>
-
 
 ### Grading Scale
 
@@ -130,7 +129,7 @@ We will be using **"Data Structures and Algorithm Analysis in C++" by Mark Weiss
 You may also find the course lecture notes useful.  You may download (and possibly print) the [lecture notes]({{ site.data.urls.notes }}).
 These are based on teaching of CSCI 104 in past semesters, and cover the material quite accurately as presented in class.
 However, the lecture notes may be out of order and cover different topics, as we have changed the schedule significantly.
-We will also be providing detailed lecture slides that you may also use.
+We will also be providing detailed lecture slides and recorded videos that you may also use.
 
 We want to provide you with additional references that may enhance study so in addition to the textbook used for CSCI 103, for the C++ Language the following references are available for free online from the USC Library:
 
@@ -140,6 +139,7 @@ We want to provide you with additional references that may enhance study so in a
 
 For data structures specifically: 
 
+- Weiss.  Data Structures and Algorithm Analysis in C++ 4th Ed. Pearson, 2014.
 - Carrano, Frank and Thomas Henry. Data Abstraction & Problem Solving with C++ 6th Ed. Pearson, 2013.
 - [Goodrich, Michael T, Roberto Tamassia, and David M Mount. Data Structures and Algorithms in C](https://uosc.primo.exlibrisgroup.com/permalink/01USC_INST/hs9vaa/alma991043327161803731). Wiley, 2011.
 
@@ -150,7 +150,7 @@ These readings contain theoretical concepts, examples and usable code that will 
 
 ## Exams
 
-Exams will involve analysis and coding.  Questions require students to demonstrate their mastery over the material. Exams will likely be given via Gradescope and require you to bring a laptop. More details will be posted at least 1 week before the exam.
+Exams will involve analysis and coding.  Questions require students to demonstrate their mastery over the material. Exams are currently expected to be in person but will likely be given via Gradescope and require you to bring a laptop. More details will be posted at least 1 week before the exam.
 
 ## Accommodations
 
@@ -158,32 +158,14 @@ If you have USC approved (OSAS) accommodations, you **MUST** upload your OSAS ge
 
 ## Statement on Academic Conduct
 
-
-
-## Statement on Academic Conduct and Support Systems 
-
 Below is USC's official language.
- However, **we have specific rules in CS 104 which are outlined on the [assignments & grading page]({{ site.baseurl }}/homework/)** and below:
+ However, **we have specific rules in CS 104 which are outlined on the [assignments & grading page]({{ site.baseurl }}/homework/)**.
 
- **Collaboration**:  Your homework assignments and exams should be individual efforts unless explictly stated otherwise. While collaboration and online searches are common in the workplace, taking code from those sources is usually not allowed due to licensing and can have legal ramifications.  Similarly, while collaboration in a company is common, we are training you to be capable computer scientists and, thus, you need to develop the skills for yourself.  You will have higher levels of collaboration for team-based projects in future courses and in the workplace.  For homework assignments, you may only have **CONCEPTUAL** discussions with classmates. Any discussion that includes specific code (describing variables, loops, functions, etc.) and implementation details is an **inappropriate level** of collaboration and a **violation of academic integrity**.    **Copying (and then modification) or just "viewing for reference"** any (**even small**) portion(s) of code from Internet sources or fellow students is prohibited unless explicitly cleared with the instructor.  Simiarly, **ANY use of chatGPT or similar AI-generators** to generate ANY amount of code is a violation. Similarly you should NOT verbally describe your code at any level of detail.  Instead, draw (non-code) pictures, ask questions that consider possible inputs or other scenarios, or provide advice on how to debug.  Violations of this policy **will likely** result in an **F in the course**.
-
-### Academic Integrity:
-The University of Southern California is a learning community committed to developing successful scholars and researchers dedicated to the pursuit of knowledge and the dissemination of ideas. Academic misconduct, which includes any act of dishonesty in the production or submission of academic work, comprises the integrity of the person who commits the act and can impugn the perceived integrity of the entire university community. It stands in opposition to the university’s mission to research, educate, and contribute productively to our community and the world. 
-
-All students are expected to submit assignments that represent their own original work, and that have been prepared specifically for the course or section for which they have been submitted. You may not submit work written by others or “recycle” work prepared for other courses without obtaining written permission from the instructor(s).
-
-Other violations of academic integrity include, but are not limited to, cheating, plagiarism, fabrication (e.g., falsifying data), collusion, knowingly assisting others in acts of academic dishonesty, and any act that gains or is intended to gain an unfair academic advantage.
-
-The impact of academic dishonesty is far-reaching and is considered a serious offense against the university. All incidences of academic misconduct will be reported to the Office of Academic Integrity and could result in outcomes such as failure on the assignment, failure in the course, suspension, or even expulsion from the university.
-
-For more information about academic integrity see the [student handbook](https://policy.usc.edu/studenthandbook/) or the [Office of Academic Integrity’s website](http://academicintegrity.usc.edu/), and university policies on [Research and Scholarship Misconduct](https://policy.usc.edu/research-and-scholarship-misconduct/).
-
-Please ask your instructor if you are unsure what constitutes unauthorized assistance on an exam or assignment, or what information requires citation and/or attribution.
-
-Students and Disability Accommodations: 
-
-USC welcomes students with disabilities into all of the University’s educational programs. The Office of Student Accessibility Services (OSAS) is responsible for the determination of appropriate accommodations for students who encounter disability-related barriers. Once a student has completed the OSAS process (registration, initial appointment, and submitted documentation) and accommodations are determined to be reasonable and appropriate, a Letter of Accommodation (LOA) will be available to generate for each course. The LOA must be given to each course instructor by the student and followed up with a discussion. This should be done as early in the semester as possible as accommodations are not retroactive. More information can be found at [osas.usc.edu](http://osas.usc.edu/). You may contact OSAS at (213) 740-0776 or via email at osasfrontdesk@usc.edu.
-
+Plagiarism - presenting someone else's ideas as your own, either verbatim or recast in your own words - is a serious academic offense with serious consequences.
+Please familiarize yourself with the discussion of plagiarism in the USC Student Handbook, Integrity and Accountability: Acadmic Integrity (page 11): 
+ [https://policy.usc.edu/studenthandbook/](https://policy.usc.edu/studenthandbook/).
+Other forms of academic dishonesty are equally unacceptable.
+See additional information in the USC Student Handbook and university policies on scientific misconduct, [http://policy.usc.edu/scientific-misconduct/](http://policy.usc.edu/scientific-misconduct/).
 
 ## Support Systems
 

@@ -1,197 +1,148 @@
 assignments:
   - id: hw1
-    title: Linked Lists, Runtime, and Recursion
+    title: Linked Lists and Recursion
     assigned: true
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link:
     dates:
-      assigned: Thursday, Aug 24
-      written: Friday, Sep 1 at 11:59PM PST
-      due: Friday, Sep 8 at 11:59PM Pacific
+      assigned:
+      checkpoint:
+      due: Friday, January 27th 11:59PM PST
   - id: hw2
-    title: Inheritance, Polymorphism, and Class Design
-    assigned: true
+    title: Inheritance, Polymorphism, and STL
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link:
     dates:
-      assigned: Saturday, Sep 9
-      written: Friday, Sep 15 at 11:59PM PST
-      due: Friday, Sep 22 at 11:59PM PST
+      assigned:
+      checkpoint:
+      due: Friday, February 10th 11:59PM PST
   - id: hw3
-    title: Heaps, A*, and Counting
-    assigned: true
+    title: Heaps
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link:
     dates:
-      assigned: Saturday, Sep 30
-      written: Friday, Oct 6 at 11:59PM PST
-      due: Wednesday, Oct 11 at 11:59PM PST
+      assigned:
+      checkpoint:
+      due: Friday, February 24th at 11:59PM PST
   - id: hw4
-    title: Probability and Number Theory
-    assigned: true
-    regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
-    dates:
-      assigned: Thursday, Oct 12
-      written: Friday, Oct 20 at 11:59PM PST
-      due: Friday, Oct 27 at 11:59PM Pacific
-  - id: hw5
-    title: Amortized Analysis and Hash Tables
-    assigned: true
-    regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
-    dates:
-      assigned: Saturday, Nov 4
-      written: Monday, Nov 13 at 11:59PM PST
-      due: Friday, Nov 17 at 11:59PM Pacific
-  - id: hw6
     title: AVL Trees
-    assigned: true
+    assigned: false
     regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
+    submit_link:
     dates:
-      assigned: Saturday, Nov 18
-      due: Friday, Dec 1 at 11:59PM Pacific
+      assigned:
+      checkpoint:
+      due: Friday, March 24th at 11:59PM PDT
+  - id: hw5
+    title: Counting, Probability, Recursion
+    assigned: false
+    regrade_form:
+    submit_link:
+    dates:
+      assigned:
+      checkpoint:
+      due: Friday, April 7th at 11:59PM PST
+  - id: hw6
+    title: Hash tables
+    assigned: false
+    regrade_form:
+    submit_link:
+    dates:
+      assigned:
+      checkpoint:
+      due: Friday, April 28th at 11:59PM PST
 
 labs:
-  - id: 0
-    folder: lab0-github
+  - id: lab0
+    week: Before
+    title: Getting Started
+    assigned: true
+    topics: Github, curricula, registration, setup
+  - id: lab1
     week: Week 1
-    date: 1/8
-    title: Class Setup
-    assigned: false
-    topics: GitHub, Docker, Codio
-    # slides: lab0.pdf
-
-
-  - id: 1
-    folder: lab1-gdb
+    title: Git Tutorial
+    assigned: true
+    topics: Git, github
+    slides: git_lab.pdf
+  - id: lab2
     week: Week 2
-    date: 1/15
-    title: Git
-    assigned: false
-    topics: Git, GitHub
-    # slides: lab1.pdf
-
-  - id: 2
-    folder: lab2-make
-    week: Week 3
-    date: 1/22
-    title: Makefiles
-    assigned: false
-    topics: Make, Build Systems
-    # slides: lab2.pdf
-
-  - id: 3
-    folder: lab3-stl
-    week: Week 4
-    date: 1/29
     title: GDB
-    assigned: false
-    topics: Debugging
-    # slides: lab3.pdf
-
-  - id: 4
-    folder: lab4-templates
-    title: Week 5 Lab
+    assigned: true
+    topics: Debugging, GDB, tooling
+    slides: Lab2_slides.pdf
+  - id: lab3
+    week: Week 3
+    title: Makefiles
+    assigned: true
+    topics: Make, makefiles, build systems
+    slides: makefile_lab.pdf
+  - id: lab4
+    week: Week 4
+    title: Inheritance and STL
+    assigned: true
+    topics: Object Oriented Programming
+    slides: stl_inh_lab.pdf
+  - id: lab5
     week: Week 5
-    date: 2/5
-    assigned: false
-    topics:
-    # slides: lab4.pdf
-
-  - id: 5
-    folder: lab5-midterm
+    title: Templates
+    assigned: true
+    topics: Object Oriented Programming
+    slides: templates_lab.pdf
+  - id: lab6
     week: Week 6
-    date: 2/12
-    title: Week 6 Lab
-    assigned: false
-    # slides: mt1_review_student.pdf
-
-  - id: 6
-    folder: lab6-counting
+    title: Heaps
+    assigned: true
+    topics: Heaps
+    slides: heap_lab.pdf
+  - id: lab7
     week: Week 7
-    date: 2/19
-    title: Week 7 Lab
+    title: Backtracking
+    assigned: true
+    topics: Recursive Backtracking
+    slides: Backtracking_Lab.pdf
+  - id: NO LAB
+    week: Week 8
+    title: Optional Midterm Review
     assigned: false
     topics:
-    # slides: lab6.pdf
-
-  - id: 7
-    week: Week 8
-    date: 2/26
-    title: Week 8 Lab
-    assigned: false
-    # slides: heap_lab.pdf
-
-  - id: 8
-    folder: lab7-probability-numtheory
+  - id: lab9
     week: Week 9
-    date: 3/4
-    title: Week 9 Lab
-    assigned: false
-    # topics: Probability, Number Theory
-    # slides: lab7.pdf
-
-  - id: 9
-    folder: lab8-hashtables
-    # week: Week 10
-    date: 3/11
-    title: Spring Break
-    assigned: false
-    # topics: Hashtables
-    # slides: lab8.pdf
-
-  - id: 10
-    folder: lab9-midterm
+    title: BST and AVL
+    assigned: true
+    topics: BST and AVL Trees
+    slides: Lab9_BST_AVL.pdf
+  - id: lab10
     week: Week 10
-    date: 3/18
-    title: Week 10 Lab
-    # assigned: false
-    # slides:
-    #   - mt2_review_student.pdf
-
-  - id: 11
-    folder: lab10-amortization
+    title: Hashtables
+    assigned: true
+    topics: Hashtables
+  - id: lab11
     week: Week 11
-    date: 3/25
-    title: Week 11 Lab
-    assigned: false
-    # topics: Runtime
-
-  - id: 12
-    folder: lab11-avl
+    title: Counting
+    assigned: true
+    topics: Counting
+    slides: counting_lab.pdf
+  - id: lab12
     week: Week 12
-    date: 4/1
-    title: Week 12 Lab
-    assigned: false
-    # topics: Trees
-    # slides: lab11.pdf
-
-  - id: 13
-    folder: lab12
+    title: Probability
+    assigned: true
+    topics: Probability
+    slides: probability_lab.pdf
+  - id: lab13
+    title: Number Theory
     week: Week 13
-    date: 4/8
-    title: Week 13 Lab
-    assigned: false
-    # slides: probability_lab.pdf
-
-  - id: 14
-    folder: lab12-finallab
+    assigned: true
+    topics:
+  - id: lab14
+    title: GTest
     week: Week 14
-    date: 4/15
-    title: Week 14 Lab
-    assigned: false
-    # slides: final_review.pdf
-
-  - id: 15
-    folder: lab12-finallab
-    week: Week 15
-    date: 4/22
+    assigned: true
+    topics: Unit Testing, GTest
+  - id:
     title: Final Review
+    week: Week 15
     assigned: false
-    # slides: final_review.pdf
-
-
-
+    topics:
 

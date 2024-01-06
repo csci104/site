@@ -16,8 +16,8 @@ Make sure you read each section carefully; if you don't, you may find yourself u
 If you have not created a Github account yet, follow the instructions in this section.
 If you already have a Github account and you wish to use it for this course, you can skip to the next section.
 
-We will be using git extensively this semester in labs and in programming assignments.
-Github is a development ecosystem based around git.
+We will be using git extensively this semester in labs.
+GitHub is a development ecosystem based around git.
 In CSCI 104, we will be using Github to host our git repositories and we will take advantage of other GitHub features such as the issue tracker and wiki.
 
 We start by visiting Github's <a href="https://github.com/signup/free" target="_blank">signup page</a>.
@@ -29,44 +29,6 @@ Do that before proceeding.
 If in doubt, use a GitHub account with your @usc.edu e-mail address.
 
 - [ ] Create or have a GitHub account
-
-
-## Sign Up with Codio
-
-We'll be using Codio as part of our workflow. Some of you may be familar with Codio as the coding platform from CSCI 103L. While you may still do your coding in Codio, we suggest setting up a local coding environment as well. More on that later. Then why use Codio? Primarily it makes the course administration eaiser regarding assignment creation, grading, plagarism and etc. Codio features GitHub integration we'll take advantage of as well.
-
-Please [join the Codio Course]({{site.data.urls.codio_join}}){:target="_blank"}
-
-- [ ] Register with Codio
-
-
-## Connect Your Codio Account to Your GitHub Account
-
-Login to Codio and follow the instructions on this page: [Connect to GitHub](https://docs.codio.com/common/settings/github.html){:target="_blank"}
-
-Use the same GitHub account from the first step above. If in doubt, use a GitHub account with your @usc.edu e-mail address.
- 
-- [ ] Connect Codio to GitHub
-
-## Local Development Environment
-
-We have two options for running the compiler tools that we will use for grading.
-While you are welcome to use any editor/IDE to develop your homework code, you must compile and run your code (and any of our tests) in a Linux virtual environment using the Codio terminal, Linux VM, Docker, or some similar solution of your creation.
-
-We offer two solutions in addition to Codio: a traditional VM and Docker.
-**We recommend Docker, as it avoids emulating an entire desktop by giving you easy and low-latency command-line access to all the tools you need**.
-Plus, you can use your own local editor to develop and write code.
-To set this up, please follow the [directions in the repository](https://github.com/csci104/docker){:target="_blank"}. **Before you start, you might want to [configure an SSH key for your github account](#configuring-an-ssh-key) first.**
-
-Alternatively, you can download and install the Course VM, the instructions for which are available [in the wiki]({{ site.baseurl }}/wiki/vm/). 
-This provides a full-featured virtual OS with graphical interface, etc.
-It is larger, stores your files on a separate "virtual disk" that is not directly accessible from your computer's host OS, and can sometimes get corrupted, so please push your work to Github often.
-
-- [ ] Install Docker or a virtual machine.
-
-If you want more information on how Docker works and how to use it, you can read the <a href="https://github.com/csci104/docker/wiki/Usage">additional guide</a>.
-
-- [ ] Read the additional guide or promise you know what you're doing.
 
 ## Install Git
 
@@ -82,8 +44,30 @@ If you are using Windows, we recommend installing [git bash](https://git-scm.com
 Git bash is a separate shell that provides access to git as well as other command line utilities.
 If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
 
-## Configuring an SSH Key
+## Virtual Machine
+While homeworks will be submitted through Codio (which means you can write your code on Codio), we *strongly* recommend that you do your development in a local IDE—to encourage this, all labs this semester will be done locally, and are not available through Codio.
 
+To be able to run your code locally, there are a number of tools that you will need. Instead of installing all of these individually, we created two options for you: using Docker or a VM. We strongly  strongly recommend using Docker, as it avoids emulating an entire desktop by giving you easy and low-latency command-line access to all the tools you need! Plus, you can use your own local editor to develop and write code. If you do use the VM, you are on your own- no course staff uses it!
+
+
+### Docker
+Follow the directions in this Github **[repository](https://github.com/csci104/docker){:target="_blank"}.**
+
+If you want more information on how Docker works and how to use it, you can read the <a href="https://github.com/csci104/docker/wiki/Usage">additional guide</a>.
+
+- [ ] Read the additional guide or promise you know what you're doing.
+
+
+### VM
+
+Alternatively, you can download and install the Course VM, the instructions for which are available [in the wiki]({{ site.baseurl }}/wiki/vm/).
+This provides a full-featured virtual OS with graphical interface, etc.
+It is larger, stores your files on a separate "virtual disk" that is not directly accessible from your computer's host OS, and can sometimes get corrupted, so please push your work to Github often.
+
+- [ ] Install Docker or a virtual machine.
+
+
+## Configuring an SSH Key
 One of the main features of using a distributed version control system such as git is having a complete backup of your code and its history.
 Git uses the [Secure Shell](http://en.wikipedia.org/wiki/Secure_Shell) protocol (SSH) when contacting remote servers.
 To facilitate this communication, you need to generate a pair of encryption keys: one public and the other private.
@@ -91,7 +75,7 @@ In this step, we will generate the set of keys required to use SSH.
 This will be done manually through the command line.
 
 **Important**: where you run the following instructions will depend on whether you're using Docker or the VM.
-**If you are using Docker, you must open a terminal on your normal operating system. This is because Docker reboots itself from a pre-canned image everytime, which would erase all git configurations you had**.
+**If you are using Docker, you must open a terminal on your NORMAL operating system. This is because Docker reboots itself from a pre-canned image everytime, which would erase all git configurations you had**.
 If you're on Windows, installing Git should either give you Git Bash or access to unix commands in CMD.
 **If you are using the VM, you have to open Terminal inside the virtual desktop**.
 Going forward, whichever applies to you will be the terminal we refer to when we ask you to open or write commands in a terminal.
@@ -106,7 +90,7 @@ If you're using Docker, copy and paste should work how it normally does on your 
 Use the following command to generate an SSH key, **replacing `ttrojan@usc.edu` with the email associated with your Github account**:
 
 ```shell
-ssh-keygen -t rsa -b 2048 -C "ttrojan@usc.edu"
+ssh-keygen -t rsa -b 2048 -C "ttrojan@usc.edu" // your email replaced
 ```
 
 - [ ] Generate an SSH key using the email associated with your GitHub account
@@ -116,7 +100,7 @@ The path may look slightly different than the one below, but that's fine.
 
 ```
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/cs104/.ssh/id_rsa):
+Enter file in which to save the key (/home/csci104/.ssh/id_rsa):
 ```
 
 After that, you will be prompted for a passphrase to secure your private key.
@@ -129,8 +113,8 @@ Upon success, you should receive confirmation that your key was generated.
 It will most likely look something like this:
 
 ```
-Your identification has been saved in /home/cs104/.ssh/id_rsa.
-Your public key has been saved in /home/cs104/.ssh/id_rsa.pub.
+Your identification has been saved in /home/csci104/.ssh/id_rsa.
+Your public key has been saved in /home/csci104/.ssh/id_rsa.pub.
 The key fingerprint is:
 SHA256:vC+4OG2u1PIeE0OKX9jiFFHuLnkYCBSsvIW8ybD873H ttrojan@usc.edu
 The key's randomart image is:
@@ -148,7 +132,6 @@ The key's randomart image is:
 ```
 
 - [ ] Save the key to the default location
-
 
 ## Git Configuration
 
@@ -285,6 +268,23 @@ Homework grade reports are released through GitHub, and using the above settings
 - [ ] Set your profile name to your real name
 - [ ] Upload your SSH key by adding the contents of your `id_rsa.pub`
 - [ ] Enable Github and Github email notifications
+
+## Lab Repository
+We expect you to complete labs in a local IDE so you become more familiar with GitHub and a more standard development setup.
+
+Each week, the lab material will be posted to the sp24-labs repository. To access it:
+
+1. Using command line, `cd` to whichever location you would like your lab work to live in.
+2. Type `git clone git@github.com:csci104/sp24-labs.git`
+3. Finally, whenever it's time to do lab, just go to the location of this repo and type `git pull` to get the new resources!
+
+## Codio
+We will use Codio for homework submissions.
+Some of you may be familar with Codio as the coding platform from CSCI 103L.
+
+You will have to register for Codio and then connect GitHub to it; there will be more information on this in the coming days! 
+
+
 
 
 

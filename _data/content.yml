@@ -55,94 +55,145 @@ assignments:
       due: Friday, April 28th at 11:59PM PST
 
 labs:
-  - id: lab0
-    week: Before
-    title: Getting Started
-    assigned: true
-    topics: Github, curricula, registration, setup
-  - id: lab1
+  - id: 0
+    folder: lab0
     week: Week 1
-    title: Git Tutorial
-    assigned: true
-    topics: Git, github
-    slides: git_lab.pdf
-  - id: lab2
+    date: 1/8
+    title: Class Setup
+    assigned: false
+    topics: GitHub, Docker, Codio
+    # slides: lab0.pdf
+
+
+  - id: 1
+    folder: lab1-gdb
     week: Week 2
-    title: GDB
-    assigned: true
-    topics: Debugging, GDB, tooling
-    slides: Lab2_slides.pdf
-  - id: lab3
+    date: 1/15
+    title: Git
+    assigned: false
+    topics: Git, GitHub
+    # slides: lab1.pdf
+
+  - id: 2
+    folder: lab2-make
     week: Week 3
+    date: 1/22
     title: Makefiles
-    assigned: true
-    topics: Make, makefiles, build systems
-    slides: makefile_lab.pdf
-  - id: lab4
+    assigned: false
+    topics: Make, Build Systems
+    # slides: lab2.pdf
+
+  - id: 3
+    folder: lab3-stl
     week: Week 4
-    title: Inheritance and STL
-    assigned: true
-    topics: Object Oriented Programming
-    slides: stl_inh_lab.pdf
-  - id: lab5
+    date: 1/29
+    title: GDB
+    assigned: false
+    topics: Debugging
+    # slides: lab3.pdf
+
+  - id: 4
+    folder: lab4-templates
+    title: Week 5 Lab
     week: Week 5
-    title: Templates
-    assigned: true
-    topics: Object Oriented Programming
-    slides: templates_lab.pdf
-  - id: lab6
+    date: 2/5
+    assigned: false
+    topics:
+    # slides: lab4.pdf
+
+  - id: 5
+    folder: lab5-midterm
     week: Week 6
-    title: Heaps
-    assigned: true
-    topics: Heaps
-    slides: heap_lab.pdf
-  - id: lab7
+    date: 2/12
+    title: Week 6 Lab
+    assigned: false
+    # slides: mt1_review_student.pdf
+
+  - id: 6
+    folder: lab6-counting
     week: Week 7
-    title: Backtracking
-    assigned: true
-    topics: Recursive Backtracking
-    slides: Backtracking_Lab.pdf
-  - id: NO LAB
+    date: 2/19
+    title: Week 7 Lab
+    assigned: false
+    topics:
+    # slides: lab6.pdf
+
+  - id: 7
     week: Week 8
-    title: Optional Midterm Review
+    date: 2/26
+    title: Week 8 Lab
     assigned: false
-    topics:
-  - id: lab9
+    # slides: heap_lab.pdf
+
+  - id: 8
+    folder: lab7-probability-numtheory
     week: Week 9
-    title: BST and AVL
+    date: 3/4
+    title: Week 9 Lab
     assigned: true
-    topics: BST and AVL Trees
-    slides: Lab9_BST_AVL.pdf
-  - id: lab10
-    week: Week 10
-    title: Hashtables
-    assigned: true
-    topics: Hashtables
-  - id: lab11
-    week: Week 11
-    title: Counting
-    assigned: true
-    topics: Counting
-    slides: counting_lab.pdf
-  - id: lab12
-    week: Week 12
-    title: Probability
-    assigned: true
-    topics: Probability
-    slides: probability_lab.pdf
-  - id: lab13
-    title: Number Theory
-    week: Week 13
-    assigned: true
-    topics:
-  - id: lab14
-    title: GTest
-    week: Week 14
-    assigned: true
-    topics: Unit Testing, GTest
-  - id:
-    title: Final Review
-    week: Week 15
+    # topics: Probability, Number Theory
+    # slides: lab7.pdf
+
+  - id: 9
+    folder: lab8-hashtables
+    # week: Week 10
+    date: 3/11
+    title: Spring Break
     assigned: false
-    topics:
+    # topics: Hashtables
+    # slides: lab8.pdf
+
+  - id: 10
+    folder: lab9-midterm
+    week: Week 10
+    date: 3/18
+    title: Week 10 Lab
+    # assigned: false
+    # slides:
+    #   - mt2_review_student.pdf
+
+  - id: 11
+    folder: lab10-amortization
+    week: Week 11
+    date: 3/25
+    title: Week 11 Lab
+    assigned: false
+    # topics: Runtime
+
+  - id: 12
+    folder: lab11-avl
+    week: Week 12
+    date: 4/1
+    title: Week 12 Lab
+    assigned: false
+    # topics: Trees
+    # slides: lab11.pdf
+
+  - id: 13
+    folder: lab12
+    week: Week 13
+    date: 4/8
+    title: Week 13
+    assigned: false
+    # slides: probability_lab.pdf
+
+  - id: 14
+    folder: lab12-finallab
+    week: Week 14
+    date: 4/15
+    title: Week 14 Lab
+    assigned: false
+    # slides: final_review.pdf
+
+  - id: 15
+    folder: lab12-finallab
+    week: Week 15
+    date: 4/22
+    title: Final Review
+    assigned: false
+    # slides: final_review.pdf
+
+
+
+
 

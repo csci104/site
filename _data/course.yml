@@ -14,58 +14,48 @@ sections:
       location: THH 201
       instructors: Andrew Goodney
   labs:
-    - id: 29912
-      days: Wednesday
-      time: 5:00-6:50pm
-      location: SAL109
-      instructors: Charles Bickham
-    - id: 29914
-      days: Wednesday
-      time: 3:00-4:50pm
-      location: SAL126
-      instructors: Elan Markowitz
-    - id: 29915
-      days: Wednesday
-      time: 12:00-1:50pm
-      location: SAL126
-      instructors: Satyaki Das
-    - id: 30167
-      days: Friday
-      time: 12:00-1:50pm
-      location: SAL109
-      instructors: Leo Zhuang
     - id: 30200
       days: Tuesday
       time: 3:30-5:20pm
       location: SAL126
-      instructors: Matt Leslie
+      instructors:
     - id: 30238
       days: Tuesday
       time: 5:30-7:20pm
       location: SAL126
-      instructors: Bridget Bell
+      instructors: 
     - id: 30286
       days: Wednesday
       time: 12:00-1:50pm
       location: SAL109
-      instructors: Nicole Russack
-    - id: 30293
-      days: Friday
-      time: 2:00-3:50pm
-      location: SAL126
-      instructors: Nicholas Schumacher
+      instructors: 
     - id: 30294
       days: Tuesday
       time: 1:00-2:50pm
       location: SAL126
-      instructors: Mila Mathias
+      instructors: 
     - id: 30379
       days: Thursday
       time: 2:00-3:50pm
       location: SAL127
-      instructors: Charles Bickham
+      instructors: 
     - id: 30394
       days: Wednesday
       time: 2:00-3:50pm
       location: SAL109
-      instructors: Skylar Kim
+      instructors: 
+    - id: 29912
+      days: Wednesday
+      time: 5:00-6:50pm
+      location: SAL109
+      instructors: 
+    - id: 29914
+      days: Wednesday
+      time: 3:00-4:50pm
+      location: SAL126
+      instructors: 
+    - id: 29915
+      days: Wednesday
+      time: 12:00-1:50pm
+      location: SAL126
+      instructors: 

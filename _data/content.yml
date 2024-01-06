@@ -56,7 +56,7 @@ assignments:
 
 labs:
   - id: 0
-    folder: lab0-github
+    folder: lab0
     week: Week 1
     date: 1/8
     title: Class Setup

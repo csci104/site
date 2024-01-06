@@ -282,17 +282,7 @@ Each week, the lab material will be posted to the sp24-labs repository. To acces
 We will use Codio for homework submissions.
 Some of you may be familar with Codio as the coding platform from CSCI 103L.
 
-Please [join the Codio Course]({{site.data.urls.codio_join}})
-
-- [ ] Register with Codio
-
-
-## Connect Your Codio Account to Your GitHub Account
-Login to Codio and follow the instructions on this page: [Connect to GitHub](https://docs.codio.com/common/settings/github.html)
-
-Use the same GitHub account from the first step above. If in doubt, use a GitHub account with your @usc.edu e-mail address.
-
-- [ ] Connect Codio to GitHub
+You will have to register for Codio and then connect GitHub to it; there will be more information on this in the coming days! 
 
 
 

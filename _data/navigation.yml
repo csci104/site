@@ -7,9 +7,9 @@ items:
     short: TAs
     url: /tas/
     icon: /assets/img/icon/question.svg
-  - title: Peer Tutoring 
-    url: /q/
-    menubar: false
+  - title: Peer Tutoring
+    short: Tutoring 
+    url: /tutoring/
     icon: /assets/img/icon/duration.svg
   - title: Semester schedule
     short: Schedule

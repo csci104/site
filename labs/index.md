@@ -37,9 +37,9 @@ Lab sessions are held every week and will be conducted by a team of TAs and Cour
     >
       <td>
         {% if lab.assigned %}
-        <a href="{{ site.baseurl }}/labs/{{ lab.id }}">{{ lab.id }}</a>
+        <a href="{{ site.baseurl }}/labs/{{ lab.folder }}">{{ lab.folder }}</a>
         {% else %}
-        {{ lab.id }}
+        {{ lab.folder }}
         {% endif %}
       </td>
       <td>{{ lab.week }}</td>
@@ -47,7 +47,7 @@ Lab sessions are held every week and will be conducted by a team of TAs and Cour
       <td>{{ lab.topics }}</td>
       <td>
         {% if lab.slides %}
-        <a href="{{ lab.id }}/assets/{{ lab.slides }}">{{ lab.slides }}</a>
+        <a href="{{ lab.folder }}/assets/{{ lab.slides }}">{{ lab.slides }}</a>
         {% endif %}
       </td>
     </tr>

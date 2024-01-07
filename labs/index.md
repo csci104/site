@@ -36,11 +36,7 @@ Lab sessions are held every week and will be conducted by a team of TAs and Cour
       {% endif %}
     >
       <td>
-        {% if lab.assigned %}
-        <a href="{{ site.baseurl }}/labs/{{ lab.folder }}">{{ lab.id }}</a>
-        {% else %}
         {{ lab.id }}
-        {% endif %}
       </td>
       <td>{{ lab.week }}</td>
       <td>

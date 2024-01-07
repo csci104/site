@@ -24,7 +24,6 @@ In many assignments, you will be required to submit documentation and/or textual
 The following document formats are accepted:
 
   + Plain text
-  + Markdown
   + PDF
   
 No other formats are accepted unless explicitly stated. These include, but are not limited to, Microsoft Word documents (e.g. `.doc`, `.docx`) and Rich Text Format (RTF) files.

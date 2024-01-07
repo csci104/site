@@ -91,11 +91,11 @@ Because of the fairly generous scale we will not round up if you are close to th
       <tr><th>Grade</th><th>Letter</th></tr>
     </thead>
     <tbody>
-      <tr><td>85%</td><td>A </td></tr>
-      <tr><td>80%</td><td>A-</td></tr>
-      <tr><td>75%</td><td>B+</td></tr>
-      <tr><td>70%</td><td>B </td></tr>
-      <tr><td>65%</td><td>B-</td></tr>
+      <tr><td>90%</td><td>A </td></tr>
+      <tr><td>85%</td><td>A-</td></tr>
+      <tr><td>80%</td><td>B+</td></tr>
+      <tr><td>75%</td><td>B </td></tr>
+      <tr><td>70%</td><td>B-</td></tr>
     </tbody>
   </table>
   <table class="simple center">
@@ -103,11 +103,11 @@ Because of the fairly generous scale we will not round up if you are close to th
       <tr><th>Grade</th><th>Letter</th></tr>
     </thead>
     <tbody>
-      <tr><td>60%</td><td>C+</td></tr>
-      <tr><td>55%</td><td>C </td></tr>
-      <tr><td>50%</td><td>C-</td></tr>
-      <tr><td>45%</td><td>D+</td></tr>
-      <tr><td>40%</td><td>D </td></tr>
+      <tr><td>65%</td><td>C+</td></tr>
+      <tr><td>60%</td><td>C </td></tr>
+      <tr><td>55%</td><td>C-</td></tr>
+      <tr><td>50%</td><td>D+</td></tr>
+      <tr><td>45%</td><td>D </td></tr>
     </tbody>
   </table>
 </div>

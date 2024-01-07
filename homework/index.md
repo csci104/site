@@ -13,6 +13,10 @@ Each student will be responsible for creating and using a GitHub repo for the de
 
 Please read the submission instructions and policies below **carefully**!  Failure to follow the process (of pushing the appropriate files to Github and submitting your git commit SHA on our website) will result in a 0 on the assignment. 
 
+Assignments are assigned and submitted on <a href="{{ site.data.urls.codio_course }}" target=_blank >Codio</a>. Each assignment has a written portion and a programming portion (except assignment #2, which is programming only).
+
+Please note: depending on how we configure Blackboard/Codio integrations, you may need to **start** the assignments from within Blackboard, but this is TBD as of now.
+
 <h2 id="schedule">Schedule</h2>
 <table class="standard assignments">
   <thead>
@@ -34,15 +38,11 @@ Please read the submission instructions and policies below **carefully**!  Failu
     >
       <td>{{ forloop.index }}</td>
       <td>
-        {% if assignment.assigned %}
-        <a href="{{ site.data.urls.codio_course }}">Codio</a>
-        {% else %}
         
-        {% endif %}
       </td>
       <td>{{ assignment.title }}</td>
       <td>{{ assignment.dates.due }}</td>
-      <td><a href="{{ site.data.urls.regrades }}">Regrade</a></td>
+      <td><a href="{{ site.data.urls.regrades }}" target=_blank>Regrade</a></td>
     </tr>
     {% endfor %}
   </tbody>
@@ -69,9 +69,9 @@ In addition to making sure your submission is on time, **please make sure that t
 
 There will be **6 assignments**. In CSCI 104L we do not accept late submissions (except as outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 7-10 days per assignment should allow you to finish on time if you **start early** and **work consistently**, we have a flexible due-date policy that allows for submitting assignments within 5 days of the due date with minimal penalty. For each of the first five days **after** the due date you may submit an assignment with a penalty of 1% per day (for a total of 5% on the last day). After five days, there are no late submissions.
 
-In this age of COVID, we realize that being sick or having sick family may preclude you from working on your assignments as you would be able to otherwise.   If a confirmed COVID-related illness or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}) and make a private note on [edStem]({{site.data.urls.discussion}}) to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment. **Note:** A minor illness, injury or other incident a few days before the deadline or a trip home to see family does not qualify for an extension. Start early anticipating that things may come up closer to the deadline.  If you have not started early and ask for an extension, your request may be rejected. Commit and push your intermediate work often as a record of your effort on an assignment.
+In this age of COVID, we realize that being sick or having sick family may preclude you from working on your assignments as you would be able to otherwise.   If a confirmed COVID-related illness or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}){:target="_blank"} and make a private note on [edStem]({{site.data.urls.discussion}}){:target="_blank"} to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment. **Note:** A minor illness, injury or other incident a few days before the deadline or a trip home to see family does not qualify for an extension. Start early anticipating that things may come up closer to the deadline.  If you have not started early and ask for an extension, your request may be rejected. Commit and push your intermediate work often as a record of your effort on an assignment.
 
-For non-emergency issues (especially those close to the deadline), extensions are generally not applicable. Instead, **your late days** are available and should be used for such circumstances.
+For non-emergency issues (especially those close to the deadline), extensions are generally not applicable. Instead, **1% per day late-submission days** are available and should be used for such circumstances.
 
 As a reward for starting early coding assignments turned in early will receive a 5% bonus. "Turned in early" means the assignment was marked-as-complete on Codio and the autograding script awarded full marks **before** the day of the deadline. Said another way, if you finish your assignment with full marks before the due date (not time) you will receive the bonus. This means you can earn up to 105% of the points on the homework portion of the course.
 
@@ -85,7 +85,7 @@ We will work hard to post HW scores and feedback within 1 week of the homework's
 
 Any disputes with posted grades **must** be raised within **7 days** (unless specifically noted) of the score posting.  Then follow the process below for the type of regrade you are requesting.  
 
-Fill out this [**HW regrade form**]({{site.data.urls.regrade_form}}) **within 7 days** of grades being released. The graders will review your regrade request and if appropriate make any updates to your score on Codio. They will also respond via the Admin and Grading discussion board with a reply whether or not your score changed.
+Fill out this [**HW regrade form**]({{site.data.urls.regrade_form}}){:target="_blank"} **within 7 days** of grades being released. The graders will review your regrade request and if appropriate make any updates to your score on Codio. They will also respond via the Admin and Grading discussion board with a reply whether or not your score changed.
 
 Any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  Finally, please note that regrades are not for "fixing" your code.  For example: If there was just one line off that caused all the tests to fail, that might be a viable reason for a regrade but with the Codio submission process you will know that your code fails when you submit. It is your responsibility (especially if the test suite was released before submission) to ensure your code compiled, tested, and all files were submitted on Github which can be verified by the "Verification" process outlined at the end of each homework.
 
@@ -125,7 +125,7 @@ Collaboration is important in an academic environment. We want to be sure that y
 
 **In summary, any time that you are trying to get higher grades for work that you did not earn is not acceptable. Any behavior by which you are attempting to receive or grant an unfair advantage that your classmates who are following the rules do not have is not acceptable.** Please act with the integrity that is expected of USC Trojans.
 
-We run MOSS on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported to [SJACS](http://sjacs.usc.edu/), no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
+We run MOSS on all homework submissions to catch inappropriate collaboration and plagiarism. If there is suspected cheating, you will be reported to the Office of Academic Integrity, no exceptions. Follow the above guidelines to make sure this doesn't happen to you.
 
 In order to make sure that an appropriate level of collaboration is used between you and your classmates, please do not keep notes,  pictures, or any records from your discussions. This will ensure that your work reflects only your understanding when you create it. Please do not sit coding next to each other while discussing the work. If you are concerned that an inappropriate level of collaboration has occured, please do the following:
 

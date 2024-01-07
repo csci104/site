@@ -70,7 +70,7 @@ Your final grade will depend solely on your own performance, graded according to
       </tr>
       <tr>
         <td>28%</td>
-        <td>Midterm Exams</td>
+        <td>Midterm Exams (equal between MT1 and MT2)</td>
       </tr>
       <tr>
         <td>30%</td>
@@ -84,7 +84,6 @@ Your final grade will depend solely on your own performance, graded according to
 
 We will guarantee that you will get at least the grade indicated by the following scale.
 Because of the fairly generous scale we will not round up if you are close to the lower threshold of a letter grade.
-At the end of the semester, we may decide to lower the scale if the exams were more difficult than intended.
 
 <div class="text-align-center">
   <table class="simple center">
@@ -154,7 +153,7 @@ Exams will involve analysis and coding.  Questions require students to demonstra
 
 ## Accommodations
 
-If you have USC approved (OSAS) accommodations, you **MUST** upload your OSAS generated PDF letter for this class to the **[linked form]({{site.data.urls.osas_dsp_form}})**.
+If you have USC approved (OSAS) accommodations, you **MUST** upload your OSAS generated PDF letter for this class to the **[linked form]({{site.data.urls.osas_dsp_form}}){:target="_blank"}**.
 
 ## Statement on Academic Conduct
 
@@ -163,49 +162,42 @@ Below is USC's official language.
 
 Plagiarism - presenting someone else's ideas as your own, either verbatim or recast in your own words - is a serious academic offense with serious consequences.
 Please familiarize yourself with the discussion of plagiarism in the USC Student Handbook, Integrity and Accountability: Acadmic Integrity (page 11): 
- [https://policy.usc.edu/studenthandbook/](https://policy.usc.edu/studenthandbook/).
+ [https://policy.usc.edu/studenthandbook/](https://policy.usc.edu/studenthandbook/){:target="_blank"}.
 Other forms of academic dishonesty are equally unacceptable.
-See additional information in the USC Student Handbook and university policies on scientific misconduct, [http://policy.usc.edu/scientific-misconduct/](http://policy.usc.edu/scientific-misconduct/).
+See additional information in the USC Student Handbook and university policies on scientific misconduct, [http://policy.usc.edu/scientific-misconduct/](http://policy.usc.edu/scientific-misconduct/){:target="_blank"}.
 
 ## Support Systems
 
 - **Student Counseling Services (SCS)** - (213) 740-7711 - 24/7 on call
   Free and confidential mental health treatment for students, including short-term psychotherapy, group counseling, stress fitness workshops, and crisis intervention.
-  [engemannshc.usc.edu/counseling](engemannshc.usc.edu/counseling)
+  [https://sites.usc.edu/counselingandmentalhealth/](https://sites.usc.edu/counselingandmentalhealth/){:target="_blank"}
 
 - **National Suicide Prevention Lifeline** - 1 (800) 273-8255
   Provides free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours a day, 7 days a week.
-  [www.suicidepreventionlifeline.org](www.suicidepreventionlifeline.org)
-
-- **Relationship and Sexual Violence Prevention Services (RSVP)** - (213) 740-4900 - 24/7 on call
-  Free and confidential therapy services, workshops, and training for situations related to gender-based harm.
-  [engemannshc.usc.edu/rsvp](engemannshc.usc.edu/rsvp)
+  [www.suicidepreventionlifeline.org](https://www.suicidepreventionlifeline.org){:target="_blank"}
 
 - **Sexual Assault Resource Center**
-  For more information about how to get help or help a survivor, rights, reporting options, and additional resources, visit the website: [sarc.usc.edu](sarc.usc.edu)
+  For more information about how to get help or help a survivor, rights, reporting options, and additional resources, visit the website: [https://sites.usc.edu/clientservices/](https://sites.usc.edu/clientservices/){:target="_blank"}
 
 - **Office of Equity and Diversity (OED)/Title IX Compliance** - (213) 740-5086
   Works with faculty, staff, visitors, applicants, and students around issues of protected class.
-  [equity.usc.edu](equity.usc.edu)
+  [equity.usc.edu](https://equity.usc.edu){:target="_blank"}
 
-- **Bias Assessment Response and Support** - Incidents of bias, hate crimes and microaggressions need to be reported allowing for appropriate investigation and response.
-  [studentaffairs.usc.edu/bias-assessment-response-support](studentaffairs.usc.edu/bias-assessment-response-support)
-
-- **The Office of Disability Services and Programs**
+- **The Office of Student Accessibility Services**
   Provides certification for students with disabilities and helps arrange relevant accommodations.
-  [dsp.usc.edu](dsp.usc.edu)
+  [osas.usc.edu](https://osas.usc.edu){:target="_blank"}
 
 - **Campus Support and Intervention** - (213) 821-4710
   Assists students and families in resolving complex issues adversely affecting their success as a student EX: personal, financial, and academic.
-  [studentaffairs.usc.edu/ssa](https://campussupport.usc.edu/)
+  [studentaffairs.usc.edu/ssa](https://campussupport.usc.edu/){:target="_blank"}
 
 - **Diversity at USC**
   Information on events, programs and training, the Diversity Task Force (including representatives for each school), chronology, participation, and various resources for students.
-  [diversity.usc.edu](diversity.usc.edu)
+  [diversity.usc.edu](https://diversity.usc.edu){:target="_blank"}
 
 - **USC Emergency Information**
   Provides safety and other updates, including ways in which instruction will be continued if an officially declared emergency makes travel to campus infeasible.
-  [emergency.usc.edu](emergency.usc.edu)
+  [emergency.usc.edu](https://emergency.usc.edu){:target="_blank"}
 
 - **USC Department of Public Safety** - UPC: (213) 740-4321 - HSC: (323) 442-1000 - 24-hour emergency or to report a crime.
-  Provides overall safety to USC community. [dps.usc.edu](dps.usc.edu)
+  Provides overall safety to USC community. [dps.usc.edu](https://dps.usc.edu){:target="_blank"}

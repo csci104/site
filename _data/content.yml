@@ -1,7 +1,7 @@
 assignments:
   - id: hw1
     title: Linked Lists and Recursion
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link:
     dates:
@@ -43,7 +43,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, April 12th at 11:59PM PST
+      due: Friday, April 12th at 11:59PM PDT
   - id: hw6
     title: Hash tables
     assigned: false
@@ -52,7 +52,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, April 26th at 11:59PM PST
+      due: Friday, April 26th at 11:59PM PDT
 
 labs:
   - id: 0
@@ -60,7 +60,7 @@ labs:
     week: Week 1
     date: 1/8
     title: Class Setup
-    assigned: false
+    assigned: true
     topics: GitHub, Docker, Codio
     # slides: lab0.pdf
 
@@ -130,7 +130,7 @@ labs:
     week: Week 9
     date: 3/4
     title: Week 9 Lab
-    assigned: true
+    assigned: false
     # topics: Probability, Number Theory
     # slides: lab7.pdf
 

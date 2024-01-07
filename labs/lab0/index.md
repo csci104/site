@@ -282,10 +282,4 @@ Each week, the lab material will be posted to the sp24-labs repository. To acces
 We will use Codio for homework submissions.
 Some of you may be familar with Codio as the coding platform from CSCI 103L.
 
-You will have to register for Codio and then connect GitHub to it; there will be more information on this in the coming days! 
-
-
-
-
-
-
+You will have to register for Codio and then connect GitHub to it; there will be more information on this in the coming days!

@@ -14,41 +14,73 @@ assistants:
 
 
 staff:
-  - name: Louis Addison
-    email: laddison@usc.edu
-    image: /assets/img/staff/louis.jpg
+  - name: Bridget Bell
+    email: bgbell@usc.edu
+    image: /assets/img/staff/bridget.jpg
+
+  - name: Nicholas Schumacher
+    email: naschuma@usc.edu
+    image: /assets/img/staff/nicolas.jpg
+
+  - name: Raymond Liu
+    email: liuraymo@usc.edu
+    image: /assets/img/staff/raymond.jpg
+
+  - name: Paul Somodi
+    email: somodi@usc.edu
+    image: /assets/img/staff/pauls.jpg
 
   - name: Ishu Agrawal
     email: ishuagra@usc.edu
     image: /assets/img/staff/ishu.jpeg
 
-  - name: Bridget Bell
-    email: bgbell@usc.edu
-    image: /assets/img/staff/bridget.jpg
-
   - name: Nic Buxbaum
     email: nbuxbaum@usc.edu
     image: /assets/img/staff/nic.jpg
+
+  - name: Justin Bai
+    email: jybai@usc.edu
+    image: /assets/img/staff/justin_bai.jpg
+
+  - name: Junu Song
+    email: junusong@usc.edu
+    image: /assets/img/staff/junu.jpg
+
+  - name: Josheta Srinivasan
+    email: jsriniva@usc.edu
+    image: /assets/img/staff/josheta.jpg
 
   - name: Jessica Cheung
     email: cheungje@usc.edu
     image: /assets/img/staff/jessica.jpg
 
-  - name: James Fan
-    email: jlfan@usc.edu
-    image: /assets/img/staff/james.jpg
+  - name: James Li
+    email: jli51468@usc.edu
+    image: /assets/img/staff/james_li.jpg
 
-  - name: Isaac Gerstmann
-    email: ig_707@usc.edu
-    image: /assets/img/staff/isaac.jpg
-
-  - name: Paul Kim
-    email: pbkim@usc.edu
-    image: /assets/img/staff/paul.jpg
+  - name: Aayushi Agrawal
+    email: aayushia@usc.edu
+    image: /assets/img/staff/aayushi.jpg
 
   - name: David Morales
     email: davidm62@usc.edu
     image: /assets/img/staff/davidmorales.jpg
+
+  - name: Carlos Subramanian
+    email: cksubram@usc.edu
+    image: /assets/img/staff/cksubram.jpg
+
+  - name: Ania Ahsan
+    email: aahsan@usc.edu
+    image: /assets/img/staff/ania_ahsan.jpg
+
+  - name: Zuoning Zhang
+    email: zuoningz@usc.edu
+    image: /assets/img/staff/zuoning.jpeg
+
+  - name: Sunghyun Cho
+    email: scho1939@usc.edu
+    image: /assets/img/staff/sunghyun.jpeg
 
   - name: Sid Qian
     email: sidqian@usc.edu
@@ -58,13 +90,25 @@ staff:
     email: shiqingr@usc.edu
     image: /assets/img/staff/amy.jpg
 
-  - name: Nicholas Schumacher
-    email: naschuma@usc.edu
-    image: /assets/img/staff/nicolas.jpg
+  - name: Christian Moreno
+    email: parramor@usc.edu
+    image: /assets/img/staff/christian.jpeg
 
-  - name: Zuoning Zhang
-    email: zuoningz@usc.edu
-    image: /assets/img/staff/zuoning.jpeg
+  - name: Isaac Gerstmann
+    email: ig_707@usc.edu
+    image: /assets/img/staff/isaac.jpg
+
+  - name: Paul Kim
+    email: pbkim@usc.edu
+    image: /assets/img/staff/paul.jpg
+
+  - name: Louis Addison
+    email: laddison@usc.edu
+    image: /assets/img/staff/louis.jpg
+
+  - name: Jake Hosking
+    email: hosking@usc.edu
+    image: /assets/img/staff/hosking.jpg
     
 graders:
  

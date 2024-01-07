@@ -168,36 +168,41 @@ See additional information in the USC Student Handbook and university policies o
 
 ## Support Systems
 
-- **Student Counseling Services (SCS)** - (213) 740-7711 - 24/7 on call
-  Free and confidential mental health treatment for students, including short-term psychotherapy, group counseling, stress fitness workshops, and crisis intervention.
-  [https://sites.usc.edu/counselingandmentalhealth/](https://sites.usc.edu/counselingandmentalhealth/){:target="_blank"}
+- [**Counseling and Mental Health**](https://sites.usc.edu/counselingandmentalhealth/){:target="_blank"} - (213) 740-9355 – 24/7 on call
+Free and confidential mental health treatment for students, including short-term psychotherapy, group counseling, stress fitness workshops, and crisis intervention. 
 
-- **National Suicide Prevention Lifeline** - 1 (800) 273-8255
-  Provides free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours a day, 7 days a week.
-  [www.suicidepreventionlifeline.org](https://www.suicidepreventionlifeline.org){:target="_blank"}
+- [**988 Suicide and Crisis Lifeline**](https://988lifeline.org/){:target="_blank"} - 988 for both calls and text messages – 24/7 on call
+The 988 Suicide and Crisis Lifeline (formerly known as the National Suicide Prevention Lifeline) provides free and confidential emotional support to people in suicidal crisis or emotional distress 24 hours a day, 7 days a week, across the United States. The Lifeline is comprised of a national network of over 200 local crisis centers, combining custom local care and resources with national standards and best practices. The new, shorter phone number makes it easier for people to remember and access mental health crisis services (though the previous 1 (800) 273-8255 number will continue to function indefinitely) and represents a continued commitment to those in crisis.
 
-- **Sexual Assault Resource Center**
-  For more information about how to get help or help a survivor, rights, reporting options, and additional resources, visit the website: [https://sites.usc.edu/clientservices/](https://sites.usc.edu/clientservices/){:target="_blank"}
+- [**Relationship and Sexual Violence Prevention Services (RSVP)**](https://sites.usc.edu/clientservices/){:target="_blank"} - (213) 740-9355(WELL) – 24/7 on call
+Free and confidential therapy services, workshops, and training for situations related to gender- and power-based harm (including sexual assault, intimate partner violence, and stalking).
 
-- **Office of Equity and Diversity (OED)/Title IX Compliance** - (213) 740-5086
-  Works with faculty, staff, visitors, applicants, and students around issues of protected class.
-  [equity.usc.edu](https://equity.usc.edu){:target="_blank"}
+- [**Office for Equity, Equal Opportunity, and Title IX (EEO-TIX)**](https://eeotix.usc.edu/){:target="_blank"} - (213) 740-5086 
+Information about how to get help or help someone affected by harassment or discrimination, rights of protected classes, reporting options, and additional resources for students, faculty, staff, visitors, and applicants. 
 
-- **The Office of Student Accessibility Services**
-  Provides certification for students with disabilities and helps arrange relevant accommodations.
-  [osas.usc.edu](https://osas.usc.edu){:target="_blank"}
+- [**Trojans Care 4 Trojans**](https://usc-advocate.symplicity.com/care_report/){:target="_blank"} - 
+Facility to report concerns about fellow Trojan's.
 
-- **Campus Support and Intervention** - (213) 821-4710
-  Assists students and families in resolving complex issues adversely affecting their success as a student EX: personal, financial, and academic.
-  [studentaffairs.usc.edu/ssa](https://campussupport.usc.edu/){:target="_blank"}
+- [**Reporting Incidents of Bias or Harassment**](https://report.usc.edu{:target="_blank"}) - (213) 740-5086 or (213) 821-8298
+Avenue to report incidents of bias, hate crimes, and microaggressions to the Office for Equity, Equal Opportunity, and Title for appropriate investigation, supportive measures, and response.
 
-- **Diversity at USC**
-  Information on events, programs and training, the Diversity Task Force (including representatives for each school), chronology, participation, and various resources for students.
-  [diversity.usc.edu](https://diversity.usc.edu){:target="_blank"}
+- [**The Office of Student Accessibility Services (OSAS)**](https://osas.usc.edu){:target="_blank"} - (213) 740-0776
+OSAS ensures equal access for students with disabilities through providing academic accommodations and auxiliary aids in accordance with federal laws and university policy.
 
-- **USC Emergency Information**
-  Provides safety and other updates, including ways in which instruction will be continued if an officially declared emergency makes travel to campus infeasible.
-  [emergency.usc.edu](https://emergency.usc.edu){:target="_blank"}
+- [**USC Campus Support and Intervention**](https://campussupport.usc.edu/){:target="_blank"} - (213) 740-0411
+Assists students and families in resolving complex personal, financial, and academic issues adversely affecting their success as a student.
 
-- **USC Department of Public Safety** - UPC: (213) 740-4321 - HSC: (323) 442-1000 - 24-hour emergency or to report a crime.
-  Provides overall safety to USC community. [dps.usc.edu](https://dps.usc.edu){:target="_blank"}
+- [**Diversity, Equity and Inclusion**](https://diversity.usc.edu/){:target="_blank"} - (213) 740-2101
+Information on events, programs and training, the Provost’s Diversity and Inclusion Council, Diversity Liaisons for each academic school, chronology, participation, and various resources for students. 
+
+- [**USC Emergency**](https://emergency.usc.edu){:target="_blank"} - UPC: (213) 740-4321, HSC: (323) 442-1000 – 24/7 on call 
+Emergency assistance and avenue to report a crime. Latest updates regarding safety, including ways in which instruction will be continued if an officially declared emergency makes travel to campus infeasible.
+
+- [**USC Department of Public Safety**](https://dps.usc.edu/){:target="_blank"} - UPC: (213) 740-6000, HSC: (323) 442-1200 – 24/7 on call 
+Non-emergency assistance or information.
+
+- [**Office of the Ombuds**](https://ombuds.usc.edu/){:target="_blank"} - (213) 821-9556 (UPC) / (323-442-0382 (HSC) 
+A safe and confidential place to share your USC-related issues with a University Ombuds who will work with you to explore options or paths to manage your concern.
+
+- [**Occupational Therapy Faculty Practice**](https://chan.usc.edu/patient-care/faculty-practice){:target="_blank"} - (323) 442-2850 or otfp@med.usc.edu 
+Confidential Lifestyle Redesign services for USC students to support health promoting habits and routines that enhance quality of life and academic performance. 

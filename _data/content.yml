@@ -130,7 +130,7 @@ labs:
     week: Week 9
     date: 3/4
     title: Week 9 Lab
-    assigned: true
+    assigned: false
     # topics: Probability, Number Theory
     # slides: lab7.pdf
 

@@ -5,7 +5,7 @@ title: Labs
 
 # Lab Overview
 
-Lab sessions are held every week and will be conducted by a team of TAs and Course Producers.  Labs are **NOT** just summaries of previous lecture content.  While you will do some review, the labs will often teach new tools (debuggers, unit testing, Makefiles, etc.) or have you practice skills in more depth than lecture was able to cover.  Thus, it is very important you attend labs and give your best effort.  This may be different from previous CS courses where labs/discussions were optional or done ahead of time. In CS104, you should treat labs as you do lectures and make it a priority to attend each week.
+Lab sessions are held every week and will be conducted by a team of TAs and Tutors.  Labs are **NOT** just summaries of previous lecture content.  While you will do some review, the labs will often teach new tools (debuggers, unit testing, Makefiles, etc.) or have you practice skills in more depth than lecture was able to cover.  Thus, it is very important you attend labs and give your best effort.  This may be different from previous CS courses where labs/discussions were optional or done ahead of time. In CS104, you should treat labs as you do lectures and make it a priority to attend each week.
 
 ## Policies
 

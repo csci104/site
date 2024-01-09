@@ -113,7 +113,7 @@ Collaboration is important in an academic environment. We want to be sure that y
 
 ### Acceptable Actions
 - Discussing **high-level** ideas (no coding terms at all) with other students is fine. It is even helpful if you annotate your work with the names of your collaborators.
-- Asking course staff (instructor, TAs, CPs) for help or to look at your code.
+- Asking course staff (instructor, TAs, tutors) for help or to look at your code.
 - Copying test cases from other students or {{site.data.urls.qa_tool}} when test cases are not graded is fine since it serves to teach you something, and there is no risk that you will get points for the work of other students.
 - Looking up references on C++ library containers, functions, and syntax.  However, looking up "similar" examples to a homework assignment is NOT okay.
 

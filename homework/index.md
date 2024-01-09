@@ -13,9 +13,9 @@ Each student will be responsible for creating and using a GitHub repo for the de
 
 Please read the submission instructions and policies below **carefully**!  Failure to follow the process (of pushing the appropriate files to Github and submitting your git commit SHA on our website) will result in a 0 on the assignment. 
 
-Assignments are assigned and submitted on <a href="{{ site.data.urls.codio_course }}" target=_blank >Codio</a>. Each assignment has a written portion and a programming portion (except assignment #2, which is programming only).
+Assignments are assigned and submitted on Codio. To set up your Codio account, see the directions in lab 0. Each assignment has a written portion and a programming portion (except assignment #2, which is programming only).
 
-Please note: depending on how we configure Blackboard/Codio integrations, you may need to **start** the assignments from within Blackboard, but this is TBD as of now.
+You will need to **start** each of the assignments from within Blackboard, within the Codio Assignments tab.
 
 <h2 id="schedule">Schedule</h2>
 <table class="standard assignments">

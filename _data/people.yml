@@ -11,7 +11,25 @@ administrators:
     image: /assets/img/staff/tallulah.jpg
 
 assistants:
+  - name: Nathan Bartley
+    email: nbartley@usc.edu
+    image: /assets/img/staff/nbartley.jpg
 
+  - name: Pranav Jain
+    email: pranavj@usc.edu
+    image: /assets/img/staff/temp.png
+
+  - name: Yuxin Yang
+    email: yyang393@usc.edu
+    image: /assets/img/staff/temp.png
+
+  - name: Sima Arasteh
+    email: arasteh@usc.edu
+    image: /assets/img/staff/temp.png
+
+  - name: Jeremy Morgan
+    email: morganje@usc.edu
+    image: /assets/img/staff/morganje.jpeg
 
 staff:
   - name: Bridget Bell

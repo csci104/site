@@ -62,17 +62,17 @@ labs:
     title: Class Setup
     assigned: true
     topics: GitHub, Docker, Codio
-    # slides: lab0.pdf
+    #slides:
 
 
   - id: 1
-    folder: lab1-gdb
+    folder: lab1
     week: Week 2
     date: 1/15
     title: Git
-    assigned: false
+    assigned: true
     topics: Git, GitHub
-    # slides: lab1.pdf
+    slides: GitLab.pdf
 
   - id: 2
     folder: lab2-make

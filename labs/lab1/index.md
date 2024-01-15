@@ -54,7 +54,7 @@ The above command shall be ran from your **Docker terminal**.
   the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
   Alternatively, you could open it by searching for "terminal" in the quick launcher:
 
-[vm terminal](assets/vm-terminal.png)
+<div style="text-align:center"><img src="./assets/vm-terminal.png" alt="vm terminal" /></div>
 
 ## Creating a GitHub repo and obtaining the example files
 
@@ -371,7 +371,7 @@ git push
 Now, if you everything runs successfully, the changes you have made would be synced to GitHub. Go to
 the repo page on GitHub, and navigate to `example`, you should see the following files:
 
-<div style="text-align:center;"><img src="assets/github-example-first-commit.png" width="80%"></div>
+<div style="text-align:center"><img src="./assets/github-example-first-commit.png" alt="vm terminal" /></div>
 
 If you read the `library.cpp` file, you should be able to see the code you have just modified.
 
@@ -456,11 +456,11 @@ Finally we'll practice another pull by modifying files on the webiste.
 First navigate to the `README.md` file in your `lab1` GitHub repo page, and
 click the pencil icon (see the image below):
 
-<div style="text-align:center;"><img src="assets/github-edit-pencil.png" width="80%" /></div>
+<div style="text-align:center"><img src="./assets/github-edit-pencil.png" alt="edit pencil" /></div>
 
 Then make an edit to the markdown file (any edit will do), and click `Commit Changes`:
 
-<div style="text-align:center;"><img src="assets/github-edit-submit.png" width="80%" /></div>
+<div style="text-align:center"><img src="./assets/github-edit-submit.png" alt="edit submit" /></div>
 
 ** Note in general we do not recommend modifying files directly on GitHub, it is used
 here just for demonstration purposes **

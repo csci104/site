@@ -54,7 +54,8 @@ The above command shall be ran from your **Docker terminal**.
   the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
   Alternatively, you could open it by searching for "terminal" in the quick launcher:
 
-<div style="text-align:center"><img src="vm-terminal.png" alt="vm terminal" /></div>
+![VM Terminal](assets/vm-terminal.png)
+
 
 ## Creating a GitHub repo and obtaining the example files
 

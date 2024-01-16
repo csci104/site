@@ -4,7 +4,7 @@ admin_piazza: httpx://piazza.com/usc/spring2023/csci104/home
 discussion: https://edstem.org/us/courses/51592/discussion/
 discussion-join: https://edstem.org/us/join/pVp64d
 admin_discussion-join: httpx://piazza.com/usc/spring2023/csci104
-calendar: httpx://calendar.google.com/calendar/embed?src=c_719cef00borqimhoifnopko60k%40group.calendar.google.com&ctz=America%2FLos_Angeles
+calendar: https://calendar.google.com/calendar/embed?src=c_115d4ae4a982a5a6e7a8d404ed46f3ab67dd2fac63a7ffb242ca6a5940b47bbd%40group.calendar.google.com&ctz=America%2FLos_Angeles
 github: httpx://github.com/usc-csci104-summer2022
 github_ssh: git@github.com:usc-csci104-summer2022
 github_org: 'usc-csci104-summer2022'

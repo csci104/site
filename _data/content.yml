@@ -81,7 +81,7 @@ labs:
     title: GDB
     assigned: true
     topics: Debugging
-    # slides: lab2.pdf
+    slides: GDBLab.pdf
 
   - id: 3
     folder: lab3-stl

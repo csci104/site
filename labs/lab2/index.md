@@ -20,9 +20,9 @@ Can you survive the maze of segfaults, and banish a battery of blatantly bad beh
 This lab will guide you through hunting down the kind of bugs that keep programmers awake at night.
 Do you dare take it on?
 
-<div class="showcase">
+<!-- <div class="showcase">
     <img src="./assets/gdb_house_of_horrors.png" alt="GDB House of Horrors" class="no-shadow" />
-</div>
+</div> -->
 
 ## Lab Materials
 
@@ -149,9 +149,9 @@ The members of one row/column of each army duel in each skirmish, and the battle
 The twist is that one of the armies is laid out sideways, so row `i` of the invaders duels column `i` of the protectors.
 Think of it like matrix multiplication, but with more violence!
 
-<div class="showcase">
+<!-- <div class="showcase">
     <img src="./assets/game_of_pointers.png" alt="Game of Pointers" width="500" height="350" class="no-shadow" />
-</div>
+</div> -->
 
 Two students (whose names have been omitted to protect the guilty) attempted this problem, but didn't get it quite right.
 We're now going to find the bugs in their programs with GDB.

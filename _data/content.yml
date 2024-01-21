@@ -75,21 +75,21 @@ labs:
     slides: GitLab.pdf
 
   - id: 2
-    folder: lab2-make
+    folder: lab2
     week: Week 3
     date: 1/22
-    title: Makefiles
-    assigned: false
-    topics: Make, Build Systems
+    title: GDB
+    assigned: true
+    topics: Debugging
     # slides: lab2.pdf
 
   - id: 3
     folder: lab3-stl
     week: Week 4
     date: 1/29
-    title: GDB
+    title: Makefiles
     assigned: false
-    topics: Debugging
+    topics: Make, Build Systems
     # slides: lab3.pdf
 
   - id: 4

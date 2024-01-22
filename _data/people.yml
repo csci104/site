@@ -31,6 +31,14 @@ assistants:
     email: morganje@usc.edu
     image: /assets/img/staff/jeremy_morgan.png
 
+  - name: Sina Shaham
+    email: sshaham@usc.edu
+    image: /assets/img/staff/sina.jpg
+
+  - name: Bryce
+    email: blinn@usc.edu
+    image: /assets/img/staff/temp.png
+
 staff:
   - name: Bridget Bell
     email: bgbell@usc.edu

@@ -18,44 +18,44 @@ sections:
       days: Tuesday
       time: 3:30-5:20pm
       location: SAL126
-      instructors:
+      instructors: Pranav Jain
     - id: 30238
       days: Tuesday
       time: 5:30-7:20pm
       location: SAL126
-      instructors: 
+      instructors: Pranav Jain
     - id: 30286
       days: Wednesday
       time: 12:00-1:50pm
       location: SAL109
-      instructors: 
+      instructors: Yuxin Yang
     - id: 30294
       days: Tuesday
       time: 1:00-2:50pm
       location: SAL126
-      instructors: 
+      instructors: Jeremy Morgan
     - id: 30379
       days: Thursday
       time: 2:00-3:50pm
       location: SAL127
-      instructors: 
+      instructors: Sima Arasteh
     - id: 30394
       days: Wednesday
       time: 2:00-3:50pm
       location: SAL109
-      instructors: 
+      instructors: Nathan Bartley
     - id: 29912
       days: Wednesday
       time: 5:00-6:50pm
       location: SAL109
-      instructors: 
+      instructors: Nathan Bartley
     - id: 29914
       days: Wednesday
       time: 3:00-4:50pm
       location: SAL126
-      instructors: 
+      instructors: Sima Arasteh
     - id: 29915
       days: Wednesday
       time: 12:00-1:50pm
       location: SAL126
-      instructors: 
+      instructors: Jeremy Morgan

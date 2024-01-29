@@ -84,13 +84,13 @@ labs:
     slides: GDBLab.pdf
 
   - id: 3
-    folder: lab3-stl
+    folder: lab3
     week: Week 4
     date: 1/29
     title: Makefiles
-    assigned: false
+    assigned: true
     topics: Make, Build Systems
-    # slides: lab3.pdf
+    slides: MakeLab.pdf
 
   - id: 4
     folder: lab4-templates

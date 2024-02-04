@@ -93,13 +93,13 @@ labs:
     slides: MakeLab.pdf
 
   - id: 4
-    folder: lab4-templates
-    title: Week 5 Lab
+    folder: lab4
+    title: Inheritance
     week: Week 5
     date: 2/5
-    assigned: false
-    topics:
-    # slides: lab4.pdf
+    assigned: true
+    topics: Inheritance, Polymorphism, OOP
+    slides: InheritanceLab.pdf
 
   - id: 5
     folder: lab5-midterm

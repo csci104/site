@@ -87,8 +87,9 @@ This would work, but note the repetition — students and professors both have m
 	Below code in the div is for HTML, not markdown. Above works for markdown but not for
 	displaying on bytes website so use img element.
 -->
-<!-- <div style="text-align:center"><img src="./assets/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div> -->
-<img src="lab4/assets/inheritance_diagram.png" alt="" width="300" />
+<div style="text-align:center"><img src="./lab4/assets/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div>
+<!-- TESTING: -->
+<!-- <img src="lab4/assets/inheritance_diagram.png" alt="" width="300" /> -->
 
 
 ```c++

@@ -88,7 +88,7 @@ This would work, but note the repetition — students and professors both have m
 	displaying on bytes website so use img element.
 -->
 <!-- <div style="text-align:center"><img src="./assets/inheritance_diagram.png" alt="inheritance" width="500" height="400" /> </div> -->
-<img src="./assets/inheritance_diagram.png" alt="" width="300" />
+<img src="http://upload.wikimedia.org/wikipedia/commons/d/da/Binary_search_tree.svg" alt="" width="300" />
 
 
 ```c++

@@ -62,7 +62,7 @@ Your final grade will depend solely on your own performance, graded according to
     <tbody>
       <tr>
         <td>34%</td>
-        <td>Homework (24% -> 6x Programming Assignments, 10% -> 5x Written Assignments)  
+        <td>Homework (24% -> 6x Programming Assignments, 10% -> 5x Written Assignments)</td>  
       </tr>
       <tr>
         <td>8%</td>

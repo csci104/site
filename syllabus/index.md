@@ -61,11 +61,15 @@ Your final grade will depend solely on your own performance, graded according to
     </thead>
     <tbody>
       <tr>
-        <td>36%</td>
+        <td>34%</td>
         <td>Homework</td>
       </tr>
       <tr>
-        <td>6%</td>
+        <td>&nbsp;</td>
+        <td>(24% 6x Programming Assignments, 10% 5x Written Assignments)</td>
+      </tr>
+      <tr>
+        <td>8%</td>
         <td>Lab Exercises</td>
       </tr>
       <tr>

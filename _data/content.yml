@@ -102,12 +102,13 @@ labs:
     slides: InheritanceLab.pdf
 
   - id: 5
-    folder: lab5-midterm
+    folder: lab5
     week: Week 6
     date: 2/12
-    title: Week 6 Lab
-    assigned: false
-    # slides: mt1_review_student.pdf
+    title: Heaps
+    assigned: true
+    topics: Heaps, Priority Queues
+    slides: HeapsLab.pdf
 
   - id: 6
     folder: lab6-counting

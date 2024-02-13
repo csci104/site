@@ -5,23 +5,23 @@ nav: Resources
 ---
 
 ## MT1 Info
-Fall 2023 Canary: The following information HAS NOW been updated for Fall 2023!
+Spring 2024 Canary: The following information HAS NOW been updated for Spring 2024!
 
 ### Overview and Process
 
 The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
-  - The test will be set for **1 hour, 50 minutes**
-  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 9th, otherwise you will not be able to use your accomodations.  
+  - The test will be set for **1 hour, 30 minutes**
+  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 15th, otherwise you will not be able to use your accomodations.  
 - Location: THH
   - 11AM section: 
-    - THH 101
+    - SLH 102 Last Name Starts with A - G
+    - SLH 200 Last Name Starts with H - Z
   - 8AM section:
-    - Last Name starts with A-K: THH 102
-	- Last Name starts with L-Z: THH 301
-  - If you have **1.5x time accommodations**: THH 213 (starting at 7pm running to 9:45pm)
-  - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
+    - SLH 100 Last Name Starts with A - K
+	- SGM 101 Last Name Starts with L - Z
+  - If you have OSAS accomodations you should schedule your exam at the OSAS offices **on Thursday or Friday during OSAS hours**
 
 - The test will be taken on Gradescope. You will be added to this course on Gradescope automatically, but you should test your Gradescope login sometime before the exam.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
@@ -70,11 +70,6 @@ The exam is a mix of short answer, multiple choice and coding snippets. We will 
  - Implementaiton options and their effeciency
  - Applications of queues and stacks
 
-#### Unit 8 - Templates
- - Templated classes and functions
- - Inheritance and templates
- - Function objects ("functors")
-
 #### Unit 9 - PQ and Heaps
  - Tree representations and storage
  - Full, complete, and balanced tree definitions
@@ -82,11 +77,6 @@ The exam is a mix of short answer, multiple choice and coding snippets. We will 
  - Heap implementation and operations (push, pop, top) and runtime
  - `build-heap` (`make-heap`) algorithm and runtime
  - heap-sort
-
-#### Units 10 and 11 - Graph Algorithms and Graph Traversals
- - Graph representations and the graph ADT
- - Pagerank, BFS, Dijikstra's, A*, DFS
- - Traversals (pre/in/post order)
  
 ### Practice Materials
 

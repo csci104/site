@@ -12,7 +12,7 @@ Spring 2024 Canary: The following information HAS NOW been updated for Spring 20
 The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
-  - The test will be set for **1 hour, 30 minutes**
+  - The test will be set for **1 hour, 40 minutes**
   - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 15th, otherwise you will not be able to use your accomodations.  
 - Location: depends on your lecture section **and** the letter your last name starts with
   - 11 AM section: 
@@ -67,7 +67,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - Class hierarchy and design
 
 #### Unit 7 - Queues and Stack
- - Implementaiton options and their effeciency
+ - Implementaiton options and their efficiency
  - Applications of queues and stacks
 
 #### Unit 9 - PQ and Heaps

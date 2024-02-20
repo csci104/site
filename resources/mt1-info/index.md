@@ -77,6 +77,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - Heap implementation and operations (push, pop, top) and runtime
  - `build-heap` (`make-heap`) algorithm and runtime
  - heap-sort
+ - Functors
  
 ### Practice Materials
 

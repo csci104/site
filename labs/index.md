@@ -49,7 +49,9 @@ Lab sessions are held every week and will be conducted by a team of TAs and Tuto
       <td>{{ lab.topics }}</td>
       <td>
         {% if lab.slides %}
-        <a href="{{ lab.folder }}/assets/{{ lab.slides }}">{{ lab.slides }}</a>
+        {% for slide in lab.slides %}
+        <a href="{{ lab.folder }}/assets/{{ slide }}">{{ slide }}</a>
+        {% endfor %}
         {% endif %}
       </td>
     </tr>

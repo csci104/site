@@ -117,9 +117,7 @@ labs:
     title: Midterm 1 Review Lab
     assigned: false
     topics:
-    slides:
-      - Midterm1Lab_Student.pdf
-      - Midterm1Lab.pdf
+    slides: [Midterm1Lab_Student.pdf, Midterm1Lab.pdf]
 
   - id: 7
     week: Week 8

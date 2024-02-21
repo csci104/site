@@ -117,7 +117,7 @@ labs:
     title: Midterm 1 Review Lab
     assigned: false
     topics:
-    slides:
+    slides: |
       - Midterm1Lab_Student.pdf
       - Midterm1Lab.pdf
 

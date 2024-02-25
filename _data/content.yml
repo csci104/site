@@ -124,9 +124,9 @@ labs:
   - id: 7
     week: Week 8
     date: 2/26
-    title: Week 8 Lab
-    assigned: false
-    # slides: heap_lab.pdf
+    title: Templates
+    assigned: true
+    slides: TemplatesLab.pdf
 
   - id: 8
     folder: lab7-probability-numtheory

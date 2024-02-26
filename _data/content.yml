@@ -122,6 +122,7 @@ labs:
       - Midterm1Lab.pdf
 
   - id: 7
+  folder: lab7
     week: Week 8
     date: 2/26
     title: Templates
@@ -177,7 +178,7 @@ labs:
     folder: lab12
     week: Week 13
     date: 4/8
-    title: Week 13
+    title: Week 13 Lab
     assigned: false
     # slides: probability_lab.pdf
 

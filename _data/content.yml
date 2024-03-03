@@ -131,13 +131,13 @@ labs:
     slides: TemplatesLab.pdf
 
   - id: 8
-    folder: lab7-probability-numtheory
+    folder: lab8
     week: Week 9
     date: 3/4
-    title: Week 9 Lab
-    assigned: false
-    # topics: Probability, Number Theory
-    # slides: lab7.pdf
+    title: Binary Search Trees
+    assigned: true
+    topics: trees
+    slides: BstAvlLab.pdf
 
   - id: 9
     folder: lab8-hashtables

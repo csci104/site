@@ -11,8 +11,6 @@ title: Tree Traversal
 
 What does it mean for a tree to be binary?
 
-<img src="http://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/tree1.bmp" alt="" width="385" height="343" />
-
 A Binary Search Tree is a specific type of binary tree. In a BST, left children (the left subtree) hold values that are *less than* the parent's value, and right children (the right subtree) hold values *greater than* the parent's value.
 
 ### 2 - Traversals
@@ -92,11 +90,7 @@ A balanced  binary trees is a tree that ensures that the height of each subtree 
 
 A tree is considered balanced if it conforms to the **Height-Balancing Property**: A node in a tree is height-balanced if the heights of its subtrees differ by no more than 1.
 
-As we will see in a few weeks, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced .
-
-Here is an example of balanced vs. non balanced trees.
-
-<div style="text-align:center"><img src="{{site.url}}/labs/balanced/examples.GIF" alt="bst" width="550" height="250" /> </div>
+As we will see, most operations on a BST take time directly proportional to the height of the tree, so we want to keep the height balanced.
 
 ### How can we maintain these properties at the same time?
 
@@ -116,14 +110,7 @@ For all of these self-balancing binary search trees, the height-balancing proper
 
 ### Checkoff
 
-Given this *binary tree*:
-
-<img src="{{site.url}}/labs/tree/bst.png" alt="bst" width="300" height="300" />
-
-- [ ] What order will the nodes be printed out with Pre-Order traversal? In-Order? Post-Order?
-Save your answers in a .txt file for checkoff.
-
-Next, you'll have to complete the following three binary tree traversal problems. A node is defined in `bst.h` as such:
+For this lab, you will have to complete the following three binary tree traversal problems. A node is defined in `bst.h` as such:
 
 ```
 class Node {

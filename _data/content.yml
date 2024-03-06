@@ -134,7 +134,7 @@ labs:
     folder: lab8
     week: Week 9
     date: 3/4
-    title: Balanced Trees
+    title: Binary Trees
     assigned: true
     topics: AVL, BST
     slides: BstAvlLab.pdf

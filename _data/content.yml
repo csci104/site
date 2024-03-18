@@ -140,7 +140,7 @@ labs:
     slides: BstAvlLab.pdf
 
   - id: 9
-    folder: lab8-hashtables
+    folder:
     # week: Week 10
     date: 3/11
     title: Spring Break
@@ -149,30 +149,31 @@ labs:
     # slides: lab8.pdf
 
   - id: 10
-    folder: lab9-midterm
+    folder: lab9
     week: Week 10
     date: 3/18
-    title: Week 10 Lab
-    # assigned: false
-    # slides:
-    #   - mt2_review_student.pdf
+    title: Backtracking
+    assigned: true
+    topics: recursion
+    slides: BacktrackingLab.pdf
 
   - id: 11
-    folder: lab10-amortization
+    folder: lab10
     week: Week 11
     date: 3/25
-    title: Week 11 Lab
+    title: Backtracking
+    topics: recursion
     assigned: false
-    # topics: Runtime
+    # slides:
+
 
   - id: 12
     folder: lab11-avl
     week: Week 12
     date: 4/1
-    title: Week 12 Lab
+    title: Midterm 2 Review Lab
     assigned: false
-    # topics: Trees
-    # slides: lab11.pdf
+    # slides:
 
   - id: 13
     folder: lab12

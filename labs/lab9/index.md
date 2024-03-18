@@ -80,7 +80,7 @@ etc.
 The first correct solution we will hit is 1, 3, 0, 2.
 
 
-#### 3.1 - Sudoku
+### 2 - Sudoku
 
 [Sudoku](http://www.websudoku.com/) is a popular puzzle game involving a 9x9 grid and the numbers 1-9. The goal of the game is to fill board such that each row, column, and 3x3 box have the numbers 1-9 with no repeats. We will be programming a sudoku solver for lab.
 

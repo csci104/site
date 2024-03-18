@@ -154,15 +154,15 @@ labs:
     date: 3/18
     title: Backtracking
     assigned: true
-    topics: recursion
+    topics: Recursion
     slides: BacktrackingLab.pdf
 
   - id: 11
     folder: lab10
     week: Week 11
     date: 3/25
-    title: Backtracking
-    topics: recursion
+    title: Week 11 Lab
+    topics:
     assigned: false
     # slides:
 

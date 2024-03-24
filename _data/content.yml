@@ -154,17 +154,17 @@ labs:
     date: 3/18
     title: Backtracking
     assigned: true
-    topics: Recursion
+    topics: Recursion, Graph Algorithms
     slides: BacktrackingLab.pdf
 
   - id: 11
     folder: lab10
     week: Week 11
     date: 3/25
-    title: Week 11 Lab
-    topics:
-    assigned: false
-    # slides:
+    title: Hashtables
+    topics: Hashtables, Hashing
+    assigned: true
+    slides: Hashtables.pdf
 
 
   - id: 12

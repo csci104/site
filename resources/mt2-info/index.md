@@ -16,9 +16,11 @@ The exam will be **IN PERSON**!
   - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 15th, otherwise you will not be able to use your accomodations.  
 - Location: depends on your lecture section **and** the letter your last name starts with
   - 11 AM section: 
-    - TBD
+    - SLH 102 Last Name Starts with A - G
+    - SLH 200 Last Name Starts with H - Z
   - 8 AM section:
-    - TBD
+    - SLH 100 Last Name Starts with A - K
+	- SGM 101 Last Name Starts with L - Z
   - If you have OSAS accomodations you should schedule your exam at the OSAS offices **on Thursday or Friday during OSAS hours**
 <!-- - The test will be taken on Gradescope and on paper. Be prepared with your laptop, and a pencil/pen. -->
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.

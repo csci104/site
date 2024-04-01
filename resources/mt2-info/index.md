@@ -58,7 +58,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
 
 #### Sample Midterms
 
- - [Sample Midterm Heap Problems]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024.pdf) - [Solutions]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024-answer-key)
+ - [Sample Midterm Heap Problems]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024.pdf) - [Solutions]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024-answer-key.pdf)
  - [Sample Midterm]({{site.baseurl}}/resources/midterm-b.pdf) - [Solutions]({{site.baseurl}}/resources/midterm-b-sol.pdf)
     - Copy construction, operator overloading are not a major focus of CS104 but were in previous years.
  - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (partial solutions)

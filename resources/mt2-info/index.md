@@ -44,7 +44,7 @@ The exam is a mix of short answer and coding snippets. We will **visually** grad
  - Recursion
  - Combinations & Backtracking
 
- #### Unit 13 - Iterators
+#### Unit 13 - Iterators
  - Iterators
 
 #### Unit 14 - Binary Search Trees & AVL Trees

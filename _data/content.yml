@@ -168,12 +168,12 @@ labs:
 
 
   - id: 12
-    folder: lab11-avl
+    folder: lab11
     week: Week 12
     date: 4/1
     title: Midterm 2 Review Lab
     assigned: false
-    # slides:
+    slides: Midterm2Lab.pdf
 
   - id: 13
     folder: lab12

@@ -22,13 +22,13 @@ The exam will be **IN PERSON**!
     - SLH 100 Last Name Starts with A - K
 	- SGM 101 Last Name Starts with L - Z
   - If you have OSAS accomodations you should schedule your exam at the OSAS offices **on Thursday or Friday during OSAS hours**
-<!-- - The test will be taken on Gradescope and on paper. Be prepared with your laptop, and a pencil/pen. -->
+- The test will be taken on Gradescope and on paper. Be prepared with your laptop, and a pencil/pen.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 ### Topics and Style
 
-The exam is a mix of short answer, multiple choice, and coding snippets. We will **visually** grade your code snippets and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
+The exam is a mix of short answer and coding snippets. We will **visually** grade your code snippets and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
 
 #### Unit 9 - Priority Queues and Heaps
  - Build Heap
@@ -43,6 +43,9 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
 #### Unit 12 - Recursion: Combinations & Backtracking
  - Recursion
  - Combinations & Backtracking
+
+ #### Unit 13 - Iterators
+ - Iterators
 
 #### Unit 14 - Binary Search Trees & AVL Trees
  - Binary Search Trees

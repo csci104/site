@@ -164,7 +164,7 @@ labs:
     title: Hashtables
     topics: Hashtables, Hashing
     assigned: true
-    slides: Hashtables.pdf
+    slides: HashtablesLab.pdf
 
 
   - id: 12

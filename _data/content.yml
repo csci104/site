@@ -43,7 +43,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, April 12th at 11:59PM PDT
+      due: Written - Friday, April 12th at 11:59PM PDT, PA - Wednesday, April 17th at 11:59 PM PDT
   - id: hw6
     title: Hash tables
     assigned: false

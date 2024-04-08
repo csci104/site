@@ -179,9 +179,9 @@ labs:
     folder: lab12
     week: Week 13
     date: 4/8
-    title: Week 13 Lab
-    assigned: false
-    # slides: probability_lab.pdf
+    title: Counting
+    assigned: true
+    slides: CountingLab.pdf
 
   - id: 14
     folder: lab12-finallab

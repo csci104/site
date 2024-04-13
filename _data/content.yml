@@ -181,15 +181,17 @@ labs:
     date: 4/8
     title: Counting
     assigned: true
+    topics: Counting
     slides: CountingLab.pdf
 
   - id: 14
-    folder: lab12-finallab
+    folder: lab13
     week: Week 14
     date: 4/15
-    title: Week 14 Lab
-    assigned: false
-    # slides: final_review.pdf
+    title: Probability & Number Theory
+    assigned: true
+    topics: Probability, Number Theory
+    slides: ProbabilityNumberTheoryLab.pdf
 
   - id: 15
     folder: lab12-finallab

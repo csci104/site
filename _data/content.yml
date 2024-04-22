@@ -198,7 +198,7 @@ labs:
     week: Week 15
     date: 4/22
     title: Final Review
-    assigned: true
+    assigned: false
     slides: FinalLab.pdf
 
 

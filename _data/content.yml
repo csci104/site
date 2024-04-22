@@ -194,12 +194,12 @@ labs:
     slides: ProbabilityNumberTheoryLab.pdf
 
   - id: 15
-    folder: lab12-finallab
+    folder: lab14
     week: Week 15
     date: 4/22
     title: Final Review
-    assigned: false
-    # slides: final_review.pdf
+    assigned: true
+    slides: FinalLab.pdf
 
 
 

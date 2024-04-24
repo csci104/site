@@ -8,15 +8,17 @@ nav: Resources
 
 ### Overview and Process
 
-- Time/Date: **{{site.data.schedule.exams[1].time}}**
-  - The test will be set for **2 hours.**
-  - If you have USC approved accommodations, please confirm with me via email and we will make preparations for your approved time.  
-- Location: {{site.data.schedule.exams[1].location}} (leave a blank seat between you and your neighbor, if possible)
-  - If you have 1.5x time accommodations: ZHS 360
-  - If you have **2x or 1.5x (with other) accommodations** you should schedule your exam at the OSAS offices **for the day of the exam**
+- Time/Date: **{{site.data.schedule.exams[2].time}}**
+  - The test will be set for **110 minutes**. The room is scheduled for 2 hours, so please be a few minutes early.
+  - If you have USC approved accommodations, please coordinate with {{site.data.people.administrators[0].name}} ({{site.data.people.administrators[0].email}}) and we will make preparations for your approved time. All OSAS exams will be taken at the OSAS center, please make your arrangements as soon as possible.
+- Location: (leave a blank seat between you and your neighbor, if possible)
+  {% for location in site.data.schedule.exams[2].location %}
+  - {{ location }}
+  {% endfor %}
 
-- The final will be on Gradescope
-- The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind and blank scratch paper but nothing else.
+- There will be a one page attendance sheet with 1-2 written questions.
+- The rest will be on Gradescope
+- The exam is **Closed book, Closed notes, Closed Internet (search/reference/ChatGPT)**.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **typed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 <!--
@@ -29,34 +31,7 @@ nav: Resources
 -->
 ### Topics and Style
 
-All topics covered on the midterm are also fair game in addition to the following:  
-
-#### Unit 11 - Tree and Graph Traversals
- - Breadth- and Depth-first search
- - In-, pre-, post-order tree traversals
-
-#### Unit 12 - Backtracking Search
- - Recursion to generate all combinations
- - General backtracking code structure
-
-#### Unit 13 - Iterators
- - Why we use them?
- - General implementation approach (operator overloading, saving some internal state to track which item is being referenced, etc.)
-
-#### Unit 14 - BSTs and Balanced (AVL) Binary Search Trees
- - Binary search tree property
- - BST operations: find, insert, remove and their runtimes
- - AVL tree property (using height or balance values)
- - AVL operations: insert and remove (be able to perform these yourself on paper) but you do not need to memorize the pseudocode
-
-#### Unit 15 - Splay Trees
-
-#### Unit 16 - Hash Tables
- - Properties of hash functions
- - Dealing with collisions
-  - Closed addressing: chaining or buckets
-  - Open addressing: probing (linear, quadratic, double-hashing)
- - Runtime and relationship to loading factor
+The final is cumulative, so questions related to any unit we have covered may appear on the exam. However, the exam will focus on the topics we have covered since the 2nd midterm:  
 
 #### Unit 17 - Counting
  - All relevant counting rules and approaches taught in lecture and on HW
@@ -101,7 +76,8 @@ All topics covered on the midterm are also fair game in addition to the followin
 ### Practice Materials
 
 #### Sample Finals
-
+ - **There is a practice final available on Gradescope:**
+    - CSCI 104L Spring 2024 PRACTICE FINAL
  - [Sample Final (Spring 2014)]({{site.baseurl}}/resources/final-a.pdf) (no solutions)
  - [Sample Final (Spring 2014 and others)]({{site.baseurl}}/resources/final-b.pdf) (no solutions)
 

@@ -18,7 +18,11 @@ exams:
   
   - name: Final
     time: Wednesday, May 1st, 8 AM Pacific
-    location: TBA
+    location: 
+            - "8am section: Last Name A-C -> ZHS 360"
+            - "8am section: Last Name D-Z -> SLH 200"
+            - "11am section: Last Name A-L -> ZHS 159"
+            - "11am section: Last Name M-Z -> HAR 101"
     link: final-info/
 
 lectures:

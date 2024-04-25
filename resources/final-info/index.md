@@ -37,7 +37,7 @@ The final is cumulative, so questions related to any unit we have covered may ap
  - All relevant counting rules and approaches taught in lecture and on HW
 
 #### Unit 18 - Probability
- - All relevant counting rules and approaches taught in lecture and on HW
+ - All relevant probability rules and approaches taught in lecture and on HW
  - Basic probability calculation
  - Conditional probability and its definition
  - Law of total probability

@@ -1,140 +1,108 @@
 instructors:
-  - name: Andrew Goodney
-    email: goodney@usc.edu
-    image: /assets/img/staff/goodney.jpg
-    hours: 'Monday 10am - 12pm, Wednesday 10am - 12pm'
-    location:  PHE 406
+  - name: Aaron Cote
+    email: aaroncot@usc.edu
+    image: /assets/img/staff/aaron.png
+    hours: 
+    location: SAL 210
 
-administrators:
-  - name: Tallulah Winston-Schrader
-    email: winstons@usc.edu
-    image: /assets/img/staff/tallulah.jpg
+# administrators:
+#   - name: Tallulah Winston-Schrader
+#     email: winstons@usc.edu
+#     image: /assets/img/staff/tallulah.jpg
 
 assistants:
-  - name: Nathan Bartley
-    email: nbartley@usc.edu
-    image: /assets/img/staff/nbartley.jpg
+  # - name: Nathan Bartley
+  #   email: nbartley@usc.edu
+  #   image: /assets/img/staff/nbartley.jpg
 
-  - name: Pranav Jain
-    email: pranavj@usc.edu
-    image: /assets/img/staff/pranav_jain.png
+  # - name: Pranav Jain
+  #   email: pranavj@usc.edu
+  #   image: /assets/img/staff/pranav_jain.png
 
-  - name: Yuxin Yang
-    email: yyang393@usc.edu
-    image: /assets/img/staff/yuxin_yang.JPG
+  # - name: Yuxin Yang
+  #   email: yyang393@usc.edu
+  #   image: /assets/img/staff/yuxin_yang.JPG
 
-  - name: Sima Arasteh
-    email: arasteh@usc.edu
-    image: /assets/img/staff/sima_arasteh.jpg
+  # - name: Sima Arasteh
+  #   email: arasteh@usc.edu
+  #   image: /assets/img/staff/sima_arasteh.jpg
 
-  - name: Jeremy Morgan
-    email: morganje@usc.edu
-    image: /assets/img/staff/jeremy_morgan.png
+  # - name: Jeremy Morgan
+  #   email: morganje@usc.edu
+  #   image: /assets/img/staff/jeremy_morgan.png
 
-  - name: Sina Shaham
-    email: sshaham@usc.edu
-    image: /assets/img/staff/sina.jpg
+  # - name: Sina Shaham
+  #   email: sshaham@usc.edu
+  #   image: /assets/img/staff/sina.jpg
 
-  - name: Bryce
-    email: blinn@usc.edu
-    image: /assets/img/staff/bryce.png
+  # - name: Bryce
+  #   email: blinn@usc.edu
+  #   image: /assets/img/staff/bryce.png
 
 staff:
-  - name: Bridget Bell
-    email: bgbell@usc.edu
-    image: /assets/img/staff/bridget.jpg
+  # - name: Nicholas Schumacher
+  #   email: naschuma@usc.edu
+  #   image: /assets/img/staff/nicolas.jpg
 
-  - name: Nicholas Schumacher
-    email: naschuma@usc.edu
-    image: /assets/img/staff/nicolas.jpg
+  # - name: James Li
+  #   email: jli51468@usc.edu
+  #   image: /assets/img/staff/james_li.jpg
 
-  - name: Raymond Liu
-    email: liuraymo@usc.edu
-    image: /assets/img/staff/raymond.jpg
+  # - name: Aayushi Agrawal
+  #   email: aayushia@usc.edu
+  #   image: /assets/img/staff/aayushi.jpg
 
-  - name: Paul Somodi
-    email: somodi@usc.edu
-    image: /assets/img/staff/pauls.jpg
+  # - name: Junu Song
+  #   email: junusong@usc.edu
+  #   image: /assets/img/staff/junu.jpg
 
-  - name: Ishu Agrawal
-    email: ishuagra@usc.edu
-    image: /assets/img/staff/ishu.jpeg
+  # - name: Josheta Srinivasan
+  #   email: jsriniva@usc.edu
+  #   image: /assets/img/staff/josheta.jpg
 
-  - name: Nic Buxbaum
-    email: nbuxbaum@usc.edu
-    image: /assets/img/staff/nic.jpg
+  # - name: Jessica Cheung
+  #   email: cheungje@usc.edu
+  #   image: /assets/img/staff/jessica.jpg
 
-  - name: Justin Bai
-    email: jybai@usc.edu
-    image: /assets/img/staff/justin_bai.jpg
+  # - name: David Morales
+  #   email: davidm62@usc.edu
+  #   image: /assets/img/staff/davidmorales.jpg
 
-  - name: Junu Song
-    email: junusong@usc.edu
-    image: /assets/img/staff/junu.jpg
+  # - name: Carlos Subramanian
+  #   email: cksubram@usc.edu
+  #   image: /assets/img/staff/cksubram.jpg
 
-  - name: Josheta Srinivasan
-    email: jsriniva@usc.edu
-    image: /assets/img/staff/josheta.jpg
+  # - name: Ania Ahsan
+  #   email: aahsan@usc.edu
+  #   image: /assets/img/staff/ania_ahsan.jpg
 
-  - name: Jessica Cheung
-    email: cheungje@usc.edu
-    image: /assets/img/staff/jessica.jpg
+  # - name: Zuoning Zhang
+  #   email: zuoningz@usc.edu
+  #   image: /assets/img/staff/zuoning.jpeg
 
-  - name: James Li
-    email: jli51468@usc.edu
-    image: /assets/img/staff/james_li.jpg
+  # - name: Sunghyun Cho
+  #   email: scho1939@usc.edu
+  #   image: /assets/img/staff/sunghyun.jpeg
 
-  - name: Aayushi Agrawal
-    email: aayushia@usc.edu
-    image: /assets/img/staff/aayushi.jpg
+  # - name: Sid Qian
+  #   email: sidqian@usc.edu
+  #   image: /assets/img/staff/sid.jpg
 
-  - name: David Morales
-    email: davidm62@usc.edu
-    image: /assets/img/staff/davidmorales.jpg
+  # - name: Amy Rong
+  #   email: shiqingr@usc.edu
+  #   image: /assets/img/staff/amy.jpg
 
-  - name: Carlos Subramanian
-    email: cksubram@usc.edu
-    image: /assets/img/staff/cksubram.jpg
+  # - name: Christian Moreno
+  #   email: parramor@usc.edu
+  #   image: /assets/img/staff/christian.jpeg
 
-  - name: Ania Ahsan
-    email: aahsan@usc.edu
-    image: /assets/img/staff/ania_ahsan.jpg
+  # - name: Louis Addison
+  #   email: laddison@usc.edu
+  #   image: /assets/img/staff/louis.jpg
 
-  - name: Zuoning Zhang
-    email: zuoningz@usc.edu
-    image: /assets/img/staff/zuoning.jpeg
-
-  - name: Sunghyun Cho
-    email: scho1939@usc.edu
-    image: /assets/img/staff/sunghyun.jpeg
-
-  - name: Sid Qian
-    email: sidqian@usc.edu
-    image: /assets/img/staff/sid.jpg
-
-  - name: Amy Rong
-    email: shiqingr@usc.edu
-    image: /assets/img/staff/amy.jpg
-
-  - name: Christian Moreno
-    email: parramor@usc.edu
-    image: /assets/img/staff/christian.jpeg
-
-  - name: Isaac Gerstmann
-    email: ig_707@usc.edu
-    image: /assets/img/staff/isaac.jpg
-
-  - name: Paul Kim
-    email: pbkim@usc.edu
-    image: /assets/img/staff/paul.jpg
-
-  - name: Louis Addison
-    email: laddison@usc.edu
-    image: /assets/img/staff/louis.jpg
-
-  - name: Jake Hosking
-    email: hosking@usc.edu
-    image: /assets/img/staff/hosking.jpg
+  # - name: Jake Hosking
+  #   email: hosking@usc.edu
+  #   image: /assets/img/staff/hosking.jpg
     
 graders:
  

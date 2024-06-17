@@ -61,28 +61,25 @@ Your final grade will depend solely on your own performance, graded according to
     </thead>
     <tbody>
       <tr>
-        <td>34%</td>
+        <td>36%</td>
         <td>Homework</td>
       </tr>
       <tr>
-        <td>&nbsp;</td>
-        <td>(24% 6x Programming Assignments, 10% 5x Written Assignments)</td>
-      </tr>
-      <tr>
-        <td>8%</td>
+        <td>6%</td>
         <td>Lab Exercises</td>
       </tr>
       <tr>
-        <td>28%</td>
+        <td>30%</td>
         <td>Midterm Exams (equal between MT1 and MT2)</td>
       </tr>
       <tr>
-        <td>30%</td>
+        <td>28%</td>
         <td>Final Exam</td>
       </tr>
     </tbody>
   </table>
 </div>
+
 
 ### Grading Scale
 
@@ -95,11 +92,11 @@ Because of the fairly generous scale we will not round up if you are close to th
       <tr><th>Grade</th><th>Letter</th></tr>
     </thead>
     <tbody>
-      <tr><td>90%</td><td>A </td></tr>
-      <tr><td>85%</td><td>A-</td></tr>
-      <tr><td>80%</td><td>B+</td></tr>
-      <tr><td>75%</td><td>B </td></tr>
-      <tr><td>70%</td><td>B-</td></tr>
+      <tr><td>85%</td><td>A </td></tr>
+      <tr><td>80%</td><td>A-</td></tr>
+      <tr><td>75%</td><td>B+</td></tr>
+      <tr><td>70%</td><td>B </td></tr>
+      <tr><td>65%</td><td>B-</td></tr>
     </tbody>
   </table>
   <table class="simple center">
@@ -107,14 +104,16 @@ Because of the fairly generous scale we will not round up if you are close to th
       <tr><th>Grade</th><th>Letter</th></tr>
     </thead>
     <tbody>
-      <tr><td>65%</td><td>C+</td></tr>
-      <tr><td>60%</td><td>C </td></tr>
-      <tr><td>55%</td><td>C-</td></tr>
-      <tr><td>50%</td><td>D+</td></tr>
-      <tr><td>45%</td><td>D </td></tr>
+      <tr><td>60%</td><td>C+</td></tr>
+      <tr><td>55%</td><td>C </td></tr>
+      <tr><td>50%</td><td>C-</td></tr>
+      <tr><td>47%</td><td>D+</td></tr>
+      <tr><td>43%</td><td>D </td></tr>
+      <tr><td>40%</td><td>D-</td></tr>
     </tbody>
   </table>
 </div>
+
 
 ### Assignments and Labs
 

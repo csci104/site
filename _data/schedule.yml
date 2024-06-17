@@ -6,294 +6,230 @@ show:
 
 exams:
 
-  - name: Midterm 1 
-    time: Thursday Feburary 22nd at 7 PM Pacific
+  - name: MT1 
+    time: Fri, Oct 4 at 7 PM Pacific
     location: TBA
-    link: mt1-info/
 
-  - name: Midterm 2 
-    time: Thursday April 4th at 7 PM Pacific
+  - name: MT2
+    time: Fri, Nov 3 at 7 PM Pacific
     location: TBA
-    link: mt2-info/
-  
+
   - name: Final
-    time: Wednesday, May 1st, 8 AM Pacific
-    location: 
-            - "8am section: Last Name A-C -> ZHS 360"
-            - "8am section: Last Name D-Z -> SLH 200"
-            - "11am section: Last Name A-L -> ZHS 159"
-            - "11am section: Last Name M-Z -> HAR 101"
-    link: final-info/
+    time: Sat, Dec 14 at 11 AM Pacific
+    location: TBA
 
 lectures:
 
-  # 1 Tue 8/23
+  # 1 Tues Aug 27
   - topics:
       - Course overview
       - Motivation for Data Structures
-      - Review (Memory Allocation)
-    chapters:
-      - Chapter 1.1-1.5
-      - Chapter 2
-    notes:
-      - L01_Overview.pdf
-      - L02a_MemAlloc.pdf
-    recording: 
-
-  # 2 Thur 8/25
-  - topics:
-      - Classes (Initialization Lists)
-      - Linked Lists
-    chapters:
-      - Chapter 1.4
-      - Chapter 3.3-3.5    
-      - Chapter 1.3
-    notes: 
-      - L02b_Classes.pdf
-      - L02e_LinkedLists.pdf
-    recording: 
-    
-  # 3 Tue 8/30
-  - topics:
-      - Linked Lists (cont.)
-      - Operator Overloading Review (if time)
       - Runtime
     chapters:
-      - Chapter 1.4
-      - Chapter 3.3-3.5    
+      - Chapter 1.1, 1.2, 1.4, 1.5
+      - Chapter 2
+
+  # 2 Thurs Aug 29
+  - topics:
+      - Runtime
+      - Recursion
+    chapters:
       - Chapter 1.3
     notes: 
-      - L02e_LinkedLists.pdf
-      - L02c_OperatorOverloading.pdf
-      - L02d_Runtime.pdf
-    recording: 
-
-  # 4 Thur 9/1
-  - topics:
-      - Recursion
-      - Copy Semantics
-    chapters:
-      - Chapter 1.3, 1.5
-      - Chapter 3.1-3.3, 4.8
-    notes:
-      - L03_Recursion.pdf
-      - L02f_CopyConstructors.pdf
-    recording: 
     
-  # 5 Tue 9/6
+  # 3 Tues Sep 3
   - topics:
       - Recursion
+      - Review (Linked Lists)
+    chapters:
+      - Chapter 3.2
+    notes:
+    
+  # 4 Thurs Sep 5
+  - topics:
+      - Recursion
+    chapters:
+      - Chapter 10.5
+    notes: 
+    
+  # 5 Tues Sep 10
+  - topics:
+      - Review (Inheritance, Polymorphism)
+    chapters:
+      - Class Notes
+    notes: 
+
+  # 6 Thurs Sep 12
+  - topics:
       - ADTs
       - STL
     chapters:
-      - Chapter 3.3,4.8
-      - Course Notes
+      - Chapter 3.1-3.5
+      - Chapter 4.8   
     notes: 
-      - L04_ADTs.pdf
-      - L05_STL.pdf
-    recording: 
-    
-  # 6 Thur 9/8
+      
+  # 7 Tues Sep 17
   - topics:
-      - STL
-      - Inheritance
-      - Polymorphism
+      - Stacks
+      - Queues
     chapters:
-      - Chapter 3.6-3.7
+      - Chapter 3.6, 3.7
     notes: 
-      - L05_STL.pdf
-      - L06a_Inheritance.pdf
-    recording: 
-
-  # 7 Tue 9/13
-  - topics:
-      - Polymorphism
-      - ArrayLists 
-    chapters:
-      - Chapter 3.6-3.7
-    notes: 
-      - L06b_Polymorphism.pdf
-      - L07_QueueStackDeque.pdf
-
-  # 8 Thur 9/15
-  - topics:
-      - Stacks and Queues
-      - Templates
-    chapters:
-      - Chapter 3.6-3.7
-      - Chapter 1.6
-    notes: 
-      - L07_QueueStackDeque.pdf
-      - L08_Templates.pdf
-
-  # 9 Tue 9/20
+         
+  # 8 Thurs Sep 19
   - topics:
       - Templates
       - Trees
     chapters:
+      - Chapter 1.6
       - Chapter 4.1-4.2
-    notes: 
-      - L09_PQHeaps.pdf
-
-  # 10 Thur 9/22
-  - topics:
-      - Heaps
-    chapters:
-      - Chapter 6.1-6.5   
       - Chapter 9.1
     notes: 
-      - L09_PQHeaps.pdf
-
-  # 11 Tue 9/27
+ 
+  # 9 Tues Sep 24
   - topics:
-      - Heapsort and build-heap
-      - Graph Algorithms
+      - Priority Queues (Heaps)
+    chapters:
+      - Chapter 6.1-6.4, 6.9
+    notes: 
+
+  # 10 Thurs Sep 26
+  - topics:
+      - Dijkstra
+      - A* Search
     chapters:
       - Chapter 9.3
     notes: 
-      - L10_GraphsAlgorithms.pdf
- 
-  # 12 Thur 9/29
-  - topics:
-      - Graph Traversals
-      - Tree Traversals
-    chapters:
-      - Chapter 9.2-9.3,9.6
-      - Chapter 4.1-4.2,4.6
-    notes: 
-      - L11_GraphTraversals.pdf
 
-  # 13 Tue 10/4
+  # 11 Tues Oct 1
   - topics:
-      - Recursion - All combinations
-    chapters:
-      - Chapter 2
-      - Class Notes
-    notes: 
-      - L12_BacktrackingSearch.pdf
-
-  # 15 Tue 10/11
-  - topics:
-      - Recursion - Backtracking
-      - Iterators
-    chapters:
-      - Chapter 4.3-4.4
-    notes: 
-      - L13_Iterators.pdf
-  
-  # 17 Tue 10/18
-  - topics:
-      - Binary Search Trees
-    chapters:
-      - Chapter 4.3-4.4
-    notes: 
-      - L14_BalancedBST_AVL.pdf
-
-  # 18 Thur 10/20
-  - topics:
-      - AVL Trees
-    chapters:
-      - Chapter 4.4-4.5,4.7
-    notes: 
-      - L14_BalancedBST_AVL.pdf
-      - L14_BalancedBST_AVL_Handout.pdf
-
-  # 20 Tue 10/25
-  - topics:
-      - Splay Trees
-      - Hash Table introduction
-    chapters:
-      - Chapter 4.7,5.1,5.3
-    notes: 
-      - L15_SplayTrees.pdf
-
-  # 21 Thur 10/27
-  - topics:
-      - Hash Table introduction
+      - Hash Tables
       - Counting
     chapters:
       - Chapter 5.1-5.3
-      - Lewis & Zax Chapter 22
-    notes: 
-      - L16_HashingIntro.pdf
+    notes:
 
-  # 22 Tue 11/1
+  # 12 Thurs Oct 3
   - topics:
       - Counting
     chapters:
+      - Lewis & Zax Chapter 22
       - Lewis & Zax Chapter 23
     notes: 
-      - L17_Counting.pdf
 
-  # 23 Thur 11/3
+  # 13 Tues Oct 8
   - topics:
       - Probability
     chapters:
       - Lewis & Zax Chapter 26
+      - Lewis & Zax Chapter 27
     notes: 
-      - L18_Probability.pdf
 
-  # 24 Tue 11/8
+  # 14 Tues Oct 15
   - topics:
       - Probability
     chapters:
-      - Lewis & Zax Chapter 27
       - Lewis & Zax Chapter 28
+      - Lewis & Zax Chapter 29
     notes: 
-      - L18_Probability.pdf
 
-  # 25 Thur 11/10
+  # 15 Thurs Oct 17
   - topics:
+      - Probability
       - Number Theory
     chapters:
-      - Lewis & Zax Chapter 29
       - Lewis & Zax Chapter 30
     notes: 
-      - L19_NumberTheory.pdf
  
-  # 26 Tue 11/15
+  # 16 Tues Oct 22
   - topics:
       - Number Theory
-      - Hash Functions
     chapters:
       - Lewis & Zax Chapter 31
     notes: 
-      - L19_NumberTheory.pdf
-      - L20_HashFunctions.pdf
- 
-  # 27 Thur 11/17
-  - topics:
-      - Hash Functions and Bloom Filters 
-    chapters:
-      - Chapter 5
-    notes: 
-      - L20_HashFunctions.pdf
 
-  # 28 Tue 11/22
+  # 17 Thurs Oct 24
   - topics:
-      - Tries
+      - Hash Tables
+    chapters:
+      - Chapter 5.4-5.8
+    notes: 
+
+  # 18 Tues Oct 29
+  - topics:
+      - Probing
+      - Bloom Filters
+    chapters:
+      - Course Notes
+    notes: 
+
+  # 19 Thurs Oct 31
+  - topics:
       - Skip Lists
     chapters:
-      - Chapter 5
-      - Chapter 12.4, 11.1, 11.5
+      - Chapter 10.4
     notes: 
-      - L22_Tries.pdf
-      - L21_SkipLists.pdf
-  
-  # 30 Tue 11/29
+
+  # 20 Tues Nov 5
   - topics:
       - Amortized Analysis
+    chapters:
+      - Chapter 11.1
+    notes: 
+
+  # 21 Thurs Nov 7
+  - topics:
       - Merge Trees
     chapters:
-      - Chapter 11.1,11.5
+      - Course Notes
     notes: 
-      - L23_AmortizedAnalysis.pdf
-      - L24_MergeTrees.pdf
 
-  # 31 Thur 12/1
+  # 22 Tues Nov 12
   - topics:
-      - Final Review
+      - Binary Search Trees
     chapters:
-      - Class notes
+      - Chapter 4.3
     notes: 
-      - L25_Review.pdf
+
+  # 23 Thurs Nov 14
+  - topics:
+      - AVL Trees
+    chapters:
+      - Chapter 4.4
+    notes: 
+
+  # 24 Tues Nov 19
+  - topics:
+      - Splay Trees
+    chapters:
+      - Chapter 4.5
+      - Chapter 11.5
+    notes: 
+
+  # 25 Thurs Nov 21
+  - topics:
+      - Tries
+    chapters:
+      - Chapter 12.4
+    notes: 
+
+  # 26 Tues Nov 26
+  - topics:
+      - Extra Topics/Flex
+    chapters:
+      - Course Notes
+    notes: 
+
+  # 27 Tues Dec 3
+  - topics:
+      - Extra Topics/Flex
+    chapters:
+      - Course Notes
+    notes: 
+
+  # 28 Thurs Dec 5
+  - topics:
+      - Extra Topics/Flex
+    chapters:
+      - Course Notes
+    notes: 

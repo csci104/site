@@ -1,7 +1,7 @@
 assignments:
   - id: hw1
     title: Linked Lists, Runtime, and Recursion
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
@@ -10,7 +10,7 @@ assignments:
       due: Friday, Sep 13 at 11:59PM Pacific
   - id: hw2
     title: Inheritance, Polymorphism, and Class Design
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
@@ -19,7 +19,7 @@ assignments:
       due: Friday, Sep 27 at 11:59PM PST
   - id: hw3
     title: Heaps, Backtracking, and Counting
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
@@ -28,7 +28,7 @@ assignments:
       due: Friday, Oct 18 at 11:59PM PST
   - id: hw4
     title: Probability and Number Theory
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
@@ -37,7 +37,7 @@ assignments:
       due: Friday, Nov 1 at 11:59PM Pacific
   - id: hw5
     title: Amortized Analysis and Hash Tables
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
@@ -46,7 +46,7 @@ assignments:
       due: Friday, Nov 22 at 11:59PM Pacific
   - id: hw6
     title: AVL Trees
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:

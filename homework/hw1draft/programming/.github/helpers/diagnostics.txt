@@ -1,0 +1,8 @@
+g++.exe: error: split.cpp: No such file or directory
+g++.exe: error: split_test.cpp: No such file or directory
+g++.exe: fatal error: no input files
+compilation terminated.
+g++.exe: error: ulliststr.cpp: No such file or directory
+g++.exe: error: ulliststr_test.cpp: No such file or directory
+g++.exe: fatal error: no input files
+compilation terminated.

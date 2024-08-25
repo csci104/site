@@ -71,7 +71,7 @@ labs:
     title: GDB
     assigned: false
     topics: GDB, Debugging
-    slides: lab1.pdf
+    # slides: lab1.pdf
 
   - id: 2
     folder: lab2-make
@@ -80,7 +80,7 @@ labs:
     title: Makefiles
     assigned: false
     topics: Make, Build Systems
-    slides: lab2.pdf
+    # slides: lab2.pdf
 
   - id: 3
     folder: lab3-stl
@@ -89,7 +89,7 @@ labs:
     title: STL & Inheritance
     assigned: false
     topics: OOP
-    slides: lab3.pdf
+    # slides: lab3.pdf
 
   - id: 4
     folder: lab4-templates
@@ -98,7 +98,7 @@ labs:
     date: 9/19
     assigned: false
     topics: OOP
-    slides: lab4.pdf
+    # slides: lab4.pdf
 
   - id: 5
     folder: lab5-midterm
@@ -106,7 +106,7 @@ labs:
     date: 9/26
     title: Midterm I Review
     assigned: false
-    slides: mt1_review_student.pdf
+    # slides: mt1_review_student.pdf
 
   - id: 6
     folder: lab6-counting
@@ -115,7 +115,7 @@ labs:
     title: Counting
     assigned: false
     topics: Counting
-    slides: lab6.pdf
+    # slides: lab6.pdf
 
   - id: 7
     week: Week 8
@@ -131,7 +131,7 @@ labs:
     title: Probability & Number Theory
     assigned: false
     topics: Probability, Number Theory
-    slides: lab7.pdf
+    # slides: lab7.pdf
 
   - id: 9
     folder: lab8-hashtables
@@ -140,7 +140,7 @@ labs:
     title: Hashtables
     assigned: false
     topics: Hashtables
-    slides: lab8.pdf
+    # slides: lab8.pdf
 
   - id: 10
     folder: lab9-midterm
@@ -149,7 +149,7 @@ labs:
     title: Midterm II Review
     assigned: false
     slides:
-      - mt2_review_student.pdf
+      # - mt2_review_student.pdf
 
   - id: 11
     folder: lab10-amortization
@@ -166,7 +166,7 @@ labs:
     title: AVL Trees
     assigned: false
     topics: Trees
-    slides: lab11.pdf
+    # slides: lab11.pdf
 
   - id: 13
     folder: lab12

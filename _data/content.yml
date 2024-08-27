@@ -69,36 +69,36 @@ labs:
     week: Week 2
     date: 8/29
     title: GDB
-    assigned: true
+    assigned: false
     topics: GDB, Debugging
-    slides: lab1.pdf
+    # slides: lab1.pdf
 
   - id: 2
     folder: lab2-make
     week: Week 3
     date: 9/5
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, Build Systems
-    slides: lab2.pdf
+    # slides: lab2.pdf
 
   - id: 3
     folder: lab3-stl
     week: Week 4
     date: 9/12
     title: STL & Inheritance
-    assigned: true
+    assigned: false
     topics: OOP
-    slides: lab3.pdf
+    # slides: lab3.pdf
 
   - id: 4
     folder: lab4-templates
     title: Templates
     week: Week 5
     date: 9/19
-    assigned: true
+    assigned: false
     topics: OOP
-    slides: lab4.pdf
+    # slides: lab4.pdf
 
   - id: 5
     folder: lab5-midterm
@@ -106,16 +106,16 @@ labs:
     date: 9/26
     title: Midterm I Review
     assigned: false
-    slides: mt1_review_student.pdf
+    # slides: mt1_review_student.pdf
 
   - id: 6
     folder: lab6-counting
     week: Week 7
     date: 10/3
     title: Counting
-    assigned: true
+    assigned: false
     topics: Counting
-    slides: lab6.pdf
+    # slides: lab6.pdf
 
   - id: 7
     week: Week 8
@@ -129,18 +129,18 @@ labs:
     week: Week 9
     date: 10/17
     title: Probability & Number Theory
-    assigned: true
+    assigned: false
     topics: Probability, Number Theory
-    slides: lab7.pdf
+    # slides: lab7.pdf
 
   - id: 9
     folder: lab8-hashtables
     week: Week 10
     date: 10/24
     title: Hashtables
-    assigned: true
+    assigned: false
     topics: Hashtables
-    slides: lab8.pdf
+    # slides: lab8.pdf
 
   - id: 10
     folder: lab9-midterm
@@ -149,14 +149,14 @@ labs:
     title: Midterm II Review
     assigned: false
     slides:
-      - mt2_review_student.pdf
+      # - mt2_review_student.pdf
 
   - id: 11
     folder: lab10-amortization
     week: Week 12
     date: 11/7
     title: Amortized Analysis
-    assigned: true
+    assigned: false
     topics: Runtime
 
   - id: 12
@@ -164,9 +164,9 @@ labs:
     week: Week 13
     date: 11/14
     title: AVL Trees
-    assigned: true
+    assigned: false
     topics: Trees
-    slides: lab11.pdf
+    # slides: lab11.pdf
 
   - id: 13
     folder: lab12

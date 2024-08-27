@@ -1,5 +1,5 @@
 qa_tool: Piazza
-piazza: 
+piazza: https://piazza.com/usc/fall2024/csci104
 # admin_piazza: httpx://piazza.com/usc/spring2023/csci104/home # Something Prof Goodney used to do
 # discussion: https://edstem.org/us/courses/51592/discussion/ # For EdStem
 # discussion-join: https://edstem.org/us/join/pVp64d
@@ -14,20 +14,21 @@ vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 blackboard: https://blackboard.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
 # these are the same, the html and md files should be searched and fixed
-regrades: https://forms.gle/TeeDuB1oJhuA85UN9
-regrade_form: https://forms.gle/TeeDuB1oJhuA85UN9
 slug: cs104-fa24
 slide_location: http://bytes.usc.edu/files/cs104/slides
-extension_form: https://forms.gle/Xjpc6kLTkKDr59qC9
 visual_code: https://code.visualstudio.com/download
 docker_repo: https://github.com/csci104/docker
 lab_form: 
 git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
-osas_dsp_form: https://forms.gle/ao59Rnn3MLzfeZJF7
 account_ta_name: Nathan Bartley
 account_ta_email: nbartley@usc.edu
-tutoring_queue: 
+
+oh_queue: 
+# osas_dsp_form: https://forms.gle/ao59Rnn3MLzfeZJF7
+# extension_form: https://forms.gle/Xjpc6kLTkKDr59qC9
+# excused_lab: https://forms.gle/3gUGeSpR5oFAnCtDA
+# regrades: https://forms.gle/TeeDuB1oJhuA85UN9
+# submitSHA_form: 
+
 # codio_course: https://codio.com/home/student?course_id=dd6254178579897c59761448780a0647
-codio_join: https://codio.com/p/signup?courseToken=polka-fragile
-covid_lab: httpx://forms.gle/GuyuVfw33ehAx68S9
-excused_lab: https://forms.gle/3gUGeSpR5oFAnCtDA
+# codio_join: https://codio.com/p/signup?courseToken=polka-fragile

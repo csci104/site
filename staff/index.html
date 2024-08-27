@@ -5,14 +5,23 @@ title: Data Structures and Object Oriented Design
 
 <!-- Putting comment here to make deployed website page update. -->
 
-<h1>Course Staff</h1>
+<h1>Course Staff and Hours</h1>
 <p/>
   All questions related to the course must use <a href="{{ site.data.urls.piazza }}">the course Piazza page</a>. For general or assignment questions, this allows other students to see your question and answer. For individual or administrative questions, posting to the discussion board privately will get "more eyes on it" so that hopefully it can be answered quickly. Course staff will tag the instructor or course administrator, if necessary, to bring prompt attention to your query.
   
   <p/>
-  For an up to date listing of instructor and TA office hours, please see the <a href="{{ site.data.urls.calendar }}">Google Calendar</a>. 
+  Note that <span class="font-bold">we may change the listed office hours</span> as needed, or add more before homework deadlines or examinations.
+
   <p/>
-  Tutors do not hold office hours. See the <a href="{{ site.baseurl }}{{ site.data.navigation.items[2].url }}">tutoring page</a> for more details.
+  For an up to date listing of instructor and staff office hours, please see the <a href="{{ site.data.urls.calendar }}">Google Calendar</a> below. 
+
+  <p/>
+  To receive Office Hour assistance, please join this <a href="{{ site.data.urls.oh_queue }}">ImmaSignUp</a> queue. You will need to use your @usc.edu email address.
+
+  <!-- <p/> -->
+  <!-- Tutors do not hold office hours. See the <a href="{{ site.baseurl }}{{ site.data.navigation.items[2].url }}">tutoring page</a> for more details. -->
+
+<iframe src="{{ site.data.urls.calendar }}" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 <h2>Instructors</h2>
 <div class="people">
@@ -32,7 +41,7 @@ title: Data Structures and Object Oriented Design
   {% include person.html %}
   {% endfor %}
 </div>
-<h2>Tutors</h2>
+<h2>Course Producers</h2>
 <div class="people">
   {% for person in site.data.people.staff %}
   {% include person.html %}

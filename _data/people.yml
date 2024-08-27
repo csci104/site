@@ -5,104 +5,64 @@ instructors:
     hours: 
     location: SAL 210
 
-# administrators:
-#   - name: Tallulah Winston-Schrader
-#     email: winstons@usc.edu
-#     image: /assets/img/staff/tallulah.jpg
+administrators:
+  - name: Tallulah Winston-Schrader
+    email: winstons@usc.edu
+    image: /assets/img/staff/tallulah.jpg
 
 assistants:
-  # - name: Nathan Bartley
-  #   email: nbartley@usc.edu
-  #   image: /assets/img/staff/nbartley.jpg
+  - name: Rebecca Dorn
+    email: rdorn@usc.edu
+    image: /assets/img/staff/rebecca.jpg
 
-  # - name: Pranav Jain
-  #   email: pranavj@usc.edu
-  #   image: /assets/img/staff/pranav_jain.png
+  - name: Bryce Blinn
+    email: blinn@usc.edu
+    image: /assets/img/staff/bryce.png
 
-  # - name: Yuxin Yang
-  #   email: yyang393@usc.edu
-  #   image: /assets/img/staff/yuxin_yang.JPG
+  - name: Robert Winn
+    email: rwinn@usc.edu
+    image: /assets/img/staff/rwinn.jpg
 
-  # - name: Sima Arasteh
-  #   email: arasteh@usc.edu
-  #   image: /assets/img/staff/sima_arasteh.jpg
+  - name: Weizhao Jin
+    email: weizhaoj@usc.edu
+    image: /assets/img/staff/temp.png
 
-  # - name: Jeremy Morgan
-  #   email: morganje@usc.edu
-  #   image: /assets/img/staff/jeremy_morgan.png
-
-  # - name: Sina Shaham
-  #   email: sshaham@usc.edu
-  #   image: /assets/img/staff/sina.jpg
-
-  # - name: Bryce
-  #   email: blinn@usc.edu
-  #   image: /assets/img/staff/bryce.png
+  - name: Hanchen Xie
+    email: hanchenx@usc.edu
+    image: /assets/img/staff/temp.png
 
 staff:
-  # - name: Nicholas Schumacher
-  #   email: naschuma@usc.edu
-  #   image: /assets/img/staff/nicolas.jpg
+  - name: Nicholas Schumacher
+    email: naschuma@usc.edu
+    image: /assets/img/staff/naschuma.jpg
 
-  # - name: James Li
-  #   email: jli51468@usc.edu
-  #   image: /assets/img/staff/james_li.jpg
+  - name: James Li
+    email: jli51468@usc.edu
+    image: /assets/img/staff/james_li.jpg
 
-  # - name: Aayushi Agrawal
-  #   email: aayushia@usc.edu
-  #   image: /assets/img/staff/aayushi.jpg
+  - name: Aayushi Agrawal
+    email: aayushia@usc.edu
+    image: /assets/img/staff/aayushi.jpg
 
-  # - name: Junu Song
-  #   email: junusong@usc.edu
-  #   image: /assets/img/staff/junu.jpg
+  - name: Carlos Subramanian
+    email: cksubram@usc.edu
+    image: /assets/img/staff/cksubram.jpg
 
-  # - name: Josheta Srinivasan
-  #   email: jsriniva@usc.edu
-  #   image: /assets/img/staff/josheta.jpg
+  - name: Ellen Landrum
+    email: elandrum@usc.edu
+    image: /assets/img/staff/temp.png
 
-  # - name: Jessica Cheung
-  #   email: cheungje@usc.edu
-  #   image: /assets/img/staff/jessica.jpg
+  - name: Emerson Kahle
+    email: ekahle@usc.edu
+    image: /assets/img/staff/temp.png
 
-  # - name: David Morales
-  #   email: davidm62@usc.edu
-  #   image: /assets/img/staff/davidmorales.jpg
+  - name: Jonathan Aydin
+    email: jaydin@usc.edu
+    image: /assets/img/staff/temp.png
 
-  # - name: Carlos Subramanian
-  #   email: cksubram@usc.edu
-  #   image: /assets/img/staff/cksubram.jpg
-
-  # - name: Ania Ahsan
-  #   email: aahsan@usc.edu
-  #   image: /assets/img/staff/ania_ahsan.jpg
-
-  # - name: Zuoning Zhang
-  #   email: zuoningz@usc.edu
-  #   image: /assets/img/staff/zuoning.jpeg
-
-  # - name: Sunghyun Cho
-  #   email: scho1939@usc.edu
-  #   image: /assets/img/staff/sunghyun.jpeg
-
-  # - name: Sid Qian
-  #   email: sidqian@usc.edu
-  #   image: /assets/img/staff/sid.jpg
-
-  # - name: Amy Rong
-  #   email: shiqingr@usc.edu
-  #   image: /assets/img/staff/amy.jpg
-
-  # - name: Christian Moreno
-  #   email: parramor@usc.edu
-  #   image: /assets/img/staff/christian.jpeg
-
-  # - name: Louis Addison
-  #   email: laddison@usc.edu
-  #   image: /assets/img/staff/louis.jpg
-
-  # - name: Jake Hosking
-  #   email: hosking@usc.edu
-  #   image: /assets/img/staff/hosking.jpg
+  - name: Zhuangzhuang Qian
+    email: alexqian@usc.edu
+    image: /assets/img/staff/temp.png
     
 graders:
  

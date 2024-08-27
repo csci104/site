@@ -23,8 +23,8 @@ Please read the submission instructions and policies below **carefully**!  Failu
       <th>Title</th>
       <th>Written Due</th>
       <th>Programming Due</th>
-      <th>Submit</th>
-      <th>Regrade</th>
+      <!-- <th>Submit</th>
+      <th>Regrade</th> -->
     </tr>
   </thead>
   <tbody>
@@ -53,8 +53,8 @@ Please read the submission instructions and policies below **carefully**!  Failu
       <td>{{ assignment.title }}</td>
       <td>{{ assignment.dates.written }}</td>
       <td>{{ assignment.dates.due }}</td>
-      <td><a href="{{ assignment.submit_link }}">Submit</a></td>
-      <td><a href="{{ site.data.urls.regrades }}">Regrade</a></td>
+      <!-- <td><a href="{{ assignment.submit_link }}">Submit</a></td>
+      <td><a href="{{ site.data.urls.regrades }}">Regrade</a></td> -->
     </tr>
     {% endfor %}
   </tbody>

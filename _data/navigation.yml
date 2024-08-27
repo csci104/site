@@ -1,16 +1,16 @@
 items:
-  - title: Staff
+  - title: Staff and hours
     short: Staff
     url: /staff/
     icon: /assets/img/icon/user.svg
-  - title: TA Office Hours
-    short: TAs
-    url: /tas/
-    icon: /assets/img/icon/question.svg
-  - title: Peer Tutoring
-    short: Tutoring 
-    url: /tutoring/
-    icon: /assets/img/icon/duration.svg
+  # - title: TA Office Hours
+  #   short: TAs
+  #   url: /tas/
+  #   icon: /assets/img/icon/question.svg
+  # - title: Peer Tutoring
+  #   short: Tutoring 
+  #   url: /tutoring/
+  #   icon: /assets/img/icon/duration.svg
   - title: Semester schedule
     short: Schedule
     url: /schedule/

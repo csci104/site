@@ -29,7 +29,7 @@ The following document formats are accepted:
 No other formats are accepted unless explicitly stated. These include, but are not limited to, Microsoft Word documents (e.g. `.doc`, `.docx`) and Rich Text Format (RTF) files.
 
 ### Step 2. Push your commits to GitHub
-After you have verified that your assignment is ready to be submitted, push your source code and all relevant files. Do not push binary files or "garbage" files. (Use the `.gitignore` file to make this as easy as possible on yourself as well as `make clean` to delete any object files or executables). You should NOT add/commit/push any of the test suite folders (and files) that may be released before the submission deadline (e.g. `hw1_tests`).  This can easily happen if you use `git add .`. Instead, we recommend adding specific files (e.g. `git add file1.h file1.cpp file2.h file2.cpp Makefile`) or using specific wildcards: `git add *.h *.cpp Makefile` (which will leave out anything in a subfolder).  If you do happen to add/commit/push a test suite, you can remove it by running `git rm -rf hw1_tests` followed by `git commit -m "Removed tests"` followed by `git push`.  
+After you have verified that your assignment is ready to be submitted, submit by pushing your source code and all relevant files. Do not push binary files or "garbage" files. (Use the `.gitignore` file to make this as easy as possible on yourself as well as `make clean` to delete any object files or executables). You should NOT add/commit/push any of the test suite folders (and files) that may be released before the submission deadline (e.g. `hw1_tests`).  This can easily happen if you use `git add .`. Instead, we recommend adding specific files (e.g. `git add file1.h file1.cpp file2.h file2.cpp Makefile`) or using specific wildcards: `git add *.h *.cpp Makefile` (which will leave out anything in a subfolder).  If you do happen to add/commit/push a test suite, you can remove it by running `git rm -rf hw1_tests` followed by `git commit -m "Removed tests"` followed by `git push`.  
 
 Run `git status` on your repository and make sure that there are no files listed as:
 
@@ -57,25 +57,23 @@ This will output something like:
 commit 36448c9f45d1c4de770ce4c65a6db1fb964714d8
 ``` 
 
-The long string of hexadecimal digits is your hash. Copy it to your clipboard.
+The long string of hexadecimal digits is your hash. Copy it to your clipboard if you need the SHA for Step 4.
 
 ### Step 3. Verify your commit **before** the Deadline
 
-Before the deadline and after pushing your submission to GitHub, you **must** ( **MUST** ) follow the verification steps listed at the end of each assignment page to clone your repo to a separate folder and follow the process you list in your own `README.md` to ensure your code compiles and works as you expect. We cannot emphasize enough how many bugs you will discover (and how many points you can avoid losing) by doing this simple 5-minute step.
+Before the deadline and after pushing your submission to GitHub, you **must** ( **MUST** ) follow the verification steps listed at the end of each assignment page to clone your repo to a separate folder (or check your GitHub Actions output) and follow the process you list in your own `README.md` to ensure your code compiles and works as you expect. We cannot emphasize enough how many bugs you will discover (and how many points you can avoid losing) by doing this simple 5-minute step.
 
-Our reference grading environment is Codio. You should test your code on Codio to ensure that it works properly in the environment we will test it in.
+### Step 4. Submit the hash to the Submit SHA form on the homepage
 
-### Step 4. Submit the hash to Codio and mark your assignment as complete
+You can resubmit as often as you want -- we will grade your latest submission/push by default.
 
-When you're ready to submit (and you're 100% the commit at the desired hash is ready-to-go) you paste the hash into the box on the Codio guide. This will run structural checks on your GitHub repo (can the hash be checked out, do the required files exist, etc.). If the script passes, then your assignment has been submitted! If the script detects any problems it will give you some feedback on how to fix the problem. Once you are able to submit a clean hash, mark the assignment as complete.
+If you want an earlier commit to be graded, please submit the SHA of the commit to the Submit SHA form on the homepage before the late deadline.
 
-When you mark the assignment as complete a background grading script will grade the assignment using the provided test suite against the code at your submitted SHA.
-
-You can resubmit as often as you want -- the backgrund script will grade the most recently submitted SHA.
+If we already graded a different commit and you didn't submit the correct SHA in-time, we won't regrade with the other commit.
 
 ### Late Submissions
 
-As outlined on the top-level [homework](../) page, late submissions are accepted for the first five days after the due date. After that, the assignment will close and no further submissions are allowed.
+As outlined on the top-level [homework](../) page, late submissions are accepted for the first two days after the due date. After that, the assignment will close and no further submissions are allowed.
 
 No exceptions will be made to this policy except for University approved medical reasons. Interviews, conferences, or other trips are not valid reasons to obtain an extension.
 

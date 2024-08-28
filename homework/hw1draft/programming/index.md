@@ -9,7 +9,7 @@ title: Homework 1 Programming
 
 + Due: Friday, September 13th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
-+ The GitHub Classroom link for this assignment is: [here](https://classroom.github.com/a/dJtpWgro)
++ The GitHub Classroom link to access this assignment is: [here](https://classroom.github.com/a/dJtpWgro)
     - Since this is your first time, you would need to pick an identifier (please choose your email!). If you cannot find it, you can press skip for now and make a private post on Piazza with your GitHub username and USC email.
     - You will turn in all Programming Assignments by pushing code to repositories like this.
 + **We will NOT provide a test suite before the due date for this homework**.  You will need to test the coding questions yourself with your own test programs. This should cause you to a.) appreciate the importance of testing, b.) consider the kinds of test cases you should write (i.e. if none of your test cases exercise a particular set of code in your implementation then you probably need to write more tests), c.) What common tasks related to testing would be useful to reuse and why there are testing frameworks like the one we will use in this class.
@@ -127,7 +127,7 @@ We have provided you an incomplete implementation of an unrolled doubly-linked l
 An unrolled linked list, is a normal linked list (doubly-linked in this case) but each node/item does not store a single data value but an array of values.  The head and tail nodes of the linked list may have arrays that are not fully occupied so we keep `first` and `last` index to indicate where the first actual data item exists in the array (this index is *inclusive*) and the last data item exists (this index is *exclusive* and points to one **beyond** the last value).  These arrays provide better underlying memory performance in most computers (due to caching effects that you'll learn about in CS 356 or EE 457) and can be more space efficient.
 
 <div class="showcase">
-    <img src="./unrolled_linked_list.png" alt="Unrolled Linked List" width="640"/>
+    <img src="./programming/unrolled_linked_list.png" alt="Unrolled Linked List" width="640"/>
 </div>
 
 In the image above we see each Item struct has a `next` and `prev` pointer as would be typical in a doubly-linked list.  Then, rather than a single value, it will contain an array of a fixed size where multiple items can be placed.  To track which items are used a pair of indices is used of the form: `[first, last)` where `first` is inclusive and is the index of the first used item and `last` is the index 1 beyond the last used index.  This approach allows more natural iteration and allows computing the number of items in the range through simple subtraction (i.e. `last-first`).  As an example, `first=last=0` indicates no items are used and `first=0 and last=10` indicates the 10 elements are occupied (from indices `0..9`).

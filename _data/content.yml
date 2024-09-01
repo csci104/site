@@ -69,9 +69,9 @@ labs:
     week: Week 2
     date: 8/29
     title: GDB
-    assigned: false
+    assigned: true
     topics: GDB, Debugging
-    # slides: lab1.pdf
+    slides: lab1.pdf
 
   - id: 2
     folder: lab2-make

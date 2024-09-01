@@ -2,491 +2,488 @@
 layout: asides
 toc: true
 tasks: true
-title: Introduction to Git
+title: Jamie's GDB House of Horrors
 ---
 
-# Introduction to Git
+---
 
-[Git](http://git-scm.com/) is a distributed source code version control system.
-When you place your code under version control, you record the changes you make to your files over time and you can recall the history of each of your file changes at will.
+**Due at the end of your lab section**
 
-[GitHub](https://github.com/) is a development ecosystem based around git.
-In this course, we will be using GitHub to host our lab git repository and help you save versions of your homework.
+You are expected to show your work to any CP/TA to get checked off during the lab section
+you registered for. Check off will ential filling out a Google Form. If you are sick or cannot make it for some reason, please post on Piazza.
 
-**If you have not done [Lab 0]({{ site.baseurl }}/labs/lab0) to set up your GitHub account or install Docker or a VM, please do so now.**
+---
 
-## Important: Using the correct terminal
+# Jamie's GDB House of Horrors
 
-In order to complete this lab, make sure you are using the correct terminal to run commands:
-
-* If you are running Docker, then there are two types of terminals you are going to interact with:
-  - The **Windows terminal** refers to the terminal provided by Windows, not docker. On Windows, type
-    `Win + R` and then `powershell` to start it.
-  - On **MacOS** you can use the built in Terminal app (search Terminal), or install an app like [https://iterm2.com/](iTerm2){:target="_blank"}. At this time, on MacOS we assume you are using Docker. (Fully native development **is** possible, just not supported by the course staff)
-  - If the instructions specify **native** terminal, these commands are to be issued in either the MacOS or Windows terminal.
-  - The **docker terminal** refers to the terminal you obtain by typing the following in your **native terminal**:
-
-```shell
-ch start csci104
-ch shell csci104
-```
-
-From now on, every sequence of command we show you would be annotated with either *`[native]`* or *`[docker]`*. This denotes the
-terminal you should be running the command from if you are using Docker. (If you are using the VM, then always use the VM terminal).
-
-Examples (You do **NOT** need to run these commands):
-
-*`[native]`*
-```shell
-notepad.exe cat.txt
-```
-
-The above command shall be ran from your **native terminal**.
-
-*`[docker]`*
-```shell
-vim cat.txt
-```
-
-The above command shall be ran from your **Docker terminal**.
-
-* If you are running the course VM (through Virtual Box), then **all commands** (both native and docker) from this lab shall be ran from
-  the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
-  Alternatively, you could open it by searching for "terminal" in the quick launcher.
-
-
-## Creating a GitHub repo and obtaining the example files
-
-### The Concept of the *working directory*
-
-Every open terminal has a *working directory*. When you run a command inside that terminal,
-the command would interpret paths and filenames to be relative to that working directory, for example:
-
-```
-mkdir sub
-```
-
-creates the subdirectory named `sub` under the current *working directory*. If the *working directory* is `/usr/root/parent`, then this will
-create the directory `/usr/root/parent/sub`.
-
-### Step 1. Changing working directory to Docker's assigned `/work` directory
-
-First open your **native terminal**. Then, change the working directory to the
-directory you [assigned to Docker during setup](https://github.com/csci104/docker#step-5-set-your-working-directory).
-
-If you are working on the course VM, you may use any directory you like on the VM (e.g. `~/csci104`).
-
-The command for changing the working directory is `cd` (which stands for "**c**hange **d**irectory"). In my case, the path to change to is:
-`C:\Users\rin\Documents\csci104\home` (yours might be different, depending on how you configured your docker), therefore I just type:
-
-*`[native]`*
-```shell
-cd C:\Users\rin\Documents\csci104\home
-```
-
-**Note: You will need double quotes around the path if your path contains space, e.g. `cd "C:\My Documents\Home"`**
-
-If you have forgotten which path you have assigned to Docker, you could check it by typing:
-
-*`[native]`*
-```shell
-ch list
-```
-
-And you will see an output that looks like:
-
-```
-Name:   csci104
-        Image:  usccsci104/docker:20.04
-        Volume: C:\Users\rin\Documents\csci104\home:/work
-        SecOpt: seccomp:unconfined
-        CapAdd: SYS_PTRACE
-        Port:   :2222
-```
-
-The path after `Volume: ` (excluding `:/work`) is what you are looking for. The idea is that when you open and edit files in your native editor (VSCode, Xcode, Notepad++, TextMate, etc.) they will be saved in the working directory of the Docker image. Then when you run commands in Docker the files will be there.
-
-### Step 2: Creating a GitHub repo and downloading the example resources
-
-These step assumes that you have already finished the git, GitHub, Codio integration and SSH key setup from Lab 0. If you haven't done [lab 0](../lab0/) yet, do it now.
-
-#### Step 2.1 Create a GitHub repo for this lab (for practice)
-
-Navigate to [GitHub](https://github.com){:target="_blank"} and click the green "New" button. Or you can link there [directly](https://github.com/new){:target="_blank"}
-
-- Make sure the "Owner" is set to your GitHub user and **not** any GitHub organizations you might be part of.
-- Give the repo a good name like "104-practice" or "example".
-- Make the repo private
-- Don't add a README, a .gitignore or a license
-
-Click "Create Repository"
-
-When the repo is created GitHub will show the repo "URL" (either HTTPS or SSH). Copy the SSH version to your clipboard (there is a button for that).
-
-#### Step 2.2 Creating an new repo on your development environment and connecting to GitHub
-
-Once you are inside the correct working directory (i.e. within your csci104 folder that has the docker repo within it), type the following commands (**replace the `GHUSERNAME` with your GitHub username and `REPONAME` with the name of your repository**)
-
-*`[native]`*
-```shell
-git clone git@github.com:GHUSERNAME/REPONAME.git (this is the thing you copied)
-cd REPONAME
-echo "# Lab 1 Git Practice" > README.md
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git push -u origin main
-```
-
-#### Step 2.3 Getting the Resources from the Lab Repository
-
-This lab looks a little different from the rest of the labs you will be doing this semester, as we made you create your own GitHub repository to practice with for this one. Usually, you can just code directly in the sp24-labs repository without having to do any copying, but for the sake of this assignment so everyone can practice pushing, there will be some copying.
-
-In your terminal, change directories from the folder that you just made for your practice repo to the sp24-labs folder. For example, for me:
-
-*`[native]`*
-```shell
-pwd
-    --> /Users/bridgetbell/desktop/code/usc/cp104/practice
-cd ..
-pwd
-    --> /Users/bridgetbell/desktop/code/usc/cp104
-cd sp24-labs
-pwd
-    --> /Users/bridgetbell/desktop/code/usc/cp104/sp24-labs
-```
-
-The pwd command shows the full path of your current directory. `cd` with a space and two periods after it goes back a directory.
-
-Now, pull the resources!
-*`[native]`*
-```shell
-git pull
-```
-
-You should see something come up about a lab1 folder.
-
-### Step 2.4 Copying the Files to Your Practice Repo
-
-Now, we will copy the **lab1 folder** from the sp24-labs folder over to the practice repository we created. While we could do this with our computer GUI by dragging and dropping the files, let's practice it through the command line!
-
-This is the general command:
-
-*`[native]`*
-```shell
-cp /path/of/source/folder /path/of/destination/folder
-```
-
-For me, this would then be:
-*`[native]`*
-```shell
-cp -r /Users/bridgetbell/desktop/code/usc/cp104/sp24-labs/lab1 /Users/bridgetbell/desktop/code/usc/cp104/practice
-```
-You may have to change this based on the name of your folders.Modify this command above so it works for you, then within the *destination* folder (the practice repo), type
-
-*`[native]`*
-```shell
-ls
-```
-
-Now you should see a folder called lab1!
-
-## Running the Code
-
-The lab 1 code you just copied over is great for testing whether you have the correct environment setup to compile the rest of the labs (and homeworks if you so choose). Make sure you follow the steps below and the output on your terminal matches the ones on this page.
-
-
-### Step 3. Building the  project
-
-Let's get docker up and running so we can test the code.
-
-*`[native]`*
-```shell
-ch start csci104
-ch shell csci104
-```
-
-This will take you to the csci104 folder you mounted. You *should* see the sp24-labs folder in this folder if you cloned it there. If you cloned this repo somewhere else, it needs to be accessible to docker!!! i.e. a subdirectory of wherever the mount point was.
-
-Navigate to your example repo and the lab1 folder:
-*`[docker]`*
-```
-cd example/lab1
-```
-**Note:** this assumes your example repo is at the root where your shell launches (i.e. the csci104 folder). If you get a error like `no such file or directory` then your shell isn't in the right place. Practice navigating around on the command line using `cd` to get to the right place.
-
-Then, run the following command within the new lab1 folder:
-
-*`[docker]`*
-```
-make run
-```
-
-If the build is successful, you should see something like this:
+Can you survive the maze of segfaults, and banish a battery of blatantly bad behavior, all in the name of improving your GDB skills?
+This lab will guide you through hunting down the kind of bugs that keep programmers awake at night.
+Do you dare take it on?
+
+<div class="showcase">
+    <img src="./assets/gdb_house_of_horrors.png" alt="GDB House of Horrors" class="no-shadow" />
+</div>
+
+## Lab Materials
+
+The files we'll be using for this lab are posted in the `resources` repository, which you've hopefully already cloned for the homework skeleton code.
+In the `lab` directory you should see the following files:
+
+1. `answers.txt`
+2. `game_of_pointers_student1.cpp`
+3. `game_of_pointers_student2.cpp`
+4. `input1.txt`
+5. `input2.txt`
+6. `input3.txt`
+7. `Makefile`
+8. `output1.check`
+9. `output2.check`
+10. `output3.check`
+
+## What is a debugger?
+
+At its core, a debugger is a tool used to inspect a program while it is running.
+You run it on the command line, passing an executable as an argument, and it interposes itself between the program and the system and monitors everything that the program does.
+It runs through a program until it hits a preset point, called a *breakpoint*, which tells it to pause the program.
+When paused, you can ask it to evaluate variables, call functions, and examine the call stack.
+You can then resume your program, or step through it line-by-line.
+
+Debuggers are critical tools in any programmer's debugging arsenal, and are best when you need to trace the flow of your code through a complex process or algorithm.
+Today, we will be illustrating how to use one!
+But first, let's go over some common tips and tricks for debugging.
+
+### Identify the Issue
+
+The most common two ways your code will terminate (besides a successful execution) is by a Segmentation Fault (`SIGSEGV`) or by an Abort (`SIGABRT`).
+These will automatically trigger the debugger to break, so you don't have to.
+
+- **Segfault**: when a program tries to read or write outside the memory that is allocated for it, or to write memory that can only be read.
+- **Abort**: indicates an error detected by the program itself.
+
+The other issues could be:
+
+- **Infinite loop or recursion**: caused by faulty logic or base case.
+- **Logic**: `2 + 2 == 5`? code is correct but the logic is faulty.
+- **Translation error**: the logic is correct but it was just coded incorrectly.
+
+### Isolate the Problem
+
+In order to successfully find the issue, you need to be able to answer a few questions:
+
+1. What line is the problem occurring on?
+    - Read through long standard library backtraces.
+      Often, a segfault or exception will happen deep inside C++ standard library code, and you will get a backtrace with several frames of obscurely named and templated functions at the top.
+      Just ignore those, and find the highest frame that mentions your code.
+      That is usually where the actual error is.
+    - Use Valgrind as well.
+      If all you need is the backtrace for a segfault, Valgrind can give that to you without any hassle.
+      Also, note that GDB will always stop on the first memory error.
+      Valgrind, on the other hand, will keep continuing the program until there's an unrecoverable error.
+      This can help you see the bigger picture for certain memory issues.
+    - You can also use break points and `cerr` statements to find what line the problem is occurring on.
+
+2. When does this bug occur?
+    - Are their certain situations where the issue presents itself?
+    - Is it only when I am using a certain function or trying to do a specific action.
+
+3. Can I reliably produce this bug over and over again?
+    - Create a separate test case to make the problem clear.
+
+### Why is the Issue Occurring?
+
+The main question to ask is, "is the problem conceptual, logical, or coding error?"
+To answer, understand what your function/code is trying to and then use `cerr` statements or GDB in order to identify what the values of variables are to determine if they are correct or not.
+
+- Carefully place breakpoints.
+  You want to break at the start of the area where the problem might be occurring, not before and not after.
+  If you have to step a long distance through the code, you might accidentally step through something important.
+  If your error is happening on the 12,000th loop through a giant algorithm, you might want to refactor your code to give you someplace to put a breakpoint.
+- Print important variables.
+  Use the `print` GDB command to check the values of any suspicious variables.
+  Don't forget that by calling print with a struct or class, it will print out all the member variables of that class.
+- Use `cerr` statements.
+  For localizing a fault to a specific area of the code, or tracing the flow of an entire program, it's invaluable to just print out important values and messages throughout your program.
+  Remember to use `cerr` rather than `cout` so your output is guaranteed to be flushed to the terminal before the program terminates.
+
+### GDB Command Cheat Sheet
+
+This cheatsheet is also available on the [wiki]({{ site.baseurl }}/wiki/gdb/) for future reference.
+
+- `run/r [arguments]` runs the program with the given arguments.
+- `break/b [file.cpp:line number]` puts a breakpoint at the given line number in the given file.
+  Note that if you only have one file, just break `[line number]` will suffice.
+- `break/b [function name]` places a breakpoint at the start of the given function.
+- `clear [file.cpp:line number]` clears a breakpoint at the given line number in the given file.
+  Note that if you only have one file, just clear `[line number]` will suffice.
+- `clear [function name]` removes the breakpoint on the given function.
+  Note: function breakpoints will not work on functions that take strings as arguments (it's complicated) on your course VM due to an incompatibility between GCC and GDB.
+  However, this will work properly on newer systems.
+- `layout next` From the begining of GDB, entering 'layout next' once the program is running will show you source code around your current location in the program.
+  This view can be helpful to those who are new to gdb, and especially helpful when working with source code you are not farmiliar with.
+  Repeating 'layout next' shows your program in assembly language.
+- `layout prev` Takes you back to the previous layout mode.
+- `bt` shows the function call stack, every function that you've run through since the line you've arrived at.
+- `frame [number]` goes to the selected frame in the call stack.
+- `continue/c` continues the program after being stopped by a breakpoint.
+- `print/p [variable]` prints out the variable value.
+  If you pass it a class/struct instance, it will print all the data members in the class.
+- `display/d [variable]` is like print, but reprints the information after every instruction.
+- `next/n` executes the current source line and moves it to the next one.
+  Will skip over any function calls.
+  If you were to have the line `x = getValue(y)` and used `n`, you would go to the next line in the current function call, ignoring what happens in `getValue(y)`.
+  Useful for when you're testing out a function and you KNOW your helper functions work.
+- `step/s` executes the current source line and moves it to the next one.
+  Will step INTO any function calls.
+  If you were to have the line `x = getValue(y)` and used `s`, you would go into the `getValue(y)` function.
+- `finish/f` executes the rest of the current function.
+  Will step OUT of the current function.
+- `l/list` prints the area around the current line in the current source file.
+- `where` displays the current line and the function stack of calls that got you there.
+- `quit` exits GDB.
+
+## Game of Pointers
+
+The code we will be debugging today is a student assignment from a past iteration of the class.
+The details are not super important, but essentially it is a simulator for a battle between two armies, the protectors and the invaders.
+The members of one row/column of each army duel in each skirmish, and the battle ends either when there is a gap in the ranks of the protectors, or when the protectors are able to last through every round of the fight.
+The twist is that one of the armies is laid out sideways, so row `i` of the invaders duels column `i` of the protectors.
+Think of it like matrix multiplication, but with more violence!
+
+<div class="showcase">
+    <img src="./assets/game_of_pointers.png" alt="Game of Pointers" width="500" height="350" class="no-shadow" />
+</div>
+
+Two students (whose names have been omitted to protect the guilty) attempted this problem, but didn't get it quite right.
+We're now going to find the bugs in their programs with GDB.
+
+### Directions
+
+For each problem below, answer in `answers.txt` with:
+
+- The line number where the error was.
+- A **short** explanation of the nature of the error (one or two sentences).
+- A **short** explanation of what you did to fix the error.
+
+
+## Problem 1 (Guided)
+
+Okay, so let's check out the first student's program.
+Open a terminal in the assignment directory, and run the simulation with `make test_game1`.
+
+If you are using Docker, please first move the `resources` directory into the directory you mounted to the Docker container in Lab 0, if it is not already in there. Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
+
+- [ ] Double check that `resources` is in the directory you mounted to the Docker container in Lab 0.
+- [ ] Start/open a shell.
+
+You should get something like:
 
 ```
-Running main() from /build/googletest-j5yxiC/googletest-1.10.0/googletest/src/gtest_main.cc
-[==========] Running 3 tests from 2 test suites.
-[----------] Global test environment set-up.
-[----------] 2 tests from SimpleReturnTest
-[ RUN      ] SimpleReturnTest.Returns42
-[       OK ] SimpleReturnTest.Returns42 (0 ms)
-[ RUN      ] SimpleReturnTest.Returns37
-test.cpp:12: Failure
-Expected equality of these values:
-  returns_37()
-    Which is: 36
-  37
-[  FAILED  ] SimpleReturnTest.Returns37 (0 ms)
-[----------] 2 tests from SimpleReturnTest (0 ms total)
-
-[----------] 1 test from SummationTest
-[ RUN      ] SummationTest.SumsAreEqual
-[       OK ] SummationTest.SumsAreEqual (0 ms)
-[----------] 1 test from SummationTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 3 tests from 2 test suites ran. (0 ms total)
-[  PASSED  ] 2 tests.
-[  FAILED  ] 1 test, listed below:
-[  FAILED  ] SimpleReturnTest.Returns37
-
- 1 FAILED TEST
-make: *** [Makefile:8: run] Error 1
+******************************************************************
+                   Testing Student 1's Game
+******************************************************************
+./game_student1 input1.txt output1-stu1.txt
+Makefile:15: recipe for target 'test_game1' failed
+make: *** [test_game1] Segmentation fault (core dumped)
 ```
 
-You **don't** have to worry about the red `[FAILED]` message as long as it shows up (it is intentional),
-but in case it does not show up, please ask for help from your lab instructor.
+- [ ] Run `make test_game1`.
 
-### Step 4. Fixing the FAILED test case
-
-What you have just seen above is an example of an automated test. We run automated tests to grade your
-assignments, and you will learn more about them in later labs. For now, you could just think of them
-as programs that feeds some input into your assignment code and test whether they produce the correct
-output.
-
-Obviously, it is not good to have a FAILED test case! (You would lose points in an actual assignment if your
-program fail our test cases) So let's fix it!
-
-Open `library.cpp` and look at the function `int returns_37()`. As you can see it returns `36` instead of
-the suggested `37`. If you look at the FAILED test case carefully you would see:
+Uh-oh.
+That's not good.
+In the past, you might have ran screaming from an error like this, but now we have tools to attack it!
+Run GDB on the program with the terminal command `gdb ./game_student1`.
+You should now have a terminal prompt that looks like:
 
 ```
-Expected equality of these values:
-  returns_37()
-    Which is: 36
-  37
+(gdb)
 ```
 
-which points to exactly the same issue.
+- [ ] Start `gdb` with the newly compiled `game_student1`.
 
-Therefore, change the return value to `37` and run `make run` again. This time every test should pass.
-
-### Step 5. Committing and pushing your changes
-
-Now that you have finished the work locally, you would also want to push the changes to GitHub.
-
-To do so, open your **native** terminal (you can exit docker by typing `exit`) , and change
-the working directory to the root of your practice repo. Then type
-
-*`[native]`*
-```
-git status
-```
-
-The output should look like this:
+The program has not been started yet, and GDB is now awaiting your commands.
+Just to practice, let's set a breakpoint at the start of the program so it will stop right away.
+Run the command `break main`.
+You should get:
 
 ```
-Your branch is up to date with 'origin/main'.
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        lab1/
+(gdb) break main
+Breakpoint 1 at 0x401d81: file game_of_pointers_student1.cpp, line 198.
 ```
 
-which means that nothing from your `lab1` directory is tracked by git.
+- [ ] Set a breakpoint on `main`.
 
-To track those files run the following command:
-
-*`[native]`*
-```
-git add .
-```
-
-This command tells git to track all modification you have done to the repo (adding a new file, modifying a file, deleting a file, renaming a file, etc.). You could also specify individual files to track by providing their name instead of `.` (e.g. `git add library.cpp`).
-
-Now, if you check `git status`, you would see:
+Now, let's start the program, supplying the command line arguments for its input and output files: `run input1.txt output1-stu1.txt`.
+You should get:
 
 ```
-On branch main
-Your branch is up to date with 'origin/main'.
+(gdb) run input1.txt output1-stu1.txt
+Starting program: ./game_student1 input1.txt output1-stu1.txt
 
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        new file:   lab1/.vscode/launch.json
-        new file:   lab1/.vscode/settings.json
-        new file:   lab1/.vscode/tasks.json
-        new file:   lab1/Makefile
-        new file:   lab1/README.md
-        new file:   lab1/library.cpp
-        new file:   lab1/library.hpp
-        new file:   lab1/library.o
-        new file:   lab1/test
-        new file:   lab1/test.cpp
+Breakpoint 1, main (argc=3, argv=0x7fffffffdc58)
+    at game_of_pointers_student1.cpp:198
+198	{
 ```
 
-(you may or may not have the .vscode folder and files, depending on your editor and settings; if you don't see it, no worries! )
+- [ ] Run the program with input and output files.
 
-All the changes are now ready to be *committed*. You could now run the following command:
+GDB has now started your program, and it stopped on the breakpoint we set earlier.
+You can set these breakpoints on any function name or source line in your code, and GDB will stop there.
 
-*`[native]`*
-```
-git commit -m "fixed the example"
-```
-
-This tells git to create a snapshot of the repository that reflects the changes you just asked it to track.
-The snapshot is called a **commit**. Each commit must have a message, as specified by the `-m` option. It can be anything,
-but it's a good practice to keep it informative of what changes you have made.
-
-
-Now, if you type `git status`, you would see:
+If you enter the `n` command a few times, you can now step through the main function one line at a time.
+Cool, right?
+However, it would take forever to search through the entire program this way.
+Instead, let's just head straight to the segfault.
+Luckily, GDB automatically breaks on segfaults, so we don't have to worry about breakpoint positioning right now.
+Enter `c` to continue straight to the issue.
+You should get:
 
 ```
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
+(gdb) c
+Continuing.
 
-nothing to commit, working directory clean
+Program received signal SIGSEGV, Segmentation fault.
+0x0000000000402050 in main (argc=<optimized out>, argv=<optimized out>)
+    at game_of_pointers_student1.cpp:252
+252	            invaders[invaderRow][invaderCol]->power = invaderRow * 10 + (invaderCol + 1) * 10;
 ```
 
-This tells that your local repo has one commit that the remote does not have. To
-upload the commit, simply type:
+- [ ] Use `continue` to get to our error.
 
-*`[native]`*
-```
-git push
-```
-
-Now, if you everything runs successfully, the changes you have made would be synced to GitHub. Go to
-the repo page on GitHub, and navigate to the repository.
-
-If you read the `library.cpp` file, you should be able to see the code you have just modified.
-
-However, if you look at the `lab1` directory, you would see the file `test`. That is the binary files created by the `make run` command while building
-the project. As a good practice you should never push anything generated by a build process. We would deduct
-points if you submitted your assignment with those files (unless otherwise specified).
-
-**NOTE: You may not be able to see the `library.o` file on GitHub, that is to be expected
-with the homework repository.**
-
-### Step 6. Removing the extra files from your repo
-
-To tell git to remove the file from the repo, then type the following:
+GDB is now at the point of the segfault, ready for you to analyze what's wrong.
+Since the segfault is occurring on this line, we already have a pretty big clue on what's wrong.
+There's only one pointer being dereferenced here.
+Let's check out its value: `print invaders[invaderRow][invaderCol]`
 
 ```
-git rm lab1/test
+(gdb) print invaders[invaderRow][invaderCol]
+$1 = (Warrior *) 0x0
 ```
 
-This will remove the two files from the directory and ask git to track the removal.
+- [ ] Check the value of the dereferenced pointer.
 
-### Step 7. Prevent accidentally adding files with .gitignore
+GDB is telling us it's a null pointer!
+Fantastic!
+We now know where the problem is, and that's usually more than half the battle in debugging.
+But we still have to figure out *why* it's null.
+Open `game_of_pointers_student1.cpp` and look at what allocates `invaders[invaderRow][invaderCol]`, on line 249:
 
-The `git rm` command only solves the problem temporarily. What if in the future you run `make run` again and
-generated the files again? It would be an annoyance to run `git rm` every time you push.
-
-Fortunately, git offers a way to prevent files from being tracked by the `git add` command. To achieve this,
-create a file called `.gitignore` (with no extensions) in your `lab1` directory, and open it in a text editor or IDE.
-
-**NOTE: a file or directory starting with `.` is hidden by default on most systems. To make your system show
-those files, follow these instructions:**
-
-* [Windows](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-97fbc472-c603-9d90-91d0-1166d1d9f4b5#WindowsVersion=Windows_10),
-* [Mac](https://www.pcmag.com/how-to/how-to-access-your-macs-hidden-files)
-
-Once you are inside the text editor, add the following lines:
-
-```
-test
-*.o
+```cpp
+invaders[invaderRow][invaderRow] = new Warrior();
 ```
 
-The first line tells git to ignore any file
-named `test`. The second line tells git to ignore all files with a .o extension.
+See anything suspicious on that line?
+Perhaps, with the array indices of `invaders`?
+Compare the indices on that line to the ones used on line 252.
+The issue should be fairly clear.
 
-Note that since the `.gitignore` file is placed under
-the `lab1` directory, the rules would only be enforced
-there. In general you would want separate `.gitignore` files
-for each of your assignment.
+- [ ] Fix the mistake and describe your solution in `answers.txt` as outlined above.
 
-*`[native]`*
-```
-git add .
-git status
-```
+## Problem 2 (Semi-Guided)
 
-you would see something like:
+When you run `make test_game1` again, you should see that the segfault is fixed, but the program fails its first test case.
+The output file should be (can be seen in `output1.check`)
 
 ```
-Your branch is up to date with 'origin/main'.
-
-Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-        new file:   .gitignore
-        deleted:    test
+Invader killed
+Duel ends in draw
+Winner: protectors
 ```
-
-You could then commit and push the changes to GitHub:
-
-*`[native]`*
+but instead it's (can be seen in `output1-stu1.txt`)
 ```
-git commit -m "removed extra files and added .gitignore"
-git push
+Invader killed
+Invader killed
+Winner: protectors
 ```
-
-If you now go to the GitHub repo page, you would see that `test` is no longer there.
-
-
-### Step 8. Modifying a file on GitHub
-
-Finally we'll practice another pull by modifying files on the webiste.
-
-First navigate to the `README.md` file in your `lab1` GitHub repo page, and
-click the pencil icon, then make an edit to the markdown file (any edit will do), and click `Commit Changes`.
-
-** Note in general we do not recommend modifying files directly on GitHub, it is used
-here just for demonstration purposes **
-
-### Step 9. Pulling the change
-
-Now change your directory into `lab1` in your local terminal, and then type:
-
-*`[native]`*
-```
-git pull
-```
-
-The output should look like this:
+and you will see the difference between the two appear in the terminal
 
 ```
-remote: Enumerating objects: 7, done.
-remote: Counting objects: 100% (7/7), done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (4/4), 742 bytes | 32.00 KiB/s, done.
-From github.com:ph3rin/hw-demo
-   dcdcc61..eb57bef  main       -> origin/main
-Updating dcdcc61..eb57bef
-Fast-forward
- lab1/README.md | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+2c2
+< Duel ends in draw
+---
+> Invader killed
+```
+Clearly there is some sort of logic error affecting the result of the second duel.
+To debug this, we will need to trace the issue back through the code.
+It looks like `"Invader killed"` is being output inside skirmish() at line 135:
+
+```cpp
+else if (result == result_protector)
+{
+	output << "Invader killed" << std::endl;
+	delete invader;
+	invader = nullptr;
+}
 ```
 
-Now if you read the `lab1/README.md` file on your local machine, it should
-match the one on GitHub!
+`result`, meanwhile, comes from the call to `getDuelResult()` on line 99.
 
-## In Closing
+That if statement looks like a good place to start our investigation.
+We can check if the result really is set wrong, or if there is some sort of logic error causing `result` to be interpreted incorrectly.
 
-There are tons of git cheatsheets all over the web.
-Here's [one by Tower](https://www.git-tower.com/blog/git-cheat-sheet/) and [another by Atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet).
-You can use one of these your make your own; git has a bit of a learning curve and at the end of the day comes down to memorizing the most useful commands and what they do.
-Don't worry if it takes a little while.
+Again, run GDB on the `game_student1` executable.
+Since we want to investigate the if statement in skirmish, let's set a breakpoint on line 101: `break game_of_pointers_student1.cpp:101`
+Next, run the program from GDB like you did in Problem 1.
+
+```
+(gdb) run input1.txt output1-stu1.txt
+Starting program: ./game_student1 input1.txt output1-stu1.txt
+
+Breakpoint 1, skirmish (protectors=protectors@entry=0x61a0a0,
+    invaders=invaders@entry=0x61a0c0, skirmish_col=0, rows=2, columns=3,
+    reserves=@0x7fffffffd724: 1, output=...)
+    at game_of_pointers_student1.cpp:101
+101			if (result == result_invader)
+```
+
+- [ ] Rerun `gdb` with `game_student1`.
+- [ ] Set the breakpoint and run the program.
+
+Now, the program ran until it hit the breakpoint.
+However, only the second duel is producing an incorrect result, so we want to wait until the second time this code runs.
+Continue the program once with `c`.
+
+```
+(gdb) c
+Continuing.
+
+Breakpoint 1, skirmish (protectors=protectors@entry=0x61a0a0,
+    invaders=invaders@entry=0x61a0c0, skirmish_col=0, rows=2, columns=3,
+    reserves=@0x7fffffffd724: 1, output=...)
+    at game_of_pointers_student1.cpp:101
+101			if (result == result_invader)
+```
+
+Now, we're at the second skirmish.
+Check the value of `result` with `print result`.
+
+```
+(gdb) print result
+$1 = "protector"
+```
+
+- [ ] Continue to the second skirmish.
+- [ ] Print the value of `result`.
+
+Now we have some useful information.
+Clearly result is being set wrong in `getDuelResult()`.
+_Your_ job is to figure out why.
+Set a breakpoint wherever you think is appropriate, restart the program using the same run command as you used before, and figure out what the issue is inside `getDuelResult()`.
+Describe your solution and your fix in `answers.txt`.
+
+- [ ] Figure out what's going wrong in `getDuelResult()`.
+- [ ] Write up the answer in `answers.txt`.
+
+## Problem 3 (Semi-Guided)
+
+Run `make test_game1` in terminal, and you should see the first test pass!
+Unfortunately, the second test gets stuck in an infinite loop.
+Luckily, GDB lets us debug infinite loops easily!
+We may not be able to catch the issue with a breakpoint since we don't know where the loop is, but there is another strategy that works great here.
+
+First, load the program into GDB and run it without setting any breakpoints.
+Don't forget to use the second input and output files in this run command!
+
+- [ ] Load the program into `gdb`.
+- [ ] Run the program with the second input and output files.
+
+Like you can cancel a program on the command line, GDB lets you use `ctrl-c` to stop a program wherever it currently is.
+Hit `ctrl-c` now to break the infinite loop.
+
+```
+(gdb) run input2.txt output2-stu1.txt
+Starting program: ./game_student1 input2.txt output2-stu1.txt
+^C
+Program received signal SIGINT, Interrupt.
+0x000000000040142f in findOpenInvaderPos (invaders=invaders@entry=0x61a0c0,
+    numRows=numRows@entry=5, numCols=numCols@entry=2)
+    at game_of_pointers_student1.cpp:64
+64				if (invaders[rowIdx][colIdx] == nullptr)
+```
+
+- [ ] Use `ctrl-c` to send a `SIGINT` interrupt.
+
+So, the code is stopped at some point within the infinite loop, but we don't really know where in the program we are.
+To find out, use the backtrace command: `bt`
+
+```
+(gdb) bt
+#0  0x000000000040142f in findOpenInvaderPos (invaders=invaders@entry=0x61a0c0, numRows=numRows@entry=5, numCols=numCols@entry=2)
+    at game_of_pointers_student1.cpp:64
+#1  0x0000000000401a55 in skirmish (protectors=protectors@entry=0x61a0a0, invaders=invaders@entry=0x61a0c0, skirmish_col=1, rows=2, columns=5, reserves=@0x7fffffffd724: 1, output=...)
+    at game_of_pointers_student1.cpp:103
+#2  0x0000000000402112 in main (argc=<optimized out>, argv=<optimized out>)
+    at game_of_pointers_student1.cpp:284
+```
+
+- [ ] Backtrace to figure out where you are.
+
+This backtrace contains a wealth of useful information.
+Each numbered paragraph represents one frame in the current call stack of the program.
+Frame `#0` is always the current function, and we see frames going up to the `main()` function of the program.
+The first hexadecimal number is the address of the function in memory (not really important right now).
+Next, we have the name of the function and the arguments it was called with, and finally the file and line number.
+The backtrace is an extremely useful tool since it lets you get a quick glance at which functions were called to bring the program to its current state.
+
+We are also able to move around through the backtrace and inspect the environment at each stack frame.
+Let's switch to frame 1 with the command `frame 1`.
+
+```
+(gdb) frame 1
+#1  0x0000000000401a55 in skirmish (protectors=protectors@entry=0x61a0a0, invaders=invaders@entry=0x61a0c0, skirmish_col=1, rows=2, columns=5, reserves=@0x7fffffffd724: 1, output=...)
+    at game_of_pointers_student1.cpp:103
+103				Warrior **firstOpenInvaderPos = findOpenInvaderPos(invaders, columns, rows);
+```
+
+- [ ] Switch to frame 1.
+
+The program is in skirmish() at line 103.
+Let's check out the values of `columns` and `rows`.
+
+```
+(gdb) print columns
+$1 = 5
+(gdb) print rows
+$2 = 2
+```
+
+- [ ] Check `columns` and `rows`.
+
+Those numbers match the dimensions in input2.txt, so they seem legitimate.
+Your job, now, is to figure out why the code is getting in a loop.
+I highly suggest changing back to frame 0 and stepping the code forward with `n` to figure out where exactly it is looping.
+
+- [ ] Figure out the cause of the loop and describe your solution in `answers.txt`.
+
+## Problem 4
+
+Now, run the second student's program by running `make test_game2` in the terminal.
+You'll find that the code won't finish executing because of a segmentation fault.
+
+When debugging this error, keep in mind that the invader and protector arrays are different sizes.
+Try to find out what those sizes are, and determine whether they're used consistently in the `AllocateWarriors` and `DeallocateWarriors` functions.
+
+- [ ] Fix the mistake, and describe your solution in `answers.txt`.
+
+After you've fixed it, you should be passing two of the three tests.
+
+## Problem 5
+
+A common use case of GDB is to figure out which code path is executing.
+In cases where there are many conditional statements, GDB can be a much quicker tool to use than print statements.
+Student 2's code contains a logical error: some duels aren't turning out as they should.
+Run `make test_game2` and use your test output along with GDB to figure out exactly what went wrong.
+
+You will probably want to break the code inside `Skirmish()` and observe how the logic in there is behaving.
+The most straightforward way to do this is to set a breakpoint on the first `if` statement in that function.
+Once GDB breaks there, you will be on the first call to `Skirmish()`.
+If you want to go to the next call, just resume the program with the `c` command and wait for it to hit the breakpoint again.
+Think, which call to `Skirmish()` does the program output the wrong thing on?  Go to the correct iteration and step through the logic, and the issue should show itself.
+
+- [ ] Fix the mistake, and describe your solution in `answers.txt`.
+
+### That's it!
+
+You have stood fast in the face of overwhelming peril, and banished the bugs back to whence they came!
+<del>The world</del> <del>the town</del> your computer is safe once again!
+
+- [ ] Show a CP or TA  `answers.txt` to get checked off!!

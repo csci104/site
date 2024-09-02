@@ -34,7 +34,7 @@ and your private `pa1-username` repository.
 git clone {{ site.data.urls.github_ssh }}/resources.git
 ```
 
-The files we'll be using for this lab are posted in the `resources` repository, which you've hopefully already cloned for the homework skeleton code.
+The files we'll be using for this lab are posted in the `resources` repository.
 In the `lab` directory you should see the following files:
 
 1. `answers.txt`

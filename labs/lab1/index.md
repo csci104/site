@@ -21,20 +21,13 @@ This lab will guide you through hunting down the kind of bugs that keep programm
 Do you dare take it on?
 
 <div class="showcase">
-    <img src="./lab1-gdb/assets/gdb_house_of_horrors.png" alt="GDB House of Horrors" class="no-shadow" />
+    <img src="./assets/gdb_house_of_horrors.png" alt="GDB House of Horrors" class="no-shadow" />
 </div>
 
 ## Lab Materials
 
-The files we'll be using for this lab are posted in the `resources` repository, which you've hopefully already cloned. If not, you need to accept
-the [first programming assignment](https://bytes.usc.edu/cs104/homework/hw1/programming/) on GitHub Classroom. This will give you access to our `resources` repository,
-and your private `pa1-username` repository.
-
-```shell
-git clone {{ site.data.urls.github_ssh }}/resources.git
-```
-
-In the `lab1` directory you should see the following files:
+The files we'll be using for this lab are posted in the `resources` repository, which you've hopefully already cloned for the homework skeleton code.
+In the `lab` directory you should see the following files:
 
 1. `answers.txt`
 2. `game_of_pointers_student1.cpp`
@@ -157,7 +150,7 @@ The twist is that one of the armies is laid out sideways, so row `i` of the inva
 Think of it like matrix multiplication, but with more violence!
 
 <div class="showcase">
-    <img src="./lab1-gdb/assets/game_of_pointers.png" alt="Game of Pointers" width="500" height="350" class="no-shadow" />
+    <img src="./assets/game_of_pointers.png" alt="Game of Pointers" width="500" height="350" class="no-shadow" />
 </div>
 
 Two students (whose names have been omitted to protect the guilty) attempted this problem, but didn't get it quite right.

@@ -46,15 +46,16 @@ lectures:
       - Review (Linked Lists)
     chapters:
       - Chapter 3.2
-    notes:
+    notes2:
+      - 104handout3.pdf
     
   # 4 Thurs Sep 5
   - topics:
       - Recursion
     chapters:
       - Chapter 10.5
-    notes: 
-    
+    notes2: 
+      - 104handout4.pdf    
   # 5 Tues Sep 10
   - topics:
       - Review (Inheritance, Polymorphism)

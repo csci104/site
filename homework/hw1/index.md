@@ -52,7 +52,7 @@ After pushing your code to Github you should:
 3. Complete the online submission page using your FULL (30 or more digit) SHA only if you do not want your latest commit to be graded.
 
 ## 2. Git (10%)
-Carefully review and implement the steps discussed in [Lab1](https://bytes.usc.edu/labs/lab1/). Then, answer the following questions:
+Carefully review and implement the steps discussed in [Lab1](https://bytes.usc.edu/cs104/labs/lab1-gdb). Then, answer the following questions:
 
 #### Part (a):
 

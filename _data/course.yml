@@ -18,27 +18,27 @@ sections:
       days: Tuesday
       time: 2:00-3:50pm
       location: SAL109
-      instructors: 
+      instructors: Weizhao Jin
     - id: 29907
       days: Tuesday
       time: 4:00-5:50pm
       location: SAL109
-      instructors: 
+      instructors: Weizhao Jin
     - id: 29932
       days: Friday
       time: 12:00-1:50pm
       location: SAL109
-      instructors: 
+      instructors: Bryce Blinn
     - id: 29933
       days: Wednesday
       time: 2:00-3:50pm
       location: SAL109
-      instructors: 
+      instructors: Rebecca Dorn
     - id: 29937
       days: Thursday
       time: 5:00-6:50pm
       location: SAL126
-      instructors: 
+      instructors: Hanchen Xie
     - id: 29938
       days: Friday
       time: 12:00-1:50pm
@@ -48,29 +48,29 @@ sections:
       days: Wednesday
       time: 8:00-9:50am
       location: SAL126
-      instructors: 
+      instructors: Robert Winn
     - id: 30118
       days: Wednesday
       time: 6:00-7:50pm
       location: SAL126
-      instructors: 
+      instructors: Weizhao Jin
     - id: 30119
       days: Monday
       time: 12:00-1:50pm
       location: SAL127
-      instructors: 
+      instructors: Bryce Blinn
     - id: 30210
       days: Wednesday
       time: 10:00-11:50am
       location: SAL127
-      instructors: 
+      instructors: Robert Winn
     - id: 30251
       days: Wednesday
       time: 4:00-5:50pm
       location: SAL126
-      instructors: 
+      instructors: Rebecca Dorn
     - id: 30252
       days: Wednesday
       time: 12:00-1:50pm
       location: SAL126
-      instructors: 
+      instructors: Rebecca Dorn

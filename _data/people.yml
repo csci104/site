@@ -29,7 +29,7 @@ assistants:
 
   - name: Hanchen Xie
     email: hanchenx@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/hanchen_xie.jpg
 
 staff:
   - name: Nicholas Schumacher
@@ -66,7 +66,7 @@ staff:
 
   - name: Alice Wei
     email: alicewei@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/alice_wei.jpg
     
 graders:
  

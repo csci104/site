@@ -18,40 +18,23 @@ assignments:
       written: Friday, Sep 20 at 11:59PM PST
       due: Friday, Sep 27 at 11:59PM PST
   - id: hw3
-    title: Heaps, Backtracking, and Counting
+    title: Heaps, A*, Counting, Probability
     assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Saturday, Oct 5
-      written: Monday, Oct 14 at 11:59PM PST
-      due: Friday, Oct 18 at 11:59PM PST
+      assigned: Friday, Oct 11
+      written: Friday, Oct 18 at 11:59PM PST
+      due: Friday, Nov 1 at 11:59PM PST
   - id: hw4
-    title: Probability and Number Theory
+    title: Number Theory, Amortized Analysis, AVL Trees
     assigned: false
     regrade_form:
     submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
     dates:
-      assigned: Saturday, Oct 19
-      written: Friday, Oct 25 at 11:59PM PST
-      due: Friday, Nov 1 at 11:59PM Pacific
-  - id: hw5
-    title: Amortized Analysis and Hash Tables
-    assigned: false
-    regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
-    dates:
-      assigned: Saturday, Nov 9
-      written: Friday, Nov 15 at 11:59PM PST
-      due: Friday, Nov 22 at 11:59PM Pacific
-  - id: hw6
-    title: AVL Trees
-    assigned: false
-    regrade_form:
-    submit_link: https://bytes.usc.edu/cs104/submit/course/usc-csci104-fall2023
-    dates:
-      assigned: Saturday, Nov 23
-      due: Friday, Dec 6 at 11:59PM Pacific 
+      assigned: Friday, Nov 15
+      written: Friday, Nov 22 at 11:59PM PST
+      due: Friday, Dec 6 at 11:59PM Pacific
 
 labs:
   - id: 0

@@ -61,8 +61,12 @@ Your final grade will depend solely on your own performance, graded according to
     </thead>
     <tbody>
       <tr>
-        <td>36%</td>
-        <td>Homework</td>
+        <td>14%</td>
+        <td>Homework 1/2</td>
+      </tr>
+      <tr>
+        <td>22%</td>
+        <td>Homework 3/4</td>
       </tr>
       <tr>
         <td>6%</td>

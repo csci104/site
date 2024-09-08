@@ -63,7 +63,7 @@ labs:
     title: Makefiles
     assigned: false
     topics: Make, Build Systems
-    # slides: lab2.pdf
+    slides: lab2.pdf
 
   - id: 3
     folder: lab3-stl

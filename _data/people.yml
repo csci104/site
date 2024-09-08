@@ -54,15 +54,15 @@ staff:
 
   - name: Emerson Kahle
     email: ekahle@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/emerson_kahle.png
 
   - name: Jonathan Aydin
     email: jaydin@usc.edu
     image: /assets/img/staff/temp.png
 
-  - name: Zhuangzhuang Qian
+  - name: Alex Qian
     email: alexqian@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/alex_qian.jpg
 
   - name: Alice Wei
     email: alicewei@usc.edu

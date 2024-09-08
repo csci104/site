@@ -61,7 +61,7 @@ labs:
     week: Week 3
     date: 9/5
     title: Makefiles
-    assigned: false
+    assigned: true
     topics: Make, Build Systems
     slides: lab2.pdf
 

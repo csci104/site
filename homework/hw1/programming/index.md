@@ -141,9 +141,9 @@ The unrolled list we implement will store `string`s.  For the sake of this homew
       
       ```c++
       ULListStr dat;
-      dat.push_back(7);
-      dat.push_front(8);
-      dat.push_back(9);
+      dat.push_back("7");
+      dat.push_front("8");
+      dat.push_back("9");
       cout << dat.get(0) << " " << dat.get(1) << " " << dat.get(2) << endl;
       // prints: 8 7 9
       cout << dat.size() << end;  // prints 3 since there are 3 strings stored

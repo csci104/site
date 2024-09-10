@@ -61,7 +61,7 @@ lectures:
       - Review (Inheritance, Polymorphism)
     chapters:
       - Class Notes
-    notes: 
+    notes2: 
       - 104handout5.pdf
 
   # 6 Thurs Sep 12
@@ -71,7 +71,7 @@ lectures:
     chapters:
       - Chapter 3.1-3.5
       - Chapter 4.8   
-    notes: 
+    notes2: 
       - 104handout6.pdf
       
   # 7 Tues Sep 17
@@ -80,7 +80,7 @@ lectures:
       - Queues
     chapters:
       - Chapter 3.6, 3.7
-    notes: 
+    notes2: 
          
   # 8 Thurs Sep 19
   - topics:
@@ -90,14 +90,14 @@ lectures:
       - Chapter 1.6
       - Chapter 4.1-4.2
       - Chapter 9.1
-    notes: 
+    notes2: 
  
   # 9 Tues Sep 24
   - topics:
       - Priority Queues (Heaps)
     chapters:
       - Chapter 6.1-6.4, 6.9
-    notes: 
+    notes2: 
 
   # 10 Thurs Sep 26
   - topics:
@@ -105,7 +105,7 @@ lectures:
       - A* Search
     chapters:
       - Chapter 9.3
-    notes: 
+    notes2: 
 
   # 11 Tues Oct 1
   - topics:
@@ -113,7 +113,7 @@ lectures:
       - Counting
     chapters:
       - Chapter 5.1-5.3
-    notes:
+    notes2:
 
   # 12 Thurs Oct 3
   - topics:
@@ -121,7 +121,7 @@ lectures:
     chapters:
       - Lewis & Zax Chapter 22
       - Lewis & Zax Chapter 23
-    notes: 
+    notes2: 
 
   # 13 Tues Oct 8
   - topics:
@@ -129,7 +129,7 @@ lectures:
     chapters:
       - Lewis & Zax Chapter 26
       - Lewis & Zax Chapter 27
-    notes: 
+    notes2: 
 
   # 14 Tues Oct 15
   - topics:
@@ -137,7 +137,7 @@ lectures:
     chapters:
       - Lewis & Zax Chapter 28
       - Lewis & Zax Chapter 29
-    notes: 
+    notes2: 
 
   # 15 Thurs Oct 17
   - topics:
@@ -145,21 +145,21 @@ lectures:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 30
-    notes: 
+    notes2: 
  
   # 16 Tues Oct 22
   - topics:
       - Number Theory
     chapters:
       - Lewis & Zax Chapter 31
-    notes: 
+    notes2: 
 
   # 17 Thurs Oct 24
   - topics:
       - Hash Tables
     chapters:
       - Chapter 5.4-5.8
-    notes: 
+    notes2: 
 
   # 18 Tues Oct 29
   - topics:
@@ -167,42 +167,42 @@ lectures:
       - Bloom Filters
     chapters:
       - Course Notes
-    notes: 
+    notes2: 
 
   # 19 Thurs Oct 31
   - topics:
       - Skip Lists
     chapters:
       - Chapter 10.4
-    notes: 
+    notes2: 
 
   # 20 Tues Nov 5
   - topics:
       - Amortized Analysis
     chapters:
       - Chapter 11.1
-    notes: 
+    notes2: 
 
   # 21 Thurs Nov 7
   - topics:
       - Merge Trees
     chapters:
       - Course Notes
-    notes: 
+    notes2: 
 
   # 22 Tues Nov 12
   - topics:
       - Binary Search Trees
     chapters:
       - Chapter 4.3
-    notes: 
+    notes2: 
 
   # 23 Thurs Nov 14
   - topics:
       - AVL Trees
     chapters:
       - Chapter 4.4
-    notes: 
+    notes2: 
 
   # 24 Tues Nov 19
   - topics:
@@ -210,32 +210,32 @@ lectures:
     chapters:
       - Chapter 4.5
       - Chapter 11.5
-    notes: 
+    notes2: 
 
   # 25 Thurs Nov 21
   - topics:
       - Tries
     chapters:
       - Chapter 12.4
-    notes: 
+    notes2: 
 
   # 26 Tues Nov 26
   - topics:
       - Extra Topics/Flex
     chapters:
       - Course Notes
-    notes: 
+    notes2: 
 
   # 27 Tues Dec 3
   - topics:
       - Extra Topics/Flex
     chapters:
       - Course Notes
-    notes: 
+    notes2: 
 
   # 28 Thurs Dec 5
   - topics:
       - Extra Topics/Flex
     chapters:
       - Course Notes
-    notes: 
+    notes2: 

@@ -141,12 +141,12 @@ The unrolled list we implement will store `string`s.  For the sake of this homew
       
       ```c++
       ULListStr* dat = new ULListStr();
-      dat.push_back("7");
-      dat.push_front("8");
-      dat.push_back("9");
-      cout << dat.get(0) << " " << dat.get(1) << " " << dat.get(2) << endl;
+      dat->push_back("7");
+      dat->push_front("8");
+      dat->push_back("9");
+      cout << dat->get(0) << " " << dat->get(1) << " " << dat->get(2) << endl;
       // prints: 8 7 9
-      cout << dat.size() << endl;  // prints 3 since there are 3 strings stored
+      cout << dat->size() << endl;  // prints 3 since there are 3 strings stored
       ```
     - Here is a [video explanation](http://ee.usc.edu/~redekopp/Streaming/cs104/cs104-unrolled-ll/cs104-unrolled-ll.html) for some of the possible implementation approaches.
     - **Do NOT change** any of the public member function signatures or private data members, though you may add additional member functions or data members if you deem them useful.  

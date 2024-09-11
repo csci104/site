@@ -9,10 +9,10 @@ nav: homework
 
 ### Step 1. Prepare Your Code for Submission
 
-  + Create a `README.md` in the directory for each assignment.
+  + If you want to leave any comments or special instructions, create a `README.md` in the directory for each assignment.
   + Suppress all debug messages (remove any `cout`/`cerr` statements or other debug output).
   + Ensure that all assignment files are in the correct directory with the proper names, as specified on the assignment page and are pushed to Github.  Failure to submit a necessary file will lead to your code failing all or part of the test suite. 
-  + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.  If your code has warnings, a **deduction of up to 4 points** may be applied to the problem!  
+  + Make sure your code compiles with no warnings and no errors, and throws no exceptions. Unless specified otherwise, we will compile your code with the parameters `g++ -g -Wall -std=c++11`, so your code should compile with those setting.  If your code has warnings, a **deduction of up to 5 points** may be applied to the problem!  
   + If there are any specific actions and/or commands necessary to compile or run your code, or to access any required documentation for your assignment, include instructions in your `README.md` file.
   + Ensure no `valgrind` errors exist.  `valgrind` errors will result in a **deduction of up to 0.5 points** per failed test.
 

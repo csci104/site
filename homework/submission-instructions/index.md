@@ -63,7 +63,7 @@ Before the deadline and after pushing your submission to GitHub, you **must** ( 
 
 ### Step 4. Submit the hash to the Submit SHA form on the homepage (if you need to specify an earlier commit)
 
-You can resubmit as often as you want -- we will grade your latest submission/push by default.
+You can resubmit as often as you want -- we will grade your latest submission/push if you don't submit the form at all.
 
 If you want an earlier commit to be graded, please submit the SHA of the commit to the Submit SHA form on the homepage before the late deadline.
 

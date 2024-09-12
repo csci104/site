@@ -170,7 +170,15 @@ g++ -g -Wall ulliststr.cpp ulliststr_test.cpp -o ullistr_test
 ### Completion Checklist
 
 Use `git status` to make sure that there are no modified source code files that need to be submitted. If there are, use `git add` and `git commit` to commit those changes. Then use `git push` to push those changes to Github.
-+ If you have files you don't want to push (like garbage .o files), you can use a `.gitignore` file and push that instead
++ If you have files you don't want to push (like garbage .o files), you can use a `.gitignore` file and push that instead.
+
+Here's a summary of commands you'll probably want to do:
+```
+git status
+git add *.cpp *.h
+git commit -m "Done!"
+git push
+```
 
 WAIT! You aren’t done yet. Complete the sections below to ensure you’ve committed all your code.
 

@@ -55,7 +55,7 @@ This will output something like:
 commit 36448c9f45d1c4de770ce4c65a6db1fb964714d8
 ``` 
 
-The long string of hexadecimal digits is your hash. Copy it to your clipboard if you need the SHA for Step 4.
+The long string of hexadecimal digits is your hash. Copy it to your clipboard if you need the SHA for Step 4. 
 
 ### Step 3. Verify your commit **before** the Deadline
 

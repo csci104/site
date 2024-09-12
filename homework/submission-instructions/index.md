@@ -42,7 +42,7 @@ A `git status` on your master branch must return:
 nothing to commit, working directory clean
 ```
 
-If files that you do not want to push (i.e. `hw1_tests` or other object files ) appear in the untracked list, add that folder/filename(s) to your `.gitignore`.  (Note: you must add/commit/push your `.gitignore` like any other file).
+If files that you do not want to push (i.e. object files) appear in the untracked list, add that folder/filename(s) to your `.gitignore`.  (Note: you must add/commit/push your `.gitignore` like any other file).
 
 If you need the full hash of your current commit, first make sure `git status` outputs as above, then run:
 
@@ -59,15 +59,13 @@ The long string of hexadecimal digits is your hash. Copy it to your clipboard if
 
 ### Step 3. Verify your commit **before** the Deadline
 
-Before the deadline and after pushing your submission to GitHub, you **must** ( **MUST** ) follow the verification steps listed at the end of each assignment page to clone your repo to a separate folder (or check your GitHub Actions output) and follow the process you list in your own `README.md` to ensure your code compiles and works as you expect. We cannot emphasize enough how many bugs you will discover (and how many points you can avoid losing) by doing this simple 5-minute step.
+Before the deadline and after pushing your submission to GitHub, you **must** ( **MUST** ) follow the verification steps listed at the end of each assignment page.
 
-### Step 4. Submit the hash to the Submit SHA form on the homepage
+### Step 4. Submit the hash to the Submit SHA form on the homepage (if you need to specify an earlier commit)
 
 You can resubmit as often as you want -- we will grade your latest submission/push by default.
 
 If you want an earlier commit to be graded, please submit the SHA of the commit to the Submit SHA form on the homepage before the late deadline.
-
-If we already graded a different commit and you didn't submit the correct SHA in-time, we won't regrade with the other commit.
 
 ### Late Submissions
 

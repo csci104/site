@@ -9,15 +9,22 @@ title: Homework 2 Programming
 
 + Due: Friday, September 27th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
-+ Directory name in your github repository for this homework (case sensitive): `hw2`
++ The GitHub Classroom link to access this assignment is: [here](https://classroom.github.com/a/LKTeL6ou)
 
-    - In this project we have provided a **substantial** code base.  Do a `git pull` in your `resources` repo.
-    - Then copy the `resources/hw2` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw2` folder.
+    - In this project we have provided a **substantial** code base.  After accepting the assignment, clone your new repository into your `csci104` folder.
 
     - You **MUST** modify the provided `Makefile` so that we can compile your code (not run it) by simply typing `make` which should among other compilation commands, produce an executable `amazon`
     - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
-    -   Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
     - **You may use any STL classes you like**
+
+### GitHub Actions
+
+GitHub Actions will work very similarly to the last homework, but it will now run our auto-grader and provide a score on the auto-graded portion.
++ You can access Actions reports by going to your `pa2-username` repository, clicking on the `Actions` tab, then click the text of the commit you want to see the report of.
+    - Once the Actions is finished, `Summary` will display useful information.
+    - You can also click on `build` on the left to see output in real-time and a detailed log of everything that happened. Specially within `build`, you want to view `Build and run tests`
++ It will run when you accept the assignment and fail automatically, so ignore the existing Actions run.
++ Functionality for this is from the `.github` folder. **You should not modify any .github files.**
 
 **Please read the entire assignment through once before you start to perform any tasks.**
 
@@ -26,7 +33,7 @@ In this project you will write code to model a **very** simplified version of an
 
 **Important**:  In practice, reading and understanding others' code is just as important as writing your own code. So in this project you will need to read and understand a good bit of provided code.  Spend time understanding what it does and its structure.
 
-One common need when reading large code bases (in the grand scheme this is not that large of a code base) is to find where classes or functions are defined that you see being called or used.  Most editors have the ability to do this via some *Find in files* or *Goto definition* related feature(s). In Sublime if you open a folder (e.g. your `hw2` folder) you can right click on a class name or function name and choose *Goto Definition* to jump to where that class or function is declared/defined.
+One common need when reading large code bases (in the grand scheme this is not that large of a code base) is to find where classes or functions are defined that you see being called or used.  Most editors have the ability to do this via some *Find in files* or *Goto definition* related feature(s). In Sublime if you open a folder (e.g. your `pa2-username` folder) you can right click on a class name or function name and choose *Goto Definition* to jump to where that class or function is declared/defined.
 
 Another simple command line tool is `grep`.  At the command prompt you can type:
 
@@ -322,19 +329,40 @@ Genre: <genre> Rating: <rating>
 <price> <quantity> left.
 ```
 
-### Test your Program
+### Test your Program Manually
 
 We strongly recommend writing separate test drivers programs (i.e. separate `.cpp` files with a `main()`) that perform basic unit tests by calling various functions or instantiating your classes and invoking the various member functions.  In this way you can have some confidence that the individual pieces work before you try to put them all together.
 
 At the point where you need a database file to parse and act upon, you may use the `database.txt` file. Feel free to add products and users to the `database.txt` or, better, create your own database text file.  Run the program and be sure to test various sequences of command that exercise the requirements described above.
 
+### Test your Program with our Test Suite
+
+We provided a test suite that you can run locally or via GitHub Actions. To set this up locally, run the following on docker:
+```
+cd pa2-username
+tar xvf hw2_tests.tar.gz
+cd hw2_tests
+cmake .
+```
+Now every time you want to test your program, do the following in `hw2_tests`:
+```
+make
+cd amazon_tests
+./amazon_tests
+```
+
 ### Finishing Up
 
 ### Completion Checklist
 
-Use `git status` to make sure that there are no modified source code files that need to be submitted. If there are, use `git add` and `git commit` to commit those changes. Then use `git push` to push those changes to Github.
+Use `git status` in the `pa2-username` directory to make sure that there are no modified source code files that need to be submitted. If there are, use `git add` and `git commit` to commit those changes. Then use `git push` to push those changes to Github.
++ Files to push:
+  - `amazon.cpp`, `datastore.h`, `db_parser.cpp`, `db_parser.h`, `product.cpp`, `product.h`, `product_parser.cpp`, `product_parser.h`, `user.cpp`, `user.h`, `util.cpp`, `util.h`
+  - Any files you created (that is not garbage like executables, .o, etc.)
+  - Your `Makefile`
++ If you have files you don't want to push (like garbage .o files), you can edit the `.gitignore` file and push that instead.
 
-+ If you have files you don't want to push (like garbage .o files), you can use a `.gitignore` file and push that instead
+Ensure you add/commit/push all your source code files to your `pa2-username` repository.
 
 WAIT! You aren’t done yet. Complete the sections below to ensure you’ve committed all your code.
 
@@ -348,10 +376,10 @@ WAIT! You aren’t done yet. Complete the sections below to ensure you’ve comm
 
 If you want extra peace of mind on your submission or GitHub Actions isn't working for some reason, try doing the following:
 
-1. In your terminal, `cd` to the folder that has your `resources` and `pa2-username` (i.e. `cs104`)
+1. In your terminal, `cd` to the folder that has your `resources` and `pa2-username` (i.e. `csci104`)
 2. Create a `verify-hw2` directory: `$ mkdir verify-hw2`
 3. Go into that directory: `$ cd verify-hw2`
 4. Clone your hw_username repo: `$ git clone git@github.com:usc-csci104-fall2024/pa2-username.git`
-5. Go into your hw1 folder `$ cd pa2-username`
-6. Switch over to a docker shell, navigate to the same `verify-hw1/pa2-username` folder.
+5. Go into your hw2 folder `$ cd pa2-username`
+6. Switch over to a docker shell, navigate to the same `verify-hw2/pa2-username` folder.
 7. Recompile and rerun your programs and tests to ensure that what you submitted works.

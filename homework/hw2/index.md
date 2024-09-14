@@ -9,7 +9,7 @@ title: Homework 2 Written
 
 + Due: Friday, September 20th, 11:59pm PST
 + You will submit this homework through Gradescope, by uploading your answers.  Please submit with a common file extension (such as .jpg, or .pdf)
-+ To access the programming portion of this assignment, click [here](./hw2/programming/)
++ To access the programming portion of this assignment, click [here](./programming/)
 
 ### Problem 1 - More git Questions (5%)
 
@@ -180,4 +180,4 @@ Read the programming assignment carefully, and study the provided skeleton code.
 
 ## Programming Assignment
 
-To access the programming portion of this assignment, click [here](./hw2/programming/)
+To access the programming portion of this assignment, click [here](./programming/)

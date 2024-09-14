@@ -8,7 +8,7 @@ cd build
 
 # TODO: Get test files so that you can do cmake . within build directory. You may need to edit the curl file source
 curl -L -O https://bytes.usc.edu/cs104/homework/test-suites/hw2_tests.tar.gz || { echo "::error::Unable to download graded tests. Try again."; exit 1; }
-tar xvf ../hw2_tests.tar.gz || { echo "::error::Error downloading graded tests. Try again."; exit 1; }
+tar xvf hw2_tests.tar.gz || { echo "::error::Error downloading graded tests. Try again."; exit 1; }
 cp -rf ./hw2_tests/* .
 
 # Put the name of each target (probably the name of the test .cpp files) here for compiling separately. Like "make permutations_tests".

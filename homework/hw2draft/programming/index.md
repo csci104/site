@@ -9,7 +9,7 @@ title: Homework 2 Programming
 
 + Due: Friday, September 27th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
-+ The GitHub Classroom link to access this assignment is: [here](https://classroom.github.com/a/LKTeL6ou)
++ The GitHub Classroom link to access this assignment is: [here](https://classroom.github.com/a/fUDOjqGj)
 
     - In this project we have provided a **substantial** code base.  After accepting the assignment, clone your new repository into your `csci104` folder.
 

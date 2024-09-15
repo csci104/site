@@ -50,7 +50,7 @@ staff:
 
   - name: Ellen Landrum
     email: elandrum@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/elandrum.jpeg
 
   - name: Emerson Kahle
     email: ekahle@usc.edu
@@ -58,7 +58,7 @@ staff:
 
   - name: Jonathan Aydin
     email: jaydin@usc.edu
-    image: /assets/img/staff/temp.png
+    image: /assets/img/staff/jaydin.jpg
 
   - name: Alex Qian
     email: alexqian@usc.edu

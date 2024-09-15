@@ -70,9 +70,9 @@ labs:
     week: Week 4
     date: 9/12
     title: STL & Inheritance
-    assigned: false
+    assigned: true
     topics: OOP
-    # slides: lab3.pdf
+    slides: lab3.pdf
 
   - id: 4
     folder: lab4-templates

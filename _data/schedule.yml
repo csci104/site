@@ -80,7 +80,8 @@ lectures:
       - Queues
     chapters:
       - Chapter 3.6, 3.7
-    notes2: 
+    notes2:
+	- 104handout7.pdf 
          
   # 8 Thurs Sep 19
   - topics:
@@ -91,6 +92,7 @@ lectures:
       - Chapter 4.1-4.2
       - Chapter 9.1
     notes2: 
+	- 104handout8.pdf
  
   # 9 Tues Sep 24
   - topics:

@@ -79,9 +79,9 @@ labs:
     title: Templates
     week: Week 5
     date: 9/19
-    assigned: false
+    assigned: true
     topics: OOP
-    # slides: lab4.pdf
+    slides: lab4.pdf
 
   - id: 5
     folder: lab5-midterm

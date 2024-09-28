@@ -21,7 +21,7 @@ The test will be **IN PERSON**
   - 8 AM section:
     - SLH 100 Last Name Starts with A - K
 	- SGM 101 Last Name Starts with L - Z
-  - If you have OSAS accomodations you should schedule your exam at the OSAS offices **on Thursday or Friday during OSAS hours**
+  - If you have OSAS accomodations you should schedule your exam at the OSAS offices **on Friday, ending at 5pm (closing time)**
 
 - The test will be taken on Gradescope and on paper. Be prepared with your laptop, and a pencil/pen.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
@@ -78,7 +78,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - `build-heap` (`make-heap`) algorithm and runtime
  - heap-sort
  - Functors
- 
+
 ### Practice Materials
 
 #### Sample Midterms
@@ -92,7 +92,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
    - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
    - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
- 
+
 #### Practice Quizzes
 
  - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)

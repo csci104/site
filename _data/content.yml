@@ -87,7 +87,7 @@ labs:
     folder: lab6-midterm1
     week: Week 6
     date: 9/26
-    title: Midterm I Review
+    # title: Midterm I Review
     assigned: true
     slides: Midterm1Lab.pdf
 

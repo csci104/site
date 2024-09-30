@@ -29,7 +29,7 @@ title: Visual Inspection Rubric
                 <td>Always apply unless explicitly allowed</td>
             </tr>
             <tr>
-                <td>Adding public variables/functions or exposing private variables/functions</td>
+                <td>Adding public variables, or exposing private variables/functions when unecessary</td>
                 <td>3 points</td>
                 <td>Always apply unless explicitly allowed</td>
             </tr>

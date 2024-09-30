@@ -13,19 +13,12 @@ The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 40 minutes**
-  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 15th, otherwise you will not be able to use your accomodations.  
-- Location: depends on your lecture section **and** the letter your last name starts with
-  - 11 AM section: 
-    - SLH 102 Last Name Starts with A - G
-    - SLH 200 Last Name Starts with H - Z
-  - 8 AM section:
-    - SLH 100 Last Name Starts with A - K
-	- SGM 101 Last Name Starts with L - Z
-  - If you have OSAS accomodations you should schedule your exam at the OSAS offices **on Thursday or Friday during OSAS hours**
-
-- The test will be taken on Gradescope and on paper. Be prepared with your laptop, and a pencil/pen.
+  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}).  
+  
+  - If you have OSAS accomodations you should schedule your exam at the OSAS offices **on Friday, ending at 5pm (closing time)**
+- The test will be taken on paper and uploaded to Gradescope. Be prepared with a pencil/pen.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
-- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
+- You are allowed 1 **8.5x11 (front and back) notes sheet**. 
 
 ### Topics and Style
 
@@ -78,7 +71,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - `build-heap` (`make-heap`) algorithm and runtime
  - heap-sort
  - Functors
- 
+
 ### Practice Materials
 
 #### Sample Midterms
@@ -92,7 +85,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
    - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
    - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
- 
+
 #### Practice Quizzes
 
  - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)

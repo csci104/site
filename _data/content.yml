@@ -84,12 +84,12 @@ labs:
     slides: lab4.pdf
 
   - id: 5
-    folder: lab5-midterm
+    folder: lab6-midterm1
     week: Week 6
     date: 9/26
     title: Midterm I Review
-    assigned: false
-    # slides: mt1_review_student.pdf
+    assigned: true
+    slides: Midterm1Lab.pdf
 
   - id: 6
     folder: lab6-counting

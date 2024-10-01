@@ -118,6 +118,7 @@ lectures:
     chapters:
       - Chapter 5.1-5.3
     notes2:
+      - 104handout11.pdf
 
   # 12 Thurs Oct 3
   - topics:
@@ -126,6 +127,7 @@ lectures:
       - Lewis & Zax Chapter 22
       - Lewis & Zax Chapter 23
     notes2: 
+      - 104handout12.pdf
 
   # 13 Tues Oct 8
   - topics:

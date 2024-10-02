@@ -46,8 +46,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
 
 #### Unit 5 - STL
  - Iterators and their use
- - `std::map` usage and runtime of its operations
- - `std::set` usage and runtime of its operations
+ - `std::map` usage
 
 #### Unit 6 - Inheritance and Polymorphism
  - Order or construction/destruction of parent/child classes
@@ -60,7 +59,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - Class hierarchy and design
 
 #### Unit 7 - Queues and Stack
- - Implementaiton options and their efficiency
+ - Implementation options and their efficiency
  - Applications of queues and stacks
 
 #### Unit 9 - PQ and Heaps
@@ -68,9 +67,7 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - Full, complete, and balanced tree definitions
  - Implementation of a priority queue
  - Heap implementation and operations (push, pop, top) and runtime
- - `build-heap` (`make-heap`) algorithm and runtime
  - heap-sort
- - Functors
 
 ### Practice Materials
 
@@ -81,8 +78,8 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (partial solutions)
    - [Q1 Solution]({{site.baseurl}}/resources/midterm-c-q1sol.png)
    - [Q2 and Q3 Solution]({{site.baseurl}}/resources/midterm-c-q2q3sol.pdf)
- - [Summer 2020 Midterm (Programming)]({{site.baseurl}}/resources/mt-su20.html) (no solutions)
- - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
+ - [Summer 2020 Midterm (Programming)]({{site.baseurl}}/resources/mt-su20.html) (no solutions) [AC: This is not as relevant for the current semester, but still excellent practice]
+ - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf) [AC: This gets into material that will be on the final but not MT1]
    - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
    - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
 
@@ -92,4 +89,4 @@ The exam is a mix of short answer, multiple choice, and coding snippets. We will
  - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-streams-recursion-sol.cpp)
  - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) - [No Solutions]
  - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
- - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)
+ - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf) [AC: Not covered this semester]

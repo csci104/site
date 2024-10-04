@@ -12,7 +12,7 @@ title: Homework 3 Written
 + For problem 4, you will primarily be graded on **your work**.  Only putting a final numerical answer will yield very little credit.  Instead, give the formula you used, and explain your answers.  You do **not** need to provide a final numerical answer for any of these problems, but it might help your graders out a bit if you do.
 + To access the programming portion of this assignment, click [here](./programming/)
 
-### Problem 1 (Heaps, 4%)
+### Problem 1 (Heaps, 5%)
 
 For the following pen-and-paper exercise, please solve it by hand and only use online visualization tools to verify your work.
 
@@ -25,7 +25,7 @@ If one of the two heaps we gave you is not a correct binary min-heap, then point
 
 Your answer should not be in array form like ours, but instead be drawn as a tree, either for the trees you want us to see, or by annotating the mistakes in the tree(s) we gave you.
 
-### Problem 2 (Runtime, 4%)
+### Problem 2 (Runtime, 3%)
 
 In an implementation of Dijkstra's algorithm, suppose that instead of using a Min-Heap, you used something called a **Binomial Queue**.  While you have no idea how such a thing is implemented, you do know it has the following runtimes:
 

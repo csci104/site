@@ -64,6 +64,26 @@ You do not need to submit your answers, these questions are merely to help you f
 
 Lastly, you may break ties however you wish, but you may want to break ties a specific way considering that you will be using your heap in problem 2.  On a related note, we promise to only instantiate your Heap with classes that have operator< defined.
 
+### Test your Program with our Test Suite
+
+We provided a test suite that you can run locally or via GitHub Actions. To set this up locally, run the following on docker:
+```
+cd pa3-username
+tar xvf hw3_tests.tar.gz
+cd hw3_tests
+cmake .
+```
+Now every time you want to test your program, do the following in `hw3_tests`:
+```
+make
+./heap_tests/heap_tests
+valgrind --tool=memcheck --leak-check=yes ./heap_tests/heap_tests
+```
+Once everything works, run the following in `hw3_tests` to run the auto-grader, which will auto-deduct for things like Valgrind errors, compiler warnings, and runtime issues (this is what GitHub Actions uses):
+```
+make grade
+```
+
 ### Problem 2 (A* Search, 42%)
 
 The word game "Doublet" was invented by Lewis Carroll, and is a word transformation puzzle.  Two words of identical length are given.  The objective is to transform the first word into the second word by forming successive valid words of the same length, changing only one letter at a time.  The list of valid words will be provided to you.  Here is an example from HEAD to TAIL:
@@ -187,6 +207,10 @@ It would output:
 5
 8
 ```
+
+### Test your Doublet Program
+
+We plan on providing a test suite for this problem but it's not quite ready yet. We'll post an update on Piazza once it's finished. You can test the program yourself in the meantime.
 
 ### Finishing Up
 

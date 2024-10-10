@@ -9,10 +9,10 @@ title: Homework 3 Programming
 
 + Due: Friday, November 1st, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
-+ Directory name in your github repository for this homework (case sensitive): `hw3`
-+ There is no skeleton code for PA3
-+ You should use the `Makefile` from the resources repo to compile your doublet program.  While you should test your heap, you won't submit your testing code, and thus will not need to provide a compilation command for it.
-+ Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
++ The GitHub Classroom link to access this assignment is: [here](https://classroom.github.com/a/s__fpPn7)
+
+    - There is no skeleton code for PA3 other than the given `Makefile`. There should be no need to modify it since you won't need to provide a compilation command for MinHeap.h
+    - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
 <!-- + Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of. -->
 
 ### Problem 1 (Build a templated d-ary heap, 20%)
@@ -52,7 +52,7 @@ Build your own d-ary `MinHeap` class in `MinHeap.h` with the interface given bel
   };
 ```
 
-In order to build it, you may use internally the `vector<T>` container (you are not required to do so).  You should of course not use the STL `priority_queue` class or `make_heap`, `push`, `pop` algorithms.
+In order to build it, you may use internally the `vector<T>` container (you are not required to do so). You should of course not use the STL `priority_queue` class or `make_heap`, `push`, `pop` algorithms. **You also cannot use any STL map**.
 
 In order to guide you to the right solution, think first about the following questions. We strongly recommend that you start your array indexing at 0 (that will make the following calculations easier). In order to figure out the answers, we suggest that you create some examples and find a pattern.
 
@@ -197,7 +197,7 @@ Use `git status` in the `pa3-username` directory to make sure that there are no 
 Files to push:
 
 - `doublet.cpp`, `MinHeap.h`
-- Your `Makefile`, make sure it will create a `doublet` exe file in the hw3 direcotry (same as where Makefile should be) and not in a sub-directory like BIN_DIR. This does not mean to include the exe file in your submission. Failure to have this exe correctly setup in your Makefile as instructed will result in a 10 point penalty.
+- Your `Makefile`, make sure it will create a `doublet` exe file in the hw3 direcotry (same as where Makefile should be). You shouldn't need to worry about this unless you modified your `Makefile`.
 - If you have files you don't want to push (like garbage .o files), you can edit the `.gitignore` file and push that instead.
 
 Ensure you add/commit/push all your source code files to your `pa3-username` repository.
@@ -209,6 +209,7 @@ WAIT! You aren’t done yet. Complete the sections below to ensure you’ve comm
 + Make sure to check the Actions summary of your latest commit and that it matches your expectations based on what you saw on your local machine.
 + Make sure there are no compilation errors and warnings, along with no Valgrind errors.
 + By default, we will grade your latest commit (unless it's after the late deadline) so if you are satisfied with your Actions report, you are done! If you want an earlier commit to be graded, you must fill out the `Homework Submit SHA Form` form found on the [home page](https://bytes.usc.edu/cs104/) before the late deadline.
++ **WARNING:** While a green checkmark is better than a red X, it may not mean that your program had no issues. Please check the Actions summary as mentioned earlier!
 
 ### Commit then Re-clone your Repository (Optional)
 

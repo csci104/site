@@ -103,7 +103,7 @@ labs:
     week: Week 7
     date: 10/10
     title: Counting
-    assigned: false
+    assigned: true
     topics: Counting
     # slides: lab6.pdf
 

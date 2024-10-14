@@ -105,7 +105,7 @@ labs:
     title: Counting
     assigned: true
     topics: Counting
-    # slides: lab6.pdf
+    slides: lab6.pdf
 
   - id: 8
     folder: lab7-probability-numtheory

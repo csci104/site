@@ -71,13 +71,23 @@ We provided a test suite that you can run locally or via GitHub Actions. To set 
 cd pa3-username
 tar xvf hw3_tests.tar.gz
 cd hw3_tests
+
+# This command won't work until doublet.cpp exists (it can be blank for now)
 cmake .
 ```
-Now every time you want to test your program, do the following in `hw3_tests`:
+Now every time you want to test your program, do the following in `hw3_tests` depending on your preference:
 ```
 make
+
+# Option 1
 ./heap_tests/heap_tests
 valgrind --tool=memcheck --leak-check=yes ./heap_tests/heap_tests
+
+# Option 2 (Just outputs pass/fail)
+ctest
+
+# Option 3 (Basically equivalent to both Option 1 commands. Format is a little different)
+ctest --output-on-failure
 ```
 Once everything works, run the following in `hw3_tests` to run the auto-grader, which will auto-deduct for things like Valgrind errors, compiler warnings, and runtime issues (this is what GitHub Actions uses):
 ```
@@ -210,7 +220,24 @@ It would output:
 
 ### Test your Doublet Program
 
-We plan on providing a test suite for this problem but it's not quite ready yet. We'll post an update on Piazza once it's finished. You can test the program yourself in the meantime.
+Now every time you want to test your program, do the following in `hw3_tests` depending on your preference:
+```
+make
+
+# Option 1
+./doublet_tests/doublet_tests
+valgrind --tool=memcheck --leak-check=yes ./doublet_tests/doublet_tests
+
+# Option 2 (Just outputs pass/fail)
+ctest
+
+# Option 3 (Basically equivalent to both Option 1 commands. Format is a little different)
+ctest --output-on-failure
+```
+Once everything works, run the following in `hw3_tests` to run the auto-grader, which will auto-deduct for test cases, Valgrind errors, compiler warnings, and runtime issues (this is what GitHub Actions uses):
+```
+make grade
+```
 
 ### Finishing Up
 

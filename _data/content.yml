@@ -114,7 +114,7 @@ labs:
     title: Probability & Number Theory
     assigned: true
     topics: Probability, Number Theory
-    # slides: lab8_probability.pdf
+    # slides: lab7.pdf
 
   - id: 9
     folder: lab8-hashtables

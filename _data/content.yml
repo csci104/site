@@ -108,13 +108,13 @@ labs:
     slides: lab6.pdf
 
   - id: 8
-    folder: lab7-probability-numtheory
+    folder: lab8-probability
     week: Week 9
     date: 10/17
     title: Probability & Number Theory
-    assigned: false
+    assigned: true
     topics: Probability, Number Theory
-    # slides: lab7.pdf
+    # slides: lab8_probability.pdf
 
   - id: 9
     folder: lab8-hashtables

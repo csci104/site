@@ -77,7 +77,7 @@ cmake .
 ```
 Now every time you want to test your program, do the following in `hw3_tests` depending on your preference:
 ```
-make
+make heap_tests
 
 # Option 1
 ./heap_tests/heap_tests

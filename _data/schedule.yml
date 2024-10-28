@@ -179,6 +179,7 @@ lectures:
     chapters:
       - Course Notes
     notes2: 
+      - 104handout18.pdf
 
   # 19 Thurs Oct 31
   - topics:
@@ -186,6 +187,7 @@ lectures:
     chapters:
       - Chapter 10.4
     notes2: 
+      - 104handout19.pdf
 
   # 20 Tues Nov 5
   - topics:

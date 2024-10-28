@@ -123,7 +123,7 @@ labs:
     title: Hashtables
     assigned: true
     topics: Hashtables
-    slides: HashTablesLab.pptx
+    slides: HashTablesLab.pdf
 
   - id: 10
     folder: lab9-midterm

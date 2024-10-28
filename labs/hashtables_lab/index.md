@@ -24,7 +24,7 @@ The look up speed and ordering of map elements depends on the data structure we 
 
 A Hash Table is like an array in many aspects. However, in order to find the index in the array, we use a special function called a hash function. This converts the input into an index location that the input is then stored into.
 
-<div style="text-align:center"><img src="./assets/hashTable.png" alt="bst" width="300" height="250" /> </div>
+<div style="text-align:center"><img src="./hashtables_lab/assets/hashTable.png" alt="bst" width="300" height="250" /> </div>
 
 In the above example, we can see that our hash table stores strings, and those strings are stored in locations within an array specified by the hash function.
 
@@ -125,7 +125,7 @@ Try yourself with pen and paper. What will the hashtable look like following eac
 
 For closed addressing we will focus on chaining. Chaining allows for multiple objects to reside within the same array location. The array is changed to be an array of lists or some other data structure, allowing us to store multiple items per index. We often use an array of linked lists, hence the name "chaining."
 
-<div style="text-align:center"><img src="./assets/chaining.png" alt="bst" width="400" height="250" /> </div>
+<div style="text-align:center"><img src="./hashtables_lab/assets/chaining.png" alt="bst" width="400" height="250" /> </div>
 
 
 Other implementations may use another type of list or even a balanced tree.

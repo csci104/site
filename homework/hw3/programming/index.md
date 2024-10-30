@@ -79,14 +79,13 @@ Now every time you want to test your program, do the following in `hw3_tests` de
 ```
 make heap_tests
 
-# Option 1
+# Option 1 (please use the other two options to use Valgrind)
 ./heap_tests/heap_tests
-valgrind --tool=memcheck --leak-check=yes ./heap_tests/heap_tests
 
 # Option 2 (Just outputs pass/fail)
 ctest
 
-# Option 3 (Basically equivalent to both Option 1 commands. Format is a little different)
+# Option 3 (Option 2 but with failure info)
 ctest --output-on-failure
 ```
 Once everything works, run the following in `hw3_tests` to run the auto-grader, which will auto-deduct for things like Valgrind errors, compiler warnings, and runtime issues (this is what GitHub Actions uses):
@@ -224,14 +223,13 @@ Now every time you want to test your program, do the following in `hw3_tests` de
 ```
 make
 
-# Option 1
+# Option 1 (please use the other two options to use Valgrind)
 ./doublet_tests/doublet_tests
-valgrind --tool=memcheck --leak-check=yes ./doublet_tests/doublet_tests
 
 # Option 2 (Just outputs pass/fail)
 ctest
 
-# Option 3 (Basically equivalent to both Option 1 commands. Format is a little different)
+# Option 3 (Option 2 but with failure info)
 ctest --output-on-failure
 ```
 Once everything works, run the following in `hw3_tests` to run the auto-grader, which will auto-deduct for test cases, Valgrind errors, compiler warnings, and runtime issues (this is what GitHub Actions uses):
@@ -261,6 +259,7 @@ WAIT! You aren’t done yet. Complete the sections below to ensure you’ve comm
 + Make sure there are no compilation errors and warnings, along with no Valgrind errors.
 + By default, we will grade your latest commit (unless it's after the late deadline) so if you are satisfied with your Actions report, you are done! If you want an earlier commit to be graded, you must fill out the `Homework Submit SHA Form` form found on the [home page](https://bytes.usc.edu/cs104/) before the late deadline.
 + **WARNING:** While a green checkmark is better than a red X, it may not mean that your program had no issues. Please check the Actions summary as mentioned earlier!
+  - A common issue for failure is that the file name capitalization doesn't match exactly what we said to do. This also includes the capitalization in Makefile and any #includes in your code.
 
 ### Commit then Re-clone your Repository (Optional)
 

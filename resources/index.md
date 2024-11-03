@@ -23,6 +23,7 @@ Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
 
 ## Exam Info pages
  - [MT1 Info page]({{site.baseurl}}/resources/mt1-info/) 
+ - [MT2 Info page]({{site.baseurl}}/resources/mt2-info/) 
  - [Final Info page]({{site.baseurl}}/resources/final-info/)
 
 ## Editors and IDEs

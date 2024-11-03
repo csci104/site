@@ -130,8 +130,8 @@ labs:
     week: Week 11
     date: 10/31
     title: Midterm II Review
-    assigned: false
-    slides:
+    assigned: true
+    slides: mt2_review_student.pdf
       # - mt2_review_student.pdf
 
   - id: 11

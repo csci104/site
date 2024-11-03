@@ -36,6 +36,6 @@ The exam is cumulative, but will have a very strong emphasis on the above materi
 
 The following is a set of difficult practice problems.  Most of them are more difficult than you will face on the exam, but will provide extra practice on the topics of the course.
 
-[Practice Problems]({{site.baseurl}}/resources/practice.pdf)
+[Practice Problems]({{site.baseurl}}/resources/Practice.pdf)
 
-[Practice Problems Solutions]({{site.baseurl}}/resources/practiceSol.pdf)
+[Practice Problems Solutions]({{site.baseurl}}/resources/PracticeSol.pdf)

@@ -195,6 +195,7 @@ lectures:
     chapters:
       - Chapter 11.1
     notes2: 
+      - 104handout20.pdf
 
   # 21 Thurs Nov 7
   - topics:
@@ -202,6 +203,7 @@ lectures:
     chapters:
       - Course Notes
     notes2: 
+      - 104handout21.pdf
 
   # 22 Tues Nov 12
   - topics:

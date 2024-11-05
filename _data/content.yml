@@ -129,10 +129,9 @@ labs:
     folder: lab9-midterm
     week: Week 11
     date: 10/31
-    title: Midterm II Review
+    # title: Midterm II Review
     assigned: true
     slides: mt2_review_student.pdf
-      # - mt2_review_student.pdf
 
   - id: 11
     folder: lab10-amortization

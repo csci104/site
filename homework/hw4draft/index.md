@@ -22,7 +22,7 @@ Answer the following questions and show your work.
 4. What is `(1! + 2! + 3! + 4! + ... + 1000!) % 10`?
 5. Our prisons are too crowded, so we need to release some inmates.  For a high-security prison, there are 1000 inmates and 1000 guards.  Initially, all doors are locked.  Beginning with the 1st guard, the `i`th guard switches the locked/unlocked state of every `i`th door. For example, the first guard would go through and unlock every door. Then the 2nd guard switches the (lock/unlock) state for every even door (effectively locking every even door while leaving every odd door unlocked).  Then the 3rd guard switches the state for every 3rd door, unlocking the door if it is locked, or locking the door if it is unlocked. After the 1000th guard, how many doors are left unlocked?
 
-### Problem 2 (Hashing Applications, 7%)
+### Problem 2 (Hashing Applications, 8%)
 
 In the Pattern Matching problem, you have a long string `S = s1 s2 ... sn`, and a short string `T = t1 t2 ... tk` (`k < n`).  You are wondering if T shows up anywhere in S; that is, if there is an i such that `si s(i+1) ... s(i+k-1) = T`.  
 
@@ -34,7 +34,7 @@ Instead, we will use a very simple hash function `h(a1 a2 ... ak)` which takes a
 2. If `h(si s(i+1) ... s(i+k-1)) = h(T)`, why have we **not** necessarily found a match?  How would we verify whether this is actually a match?
 3. We will assume the probability of a false positive (that is, finding `h(si s(i+1) ... s(i+k-1)) = h(T)` when it isn't a match) is smaller than `1/k`.  Explain how the algorithm sketched out in your previous answers obtains an average runtime of O(n) 
 
-### Problem 3 (Stacks and Queues, 12%)
+### Problem 3 (Stacks and Queues, 10%)
 
 It is possible to implement a queue using two stacks `stack1` and `stack2`, by implementing the functions in the following manner:
 

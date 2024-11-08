@@ -21,7 +21,7 @@ title: Homework 4 Programming
   - Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
   - We will **not** be providing the full testing suite for this assignment.  You are expected to test your own code to figure out if it works.
   
-  ### Problem 1 (Binary Search Tree Iterators, 16%)
+  ### Problem 1 (Binary Search Tree Iterators, 17%)
   
   We are providing you with interface specifications for binary search trees.
   

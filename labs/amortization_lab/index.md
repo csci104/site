@@ -7,7 +7,7 @@ title: Amortized Analysis
 
 ---
 
-**Due by Thursday, November 9th.** Please note that there is NO lab instruction/lecture this week, just the asynchronous assignment. You are welcome to attend your regular lab section to get checked off, however!
+**Due by Friday, November 22nd.** Please note that there is NO lab instruction/lecture this week, just the asynchronous assignment. You are welcome to attend your regular lab section to get checked off next week (11/18-11/22), however!
 
 ---
 
@@ -114,7 +114,7 @@ Which is a constant, so the amortized runtime is constant! The potential method 
 
 For this week's lab, you will be implementing a queue with two stacks, just like problem 3 of written homework 5 describes. There are two functions you need to implement: front() and dequeue(). Front returns the value at the front of the queue. Dequeue removes the item at the front of the queue.
 
-For a starting point on how to do this, refer to the note in homework 5:
+For a starting point on how to do this, refer to the note in homework 4:
 
 """
 

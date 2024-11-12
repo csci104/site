@@ -33,7 +33,7 @@ Using the aggregate method, we will determine the upper bound T(n) on the total 
 
 For our binary counter, let's consider incrementing it n times. How many bit flips will be required overall?
 
-<div style="text-align:center"><img src="assets/CounterAggregate.png" alt="binary counter aggregate example" width="300" height="180" /> </div>
+<div style="text-align:center"><img src="./amoritzation_lab/assets/CounterAggregate.png" alt="binary counter aggregate example" width="300" height="180" /> </div>
 
 Well, writing out a couple of the increments, we can notice a pattern. The least significant bit will be flipped every single time we increment the counter; so, if we have *n* increments, then we will flip this bit *n* times.
 
@@ -44,7 +44,7 @@ The thirs bit will be flipped every fourth increment, so that will be a total of
 The upper bound T(n) then will be the summation of all of these flips, since we want the total cost of our n operations.
 
 This summation will be:
-<div style="text-align:center"><img src="assets/AggregateSummation.png" alt="aggregate method summation" width="300" height="120" /> </div>
+<div style="text-align:center"><img src="./amoritzation_labassets/AggregateSummation.png" alt="aggregate method summation" width="300" height="120" /> </div>
 
 Thus, T(n) is equal to *2n*. Now, to find the average runtime per operation, we must divide it by n. So our final amortized cost is 2n / n = 2.
 
@@ -82,7 +82,7 @@ Luckily, we have \$2 saved from cheap operations.
 
 We're left with \$1 in the bank.
 
-<div style="text-align:center"><img src="./assets/PiggyBank.png" alt="piggy bank example" width="300" height="250" /> </div>
+<div style="text-align:center"><img src="./amoritzation_lab/assets/PiggyBank.png" alt="piggy bank example" width="300" height="250" /> </div>
 
 Because we never overspend our savings (i.e. our fixed cost of \$2 is always enough, no matter what) then we can see that our increment function will have a constant time amortized cost! If instead the amount of money per operation was linear and not a fixed value (ex. the amount we had to pay was dependent on what number of increments we were doing), then we'd be able to determine that the amortized runtime is linear.
 

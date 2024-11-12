@@ -8,18 +8,15 @@ title: Homework 4 Programming
 # HW4: Programming Assignment
 
 + Due: Friday, December 6th, 11:59pm PST
-
 + To access the written portion of this assignment, click [here](..)
 
-+ Directory name in your github repository for this homework (case sensitive): `hw4`
++ The GitHub Classroom link to access this assignment is: [here]()
 
-  - In this project we have provided a **substantial** code base.  Do a `git pull` in your `resources` repo.
-  - Then copy the `resources/hw4` folder into your `hw-username` repo and use the skeletons provided to start work in that `hw4` folder.
-  
-  - You **MUST** provide a `Makefile` so that we can compile your code (not run it) by simply typing `make` which should, among other compilation commands, produce an executable `floorplan`
+  - In this project we have provided a **substantial** code base.
+  - You **MUST** provide a `Makefile` for `Problem 3` so that we can compile your code (not run it) by simply typing `make` which should, among other compilation commands, produce an executable `floorplan`
   - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
-  - Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of.
-  - We will **not** be providing the full testing suite for this assignment.  You are expected to test your own code to figure out if it works.
+  <!-- - Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of. -->
+  - We will **not** be providing the full testing suite for this assignment.  You are expected to test your own code to figure out if it works. However, we've given you a test helper in `avlbst_testcase_builder` and a README guide inside.
   
   ### Problem 1 (Binary Search Tree Iterators, 17%)
   
@@ -187,7 +184,7 @@ Files to push:
 
 - `floorplan.cpp`, `bst.h`, `avlbst.h`, `print_bst.h`
 - Your `Makefile`, make sure it will create a `floorplan` exe file in the hw4 directory (same as where Makefile should be). You shouldn't need to worry about this unless you modified your `Makefile`.
-- If you have files you don't want to push (like garbage .o files), you can edit the `.gitignore` file and push that instead.
+- If you have files you don't want to push (like garbage .o files), you can add/edit the `.gitignore` file and push that instead. **Note that you were not given one this time, make your own!**
 
 Ensure you add/commit/push all your source code files to your `pa4-username` repository.
 
@@ -195,11 +192,15 @@ WAIT! You aren’t done yet. Complete the sections below to ensure you’ve comm
 
 ### GitHub Actions Summary
 
+<!-- PA4-specific warning -->
++ **WARNING:** GitHub Actions primarily runs `make valgrind` for the `BST/AVL` portion of this assignment. There is no check for a working `floorplan.cpp`.
+
 + Make sure to check the Actions summary of your latest commit and that it matches your expectations based on what you saw on your local machine.
 + Make sure there are no compilation errors and warnings, along with no Valgrind errors.
-+ By default, we will grade your latest commit (unless it's after the late deadline) so if you are satisfied with your Actions report, you are done! If you want an earlier commit to be graded, you must fill out the `Homework Submit SHA Form` form found on the [home page](https://bytes.usc.edu/cs104/) before the late deadline.
++ By default, we will grade your latest commit (unless it's after the late deadline) so if you are satisfied with your work and Actions report, you are done! If you want an earlier commit to be graded, you must fill out the `Homework Submit SHA Form` form found on the [home page](https://bytes.usc.edu/cs104/) before the late deadline.
 + **WARNING:** While a green checkmark is better than a red X, it may not mean that your program had no issues. Please check the Actions summary as mentioned earlier!
   - A common issue for failure is that the file name capitalization doesn't match exactly what we said to do. This also includes the capitalization in Makefile and any #includes in your code.
+  - Another common issue is that there's a green checkmark, but there may be compiler warnings on the report, which can result in deductions.
 
 ### Commit then Re-clone your Repository (Optional)
 

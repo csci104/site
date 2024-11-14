@@ -10,7 +10,7 @@ title: Homework 4 Programming
 + Due: Friday, December 6th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)
 
-+ The GitHub Classroom link to access this assignment is: [here]()
++ The GitHub Classroom link to access this assignment is: [here](https://classroom.github.com/a/tvN3AZYl)
 
   - In this project we have provided a **substantial** code base.
   - You **MUST** provide a `Makefile` for `Problem 3` so that we can compile your code (not run it) by simply typing `make` which should, among other compilation commands, produce an executable `floorplan`

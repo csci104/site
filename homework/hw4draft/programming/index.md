@@ -5,7 +5,7 @@ tasks: true
 title: Homework 4 Programming
 ---
 
-# HW4: Programming Assignment (test)
+# HW4: Programming Assignment
 
 + Due: Friday, December 6th, 11:59pm PST
 + To access the written portion of this assignment, click [here](..)

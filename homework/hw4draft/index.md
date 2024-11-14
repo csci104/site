@@ -9,7 +9,7 @@ title: Homework 4 Written
 
 + Due: Friday, November 22nd, 11:59pm PST
 + You will submit this homework through Gradescope, by uploading your answers.  Please submit with a common file extension (such as .jpg, or .pdf)
-+ For all your answers, you will primarily be graded on **your work**.  Only putting a final numerical answer will yield very little credit.  Instead, give the formula you used, and explain your answers.  You do **not** need to provide a final numerical answer for any of these problems, but it might help your graders out a bit if you do.
++ For all your answers, you will primarily be graded on **your work**.  Only putting a final numerical answer will yield very little credit.  Instead, give the formula you used, and explain your answers.  You do **not** need to provide a final numerical answer for any of these problems, but it might help your graders out a bit if you do. 
 + To access the programming portion of this assignment, click [here](./programming/)
 
 ### Problem 1 (Number Theory, 15%)

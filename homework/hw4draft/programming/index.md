@@ -12,7 +12,7 @@ title: Homework 4 Programming
 
 + The GitHub Classroom link to access this assignment is: [here](https://classroom.github.com/a/tvN3AZYl)
 
-  - In this project we have provided a **substantial** code base.
+  - In this project we have provided a **substantial** code base. 
   - You **MUST** provide a `Makefile` for `Problem 3` so that we can compile your code (not run it) by simply typing `make` which should, among other compilation commands, produce an executable `floorplan`
   - Remember to compile and test your code inside Docker (but should do your git commands outside Docker)
   <!-- - Provide a `README.md` file to explain how to compile your code, and to document any oddities you want the graders to be aware of. -->

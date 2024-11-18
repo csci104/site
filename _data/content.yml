@@ -142,13 +142,13 @@ labs:
     topics: Runtime
 
   - id: 12
-    folder: lab11-avl
+    folder: avl_lab
     week: Week 13
     date: 11/14
     title: AVL Trees
-    assigned: false
+    assigned: true
     topics: Trees
-    # slides: lab11.pdf
+    slides: AVLBSTLAB.pdf
 
   - id: 13
     folder: lab12

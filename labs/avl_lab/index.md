@@ -7,7 +7,7 @@ title: AVL Trees
 
 ---
 
-**Due at the end of your registered lab section**
+**Due at the end of your registered lab section. Remember to get checked off for last week's asynchronous lab as well!**
 
 ---
 

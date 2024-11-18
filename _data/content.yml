@@ -148,7 +148,7 @@ labs:
     title: AVL Trees
     assigned: true
     topics: Trees
-    slides: AVLBSTLAB.pdf
+    slides: AVLBSTLab.pdf
 
   - id: 13
     folder: lab12

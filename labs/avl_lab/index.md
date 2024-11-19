@@ -38,7 +38,6 @@ A rotation changes the local structure of a binary tree without changing its ord
 Rotations can be broken up into left and right rotations which are just inversions of each other.
 
 <div style="text-align:center"><img src="{{site.url}}/labs/avl_lab/assets/rotations.gif" alt="rotations" width="500" height="200" /></div>
-![rotations](./avl_lab/assets/rotations.gif)
 
 Rotaions make up the foundation of the AVL tree. In your upcoming PA6, you will need to implement these rotations in a variety of scenarios. There are 4 combinations of rotations: left-left, left-right, right-left, right-right. Sometimes, these rotations are referred to as "zig zig" or "zig zag", or something similar. The point is, during these sequences of rotations, the tree becomes more balanced than it was before.
 

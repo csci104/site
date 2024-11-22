@@ -21,7 +21,7 @@ This lab will guide you through hunting down the kind of bugs that keep programm
 Do you dare take it on?
 
 <div class="showcase">
-    <img src="./lab1-gdb/assets/gdb_house_of_horrors.png" alt="GDB House of Horrors" class="no-shadow" />
+    <img src="{{site.url}}/labs/lab1-gdb/assets/gdb_house_of_horrors.png" alt="GDB House of Horrors" class="no-shadow" />
 </div>
 
 ## Lab Materials

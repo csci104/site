@@ -159,10 +159,11 @@ labs:
     # slides: probability_lab.pdf
 
   - id: 14
-    folder: lab10
+    folder: final-lab
     week: Week 15
-    title: Final Review
-    assigned: false
+    # title: Final Review
+    assigned: true
+    slides: FinalReview.pdf
 
 
 

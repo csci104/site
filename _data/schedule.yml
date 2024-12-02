@@ -252,6 +252,7 @@ lectures:
     chapters:
       - Course Notes
     notes2: 
+      - 104handout27.pdf
 
   # 28 Thurs Dec 5
   - topics:
@@ -259,3 +260,4 @@ lectures:
     chapters:
       - Course Notes
     notes2: 
+      - 104handout28.pdf

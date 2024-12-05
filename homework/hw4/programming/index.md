@@ -183,7 +183,7 @@ Use `git status` in the `pa4-username` directory to make sure that there are no 
 Files to push:
 
 - `floorplan.cpp`, `bst.h`, `avlbst.h`, `print_bst.h`
-- Your `Makefile`, make sure it will create a `floorplan` exe file in the hw4 directory (same as where Makefile should be). You shouldn't need to worry about this unless you modified your `Makefile`.
+- Your `Makefile`, make sure it will create a `floorplan` exe file in the hw4 directory (same as where Makefile should be).
 - If you have files you don't want to push (like garbage .o files), you can add/edit the `.gitignore` file and push that instead. **Note that you were not given one this time, make your own!**
 
 Ensure you add/commit/push all your source code files to your `pa4-username` repository.

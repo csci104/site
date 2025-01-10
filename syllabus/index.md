@@ -45,8 +45,7 @@ Introduces the student to standard data structures (linear structures such as li
 ## Course Websites
 
 - [All content & info]({{ site.baseurl }}/)
-- [Blackboard]({{ site.data.urls.blackboard }}){:target="_blank"}
-- [EdStem]({{ site.data.urls.piazza }}){:target="_blank"}
+- [Piazza]({{ site.data.urls.piazza }}){:target="_blank"}
 
 ## Grading Weights and Scale
 
@@ -61,24 +60,20 @@ Your final grade will depend solely on your own performance, graded according to
     </thead>
     <tbody>
       <tr>
-        <td>34%</td>
+        <td>28%</td>
         <td>Homework</td>
       </tr>
       <tr>
         <td>&nbsp;</td>
-        <td>(24% 6x Programming Assignments, 10% 5x Written Assignments)</td>
+        <td>(18% 6x Programming Assignments, 10% 5x Written Assignments)</td>
       </tr>
       <tr>
-        <td>8%</td>
+        <td>10%</td>
         <td>Lab Exercises</td>
       </tr>
       <tr>
-        <td>28%</td>
-        <td>Midterm Exams (equal between MT1 and MT2)</td>
-      </tr>
-      <tr>
-        <td>30%</td>
-        <td>Final Exam</td>
+        <td>62%</td>
+        <td>Exams (16% low, 20% median, 26% high across MT1, MT2 and Final Exam)</td>
       </tr>
     </tbody>
   </table>

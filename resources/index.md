@@ -37,7 +37,7 @@ Switch to a professional-level environment or editor, such as the following:
 
 ## Tutoring
 
-- [VARC](http://viterbi.usc.edu/varc/) offers tutoring for this class.
+- [Viterbi Learning Program](https://viterbiundergrad.usc.edu/viterbilearningprogram/) offers tutoring for this class.
 
 ## C/C++ Related Links
 

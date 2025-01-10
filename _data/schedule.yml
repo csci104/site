@@ -7,22 +7,18 @@ show:
 exams:
 
   - name: Midterm 1 
-    time: Thursday Feburary 22nd at 7 PM Pacific
+    time: Thursday Feburary 27nd at 7 PM Pacific
     location: TBA
     link: mt1-info/
 
   - name: Midterm 2 
-    time: Thursday April 4th at 7 PM Pacific
+    time: Thursday April 10th at 7 PM Pacific
     location: TBA
     link: mt2-info/
   
   - name: Final
-    time: Wednesday, May 1st, 8 AM Pacific
-    location: 
-            - "8am section: Last Name A-C -> ZHS 360"
-            - "8am section: Last Name D-Z -> SLH 200"
-            - "11am section: Last Name A-L -> ZHS 159"
-            - "11am section: Last Name M-Z -> HAR 101"
+    time: Wednesday, May 7st, 8 AM Pacific
+    location: TBA
     link: final-info/
 
 lectures:

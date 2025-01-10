@@ -6,16 +6,13 @@ title: Homework
 
 # Homework
 
-Homework will be assigned once every **7-10 days**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homeworks will typically contain a mix of programming exercises and "theory" questions about data structures and their implementation.  
-
+Homework will be assigned once every **7-10 days**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homework assignments will typically be split into two components: a written component and a coding component. Note: These components are submitted separately and have different late policies.
 
 Each student will be responsible for creating and using a GitHub repo for the development and submission of all assignments. You will be using the **git** source code management tool to maintain your homework code. 
 
 Please read the submission instructions and policies below **carefully**!  Failure to follow the process (of pushing the appropriate files to Github and submitting your git commit SHA on our website) will result in a 0 on the assignment. 
 
 Assignments are assigned and submitted on Codio. To set up your Codio account, see the directions in lab 0. Each assignment has a written portion and a programming portion (except assignment #2, which is programming only).
-
-You will need to **start** each of the assignments from within Blackboard, within the Codio Assignments tab.
 
 <h2 id="schedule">Schedule</h2>
 <table class="standard assignments">
@@ -58,7 +55,6 @@ In order to properly submit your assignment, **please follow the course [submiss
 
 For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).  The programming submission must be made correctly via your github account and your **`git` commit SHA** must be submitted on the appropriate submission page using the process described on the [submission instructions]({{ site.baseurl }}/homework/submission-instructions/) page.  Read and follow those instructions carefully for each homework.  **Failure to do so may lead to a 0 on the assignment** even though you may have had all the code working on your machine.  Much of software development requires following strict processes, so it is important you start to understand and follow those processes.
 
-
 **Important Note:**  You will NOT receive an exception for failing to follow these instructions!
 
 For example, often times students forget to commit/push a file that is part of their solution to Github.  If they had followed the submission instructions and re-cloned their repo to a temporary folder and attempted to build their assignment code, they would have easily found the issue.  We cannot accept files that were not submitted or files where you submitted "the wrong version".  We can only grade what you submitted.
@@ -67,15 +63,17 @@ In addition to making sure your submission is on time, **please make sure that t
 
 ## Policies
 
-There will be **6 assignments**. In CSCI 104L we do not accept late submissions (except as outlined below). We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 7-10 days per assignment should allow you to finish on time if you **start early** and **work consistently**, we have a flexible due-date policy that allows for submitting assignments within 3 days of the due date with minimal penalty. The penalty for the three days is as follows: 2% (1 day late), 5% (two days late). 10% (three days late) After three days, there are no late submissions.
+There will be **6 assignments**. In CSCI 104L we do not accept late submissions (except as outlined below). Late days apply **only** to the coding portion of the assignments. The written portions must be completed on-time by uploading your written answers to Codio before the deadline. 
 
-In this age of COVID, we realize that being sick or having sick family may preclude you from working on your assignments as you would be able to otherwise.   If a confirmed COVID-related illness or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}){:target="_blank"} and make a private note on [edStem]({{site.data.urls.discussion}}){:target="_blank"} to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment. **Note:** A minor illness, injury or other incident a few days before the deadline or a trip home to see family does not qualify for an extension. Start early anticipating that things may come up closer to the deadline.  If you have not started early and ask for an extension, your request may be rejected. Commit and push your intermediate work often as a record of your effort on an assignment.
+We  do realize that as a student, things will come up and other classes may need more focus on certain weeks.  While 7-10 days per assignment should allow you to finish on time if you **start early** and **work consistently**, we have a flexible due-date policy that allows for submitting assignments within 5 days of the due date with minimal penalty. The penalty is 2% per day up to 5 days. After five days, there are no late submissions.
+
+We realize that emergent situations may preclude you from working on your assignments as you would be able to otherwise.   If a major illness, injury or other emergency occurs, please fill out [this form]({{site.data.urls.extension_form}}){:target="_blank"} and make a private note on [edStem]({{site.data.urls.discussion}}){:target="_blank"} to inform the course staff and we will try our very best to work out a flexible plan for completing the assignment. Extensions are not automatically granted and must be reserved for a significant medical situation or other emergency. 
+
+**Note: A minor illness, minor injury or other incident a few days before the deadline or a trip home to see family does not qualify for an extension.** Start early anticipating that things may come up closer to the deadline.  If you have not started early and ask for an extension, your request may be rejected. Commit and push your intermediate work often as a record of your effort on an assignment.
 
 For non-emergency issues (especially those close to the deadline), extensions are generally not applicable. Instead, **the late-submission days** are available and should be used for such circumstances.
 
 As a reward for starting early coding assignments turned in early will receive a 1% bonus. "Turned in early" means the assignment was marked-as-complete on Codio and the autograding script awarded full marks **before** the day of the deadline. Said another way, if you finish your assignment with full marks before the due date (not time) you will receive the bonus. This means you can earn up to 101% of the points on the homework portion of the course.
-
-Late days apply **only** to the coding portion of the assignments. The written portions must be completed on-time by uploading your written answers to Codio before the deadline.
 
 The most consistent advice from students who have done well in CS 104 is (you guessed it): **start early!**  
 

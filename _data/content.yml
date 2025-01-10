@@ -7,7 +7,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, January 26th 11:59PM PST
+      due: Friday, January 31th 11:59PM PST
   - id: hw2
     title: Inheritance, Polymorphism, and STL
     assigned: false
@@ -16,7 +16,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, February 9th 11:59PM PST
+      due: Friday, February 14th 11:59PM PST
   - id: hw3
     title: Heaps
     assigned: false
@@ -25,7 +25,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, March 1st at 11:59PM PST
+      due: Friday, March 7th at 11:59PM PST
   - id: hw4
     title: AVL Trees
     assigned: false
@@ -34,7 +34,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, March 29th at 11:59PM PDT
+      due: Friday, April 4th at 11:59PM PDT
   - id: hw5
     title: Counting, Probability, Recursion
     assigned: false
@@ -43,7 +43,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Written - Friday, April 12th at 11:59PM PDT, PA - Wednesday, April 17th at 11:59 PM PDT
+      due: Friday, April 25th at 11:59PM PDT
   - id: hw6
     title: Hash tables
     assigned: false
@@ -52,13 +52,13 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, April 26th at 11:59PM PDT
+      due: Friday, May 2nd at 11:59PM PDT
 
 labs:
   - id: 0
     folder: lab0
     week: Week 1
-    date: 1/8
+    date: 1/13
     title: Class Setup
     assigned: true
     topics: GitHub, Docker, Codio
@@ -68,7 +68,7 @@ labs:
   - id: 1
     folder: lab1
     week: Week 2
-    date: 1/15
+    date: 1/20
     title: Git
     assigned: true
     topics: Git, GitHub
@@ -77,7 +77,7 @@ labs:
   - id: 2
     folder: lab2
     week: Week 3
-    date: 1/22
+    date: 1/27
     title: GDB
     assigned: true
     topics: Debugging
@@ -86,7 +86,7 @@ labs:
   - id: 3
     folder: lab3
     week: Week 4
-    date: 1/29
+    date: 2/3
     title: Makefiles
     assigned: true
     topics: Make, Build Systems
@@ -96,7 +96,7 @@ labs:
     folder: lab4
     title: Inheritance
     week: Week 5
-    date: 2/5
+    date: 2/10
     assigned: true
     topics: Inheritance, Polymorphism, OOP
     slides: InheritanceLab.pdf
@@ -104,7 +104,7 @@ labs:
   - id: 5
     folder: lab5
     week: Week 6
-    date: 2/12
+    date: 2/17
     title: Heaps
     assigned: true
     topics: Heaps, Priority Queues
@@ -113,7 +113,7 @@ labs:
   - id: 6
     folder: lab6
     week: Week 7
-    date: 2/19
+    date: 2/24
     title: Midterm 1 Review Lab
     assigned: false
     topics:
@@ -124,7 +124,7 @@ labs:
   - id: 7
     folder: lab7
     week: Week 8
-    date: 2/26
+    date: 3/3
     title: Templates
     topics: OOP
     assigned: true
@@ -133,7 +133,7 @@ labs:
   - id: 8
     folder: lab8
     week: Week 9
-    date: 3/4
+    date: 3/10
     title: Binary Trees
     assigned: true
     topics: AVL, BST
@@ -142,7 +142,7 @@ labs:
   - id: 9
     folder:
     # week: Week 10
-    date: 3/11
+    date: 3/17
     title: Spring Break
     assigned: false
     # topics: Hashtables
@@ -151,7 +151,7 @@ labs:
   - id: 10
     folder: lab9
     week: Week 10
-    date: 3/18
+    date: 3/24
     title: Backtracking
     assigned: true
     topics: Recursion, Graph Algorithms
@@ -160,7 +160,7 @@ labs:
   - id: 11
     folder: lab10
     week: Week 11
-    date: 3/25
+    date: 3/31
     title: Hashtables
     topics: Hashtables, Hashing
     assigned: true
@@ -170,7 +170,7 @@ labs:
   - id: 12
     folder: lab11
     week: Week 12
-    date: 4/1
+    date: 4/7
     title: Midterm 2 Review Lab
     assigned: false
     slides: Midterm2Lab.pdf
@@ -178,7 +178,7 @@ labs:
   - id: 13
     folder: lab12
     week: Week 13
-    date: 4/8
+    date: 4/14
     title: Counting
     assigned: true
     topics: Counting
@@ -187,7 +187,7 @@ labs:
   - id: 14
     folder: lab13
     week: Week 14
-    date: 4/15
+    date: 4/21
     title: Probability & Number Theory
     assigned: true
     topics: Probability, Number Theory
@@ -196,7 +196,7 @@ labs:
   - id: 15
     folder: lab14
     week: Week 15
-    date: 4/22
+    date: 4/28
     title: Final Review
     assigned: false
     slides: FinalLab.pdf

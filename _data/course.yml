@@ -1,5 +1,5 @@
-semester: Spring 2024
-short: usc-csci104-spring2024
+semester: Spring 2025
+short: usc-csci104-spring2025
 
 sections:
   lectures:
@@ -7,7 +7,7 @@ sections:
       days: Tuesday, Thursday
       time: 8:00 AM to 9:20 AM Pacific
       location: SGM 101
-      instructors: Andrew Goodney
+      instructors: Carter Slocum
     - id: 29905
       days: Tuesday, Thursday
       time: 11:00 AM to 12:20 PM Pacific
@@ -18,44 +18,44 @@ sections:
       days: Tuesday
       time: 3:30-5:20pm
       location: SAL126
-      instructors: Pranav Jain
+      instructors: TBD
     - id: 30238
       days: Tuesday
       time: 5:30-7:20pm
       location: SAL126
-      instructors: Pranav Jain
+      instructors: TBD
     - id: 30286
       days: Wednesday
       time: 12:00-1:50pm
       location: SAL109
-      instructors: Yuxin Yang
+      instructors: TBD
     - id: 30294
       days: Tuesday
       time: 1:00-2:50pm
       location: SAL126
-      instructors: Jeremy Morgan
+      instructors: TBD
     - id: 30379
       days: Thursday
       time: 2:00-3:50pm
       location: SAL127
-      instructors: Sima Arasteh
+      instructors: TBD
     - id: 30394
       days: Wednesday
       time: 2:00-3:50pm
       location: SAL109
-      instructors: Nathan Bartley
+      instructors: TBD
     - id: 29912
       days: Wednesday
       time: 5:00-6:50pm
       location: SAL109
-      instructors: Nathan Bartley
+      instructors: TBD
     - id: 29914
       days: Wednesday
       time: 3:00-4:50pm
       location: SAL126
-      instructors: Sima Arasteh
+      instructors: TBD
     - id: 29915
       days: Wednesday
       time: 12:00-1:50pm
       location: SAL126
-      instructors: Jeremy Morgan
+      instructors: TBD

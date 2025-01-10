@@ -40,4 +40,5 @@ gem "webrick", "~> 1.7"
 gem "csv"
 gem "logger"
 gem "base64"
-
+gem "tzinfo", "~> 1.2"
+gem "tzinfo-data"

@@ -31,15 +31,14 @@ If in doubt, use a GitHub account with your @usc.edu e-mail address.
 - [ ] Create or have a GitHub account
 
 ## Sign Up with Codio
-For Spring 2024, we will be using the online coding platform Codio for homework submissions.
+For Spring 2025, we will be using the online coding platform Codio for homework submissions.
 (This is the same platform some of you used for CSCI 103L).
 
 To create a Codio account (or use the same account you used for CSCI 103L), follow these steps:
 
-- Login to Blackboard and open the CSCI 104 course.
-- On the left panel of the page, click on the 'Codio Assignments' label.
-- Click on the link that says 'Welcome to Codio' to be redirected to Codio.
-- Setup your new (or existing) account and pay the ~$42 fee as it prompts you to do so.
+- If you already have a Codio account, login first.
+- Click the [Codio join link]({{ site.data.urls.codio_join}}) to join the course
+- Setup your new (or existing) account and pay the semester fee as it prompts you to do so.
 - Now, your Codio account is set up and you've successfully joined the CSCI 104L course!
 
 - [ ] Register with Codio
@@ -294,8 +293,8 @@ Homework grade reports are released through GitHub, and using the above settings
 ## Lab Repository
 We expect you to complete labs in a local IDE so you become more familiar with GitHub and a more standard development setup.
 
-Each week, the lab material will be posted to the sp24-labs repository. To access it:
+Each week, the lab material will be posted to the sp25-labs repository. To access it:
 
 1. Using command line, `cd` to whichever location you would like your lab work to live in.
-2. Type `git clone git@github.com:csci104/sp24-labs.git`
+2. Type `git clone git@github.com:csci104/sp25-labs.git`
 3. Finally, whenever it's time to do lab, just go to the location of this repo and type `git pull` to get the new resources!

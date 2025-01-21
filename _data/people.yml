@@ -2,8 +2,8 @@ instructors:
   - name: Andrew Goodney
     email: goodney@usc.edu
     image: /assets/img/staff/goodney.jpg
-    #hours: 'Monday 10am - 12pm, Wednesday 10am - 12pm'
-    #location:  PHE 406
+    hours: 'Monday 1pm - 3pm, Tuesday/Thursday 1pm - 2pm'
+    location:  GCS Collaborative Spaces (Lower Level 1 or 2)
   - name: Carter Slocum
     email: cpslocum@usc.edu
     image: /assets/img/staff/cpslocum.jpg

@@ -20,7 +20,7 @@ assistants:
 
   - name: Zane Chou
     email: zchou@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/chouZane.jpg
 
   - name: Nejat Can
     email: ncan@usc.edu
@@ -65,7 +65,7 @@ staff:
 
   - name: Tracy Chen
     email: tchen996@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/chenTracy.jpg
 
   - name: Tommy Schindler
     email: tsschind@usc.edu

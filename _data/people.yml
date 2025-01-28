@@ -28,7 +28,7 @@ assistants:
 
   - name: Sophie Hsu
     email: yachuanh@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/hsuSophie.jpg
 
   - name: Jake Bremerman
     email: bremerma@usc.edu
@@ -49,15 +49,15 @@ staff:
 
   - name: Sid Qian
     email: sidqian@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/qianSid.jpg
 
   - name: Amy Rong
     email: shiqingr@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/rongAmy.jpg
 
   - name: Hong Wang
     email: hongwang@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/hongWang.jpg
 
   - name: Yingxin Wu
     email: wuyingxi@usc.edu
@@ -81,7 +81,7 @@ staff:
 
   - name: Jason Liu
     email: jliu3566@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/liuJason.jpg
 
   - name: Jorge Gonzalez
     email: jorgelg@usc.edu

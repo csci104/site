@@ -32,7 +32,7 @@ assistants:
 
   - name: Jake Bremerman
     email: bremerma@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/bremermanJake.jpg
 
   - name: Zhivar Sourati Hassan Zadeh
     email: souratih@usc.edu
@@ -49,7 +49,7 @@ staff:
 
   - name: Sid Qian
     email: sidqian@usc.edu
-    image: /assets/img/staff/qianSid.jpg
+    image: /assets/img/staff/qianSid.png
 
   - name: Amy Rong
     email: shiqingr@usc.edu
@@ -73,7 +73,7 @@ staff:
 
   - name: Josheta Srinivasan
     email: jsriniva@usc.edu
-    image: /assets/img/staff/temp.jpg
+    image: /assets/img/staff/srinivasanJo.jpg
 
   - name: Alexander Severinghaus
     email: severing@usc.edu

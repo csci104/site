@@ -16,7 +16,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, February 21th 11:59PM PST
+      due: Friday, February 21st 11:59PM PST
   - id: hw3
     title: Heaps
     assigned: false

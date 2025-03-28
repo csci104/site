@@ -13,7 +13,7 @@ The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[1].time}}**
   - The test will be set for **1 hour, 40 minutes**
-  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 15th, otherwise you will not be able to use your accommodations.  
+  - If you have USC approved accommodations, you must upload your accommodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday April 3rd, otherwise you will not be able to use your accommodations.  
 - Location: depends on the letter your last name starts with:
   - THH 301 A-G
   - HAR 101 H-M
@@ -66,6 +66,8 @@ The exam is a mix of short answer and coding snippets. We will **visually** grad
 ### Practice Materials
 
 #### Sample Midterms
+
+Note: since the number of midterms (one vs. two) and their timing differs from semester to semester, some of these exams have material not mentioned above. Look for problems that match the topics listed above.
 
  - [Sample Midterm Heap Problems]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024.pdf) - [Solutions]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024-answer-key.pdf)
  - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (partial solutions)

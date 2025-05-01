@@ -16,8 +16,7 @@ nav: Resources
   - {{ location }}
   {% endfor %}
 
-- There will be a one page attendance sheet with 1-2 written questions.
-- The rest will be on Gradescope
+- The exam will be on paper similar to the midterm exams.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference/ChatGPT)**.
 - You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **typed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
@@ -76,8 +75,7 @@ The final is cumulative, so questions related to any unit we have covered may ap
 ### Practice Materials
 
 #### Sample Finals
- - **There is a practice final available on Gradescope:**
-    - CSCI 104L Spring 2024 PRACTICE FINAL
+
  - [Sample Final (Spring 2014)]({{site.baseurl}}/resources/final-a.pdf) (no solutions)
  - [Sample Final (Spring 2014 and others)]({{site.baseurl}}/resources/final-b.pdf) (no solutions)
 

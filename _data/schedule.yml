@@ -19,10 +19,10 @@ exams:
   - name: Final
     time: Wednesday, May 7th, 8 AM Pacific
     location: 
-      - SLH 102 A - D
-      - HAR 101 E - Li
-      - SLH 200 Lo - W
-      - ZHS 252 X - Z
+      - Last name A - D => SLH 102 
+      - Last name E - Li => HAR 101 
+      - Last name Lo - W => SLH 200 
+      - Last name X - Z => ZHS 252
     link: final-info/
 
 lectures:

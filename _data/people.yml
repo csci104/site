@@ -1,17 +1,13 @@
 instructors:
-  - name: Andrew Goodney
-    email: goodney@usc.edu
-    image: /assets/img/staff/goodney.jpg
-    hours: "Monday 1pm - 3pm, Tuesday/Thursday 1pm - 2pm"
-    location: GCS Collaborative Spaces (Lower Level 1 or 2)
   - name: Carter Slocum
     email: cpslocum@usc.edu
     image: /assets/img/staff/cpslocum.jpg
-
-administrators:
-  - name: Tallulah Winston-Schrader
-    email: winstons@usc.edu
-    image: /assets/img/staff/tallulah.jpg
+    hours: "Tuesday/Thursday 2pm - 3pm"
+    location: GCS Collaborative Spaces (Lower Level 1 or 2)
+  - name: Mukund Ragothaman
+    email: raghotha@usc.edu
+    hours: "TBD"
+    location: GCS Collaborative Spaces (Lower Level 1 or 2)
 
 assistants:
   - name: Mingyu Zong

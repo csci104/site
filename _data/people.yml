@@ -2,7 +2,7 @@ instructors:
   - name: Carter Slocum
     email: cpslocum@usc.edu
     image: /assets/img/staff/cpslocum.jpg
-    hours: "Tuesday/Thursday 2pm - 3pm"
+    hours: "Tuesday/Thursday 1:50pm - 2:50pm"
     location: GCS Collaborative Spaces (Lower Level 1 or 2)
   - name: Mukund Ragothaman
     email: raghotha@usc.edu
@@ -10,77 +10,22 @@ instructors:
     location: GCS Collaborative Spaces (Lower Level 1 or 2)
 
 assistants:
-  - name: Mingyu Zong
-    email: mzong@usc.edu
-    image: /assets/img/staff/zongMingyu.jpg
+  - name: Cai, Jie
+    email: caijie@usc.edu
+    image: 
 
-  - name: Zane Chou
-    email: zchou@usc.edu
-    image: /assets/img/staff/chouZane.jpg
+  - name: Hackett, Jade
+    email: sjhacket@usc.edu
+    image: 
 
-  - name: Nejat Can
-    email: ncan@usc.edu
-    image: /assets/img/staff/canNejat.jpg
+  - name: Liu, Hanwen
+    email: liuhanwe@usc.edu
+    image: 
 
-  - name: Sophie Hsu
-    email: yachuanh@usc.edu
-    image: /assets/img/staff/hsuSophie.jpg
+  - name: Fang, Weike
+    email: weikefan@usc.edu
+    image: 
 
-  - name: Jake Bremerman
-    email: bremerma@usc.edu
-    image: /assets/img/staff/bremermanJake.jpg
-
-  - name: Zhivar Sourati Hassan Zadeh
-    email: souratih@usc.edu
-    image: /assets/img/staff/souratih.jpg
-
-staff:
-  - name: Jake Hosking
-    email: hosking@usc.edu
-    image: /assets/img/staff/hosking.jpg
-
-  - name: Blake La
-    email: late@usc.edu
-    image: /assets/img/staff/laBlake.jpg
-
-  - name: Sid Qian
-    email: sidqian@usc.edu
-    image: /assets/img/staff/qianSid.png
-
-  - name: Amy Rong
-    email: shiqingr@usc.edu
-    image: /assets/img/staff/rongAmy.jpg
-
-  - name: Hong Wang
-    email: hongwang@usc.edu
-    image: /assets/img/staff/hongWang.jpg
-
-  - name: Yingxin Wu
-    email: wuyingxi@usc.edu
-    image: /assets/img/staff/wuYingxin.jpg
-
-  - name: Tracy Chen
-    email: tchen996@usc.edu
-    image: /assets/img/staff/chenTracy.jpg
-
-  - name: Tommy Schindler
-    email: tsschind@usc.edu
-    image: /assets/img/staff/schindlerTommy.jpg
-
-  - name: Josheta Srinivasan
-    email: jsriniva@usc.edu
-    image: /assets/img/staff/srinivasanJo.jpg
-
-  - name: Alexander Severinghaus
-    email: severing@usc.edu
-    image: /assets/img/staff/severinghausAlex.jpg
-
-  - name: Jason Liu
-    email: jliu3566@usc.edu
-    image: /assets/img/staff/liuJason.jpg
-
-  - name: Jorge Gonzalez
-    email: jorgelg@usc.edu
-    image: /assets/img/staff/gonzalesGeorge.jpg
-
-graders:
+  - name: Zhao, Yiqi
+    email: yiqizhao@usc.edu
+    #image: /assets/img/staff/bremermanJake.jpg

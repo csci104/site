@@ -7,7 +7,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, January 31th 11:59PM PST
+      due: Friday, September 12th 11:59PM PST
   - id: hw2
     title: Inheritance, Polymorphism, and STL
     assigned: false
@@ -16,7 +16,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, February 21st 11:59PM PST
+      due: Friday, October 3rd 11:59PM PST
   - id: hw3
     title: Heaps
     assigned: false
@@ -25,7 +25,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, March 7th at 11:59PM PST
+      due: Friday, October 17th at 11:59PM PST
   - id: hw4
     title: AVL Trees
     assigned: false
@@ -34,7 +34,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, April 4th at 11:59PM PDT
+      due: Friday, November 14th at 11:59PM PDT
   - id: hw5
     title: Counting, Probability, Recursion
     assigned: false
@@ -43,7 +43,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, April 25th at 11:59PM PDT
+      due: Friday, December 5th at 11:59PM PDT
   - id: hw6
     title: Hash tables
     assigned: false
@@ -52,7 +52,7 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      due: Friday, May 2nd at 11:59PM PDT
+      due: Friday, December 16th at 11:59PM PDT
 
 labs:
   - id: 0

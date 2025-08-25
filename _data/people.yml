@@ -6,7 +6,8 @@ instructors:
     location: GCS Collaborative Spaces (Lower Level 1 or 2)
   - name: Mukund Ragothaman
     email: raghotha@usc.edu
-    hours: "TBD"
+    image: /assets/img/staff/raghotha.jpg
+    hours: "Monday/Wednesday 3pm - 4:30pm"
     location: GCS Collaborative Spaces (Lower Level 1 or 2)
 
 assistants:

@@ -5,7 +5,7 @@ nav: Resources
 ---
 
 ## MT1 Info
-Spring 2025 Canary: The following information HAS NOW been updated for Spring 2025!
+Fall 2025 Canary: The following information HAS NOW been updated for Fall 2025!
 
 ### Overview and Process
 
@@ -13,18 +13,14 @@ The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 40 minutes**
-  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on Thursday February 15th, otherwise you will not be able to use your accommodations.  
-- Location: depends on the letter your last name starts with:
-  - THH 301 A-G
-  - HAR 101 H-M
-  - THH 102 N-T
-  - SOS B2 V-Z
+  - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) by 11am on the week before the exam, otherwise you will not be able to use your accommodations.  
+- Location: SGM 123
 
   - If you have OSAS accommodations you should schedule your exam at the OSAS offices **on Thursday or Friday during OSAS hours**
 
 - The test will be taken on paper. Be prepared a pencil/pen.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
-- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You will be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
+- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You may be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 ### Topics and Style
 

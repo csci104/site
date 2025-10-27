@@ -192,7 +192,6 @@ lectures:
       - Chapter 4.4-4.5,4.7
     notes: 
       - L14_BalancedBST_AVL.pdf
-      - L14_BalancedBST_AVL_Handout.pdf
 
   # 20 Tue 10/25
   - topics:
@@ -212,6 +211,8 @@ lectures:
       - Lewis & Zax Chapter 22
     notes: 
       - L16_HashingIntro.pdf
+      - L16_HashingIntro_Mark.pdf
+      - L16_HashingPractice.pdf
 
   # 22 Tue 11/1
   - topics:

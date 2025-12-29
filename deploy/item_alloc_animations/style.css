@@ -1,0 +1,38 @@
+*{box-sizing:border-box;font-family:Segoe UI,Roboto,Arial,sans-serif}
+body{margin:12px;background:#f7f9fc;color:#222}
+header{margin-bottom:12px}
+.controls{margin-bottom:12px}
+#panel{display:flex;gap:12px}
+#codePanel{flex:1}
+#codeArea{background:#1e1e1e;color:#dcdcdc;padding:12px;border-radius:6px;height:360px;overflow:auto}
+#codeArea .line{white-space:pre; font-family:Consolas, 'Courier New', monospace; padding:2px 0}
+#codeArea .ln{color:#6a9955; display:inline-block; width:36px}
+#codeArea .kw{color:#569cd6; font-weight:700}
+#codeArea .typ{color:#4ec9b0}
+#codeArea .str{color:#ce9178}
+#codeArea .com{color:#6a9955}
+#codeArea .num{color:#b5cea8}
+#codeArea .highlight{background:rgba(255,255,0,0.12)}
+#vizPanel{width:480px;display:grid;grid-template-columns:1fr;gap:12px}
+.memory{background:#fff;border-radius:6px;padding:8px;box-shadow:0 1px 3px rgba(0,0,0,0.15)}
+#vizPanel{position:relative}
+#arrowLayer{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+#stackFrames{min-height:160px;border:1px dashed #ddd;padding:8px}
+.frame{border:1px solid #cfcfcf;padding:6px;margin:6px 0;background:#fff;position:relative}
+.frame .addr{position:absolute;right:6px;top:6px;font-size:12px;color:#777}
+.var{font-size:13px;color:#111;margin-top:4px}
+.heapObj{border:1px solid #9fd3a7;padding:8px;margin:6px 0;background:#eaffed}
+.heapObj.leak{border-color:#b00020;background:#ffecec}
+.pointer{color:#0b5394;font-weight:600}
+#infoArea{min-height:120px}
+.highlight{background:rgba(255,255,0,0.15)}
+button{margin-left:6px}
+.playing{background:#ffefc6}
+.leak{color:#b00020;font-weight:700}
+.valid{color:#166534;font-weight:700}
+.tombstone{margin:6px;padding:6px;border:1px dashed #b00020;background:#fff2f2;color:#b00020;font-weight:700}
+.dangling{color:#b00020;font-weight:700}
+.ref{color:#ad5500;font-weight:700}
+.ref-target{outline:3px solid #ad5500;border-radius:4px;padding:2px}
+/* invalidated (completed) stack frame */
+.frame.invalid{opacity:0.55;background:#f3f3f3}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Item Allocation Animations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Item allocation & lifetime animations</h1>
+    <p>Four examples show stack/heap behavior, what the pointer/reference in main refers to, and whether there is a memory leak.</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <label for="exampleSelect">Select example:</label>
+      <select id="exampleSelect">
+        <option value="ex1">Example 1 — return by value (valid)</option>
+        <option value="ex2">Example 2 — return reference to local (dangling)</option>
+        <option value="ex3">Example 3 — return pointer to heap (valid, requires delete)</option>
+        <option value="ex5">Example 5 — return reference to heap object (valid)</option>
+      </select>
+      <button id="playBtn">Play</button>
+      <button id="stepBtn">Step</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <section id="panel">
+      <div id="codePanel">
+        <pre id="codeArea" class="code"></pre>
+      </div>
+
+      <div id="vizPanel">
+        <div id="stackArea" class="memory">
+          <h3>Stack</h3>
+          <div id="stackFrames"></div>
+        </div>
+
+        <div id="heapArea" class="memory">
+          <h3>Heap</h3>
+          <div id="heapObjects"></div>
+        </div>
+
+        <div id="infoArea" class="memory">
+          <h3>Info</h3>
+          <div id="infoText"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="legend">
+      <h3>Legend</h3>
+      <ul>
+        <li>Stack frames show function name and local variables (address simulated).</li>
+        <li>Heap shows allocated objects (address simulated). New allocations are shown in green.</li>
+        <li>At the end the main() variable's referent is shown and whether a memory leak exists.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

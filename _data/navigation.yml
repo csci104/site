@@ -7,10 +7,14 @@ items:
     short: TAs
     url: /tas/
     icon: /assets/img/icon/question.svg
-  - title: Peer Tutoring
-    short: Tutoring 
-    url: /tutoring/
-    icon: /assets/img/icon/duration.svg
+  # - title: Peer Tutoring
+  #   short: Tutoring 
+  #   url: /tutoring/
+  #   icon: /assets/img/icon/duration.svg
+  - title: Shared folders
+    short: folder
+    url: {{ site.data.urls.slide_location }}
+    icon: /assets/img/icon/google-document.svg 
   - title: Semester schedule
     short: Schedule
     url: /schedule/
@@ -23,18 +27,18 @@ items:
     short: Labs
     url: /labs/
     icon: /assets/img/icon/lab.svg
-  - title: Exercises
-    short: Exercises
-    url: /exercises/
+  - title: EdStem
+    short: EdStem
+    url: https://edstem.org/us/courses/89779/discussion
     icon: /assets/img/icon/admin.svg
   - title: Course syllabus
     short: Syllabus
     url: /syllabus/
     icon: /assets/img/icon/google-document.svg
-  - title: Section list
-    short: Sections
-    url: /sections/
-    icon: /assets/img/icon/list.svg
+  # - title: Section list
+  #   short: Sections
+  #   url: /sections/
+  #   icon: /assets/img/icon/list.svg
   - title: Wiki and guides
     short: Wiki
     url: /wiki/

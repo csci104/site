@@ -5,7 +5,7 @@ nav: Resources
 ---
 
 ## MT1 Info
-Fall 2025 Canary: The following information HAS NOW been updated for Fall 2025!
+Spring 2026 Canary: The following information HAS NOW been updated for Spring 2026!
 
 ### Overview and Process
 

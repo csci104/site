@@ -1,10 +1,10 @@
 items:
-  - title: Staff
+  - title: Staff Contact
     short: Staff
     url: /staff/
     icon: /assets/img/icon/user.svg
-  - title: Help
-    short: help
+  - title: Help (Office Hours)
+    short: Help
     url: /tas/
     icon: /assets/img/icon/question.svg
   # - title: Peer Tutoring
@@ -12,7 +12,7 @@ items:
   #   url: /tutoring/
   #   icon: /assets/img/icon/duration.svg
   - title: Shared folder
-    short: folder
+    short: Drive
     url: {{ site.data.urls.slide_location }}
     icon: /assets/img/icon/google-document.svg 
   - title: Semester schedule

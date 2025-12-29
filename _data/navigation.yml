@@ -3,15 +3,15 @@ items:
     short: Staff
     url: /staff/
     icon: /assets/img/icon/user.svg
-  - title: TA Office Hours
-    short: TAs
+  - title: Help
+    short: help
     url: /tas/
     icon: /assets/img/icon/question.svg
   # - title: Peer Tutoring
   #   short: Tutoring 
   #   url: /tutoring/
   #   icon: /assets/img/icon/duration.svg
-  - title: Shared folders
+  - title: Shared folder
     short: folder
     url: {{ site.data.urls.slide_location }}
     icon: /assets/img/icon/google-document.svg 

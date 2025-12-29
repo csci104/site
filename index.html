@@ -6,7 +6,8 @@ layout: default
 <span class="subtitle">University of Southern California, {{ site.data.course.semester }}</span>
 <span class="subtitle">
   {% for professor in site.data.people.instructors %}
-  {% if not forloop.first %} and {% endif %} {{ professor.name }}
+  {{ professor.name }}
+  <!-- {% if forloop.first %} and {% endif %}  -->
   {% endfor %}
 </span>
 <div class="columns">

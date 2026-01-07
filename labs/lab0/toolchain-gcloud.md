@@ -1,3 +1,10 @@
+---
+layout: asides
+toc: true
+tasks: false
+title: Gcloud Toolchain Setup
+---
+
 # C++ Setup Using Google Cloud Shell (VS Code-style Cloud Editor)
 
 *Note: This guide was create in part with the help of chatGPT, OpenAI (1/7/2026)*.

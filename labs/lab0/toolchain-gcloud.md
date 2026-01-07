@@ -17,7 +17,7 @@ title: Gcloud Toolchain Setup
 
 ## 1. Open Google Cloud Shell Editor
 
-1. Go to https://shell.cloud.google.com
+1. Go to [https://ide.cloud.google.com](https://ide.cloud.google.com)
 2. Sign in with a Google account
 3. Click **Open Editor** (VS Code–style interface)
 
@@ -38,12 +38,13 @@ Each time Cloud Shell restarts, it creates a **new VM**. While it saves your hom
 
 ### Create the file
 
-In the Cloud Shell terminal:
+In the Cloud Shell terminal at the bottom of the screen (click `View..Terminal` if you do not see a Terminal), run:
+
 ```bash
 nano ~/.customize_environment
 ```
 
-Paste the following **exact contents**:
+Paste in the following contents **exactly** (you may need to right-click in the terminal area).
 
 ```sh
 echo "Sourcing CS104 tools" 
@@ -102,7 +103,7 @@ valgrind --version
 
 ## 4. CMake Starter Project (Multi-file, In-Source Build)
 
-> ⚠️ For this course we use **in-source builds** (no `build/` directory).
+Here is the final folder structure and files you will now create:
 
 ### Folder Structure
 ```
@@ -158,9 +159,10 @@ std::string make_greeting(const std::string& name);
 ### `src/greeter.cpp`
 ```cpp
 #include "greeter.h"
+using namespace std;
 
-std::string make_greeting(const std::string& name) {
-    return "Hello, " + name + " from Google Cloud Shell!";
+string make_greeting(const string& name) {
+    return "Hello, " + name + " from CMake + WSL!";
 }
 ```
 
@@ -171,15 +173,16 @@ std::string make_greeting(const std::string& name) {
 #include <iostream>
 #include <string>
 #include "greeter.h"
+using namespace std;
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <name>" << std::endl;
+        cout << "Usage: " << argv[0] << " <name>" << endl;
         return 1;
     }
 
-    std::string name = argv[1];
-    std::cout << make_greeting(name) << std::endl;
+    string name = argv[1];
+    cout << make_greeting(name) << endl;
     return 0;
 }
 ```
@@ -195,7 +198,6 @@ After creating these files you folder structure should look like this:
 
 At the terminal in the lower pane (you may need to click `View..Terminal`)
 ```bash
-cd hello-cmake
 cmake .
 make
 ./hello Alice
@@ -234,7 +236,6 @@ Note: Cloud Shell Editor's extension marketplace is limited compared to desktop 
 Create `.vscode/launch.json` by first running these commands at the terminal (assuming your are in your `hello-cmake` folder at the terminal):
 
 ```bash
-mkdir .vscode
 touch .vscode/launch.json
 ```
 
@@ -243,6 +244,7 @@ Your file tree should now look like:
 ![img](./img/vscode-hello-cmake-file-debug-conifg.png)
 
 Then open the `launch.json` in the editor and paste in these contents and save the file.
+
 ```json
 {
   "version": "0.2.0",
@@ -279,7 +281,7 @@ Then open the `launch.json` in the editor and paste in these contents and save t
 
 ---
 
-## 8. Notes for Students
+## 8. Summary and Reminders
 
 - Your **home directory persists**, but the **VM may reset**
 - Rerun the following commands if tools are missing
@@ -293,4 +295,4 @@ source ~/.customize_environment
 
 ---
 
-✅ You can now develop, debug, and memory-check C++ programs **entirely in your browser**.
+You can now develop, debug, and memory-check C++ programs **entirely in your browser**.

@@ -10,58 +10,46 @@ title: Getting Started
 Before you start out on your 104 journey you're going to have to complete a couple of setup steps.
 Make sure you read each section carefully; if you don't, you may find yourself unable to submit assignments.
 
-## Choose Your Toolchain / Development Environment
-
-Before proceeding with the setup steps below, you'll need to choose a development environment for writing and testing your C++ code. We provide setup guides for three platforms:
-
-### **[Google Cloud Shell](toolchain-gcloud.md){:target="_blank"}** (Officially Supported - RECOMMENDED)
-
-Google Cloud Shell is our **officially supported development environment** and offers several advantages:
-- **Zero installation** - works entirely in your browser
-- **Pre-configured Linux environment** - best matches our autograder
-- **Full Valgrind support** - essential for memory checking
-- **Consistent experience** - same environment for all students
-- **Access from anywhere** - use any laptop or system
-
-### [Windows (WSL)](toolchain-win.md){:target="_blank"}
-
-For students who prefer developing on their own Windows laptop using Windows Subsystem for Linux (WSL).
-
-### [macOS](toolchain-mac.md){:target="_blank"}
-
-For students with Mac laptops. **Important:** Valgrind does NOT work on Apple Silicon Macs (M1/M2/M3/M4). You'll need to use AddressSanitizer instead or use Google Cloud Shell for full Valgrind support.
-
----
 
 ## Register with Github
-
-Once you have installed your desired toolchain, it is now time to create (and/or setup) your Github account.
 
 If you have not created a Github account yet, follow the instructions in this section.
 If you already have a Github account and you wish to use it for this course, you can skip to the next section.
 
-We will be using git extensively this semester for homework and labs.
-GitHub is a development ecosystem based around `git`. In CSCI 104, we will be using Github to host our git repositories and we will take advantage of other GitHub features such as the issue tracker and wiki.
+We will be using git extensively this semester in labs.
+GitHub is a development ecosystem based around git.
+In CSCI 104, we will be using Github to host our git repositories and we will take advantage of other GitHub features such as the issue tracker and wiki.
 
-Start by visiting Github's <a href="https://github.com/signup/free" target="_blank">signup page</a>.
+We start by visiting Github's <a href="https://github.com/signup/free" target="_blank">signup page</a>.
 You are free to choose your username; it does not necessarily need to match your USC username.
-Likewise, you are welcome to any email, though we recommend your `@usc.edu` email.  Either way, just **remember which email you use as you will need it later**. You will be sent an email to verify your email address.
+Likewise, you are welcome to any email, just **remember which email you use as you will need it later**.
+You will be sent an email to verify your email address.
 Do that before proceeding.
 
 If in doubt, use a GitHub account with your @usc.edu e-mail address.
 
 - [ ] Create or have a GitHub account
 
+## Sign Up with Codio
+For Spring 2025, we will be using the online coding platform Codio for homework submissions.
+(This is the same platform some of you used for CSCI 103L).
 
-## Join the Course GitHub Classroom
-Register your GitHub account with the course using GitHub Classroom:
+To create a Codio account (or use the same account you used for CSCI 103L), follow these steps:
 
-- Open the join link: [USC CSCI 104 Github Classroom]({{site.data.urls.github_classroom}}){:target="_blank"}
-- Sign in with the same GitHub account you set up above (preferably your @usc.edu email).
-- Authorize GitHub Classroom if prompted.
-- Accept the course assignment if/when prompted to create your private course repository.
+- If you already have a Codio account, login first.
+- Click the [Codio join link]({{ site.data.urls.codio_join}}) to join the course
+- Setup your new (or existing) account and pay the semester fee as it prompts you to do so.
+- Now, your Codio account is set up and you've successfully joined the CSCI 104L course!
 
-- [ ] Joined the GitHub Classroom and created your course repo
+- [ ] Register with Codio
+
+## Connect Your Codio Account to Your GitHub Account
+Now that you've successfully set up your Codio account, it's time to link it with your GitHub account!
+
+- Login to Codio and follow the instructions on this page: [Connect to GitHub](https://docs.codio.com/common/settings/github.html){:target="_blank"}
+- Use the same GitHub account from the first step above. If in doubt, use a Github account with your @usc.edu email address.
+
+- [ ] Connect Codio to GitHub
 
 ## Install Git
 
@@ -77,6 +65,28 @@ If you are using Windows, we recommend installing [git bash](https://git-scm.com
 Git bash is a separate shell that provides access to git as well as other command line utilities.
 If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
 
+## Virtual Machine
+While homeworks will be submitted through Codio (which means you can write your code on Codio), we *strongly* recommend that you do your development in a local IDE—to encourage this, all labs this semester will be done locally, and are not available through Codio.
+
+To be able to run your code locally, there are a number of tools that you will need. Instead of installing all of these individually, we created two options for you: using Docker or a VM. We strongly  strongly recommend using Docker, as it avoids emulating an entire desktop by giving you easy and low-latency command-line access to all the tools you need! Plus, you can use your own local editor to develop and write code. If you do use the VM, you are on your own- no course staff uses it!
+
+
+### Docker
+Follow the directions in this Github **[repository](https://github.com/csci104/docker){:target="_blank"}.**
+
+If you want more information on how Docker works and how to use it, you can read the <a href="https://github.com/csci104/docker/wiki/Usage">additional guide</a>.
+
+- [ ] Read the additional guide or promise you know what you're doing.
+
+
+### VM
+
+Alternatively, you can download and install the Course VM, the instructions for which are available [in the wiki]({{ site.baseurl }}/wiki/vm/).
+This provides a full-featured virtual OS with graphical interface, etc.
+It is larger, stores your files on a separate "virtual disk" that is not directly accessible from your computer's host OS, and can sometimes get corrupted, so please push your work to Github often.
+
+- [ ] Install Docker or a virtual machine.
+
 
 ## Configuring an SSH Key
 One of the main features of using a distributed version control system such as git is having a complete backup of your code and its history.
@@ -85,15 +95,18 @@ To facilitate this communication, you need to generate a pair of encryption keys
 In this step, we will generate the set of keys required to use SSH.
 This will be done manually through the command line.
 
-**Important**: where you run the following instructions will depend on whether you're using GCloud, Windows, or Mac.  
-**If you are using Gcloud, you must connect to the GCloud: [https://ide.cloud.google.com](https://ide.cloud.google.com), and once loaded, open a Terminal and run the following commands in the VS Code terminal area.
-
-If you're on Windows, start Ubuntu and VSCode (`code . &` at the Ubuntu prompt).  You can run the following commands from the Ubuntu terminal or the WSL terminal in VS Code.
+**Important**: where you run the following instructions will depend on whether you're using Docker or the VM.
+**If you are using Docker, you must open a terminal on your NORMAL operating system. This is because Docker reboots itself from a pre-canned image everytime, which would erase all git configurations you had**.
+If you're on Windows, installing Git should either give you Git Bash or access to unix commands in CMD.
+**If you are using the VM, you have to open Terminal inside the virtual desktop**.
+Going forward, whichever applies to you will be the terminal we refer to when we ask you to open or write commands in a terminal.
 
 - [ ] Open the correct terminal based on the instructions above.
 
 **Note**: you will be copying and pasting several commands in this lab.
-You can copy/paste the following commands to the terminal. You may need to right-click in Terminal and choose Copy/Paste.
+If you are using the VM, you can use `ctrl + shift + c` to copy from Terminal and `ctrl + shift + v` to paste into Terminal.
+You can also right-click in Terminal and choose Copy/Paste.
+If you're using Docker, copy and paste should work how it normally does on your operating system.
 
 Use the following command to generate an SSH key, **replacing `ttrojan@usc.edu` with the email associated with your Github account**:
 
@@ -108,12 +121,12 @@ The path may look slightly different than the one below, but that's fine.
 
 ```
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/username/.ssh/id_rsa):
+Enter file in which to save the key (/home/csci104/.ssh/id_rsa):
 ```
 
 After that, you will be prompted for a passphrase to secure your private key.
-**We STRONGLY recommend you do NOT generate a passphrase (because you'll have to enter it each time you upload your code to Github) and simply hit Enter when prompted for a passphrase**.  If you do decide to enter a passphrase, please note that your password will not show up in terminal as you type it.
-When you are done typing your password (**again, it's best to just hit `enter` and not use a passphrase**) .
+**We recommend you do NOT generate a passphrase (because you'll have to enter it each time you upload your code to Github) and simply hit Enter when prompted for a passphrase**.  If you do decide to enter a passphrase, please note that your password will not show up in terminal as you type it.
+When you are done typing your password (don't enter anything if you do not wish to set a passphrase), press `enter`.
 You will be prompted to verify your passphrase.
 Re-enter your passphrase (or nothing if you did not set one) and press `enter`.
 
@@ -121,8 +134,8 @@ Upon success, you should receive confirmation that your key was generated.
 It will most likely look something like this:
 
 ```
-Your identification has been saved in /home/username/.ssh/id_rsa.
-Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+Your identification has been saved in /home/csci104/.ssh/id_rsa.
+Your public key has been saved in /home/csci104/.ssh/id_rsa.pub.
 The key fingerprint is:
 SHA256:vC+4OG2u1PIeE0OKX9jiFFHuLnkYCBSsvIW8ybD873H ttrojan@usc.edu
 The key's randomart image is:
@@ -190,6 +203,8 @@ You can customize this action by setting what command you want to invoke to open
 
 - `nano` is a simple and easy-to-use shell text editor
 - `emacs`, `vi`, and `vim` have a steeper learning curve but offer more utility
+- `subl -n -w` will open Sublime if you have that installed (won't work on Docker)
+- `gedit` will open the default Ubuntu text editor (also doesn't work on Docker)
 
 Choose one of them (`nano` is likely the easiest) and run the following command:
 
@@ -250,7 +265,7 @@ In your [profile settings](https://github.com/settings/profile):
 In your [SSH key settings](https://github.com/settings/ssh):
 
 - Click `Add SSH Key`.
-- Provide a name for the key, such as "CS104 Key" or "MacBook Key".
+- Provide a name for the key, such as "CS104 VM Key" or "MacBook Key".
 - Display the contents of your `id_rsa.pub` file by running `cat ~/.ssh/id_rsa.pub` in your terminal.
 - Select all the contents of your `id_rsa.pub` file all the way through the end of the last line where your email is displayed and then copy/paste them into the key field.
   Make sure you copy the entire contents of the `id_rsa.pub` file.
@@ -278,8 +293,8 @@ Homework grade reports are released through GitHub, and using the above settings
 ## Lab Repository
 We expect you to complete labs in a local IDE so you become more familiar with GitHub and a more standard development setup.
 
-Each week, the lab material will be posted to the `sp26-labs` repository. To access it:
+Each week, the lab material will be posted to the sp25-labs repository. To access it:
 
 1. Using command line, `cd` to whichever location you would like your lab work to live in.
-2. Type `git clone git@github.com:csci104/sp26-labs.git`
+2. Type `git clone git@github.com:csci104/sp25-labs.git`
 3. Finally, whenever it's time to do lab, just go to the location of this repo and type `git pull` to get the new resources!

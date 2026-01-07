@@ -1,14 +1,25 @@
-# Windows C++ Setup (VS Code + WSL / Ubuntu)
+---
+layout: asides
+toc: true
+tasks: false
+title: Windows WSL Toolchain Setup
+---
 
-> **Audience:** CS 104 Students  
-> **Goal:** Install VS Code, g++, gdb, CMake, and Valgrind on Windows  
-> **Toolchain:** Windows Subsystem for Linux (WSL – Ubuntu)
+# C++ Setup Using Windows WSL (VS Code + WSL / Ubuntu)
+
+*Note: This guide was create in part with the help of chatGPT, OpenAI (1/7/2026)*.
+
+> **Audience:** CS104 Students  
+> **Goal:** Build, debug, and memory-check C++ programs using a Windows-based Linux environment
+> **Platform:** Windows Subsystem for Linux (WSL – Ubuntu)
 
 ---
 
 ## 1. Install Visual Studio Code (Windows)
 
-1. Go to https://code.visualstudio.com
+If you do NOT have VS Code installed on your Windows laptop: 
+
+1. Go to [https://code.visualstudio.com](https://code.visualstudio.com)
 2. Download **VS Code for Windows**
 3. Install with default options
 
@@ -19,9 +30,15 @@ Enable command-line launch:
 
 ---
 
-## 2. Install WSL (Ubuntu Linux)
+## 2. Install WSL (Ubuntu Linux) and Configure Toolchain
+
+### 2a. Install WSL
 
 Open **PowerShell as Administrator** and run:
+
+![img](./img/wsl-powershell.png)
+
+At the prompt, run:
 
 ```powershell
 wsl --install
@@ -30,20 +47,20 @@ wsl --install
 This will:
 - Enable WSL
 - Install **Ubuntu**
-- Prompt you to reboot
+- Prompt you to reboot (potentially)
 
 ---
 
-## 3. Set Up Ubuntu (First Launch)
+### 2b. Set Up Ubuntu (First Launch)
 
-After reboot:
-1. Open **Ubuntu** from the Start Menu
+After reboot, go to the Start Menu and:
+1. Open **Ubuntu** (from the Start Menu)
 2. Choose a **Linux username and password**
   - We strongly recommend you use the same username as your USC username (i.e. if your @usc.edu email is `ttrojan@usc.edu`, then we recommend making your WSL username `ttrojan`).
 
 ---
 
-## 4. Update Linux Packages
+### 2c. Update Linux Packages
 
 In the Ubuntu terminal:
 
@@ -54,7 +71,7 @@ sudo apt upgrade -y
 
 ---
 
-## 5. Install C++ Development Tools
+### 2d. Install C++ Development Tools
 
 ```bash
 sudo apt install -y \
@@ -72,8 +89,8 @@ sudo cp lib/*.a /usr/lib
 cd ~
 ```
 
-Verify:
-
+## 3. Verify Installation and Setup WSL Extension
+### 3a. Verify Installed Tools
 ```bash
 g++ --version
 gdb --version
@@ -81,9 +98,10 @@ cmake --version
 valgrind --version
 ```
 
+![Expected tool version results](./img/gcloud-tools-version-verify.png)
 ---
 
-## 6. Install VS Code WSL Extension
+### 3b. Install VS Code WSL Extension
 
 In **VS Code (Windows)**:
 1. Open Extensions
@@ -91,7 +109,7 @@ In **VS Code (Windows)**:
 
 ---
 
-## 7. Open Your Project in WSL
+### 3c. Open Your Project in WSL
 
 From Ubuntu:
 
@@ -101,8 +119,11 @@ code .
 
 ---
 
-## 8. CMake Starter Project (Multi-file, In-Source Build)
+## 4. CMake Starter Project (Multi-file, In-Source Build)
 
+Here is the final folder structure and files you will now create:
+
+### Folder Structure
 ```
 hello-cmake/
 ├── CMakeLists.txt
@@ -114,8 +135,20 @@ hello-cmake/
     └── greeter.h
 ```
 
-### CMakeLists.txt
+Create the test folders:
 
+```bash
+mkdir -p hello-cmake/src hello-cmake/.vscode
+cd hello-cmake
+```
+
+Create the necessary files in the specified folders.  **Ensure you click on the appropriate folder before creating a new file in VSCode**.   The button to create a new file looks like:
+
+![img](./img/vscode-new-file.png)
+
+---
+
+### `CMakeLists.txt`
 ```cmake
 cmake_minimum_required(VERSION 3.16)
 project(hello LANGUAGES CXX)
@@ -129,8 +162,9 @@ add_executable(hello
 )
 ```
 
-### src/greeter.h
+---
 
+### `src/greeter.h`
 ```cpp
 #pragma once
 #include <string>
@@ -138,59 +172,94 @@ add_executable(hello
 std::string make_greeting(const std::string& name);
 ```
 
-### src/greeter.cpp
+---
 
+### `src/greeter.cpp`
 ```cpp
 #include "greeter.h"
+using namespace std;
 
-std::string make_greeting(const std::string& name) {
+string make_greeting(const string& name) {
     return "Hello, " + name + " from CMake + WSL!";
 }
 ```
 
-### src/main.cpp
+---
 
+### `src/main.cpp`
 ```cpp
 #include <iostream>
 #include <string>
 #include "greeter.h"
+using namespace std;
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        std::cerr << "Usage: " << argv[0] << " <name>" << std::endl;
+        cout << "Usage: " << argv[0] << " <name>" << endl;
         return 1;
     }
 
-    std::string name = argv[1];
-    std::cout << make_greeting(name) << std::endl;
+    string name = argv[1];
+    cout << make_greeting(name) << endl;
     return 0;
 }
 ```
 
+After creating these files you folder structure should look like this:
+
+![img](./img/vscode-hello-cmake-file-structure.png)
+
 ---
 
-## 9. Build and Run (In-Source)
+## 5. Build and Run (In-Source)
 
+
+At the terminal in the lower pane (you may need to click `View..Terminal`)
 ```bash
-cd hello-cmake
 cmake .
 make
 ./hello Alice
-valgrind --tool=memcheck ./hello Alice
-cd ..
 ```
+---
+
+You should see the program run and greet Alice!
+
+## 6. Valgrind (Memory Checking)
+
+Now run with valgrind.  You should see the same output as before but with the additional Valgrind banner and debug output.
+
+```bash
+valgrind --tool=memcheck ./hello Alice
+```
+
+![img](./img/valgrind-output.png)
 
 ---
 
-## 10. VS Code Debugging
+## 7. Debugging with Cloud Editor (VS Code GUI)
 
-If VS Code prompts you to "Select debugger" when you add a debug configuration, pick "C++ (GDB/LLDB)" (this option is provided by the Microsoft C/C++ extension). If that option is not shown, choose "Install an extension for C++" extension (ms-vscode.cpptools) from the Extensions view and reopen the Run & Debug panel.
+To use the integrated debugging GUI front end of VSCode is most easily accomplished with a `launch.json` file in a `.vscode` subfolder.  For VSCode to automatically find and use this configuration file, you must point VSCode to the top-level project folder where the `.vscode` subfolder resides.  Regardless of where your terminal indicates it is, VSCode must be opened to the specific project folder.  
 
-Notes for WSL users:
-- Open the project from the WSL Ubuntu terminal using `code .` (this runs the Windows VS Code connected to your WSL environment). The Remote - WSL extension makes the C/C++ tooling operate inside WSL so the debugger and paths refer to the Linux side (e.g. `/usr/bin/gdb` and `/home/<you>/...`).
-- When you create the configuration, choose the GDB option ("C++ (GDB/LLDB)") and use the sample below. The important fields to check are `program` (path to the built executable inside the WSL workspace) and `miDebuggerPath`/`MIMode` (pointing to `/usr/bin/gdb`).
+So, choose `File..Open Folder` and choose the `hello-cmake` folder your created and click `OK`.  
 
-Example `launch.json` for WSL / gdb (place inside `.vscode/launch.json`):
+- Open the Extensions view (Ctrl+Shift+X)
+- Search for "C/C++ Debugger"
+- Install the extension authored by **Microsoft** (or any C/C++ GDB extension available in the marketplace)
+- Reload the editor when prompted
+
+![img](./img/wsl-cpp-debug-vscode-extension.png)
+
+Create `.vscode/launch.json` by first running these commands at the terminal (assuming your are in your `hello-cmake` folder at the terminal):
+
+```bash
+touch .vscode/launch.json
+```
+
+Your file tree should now look like:
+
+![img](./img/vscode-hello-cmake-file-debug-conifg.png)
+
+Then open the `launch.json` in the editor and paste in these contents and save the file.
 
 ```json
 {
@@ -200,9 +269,9 @@ Example `launch.json` for WSL / gdb (place inside `.vscode/launch.json`):
       "name": "Debug hello (gdb)",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/hello-cmake/hello",
+      "program": "${workspaceFolder}/hello",
       "args": ["Alice"],
-      "cwd": "${workspaceFolder}/hello-cmake",
+      "cwd": "${workspaceFolder}",
       "MIMode": "gdb",
       "miDebuggerPath": "/usr/bin/gdb",
       "setupCommands": [
@@ -213,22 +282,33 @@ Example `launch.json` for WSL / gdb (place inside `.vscode/launch.json`):
 }
 ```
 
+### Debug Steps
+
+1. Open `main.cpp`
+2. Click left of a line number to set a breakpoint
+3. Press **Run..Start Debugging**
+
+---
+
 If VS Code still shows the "Select debugger" list after the C/C++ extension is installed, choose "C++ (GDB/LLDB)". If you are editing/launching from the Windows side (not via Remote - WSL) and want to debug a Windows build, you would instead install the Windows C++ debugger support ("C++ extension for Visual Studio") and pick the appropriate Windows debugger.
 
+Notes for WSL users:
+- Open the project from the WSL Ubuntu terminal using `code .` (this runs the Windows VS Code connected to your WSL environment). The Remote - WSL extension makes the C/C++ tooling operate inside WSL so the debugger and paths refer to the Linux side (e.g. `/usr/bin/gdb` and `/home/<you>/...`).
+- When you create the configuration, choose the GDB option ("C++ (GDB/LLDB)") and use the sample below. The important fields to check are `program` (path to the built executable inside the WSL workspace) and `miDebuggerPath`/`MIMode` (pointing to `/usr/bin/gdb`).
+
+
 Troubleshooting checklist:
-- Make sure you built the executable in WSL (run `cmake . && make` inside WSL) so `${workspaceFolder}/hello-cmake/hello` exists.
+- Make sure you built the executable in WSL (run `cmake . && make` inside WSL) so the executable `hello` exists.
 - Confirm `gdb` is installed in WSL: `which gdb` and `gdb --version`.
 - If the debug session fails to start, open the Debug Console for errors — common causes are incorrect `program` path or missing `miDebuggerPath`.
 
 
 ---
 
-## 11. Valgrind
+## 8. Summary and Reminders
 
-```bash
-valgrind ./hello Alice
-```
+- This environment should match our autograder's exactly
 
 ---
 
-✅ You now have a Linux-grade C++ toolchain on Windows using WSL.
+You now have a Linux-grade C++ toolchain on Windows using WSL.

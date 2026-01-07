@@ -5,7 +5,7 @@ items:
     icon: /assets/img/icon/user.svg
   - title: Help (Office Hours)
     short: Help
-    url: /tas/
+    url: /help/
     icon: /assets/img/icon/question.svg
   # - title: Peer Tutoring
   #   short: Tutoring 
@@ -13,7 +13,7 @@ items:
   #   icon: /assets/img/icon/duration.svg
   - title: Shared folder
     short: Drive
-    url: {{ site.data.urls.slide_location }}
+    url: https://drive.google.com/drive/folders/1os_8HeqN1Q_S9RGZi82V4xyy5x-kvoTJ?usp=drive_link
     icon: /assets/img/icon/google-document.svg 
   - title: Semester schedule
     short: Schedule

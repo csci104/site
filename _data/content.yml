@@ -70,7 +70,7 @@ labs:
     week: Week 2
     date: 1/20
     title: Git
-    assigned: true
+    assigned: false
     topics: Git, GitHub
     slides: GitLab.pdf
 
@@ -79,7 +79,7 @@ labs:
     week: Week 3
     date: 1/27
     title: GDB
-    assigned: true
+    assigned: false
     topics: Debugging
     slides: GDBLab.pdf
 
@@ -88,7 +88,7 @@ labs:
     week: Week 4
     date: 2/3
     title: Makefiles
-    assigned: true
+    assigned: false
     topics: Make, Build Systems
     slides: MakeLab.pdf
 
@@ -97,7 +97,7 @@ labs:
     title: Inheritance
     week: Week 5
     date: 2/10
-    assigned: true
+    assigned: false
     topics: Inheritance, Polymorphism, OOP
     slides: InheritanceLab.pdf
 
@@ -106,7 +106,7 @@ labs:
     week: Week 6
     date: 2/17
     title: Heaps
-    assigned: true
+    assigned: false
     topics: Heaps, Priority Queues
     slides: HeapsLab.pdf
 
@@ -127,7 +127,7 @@ labs:
     date: 3/3
     title: Templates
     topics: OOP
-    assigned: true
+    assigned: false
     slides: TemplatesLab.pdf
 
   - id: 8
@@ -135,7 +135,7 @@ labs:
     week: Week 9
     date: 3/10
     title: Binary Trees
-    assigned: true
+    assigned: false
     topics: AVL, BST
     slides: BstAvlLab.pdf
 
@@ -153,7 +153,7 @@ labs:
     week: Week 10
     date: 3/24
     title: Backtracking
-    assigned: true
+    assigned: false
     topics: Recursion, Graph Algorithms
     slides: BacktrackingLab.pdf
 
@@ -163,7 +163,7 @@ labs:
     date: 3/31
     title: Hashtables
     topics: Hashtables, Hashing
-    assigned: true
+    assigned: false
     slides: HashtablesLab.pdf
 
 
@@ -180,7 +180,7 @@ labs:
     week: Week 13
     date: 4/14
     title: Counting
-    assigned: true
+    assigned: false
     topics: Counting
     slides: CountingLab.pdf
 
@@ -189,7 +189,7 @@ labs:
     week: Week 14
     date: 4/21
     title: Probability & Number Theory
-    assigned: true
+    assigned: false
     topics: Probability, Number Theory
     slides: ProbabilityNumberTheoryLab.pdf
 

@@ -52,17 +52,6 @@ If in doubt, use a GitHub account with your @usc.edu e-mail address.
 
 - [ ] Create or have a GitHub account
 
-
-## Join the Course GitHub Classroom
-Register your GitHub account with the course using GitHub Classroom:
-
-- Open the join link: [USC CSCI 104 Github Classroom]({{site.data.urls.github_classroom}}){:target="_blank"}
-- Sign in with the same GitHub account you set up above (preferably your @usc.edu email).
-- Authorize GitHub Classroom if prompted.
-- Accept the course assignment if/when prompted to create your private course repository.
-
-- [ ] Joined the GitHub Classroom and created your course repo
-
 ## Install Git
 
 You can skip this section if you have git installed or are using the VM, which has git installed.
@@ -275,11 +264,24 @@ Homework grade reports are released through GitHub, and using the above settings
 - [ ] Upload your SSH key by adding the contents of your `id_rsa.pub`
 - [ ] Enable Github and Github email notifications
 
-## Lab Repository
+
+## Join the Course GitHub Classroom and Starter Assignment
+Connect your GitHub account with the course using GitHub Classroom:
+
+- Open the join link: [USC CSCI 104 Github Classroom]({{site.data.urls.github_classroom}}){:target="_blank"}
+- Sign in with the same GitHub account you set up above (preferably your @usc.edu email).
+- Authorize GitHub Classroom if prompted.
+- Click on the `classroom-starter` assignment you see in our Github Classroom, or click this [link](https://classroom.github.com/a/2WPSyHEo) directly. Accept the course assignment if/when prompted to create your copy of this "dummy" repository. You do not need to do anything with it now, but we may use it in lab 1 to practice with `git`.  **But you will not have access to the lab repository described below until you do this step successfully**.
+
+- [ ] Joined the GitHub Classroom and joined the starter assignment
+
+
+
+## Labs Repository
 We expect you to complete labs in a local IDE so you become more familiar with GitHub and a more standard development setup.
 
-Each week, the lab material will be posted to the `sp26-labs` repository. To access it:
+Each week, the lab material will be posted to the `labs` repository. To access it:
 
 1. Using command line, `cd` to whichever location you would like your lab work to live in.
-2. Type `git clone git@github.com:csci104/sp26-labs.git`
+2. Type `git clone git@github.com:csci104/labs.git`
 3. Finally, whenever it's time to do lab, just go to the location of this repo and type `git pull` to get the new resources!

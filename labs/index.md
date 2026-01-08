@@ -9,10 +9,12 @@ Lab sessions are held every week and will be conducted by a team of TAs and Tuto
 
 ## Policies
 
- - **You may miss 1 lab session without penalty**.  This excused absence should ONLY be used in the case of illness and not just *a busy week*.
- - You must attend the lab in person.  If you become severely ill or need to quarantine (e.g. for COVID), you may be eligible for an excused absence but must let your lab leader know **in advance** (not after the fact) and they will indicate how you can make up the lab.
- - Labs are graded **CR/NC**.  You MUST get checked off with a live staff person before the end of the lab session.  If you are struggling with the lab you must ask questions during the lab to show you are trying.  In that way, the lab staff will be able to give you **credit** for your effort.  If you do not show effort/ask questions and have little to no work to show for your lab period, you will be marked as **no credit**.
- - Some collaboration (in pairs) is allowed for labs but it must be blatantly clear to the lab staff that both members are equally contributing.  One member should not be telling (or showing) the other student what to write, but instead, you can help your fellow student if they encounter an error or question.  If a staff member, directs you to work separately or more independently you need to alter your approach.
+ - **Attendance:** You must attend lab in person and in your registered section (seating is limited; do not attend a different lab).
+ - **Allowed absences:** You may miss at most **2 labs** during the semester and still receive credit for the lab portion. You have **2 excused lab sessions** (illness/emergency only). To use an excused absence, email your lab instructor in advance.
+ - **Grading (CR/NC):** To receive credit, attend for the vast majority of the session, participate in exercises, and achieve **50% or more** on any assessments. Effort matters — ask questions and engage; lack of effort/work may result in no credit.
+ - **Collaboration:** Light pair collaboration is allowed and encouraged only when both partners clearly contribute. Do not direct or code for your partner. Staff may require independent work if needed.
+ - **Make‑ups:** Labs generally cannot be made up after the session unless pre‑approved for documented emergencies; otherwise, a missed lab counts toward your allowed absences.
+ - **Disputes:** If you have a dispute about attendance, contact your discussion/lab leader within **1 week**.
 
 ## Schedule
 

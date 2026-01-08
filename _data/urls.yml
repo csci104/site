@@ -3,7 +3,7 @@ qa_tool: EdStem
 piazza: https://edstem.org/us/courses/89779/discussion
 #admin_piazza: httpx://piazza.com/usc/spring2023/csci104/home
 discussion: https://edstem.org/us/courses/89779/discussion
-discussion-join: https://edstem.org/us/courses/89779/discussion
+discussion-join: https://edstem.org/us/join/qw9gPK
 #admin_discussion-join: httpx://piazza.com/usc/spring2023/csci104
 calendar_fa25: https://calendar.google.com/calendar/embed?src=c_69c16e2e4689c2b7eb50fdb6af4e3f1bc8e9efa77a7fba116b02d7821a04268a%40group.calendar.google.com&ctz=America%2FLos_Angeles
 calendar: https://calendar.google.com/calendar/embed?src=c_u2lqs93tskk0tkkm1b2a0e6ae4%40group.calendar.google.com&ctz=America%2FLos_Angeles
@@ -13,6 +13,7 @@ calendar: https://calendar.google.com/calendar/embed?src=c_u2lqs93tskk0tkkm1b2a0
 # discord: https://discord.gg/YNAzZkF
 vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 
+github_classroom: https://classroom.github.com/classrooms/244087996-usc-csci104-spring2026-classroom
 blackboard: https://brightspace.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
 # these are the same, the html and md files should be searched and fixed

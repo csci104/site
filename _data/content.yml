@@ -44,7 +44,7 @@ assignments:
       programming: Fri., Mar 27th
 #      due: Fri., November 14th at 11:59PM PDT
   - id: hw5
-    title: Counting, Probability, Recursion
+    title: Backtracking and Recursion
     assigned: false
     regrade_form:
     submit_link:
@@ -55,7 +55,7 @@ assignments:
       programming: Fri., Apr 10th
 #      due: Fri., December 5th at 11:59PM PDT
   - id: hw6
-    title: Hash tables
+    title: Counting, Probability, and Hash tables
     assigned: false
     regrade_form:
     submit_link:

@@ -170,30 +170,15 @@ lectures:
     notes: 
       - L11_GraphTraversals.pdf
 
-  # 13 Tue 10/4
-  - topics:
-      - Recursion - All combinations
-    chapters:
-      - Chapter 2
-      - Class Notes
-    notes: 
-      - L12_BacktrackingSearch.pdf
-
-  # 15 Tue 10/11
-  - topics:
-      - Recursion - Backtracking
-      - Iterators
-    chapters:
-      - Chapter 4.3-4.4
-    notes: 
-      - L13_Iterators.pdf
   
   # 17 Tue 10/18
   - topics:
+      - Iterators
       - Binary Search Trees
     chapters:
       - Chapter 4.3-4.4
     notes: 
+      - L13_Iterators.pdf
       - L14_BalancedBST_AVL.pdf
 
   # 18 Thur 10/20
@@ -232,6 +217,25 @@ lectures:
       - Lewis & Zax Chapter 23
     notes: 
       - L17_Counting.pdf
+
+  # 13 Tue 10/4
+  - topics:
+      - Recursion - All combinations
+    chapters:
+      - Chapter 2
+      - Class Notes
+    notes: 
+      - L12_BacktrackingSearch.pdf
+
+  # 15 Tue 10/11
+  - topics:
+      - Recursion - Backtracking
+    chapters:
+      - Chapter 2
+      - Class Notes
+    notes: 
+      - L12_BacktrackingSearch.pdf
+
 
   # 23 Thur 11/3
   - topics:

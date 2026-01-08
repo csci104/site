@@ -81,9 +81,11 @@ We will work hard to post HW scores and feedback within 1 week of the homework's
 
 Any disputes with posted grades **must** be raised within **7 days** (unless specifically noted) of the score posting.  Then follow the process below for the type of regrade you are requesting.  
 
-Fill out this [**HW regrade form**]({{site.data.urls.regrade_form}}){:target="_blank"} **within 7 days** of grades being released. The graders will review your regrade request and if appropriate make any updates to your score on Brightspace. They will also respond via the Admin and Grading discussion board with a reply whether or not your score changed.
+For assessments on Gradescope (Written Homeworks), you MUST use the Regrade Request feature to make your request (no emails or EdStem posts will be accepted).
 
-Any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  Finally, please note that regrades are not for "fixing" your code.  For example: If there was just one line off that caused all the tests to fail, that might be a viable reason for a regrade but with the automated tests provided, you will know that your code fails when you submit. It is your responsibility to ensure your code compiled, tested, and all files were submitted on Github which can be verified by the "Verification" process outlined at the end of each homework.
+For coding assessments, post a private note on EdStem detailing why you believe the assignment was factually graded wrong (or the wrong rubric item was applied).  
+
+Any regrade request will result in us trying to give the fairest possible grade to you, which could be higher or lower than the one you received originally.  Finally, please note that regrades are not for "fixing" your code.  For example: If there was just one line off that caused all the tests to fail, that might seem like a viable reason for a regrade, but with the automated tests provided, you will know that your code fails when you submit. It is your responsibility to ensure your code compiled, tested, and all files were submitted on Github which can be verified by the "Verification" process outlined at the end of each homework.
 
 ### Exam Regrades
 Exam regrade requests must be made through the Gradescope regrade facility.  Exam regrade requests must be submitted **within 7 days** of when the exam scores are posted.  After that, your exam grade is final.

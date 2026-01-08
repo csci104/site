@@ -15,7 +15,9 @@ layout: default
     <h2>General</h2>
     <div class="links">
       {% for item in site.data.navigation.items %}
-      {% if item.index != false %}
+      {% if item.external == true %}
+      <a href="{{ item.url }}"><img src="{{ site.baseurl }}{{ item.icon }}">{{ item.title }}</a>
+      {% elsif item.index != false %}
       <a href="{{ site.baseurl }}{{ item.url }}"><img src="{{ site.baseurl }}{{ item.icon }}">{{ item.title }}</a>
       {% endif %}
       {% endfor %}

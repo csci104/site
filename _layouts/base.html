@@ -16,7 +16,11 @@
       {% for item in site.data.navigation.items %}
       {% if item.menubar != false %}
       <div class="item">
+        {% if item.external == true %}
+        <a href="{{ item.url }}">{{ item.short }}</a>
+        {% else %}
         <a href="{{ site.baseurl }}{{ item.url }}">{{ item.short }}</a>
+        {% endif %}
       </div>
       {% endif %}
       {% endfor %}

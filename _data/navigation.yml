@@ -2,10 +2,12 @@ items:
   - title: Staff Contact
     short: Staff
     url: /staff/
+    external: false
     icon: /assets/img/icon/user.svg
   - title: Help (Office Hours)
     short: Help
     url: /help/
+    external: false
     icon: /assets/img/icon/question.svg
   # - title: Peer Tutoring
   #   short: Tutoring 
@@ -15,26 +17,32 @@ items:
     short: Drive
     url: https://drive.google.com/drive/folders/1os_8HeqN1Q_S9RGZi82V4xyy5x-kvoTJ?usp=drive_link
     icon: /assets/img/icon/google-document.svg 
+    external: true
   - title: Semester schedule
     short: Schedule
     url: /schedule/
     icon: /assets/img/icon/calendar.svg
+    external: false
   - title: Homework
     short: Homework
     url: /homework/
     icon: /assets/img/icon/google-document.svg
+    external: false
   - title: Labs
     short: Labs
     url: /labs/
     icon: /assets/img/icon/lab.svg
+    external: false
   - title: EdStem
     short: EdStem
     url: https://edstem.org/us/courses/89779/discussion
     icon: /assets/img/icon/admin.svg
+    external: false
   - title: Course syllabus
     short: Syllabus
     url: /syllabus/
     icon: /assets/img/icon/google-document.svg
+    external: false
   # - title: Section list
   #   short: Sections
   #   url: /sections/
@@ -43,7 +51,9 @@ items:
     short: Wiki
     url: /wiki/
     icon: /assets/img/icon/world.svg
+    external: false
   - title: Resources
     short: Resources
     url: /resources/
     icon: /assets/img/icon/admin.svg
+    external: false

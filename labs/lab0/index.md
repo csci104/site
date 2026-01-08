@@ -14,7 +14,7 @@ Make sure you read each section carefully; if you don't, you may find yourself u
 
 Before proceeding with the setup steps below, you'll need to choose a development environment for writing and testing your C++ code. We provide setup guides for three platforms:
 
-### **[Google Cloud Shell](toolchain-gcloud.md){:target="_blank"}** (Officially Supported - RECOMMENDED)
+### **[Google Cloud Shell](./toolchain-gcloud.html){:target="_blank"}** (Officially Supported - RECOMMENDED)
 
 Google Cloud Shell is our **officially supported development environment** and offers several advantages:
 - **Zero installation** - works entirely in your browser
@@ -23,11 +23,11 @@ Google Cloud Shell is our **officially supported development environment** and o
 - **Consistent experience** - same environment for all students
 - **Access from anywhere** - use any laptop or system
 
-### [Windows (WSL)](toolchain-win.md){:target="_blank"}
+### [Windows (WSL)](./toolchain-win.html){:target="_blank"}
 
 For students who prefer developing on their own Windows laptop using Windows Subsystem for Linux (WSL).
 
-### [macOS](toolchain-mac.md){:target="_blank"}
+### [macOS](./toolchain-mac.html){:target="_blank"}
 
 For students with Mac laptops. **Important:** Valgrind does NOT work on Apple Silicon Macs (M1/M2/M3/M4). You'll need to use AddressSanitizer instead or use Google Cloud Shell for full Valgrind support.
 

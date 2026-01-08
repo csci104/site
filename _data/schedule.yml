@@ -7,18 +7,23 @@ show:
 exams:
 
   - name: Midterm 1 
-    time: 7pm-9pm Oct 17th
-    location: SGM 123
+    time: 7pm-8:40pm Feb 26th
+    location: TBA
     #link: mt1-info/
 
   - name: Midterm 2 
-    time: 7pm-9pm Nov 21st
-    location: SGM 123
+    time: 7pm-8:40pm Apr 2nd
+    location: TBA
     #link: mt2-info/
-  
+
+  - name: Midterm 3
+    time: 7pm-8:40pm Apr 23rd
+    location: TBA
+    #link: final-info/
+
   - name: Final
-    time: 11am-1pm Dec 13th
-    location: THH 201
+    time: 8am-9:40am May 6th
+    location: TBA
     #link: final-info/
 
 lectures:
@@ -48,7 +53,10 @@ lectures:
       - L02b_Classes.pdf
       - L02e_LinkedLists.pdf
     recording: 
-    
+
+  - topics: 
+    - MLK Holiday
+
   # 3 Tue 8/30
   - topics:
       - Linked Lists (cont.)
@@ -130,6 +138,9 @@ lectures:
       - Chapter 4.1-4.2
     notes: 
       - L09_PQHeaps.pdf
+
+  - topics: 
+    - President's Day Holiday
 
   # 10 Thur 9/22
   - topics:
@@ -235,11 +246,18 @@ lectures:
       - Probability
     chapters:
       - Lewis & Zax Chapter 27
+    notes: 
+      - L18_Probability.pdf
+
+  # 25
+  - topics:
+      - Probability
+    chapters:
       - Lewis & Zax Chapter 28
     notes: 
       - L18_Probability.pdf
 
-  # 25 Thur 11/10
+  # 26
   - topics:
       - Number Theory
     chapters:
@@ -248,7 +266,7 @@ lectures:
     notes: 
       - L19_NumberTheory.pdf
  
-  # 26 Tue 11/15
+  # 27
   - topics:
       - Number Theory
       - Hash Functions
@@ -258,7 +276,7 @@ lectures:
       - L19_NumberTheory.pdf
       - L20_HashFunctions.pdf
  
-  # 27 Thur 11/17
+  # 28
   - topics:
       - Hash Functions and Bloom Filters 
     chapters:
@@ -266,7 +284,7 @@ lectures:
     notes: 
       - L20_HashFunctions.pdf
 
-  # 28 Tue 11/22
+  # 29
   - topics:
       - Tries
       - Skip Lists
@@ -277,7 +295,7 @@ lectures:
       - L22_Tries.pdf
       - L21_SkipLists.pdf
   
-  # 30 Tue 11/29
+  # 30 
   - topics:
       - Amortized Analysis
       - Merge Trees

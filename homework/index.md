@@ -6,13 +6,10 @@ title: Homework
 
 # Homework
 
-Homework will be assigned once every **7-10 days**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homework assignments will typically be split into two components: a written component and a coding component. Note: These components are submitted separately and have different late policies.
+Homework will be assigned once every **2 weeks**. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homework assignments will typically be split into two components: a written component and a coding component. Note: These components are submitted separately and have different late policies.
 
-Each student will be responsible for creating and using a GitHub repo for the development and submission of all assignments. You will be using the **git** source code management tool to maintain your homework code. 
+Each student will be responsible for use Github Classroom to generate a `git` repository for their coding work and also for submission. You will be using the **git** source code management tool to maintain your homework code. 
 
-Please read the submission instructions and policies below **carefully**!  Failure to follow the process (of pushing the appropriate files to Github and submitting your git commit SHA on our website) will result in a 0 on the assignment. 
-
-Assignments are assigned and submitted on Codio. To set up your Codio account, see the directions in lab 0. Each assignment has a written portion and a programming portion (except assignment #2, which is programming only).
 
 <h2 id="schedule">Schedule</h2>
 <table class="standard assignments">
@@ -53,13 +50,13 @@ Checkout our [**Tools and Links page**]({{site.baseurl}}/resources)
 
 In order to properly submit your assignment, **please follow the course [submission instructions]({{ site.baseurl }}/homework/submission-instructions/)** which will show you the steps to submit a particular `git` commit of your code. 
 
-For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).  The programming submission must be made correctly via your github account and your **`git` commit SHA** must be submitted on the appropriate submission page using the process described on the [submission instructions]({{ site.baseurl }}/homework/submission-instructions/) page.  Read and follow those instructions carefully for each homework.  **Failure to do so may lead to a 0 on the assignment** even though you may have had all the code working on your machine.  Much of software development requires following strict processes, so it is important you start to understand and follow those processes.
+For each assignment, a precise time will be specified on the due date (usually at 11:59 PM PST).  The programming submission must be made correctly via your Git repo using the process described on the [submission instructions]({{ site.baseurl }}/homework/submission-instructions/) page.  Read and follow those instructions carefully for each homework.  **Failure to do so may lead to a 0 on the assignment** even though you may have had all the code working on your machine.  Much of software development requires following strict processes, so it is important you start to understand and follow those processes.
 
 **Important Note:**  You will NOT receive an exception for failing to follow these instructions!
 
 For example, often times students forget to commit/push a file that is part of their solution to Github.  If they had followed the submission instructions and re-cloned their repo to a temporary folder and attempted to build their assignment code, they would have easily found the issue.  We cannot accept files that were not submitted or files where you submitted "the wrong version".  We can only grade what you submitted.
 
-In addition to making sure your submission is on time, **please make sure that the code you submit is formatted and works as expected with `g++`**.  We will grade your assignments using <code>g++</code> at the command line.  You are free to use other compilers or IDEs to develop your code, but in the end, it has to work with `g++` on the course Docker container or virtual machine.
+In addition to making sure your submission is on time, **please make sure that the code you submit is formatted and works as expected with `g++`**.  We will grade your assignments using <code>g++</code> at the command line.  You are free to use other compilers or IDEs to develop your code, but in the end, it has to work with `g++` on our recommended coding environment (Google Cloud Shell).
 
 ## Policies
 
@@ -92,7 +89,7 @@ To ensure that your grades reflect your mastery of the material presented in thi
 
 Use of (Generative) Artificial Intelligence and Academic Integrity.  Only by spending significant time working and struggling with the assignments yourself or with course staff will you gain the skills needed to excel on exams.  While use of (generative) AI is not strictly prohibited on coding and written assignments, it is STRONGLY DISCOURAGED!  Even if you write significant code on your own, as soon as you ask AI to generate an outline of how to approach the code or help debug some code you’ve written, etc. you have ALREADY lost valuable learning experience, much less if you start by asking AI to write significant portions of code for you.  Only through failure and the ensuing struggle will you develop the mental skills and recall needed to perform well on the exams.  
 
-Significant, obvious copying of code or written work from other students or other sources IS prohibited and may be referred to the Office of Academic Integrity and a sanction applied. 
+**Significant, obvious copying of code or written work from other students or other sources IS prohibited and may be referred to the Office of Academic Integrity and a sanction applied.** 
 
  Violations of this policy will likely result in an F in the course. If you are suspected of violating the academic integrity code of conduct the process will be as outlined at the [Office of Academic Integrity](https://academicintegrity.usc.edu/what-should-i-expect/process/):
 

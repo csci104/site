@@ -37,12 +37,13 @@ items:
     short: EdStem
     url: https://edstem.org/us/courses/89779/discussion
     icon: /assets/img/icon/admin.svg
-    external: false
+    external: true
   - title: Course syllabus
     short: Syllabus
-    url: /syllabus/
+#    url: /syllabus/
+    url: https://drive.google.com/file/d/14B4TDT-GC7P5e27snm6HKsJ2EJFu77z-/view?usp=drive_link
     icon: /assets/img/icon/google-document.svg
-    external: false
+    external: true
   # - title: Section list
   #   short: Sections
   #   url: /sections/

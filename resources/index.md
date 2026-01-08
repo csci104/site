@@ -7,14 +7,20 @@ toc: true
 
 Additional information will be posted here throughout the course as needed.
 
-## Course Docker Container or VM Image
+## Toolchain Installation Guides
+
+- **[Google Cloud Shell]({{site.baseurl}}/labs/lab0/toolchain-gcloud.html){:target="_blank"}** (Officially Supported - RECOMMENDED)
+- [Windows (WSL)]({{site.baseurl}}/labs/lab0/toolchain-win.html){:target="_blank"}
+- [macOS]({{site.baseurl}}/labs/lab0/toolchain-mac.html){:target="_blank"}
+
+
+## Docker VM Container
 
 We strongly recommend you use the Docker container which will allow you to run the Linux `g++` compiler and other tools on your PC, while still maintaining your `git` repository and files on your local drive and using your favorite native editor. We recommend [Visual Code]({{ site.data.urls.visual_code }}). 
 
 Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
 
  - [CS 104 Docker Repository]({{site.data.urls.docker_repo}}). Instructions are in the [README.md]({{site.data.urls.docker_repo}}/blob/main/README.md)
- - [CS 104 VM Image]({{site.data.urls.vm}})
 
 ## 104 Resources
 

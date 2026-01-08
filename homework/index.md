@@ -10,9 +10,11 @@ Homework will be assigned once every **2 weeks**. It will be graded, and require
 
 Each student will be responsible for use Github Classroom to generate a `git` repository for their coding work and also for submission. You will be using the **git** source code management tool to maintain your homework code. 
 
-**Note: All deadlines are 11:59 pm Pacific on the indicated date.**
 
 <h2 id="schedule">Schedule</h2>
+
+**Note: All deadlines are 11:59 pm Pacific on the indicated date.**
+
 <table class="standard assignments">
   <thead>
     <tr>

@@ -120,9 +120,9 @@
         {line:5, action:'alloc-heap', objName:'new Item', members:[{name:'(heap).w',addr:'0x4000c0a0',val:4},{name:'(heap).y',addr:'0x4000c0a4',val:'"hi"'}], addr:'0x4000c0a0'},
         {line:5, action:'set-pointer', frameName:'buildItem', ptrName:'x', targetAddr:'0x4000c0a0'},
         {line:9, action:'set-ref', refName:'i', targetBase:'0x4000c0a0', memberNames:['(heap).w','(heap).y']},
-  {line:6, action:'invalidate', addr:'0xbe0'},
-        {line:6, action:'pop', addr:'0xbe0'},
-        {line:6, action:'return', to:'main'},
+  {line:7, action:'invalidate', addr:'0xbe0'},
+        {line:7, action:'pop', addr:'0xbe0'},
+        {line:9, action:'return', to:'main'},
         {line:10, action:'info', text:'In main, i is a reference bound to the heap object at 0x4000c0a0; i.w and i.y refer to the heap members.'},
         {action:'invalidate', addr:'0xbf4'},
         {line:11, action:'leak-highlight', addr:'0x4000c0a0'}

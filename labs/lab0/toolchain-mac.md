@@ -113,7 +113,7 @@ cmake --version
 ![Expected tool version results](./img/gcloud-tools-version-verify.png)
 ---
 
-## 5. Recommended VS Code Extensions
+## 4. Recommended VS Code Extensions
 
 - C/C++ (Microsoft)
 - CMake Tools
@@ -123,30 +123,43 @@ cmake --version
 
 ---
 
-## 4. CMake Starter Project (Multi-file, In-Source Build)
+## 5. CS104 Folder and CMake Starter Project (Multi-file, In-Source Build)
 
 Here is the final folder structure and files you will now create:
 
 ### Folder Structure
+
 ```
-hello-cmake/
-├── CMakeLists.txt
-├── .vscode/
-│   └── launch.json
-└── src/
-    ├── main.cpp
-    ├── greeter.cpp
-    └── greeter.h
+cs104-repos/
+└──hello-cmake/
+   ├── CMakeLists.txt
+   ├── .vscode/
+   │   └── launch.json
+   └── src/
+      ├── main.cpp
+      ├── greeter.cpp
+      └── greeter.h
 ```
 
-Create the test folders:
+We recommend making a `cs104`  or `cs104-repos` folder under your `Documents` folder.  So, decide where you want to create this folder and navigate their in your terminal.  If you want to create your course folder under `Documents`, you would enter the commands:
+
+```bash
+cd $HOME
+cd Documents
+mkdir cs104-repos
+cd cs104-repos
+```
+
+> **Important Note**: *Each time you want to clone a new repo or work on your coding homeworks or labs, you can navigate to the appropriate repo folder by starting a terminal and using the command `cd ~/Documents/cs104-repos/<repo_name>`.
+
+Now you'll create the folders needed for the test example, `hello-cmake`. Enter the commands:
 
 ```bash
 mkdir -p hello-cmake/src hello-cmake/.vscode
 cd hello-cmake
 ```
 
-Create the necessary files in the specified folders.  **Ensure you click on the appropriate folder before creating a new file in VSCode**.   The button to create a new file looks like:
+Now, create the necessary files in the specified folders.  **Ensure you click on the appropriate folder before creating a new file in VSCode**.   The button to create a new file looks like:
 
 ![img](./img/vscode-new-file.png)
 

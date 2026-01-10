@@ -12,9 +12,9 @@ Make sure you read each section carefully; if you don't, you may find yourself u
 
 ## Choose Your Toolchain / Development Environment
 
-Before proceeding with the setup steps below, you'll need to choose a development environment for writing and testing your C++ code. We provide setup guides for three platforms:
+Before proceeding with the setup steps below, you'll need to choose a development environment for writing and testing your C++ code. We provide setup guides for three platforms. **For this lab, we recommend running through the Google Cloud Shell and Editor instructions, so that you always have it as an option.** Then, later, you can run through the Windows and Mac instructions if you decide you'd prefer to run your compiler toolchain locally.
 
-### **[Google Cloud Shell](./toolchain-gcloud.html){:target="_blank"}** (Officially Supported - RECOMMENDED)
+### **[Google Cloud Shell and Editor](./toolchain-gcloud.html){:target="_blank"}** (Officially Supported - RECOMMENDED)
 
 Google Cloud Shell is our **officially supported development environment** and offers several advantages:
 - **Zero installation** - works entirely in your browser
@@ -54,7 +54,7 @@ If in doubt, use a GitHub account with your @usc.edu e-mail address.
 
 ## Install Git
 
-You can skip this section if you have git installed or are using the VM, which has git installed.
+You can skip this section if you have git installed already or are using the Google CLoud Shell environment, which has git installed.
 
 In order to actually install the git command line tools, go to the [git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} and follow the instructions for your operating system.
 
@@ -63,8 +63,7 @@ If you're installing on MacOS, installing the Homebrew package manager should al
 ### Special Notes for Windows
 
 If you are using Windows, we recommend installing [git bash](https://git-scm.com/download/win), which will be provided as an option in the installer.
-Git bash is a separate shell that provides access to git as well as other command line utilities.
-If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
+Git bash is a separate shell that provides access to git as well as other command line utilities. If you have more experience with git or other command line tools, installing git and the other unix commands directly to your CMD is a pretty convenient option.
 
 
 ## Configuring an SSH Key
@@ -75,9 +74,11 @@ In this step, we will generate the set of keys required to use SSH.
 This will be done manually through the command line.
 
 **Important**: where you run the following instructions will depend on whether you're using GCloud, Windows, or Mac.  
-**If you are using Gcloud, you must connect to the GCloud: [https://ide.cloud.google.com](https://ide.cloud.google.com), and once loaded, open a Terminal and run the following commands in the VS Code terminal area.
+**If you are using Gcloud**, you must connect to the GCloud: [https://ide.cloud.google.com](https://ide.cloud.google.com), and once loaded, open a Terminal in your HOME folder (`cd $HOME`) and run the following commands in the VS Code terminal area.
 
-If you're on Windows, start Ubuntu and VSCode (`code . &` at the Ubuntu prompt).  You can run the following commands from the Ubuntu terminal or the WSL terminal in VS Code.
+If you're on **Windows**, start WSL/Ubuntu and VSCode (`code . &` at the Ubuntu prompt).  You can run the following commands from the Ubuntu terminal or the WSL terminal in VS Code.
+
+If you are on **Mac** you can just open a Terminal.
 
 - [ ] Open the correct terminal based on the instructions above.
 
@@ -249,13 +250,12 @@ In your [SSH key settings](https://github.com/settings/ssh):
 In your [notification settings](https://github.com/settings/notifications), apply the following settings:
 
 - In your notification settings
-    - Automatically watch repositories: ON
+    - Watching: Email OFF, Github ON
     - Participating: Email ON, Web ON
-    - Watching: Email OFF, Web ON
-- In your email notification settings:
-    - Comments on Issues and Pull Requests: ON
+- In your **Customize Email Updates** :
     - Pull Request reviews: ON
     - Pull Request pushes: ON
+    - Comments on Issues and Pull Requests: ON
     - Include your own updates: OFF
 
 Homework grade reports are released through GitHub, and using the above settings will ensure that you receive email notifications when your grade report is available.
@@ -277,11 +277,15 @@ Connect your GitHub account with the course using GitHub Classroom:
 
 
 
-## Labs Repository
+## CS104 folder and Labs Repository
 We expect you to complete labs in a local IDE so you become more familiar with GitHub and a more standard development setup.
 
+If you are on **Windows** or **Mac**, We suggest you create a `cs104` folder somewhere each to access from the command line and Explorer/Finder.
+
+  We suggest something under `Documents`.  
 Each week, the lab material will be posted to the `labs` repository. To access it:
 
 1. Using command line, `cd` to whichever location you would like your lab work to live in.
 2. Type `git clone git@github.com:csci104/labs.git`
+3. It should download and create a folder named `labs` where you will then find a `README.md` file.  You can verify by typing `cd labs` and then `ls` to list the files. You should see `README.md` listed.
 3. Finally, whenever it's time to do lab, just go to the location of this repo and type `git pull` to get the new resources!

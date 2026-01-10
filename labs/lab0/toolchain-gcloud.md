@@ -101,21 +101,37 @@ valgrind --version
 ![Expected tool version results](./img/gcloud-tools-version-verify.png)
 ---
 
-## 4. CMake Starter Project (Multi-file, In-Source Build)
+## 4. CS104 folder and CMake Starter Project (Multi-file, In-Source Build)
 
 Here is the final folder structure and files you will now create:
 
 ### Folder Structure
+
 ```
-hello-cmake/
-├── CMakeLists.txt
-├── .vscode/
-│   └── launch.json
-└── src/
-    ├── main.cpp
-    ├── greeter.cpp
-    └── greeter.h
+cs104-repos/
+└──hello-cmake/
+   ├── CMakeLists.txt
+   ├── .vscode/
+   │   └── launch.json
+   └── src/
+      ├── main.cpp
+      ├── greeter.cpp
+      └── greeter.h
 ```
+
+We recommend making a `cs104`  or `cs104-repos` (you can name it what you like, but avoid spaces in the name) folder under your HOME folder.
+
+To do so, use these commands at the prompt.
+
+```bash
+cd $HOME
+mkdir cs104-repos
+cd cs104-repos
+```
+
+> **Important Note**: *Each time you want to clone a new repo or work on your coding homeworks or labs, you can navigate to the appropriate repo folder by starting a terminal and using the command `cd ~/cs104-repos/<repo_name>`.
+
+Now you'll create the folders needed for the test example, `hello-cmake`. Enter the commands:
 
 Create the test folders:
 

@@ -73,8 +73,9 @@ labs:
     date: 1/13
     title: Class Setup
     assigned: true
-    topics: GitHub, Docker, Codio
+    topics: Compiler Toolchain, VSCode, and Github
     #slides:
+    slide_msg: No slides
 
 
   - id: 1
@@ -84,7 +85,8 @@ labs:
     title: Git
     assigned: false
     topics: Git, GitHub
-    slides: GitLab.pdf
+    #slides: GitLab.pdf
+    slide_msg: See shared folder
 
   - id: 2
     folder: lab2
@@ -93,7 +95,8 @@ labs:
     title: GDB
     assigned: false
     topics: Debugging
-    slides: GDBLab.pdf
+#    slides: GDBLab.pdf
+    slide_msg: See shared folder
 
   - id: 3
     folder: lab3
@@ -102,7 +105,8 @@ labs:
     title: Makefiles
     assigned: false
     topics: Make, Build Systems
-    slides: MakeLab.pdf
+#    slides: MakeLab.pdf
+    slide_msg: See shared folder
 
   - id: 4
     folder: lab4
@@ -111,7 +115,8 @@ labs:
     date: 2/10
     assigned: false
     topics: Inheritance, Polymorphism, OOP
-    slides: InheritanceLab.pdf
+#    slides: InheritanceLab.pdf
+    slide_msg: See shared folder
 
   - id: 5
     folder: lab5
@@ -120,7 +125,9 @@ labs:
     title: Heaps
     assigned: false
     topics: Heaps, Priority Queues
-    slides: HeapsLab.pdf
+#    slides: HeapsLab.pdf
+    slide_msg: See shared folder
+
 
   - id: 6
     folder: lab6
@@ -129,9 +136,10 @@ labs:
     title: Midterm 1 Review Lab
     assigned: false
     topics:
-    slides:
-      - Midterm1Lab_Student.pdf
-      - Midterm1Lab.pdf
+#    slides:
+#      - Midterm1Lab_Student.pdf
+#      - Midterm1Lab.pdf
+    slide_msg: See shared folder
 
   - id: 7
     folder: lab7
@@ -140,7 +148,8 @@ labs:
     title: Templates
     topics: OOP
     assigned: false
-    slides: TemplatesLab.pdf
+#    slides: TemplatesLab.pdf
+    slide_msg: See shared folder
 
   - id: 8
     folder: lab8
@@ -149,7 +158,8 @@ labs:
     title: Binary Trees
     assigned: false
     topics: AVL, BST
-    slides: BstAvlLab.pdf
+#    slides: BstAvlLab.pdf
+    slide_msg: See shared folder
 
   - id: 9
     folder:
@@ -159,6 +169,7 @@ labs:
     assigned: false
     # topics: Hashtables
     # slides: lab8.pdf
+    slide_msg: See shared folder
 
   - id: 10
     folder: lab9
@@ -167,7 +178,8 @@ labs:
     title: Backtracking
     assigned: false
     topics: Recursion, Graph Algorithms
-    slides: BacktrackingLab.pdf
+#    slides: BacktrackingLab.pdf
+    slide_msg: See shared folder
 
   - id: 11
     folder: lab10
@@ -176,7 +188,8 @@ labs:
     title: Hashtables
     topics: Hashtables, Hashing
     assigned: false
-    slides: HashtablesLab.pdf
+#    slides: HashtablesLab.pdf
+    slide_msg: See shared folder
 
 
   - id: 12
@@ -185,7 +198,8 @@ labs:
     date: 4/7
     title: Midterm 2 Review Lab
     assigned: false
-    slides: Midterm2Lab.pdf
+#    slides: Midterm2Lab.pdf
+    slide_msg: See shared folder
 
   - id: 13
     folder: lab12
@@ -194,7 +208,8 @@ labs:
     title: Counting
     assigned: false
     topics: Counting
-    slides: CountingLab.pdf
+#    slides: CountingLab.pdf
+    slide_msg: See shared folder
 
   - id: 14
     folder: lab13
@@ -203,7 +218,8 @@ labs:
     title: Probability & Number Theory
     assigned: false
     topics: Probability, Number Theory
-    slides: ProbabilityNumberTheoryLab.pdf
+#    slides: ProbabilityNumberTheoryLab.pdf
+    slide_msg: See shared folder
 
   - id: 15
     folder: lab14
@@ -211,7 +227,8 @@ labs:
     date: 4/28
     title: Final Review
     assigned: false
-    slides: FinalLab.pdf
+#    slides: FinalLab.pdf
+    slide_msg: See shared folder
 
 
 

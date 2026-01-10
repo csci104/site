@@ -277,15 +277,28 @@ Connect your GitHub account with the course using GitHub Classroom:
 
 
 
-## CS104 folder and Labs Repository
-We expect you to complete labs in a local IDE so you become more familiar with GitHub and a more standard development setup.
+## Labs Repository
+We expect you to complete labs in your VSCode environment.  In the **VS Code Terminal**, navigate to your `cs104` or `cs104-repos` folder if you haven't:
 
-If you are on **Windows** or **Mac**, We suggest you create a `cs104` folder somewhere each to access from the command line and Explorer/Finder.
+**GCloud / Windows WSL**
 
-  We suggest something under `Documents`.  
-Each week, the lab material will be posted to the `labs` repository. To access it:
+```bash
+cd ~/cs104-repos
+```
 
-1. Using command line, `cd` to whichever location you would like your lab work to live in.
-2. Type `git clone git@github.com:csci104/labs.git`
-3. It should download and create a folder named `labs` where you will then find a `README.md` file.  You can verify by typing `cd labs` and then `ls` to list the files. You should see `README.md` listed.
-3. Finally, whenever it's time to do lab, just go to the location of this repo and type `git pull` to get the new resources!
+**Mac** 
+(Replace `Documents` with the appropriate path where your `cs104-repos` folder is located.)
+
+```bash
+cd ~/Documents/cs104-repos
+```
+
+
+Each week, the lab material will be posted to the `labs` repository. Let us perform the one-time `clone` of the repo. 
+
+1. Type `git clone git@github.com:csci104/labs.git`
+2. It should download and create a folder named `labs` where you will then find a `README.md` file.  You can verify by typing `cd labs` and then `ls` to list the files. You should see `README.md` listed. If successful, your terminal should look something like this.
+
+![img](./img/vscode-labs-clone.png)
+
+In the future, whenever it's time to do lab, just go to the location of this repo (e.g. `cd ~/cs104-repos/labs`) and type `git pull` to get the new resources!

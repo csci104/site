@@ -66,6 +66,14 @@ touch ~/.cloudshell/no-apt-get-warning
 
 git config --global user.email "ttrojan@usc.edu"
 git config --global user.name "Tommy Trojan"
+
+git config --global color.ui auto
+git config --global core.editor "nano"
+git config --global init.defaultBranch main
+git config --global core.autocrlf input
+git config --global push.default simple
+
+
 ```
 
 Using only your ARROW keys, backspace and delete, change `ttrojan` to your USC email username and change `Tommy Trojan` to your name.

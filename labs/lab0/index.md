@@ -133,6 +133,8 @@ The key's randomart image is:
 
 ## Git Configuration
 
+**Note for Google Cloud Shell users**: You should have already put these commands in your `.customize_environment` file.  You can skip over this and just run `git config --list` to confirm the settings are already in place.
+
 The next step is to configure your git profile in your development environment.
 This is important because your profile information is used to annotate your contributions to a repository/project.
 It may not seem like a big deal when you are the only one committing to a repository.
@@ -216,6 +218,8 @@ git config --global push.default simple
 ```
 
 - [ ] Set the push strategy to `simple`
+
+### Confirm Your Settings
 
 You can double check your settings using the following command:
 

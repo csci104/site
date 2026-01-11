@@ -264,7 +264,6 @@ Homework grade reports are released through GitHub, and using the above settings
 - [ ] Upload your SSH key by adding the contents of your `id_rsa.pub`
 - [ ] Enable Github and Github email notifications
 
-
 ## Join the Course GitHub Classroom and Starter Assignment
 Connect your GitHub account with the course using GitHub Classroom:
 

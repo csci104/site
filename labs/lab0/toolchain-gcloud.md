@@ -63,8 +63,12 @@ sudo cp lib/*.a /usr/lib
 cd $HOME
 mkdir -p ~/.cloudshell
 touch ~/.cloudshell/no-apt-get-warning
+
+git config --global user.email "ttrojan@usc.edu"
+git config --global user.name "Tommy Trojan"
 ```
 
+Using only your ARROW keys, backspace and delete, change `ttrojan` to your USC email username and change `Tommy Trojan` to your name.
 Save and exit (`Ctrl+o`, `Enter`, `Ctrl+x`).
 
 ---

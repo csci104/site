@@ -293,10 +293,10 @@ cd ~/Documents/cs104-repos
 ```
 
 
-Each week, the lab material will be posted to the `labs` repository. Let us perform the one-time `clone` of the repo. 
+Each week, the lab material will be posted to the `resources` repository. Let us perform the one-time `clone` of the repo. 
 
 1. Type `git clone git@github.com:csci104/labs.git`
-2. It should download and create a folder named `labs` where you will then find a `README.md` file.  You can verify by typing `cd labs` and then `ls` to list the files. You should see `README.md` listed. If successful, your terminal should look something like this.
+2. It should download and create a folder named `resources` where you will then find a `README.md` file.  You can verify by typing `cd labs` and then `ls` to list the files. You should see `README.md` listed. If successful, your terminal should look something like this.
 
 ![img](./img/vscode-labs-clone.png)
 

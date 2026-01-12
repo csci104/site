@@ -25,7 +25,7 @@ hw1:
       number: 6
       title: Linked List Recursion Coding
       points: 35
-    - writeup: sparsematrix.md
+    - writeup: ulliststr.md
       number: 7
       title: Unrolled Linked List
       points: 65

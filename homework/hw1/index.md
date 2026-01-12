@@ -11,34 +11,36 @@ hwpath: hw1
 ## {{page.title}}
 
 + Due: See [homework page]({{site.url}}/homework/index.html)
-+ Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
-   - Once you have cloned your `hw-username` repo, create this `{{page.hwpath}}` folder underneath it (i.e. `hw-username/{{page.hwpath}}`)
-   - If your `hw-username` repo has not been created yet, please do your work in a separate folder and you can copy over relevant files before submitting
-
-## Written Portion
++ Written portion: Submitted on Gradescope
++ Coding portion: (Not ready) - Use Github Classroom [signup link]()
+  - Push your code and then run through the verification process listed at the end of this page before the deadline to receive full credit.
 
 ### A Few Notes on Repositories
 
-1. Never clone one repo into another.  If you have a folder `cs104` on your laptop (wherever you created your Github keys from Lab 0) and you clone your personal repo `hw-username` under it (i.e. `cs104/hw-username`) then whenever you want to clone some other repo, you need to do it back up in the `cs104` folder or other location, NOT in the `hw-username` folder.
-1. Your repo is created when you register with our website (aka `curricula` system) as outlined in the Lab 0 writeup on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps, accepted the invite to the Github organization that should be generated and emailed to you after you register with our website, and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.urls.piazza}}) to let your instructors know that your repository needs to be created.  Be sure to include your USC username and github username for reference.
+1. Never clone one repo into another.  If you have a folder named `cs104-repos` from your Lab 0 stup and you clone your HW1 repo provided by Github Classroom  under it (i.e. `cs104-repos/hw1-ttrojan`) then whenever you want to clone some other repo, you need to do it back up in the `cs104-repos` folder or other location; NOT in the `hw1-ttrojan` folder.
+1. Each coding homework will be started via Github Classroom via a customized startup link (usually listed at the top of the homework).  To `clone` it and then push files to it, you'll need to have setup your SSH keys as described in the Lab 0 writeup on the [Labs Page]({{site.url}}/labs/index.html). If you've followed those steps, used the Github Classroom sign up link (following any directions it indicates) and still cannot access your repository, you can then make a private post on the [class Q&A]({{site.data.urls.piazza}}) or visit TA office hours. In any Q&A post, be sure to include your USC username and github username for reference.
+
 
 ### Skeleton Code
 
-On many occasions we will want to distribute skeleton code, tests, and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.urls.github}}/resources ), under our class GitHub site.  You should clone this repository to your laptop (**but only if you have not already done this as part of lab**) and do a `git pull` regularly to check for updates. 
+On many occasions we will want to distribute tests and other pertinent files. To do this we have made a separate repository, [`resources`]({{site.data.urls.github}}/resources ), under our class GitHub site.  You should go to your `cs104-repos` clone this repository to your laptop (**but only if you have not already done this as part of lab**) and do a `git pull` regularly to check for updates. 
 
 ```
 $ git clone git@github.com:{{ site.data.urls.github_org }}/resources
 ```
 
-Again, be sure you don't clone this repo into your `hw-username` repo but at some higher up point like in a `cs104` folder on your laptop.  You can then manually copy (in your OS's GUI or at the command line) the skeleton files from `resources/{{page.hwpath}}` to `hw-username/{{page.hwpath}}`.
+Again, be sure you don't clone this repo into some other repo but at some higher up point like in your `cs104` or `cs104-repos` folder on your laptop.  You can then manually copy (in your OS's GUI or at the command line) the skeleton files from `resources/{{page.hwpath}}` to your individual HW repo from Github classroom and add/commit/push the new files.
 
-For example if you are in the folder containing both the `resources` and `hw-username` folders/repos, you could enter the following command at the terminal:
+For example if you are in the folder containing both the `resources` and `hw1-ttrojan` folders/repos, you could enter the following command at the terminal:
 
 ```bash
-$ cp -rf resources/{{page.hwpath}} hw-username/
+$ cp -rf resources/{{page.hwpath}} hw1-ttrojan/
 ```
 
 Again be sure to replace `hw-username` with your USC username (e.g. `hw-ttrojan`)
+
+## Written Portion
+
 
 {% for part in site.data.hws.hw1.written_parts %}
 

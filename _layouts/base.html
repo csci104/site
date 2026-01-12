@@ -19,7 +19,7 @@
         {% if item.external == true %}
         <a href="{{ item.url }}">{{ item.short }}</a>
         {% else %}
-        <a href="{{ site.baseurl }}{{ item.url }}">{{ item.short }}</a>
+        <a href="{{ site.baseurl }}{{ item.url }}" target="_blank">{{ item.short }}</a>
         {% endif %}
       </div>
       {% endif %}

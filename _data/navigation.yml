@@ -15,7 +15,7 @@ items:
   #   icon: /assets/img/icon/duration.svg
   - title: Shared folder
     short: Drive
-    url: https://drive.google.com/drive/folders/1os_8HeqN1Q_S9RGZi82V4xyy5x-kvoTJ?usp=drive_link
+    url: https://drive.google.com/drive/u/1/folders/1-NAExAHZAchzXIe1jOD0H7DfTqzHBX4t
     icon: /assets/img/icon/google-document.svg 
     external: true
   - title: Semester schedule

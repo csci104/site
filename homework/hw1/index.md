@@ -10,6 +10,8 @@ hwpath: hw1
 
 ## {{page.title}}
 
+**This Homework has NOT been officially released.  Take care if starting to work on any problems until it IS officially released.**
+
 + Due: See [homework page]({{site.url}}/homework/index.html)
 + Written portion: Submitted on Gradescope
 + Coding portion: (Not ready) - Use Github Classroom [signup link]()

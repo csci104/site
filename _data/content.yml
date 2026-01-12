@@ -1,13 +1,13 @@
 assignments:
   - id: hw1
     title: Linked Lists and Recursion
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link:
     dates:
       assigned:
       checkpoint:
-      written: Fri., Jan 23rd
+      written: Mon., Jan 26th
       programming: Fri., Jan 30th
 #      due: Fri., September 12th
   - id: hw2

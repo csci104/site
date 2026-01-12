@@ -43,15 +43,17 @@ lectures:
 
   # 2 Thur 8/25
   - topics:
-      - Classes (Initialization Lists)
+      - Runtime
       - Linked Lists
+      - Classes (Initialization Lists)
     chapters:
       - Chapter 1.4
       - Chapter 3.3-3.5    
       - Chapter 1.3
     notes: 
-      - L02b_Classes.pdf
+      - L02d_Runtime.pdf
       - L02e_LinkedLists.pdf
+      - L02b_Classes.pdf
     recording: 
     special_row: "Special Review Lecture on Zoom during Thurs. 1/15 Quiz time -- See EdStem for link."
 
@@ -62,7 +64,7 @@ lectures:
   - topics:
       - Linked Lists (cont.)
       - Operator Overloading Review (if time)
-      - Runtime
+      - Copy Semantics
     chapters:
       - Chapter 1.4
       - Chapter 3.3-3.5    
@@ -70,19 +72,17 @@ lectures:
     notes: 
       - L02e_LinkedLists.pdf
       - L02c_OperatorOverloading.pdf
-      - L02d_Runtime.pdf
+      - L02f_CopyConstructors.pdf 
     recording: 
 
   # 4 Thur 9/1
   - topics:
       - Recursion
-      - Copy Semantics
     chapters:
       - Chapter 1.3, 1.5
       - Chapter 3.1-3.3, 4.8
     notes:
       - L03_Recursion.pdf
-      - L02f_CopyConstructors.pdf
     recording: 
     
   # 5 Tue 9/6

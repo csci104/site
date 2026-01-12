@@ -24,7 +24,7 @@
         {line:4, action:'call', fn:'buildItem', addr:'0xbe0'},
         {line:5, action:'push', frameName:'buildItem', vars:[{type:'object', name:'x', base:'0xbe4', members:[{name:'x.w',addr:'0xbe4',val:4},{name:'x.y',addr:'0xbe8',val:'"hi"'}]}], addr:'0xbe4'},
         {line:6, action:'note', text:'return x — literal (unoptimized) semantics: copy x into caller storage'},
-  {line:9, action:'copy-to-caller', fromBase:'0xbe4', toBase:'0xbf8', varName:'i', members:[{name:'i.w',addr:'0xbf8',val:4},{name:'i.y',addr:'0xbfc',val:'"hi"'}]},
+  {line:6, action:'copy-to-caller', fromBase:'0xbe4', toBase:'0xbf8', varName:'i', members:[{name:'i.w',addr:'0xbf8',val:4},{name:'i.y',addr:'0xbfc',val:'"hi"'}]},
   {line:6, action:'invalidate', addr:'0xbe0'},
   {action:'pop', addr:'0xbe0'},
         {line:10, action:'info', text:'In main, i is a full Item object with its own members i.w and i.y; no dangling reference and no leak.'},
@@ -55,8 +55,8 @@
     {line:9, action:'set-ref', refName:'i', targetBase:'0xbe4', memberNames:['x.w','x.y']},
   {line:6, action:'invalidate', addr:'0xbe0'},
     {line:6, action:'pop', addr:'0xbe0'},
+        {line:9, action:'invalidate', addr:'0xbf4'},
         {line:10, action:'info', text:'In main, i is a reference bound to the stack address 0xbe4 which was popped — this is a dangling reference and accessing i.w or i.y is undefined behavior.'},
-        {action:'invalidate', addr:'0xbf4'}
       ]
     },
   ex3: {
@@ -460,7 +460,7 @@
             state.pendingAnimation = { fromFrame: step.animateFrom.frame, fromVar: step.animateFrom.var, toFrame: targetFrame.name, toVar: step.ptrName };
           }
           if(heapObj){
-            const members = (heapObj.members||[]).map(m=>({name:`${step.ptrName}.${m.name.split('.').pop()}`, addr:m.addr, val:m.val}));
+            const members = (heapObj.members||[]).map(m=>({name:`${step.ptrName}->${m.name.split('.').pop()}`, addr:m.addr, val:m.val}));
             const idx = targetFrame.vars.findIndex(v=>v.name===step.ptrName);
             if(idx>=0){
               targetFrame.vars[idx].type = 'object';

@@ -37,7 +37,14 @@ Each student will be responsible for use Github Classroom to generate a `git` re
       <td>
         
       </td>
-      <td>{{ assignment.title }}</td>
+      <td>
+        {% if assignment.assigned %}
+        <a href="{{ site.baseurl }}/homework/{{ assignment.id }}/">{{ assignment.title }}</a>
+        {% else %}
+        {{ assignment.title }}
+        {% endif %}
+
+      </td>
       <td>{{ assignment.dates.written }}</td>
       <td>{{ assignment.dates.programming }}</td>
 <!--

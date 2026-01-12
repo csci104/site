@@ -1,4 +1,6 @@
-In Big-&Theta; notation, analyze the running time of the following three pieces of code/pseudo-code. Describe it as a function of the input (here, `n`).   Submit your answers as a PDF (using some kind of illustration software or scanned handwritten notes where you use your phone to convert to PDF) showing your work and derivations supporting your final answer.  **You must name the file `q3_answers.pdf`**.  As usual, answers without supporting work will receive 0 credit.
+In Big-&Theta; notation, analyze the running time of the following three pieces of code/pseudo-code. Describe it as a function of the input (here, `n`).   Submit **EACH** problem separately.  Your submissions should be a PDF or JPG (using some kind of equation / math software or scanned handwritten notes) showing your work (derivations of T(n), summations, and steps you used to arrive at your final answer.  
+
+**As usual, answers without supporting work will receive 0 credit.**
 
 #### Part (a)
 

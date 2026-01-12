@@ -2,53 +2,46 @@ Carefully study the information on the [course web site]({{site.url}}), then ans
 
 **Place your answers to this question in a file name `hw1.txt` in your `hw-username/{{page.hwpath}}` folder.**
 
-#### Part (a): 
-Which of the following are acceptable behaviors in solving homeworks/projects (list all that apply)?
+#### Part (a):
 
-1. Looking up relevant C++ reference information online.
-1. Looking up or asking for sample solutions online from sites like Chegg, Github, etc.
-1. Talking to my classmates about general approaches about the problems (but no specific coding statements or description of your own code or someone else's code).
-1. Copying code from my classmates or an online source, and then editing it significantly.
-1. Asking the course staff for help.
-1. Sitting next to my classmate and coding together as a team or with significant conversation about approach.
-1. Sharing my code with a classmate, even if he/she just wants to read over it and learn from it
+How many excused absences do you have for labs?
 
-#### Part (b): 
-To dispute a grade on a HW assignment you should (list all that apply):
+#### Part (b):
+If you have used your excused absences and miss another lab, it will only be excused if...
 
-1. Email the professor immediately.
-1. Complete the regrade request form within 1 week of receiving the grade and wait for an issue to be posted to your Github repo.
-1. Visit the designated regrade TA within 1 week of your score posting.
+- you request another absence
+- you really need to attend an extra-curricular club trip or competition. 
+- USC campus support indicates an emergency has occurred
 
 
-#### Part(c): 
-What is the late submission policy (list all that apply)?
+#### Part (c): 
 
-1. One hour late submission is acceptable for each assignment.
-1. Each assignment can be submitted up to two days late for 50% credit.
-1. Each student has 5 late days of which only 2 can be used per HW
-1. Students need to get an approval before submitting an assignment late.
+You must be available on the scheduled Exam dates, and **NO** alternative times will be provided (except for students with accommodations taking the exam at OSAS).
 
-#### Part(d): 
-After pushing your code to Gihub you should...  (list all that apply)
+- True
+- False
 
-1. Do nothing.  Once you push your code you are done.
-1. Clone your repo to a temporary folder to ensure all the files you desire are pushed and that your code compiles.
-1. Complete the online submission page using your FULL **(30 or more digit)** SHA.
+#### Pard (d):
+
+While use of generative AI is not strictly prohibited on Homeworks, it is strongly discouraged since exams will require you to apply coding skills and concepts applied in the homework.  Read the section in the syllabus about generate AI, in particular:
+
+>Even if you write significant code on your own, as soon as you ask AI to generate an outline of how to approach the code or help debug some code you’ve written, etc. you have ALREADY lost valuable learning experience, much less if you start by asking AI to write significant portions of code for you.  Only through failure and the ensuing struggle will you develop the mental skills and recall needed to perform well on the exams, and develop understanding needed for larger tasks in the workplace.
+
+Take a few moments to reflect on this statement.  What aspects do you agree with and which do you disagree?  Why? How will you approach homeworks, and what will you do when your code doesn't work or you don't know how to approach a problem?
+
+
 
 
 #### Part (e): 
-If you have NO grace days left and it is after the submission deadline, we will accept your assignment under what circumstances  (list all that apply).
+If you forget to push a file in your submission, but your code worked on your laptop, you can submit a regrade.
 
-1. None.  We will not accept your submission.
-1. There is an hour grace period after the deadline.
-1. If there is a technical difficulty (such as wireless trouble, or github commit/push issues, etc.) with submission.
-1. If you email us your code as attachments.
+- True
+- False
 
-#### Part (f): 
-General submission policies (indicate True/False).
 
-1. *True/False*:  Before submitting your HW you should reclone your repo to a separate folder and ensure all files are present and your code compiles.
-1. *True/False*:  If you forget to submit a file via GITHUB you can still apply for a regrade after the deadline and submit the missing file.
-1. *True/False*:  You only have 7 days to submit a regrade for homeworks, unless otherwise stated, and after that you are not eligible for a regrade for ANY reason.
+#### Part(f): 
+You may submit homeworks up to 4 days late for a -20 deduction.
+
+- True
+- False
 

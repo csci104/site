@@ -26,10 +26,29 @@ Node* llrec(Node* in1, Node* in2)
 ```
 
 
- **Question a**:  What linked list is returned if `llrec` is called with the input linked lists **in1** = `1,2,3,4` and **in2** = `5,6`?
+#### Part a
+What linked list is returned if `llrec` is called with the input linked lists **in1** = `1,2,3,4` and **in2** = `5,6`?
 
- **Question b**:  What linked list is return if `llrec` is called with the input linked lists **in1** = `nullptr` and **in2** = `2`? 
+- 1 5 6 2 3 4
+- 1 2 3 4 5 6
+- 1 5 2 6 3 4
+- 5 1 6 2 3 4
+- None of these
 
-To show work, you can draw a call tree or box diagram of the function calls using some simplified substitution of your choice rather than pointer values (e.g. "p3" for a pointer to a node with value 3).  Submit your answers as a PDF (using some kind of illustration software or scanned handwritten notes where you use your phone to convert to PDF) showing your work and derivations supporting your final answer.  **You must name the file `q4_answers.pdf`**. 
 
+
+
+#### Part b
+
+To show work, you can draw a call tree or box diagram of the function calls using some simplified substitution of your choice rather than pointer values (e.g. "p3" for a pointer to a node with value 3).  Submit your answers as a PDF (using some kind of illustration software or scanned handwritten notes where you use your phone to convert to PDF) showing your work and derivations supporting your final answer.  **You must name the file**. 
+
+#### Part c
+
+ What linked list is return if `llrec` is called with the input linked lists **in1** = `nullptr` and **in2** = `2`? 
+
+No need to show your work on this problem.
+- <empty>
+- 2
+- 2 0
+- None of these
 

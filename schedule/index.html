@@ -85,6 +85,11 @@ Note: If the first page of a slide deck does not show "Updated for Spring 2026" 
       </td>
       {% endif %}
     </tr>
+    {% if lecture.special_row %}
+    <tr class="special-row">
+      <td colspan="5">{{ lecture.special_row }}</td>
+    </tr>
+    {% endif %}
     {% endfor %}
   </tbody>
 </table>

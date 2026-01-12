@@ -53,6 +53,7 @@ lectures:
       - L02b_Classes.pdf
       - L02e_LinkedLists.pdf
     recording: 
+    special_row: "Special Review Lecture on Zoom during Thurs. 1/15 Quiz time -- See EdStem for link."
 
   - topics: 
     - MLK Holiday
@@ -169,6 +170,7 @@ lectures:
       - Chapter 4.1-4.2,4.6
     notes: 
       - L11_GraphTraversals.pdf
+    special_row: "Exam 1 during Quiz Section"
 
   
   # 17 Tue 10/18

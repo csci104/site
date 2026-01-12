@@ -17,9 +17,9 @@
       {% if item.menubar != false %}
       <div class="item">
         {% if item.external == true %}
-        <a href="{{ item.url }}">{{ item.short }}</a>
+        <a href="{{ item.url }}" target="_blank">{{ item.short }}</a>
         {% else %}
-        <a href="{{ site.baseurl }}{{ item.url }}" target="_blank">{{ item.short }}</a>
+        <a href="{{ site.baseurl }}{{ item.url }}">{{ item.short }}</a>
         {% endif %}
       </div>
       {% endif %}

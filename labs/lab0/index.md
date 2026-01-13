@@ -271,10 +271,9 @@ Homework grade reports are released through GitHub, and using the above settings
 ## Join the Course GitHub Classroom and Starter Assignment
 Connect your GitHub account with the course using GitHub Classroom:
 
-- Open the join link: [USC CSCI 104 Github Classroom]({{site.data.urls.github_classroom}}){:target="_blank"}
 - Sign in with the same GitHub account you set up above (preferably your @usc.edu email).
 - Authorize GitHub Classroom if prompted.
-- Click on the `classroom-starter` assignment you see in our Github Classroom, or click this [link](https://classroom.github.com/a/2WPSyHEo) directly. Accept the course assignment if/when prompted to create your copy of this "dummy" repository. You do not need to do anything with it now, but we may use it in lab 1 to practice with `git`.  **But you will not have access to the lab repository described below until you do this step successfully**.
+- Click on the `classroom-starter` assignment you see in our Github Classroom, or click **this [link](https://classroom.github.com/a/2WPSyHEo)** directly. **It will connect yor Github account to our semester's Github organization and repositories.** Accept the course assignment if/when prompted to create your copy of this "dummy" repository. You do not need to do anything with it now, but we may use it in lab 1 to practice with `git`.  **But you will not have access to the lab repository described below until you do this step successfully**.
 
 - [ ] Joined the GitHub Classroom and joined the starter assignment
 

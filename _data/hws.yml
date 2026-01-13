@@ -21,14 +21,14 @@ hw1:
       title: NOT GRADED (PRACTICE ONLY) - Constructors and Destructors
       points: 0
   programming_parts:
-    - writeup: ll-recursion.md
-      number: 6
-      title: Linked List Recursion Coding
-      points: 35
     - writeup: ulliststr.md
-      number: 7
+      number: 6
       title: Unrolled Linked List
       points: 65
+    - writeup: ll-recursion.md
+      number: 7
+      title: Linked List Recursion Coding
+      points: 35
     # - writeup: sparsematrix.md
     #   number: 6
     #   title: Sparse Matrix (Classes, Pointers, LinkedLists)

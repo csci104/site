@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Digital Divider Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Digital Hardware Divider Animation</h1>
+    <p>Step-by-step animation of a 4-bit divider computing 13 ÷ 4. Shows Verilog code execution, register state, and waveforms for each clock cycle.</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <button id="playBtn">Play</button>
+      <button id="stepBtn">Step</button>
+      <button id="resetBtn">Reset</button>
+      <span id="cycleInfo">Cycle: 0</span>
+    </div>
+
+    <section id="panel">
+      <div id="codePanel">
+        <h3>Verilog Code</h3>
+        <pre id="codeArea" class="code"></pre>
+      </div>
+
+      <div id="vizPanel">
+        <div id="stateArea" class="memory">
+          <h3>Register State</h3>
+          <div id="stateDisplay"></div>
+        </div>
+
+        <div id="waveformArea" class="memory">
+          <h3>Waveform</h3>
+          <div id="waveformDisplay"></div>
+        </div>
+
+        <div id="infoArea" class="memory">
+          <h3>Note</h3>
+          <div id="infoText"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="legend">
+      <h3>Behavior</h3>
+      <ul>
+        <li>13 ÷ 4 = 3 remainder 1 (quotient in <strong>quo</strong>, remainder in <strong>rem = x</strong>)</li>
+        <li>IDLE state: Captures inputs when <strong>start=1</strong>, clears quotient.</li>
+        <li>COMP state: Iteratively subtracts y from x, increments quotient.</li>
+        <li>DONE state: Holds result until <strong>ack=1</strong>.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -73,7 +73,7 @@ git config --global init.defaultBranch main
 git config --global core.autocrlf input
 git config --global push.default simple
 
-
+python3 -m pip install xmltodict
 ```
 
 Using only your ARROW keys, backspace and delete, change `ttrojan` to your USC email username and change `Tommy Trojan` to your name.
@@ -218,6 +218,39 @@ int main(int argc, char* argv[]) {
 After creating these files you folder structure should look like this:
 
 ![img](./img/vscode-hello-cmake-file-structure.png)
+
+### Known Issue
+
+Sadly, GCloud's IDE erroneously shows the Intellisense red-squiggle "errors" for things that are not errors.  But, there does seem to be a fix.
+
+In the terminal, go to your HOME folder:
+
+```bash
+cd ~
+```
+
+Then at the terminal, paste in this command (which just creates a settings file named `.clangd` with certain compiler options/flags to help the GCloud editor find the libraries and other built-in C++ features.
+
+
+```bash
+cat > .clangd <<'EOF'
+CompileFlags:
+  Compiler: g++
+  Add:
+    - -std=c++17
+    - -I/usr/include/c++/13
+    - -I/usr/include/x86_64-linux-gnu/c++/13
+    - -I/usr/include/c++/13/backward
+    - -I/usr/lib/gcc/x86_64-linux-gnu/13/include
+    - -I/usr/local/include
+    - -I/usr/include/x86_64-linux-gnu
+    - -I/usr/include
+EOF
+```
+
+Then, reload the window (or close and reopen Cloud Shell. Hopefully, these warnings would disappear.
+
+If that does not work, let your compiler **be the truth**, meaning compile your code (with `g++`) to find errors and, for now, ignore the red squiggles. 
 
 ---
 

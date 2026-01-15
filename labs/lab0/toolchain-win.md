@@ -87,6 +87,8 @@ sudo cmake .
 sudo make
 sudo cp lib/*.a /usr/lib
 cd ~
+
+python3 -m pip install xmltodict
 ```
 
 ## 3. Verify Installation and Setup WSL Extension

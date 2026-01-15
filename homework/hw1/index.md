@@ -5,6 +5,7 @@ tasks: false
 title: Homework 1
 nav: assignments
 hwpath: hw1
+github_starter_url: https://classroom.github.com/a/lD3BXSq3
 
 ---
 
@@ -33,7 +34,9 @@ hwpath: hw1
 
 ## Coding Portion
 
-**Signup link to create your HW1 repo:** [signup link]()
+### Github Classroom URL
+
+**Signup link to create your HW1 repo:** [signup link]({{page.github_starter_url}})
 
 
 ### A Few Notes on Repositories

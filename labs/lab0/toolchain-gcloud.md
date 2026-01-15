@@ -257,6 +257,12 @@ If that does not work, let your compiler **be the truth**, meaning compile your 
 ## 5. Build and Run (In-Source)
 
 
+Ensure you are back in your `hello-cmake` folder:
+
+```bash
+cd cs104-repos/hello-cmake
+```
+
 At the terminal in the lower pane (you may need to click `View..Terminal`)
 ```bash
 cmake .

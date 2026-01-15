@@ -279,8 +279,10 @@ Connect your GitHub account with the course using GitHub Classroom:
 
 
 
-## Labs Repository
-We expect you to complete labs in your VSCode environment.  In the **VS Code Terminal**, navigate to your `cs104` or `cs104-repos` folder if you haven't:
+## Resources Repository
+We expect you to complete labs in your VSCode environment. Each week, the lab material will be posted to the `resources` repository. Let us perform the one-time `clone` of the repo. 
+
+In the **VS Code Terminal**, navigate to your `cs104` or `cs104-repos` folder if you haven't:
 
 **GCloud / Windows WSL**
 
@@ -294,9 +296,6 @@ cd ~/cs104-repos
 ```bash
 cd ~/Documents/cs104-repos
 ```
-
-
-Each week, the lab material will be posted to the `resources` repository. Let us perform the one-time `clone` of the repo. 
 
 1. Type `git clone git@github.com:usc-csci104-spring2026/resources.git`
 2. It should download and create a folder named `resources` where you will then find a `README.md` file.  You can verify by typing `cd resources` and then `ls` to list the files. You should see `README.md` listed. If successful, your terminal should look something like this.

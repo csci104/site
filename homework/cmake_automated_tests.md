@@ -18,7 +18,7 @@ Do a `git pull` in your `resources` repo, which will download a folder like `hw1
 Copy the `hw1_tests` (or the appropriate numbered) folder from `resources` to your assingment repo (e.g. `hw1-ttrojan`) folder so that hw1_tests sits at the same level as all your source code (`.cpp` and `.h` files).  You can do  this by using `cd` at the terminal to go to your `resources` repo (which we assume sits at the same level as your `hw1-ttrojan` folder/repo.  Then you can type 
 
 ```bash
-cp -rf hw1_tests ../hw1-ttrojan/`  
+cp -rf hw1_tests ../hw1-ttrojan/
 ```
 
 (replacing `ttrojan` with your USC username).
@@ -28,7 +28,7 @@ Then, `cd` to the `hw1_tests` folder in your `hw1-ttrojan` folder.
 If you are still in the `resources` folder, you would type:
 
 ```bash
-cd ../hw1-ttrojan/hw1_tests`
+cd ../hw1-ttrojan/hw1_tests
 ```
 
 **You must be in the `hw1-ttrojan/hw1_tests` folder and not just `hw1-ttrojan` folder.**

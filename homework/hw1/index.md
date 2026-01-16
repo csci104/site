@@ -127,14 +127,25 @@ Again be sure to replace `hw1-ttrojan` with **your repo's name**.
 
 ## Submission Files
 
-Ensure you add/commit/push all your source code files and `Makefile`. Do **NOT** commit/push any test suite folder/files that we provide from the `resources` repo.  When we grade your code, we will move a fresh copy of the `{{page.hwpath}}_tests` folder into your repo, `cd` to that test folder, and run
+- **Add, commit and push** your source files including all the `.cpp` and `.h` files and `Makefile`. 
+
+- Do **NOT** add/commit/push `.o` files or executables (things that the compiler can easily generate anytime we need).  If you want to avoid adding files you should not, you can add the following lines to your `.gitignore` and then save, add, commit, push the `.gitignore`
+
+```
+<any previous contents>
+*.o
+ulliststr_test
+rem_dup
+```
+
+Do **NOT** commit/push any test suite folder/files that we provide from the `resources` repo.  When we grade your code, we will move a fresh copy of the `{{page.hwpath}}_tests` folder into your repo, `cd` to that test folder, and run
 
 ```
 cmake .
 make grade
 ```
 
-Your code must pass the tests to receive credit. You can essentially do this step yourself to ensure you pushed everything you needed and the correct verisons by following the instructions below.
+Your code must pass the tests to receive credit. You can essentially do this step yourself to ensure you pushed all the files and correct versions of those files by following the instructions below.
 
 
 {% include commit-reclone.md %}

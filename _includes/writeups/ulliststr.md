@@ -55,14 +55,7 @@ Finally, ensure your solution does not access memory incorrectly or leak memory.
 
 Do **NOT** place a `main` function in the class file: `ulliststr.cpp` (it should be in your test file: `ulliststr_test.cpp`). 
 
-Please do not change the filenames of the skeleton we give you. Commit and push your source files including `ulliststr.cpp`, `ulliststr.h`, and `ulliststr_test.cpp`.   Do **NOT** add/commit/push `.o` files or executables (things that the compiler can easily generate anytime we need).
+Please do not change the filenames of the skeleton we give you. 
 
-If you want to avoid adding files you should not, you can add the following lines to your `.gitignore` and then save, add, commit, push the `.gitignore`
 
-```
-hw1_tests/*
-*.o
-rem_dup
-ulliststr_test
-```
 

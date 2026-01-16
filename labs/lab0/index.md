@@ -297,7 +297,7 @@ cd ~/cs104-repos
 cd ~/Documents/cs104-repos
 ```
 
-1. Type `git clone git@github.com:usc-csci104-spring2026/resources.git`
+1. Type `git clone git@github.com:{{site.data.urls.github_org}}/resources.git`
 2. It should download and create a folder named `resources` where you will then find a `README.md` file.  You can verify by typing `cd resources` and then `ls` to list the files. You should see `README.md` listed. If successful, your terminal should look something like this.
 
 ![img](./img/vscode-resources-clone.png)

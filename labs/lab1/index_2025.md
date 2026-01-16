@@ -15,46 +15,122 @@ In this course, we will be using GitHub to host our lab git repository and help 
 
 **If you have not done [Lab 0]({{ site.baseurl }}/labs/lab0) to set up your GitHub account or setup your coding environment, please do so NOW!**
 
+## Important: Using the correct terminal
+
+In order to complete this lab, make sure you are using the correct terminal to run commands:
+
+* If you are running Docker, then there are two types of terminals you are going to interact with:
+  - The **Windows terminal** refers to the terminal provided by Windows, not docker. On Windows, type
+    `Win + R` and then `powershell` to start it.
+  - On **MacOS** you can use the built in Terminal app (search Terminal), or install an app like [https://iterm2.com/](iTerm2){:target="_blank"}. At this time, on MacOS we assume you are using Docker. (Fully native development **is** possible, just not supported by the course staff)
+  - If the instructions specify **native** terminal, these commands are to be issued in either the MacOS or Windows terminal.
+  - The **docker terminal** refers to the terminal you obtain by typing the following in your **native terminal**:
+
+```shell
+ch start csci104
+ch shell csci104
+```
+
+From now on, every sequence of command we show you would be annotated with either *`[native]`* or *`[docker]`*. This denotes the
+terminal you should be running the command from if you are using Docker. (If you are using the VM, then always use the VM terminal).
+
+Examples (You do **NOT** need to run these commands):
+
+*`[native]`*
+```shell
+notepad.exe cat.txt
+```
+
+The above command shall be ran from your **native terminal**.
+
+*`[docker]`*
+```shell
+vim cat.txt
+```
+
+The above command shall be ran from your **Docker terminal**.
+
+* If you are running the course VM (through Virtual Box), then **all commands** (both native and docker) from this lab shall be ran from
+  the terminal within the VM. To open a terminal in the VM, press `Ctrl + Alt + T` (Windows) or `Cmd + Option + T` (Mac).
+  Alternatively, you could open it by searching for "terminal" in the quick launcher.
+
 
 ## Creating a GitHub repo and obtaining the example files
 
+### The Concept of the *working directory*
 
+Every open terminal has a *working directory*. When you run a command inside that terminal,
+the command would interpret paths and filenames to be relative to that working directory, for example:
 
-### Step 1: Launch your coding environment 
+```
+mkdir sub
+```
 
-Start your coding environment and get to a terminal where you can enter commands.
+creates the subdirectory named `sub` under the current *working directory*. If the *working directory* is `/usr/root/parent`, then this will
+create the directory `/usr/root/parent/sub`.
+
+### Step 1. Changing working directory to Docker's assigned `/work` directory
+
+First open your **native terminal**. Then, change the working directory to the
+directory you [assigned to Docker during setup](https://github.com/csci104/docker#step-5-set-your-working-directory).
+
+If you are working on the course VM, you may use any directory you like on the VM (e.g. `~/csci104`).
+
+The command for changing the working directory is `cd` (which stands for "**c**hange **d**irectory"). In my case, the path to change to is:
+`C:\Users\rin\Documents\csci104\home` (yours might be different, depending on how you configured your docker), therefore I just type:
+
+*`[native]`*
+```shell
+cd C:\Users\rin\Documents\csci104\home
+```
+
+**Note: You will need double quotes around the path if your path contains space, e.g. `cd "C:\My Documents\Home"`**
+
+If you have forgotten which path you have assigned to Docker, you could check it by typing:
+
+*`[native]`*
+```shell
+ch list
+```
+
+And you will see an output that looks like:
+
+```
+Name:   csci104
+        Image:  usccsci104/docker:20.04
+        Volume: C:\Users\rin\Documents\csci104\home:/work
+        SecOpt: seccomp:unconfined
+        CapAdd: SYS_PTRACE
+        Port:   :2222
+```
+
+The path after `Volume: ` (excluding `:/work`) is what you are looking for. The idea is that when you open and edit files in your native editor (VSCode, Xcode, Notepad++, TextMate, etc.) they will be saved in the working directory of the Docker image. Then when you run commands in Docker the files will be there.
 
 ### Step 2: Creating a GitHub repo and downloading the example resources
 
-Again, these steps assume that you have already finished all the setup from Lab 0. If you haven't done [lab 0](../lab0/) yet, do it now.
+These step assumes that you have already finished the git, GitHub, Codio integration and SSH key setup from Lab 0. If you haven't done [lab 0](../lab0/) yet, do it now.
 
 #### Step 2.1 Create a GitHub repo for this lab (for practice)
 
-Login to [GitHub](https://github.com){:target="_blank"} and click the green "New" button. Or you can link there [directly](https://github.com/new){:target="_blank"}
+Navigate to [GitHub](https://github.com){:target="_blank"} and click the green "New" button. Or you can link there [directly](https://github.com/new){:target="_blank"}
 
 - Make sure the "Owner" is set to your GitHub user and **not** any GitHub organizations you might be part of.
-- Give the repo the name: `practice-repo`.
+- Give the repo a good name like "104-practice" or "example".
 - Make the repo private
 - Don't add a README, a .gitignore or a license
 
-Click `Create Repository`
+Click "Create Repository"
 
 When the repo is created GitHub will show the repo "URL" (either HTTPS or SSH). Copy the SSH version to your clipboard (there is a button for that).
 
 #### Step 2.2 Creating an new repo on your development environment and connecting to GitHub
 
-Go to your `cs104-repos` folder:
+Once you are inside the correct working directory (i.e. within your csci104 folder that has the docker repo within it), type the following commands (**replace the `GHUSERNAME` with your GitHub username and `REPONAME` with the name of your repository**)
 
-```bash
-cd cs104-repos
-```
-
-Type the following commands (**replace the `GHUSERNAME` with your GitHub username and `REPONAME` with the name of your repository**)
-
-
+*`[native]`*
 ```shell
-git clone git@github.com:GHUSERNAME/practice-repo.git (this is the thing you copied)
-cd practice-repo
+git clone git@github.com:GHUSERNAME/REPONAME.git (this is the thing you copied)
+cd REPONAME
 echo "# Lab 1 Git Practice" > README.md
 git add README.md
 git commit -m "first commit"
@@ -64,55 +140,85 @@ git push -u origin main
 
 #### Step 2.3 Getting the Resources from the Lab Repository
 
-This lab looks a little different from the rest of the labs you will be doing this semester, as we made you create your own GitHub repository to practice with for this one. Usually, you can just code directly in your local clone of the `resources` repository without having to do any copying, but for the sake of this assignment so everyone can practice pushing, there will be some copying.
+This lab looks a little different from the rest of the labs you will be doing this semester, as we made you create your own GitHub repository to practice with for this one. Usually, you can just code directly in the sp24-labs repository without having to do any copying, but for the sake of this assignment so everyone can practice pushing, there will be some copying.
 
-**Note: We assume you have your `resources` and `practice-repo` folders at the same level under `cs104-repos`.
+In your terminal, change directories from the folder that you just made for your practice repo to the sp24-labs folder. For example, for me:
 
-In your terminal, change directories from the `practice-repo` to `resources`, and then do a `git pull` to get the latest `lab1` files. If you were in your `practice-repo` folder, you should be able to achieve this with:
+*`[native]`*
+```shell
+pwd
+    --> /Users/bridgetbell/desktop/code/usc/cp104/practice
+cd ..
+pwd
+    --> /Users/bridgetbell/desktop/code/usc/cp104
+cd sp24-labs
+pwd
+    --> /Users/bridgetbell/desktop/code/usc/cp104/sp24-labs
+```
 
-```bash
-cd ../resources     
+The pwd command shows the full path of your current directory. `cd` with a space and two periods after it goes back a directory.
+
+Now, pull the resources!
+*`[native]`*
+```shell
 git pull
 ```
 
-(i.e. go up one folder level and then down into `resources`) and do a pull.
-
-You should see something come up about a `lab1` folder.
+You should see something come up about a lab1 folder.
 
 ### Step 2.4 Copying the Files to Your Practice Repo
 
-Now, we will copy the **`lab1` folder** from the `resources` repo over to the practice repository we created. While we could do this with our computer GUI by dragging and dropping the files, let's practice it through the command line!
+Now, we will copy the **lab1 folder** from the sp24-labs folder over to the practice repository we created. While we could do this with our computer GUI by dragging and dropping the files, let's practice it through the command line!
 
 This is the general command:
 
+*`[native]`*
 ```shell
 cp /path/of/source/folder /path/of/destination/folder
 ```
 
-So you should be able to run:
-
+For me, this would then be:
+*`[native]`*
 ```shell
-cp -r lab1 ../practice-repo
+cp -r /Users/bridgetbell/desktop/code/usc/cp104/sp24-labs/lab1 /Users/bridgetbell/desktop/code/usc/cp104/practice
 ```
+You may have to change this based on the name of your folders.Modify this command above so it works for you, then within the *destination* folder (the practice repo), type
 
-You may have to change this based on the name of your folders. Modify this command above so it works for you, then within the *destination* folder (the practice repo), type
-
-Then, navigate back to your `practice-repo` and ensure you see the right `lab1` files.
-
-```bash
-cd ../practice-repo/lab1
+*`[native]`*
+```shell
 ls
 ```
 
-Now you should see several lab files for today!  If you get a message such as `no such file or directory`, then you mistyped the command or weren't in the right directory (folder).
+Now you should see a folder called lab1!
 
+## Running the Code
+
+The lab 1 code you just copied over is great for testing whether you have the correct environment setup to compile the rest of the labs (and homeworks if you so choose). Make sure you follow the steps below and the output on your terminal matches the ones on this page.
 
 
 ### Step 3. Building the  project
 
-So if you are (and you should be) in the `practice-repo/lab1` folder, run.
+Let's get docker up and running so we can test the code.
 
-```bash
+*`[native]`*
+```shell
+ch start csci104
+ch shell csci104
+```
+
+This will take you to the csci104 folder you mounted. You *should* see the sp24-labs folder in this folder if you cloned it there. If you cloned this repo somewhere else, it needs to be accessible to docker!!! i.e. a subdirectory of wherever the mount point was.
+
+Navigate to your example repo and the lab1 folder:
+*`[docker]`*
+```
+cd example/lab1
+```
+**Note:** this assumes your example repo is at the root where your shell launches (i.e. the csci104 folder). If you get a error like `no such file or directory` then your shell isn't in the right place. Practice navigating around on the command line using `cd` to get to the right place.
+
+Then, run the following command within the new lab1 folder:
+
+*`[docker]`*
+```
 make run
 ```
 
@@ -180,11 +286,11 @@ Therefore, change the return value to `37` and run `make run` again. This time e
 
 Now that you have finished the work locally, you would also want to push the changes to GitHub.
 
-To do so, go up one level (i.e. change directory) back to the `practice-repo` folder rather than being in your `lab1` subfolder.
+To do so, open your **native** terminal (you can exit docker by typing `exit`) , and change
+the working directory to the root of your practice repo. Then type
 
-
-
-```bash
+*`[native]`*
+```
 git status
 ```
 
@@ -202,11 +308,12 @@ which means that nothing from your `lab1` directory is tracked by git.
 
 To track those files run the following command:
 
-```bash
+*`[native]`*
+```
 git add .
 ```
 
-This command tells git to track all modification you have done to the repo (adding a new file, modifying a file, deleting a file, renaming a file, etc.). You could also specify individual files to track by providing their name instead of `.` (e.g. `git add lab1/library.cpp`).
+This command tells git to track all modification you have done to the repo (adding a new file, modifying a file, deleting a file, renaming a file, etc.). You could also specify individual files to track by providing their name instead of `.` (e.g. `git add library.cpp`).
 
 Now, if you check `git status`, you would see:
 
@@ -232,8 +339,8 @@ Changes to be committed:
 
 All the changes are now ready to be *committed*. You could now run the following command:
 
-
-```bash
+*`[native]`*
+```
 git commit -m "fixed the example"
 ```
 
@@ -255,18 +362,18 @@ nothing to commit, working directory clean
 This tells that your local repo has one commit that the remote does not have. To
 upload the commit, simply type:
 
-
-```bash
+*`[native]`*
+```
 git push
 ```
 
 Now, if you everything runs successfully, the changes you have made would be synced to GitHub. Go to
-the repo page on GitHub via your web browser, and navigate to the repository.
+the repo page on GitHub, and navigate to the repository.
 
-If you refresh and read the `library.cpp` file, you should be able to see the code you have just modified.
+If you read the `library.cpp` file, you should be able to see the code you have just modified.
 
 However, if you look at the `lab1` directory, you would see the file `test`. That is the binary files created by the `make run` command while building
-the project. As a good practice you should **never** push anything generated by a build process. We may deduct
+the project. As a good practice you should never push anything generated by a build process. We would deduct
 points if you submitted your assignment with those files (unless otherwise specified).
 
 **NOTE: You may not be able to see the `library.o` file on GitHub, that is to be expected
@@ -274,18 +381,10 @@ with the homework repository.**
 
 ### Step 6. Removing the extra files from your repo
 
-Back to your VSCode terminal, let us learn how to DELETE a file that git is tracking.
+To tell git to remove the file from the repo, then type the following:
 
-To remove the file from the repo, then type the following:
-
-```bash
-git rm lab1/test
 ```
-
-If a `library1.o` exists, we can also remove that.
-
-```bash
-git rm lab1/library.o
+git rm lab1/test
 ```
 
 This will remove the two files from the directory and ask git to track the removal.
@@ -296,8 +395,7 @@ The `git rm` command only solves the problem temporarily. What if in the future 
 generated the files again? It would be an annoyance to run `git rm` every time you push.
 
 Fortunately, git offers a way to prevent files from being tracked by the `git add` command. To achieve this,
-create a file called `.gitignore` (with no extensions) in your `lab1` directory and open it.
-
+create a file called `.gitignore` (with no extensions) in your `lab1` directory, and open it in a text editor or IDE.
 
 **NOTE: a file or directory starting with `.` is hidden by default on most systems. To make your system show
 those files, follow these instructions:**
@@ -305,7 +403,7 @@ those files, follow these instructions:**
 * [Windows](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-97fbc472-c603-9d90-91d0-1166d1d9f4b5#WindowsVersion=Windows_10),
 * [Mac](https://www.pcmag.com/how-to/how-to-access-your-macs-hidden-files)
 
-In the `.gitignore` file add:
+Once you are inside the text editor, add the following lines:
 
 ```
 test
@@ -320,8 +418,8 @@ the `lab1` directory, the rules would only be enforced
 there. In general you would want separate `.gitignore` files
 for each of your assignment.
 
-
-```bash
+*`[native]`*
+```
 git add .
 git status
 ```
@@ -339,7 +437,7 @@ Changes to be committed:
 
 You could then commit and push the changes to GitHub:
 
-
+*`[native]`*
 ```
 git commit -m "removed extra files and added .gitignore"
 git push
@@ -352,18 +450,18 @@ If you now go to the GitHub repo page, you would see that `test` is no longer th
 
 Finally we'll practice another pull by modifying files on the webiste.
 
-First navigate to the `README.md` file in your `lab1` GitHub repo page using your web browser, and
-click the pencil icon.  Then make an edit to the markdown file (any edit will do), and click `Commit Changes`.
+First navigate to the `README.md` file in your `lab1` GitHub repo page, and
+click the pencil icon, then make an edit to the markdown file (any edit will do), and click `Commit Changes`.
 
-**Note in general we do not recommend modifying files directly on GitHub, it is used
-here just for demonstration purposes.**
+** Note in general we do not recommend modifying files directly on GitHub, it is used
+here just for demonstration purposes **
 
 ### Step 9. Pulling the change
 
 Now change your directory into `lab1` in your local terminal, and then type:
 
-
-```bash
+*`[native]`*
+```
 git pull
 ```
 
@@ -392,6 +490,3 @@ There are tons of git cheatsheets all over the web.
 Here's [one by Tower](https://www.git-tower.com/blog/git-cheat-sheet/) and [another by Atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet).
 You can use one of these your make your own; git has a bit of a learning curve and at the end of the day comes down to memorizing the most useful commands and what they do.
 Don't worry if it takes a little while.
-
-
-

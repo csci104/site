@@ -6,6 +6,12 @@
 Be sure to add, commit, and push your code in your {{page.hwpath}} directory to your assignment repository.  Now double-check what you've committed, by following the directions below (failure to do so may result in point deductions):
 
 - In your terminal, `cd` to the top level folder (e.g. `cs104-repos`) that has your `resources` and `{{page.hwpath}}-<your_reponame>` repos, etc.
+
+```bash
+cd ~
+cd cs104-repos  # or wherever you store your repos
+```
+
 - Create a subfolder called `verify` using the `mkdir` command below and then `cd` into that folder.
 
 ```bash

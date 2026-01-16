@@ -21,7 +21,7 @@ Copy the `hw1_tests` (or the appropriate numbered) folder from `resources` to yo
 cp -rf hw1_tests ../hw1-ttrojan/
 ```
 
-(replacing `ttrojan` with your USC username).
+(replacing `ttrojan` with your username).
 
 Then, `cd` to the `hw1_tests` folder in your `hw1-ttrojan` folder.
 

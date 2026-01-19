@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Learning Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 Linked List Learning Game</h1>
+            <p>Master linked list operations through interactive challenges</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="main-area">
+                <div class="task-section">
+                    <div class="task-title">
+                        <span id="taskName">Load a challenge to begin</span>
+                        <span id="difficulty" style="font-size: 0.8em; color: #666;"></span>
+                    </div>
+                    <div class="task-instruction" id="taskInstruction">
+                        Select a challenge from the sidebar to get started.
+                    </div>
+                    
+                    <div class="info-section" id="infoSection" style="display: none;">
+                        <strong>📋 Your Task:</strong>
+                        <p id="taskInfo"></p>
+                    </div>
+
+                    <div class="task-input" id="taskInput">
+                        <!-- Dynamic input fields -->
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn btn-primary" id="resetBtn" onclick="resetCurrentTask()">Reset</button>
+                        <button class="btn btn-success" id="submitBtn" onclick="checkSolution()" style="display: none;">Submit Solution</button>
+                        <button class="btn btn-secondary" id="hintBtn" onclick="showHint()">💡 Hint</button>
+                    </div>
+
+                    <div class="list-canvas" id="listCanvas">
+                        <div style="color: #999; text-align: center; width: 100%;">
+                            No list loaded. Select a challenge to begin.
+                        </div>
+                    </div>
+
+                    <div class="feedback" id="feedback"></div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>Challenges</h3>
+                <ul class="level-list" id="levelList">
+                    <!-- Populated by JS -->
+                </ul>
+                <div class="stats">
+                    <div class="stat-item">✓ Completed: <span id="completedCount">0</span>/10</div>
+                    <div class="stat-item" id="scoreDisplay">Score: 0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="completeModal">
+        <div class="modal-content">
+            <h2>🎉 Challenge Complete!</h2>
+            <p id="completeMessage"></p>
+            <button class="btn btn-primary" onclick="closeModal()">Next Challenge</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

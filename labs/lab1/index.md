@@ -386,6 +386,16 @@ Fast-forward
 Now if you read the `lab1/README.md` file on your local machine, it should
 match the one on GitHub!
 
+## Checkoff
+
+Show your TA the contents of your repo including the change you made in the README.md:
+  * on Github
+  * on your development environment 
+
+The contents should be the same.  
+
+**Once your TA has checked you off, you are done! Go celebrate your `git` expertise.**
+
 ## In Closing
 
 There are tons of git cheatsheets all over the web.

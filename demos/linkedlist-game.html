@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Learning Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            max-width: 1200px;
+            width: 100%;
+            padding: 30px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .main-area {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .task-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .task-title {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .task-instruction {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .task-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .task-input input {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .task-input input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .task-input button {
+            padding: 8px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+
+        .task-input button:hover {
+            background: #764ba2;
+        }
+
+        .list-canvas {
+            background: #fff;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            min-height: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: flex-start;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+
+        .list-canvas.drag-over {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .node {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: move;
+            user-select: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            min-width: 80px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .node.dragging {
+            opacity: 0.7;
+            transform: scale(1.05);
+        }
+
+        .node.selected {
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            border: 2px solid #ffd700;
+        }
+
+        .node-value {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .node-id {
+            font-size: 0.8em;
+            opacity: 0.8;
+        }
+
+        .arrow {
+            font-size: 1.5em;
+            color: #667eea;
+            margin: 0 10px;
+        }
+
+        .null-pointer {
+            font-size: 0.9em;
+            color: #999;
+            padding: 10px 15px;
+            border: 2px dashed #999;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+            border: 2px solid #e0e0e0;
+        }
+
+        .sidebar h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .level-list {
+            list-style: none;
+        }
+
+        .level-item {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .level-item:hover {
+            background: #e8eef5;
+            border-left-color: #667eea;
+        }
+
+        .level-item.active {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        .stats {
+            background: #e8eef5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #ddd;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #ccc;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+
+        .feedback {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-weight: bold;
+            min-height: 24px;
+            display: none;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .feedback.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .feedback.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .modal-content .btn {
+            margin-top: 20px;
+            min-width: 150px;
+        }
+
+        .info-section {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .info-section strong {
+            color: #1565c0;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .node {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .success-pulse {
+            animation: pulse 0.5s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .list-canvas {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔗 Linked List Learning Game</h1>
+            <p>Master linked list operations through interactive challenges</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="main-area">
+                <div class="task-section">
+                    <div class="task-title">
+                        <span id="taskName">Load a challenge to begin</span>
+                        <span id="difficulty" style="font-size: 0.8em; color: #666;"></span>
+                    </div>
+                    <div class="task-instruction" id="taskInstruction">
+                        Select a challenge from the sidebar to get started.
+                    </div>
+                    
+                    <div class="info-section" id="infoSection" style="display: none;">
+                        <strong>📋 Your Task:</strong>
+                        <p id="taskInfo"></p>
+                    </div>
+
+                    <div class="task-input" id="taskInput">
+                        <!-- Dynamic input fields -->
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn btn-primary" id="resetBtn" onclick="resetCurrentTask()">Reset</button>
+                        <button class="btn btn-success" id="submitBtn" onclick="checkSolution()" style="display: none;">Submit Solution</button>
+                        <button class="btn btn-secondary" id="hintBtn" onclick="showHint()">💡 Hint</button>
+                    </div>
+
+                    <div class="list-canvas" id="listCanvas">
+                        <div style="color: #999; text-align: center; width: 100%;">
+                            No list loaded. Select a challenge to begin.
+                        </div>
+                    </div>
+
+                    <div class="feedback" id="feedback"></div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>Challenges</h3>
+                <ul class="level-list" id="levelList">
+                    <!-- Populated by JS -->
+                </ul>
+                <div class="stats">
+                    <div class="stat-item">✓ Completed: <span id="completedCount">0</span>/10</div>
+                    <div class="stat-item" id="scoreDisplay">Score: 0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="completeModal">
+        <div class="modal-content">
+            <h2>🎉 Challenge Complete!</h2>
+            <p id="completeMessage"></p>
+            <button class="btn btn-primary" onclick="closeModal()">Next Challenge</button>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // LINKED LIST DATA STRUCTURE
+        // ========================================
+        class Item {
+            constructor(value) {
+                this.value = value;
+                this.next = null;
+                this.id = Math.random().toString(36).substr(2, 9);
+            }
+        }
+
+        class LinkedList {
+            constructor() {
+                this.head = null;
+            }
+
+            clone() {
+                const newList = new LinkedList();
+                let current = this.head;
+                let newHead = null;
+                let newCurrent = null;
+
+                while (current) {
+                    const newItem = new Item(current.value);
+                    if (!newHead) {
+                        newHead = newItem;
+                        newCurrent = newItem;
+                    } else {
+                        newCurrent.next = newItem;
+                        newCurrent = newItem;
+                    }
+                    current = current.next;
+                }
+
+                newList.head = newHead;
+                return newList;
+            }
+
+            toArray() {
+                const arr = [];
+                let current = this.head;
+                while (current) {
+                    arr.push(current.value);
+                    current = current.next;
+                }
+                return arr;
+            }
+
+            size() {
+                let count = 0;
+                let current = this.head;
+                while (current) {
+                    count++;
+                    current = current.next;
+                }
+                return count;
+            }
+        }
+
+        // ========================================
+        // CHALLENGES DEFINITION
+        // ========================================
+        const challenges = [
+            {
+                id: 'insert-beginning',
+                name: 'Insert at Beginning',
+                difficulty: 'Easy',
+                instruction: 'Insert value 99 at the beginning of the list.',
+                taskInfo: 'Create a new node with value 99 and make it the head of the list.',
+                initialList: [5, 10, 15],
+                expectedList: [99, 5, 10, 15],
+                type: 'insert-value',
+                params: { value: 99, position: 'beginning' },
+                hint: 'Create a new node, set its next to the current head, and update head to point to the new node.'
+            },
+            {
+                id: 'insert-end',
+                name: 'Insert at End',
+                difficulty: 'Easy',
+                instruction: 'Insert value 20 at the end of the list.',
+                taskInfo: 'Traverse to the end of the list and append a new node with value 20.',
+                initialList: [5, 10, 15],
+                expectedList: [5, 10, 15, 20],
+                type: 'insert-value',
+                params: { value: 20, position: 'end' },
+                hint: 'Traverse through the list until you reach a node whose next pointer is null. Update that node\'s next to point to the new node.'
+            },
+            {
+                id: 'remove-value',
+                name: 'Remove by Value',
+                difficulty: 'Medium',
+                instruction: 'Remove the node with value 10 from the list.',
+                taskInfo: 'Find and remove the node containing value 10. Be careful with the pointers!',
+                initialList: [5, 10, 15, 20],
+                expectedList: [5, 15, 20],
+                type: 'remove-value',
+                params: { value: 10 },
+                hint: 'Traverse the list. When you find the node to remove, update the previous node\'s next pointer to skip over it.'
+            },
+            {
+                id: 'remove-first',
+                name: 'Remove First Element',
+                difficulty: 'Easy',
+                instruction: 'Remove the first node from the list.',
+                taskInfo: 'Update the head pointer to point to the second node.',
+                initialList: [5, 10, 15, 20],
+                expectedList: [10, 15, 20],
+                type: 'remove-first',
+                params: {},
+                hint: 'Just move the head pointer to head->next.'
+            },
+            {
+                id: 'swap-last-two',
+                name: 'Swap Last Two Nodes',
+                difficulty: 'Hard',
+                instruction: 'Swap the positions of the last two nodes in the list.',
+                taskInfo: 'Find the last two nodes and swap their positions by rearranging pointers.',
+                initialList: [5, 10, 15, 20],
+                expectedList: [5, 10, 20, 15],
+                type: 'swap-last-two',
+                params: {},
+                hint: 'Find the node before the last two nodes (node at size-3), then adjust pointers: node.next = last node, last node.next = second-to-last node, second-to-last node.next = null.'
+            },
+            {
+                id: 'remove-duplicates',
+                name: 'Remove Duplicates',
+                difficulty: 'Hard',
+                instruction: 'Remove all duplicate values, keeping only the first occurrence.',
+                taskInfo: 'Traverse the list and remove nodes that have already appeared earlier in the list.',
+                initialList: [5, 10, 5, 15, 10, 20],
+                expectedList: [5, 10, 15, 20],
+                type: 'remove-duplicates',
+                params: {},
+                hint: 'Keep track of values you\'ve seen. When you encounter a value you\'ve already seen, remove that node.'
+            },
+            {
+                id: 'reverse-list',
+                name: 'Reverse the List',
+                difficulty: 'Hard',
+                instruction: 'Reverse the entire linked list.',
+                taskInfo: 'Rearrange all the pointers so the list goes in reverse order.',
+                initialList: [5, 10, 15, 20],
+                expectedList: [20, 15, 10, 5],
+                type: 'reverse-list',
+                params: {},
+                hint: 'Use three pointers: previous, current, and next. Iterate through the list, reversing each link as you go.'
+            },
+            {
+                id: 'move-to-end',
+                name: 'Move First to End',
+                difficulty: 'Medium',
+                instruction: 'Move the first node to the end of the list.',
+                taskInfo: 'Remove the first node and append it to the end.',
+                initialList: [5, 10, 15, 20],
+                expectedList: [10, 15, 20, 5],
+                type: 'move-to-end',
+                params: {},
+                hint: 'Find the last node, update its next to point to the first node, update the first node\'s next to null, and update head to point to the second node.'
+            },
+            {
+                id: 'insert-sorted',
+                name: 'Insert in Sorted Position',
+                difficulty: 'Hard',
+                instruction: 'Insert value 12 in its correct sorted position.',
+                taskInfo: 'Find the correct position to maintain sorted order and insert the node there.',
+                initialList: [5, 10, 15, 20],
+                expectedList: [5, 10, 12, 15, 20],
+                type: 'insert-sorted',
+                params: { value: 12 },
+                hint: 'Traverse the list to find the first node with a value greater than 12. Insert before that node.'
+            },
+            {
+                id: 'find-middle',
+                name: 'Find Middle Element',
+                difficulty: 'Medium',
+                instruction: 'Highlight the middle node(s) of the list.',
+                taskInfo: 'For even-length lists, highlight both middle nodes. For odd-length, just the middle one.',
+                initialList: [5, 10, 15, 20, 25],
+                expectedList: [5, 10, 15, 20, 25],
+                type: 'find-middle',
+                params: {},
+                hint: 'Use the slow and fast pointer technique. Move one pointer by 1 step and another by 2 steps. When the fast pointer reaches the end, the slow pointer is at the middle.'
+            }
+        ];
+
+        // ========================================
+        // GLOBAL STATE
+        // ========================================
+        let currentChallenge = null;
+        let currentList = null;
+        let originalList = null;
+        let selectedNodes = [];
+        let completedChallenges = new Set();
+        let draggedNode = null;
+
+        // ========================================
+        // INITIALIZATION
+        // ========================================
+        function initializeGame() {
+            renderChallengeList();
+            loadChallenge(challenges[0].id);
+        }
+
+        function renderChallengeList() {
+            const levelList = document.getElementById('levelList');
+            levelList.innerHTML = '';
+
+            challenges.forEach(challenge => {
+                const li = document.createElement('li');
+                li.className = 'level-item';
+                if (challenge.id === currentChallenge?.id) li.classList.add('active');
+                if (completedChallenges.has(challenge.id)) li.innerHTML += '✓ ';
+                
+                li.innerHTML += `${challenge.name}`;
+                li.style.cursor = 'pointer';
+                li.onclick = () => loadChallenge(challenge.id);
+                levelList.appendChild(li);
+            });
+
+            updateStats();
+        }
+
+        function loadChallenge(challengeId) {
+            currentChallenge = challenges.find(c => c.id === challengeId);
+            if (!currentChallenge) return;
+
+            // Create initial list
+            originalList = new LinkedList();
+            currentChallenge.initialList.forEach(value => {
+                const item = new Item(value);
+                if (!originalList.head) {
+                    originalList.head = item;
+                } else {
+                    let current = originalList.head;
+                    while (current.next) current = current.next;
+                    current.next = item;
+                }
+            });
+
+            currentList = originalList.clone();
+            selectedNodes = [];
+
+            // Update UI
+            document.getElementById('taskName').textContent = currentChallenge.name;
+            document.getElementById('difficulty').textContent = `[${currentChallenge.difficulty}]`;
+            document.getElementById('taskInstruction').textContent = currentChallenge.instruction;
+            document.getElementById('taskInfo').textContent = currentChallenge.taskInfo;
+            document.getElementById('infoSection').style.display = 'block';
+
+            // Setup input fields
+            setupTaskInput();
+
+            // Render list
+            renderList();
+            renderChallengeList();
+
+            // Clear feedback
+            document.getElementById('feedback').classList.remove('show');
+            document.getElementById('submitBtn').style.display = 'none';
+        }
+
+        function setupTaskInput() {
+            const taskInput = document.getElementById('taskInput');
+            taskInput.innerHTML = '';
+
+            // Add task-specific input
+            if (currentChallenge.type === 'insert-value' || currentChallenge.type === 'insert-sorted' || currentChallenge.type === 'remove-value') {
+                if (currentChallenge.type !== 'remove-value') {
+                    const label = document.createElement('label');
+                    label.textContent = 'Value to insert: ';
+                    label.style.display = 'flex';
+                    label.style.alignItems = 'center';
+                    label.style.gap = '10px';
+
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.value = currentChallenge.params.value;
+                    input.id = 'valueInput';
+                    input.disabled = true;
+
+                    label.appendChild(input);
+                    taskInput.appendChild(label);
+                } else {
+                    const label = document.createElement('label');
+                    label.textContent = 'Value to remove: ';
+                    label.style.display = 'flex';
+                    label.style.alignItems = 'center';
+                    label.style.gap = '10px';
+
+                    const input = document.createElement('input');
+                    input.type = 'number';
+                    input.value = currentChallenge.params.value;
+                    input.id = 'valueInput';
+                    input.disabled = true;
+
+                    label.appendChild(input);
+                    taskInput.appendChild(label);
+                }
+            }
+
+            if (currentChallenge.type === 'find-middle') {
+                const info = document.createElement('p');
+                info.textContent = '👉 Click on the node(s) you think are in the middle.';
+                info.style.color = '#666';
+                taskInput.appendChild(info);
+            }
+
+            // Show submit button for most challenges
+            document.getElementById('submitBtn').style.display = 'inline-block';
+        }
+
+        // ========================================
+        // LIST RENDERING
+        // ========================================
+        function renderList() {
+            const canvas = document.getElementById('listCanvas');
+            canvas.innerHTML = '';
+
+            if (!currentList.head) {
+                canvas.innerHTML = '<div style="color: #999;">Empty list</div>';
+                return;
+            }
+
+            let current = currentList.head;
+            let isFirst = true;
+
+            while (current) {
+                if (!isFirst) {
+                    const arrow = document.createElement('div');
+                    arrow.className = 'arrow';
+                    arrow.textContent = '→';
+                    canvas.appendChild(arrow);
+                }
+
+                const nodeEl = createNodeElement(current);
+                canvas.appendChild(nodeEl);
+
+                current = current.next;
+                isFirst = false;
+            }
+
+            // Add null pointer
+            const arrow = document.createElement('div');
+            arrow.className = 'arrow';
+            arrow.textContent = '→';
+            canvas.appendChild(arrow);
+
+            const nullPointer = document.createElement('div');
+            nullPointer.className = 'null-pointer';
+            nullPointer.textContent = 'null';
+            canvas.appendChild(nullPointer);
+        }
+
+        function createNodeElement(item) {
+            const nodeEl = document.createElement('div');
+            nodeEl.className = 'node';
+            nodeEl.draggable = true;
+            nodeEl.dataset.id = item.id;
+            nodeEl.dataset.value = item.value;
+
+            if (selectedNodes.includes(item.id)) {
+                nodeEl.classList.add('selected');
+            }
+
+            nodeEl.innerHTML = `
+                <div class="node-value">${item.value}</div>
+                <div class="node-id" style="font-size: 0.7em; opacity: 0.6;">id:${item.id.substr(0, 4)}</div>
+            `;
+
+            // Event listeners
+            nodeEl.addEventListener('dragstart', handleDragStart);
+            nodeEl.addEventListener('dragend', handleDragEnd);
+            nodeEl.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentChallenge.type === 'find-middle') {
+                    toggleNodeSelection(item.id);
+                }
+            });
+
+            return nodeEl;
+        }
+
+        function toggleNodeSelection(nodeId) {
+            const index = selectedNodes.indexOf(nodeId);
+            if (index > -1) {
+                selectedNodes.splice(index, 1);
+            } else {
+                selectedNodes.push(nodeId);
+            }
+            renderList();
+        }
+
+        // ========================================
+        // DRAG AND DROP
+        // ========================================
+        function handleDragStart(e) {
+            draggedNode = {
+                id: e.target.dataset.id,
+                value: parseInt(e.target.dataset.value)
+            };
+            e.target.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragEnd(e) {
+            e.target.classList.remove('dragging');
+            draggedNode = null;
+        }
+
+        const canvas = document.getElementById('listCanvas');
+        canvas.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            canvas.classList.add('drag-over');
+            e.dataTransfer.dropEffect = 'move';
+        });
+
+        canvas.addEventListener('dragleave', () => {
+            canvas.classList.remove('drag-over');
+        });
+
+        canvas.addEventListener('drop', (e) => {
+            e.preventDefault();
+            canvas.classList.remove('drag-over');
+        });
+
+        // ========================================
+        // CHALLENGE SOLUTIONS
+        // ========================================
+        function checkSolution() {
+            const feedback = document.getElementById('feedback');
+
+            let isCorrect = false;
+            let message = '';
+
+            switch (currentChallenge.type) {
+                case 'insert-value': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Perfect! The list has been correctly modified.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'remove-value': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Great! You successfully removed the node.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'remove-first': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Excellent! The first element has been removed.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'swap-last-two': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Perfect! The last two elements have been swapped.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'remove-duplicates': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Excellent! All duplicates have been removed.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'reverse-list': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Perfect! The list has been reversed.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'move-to-end': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Great! The first element has been moved to the end.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'insert-sorted': {
+                    const currentArray = currentList.toArray();
+                    isCorrect = JSON.stringify(currentArray) === JSON.stringify(currentChallenge.expectedList);
+                    message = isCorrect ? '✓ Perfect! The node has been inserted in the correct sorted position.' : 'The list doesn\'t match the expected result.';
+                    break;
+                }
+                case 'find-middle': {
+                    const arr = currentList.toArray();
+                    const len = arr.length;
+                    let middleIndices = [];
+                    
+                    if (len % 2 === 1) {
+                        middleIndices = [Math.floor(len / 2)];
+                    } else {
+                        middleIndices = [len / 2 - 1, len / 2];
+                    }
+
+                    let current = currentList.head;
+                    let middleIds = [];
+                    for (let i = 0; i < len; i++) {
+                        if (middleIndices.includes(i)) {
+                            middleIds.push(current.id);
+                        }
+                        current = current.next;
+                    }
+
+                    isCorrect = selectedNodes.length === middleIds.length && 
+                                middleIds.every(id => selectedNodes.includes(id));
+                    message = isCorrect ? '✓ Correct! You found the middle node(s).' : 'The selected node(s) are not in the middle.';
+                    break;
+                }
+            }
+
+            feedback.className = 'feedback show ' + (isCorrect ? 'success' : 'error');
+            feedback.textContent = message;
+
+            if (isCorrect) {
+                completedChallenges.add(currentChallenge.id);
+                showCompleteModal();
+            }
+        }
+
+        function showHint() {
+            const feedback = document.getElementById('feedback');
+            feedback.className = 'feedback show info';
+            feedback.textContent = '💡 ' + currentChallenge.hint;
+        }
+
+        function showCompleteModal() {
+            const modal = document.getElementById('completeModal');
+            const message = document.getElementById('completeMessage');
+            message.textContent = `You've mastered "${currentChallenge.name}"! Ready for the next challenge?`;
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('completeModal').classList.remove('show');
+            
+            // Load next challenge
+            const currentIndex = challenges.findIndex(c => c.id === currentChallenge.id);
+            if (currentIndex < challenges.length - 1) {
+                loadChallenge(challenges[currentIndex + 1].id);
+            } else {
+                showGameComplete();
+            }
+        }
+
+        function showGameComplete() {
+            const modal = document.getElementById('completeModal');
+            const message = document.getElementById('completeMessage');
+            message.textContent = 'You\'ve completed all challenges! You\'re now a Linked List Master! 🏆';
+            modal.classList.add('show');
+        }
+
+        function resetCurrentTask() {
+            currentList = originalList.clone();
+            selectedNodes = [];
+            renderList();
+            document.getElementById('feedback').classList.remove('show');
+        }
+
+        function updateStats() {
+            document.getElementById('completedCount').textContent = completedChallenges.size;
+            const percentage = Math.round((completedChallenges.size / challenges.length) * 100);
+            document.getElementById('scoreDisplay').textContent = `Score: ${percentage}%`;
+        }
+
+        // ========================================
+        // INTERACTIVE MODIFICATIONS (Simulated)
+        // ========================================
+        // Note: In a real implementation, these would represent student actions
+        // For this demo, students would actually modify the list through drag/drop UI
+
+        function simulateInsertAtBeginning(value) {
+            const newItem = new Item(value);
+            newItem.next = currentList.head;
+            currentList.head = newItem;
+            renderList();
+        }
+
+        function simulateInsertAtEnd(value) {
+            const newItem = new Item(value);
+            if (!currentList.head) {
+                currentList.head = newItem;
+            } else {
+                let current = currentList.head;
+                while (current.next) current = current.next;
+                current.next = newItem;
+            }
+            renderList();
+        }
+
+        function simulateRemoveValue(value) {
+            if (currentList.head && currentList.head.value === value) {
+                currentList.head = currentList.head.next;
+            } else {
+                let current = currentList.head;
+                while (current && current.next) {
+                    if (current.next.value === value) {
+                        current.next = current.next.next;
+                        break;
+                    }
+                    current = current.next;
+                }
+            }
+            renderList();
+        }
+
+        function simulateRemoveFirst() {
+            if (currentList.head) {
+                currentList.head = currentList.head.next;
+            }
+            renderList();
+        }
+
+        function simulateSwapLastTwo() {
+            const arr = currentList.toArray();
+            if (arr.length >= 2) {
+                [arr[arr.length - 1], arr[arr.length - 2]] = [arr[arr.length - 2], arr[arr.length - 1]];
+                
+                // Reconstruct list
+                currentList = new LinkedList();
+                arr.forEach(value => {
+                    const item = new Item(value);
+                    if (!currentList.head) {
+                        currentList.head = item;
+                    } else {
+                        let current = currentList.head;
+                        while (current.next) current = current.next;
+                        current.next = item;
+                    }
+                });
+                renderList();
+            }
+        }
+
+        function simulateReverse() {
+            const arr = currentList.toArray();
+            arr.reverse();
+            
+            currentList = new LinkedList();
+            arr.forEach(value => {
+                const item = new Item(value);
+                if (!currentList.head) {
+                    currentList.head = item;
+                } else {
+                    let current = currentList.head;
+                    while (current.next) current = current.next;
+                    current.next = item;
+                }
+            });
+            renderList();
+        }
+
+        function simulateRemoveDuplicates() {
+            const seen = new Set();
+            let current = currentList.head;
+            let prev = null;
+
+            while (current) {
+                if (seen.has(current.value)) {
+                    if (prev) {
+                        prev.next = current.next;
+                    } else {
+                        currentList.head = current.next;
+                    }
+                    current = current.next;
+                } else {
+                    seen.add(current.value);
+                    prev = current;
+                    current = current.next;
+                }
+            }
+            renderList();
+        }
+
+        function simulateMoveToEnd() {
+            if (currentList.head && currentList.head.next) {
+                const firstNode = currentList.head;
+                currentList.head = firstNode.next;
+                
+                let current = currentList.head;
+                while (current.next) current = current.next;
+                current.next = firstNode;
+                firstNode.next = null;
+                renderList();
+            }
+        }
+
+        function simulateInsertSorted(value) {
+            const newItem = new Item(value);
+
+            if (!currentList.head || currentList.head.value > value) {
+                newItem.next = currentList.head;
+                currentList.head = newItem;
+            } else {
+                let current = currentList.head;
+                while (current.next && current.next.value < value) {
+                    current = current.next;
+                }
+                newItem.next = current.next;
+                current.next = newItem;
+            }
+            renderList();
+        }
+
+        // ========================================
+        // KEYBOARD SHORTCUTS FOR TESTING
+        // ========================================
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'Shift') {
+                // Ctrl+Shift+1 to simulate the appropriate operation
+                switch (currentChallenge.type) {
+                    case 'insert-value':
+                        if (currentChallenge.params.position === 'beginning') {
+                            simulateInsertAtBeginning(currentChallenge.params.value);
+                        } else {
+                            simulateInsertAtEnd(currentChallenge.params.value);
+                        }
+                        break;
+                    case 'remove-value':
+                        simulateRemoveValue(currentChallenge.params.value);
+                        break;
+                    case 'remove-first':
+                        simulateRemoveFirst();
+                        break;
+                    case 'swap-last-two':
+                        simulateSwapLastTwo();
+                        break;
+                    case 'reverse-list':
+                        simulateReverse();
+                        break;
+                    case 'remove-duplicates':
+                        simulateRemoveDuplicates();
+                        break;
+                    case 'move-to-end':
+                        simulateMoveToEnd();
+                        break;
+                    case 'insert-sorted':
+                        simulateInsertSorted(currentChallenge.params.value);
+                        break;
+                }
+            }
+        });
+
+        // Initialize on page load
+        window.addEventListener('load', initializeGame);
+    </script>
+</body>
+</html>

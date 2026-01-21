@@ -1,6 +1,5 @@
 Carefully review and implement the steps discussed in [Lab1]({{site.url}}/labs/lab1/). Then, answer the following questions:
 
-**Continue your answers to this question in the file name `hw1.txt` in your `hw-username/{{page.hwpath}}` folder.**
 
 #### Part (a): 
 

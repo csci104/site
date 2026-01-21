@@ -1,6 +1,5 @@
 Carefully study the information on the [course web site]({{site.url}}), then answer the following questions about course policies:
 
-**Place your answers to this question in a file name `hw1.txt` in your `hw-username/{{page.hwpath}}` folder.**
 
 #### Part (a):
 

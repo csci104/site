@@ -1,5 +1,5 @@
 
-Place your answers to the questions below in the same file as your answers to problem 1 and 2 (i.e. `hw1.txt`).  You do not need to test and compile the code below. You are just writing out your answers in the `hw1.txt` file.
+
 
 Suppose you were given the following class to model an *entry* in your contacts list which uses a custom `Str` class that models a string and replaces `std::string`.
 

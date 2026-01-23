@@ -26,3 +26,19 @@ assistants:
     email: twang151@usc.edu
     image: /assets/img/staff/twang151.jpg
 
+uas:
+  - name: Anna Hsu
+    email: adhsu@usc.edu
+    image: /assets/img/staff/adhsu.jpg
+  - name: Andrew Zhang
+    email: azhang69@usc.edu
+    image: /assets/img/staff/azhang69.jpg
+  - name: Brianna Huynh
+    email: huynhbri@usc.edu
+    image: /assets/img/staff/huynhbri.jpg
+  - name: Darius Mahjoob
+    email: dmahjoob@usc.edu
+    image: /assets/img/staff/dmahjoob.jpg
+  - name: Himanshu Jain
+    email: jainhima@usc.edu
+    image: /assets/img/staff/jainhima.jpg

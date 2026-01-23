@@ -1,5 +1,5 @@
-Carefully review and implement the steps discussed in [Lab1]({{site.url}}/labs/lab1/). Then, answer the following questions:
 
+Carefully review the [Lab1]({{site.url}}/labs/lab1/) procedure (i.e. webpage) and slides linked on the course website or shared folder.  Then, answer the following questions:
 
 #### Part (a): 
 

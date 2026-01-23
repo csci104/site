@@ -5,7 +5,7 @@ title: Homework
 ---
 
 
-In lab you will learn about `Makefile`s and `gtest` (C++ testing suite) which are used in our testing suites.  We may not ALWAYS use the same style of testing suite, and sometimes you may be asked to write tests, but when we do release `gtest` based testing suites, here is how to run them.
+Our automated tests use `gtest` (C++ testing suite).  We may not ALWAYS use the same style of testing suite, and sometimes you may be asked to write tests, but when we do release `gtest` based testing suites, here is how to run them.
 
 Also, just like compiling and debugging, it will require some command line skills.  I think some CS 104 students do not feel comfortable navigating at the command line/terminal (which I hope we can rectify in CS 103 in the future). Basic commands like `cd`, `cp`, `rm`, `pwd`, `mv` etc. should be familiar. With that said, refer to the [CS104 Wiki]({{site.baseurl}}/wiki/linux}}) that goes through the important background for command line navigation. 
 

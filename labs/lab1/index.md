@@ -28,6 +28,12 @@ Start your coding environment and get to a terminal where you can enter commands
 
 Again, these steps assume that you have already finished all the setup from Lab 0. If you haven't done [lab 0](../lab0/) yet, do it now.
 
+Before we start the process, here are a few reminders about Github repos:
+
+- Never clone a Github repo into (or somewhere under) another repo folder on your filesystem.   For example, if you have the `resources` repo in a folder with that name (i.e. `resources`), then do NOT clone any other repo into the `resources` folder. Instead, go up a level to the parent folder and clone any other repositories you like into that folder, so they are all at the same level. This is why we asked you to create a folder like `cs104-repos`, so that you could clone all your repos there.
+- Do not clone repos into a folder that is part of a cloud-based, synchronized folder system (e.g. OneDrive, Dropbox, Google Drive).
+- For this class, don't clone your repo using `https` but `ssh`. So, rather than cloning with a command like:  `git clone https://github.com/org/repo`, use `git clone git@github.com:org/repo` (where `org` and `repo` are the organization and repo name, respectively).
+
 #### Step 2.1 Create a GitHub repo for this lab (for practice)
 
 Login to [GitHub](https://github.com){:target="_blank"} and click the green "New" button. Or you can link there [directly](https://github.com/new){:target="_blank"}

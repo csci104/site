@@ -18,7 +18,7 @@ github_starter_url: https://classroom.github.com/a/lD3BXSq3
 
 ### Updates
 
-* **2026-01-14**: Written portion is officially released. Coding portion to be release tomorrow.
+* **2026-01-14**: Written portion is officially released. Coding portion to be released tomorrow.
 * **2026-01-15**: Coding portion is released.
 * **2026-01-20**: Earlier versions mentioned that you should put your answers in `hw1.txt` and submit that as part of your homework repo.  For Spring 2026, you should ignore those instructions as you will simply submit your written answers on Gradescope.
 * **2026-01-22**: Automated tests released in the `resources` repo. Near the end of this writeup there are directions for how to download, copy, configure, and run the tests.

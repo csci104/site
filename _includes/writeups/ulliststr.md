@@ -39,7 +39,7 @@ To give you a model, we have provided a function named `basicTest()` in the `ull
 To compile a program of multiple files you must list **ALL** the `.cpp` files in the `g++` command line AND **NEVER** compile a `.h` file on the `g++` command line.  Thus, your compilation command would look like:
 
  ```bash
- g++ -g -Wall ulliststr.cpp ullistr_test.cpp -o ullistr_test
+ g++ -g -Wall ulliststr.cpp ulliststr_test.cpp -o ulliststr_test
 ```
 
 However, we have provided a `Makefile` which is a script with compilation commands so you don't have to type the above command.  Instead, just type:

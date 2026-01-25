@@ -113,8 +113,38 @@ ls
 Now you should see several lab files for today!  If you get a message such as `no such file or directory`, then you mistyped the command or weren't in the right directory (folder).
 
 
-
 ### Step 3. Building the  project
+
+#### Step 3.0 For those running on Macs
+
+**Only perform this step if you are running locally on your own Mac.**
+
+You will need to change the Makefile to tell it where homebrew installed `gtest`.  
+
+```make
+CXX      = g++
+CXXFLAGS = -g -Wall -std=c++17
+CPPFLAGS = -I/opt/homebrew/include
+LDFLAGS  = -L/opt/homebrew/lib
+LDLIBS   = -lgtest -lgtest_main -pthread
+
+all: test
+
+run: test
+    ./test
+
+library.o: library.cpp library.hpp
+    $(CXX) $(CPPFLAGS) $(CXXFLAGS) -c library.cpp -o library.o
+
+test: test.cpp library.o
+    $(CXX) $(CPPFLAGS) $(CXXFLAGS) test.cpp library.o $(LDFLAGS) $(LDLIBS) -o test
+
+.PHONY: clean
+clean:
+    rm -f *.o test
+```
+
+#### Step 3.1 Build and Run The Code
 
 So if you are (and you should be) in the `practice-repo/lab1` folder, run.
 

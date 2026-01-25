@@ -159,7 +159,10 @@ We're now going to find the bugs in their programs with GDB.
 
 ### Directions
 
-You may work in **teams of 2** where you solve the bugs and what to do together, but **each person should do the commands and run `gdb` for themselveds, individually, as you *think* together**. You create your answers together but each person should record them for themselves.
+For this lab…
+- You may work in **teams of 2** (but absolutely NO teams of 3) where you solve the bugs and what to do together
+- But **EACH** person should **run the commands and gdb for themselves**, individually;  JUST think TOGETHER as a team!
+- You create your answers together but each person should record them for themselves.
 
 For each problem below, answer in `answers.txt` with:
 

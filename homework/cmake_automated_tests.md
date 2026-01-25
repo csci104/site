@@ -45,7 +45,7 @@ That period/dot is intentional and important. It's not just `cmake`, it is `cmak
 Note: CMake is a very useful program for compiling C++ code that will generate Makefiles and other scripts
 
 #### Step 2a - Test Each Problem Individually
-**If you have written ALL your code for ALL problems in the homework, you can skip down to Step YY**.
+**If you have written ALL your code for ALL problems in the homework, you can skip down to Step 3**.
 
 Each coding problem has a subfolder of its tests.  If you've written code for just one problem and want to test it, then you'll need to `cd` into that subfolder.
 

@@ -93,7 +93,7 @@ labs:
     week: Week 3
     date: 1/27
     title: GDB
-    assigned: false
+    assigned: true
     topics: Debugging
 #    slides: GDBLab.pdf
     slide_msg: See shared folder

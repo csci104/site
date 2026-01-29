@@ -1,4 +1,4 @@
-Place your answers in `hw2.txt`. For each of the following data storage needs, describe which abstract data types you would suggest using. Natural choices would include list, set, map, queue, stack, but also any simpler data types (string, int, double) that you may have learned about before.
+For each of the following data storage needs, describe which abstract data types you would suggest using. Natural choices would include list, set, map, queue, stack, but also any simpler data types (string, int, double) that you may have learned about before.
 
 Try to be specific, e.g., rather than just saying "a list", say "a list of integers" or "a list of names (strings) and a GPA (double)". If you specify a map please describe what the key and value will be. Also, please give a brief explanation for your choice: we are grading you at least as much on your justification as on the correctness of the answer. Also, if you give a wrong answer, when you include an explanation, we'll know whether it was a minor error or a major one, and can give you appropriate partial credit. Also, there may be multiple equally good options, so your justification may get you full credit.
 

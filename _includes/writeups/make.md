@@ -1,6 +1,6 @@
-Continue your answers in `hw2.txt`.
+If the lab session covering `make` has not happened yet, consider waiting until it is covered.
 
-#### Part (a): 
+#### Part (1): 
 Every *action* line in a makefile must start with a:
 
 1. TAB
@@ -9,7 +9,6 @@ Every *action* line in a makefile must start with a:
 1. Space
 1. It doesn't matter, any character can start an action line
 
-#### Part (b):
 Look at the Makefile below and answer the following question. Assume this Makefile is in the current directory, and all required files are available.
 
 ```
@@ -43,19 +42,36 @@ clean:
 	rm -f *.o *~ shape1 shape2 *~
 ``` 
 
-Now we run the command 
+#### Part (2):
+
+If we ran the following, which rules would execute?
 
 ```
-make clean
+make
+```
+
+#### Part (3):
+
+If we ran the following, type out the **first** compiler command that would execute with **EXACT** parameter.  Don't put any leading or trailing spaces **before** the first text or **after** the last text, and put 1 space between each parameter/word (e.g. `g++ -g ... shape.o`).
+
+```
 make shape1
 ```
 
-Which action(s) will get called? What compiler command(s) with what exact parameters will get executed as a result of the action(s)?
 
-#### Part (c):
+#### Part (4):
+
+If we ran the following, type out the **last** compiler command that would execute with **EXACT** parameter.  Don't put any leading or trailing spaces **before** the first text or **after** the last text, and put 1 space between each parameter/word (e.g. `g++ -g ... shape.o`).
+
+```
+make shape1
+```
+
+
+#### Part (5):
 What is the purpose of a .PHONY rule?
 
-#### Part (d):
+#### Part (6):
 What are acceptable names for a makefile? Select all that applies.
 
 1. Makefile.txt

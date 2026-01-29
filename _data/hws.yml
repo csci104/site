@@ -39,7 +39,7 @@ hw2:
     - writeup: git-2.md
       number: 1
       title: More git Questions
-      points: 106
+      points: 10
     - writeup: make.md
       number: 2
       title: Makefiles
@@ -48,7 +48,7 @@ hw2:
       number: 3
       title: ADTs
       points: 50
-    - writeup: class-design-restaurant.md
+    - writeup: class-design-websearch.md
       number: 4
       title: Class Structures and OO Design
       points: 25

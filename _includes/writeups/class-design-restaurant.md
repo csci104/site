@@ -1,10 +1,10 @@
 
-This problem has nothing to do with the programming problem(s) below, but it will separately test your understanding of class structures and inheritance. **Place your answers in PDF file named `hw2_q4.pdf`** (Use your phone to convert hand-drawn results to a PDF, if necessary).
+This problem has nothing to do with the programming problem(s) below, but it will separately test your understanding of class structures and inheritance. Upload your work as a **PDF**  (Use your phone to convert hand-drawn results to a PDF, if necessary).
 
 Imagine that you are writing a simulation of a restaurant to help make decisions about number of employees, ensure appropriate crowding levels both in the restaurant and kitchen, etc.
 
 - The restaurant employs chefs, waiters, and hosts. The restaurant also has an owner.
-- Employee pay is calculated using a different algorithm based on the type of employee. Waiters also receive tips. The owner doesn't get paid hourly ... she owns the business.
+- Employee pay is calculated using a different algorithm based on the type of employee. Waiters also receive tips. The owner doesn't get paid ... she owns the business.
 - Parties of customers are categorized as walk-in, reserved, and celebrity parties
    + A party has a size (number of people).
    + A party will be matched to a table (we'll assume 1 party per table).
@@ -23,15 +23,15 @@ Note: You don't have to worry about how time would "increase" or "pass", nor do 
 
 Diagram the classes (show as a box) involved from the description given. Indicate which classes are abstract, and which aren't. Show which classes inherit from each other with an arrow and label it as `public` or `private`. Also show which classes have a "has-a" relationship to another class and indicate what container class (if any) would be used to store them (e.g., lists, sets or maps where appropriate).
 
-You should identify the **key** virtual functions (and whether they are *pure* virtual functions). Also, identify the data members of a class insofar as they indicate "has-a" relationships.  
+You should identify the **important** virtual functions (and whether they are *pure* virtual functions) based on the operations we need to support. Also, identify the data members of a class insofar as they indicate "has-a" relationships.  
 
-For this problem, you can choose to draw this by hand and scan it (and submit as a JPG or PDF), or to use some graphics software (and produce a JPG or PDF), or to use UML (if you know it), or draw it using ASCII art (this may be a lot of work). Provide an explanation with your choices, i.e., tell us why you chose to have certain classes inherit from each other (or not inherit). Notice that you don't need to do any actual programming for this problem.
+For this problem, you can choose to draw this by hand and scan it (and submit as a JPG or PDF), or to use some graphics software (and produce a JPG or PDF), or to use UML (if you know it), or draw it using ASCII art (this may be a lot of work). **Briefly**, provide an explanation with your choices, i.e., tell us why you chose to have certain classes inherit from each other (or not inherit). Notice that you don't need to do any actual programming for this problem.
 
-Of course, there isn't just one solution, but some solutions are better than others.  Just do your best to write a class hierarchy, define member functions, and identify keep composition and data structure members to support the description above. Good explanations may help you convince us that your proposed approach is actually good.
+Of course, there isn't just one solution, but some solutions are better than others.  Just do your best to define a class hierarchy, define member functions, and identify keep composition and data structure members to support the description above. Good explanations may help you convince us that your proposed approach is actually good.
 
 #### Clarifications:
 
-  - **Question:**  Do we need to define every member function and data member that the classes are supposed to have? Or just the virtual functions and composed objects?
+  - **Question:**  Do we need to define **every** *member* function and data member that the classes are supposed to have? Or just the virtual functions and composed objects?
 
      - **Answer:** Just the composed objects, and the (important) virtual functions.  In addition, if a detail is mentioned by the problem statement, and you decide to implement it by way of a data member, you should mention this, so as to let the grader know that you are NOT implementing it via a virtual function, or inheritance, or composition.
 

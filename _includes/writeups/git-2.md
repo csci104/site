@@ -5,12 +5,12 @@
 >figure courtesy of the [Pro Git](http://git-scm.com/book) book by Scott Chacon
 
 Notes:
-  - Parts (a) through (f) should be done in sequence. In other words, when you get to part (f), you should assume that you already executed the earlier commands (a), (b), ..., (e). You **must** use the terminology specified in the lifecycle shown above, for example the output of `git status` is not accepted as a valid answer. 
+  - Parts (a) through (f) should be done in sequence. In other words, when you get to part (f), you should assume that you already executed the earlier commands (a), (b), ..., (e). You **must** use the terminology specified in the lifecycle shown above. 
   - For the purposes of this question, you can assume you have full access (i.e. read/write) to the repository.
   - For this problem you may use online sources to look up information about `make` and Makefiles, but please cite your sources).  
   - **Place your answers in a file named `hw2.txt`**.
 
-#### Part (a):
+#### Part (1):
 What is the status of `README.md` after performing the following operations:
 
 ```bash
@@ -22,7 +22,7 @@ git clone git@github.com:{{site.data.main.github_org}}/SampleRepo.git
 cd SampleRepo
 ```
 
-#### Part (b):
+#### Part (2) and (3):
 What is the status of `README.md` and `fun_problem.txt` after performing the following operations:
 
 ```bash
@@ -34,14 +34,14 @@ ls
 echo "Markdown is easy" >> README.md
 ```
 
-#### Part (c):
+#### Part (4) and (5):
 What is the status of `README.md` and `fun_problem.txt` after performing the following operation:
 
 ```bash
 git add README.md fun_problem.txt
 ```
 
-#### Part (d):
+#### Part (6) and (7):
 What is the status of `README.md` and `fun_problem.txt` after performing the following operations:
 
 ```bash
@@ -50,7 +50,7 @@ echo "Markdown is too easy" >> README.md
 echo "So far, so good" >> fun_problem.txt
 ```
 
-#### Part (e):
+#### Part (8) and (9):
 What is the status of `README.md` and `fun_problem.txt` after performing the following operations:
 
 ```bash
@@ -58,9 +58,9 @@ git add README.md
 git checkout -- fun_problem.txt
 ```
 
-Also, what are the contents of `fun_problem.txt`? Why?
+As an ungraded thought question, what are the contents of `fun_problem.txt`? Why?
 
-#### Part (f):
+#### Part (10):
 What is the status of `README.md` after performing the following operation:
 
 ```bash

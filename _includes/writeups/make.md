@@ -52,7 +52,7 @@ make
 
 #### Part (3):
 
-If we ran the following, type out the **first** compiler command that would execute with **EXACT** parameter.  Don't put any leading or trailing spaces **before** the first text or **after** the last text, and put 1 space between each parameter/word (e.g. `g++ -g ... shape.o`).
+If we ran the following, type out the **first** compiler command that would execute with **EXACT** parameters.  Don't put any leading or trailing spaces **before** the first text or **after** the last text, and put 1 space between each parameter/word (e.g. `g++ -g ... shape.o`).
 
 ```
 make shape1
@@ -61,7 +61,7 @@ make shape1
 
 #### Part (4):
 
-If we ran the following, type out the **last** compiler command that would execute with **EXACT** parameter.  Don't put any leading or trailing spaces **before** the first text or **after** the last text, and put 1 space between each parameter/word (e.g. `g++ -g ... shape.o`).
+If we ran the following, type out the **last** compiler command that would execute with **EXACT** parameters.  Don't put any leading or trailing spaces **before** the first text or **after** the last text, and put 1 space between each parameter/word (e.g. `g++ -g ... shape.o`).
 
 ```
 make shape1

@@ -49,7 +49,9 @@ In general, we want to parse files and find all the searchable terms.  To simpli
 
 #### TXT File Parsing
 
-We have provided an implementation of a `.txt` file parser (`txtparser.h/.cpp`) that you may **use for reference** when completing the following MD parser.  We assume `.txt` file can contain no hyperlinks to other pages, so we only need to parse the text for search terms. 
+We have provided an implementation of a `.txt` file parser (`txtparser.h/.cpp`) that you may **use for reference** when completing the following MD parser.  We assume `.txt` file can contain no hyperlinks to other pages, so we only need to parse the text for search terms. And the display function just creates a string with all the text from the file.
+
+**HOWEVER**, by studying how we implement this, you should be able to implement the Markdown parser more easily.
 
 #### Markdown Parsing
 
@@ -138,7 +140,7 @@ test-small/pgh.txt
 
 The contents of `index.in` are the file names of the web pages themselves, one per line.  Each web page is stored in its own file. Your program should then read in all the web pages whose file name was listed in the index.  There will be no format errors in the index file other than possibly blank lines, which you should just skip and continue to the next line. If any file cannot be opened you may output an error message but should continue to the next file and try to parse it.
 
-We recommend that you store the index file and the other webpage files in a subdirectory just to keep your code and data files separated. We have already done this in the `{{page.hwpath}}/test-small` folder provided via the `resources` repository. 
+We recommend that you store the index file and the other webpage files in a subdirectory just to keep your code and data files separated. We have already done this in the `test-small` subfolder provided in your starter code. 
 
 The index file will be passed via the command line to your application:
 
@@ -162,6 +164,8 @@ As an example, if a page named `test-small/pg1.md` has the following contents
 ```
 
 then `test-small/pg1.md` would have an **outgoing link** to `test-small/pg2.md` and `test-small/pg3.md`. And they in turn, would have one **incoming link** from `test-small/pg1.md`
+
+Note: We use `typedef`s in `webpage.h` to make shorter type names. Feel free to lookup more info on `typedef`s if they are unfamiliar.
 
 ### Create a Command-line UI for Searching and Displaying Page Info
 
@@ -226,7 +230,7 @@ You will need to complete the rest of `cmd_handlers.cpp` to implement the comman
 
 At the heart of this assignment is the search engine (database).  To implement the search operations we have provided a `SearchEng` (Search Engine) class that can be used to store all the webpages objects and indexing data as well as actually performing the search operations and returning the appropriate `WebPage`s.  In order to be able to answer queries, you should use an **appropriate data structure that will allow you to know the set of web pages that contain a particular word/term**. Since you do NOT want to have to scan all webpages on each query, you should build this data structure as you parse all the webpages or update it anytime a webpage is added.   **This data structure is the heart of this assignment, choose it carefully**.  Again, given a term you would want to know the set of webpages that contain that term.
 
-Also, in order to not run into memory problems, you probably do not want to store duplicates of WebPage objects, as that would duplicate huge amounts of text. Instead, depending on where you store the web pages, you may want to use set of indices (i.e. an integer index to a list) or pointers to WebPage objects. The exact choice here is up to you.
+Also, in order to not run into memory problems, you probably do not want to store duplicates of WebPage objects, as that would duplicate huge amounts of text. Instead, depending on where you store the web pages, you may want to use a set of indices (i.e. an integer index to a list) or pointers to WebPage objects. The exact choice here is up to you.
 
 #### Combining Search Results
 
@@ -306,7 +310,7 @@ Also remember to complete the provided `Makefile` to ensure all your code compil
 
 - Be sure to handle the check for and throw the appropriate exceptions listed in the header file (`searcheng.h`) documentation for various `SearchEng` member functions.
 
-### Recommended Ordering of Implementation
+### Files to Update
 
 The files you will need to complete are:
 
@@ -319,9 +323,11 @@ The files you will need to complete are:
 
 All other files are complete, though you'll need to read through them carefully to understand what you've been given.
 
+### Recommended Ordering of Implementation
+
 We recommend the following order of implementation:
 
-- [ ] Complete your `MDParser`.  You may consider writing a separate test program (i.e. `.cpp` program with a `main()`) that creates an MDParser and parses a sample MD file, but we have also provided a set of MD parsing tests in `mdparse-tests.cpp`.  
+- [ ] Complete your `MDParser`.  You may consider writing a separate test program (i.e. `.cpp` program with a `main()`) that creates an MDParser and parses a sample MD file, but we have also provided a set of MD parsing tests in `mdparse-tests.cpp`.  You can compile them with `make mdparser-tests` and then run them as `./mdparser_tests`.
 
 - [ ] Update/complete your `Makefile` for each `.cpp` file.
 

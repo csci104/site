@@ -16,6 +16,7 @@ github_starter_url: https://classroom.github.com/
 
 ### Updates
 
+- 2026/01/30 - Written portion released; Coding portion to be released soon.  Note: Q4 on the written portion refers to the coding problem skeleton code. We will release that very soon, but forego that problem for now.
 
 ## Written Portion
 

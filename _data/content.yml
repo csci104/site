@@ -12,13 +12,13 @@ assignments:
 #      due: Fri., September 12th
   - id: hw2
     title: Inheritance, Polymorphism, and STL
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link:
     dates:
       assigned:
       checkpoint:
-      written: Fri., Feb 6th
+      written: Mon., Feb 9th
       programming: Fri., Feb 20th
 #      due: Fri., October 3rd
   - id: hw3

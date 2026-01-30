@@ -3,7 +3,9 @@
 
 ### Skeleton Code
 
-*Don't worry about the number of source files you see. Many are complete and others will be short and/or repeat the same pattern of code. So the overall amount of code you have to write will not be TOO large.  The main task is to understand how all the classes fit together and choose the appropriate ADTs in the `SearchEng` class. Read through the contents of this description a few times (even if it seems long).*
+*Don't worry about the number of source files you see. Many are complete and others will be short and/or repeat the same pattern of code. So the overall amount of code you have to write will not be TOO large.  The main task is to understand how all the classes fit together and choose the appropriate ADTs in the `SearchEng` class.*
+
+**Read through the contents of this description a few times (even if it seems long).**
 
 ### Overview
 

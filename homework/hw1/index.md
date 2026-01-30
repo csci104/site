@@ -59,7 +59,7 @@ github_starter_url: https://classroom.github.com/a/lD3BXSq3
   git clone git@github.com:{{ site.data.urls.github_org }}/<your_{{page.hwpath}}_repo>
   ```
 
-- In the VS Code editor, choose `File..Open Folder` and then find and open that folder (i.e. `cs104-repos/<your_hw1_repo>`)
+- In the VS Code editor, choose `File..Open Folder` and then find and open that folder (i.e. `cs104-repos/<your_{{page.hwpath}}_repo>`)
 
 
 

@@ -5,7 +5,7 @@ tasks: false
 title: Homework 2
 nav: assignments
 hwpath: hw2
-
+github_starter_url: https://classroom.github.com/
 ---
 
 ## {{page.title}}
@@ -33,7 +33,7 @@ hwpath: hw2
 
 ### Github Classroom URL
 
-**Signup link to create your HW1 repo:** [signup link]({{page.github_starter_url}})
+**Signup link to create your HW2 repo:** [signup link]({{page.github_starter_url}})
 
 
 ### Reminder: A Few Notes on Repositories

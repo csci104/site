@@ -1,4 +1,5 @@
-If the lab session covering `make` has not happened yet, consider waiting until it is covered.
+**Prerequisite:** `make` lab.
+ - If the lab session covering `make` has not happened yet, consider waiting until it is covered.
 
 #### Part (1): 
 Every *action* line in a makefile must start with a:

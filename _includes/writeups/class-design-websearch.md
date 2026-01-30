@@ -1,3 +1,6 @@
+**Prerequisite:** Inheritance and Polymorphism
+ - If Inheritance and Polymorphism have not been reviewed in lecture (though they were covered in 103), consider waiting to start this problem.
+
 Read the Web Search programming problem desribed in the second half of the assignment carefully (several times), and study the provided skeleton code.  
 
 **Draw an inheritance diagram** (an example of an inheritance diagram is shown below) of all the classes in the skeleton code, as well as all of the classes you need to create for this assignment. Show any inheritance relationship as well as **important** composition (has-a) relationships between the classes we've given of important data members (you can ignore composition relationships of basic `string`, `int`, etc. data members). **Before you can show composition relationships, you will need to consider what data members might need to be added to various classes (in particular the `SearchEng` and derived `Handlers`).  This should act as a planning exercise for the coding assignment.**

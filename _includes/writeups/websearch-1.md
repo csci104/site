@@ -1,8 +1,7 @@
+**Prerequisite:** ADTs, C++ STL (`map<K,V>`, `set<T>`, etc.), Inheritance and Polymorphism
+ - If ADTs, C++ STL, Inheritance and Polymorphism have not been reviewed in lecture (though they were covered in 103), consider waiting to start this problem.
 
 ### Skeleton Code
-Some skeleton code has been provided for you in the `{{ page.hwpath }}` folder and has been pushed to the Github repository [`resources`]({{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  
-
- - [ ] Copy the contents of `{{ page.hwpath }}` (and its subdirectories) over to a `{{ page.hwpath }}` folder under your `hw-username` repository.
 
 *Don't worry about the number of source files you see. Many are complete and others will be short and/or repeat the same pattern of code. So the overall amount of code you have to write will not be TOO large.  The main task is to understand how all the classes fit together and choose the appropriate ADTs in the `SearchEng` class. Read through the contents of this description a few times (even if it seems long).*
 
@@ -14,7 +13,7 @@ As you will see, all of this will require using quite a lot of the object-orient
 
 **We may build off of this project in a future homework. We will not provide solutions so anything you do not get working in this HW will need to be fixed in the future. So PLEASE work hard to complete this homework.**
 
-In addition, we provide you a lot of code and structure so that you can see "good" examples of object-oriented design.  Again, recall that your ability to read and understand others' code is on par with being able to write your own.
+In addition, we provide you a lot of code and structure so that you can see "good" examples of object-oriented design.  A **major** learning objective of this homework is for you to **study and learn how the provided code works** and to also understand **how its structure simplifies modularity and extendability for the future**.  Again, recall that your ability to read and understand others' code is on par with being able to write your own.
 
 We also heavily utilize inheritance and polymorphism. Understanding how they work and the benefits of using them is a key learning outcome of doing this assignment.  So please spend some time understanding and considering the given design.
 

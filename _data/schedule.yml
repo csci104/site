@@ -140,10 +140,11 @@ lectures:
     notes: 
       - L09_PQHeaps.pdf
 
+  # 11 Tue 2/17
   - topics: 
     - President's Day Holiday
 
-  # 11 Thu 2/12
+  # 12 Thurs 2/19
   - topics:
       - Heaps
     chapters:
@@ -152,7 +153,7 @@ lectures:
     notes: 
       - L09_PQHeaps.pdf
 
-  # 12 Tue 2/17
+  # 13 Tue 2/24
   - topics:
       - Heapsort and build-heap
       - Graph Algorithms
@@ -161,7 +162,7 @@ lectures:
     notes: 
       - L10_GraphsAlgorithms.pdf
  
-  # 13 Thu 2/19
+  # 14 Thu 2/26
   - topics:
       - Graph Traversals
       - Tree Traversals
@@ -173,7 +174,7 @@ lectures:
     special_row: "Exam 1 during Quiz Section"
 
   
-  # 14 Tue 2/24
+  # 15 Tue 3/3
   - topics:
       - Iterators
       - Binary Search Trees
@@ -183,7 +184,7 @@ lectures:
       - L13_Iterators.pdf
       - L14_BalancedBST_AVL.pdf
 
-  # 15 Thu 2/26
+  # 16 Thu 3/5
   - topics:
       - AVL Trees
     chapters:
@@ -191,7 +192,7 @@ lectures:
     notes: 
       - L14_BalancedBST_AVL.pdf
 
-  # 16 Tue 3/3
+  # 17 Tue 3/10
   - topics:
       - Splay Trees
       - Hash Table introduction
@@ -200,19 +201,26 @@ lectures:
     notes: 
       - L15_SplayTrees.pdf
 
-  # 17 Thu 3/5
+  # 18 Thu 3/12
   - topics:
       - Hash Table introduction
-      - Counting
     chapters:
       - Chapter 5.1-5.3
-      - Lewis & Zax Chapter 22
     notes: 
       - L16_HashingIntro.pdf
       - L16_HashingIntro_Mark.pdf
       - L16_HashingPractice.pdf
+    special_row: "Spring Break"
 
-  # 18 Tue 3/10
+  # 19 Tue 3/24
+  - topics:
+      - Counting
+    chapters:
+      - Lewis & Zax Chapter 22
+    notes: 
+      - L17_Counting.pdf
+
+  # 20 Thu 3/26
   - topics:
       - Counting
     chapters:
@@ -220,7 +228,7 @@ lectures:
     notes: 
       - L17_Counting.pdf
 
-  # 19 Thu 3/12
+  # 21 Tue 3/31
   - topics:
       - Recursion - All combinations
     chapters:
@@ -229,10 +237,7 @@ lectures:
     notes: 
       - L12_BacktrackingSearch.pdf
 
-  - topics:
-    - Spring Break
-
-  # 20 Thu 3/26
+  # 22 Thurs 4/2
   - topics:
       - Probability
     chapters:
@@ -240,7 +245,7 @@ lectures:
     notes: 
       - L18_Probability.pdf
 
-  # 21 Tue 3/31
+  # 23 Tue 4/7
   - topics:
       - Probability
     chapters:
@@ -248,7 +253,7 @@ lectures:
     notes: 
       - L18_Probability.pdf
 
-  # 22 Thu 4/2
+  # 24 Thu 4/9
   - topics:
       - Probability
     chapters:
@@ -256,7 +261,7 @@ lectures:
     notes: 
       - L18_Probability.pdf
 
-  # 23 Tue 4/7
+  # 25 Tue 4/14
   - topics:
       - Number Theory
     chapters:
@@ -265,7 +270,7 @@ lectures:
     notes: 
       - L19_NumberTheory.pdf
  
-  # 24 Thu 4/9
+  # 26 Thur 4/16
   - topics:
       - Number Theory
       - Hash Functions
@@ -275,7 +280,7 @@ lectures:
       - L19_NumberTheory.pdf
       - L20_HashFunctions.pdf
  
-  # 25 Tue 4/14
+  # 27 Tue 4/21
   - topics:
       - Hash Functions and Bloom Filters 
     chapters:
@@ -283,7 +288,7 @@ lectures:
     notes: 
       - L20_HashFunctions.pdf
 
-  # 26 Thu 4/16
+  # 28 Thu 4/23
   - topics:
       - Tries
       - Skip Lists
@@ -294,7 +299,7 @@ lectures:
       - L22_Tries.pdf
       - L21_SkipLists.pdf
   
-  # 27 Tue 4/21
+  # 29 Tue 4/28
   - topics:
       - Amortized Analysis
       - Merge Trees
@@ -304,7 +309,7 @@ lectures:
       - L23_AmortizedAnalysis.pdf
       - L24_MergeTrees.pdf
 
-  # 28 Thu 4/30
+  # 30 Thu 4/30
   - topics:
       - Final Review
     chapters:

@@ -244,6 +244,7 @@ lectures:
       - Lewis & Zax Chapter 26
     notes: 
       - L18_Probability.pdf
+    special_row: "Exam 2 during Quiz Section"
 
   # 23 Tue 4/7
   - topics:
@@ -298,6 +299,7 @@ lectures:
     notes: 
       - L22_Tries.pdf
       - L21_SkipLists.pdf
+    special_row: "Exam 3 during Quiz Section"
   
   # 29 Tue 4/28
   - topics:

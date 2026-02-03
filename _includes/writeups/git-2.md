@@ -8,7 +8,6 @@ Notes:
   - Parts (a) through (f) should be done in sequence. In other words, when you get to part (f), you should assume that you already executed the earlier commands (a), (b), ..., (e). You **must** use the terminology specified in the lifecycle shown above. 
   - For the purposes of this question, you can assume you have full access (i.e. read/write) to the repository.
   - For this problem you may use online sources to look up information about `make` and Makefiles, but please cite your sources).  
-  - **Place your answers in a file named `hw2.txt`**.
 
 #### Part (1):
 What is the status of `README.md` after performing the following operations:

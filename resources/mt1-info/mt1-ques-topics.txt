@@ -1,0 +1,104 @@
+    - exam: resources/midterm-c.pdf 
+      solutions: [resources/{midterm-c-q1sol.png midterm-c-q2q3sol.pdf midterm-c-q4q6sol.pdf}]
+      mapping:
+       - number: 1
+         q-pages: 3
+         sol-file: resources/midterm-c-q1sol.png
+         folder: astar-trace-1
+         short_name: "A* tracing 1"
+         topic: "A-star and graph algorithms"
+         sp26_exam: mt2
+       - number: 2
+         folder: runtime-bincntr
+         q-pages: 4
+         sol-file: midterm-c-q2q3sol.pdf
+         sol-pages: 1
+         short_name: "Binary counter runtime analysis"
+         topic: "Runtime analysis"
+         sp26_exam: mt1
+       - number: 3
+         folder: lazy-quicksort
+         q-pages: 5
+         sol-file: midterm-c-q2q3sol.pdf
+         sol-pages: 1
+         short_name: "Lazy Quicksort"
+         topic: "Recurrence runtime analysis"
+         sp26_exam: mt2
+       - number: 4
+         folder: ll-rec-merge
+         q-pages: 6
+         generate-solution: true
+         short_name: "Recursive linked-list merge"
+         topic: "Linked List Recursion"
+         sp26_exam: mt1
+       - number: 5
+         folder: stack-shape-game
+         q-pages: 7,8
+         generate-solution: true
+         short_name: "Shape Game (Stacks and Coding)"
+         topic: "Stacks"
+         sp26_exam: mt1
+       - number: 6
+         folder: graph-impl-stl1
+         generate-solution: true
+         q-pages: 9,10
+         short_name: "Graph Implementation and STL coding"
+         topic: "Graphs and STL"
+         sp26_exam: mt2
+       - number: 7
+         folder: heap-linked-removemin
+         generate-solution: true
+         q-pages: 11
+         short_name: "Link-based Heap Remove-min"
+         topic: "Heaps"
+         sp26_exam: mt2
+
+    - exam: resources/midterm-b.pdf 
+      mapping:
+       - number: 1b
+         q-pages: 1
+         generate-sol: true
+         folder: polymorph-short1
+         short_name: "A* tracing 1"
+         topic: "A-star and graph algorithms"
+         sp26_exam: mt2
+       - number: 2
+         folder: adt-id1
+         q-pages: 3
+         sol-file: midterm-b-sol.pdf
+         sol-pages: 3
+         short_name: "ADT identification"
+         topic: "ADTs"
+         sp26_exam: mt1
+       - number: 3
+         folder: class-hier1
+         q-pages: 4
+         sol-file: midterm-b-sol.pdf
+         sol-pages: 4
+         short_name: "Documents"
+         topic: "Polymorphism"
+         sp26_exam: mt2
+       - number: 4
+         folder: ll-rec-merge
+         q-pages: 5
+         sol-file: midterm-b-sol.pdf
+         sol-pages: 5
+         short_name: "Recursive linked-list tracing"
+         topic: "Linked List Recursion"
+         sp26_exam: mt1
+       - number: 5
+         folder: polymorph-trace1
+         q-pages: 6
+         generate-solution: true
+         short_name: "Difficult Questions (Polymorphism)"
+         topic: "Polymorphism"
+         sp26_exam: mt1
+       - number: 7
+         folder: stl
+         generate-solution: true
+         q-pages: 8,9
+         sol-file: midterm-b-sol.pdf
+         sol-pages: 9
+         short_name: "Brain and STL coding"
+         topic: "STL coding"
+         sp26_exam: mt2

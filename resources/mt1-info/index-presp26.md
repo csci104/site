@@ -20,30 +20,31 @@ The test will be **IN PERSON**
 
 - The test will be taken on paper. Be prepared a pencil/pen.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.
+- You are allowed 1 **8.5x11 handwritten (front and back) cheatsheet**. No **printed** cheat sheets.  No **single-sided, taped** pages to form a double-sided sheet.  You may be asked to turn your cheatsheet in when you are done with the exam (so if you want it for posterity, make a copy beforehand).
 
 ### Topics and Style
 
-The exam is a mix of short answer, multiple choice, analysis, tracing, and coding. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
+The exam is a mix of short answer, multiple choice, and coding snippets. We will **visually** grade your code snippets and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
 
 #### Unit 2a-2f - Review of CS 103 and CS 170
  - Memory allocation (when to use dynamic allocation)
  - Scope and lifetime of variables
  - Pointers, references
- - Runtime (we will provide your basic series formulas)
- - Linked lists
  - Classes (access modifiers), construction, destructions, initialization lists, use of `const` )
  - Operator overloading
+ - Runtime (you'll probably want your basic series formulas on your cheat sheet)
+ - Linked lists
  - Copy Constructors / Assignment Operators / Rule of 3.
 
 #### Unit 3 - Recursion
  - Simple recursion
- - **Tracing of recursive functions**
+ - Tracing of recursive functions
  - Understanding order of execution (head vs. tail recursion)
- - **Linked list recursion coding**
+ - Linked list recursion
 
 #### Unit 4 - ADTS
  - List, Set, Map, Priority Queue, Queue, Stack
- - **ADT Identification**: When to use each given a problem description
+ - When to use each given a problem description
 
 #### Unit 5 - STL
  - Iterators and their use
@@ -62,14 +63,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 
 #### Unit 7 - Queues and Stack
  - Implementation options and their efficiency
- - ArrayBased list implementations (resizing and its runtime)
- - Queue, stack and deque implementations
  - Applications of queues and stacks
-
-#### Unit 8 - Templates
- - Process for defining templated classes
- - Basic rules for templates and inheritance
- - Functors
 
 #### Unit 9 - PQ and Heaps
  - Tree representations and storage
@@ -78,7 +72,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
  - Heap implementation and operations (push, pop, top) and runtime
  - `build-heap` (`make-heap`) algorithm and runtime
  - heap-sort
-
+ - Functors
  
 ### Practice Materials
 

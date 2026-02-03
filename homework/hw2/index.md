@@ -5,7 +5,7 @@ tasks: false
 title: Homework 2
 nav: assignments
 hwpath: hw2
-github_starter_url: https://classroom.github.com/
+github_starter_url: https://classroom.github.com/a/yVnHKlcX
 ---
 
 ## {{page.title}}
@@ -17,6 +17,7 @@ github_starter_url: https://classroom.github.com/
 ### Updates
 
 - 2026/01/30 - Written portion released; Coding portion to be released soon.  Note: Q4 on the written portion refers to the coding problem skeleton code. We will release that very soon, but forego that problem for now.
+- 2026/02/03 - Coding portion released;  It's a large code base.  A good amount of time is required to read and understand the code provided. This is a learning outcome of this assignment.  Then you will add in components to complete the design.
 
 ## Written Portion
 

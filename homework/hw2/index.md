@@ -13,14 +13,14 @@ github_starter_url: https://classroom.github.com/a/yVnHKlcX
 + Due: See [homework page]({{site.url}}/homework/index.html)
 + Written portion: Submitted on Gradescope
 + Coding portion: Use Github Classroom link given at the start of the Coding portion of this page. 
-+ Posted:
-  - [Video](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/design-patterns-polymorphism.mp4) -  **Polymorphism and Design Patterns**: Common polymorphic approaches to software design.  Background knowledge that we will refer to in this homework.
-  - [Video](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/websearch-intro.mp4) -  **Homework Walkthrough**: Tour of the code and help for the inheritance diagram for this homework.
   
 ### Updates
 
 - 2026/01/30 - Written portion released; Coding portion to be released soon.  Note: Q4 on the written portion refers to the coding problem skeleton code. We will release that very soon, but forego that problem for now.
 - 2026/02/03 - Coding portion released;  It's a large code base.  A good amount of time is required to read and understand the code provided. This is a learning outcome of this assignment.  Then you will add in components to complete the design.
+- 2026/02/06 - Posted 2 videos:
+  - [Video1](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/design-patterns-polymorphism.mp4) -  **Polymorphism and Design Patterns**: Common polymorphic approaches to software design.  Background knowledge that we will refer to in this homework.
+  - [Video2](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/websearch-intro.mp4) -  **Homework Walkthrough**: Tour of the code and help for the inheritance diagram for this homework.
 
 ## Written Portion
 

@@ -30,6 +30,11 @@ At a high level, a search engine is based on the following components:
 
 For this assignment, we focus on parsing and simply returning all answers to a query, without worrying about ranking or user customization. Notice, however, that you want to keep an eye on making your code well documented and **extensible** by using good object-oriented principles (encapsulation, loose-coupling, inheritance/polymorphism, and appropriate distribution of responsibilities, etc.) in case we add to it later. (That said, you will also be allowed to rewrite your code later.)  
 
+### Related Videos
+
+  - [Video](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/design-patterns-polymorphism.mp4) -  **Polymorphism and Design Patterns**: Common polymorphic approaches to software design.  Background knowledge that we will refer to in this homework.
+  - [Video](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/websearch-intro.mp4) -  **Homework Walkthrough**: Tour of the code and help for the inheritance diagram for this homework.
+
 
 <!--
 The diagram below shows the general class structure and can be referenced as you read the remainder of this assignment.

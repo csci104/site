@@ -32,8 +32,8 @@ For this assignment, we focus on parsing and simply returning all answers to a q
 
 ### Related Videos
 
-  - [Video1](https://usc.zoom.us/rec/share/uQZAfY5ou5B7X17AWQqjM7hsW3Ikj0h4jaAgOFpthLMvxfOYZziwCiarWu52Pw-f.pG5vqSJrxIYeN3Hz) -  **Polymorphism and Design Patterns**: Common polymorphic approaches to software design.  Background knowledge that we will refer to in this homework.
-  - [Video2](https://usc.zoom.us/rec/share/ERFJK9t1vYpyoHn7XLIzM-xK399efHCYqPxioaQfo-3lZjG1BeCsdAE11esY4SC-.SKQ3zP0MBl2JG3pj) -  **Homework Walkthrough**: Tour of the code and help for the inheritance diagram for this homework.
+  - [Video1](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/cs104-design-patterns.mp4) -  **Polymorphism and Design Patterns**: Common polymorphic approaches to software design.  Background knowledge that we will refer to in this homework.
+  - [Video2](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/cs104-websearch.mp4) -  **Homework Walkthrough**: Tour of the code and help for the inheritance diagram for this homework.
 
 
 

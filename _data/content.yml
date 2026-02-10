@@ -113,7 +113,7 @@ labs:
     title: Inheritance
     week: Week 5
     date: 2/10
-    assigned: false
+    assigned: true
     topics: Inheritance, Polymorphism, OOP
 #    slides: InheritanceLab.pdf
     slide_msg: See shared folder

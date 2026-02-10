@@ -39,8 +39,6 @@ github_starter_url: https://classroom.github.com/a/yVnHKlcX
 
 ### Github Classroom URL
 
-**Note:** The coding portion has NOT been release. The link below is invalid.
-
 **Signup link to create your HW2 repo:** [signup link]({{page.github_starter_url}})
 
 

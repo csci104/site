@@ -21,7 +21,13 @@ github_starter_url: https://classroom.github.com/a/yVnHKlcX
 - 2026/02/06 - Posted 2 videos:
   - [Video1](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/cs104-design-patterns.mp4) -  **Polymorphism and Design Patterns**: Common polymorphic approaches to software design.  Background knowledge that we will refer to in this homework.
   - [Video2](https://ee.usc.edu/~redekopp/Streaming/cs104/Sp26/cs104-websearch.mp4) -  **Homework Walkthrough**: Tour of the code and help for the inheritance diagram for this homework.
-
+- 2026/02/12 - **HW2 automated tests posted**.
+  - If you get an error about `gtests` when doing `cmake .`, perform the following:
+    - Reinstall `gtest`. (It appears Google resets the VMs or upgraded their linux version at some point).  To do so, you need to already have the `.customize_environment` script from **Lab 0**, in your home folder (which you should!).
+    - Go to your home folder: `cd ~`
+    **CRITICAL STEP**: Update the packages list/installed:  `sudo apt update`
+    - Now, re-run the `.customize_environment` script: `source ~/.customize_environment`
+    - Then go back to your `hw2-<username>/hw2_tests` repo and rerun the commands starting from `cmake .`
 
 ## Written Portion
 

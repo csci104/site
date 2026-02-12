@@ -48,6 +48,7 @@ Paste in the following contents **exactly** (you may need to right-click in the 
 
 ```sh
 echo "Sourcing CS104 tools" 
+sudo apt update
 sudo apt install -y \
   cmake \
   valgrind \

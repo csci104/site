@@ -142,14 +142,14 @@ typename Outer<T>::Inner Outer<T>::GetInner()
 }
 ```
 
-### Check Off: Templated Linked List
+### Assignments: Templated Linked List
 
-We have included a simplified version of a linked list of integers,`LList`, in `resources`. Your job is to template it and make it usable with any class, not just ints.
+We have included a simplified version of a linked list of integers,`LList`, in `resources`. The inner class `Item` is the link list node. The original code only handles ints. Your job is to template it and make it usable with any class, not just ints.
 
 What you need to do:
 
 - [ ] Template the LList class. Include `template < >` tags wherever the class is mentioned. Since there is only one generic type - convention the name is `T` (instead of `FirstType`, `SecondType`).
-- [ ] Fix the inner classes Item. Item is setup to store an int variable.
+- [ ] Fix the inner classes `Item`. `Item` was setup to store an int variable. You need to template it.
 - [ ] Change approriate mentions of `int` to `T`. References to inner classes need to be changed as well - remember that they are now templated.
 - [ ] Copy the contents from `llist.cpp` into the bottom of `llist.h`, and fix these functions.
 - [ ] Make and run the program using `make`. It should produce the following output without valgrind errors:
@@ -180,4 +180,4 @@ to be inside the `Item` class.
 
 ### Checking off
 
-To get checked off, show the result after running `make` to one of your CPs.
+To get checked off, show the result after running `make` to one of your TAs.

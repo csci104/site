@@ -122,10 +122,10 @@ labs:
     folder: lab5
     week: Week 6
     date: 2/17
-    title: Heaps
-    assigned: false
-    topics: Heaps, Priority Queues
-#    slides: HeapsLab.pdf
+    title: Templates
+    topics: Templates
+    assigned: true
+#    slides: TemplatesLab.pdf
     slide_msg: See shared folder
 
 
@@ -145,10 +145,10 @@ labs:
     folder: lab7
     week: Week 8
     date: 3/3
-    title: Templates
-    topics: OOP
+    title: Heaps
     assigned: false
-#    slides: TemplatesLab.pdf
+    topics: Heaps, Priority Queues
+#    slides: HeapsLab.pdf
     slide_msg: See shared folder
 
   - id: 8

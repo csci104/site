@@ -66,21 +66,22 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
  - Queue, stack and deque implementations
  - Applications of queues and stacks
 
-#### Unit 8 - Templates
- - Process for defining templated classes
- - Basic rules for templates and inheritance
- - Functors
-
-#### Unit 9 - PQ and Heaps
- - Tree representations and storage
- - Full, complete, and balanced tree definitions
- - Implementation of a priority queue
- - Heap implementation and operations (push, pop, top) and runtime
- - `build-heap` (`make-heap`) algorithm and runtime
- - heap-sort
 
  
 ### Practice Materials
+
+#### Topic-Based Problems
+
+ - [Linked Lists and Recursion]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
+ - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
+ - [ADTs]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
+ - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)
+
+ - [Class Hierarchy]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
+ - [Polymorphism]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.md)
+ - [Stacks]({{site.baseurl}}/resources/mt1-info/stack-shape-game/ques-stack-shape-game.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/stack-shape-game/sol-stack-shape-game.md)
+ - [STL]({{site.baseurl}}/resources/mt1-info/stl-brain/ques-stl-brain.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/stl-brain/sol-stl-brain.pdf)
+ - [Lazy-Quicksort]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/ques-lazy-quicksort.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/sol-lazy-quicksort.pdf)
 
 #### Sample Midterms
 
@@ -96,8 +97,6 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
  
 #### Practice Quizzes
 
- - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)
  - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-streams-recursion-sol.cpp)
  - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) - [No Solutions]
- - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
  - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)

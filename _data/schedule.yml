@@ -9,22 +9,22 @@ exams:
   - name: Midterm 1 
     time: 7pm-8:40pm Feb 26th
     location: TBA
-    #link: mt1-info/
+    link: mt1-info/
 
   - name: Midterm 2 
     time: 7pm-8:40pm Apr 2nd
     location: TBA
-    #link: mt2-info/
+    link: mt2-info/
 
   - name: Midterm 3
     time: 7pm-8:40pm Apr 23rd
     location: TBA
-    #link: final-info/
+    link: mt3-info/
 
   - name: Final
     time: 8am-9:40am May 6th
     location: TBA
-    #link: final-info/
+    link: final-info/
 
 lectures:
 

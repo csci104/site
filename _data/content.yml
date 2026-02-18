@@ -146,7 +146,7 @@ labs:
     week: Week 8
     date: 3/3
     title: Heaps
-    assigned: false
+    assigned: true
     topics: Heaps, Priority Queues
 #    slides: HeapsLab.pdf
     slide_msg: See shared folder

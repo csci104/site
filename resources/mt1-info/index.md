@@ -85,7 +85,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
  - **Class Hierarchy**
    [Q1]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
  - **Polymorphism**
- - [Q1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.md)
+   - [Q1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.md)
  - **Inheritance, Runtime, and Data Structure Coding**
    - [Q1]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-blank.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-sol.pdf)
  - **Data Structure Coding**

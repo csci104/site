@@ -72,20 +72,27 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 
 #### Topic-Based Problems
 
- - [Runtime Analysis 1]({{site.baseurl}}/resources/runtime-1/runtime-1.html) | [Solutions]({{site.baseurl}}/resources/runtime-1/runtime-analysis-solutions.html)
- - [Runtime Analysis 2]({{site.baseurl}}/resources/runtime-bincntr/ques-runtime-binctnr.pdf) | [Solutions]({{site.baseurl}}/resources/runtime-1/sol-runtime-binctnr.pdf)
- - [Linked Lists and Recursion 1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
- - [Linked Lists and Recursion 2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf) - | [Solutions]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)
- - [ADTs 1]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
- - [ADTs 2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts-sol.html)
- - [ADTs 3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-blank.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-sol.html)
- - [Class Hierarchy]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
- - [Polymorphism]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.md)
- - [Data Structure Coding 1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/ques-stack-shape-game.pdf)  | [Solutions]({{site.baseurl}}/resources/mt1-info/stack-shape-game/sol-stack-shape-game.md)
- - [Inheritance, Runtime, and Data Structure Coding 2]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-blank.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-sol.pdf)
- - [Data Structure coding 2]({{site.baseurl}}/resources/mt1-info/stl-brain/ques-stl-brain.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/stl-brain/sol-stl-brain.pdf)
-  - [Data Structure coding 3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-blank.html) | [Solutions]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-sol.html)
-  - [Data Structure coding 4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-blank.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-sol.pdf)
+ - **Runtime**
+   - [Q1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1.html), [Sol1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-analysis-solutions.html)
+   - [Q2]({{site.baseurl}}/resources/runtime-bincntr/ques-runtime-binctnr.pdf), [Sol2]({{site.baseurl}}/resources/runtime-1/sol-runtime-binctnr.pdf)
+ - **Linked Lists and Recurion**
+   - [Q1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) , [Sol1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
+   - [Q2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)
+ - **ADTs**
+   - [Q1]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
+   - [Q2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts-sol.html)
+   - [Q3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-blank.pdf), [Sol3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-sol.html)
+ - **Class Hierarchy**
+   [Q1]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
+ - **Polymorphism**
+ - [Q1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.md)
+ - **Inheritance, Runtime, and Data Structure Coding**
+   - [Q1]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-blank.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-sol.pdf)
+ - **Data Structure Coding**
+   - [Q1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/ques-stack-shape-game.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/sol-stack-shape-game.md)
+   - [Q2]({{site.baseurl}}/resources/mt1-info/stl-brain/ques-stl-brain.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/stl-brain/sol-stl-brain.pdf)
+   - [Q3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-blank.html), [Sol3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-sol.html)
+   - [Q4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-blank.pdf), [Sol4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-sol.pdf)
 
 
 #### Sample Midterms

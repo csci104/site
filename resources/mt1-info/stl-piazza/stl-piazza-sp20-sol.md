@@ -1,3 +1,9 @@
+---
+layout: default
+title: Midterm 1 Info
+nav: Resources
+---
+
 ### Summer 2020 Midterm - STL Problem - Piazza Post Manager
 
 *Note:* This problem was a computer-based coding problem.  It is likely your exam will be paper-based coding.  However, this is representative of the kinds of problems you may be asked to complete.

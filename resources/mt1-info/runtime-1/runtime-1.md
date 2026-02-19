@@ -1,3 +1,9 @@
+---
+layout: default
+title: Midterm 1 Info
+nav: Resources
+---
+
 # Runtime Analysis Practice Problems
 
 ## Code

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Midterm 1 Info
+nav: Resources
+---
+
 # Solution: polymorph-short1 (Question 1b)
 
 ## (a) Three `const` keywords

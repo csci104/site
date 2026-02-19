@@ -1,3 +1,9 @@
+---
+layout: default
+title: Midterm 1 Info
+nav: Resources
+---
+
 # Solution: Shape Game (Stacks and Coding)
 
 ## Problem Summary

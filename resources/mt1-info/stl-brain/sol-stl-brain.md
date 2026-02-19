@@ -1,3 +1,9 @@
+---
+layout: default
+title: Midterm 1 Info
+nav: Resources
+---
+
 # Solution: Forgetful Brain (LRU with LimitedList)
 
 ## (a) Inheritance or Composition?

@@ -120,6 +120,7 @@ class HeapVisualizer {
         this.buildStepState = null;
         this.nodeToRemove = null; // index of node selected to remove in pop
         this.correctPushIndex = null; // correct index for new push value
+        this.interactionMode = 'tree'; // 'tree' or 'array'
 
         this.initEventListeners();
     }
@@ -131,6 +132,11 @@ class HeapVisualizer {
         document.getElementById('makeHeapBtn').addEventListener('click', () => this.startMakeHeap());
         document.getElementById('doneBtn').addEventListener('click', () => this.checkDone());
         document.getElementById('resetBtn').addEventListener('click', () => this.resetOperation());
+        document.getElementById('viewMode').addEventListener('change', (e) => {
+            this.interactionMode = e.target.value;
+            this.selectedNode = null;
+            this.render();
+        });
     }
 
     generate() {
@@ -232,7 +238,11 @@ class HeapVisualizer {
         this.correctPushIndex = this.heap.heap.length;
 
         this.render();
-        this.showMessage(`Push ${newValue}: Click the parent node where the new value should be attached.`, 'info');
+        if (this.interactionMode === 'array') {
+            this.showMessage(`Push ${newValue}: Click the new end index (${this.correctPushIndex}) to add the value.`, 'info');
+        } else {
+            this.showMessage(`Push ${newValue}: Click the parent node where the new value should be attached.`, 'info');
+        }
         
         document.getElementById('pushBtn').disabled = true;
         document.getElementById('popBtn').disabled = true;
@@ -253,7 +263,12 @@ class HeapVisualizer {
         this.nodeToRemove = null;
 
         this.render();
-        this.showMessage(`Pop: Which node should be removed?`, 'info');
+        if (this.interactionMode === 'array') {
+            const lastIndex = this.heap.heap.length - 1;
+            this.showMessage(`Pop: Click the last index (${lastIndex}) to remove.`, 'info');
+        } else {
+            this.showMessage(`Pop: Which node should be removed?`, 'info');
+        }
         
         document.getElementById('pushBtn').disabled = true;
         document.getElementById('popBtn').disabled = true;
@@ -266,6 +281,10 @@ class HeapVisualizer {
 
     handleNodeClick(index) {
         if (!this.mode) return;
+
+        if (this.interactionMode === 'array' && (this.mode === 'push' || this.mode === 'pop')) {
+            return;
+        }
 
         if (this.mode === 'make-heap') {
             this.handleArrayClick(index);
@@ -317,6 +336,35 @@ class HeapVisualizer {
         }
     }
 
+    handleArrayInteractionClick(index) {
+        if (!this.mode || this.interactionMode !== 'array') return;
+
+        if (this.mode === 'push' && this.pushPhase === 'selectLeaf') {
+            this.handlePushLeafSelection(index);
+        } else if (this.mode === 'pop' && this.popPhase === 'selectNode') {
+            this.handlePopNodeSelection(index);
+        } else if (this.mode === 'pop' && this.popPhase === 'selectRoot') {
+            this.handlePopRootSelection(index);
+        } else if ((this.mode === 'push' && this.pushPhase === 'trickleUp') ||
+                   (this.mode === 'pop' && this.popPhase === 'trickleDown')) {
+            if (this.selectedNode === null) {
+                this.selectedNode = index;
+                this.render();
+            } else {
+                this.attemptSwap(this.selectedNode, index);
+                this.selectedNode = null;
+            }
+        } else {
+            if (this.selectedNode === null) {
+                this.selectedNode = index;
+                this.render();
+            } else {
+                this.attemptSwap(this.selectedNode, index);
+                this.selectedNode = null;
+            }
+        }
+    }
+
     handleArrayDragStart(index) {
         if (this.mode !== 'make-heap' || this.buildPhase !== 'heapify') return;
         this.dragIndex = index;
@@ -350,10 +398,17 @@ class HeapVisualizer {
     }
 
     handlePushLeafSelection(index) {
-        const correctParentIndex = this.heap.parent(this.correctPushIndex);
-        if (index !== correctParentIndex) {
-            this.showMessage('✗ Error! That is not the correct parent for the new node.', 'error');
-            return;
+        if (this.interactionMode === 'array') {
+            if (index !== this.correctPushIndex) {
+                this.showMessage('✗ Error! The new value must be added at the end of the array.', 'error');
+                return;
+            }
+        } else {
+            const correctParentIndex = this.heap.parent(this.correctPushIndex);
+            if (index !== correctParentIndex) {
+                this.showMessage('✗ Error! That is not the correct parent for the new node.', 'error');
+                return;
+            }
         }
 
         // Attach new value at the correct next index
@@ -362,7 +417,11 @@ class HeapVisualizer {
         this.pushPhase = 'trickleUp';
         
         this.render();
-        this.showMessage('New value attached! Now click nodes to swap and trickle up.', 'success');
+        if (this.interactionMode === 'array') {
+            this.showMessage('New value attached! Now click indices to swap and trickle up. Click Done when the operation is complete.', 'success');
+        } else {
+            this.showMessage('New value attached! Now click nodes to swap and trickle up.', 'success');
+        }
     }
 
     handlePopNodeSelection(index) {
@@ -379,7 +438,11 @@ class HeapVisualizer {
         this.popPhase = 'selectRoot';
         
         this.render();
-        this.showMessage(`Node ${index} selected for removal. Where should its value be moved to?`, 'info');
+        if (this.interactionMode === 'array') {
+            this.showMessage(`Node ${index} selected for removal. Click index 0 to move its value to the root.`, 'info');
+        } else {
+            this.showMessage(`Node ${index} selected for removal. Where should its value be moved to?`, 'info');
+        }
     }
 
     handlePopRootSelection(index) {
@@ -412,7 +475,11 @@ class HeapVisualizer {
         this.popPhase = 'trickleDown';
         
         this.render();
-        this.showMessage(`Value moved to root. If the heap property is satisfied, click 'Done'. Otherwise, click the smallest child, then click the root to swap them. Continue until the heap is valid.`, 'success');
+        if (this.interactionMode === 'array') {
+            this.showMessage(`Value moved to root. If the heap property is satisfied, click 'Done'. Otherwise, click the smallest child index, then click the root index to swap. Continue until the heap is valid.`, 'success');
+        } else {
+            this.showMessage(`Value moved to root. If the heap property is satisfied, click 'Done'. Otherwise, click the smallest child, then click the root to swap them. Continue until the heap is valid.`, 'success');
+        }
     }
 
     getValidNewNodePositions() {
@@ -696,6 +763,21 @@ class HeapVisualizer {
         const treeView = document.getElementById('treeView');
         treeView.innerHTML = '';
 
+        const treeInstructions = document.getElementById('treeInstructions');
+        const showSwapInstructions =
+            this.interactionMode === 'tree' &&
+            ((this.mode === 'push' && this.pushPhase === 'trickleUp') ||
+            (this.mode === 'pop' && this.popPhase === 'trickleDown'));
+        if (treeInstructions) {
+            if (showSwapInstructions) {
+                treeInstructions.textContent = 'To swap, click the node you want to swap and then click the node to swap with. Click Done when the operation is complete.';
+                treeInstructions.style.display = 'block';
+            } else {
+                treeInstructions.textContent = '';
+                treeInstructions.style.display = 'none';
+            }
+        }
+
         if (!this.heap || this.heap.heap.length === 0) {
             treeView.innerHTML = '<div style="color: #888; text-align: center;">No heap to display</div>';
             return;
@@ -893,13 +975,29 @@ class HeapVisualizer {
         const arrayView = document.getElementById('arrayView');
         arrayView.innerHTML = '';
 
+        const arrayInstructions = document.getElementById('arrayInstructions');
+        const showSwapInstructions =
+            this.interactionMode === 'array' &&
+            ((this.mode === 'push' && this.pushPhase === 'trickleUp') ||
+            (this.mode === 'pop' && this.popPhase === 'trickleDown'));
+        if (arrayInstructions) {
+            if (showSwapInstructions) {
+                arrayInstructions.textContent = 'To swap, click the index you want to swap and then click the index to swap with. Click Done when the operation is complete.';
+                arrayInstructions.style.display = 'block';
+            } else {
+                arrayInstructions.textContent = '';
+                arrayInstructions.style.display = 'none';
+            }
+        }
+
         if (!this.heap || this.heap.heap.length === 0) {
             arrayView.innerHTML = '<div style="color: #888;">No heap to display</div>';
             return;
         }
 
+        const showNewSlot = this.mode === 'push' && this.pushPhase === 'selectLeaf' && this.interactionMode === 'array';
         const displayCount = (this.mode === 'push' && this.pushPhase === 'selectLeaf') ? 
-            this.heap.heap.length - 1 : this.heap.heap.length;
+            (showNewSlot ? this.heap.heap.length + 1 : this.heap.heap.length - 1) : this.heap.heap.length;
 
         for (let i = 0; i < displayCount; i++) {
             const item = document.createElement('div');
@@ -912,10 +1010,18 @@ class HeapVisualizer {
                 item.classList.add('highlight');
             }
 
-            item.innerHTML = `
-                <div class="index">[${i}]</div>
-                <div class="value">${this.heap.heap[i]}</div>
-            `;
+            if (showNewSlot && i === this.heap.heap.length) {
+                item.classList.add('placeholder');
+                item.innerHTML = `
+                    <div class="index">[${i}]</div>
+                    <div class="value">+</div>
+                `;
+            } else {
+                item.innerHTML = `
+                    <div class="index">[${i}]</div>
+                    <div class="value">${this.heap.heap[i]}</div>
+                `;
+            }
             if (this.mode === 'make-heap') {
                 item.addEventListener('click', () => this.handleArrayClick(i));
                 if (this.buildPhase === 'heapify' && i === this.currentIndex) {
@@ -931,6 +1037,8 @@ class HeapVisualizer {
                     e.preventDefault();
                     this.handleArrayDrop(i);
                 });
+            } else if (this.interactionMode === 'array' && (this.mode === 'push' || this.mode === 'pop')) {
+                item.addEventListener('click', () => this.handleArrayInteractionClick(i));
             }
 
             arrayView.appendChild(item);

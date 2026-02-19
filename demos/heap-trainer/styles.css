@@ -48,6 +48,20 @@ label {
     font-size: 0.9em;
 }
 
+select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    min-width: 140px;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
 input[type="number"] {
     padding: 10px;
     border: 2px solid #ddd;
@@ -192,6 +206,28 @@ button:disabled {
     text-align: center;
 }
 
+.tree-instructions {
+    background: #fffaf0;
+    border: 1px solid #f6ad55;
+    color: #7b341e;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: -5px 0 15px;
+    text-align: center;
+}
+
+.array-instructions {
+    background: #fffaf0;
+    border: 1px solid #f6ad55;
+    color: #7b341e;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin: -5px 0 15px;
+    text-align: center;
+}
+
 #treeView {
     min-height: 400px;
     display: flex;
@@ -303,6 +339,13 @@ button:disabled {
 
 .array-item.highlight {
     background: #f6ad55;
+}
+
+.array-item.placeholder {
+    background: white;
+    color: #667eea;
+    border: 2px dotted #667eea;
+    box-shadow: none;
 }
 
 .instructions {

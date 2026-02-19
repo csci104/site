@@ -73,15 +73,15 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 #### Topic-Based Problems
 
  - **Runtime**
-   - [Q1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1.html), [Sol1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-analysis-solutions.html)
-   - [Q2]({{site.baseurl}}/resources/runtime-bincntr/ques-runtime-binctnr.pdf), [Sol2]({{site.baseurl}}/resources/runtime-1/sol-runtime-binctnr.pdf)
+   - [Q1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1.html), [Sol1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1-sol.html)
+   - [Q2]({{site.baseurl}}/resources/runtime-bincntr/ques-runtime-bincntr.pdf), [Sol2]({{site.baseurl}}/resources/runtime-1/sol-runtime-bincntr.pdf)
  - **Linked Lists and Recurion**
    - [Q1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) , [Sol1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)
  - **ADTs**
    - [Q1]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts-sol.html)
-   - [Q3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-blank.pdf), [Sol3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-sol.html)
+   - [Q3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-blank.pdf), [Sol3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-sol.pdf)
  - **Class Hierarchy**
    [Q1]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
  - **Polymorphism**

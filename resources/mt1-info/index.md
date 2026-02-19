@@ -72,31 +72,27 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 
 #### Topic-Based Problems
 
- - [Linked Lists and Recursion]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
- - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
- - [ADTs]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
- - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)
-
- - [Class Hierarchy]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
+ - [Runtime Analysis 1]({{site.baseurl}}/resources/runtime-1/runtime-1.html) | [Solutions]({{site.baseurl}}/resources/runtime-1/runtime-analysis-solutions.html)
+ - [Runtime Analysis 2]({{site.baseurl}}/resources/runtime-bincntr/ques-runtime-binctnr.pdf) | [Solutions]({{site.baseurl}}/resources/runtime-1/sol-runtime-binctnr.pdf)
+ - [Linked Lists and Recursion 1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
+ - [Linked Lists and Recursion 2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf) - | [Solutions]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)
+ - [ADTs 1]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
+ - [ADTs 2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts-sol.html)
+ - [ADTs 3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-blank.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-sol.html)
+ - [Class Hierarchy]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
  - [Polymorphism]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.md)
- - [Stacks]({{site.baseurl}}/resources/mt1-info/stack-shape-game/ques-stack-shape-game.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/stack-shape-game/sol-stack-shape-game.md)
- - [STL]({{site.baseurl}}/resources/mt1-info/stl-brain/ques-stl-brain.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/stl-brain/sol-stl-brain.pdf)
- - [Lazy-Quicksort]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/ques-lazy-quicksort.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/sol-lazy-quicksort.pdf)
+ - [Data Structure Coding 1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/ques-stack-shape-game.pdf)  | [Solutions]({{site.baseurl}}/resources/mt1-info/stack-shape-game/sol-stack-shape-game.md)
+ - [Inheritance, Runtime, and Data Structure Coding 2]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-blank.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-sol.pdf)
+ - [Data Structure coding 2]({{site.baseurl}}/resources/mt1-info/stl-brain/ques-stl-brain.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/stl-brain/sol-stl-brain.pdf)
+  - [Data Structure coding 3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-blank.html) | [Solutions]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-sol.html)
+  - [Data Structure coding 4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-blank.pdf) | [Solutions]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-sol.pdf)
+
 
 #### Sample Midterms
 
- - [Sample Midterm]({{site.baseurl}}/resources/midterm-b.pdf) - [Solutions]({{site.baseurl}}/resources/midterm-b-sol.pdf)
-    - Copy construction, operator overloading are not a major focus of CS104 but were in previous years.
- - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (partial solutions)
-   - [Q1 Solution]({{site.baseurl}}/resources/midterm-c-q1sol.png)
-   - [Q2 and Q3 Solution]({{site.baseurl}}/resources/midterm-c-q2q3sol.pdf)
- - [Summer 2020 Midterm (Programming)]({{site.baseurl}}/resources/mt-su20.html) (no solutions)
+
+
  - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
    - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
    - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
  
-#### Practice Quizzes
-
- - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-streams-recursion-sol.cpp)
- - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) - [No Solutions]
- - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)

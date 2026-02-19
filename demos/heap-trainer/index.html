@@ -36,6 +36,11 @@
 
         <div id="messageArea" class="message" style="display: none;"></div>
 
+        <div class="practice-stats" id="practiceStats" style="display: none;">
+            <div class="stat-item">Errors: <span id="errorCount" class="stat-error">0</span></div>
+            <div class="stat-item">Timer: <span id="timerDisplay">00:00</span></div>
+        </div>
+
         <div id="visualization" class="visualization">
             <div id="treeSection" class="section">
                 <h2>Tree View</h2>
@@ -46,6 +51,9 @@
                 <h2>Array View</h2>
                 <div id="arrayInstructions" class="array-instructions" style="display: none;"></div>
                 <div id="arrayView"></div>
+                <div id="nextButtonContainer" style="display: none; margin-top: 15px; text-align: center;">
+                    <button id="nextBtn" disabled>Next</button>
+                </div>
             </div>
         </div>
 
@@ -53,11 +61,16 @@
             <h3>Instructions:</h3>
             <ul>
                 <li><strong>Generate:</strong> Create a new m-ary min-heap with n random values</li>
-                <li><strong>Push:</strong> Add a new element and trickle it up by clicking nodes to swap</li>
-                <li><strong>Pop:</strong> Remove the root, move the last element to root, and trickle down by clicking nodes to swap</li>
-                <li>Click on nodes to swap them during push/pop operations</li>
+                <li><strong>Push:</strong> Add a new element and trickle it up by dragging nodes to swap</li>
+                <li><strong>Pop:</strong> Remove the root, move the last element to root, and trickle down by dragging nodes to swap</li>
+                <li>Drag a node onto another node to swap them during push/pop operations</li>
                 <li>Red error messages indicate incorrect swaps - the heap will reset to try again</li>
             </ul>
+        </div>
+
+        <div class="practice-stats">
+            <div class="stat-item">Errors: <span id="errorCount" class="stat-error">0</span></div>
+            <div class="stat-item">Timer: <span id="timerDisplay">00:00</span></div>
         </div>
     </div>
 

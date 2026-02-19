@@ -96,7 +96,9 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
  - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
    - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
    - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
- 
+
+ - [Lazy-Quicksort]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/ques-lazy-quicksort.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/sol-lazy-quicksort.pdf)
+
 #### Practice Quizzes
 
  - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) - [No Solutions]

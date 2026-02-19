@@ -121,6 +121,9 @@ class HeapVisualizer {
         this.nodeToRemove = null; // index of node selected to remove in pop
         this.correctPushIndex = null; // correct index for new push value
         this.interactionMode = 'tree'; // 'tree' or 'array'
+        this.treeSpacing = { horizontal: 70, vertical: 90 };
+        this.recentSwapIndices = new Set();
+        this.recentAddedIndex = null;
 
         this.initEventListeners();
     }
@@ -148,8 +151,9 @@ class HeapVisualizer {
             return;
         }
 
-        if (this.n < 1 || this.n > 15) {
-            this.showMessage('N must be between 1 and 15', 'error');
+        const maxN = 100;
+        if (this.n < 1 || this.n > maxN) {
+            this.showMessage(`N must be between 1 and ${maxN}.`, 'error');
             return;
         }
 
@@ -168,6 +172,8 @@ class HeapVisualizer {
         this.selectedNode = null;
         this.currentIndex = null;
         this.savedState = null;
+        this.recentSwapIndices.clear();
+        this.recentAddedIndex = null;
 
         this.render();
         this.showMessage('Heap generated! Click Push, Pop, or Make-Heap to practice.', 'success');
@@ -198,6 +204,8 @@ class HeapVisualizer {
         this.currentIndex = null;
         this.selectedNode = null;
         this.dragIndex = null;
+        this.recentSwapIndices.clear();
+        this.recentAddedIndex = null;
 
         this.render();
 
@@ -224,6 +232,8 @@ class HeapVisualizer {
         this.savedState = this.heap.clone();
         this.mode = 'push';
         this.pushPhase = 'selectLeaf';
+        this.recentSwapIndices.clear();
+        this.recentAddedIndex = null;
 
         // Generate a new random value not in heap
         const maxVal = Math.max(40, 6 * this.n);
@@ -239,9 +249,9 @@ class HeapVisualizer {
 
         this.render();
         if (this.interactionMode === 'array') {
-            this.showMessage(`Push ${newValue}: Click the new end index (${this.correctPushIndex}) to add the value.`, 'info');
+            this.showMessage(`Push ${newValue}: Choose where to add the new value.`, 'info');
         } else {
-            this.showMessage(`Push ${newValue}: Click the parent node where the new value should be attached.`, 'info');
+            this.showMessage(`Push ${newValue}: Choose where to attach the new value.`, 'info');
         }
         
         document.getElementById('pushBtn').disabled = true;
@@ -261,14 +271,11 @@ class HeapVisualizer {
         this.mode = 'pop';
         this.popPhase = 'selectNode';
         this.nodeToRemove = null;
+        this.recentSwapIndices.clear();
+        this.recentAddedIndex = null;
 
         this.render();
-        if (this.interactionMode === 'array') {
-            const lastIndex = this.heap.heap.length - 1;
-            this.showMessage(`Pop: Click the last index (${lastIndex}) to remove.`, 'info');
-        } else {
-            this.showMessage(`Pop: Which node should be removed?`, 'info');
-        }
+        this.showMessage('Pop: Select a node to remove.', 'info');
         
         document.getElementById('pushBtn').disabled = true;
         document.getElementById('popBtn').disabled = true;
@@ -324,7 +331,7 @@ class HeapVisualizer {
 
         if (this.buildPhase === 'selectIndex') {
             if (index !== this.buildIndex) {
-                this.showMessage(`✗ Error! You must heapify index ${this.buildIndex} next.`, 'error');
+                this.showMessage('✗ Error! Click Reset to try again.', 'error');
                 return;
             }
 
@@ -377,13 +384,13 @@ class HeapVisualizer {
         const expectedSwap = this.heap.getNextSwapForPop(this.currentIndex);
 
         if (expectedSwap === null) {
-            this.showMessage('✗ Error! No swap needed at this index. Click Done to confirm.', 'error');
+            this.showMessage('✗ Error! Click Reset to try again.', 'error');
             this.dragIndex = null;
             return;
         }
 
         if (this.dragIndex !== this.currentIndex || targetIndex !== expectedSwap) {
-            this.showMessage('✗ Error! Drag the current index to its smallest child.', 'error');
+            this.showMessage('✗ Error! Click Reset to try again.', 'error');
             this.heap = this.buildStepState.clone();
             this.currentIndex = this.buildIndex;
             this.dragIndex = null;
@@ -400,13 +407,13 @@ class HeapVisualizer {
     handlePushLeafSelection(index) {
         if (this.interactionMode === 'array') {
             if (index !== this.correctPushIndex) {
-                this.showMessage('✗ Error! The new value must be added at the end of the array.', 'error');
+                this.showMessage('✗ Error! Click Reset to try again.', 'error');
                 return;
             }
         } else {
             const correctParentIndex = this.heap.parent(this.correctPushIndex);
             if (index !== correctParentIndex) {
-                this.showMessage('✗ Error! That is not the correct parent for the new node.', 'error');
+                this.showMessage('✗ Error! Click Reset to try again.', 'error');
                 return;
             }
         }
@@ -414,13 +421,14 @@ class HeapVisualizer {
         // Attach new value at the correct next index
         this.heap.heap[this.correctPushIndex] = this.newValue;
         this.currentIndex = this.correctPushIndex;
+        this.recentAddedIndex = this.correctPushIndex;
         this.pushPhase = 'trickleUp';
         
         this.render();
         if (this.interactionMode === 'array') {
             this.showMessage('New value attached! Now click indices to swap and trickle up. Click Done when the operation is complete.', 'success');
         } else {
-            this.showMessage('New value attached! Now click nodes to swap and trickle up.', 'success');
+            this.showMessage('New value attached! Now click nodes to swap and trickle up. Click Done when the operation is complete.', 'success');
         }
     }
 
@@ -429,7 +437,7 @@ class HeapVisualizer {
         const lastIndex = this.heap.heap.length - 1;
         
         if (index !== lastIndex) {
-            this.showMessage(`✗ Error! You must select the last (bottom-right) node, which is at index ${lastIndex}.`, 'error');
+            this.showMessage('✗ Error! Click Reset to try again.', 'error');
             return;
         }
 
@@ -438,16 +446,12 @@ class HeapVisualizer {
         this.popPhase = 'selectRoot';
         
         this.render();
-        if (this.interactionMode === 'array') {
-            this.showMessage(`Node ${index} selected for removal. Click index 0 to move its value to the root.`, 'info');
-        } else {
-            this.showMessage(`Node ${index} selected for removal. Where should its value be moved to?`, 'info');
-        }
+        this.showMessage(`Node ${index} selected for removal. Choose where its value should be moved.`, 'info');
     }
 
     handlePopRootSelection(index) {
         if (index !== 0) {
-            this.showMessage(`✗ Error! You must click the ROOT node (index 0) to move the removed node's value there.`, 'error');
+            this.showMessage('✗ Error! Click Reset to try again.', 'error');
             return;
         }
 
@@ -476,9 +480,9 @@ class HeapVisualizer {
         
         this.render();
         if (this.interactionMode === 'array') {
-            this.showMessage(`Value moved to root. If the heap property is satisfied, click 'Done'. Otherwise, click the smallest child index, then click the root index to swap. Continue until the heap is valid.`, 'success');
+            this.showMessage(`Value moved. If the heap property is satisfied, click 'Done'. Otherwise, perform swaps until the heap is valid.`, 'success');
         } else {
-            this.showMessage(`Value moved to root. If the heap property is satisfied, click 'Done'. Otherwise, click the smallest child, then click the root to swap them. Continue until the heap is valid.`, 'success');
+            this.showMessage(`Value moved. If the heap property is satisfied, click 'Done'. Otherwise, perform swaps until the heap is valid.`, 'success');
         }
     }
 
@@ -501,7 +505,7 @@ class HeapVisualizer {
             
             if (expectedSwap === null) {
                 // No swap needed - check if they tried to swap
-                this.showMessage('Error: No swap needed! Push operation complete.', 'error');
+                this.showMessage('✗ Error! Click Reset to try again.', 'error');
                 this.resetToSaved();
                 return;
             }
@@ -511,6 +515,8 @@ class HeapVisualizer {
                 (idx2 === this.currentIndex && idx1 === expectedSwap)) {
                 // Correct swap
                 this.heap.swap(idx1, idx2);
+                this.recentSwapIndices.add(idx1);
+                this.recentSwapIndices.add(idx2);
                 this.currentIndex = expectedSwap;
 
                 // Check if more swaps needed
@@ -522,7 +528,7 @@ class HeapVisualizer {
                 }
                 this.render();
             } else {
-                this.showMessage('✗ Wrong swap! You should swap index ' + this.currentIndex + ' with its parent (index ' + expectedSwap + '). Try again.', 'error');
+                this.showMessage('✗ Wrong swap! Click Reset to try again.', 'error');
                 this.resetToSaved();
             }
         } else if (this.mode === 'pop') {
@@ -531,7 +537,7 @@ class HeapVisualizer {
             
             if (expectedSwap === null) {
                 // No swap needed
-                this.showMessage('Error: No swap needed! Pop operation complete.', 'error');
+                this.showMessage('✗ Error! Click Reset to try again.', 'error');
                 this.resetToSaved();
                 return;
             }
@@ -541,6 +547,8 @@ class HeapVisualizer {
                 (idx2 === this.currentIndex && idx1 === expectedSwap)) {
                 // Correct swap
                 this.heap.swap(idx1, idx2);
+                this.recentSwapIndices.add(idx1);
+                this.recentSwapIndices.add(idx2);
                 this.currentIndex = expectedSwap;
 
                 // Check if more swaps needed
@@ -552,7 +560,7 @@ class HeapVisualizer {
                 }
                 this.render();
             } else {
-                this.showMessage('✗ Wrong swap! You should swap index ' + this.currentIndex + ' with its smallest child (index ' + expectedSwap + '). Try again.', 'error');
+                this.showMessage('✗ Wrong swap! Click Reset to try again.', 'error');
                 this.resetToSaved();
             }
         }
@@ -574,6 +582,8 @@ class HeapVisualizer {
         }
         
         this.selectedNode = null;
+        this.recentSwapIndices.clear();
+        this.recentAddedIndex = null;
         this.render();
     }
 
@@ -594,6 +604,8 @@ class HeapVisualizer {
         this.savedState = null;
         this.newValue = null;
         this.correctPushIndex = null;
+        this.recentSwapIndices.clear();
+        this.recentAddedIndex = null;
         
         this.render();
         this.showMessage('Operation cancelled. Try again!', 'info');
@@ -621,7 +633,7 @@ class HeapVisualizer {
                     for (let child of children) {
                         if (this.heap.heap[i] > this.heap.heap[child]) {
                             isValid = false;
-                            errorMsg = `✗ Heap property violated at index ${i}.`;
+                            errorMsg = '✗ Heap property violated. Click Reset to try again.';
                             break;
                         }
                     }
@@ -655,7 +667,7 @@ class HeapVisualizer {
             if (this.buildPhase === 'heapify') {
                 const nextSwap = this.heap.getNextSwapForPop(this.currentIndex);
                 if (nextSwap !== null) {
-                    this.showMessage('✗ Not complete! You still need to swap with the smallest child.', 'error');
+                    this.showMessage('✗ Not complete! Click Reset to try again.', 'error');
                     return;
                 }
 
@@ -679,27 +691,27 @@ class HeapVisualizer {
 
         if (this.mode === 'push') {
             if (this.pushPhase === 'selectLeaf') {
-                this.showMessage('✗ You must select where to add the new value!', 'error');
+                this.showMessage('✗ Not complete! Click Reset to try again.', 'error');
                 return;
             }
             const nextSwap = this.heap.getNextSwapForPush(this.currentIndex);
             if (nextSwap !== null) {
                 isValid = false;
-                errorMsg = `✗ Not complete! You still need to swap index ${this.currentIndex} with its parent (index ${nextSwap}).`;
+                errorMsg = '✗ Not complete! Click Reset to try again.';
             }
         } else if (this.mode === 'pop') {
             if (this.popPhase === 'selectNode') {
-                this.showMessage('✗ You must select the node to remove!', 'error');
+                this.showMessage('✗ Not complete! Click Reset to try again.', 'error');
                 return;
             }
             if (this.popPhase === 'selectRoot') {
-                this.showMessage('✗ You must click on the root to move the value there!', 'error');
+                this.showMessage('✗ Not complete! Click Reset to try again.', 'error');
                 return;
             }
             const nextSwap = this.heap.getNextSwapForPop(this.currentIndex);
             if (nextSwap !== null) {
                 isValid = false;
-                errorMsg = `✗ Not complete! You still need to swap index ${this.currentIndex} with its smallest child (index ${nextSwap}).`;
+                errorMsg = '✗ Not complete! Click Reset to try again.';
             }
         }
         
@@ -710,7 +722,7 @@ class HeapVisualizer {
                 for (let child of children) {
                     if (this.heap.heap[i] > this.heap.heap[child]) {
                         isValid = false;
-                        errorMsg = `✗ Heap property violated! Node at index ${i} (${this.heap.heap[i]}) is greater than its child at index ${child} (${this.heap.heap[child]}).`;
+                        errorMsg = '✗ Heap property violated. Click Reset to try again.';
                         break;
                     }
                 }
@@ -755,7 +767,30 @@ class HeapVisualizer {
     }
 
     render() {
-        this.renderTree();
+        const treeSection = document.getElementById('treeSection');
+        const arraySection = document.getElementById('arraySection');
+        const visualization = document.getElementById('visualization');
+        const hideTree = this.interactionMode === 'array' && (this.mode === 'push' || this.mode === 'pop');
+
+        if (treeSection) {
+            treeSection.style.display = hideTree ? 'none' : 'block';
+        }
+        if (arraySection) {
+            arraySection.style.display = 'block';
+        }
+        if (visualization) {
+            visualization.classList.toggle('single-column', hideTree);
+        }
+
+        if (!hideTree) {
+            this.renderTree();
+        } else {
+            const treeView = document.getElementById('treeView');
+            if (treeView) {
+                treeView.innerHTML = '';
+            }
+        }
+
         this.renderArray();
     }
 
@@ -807,14 +842,48 @@ class HeapVisualizer {
                     maxY = Math.max(maxY, pos.y);
                 }
             }
-            const width = Math.max(1, maxX - minX + 60);
-            const height = Math.max(1, maxY - minY + 80);
+            let width = Math.max(1, maxX - minX + 60);
+            let height = Math.max(1, maxY - minY + 80);
+
+            const treeViewWidth = treeView.clientWidth || treeView.getBoundingClientRect().width;
+            const maxWidthRatio = 0.9;
+            const maxWidth = maxWidthRatio * treeViewWidth;
+            let scale = 1;
+
+            if (treeViewWidth > 0) {
+                const targetWidth = Math.min(maxWidth, treeViewWidth);
+                scale = targetWidth / width;
+                const yScale = scale < 1 ? scale : 1;
+                for (let i = 0; i < positions.length; i++) {
+                    if (positions[i]) {
+                        positions[i].x *= scale;
+                        positions[i].y *= yScale;
+                    }
+                }
+                width = Math.max(1, width * scale);
+                height = Math.max(1, height * yScale);
+            }
+
             container.style.width = width + 'px';
             container.style.height = height + 'px';
             container.style.margin = '0 auto';
+
+            const defaultNodeSize = 50;
+            let nodeSize = defaultNodeSize;
+            if (scale !== 1) {
+                nodeSize = Math.max(28, Math.round(defaultNodeSize * scale));
+            }
+            const minGap = 4;
+            const maxNodeSize = Math.max(22, Math.floor(this.treeSpacing.horizontal * scale - minGap));
+            nodeSize = Math.min(nodeSize, maxNodeSize, defaultNodeSize);
+            treeView.style.setProperty('--node-size', `${nodeSize}px`);
+            treeView.style.setProperty('--node-font-size', `${Math.min(16, Math.max(10, Math.round(nodeSize * 0.45)))}px`);
         }
 
         // Draw edges for existing nodes
+        const nodeSizeValue = parseFloat(getComputedStyle(treeView).getPropertyValue('--node-size')) || 50;
+        const nodeRadius = nodeSizeValue / 2;
+
         for (let i = 0; i < existingCount; i++) {
             const children = this.heap.children(i);
             children.forEach(child => {
@@ -822,10 +891,10 @@ class HeapVisualizer {
                     const edge = document.createElement('div');
                     edge.className = 'tree-edge';
                     
-                    const x1 = positions[i].x + 25;
-                    const y1 = positions[i].y + 25;
-                    const x2 = positions[child].x + 25;
-                    const y2 = positions[child].y + 25;
+                    const x1 = positions[i].x + nodeRadius;
+                    const y1 = positions[i].y + nodeRadius;
+                    const x2 = positions[child].x + nodeRadius;
+                    const y2 = positions[child].y + nodeRadius;
                     
                     const length = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
                     const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
@@ -840,6 +909,7 @@ class HeapVisualizer {
             });
         }
 
+        const showRecent = !this.mode;
         // Draw existing nodes
         for (let i = 0; i < existingCount; i++) {
             const node = document.createElement('div');
@@ -847,6 +917,10 @@ class HeapVisualizer {
             node.textContent = this.heap.heap[i];
             node.style.left = positions[i].x + 'px';
             node.style.top = positions[i].y + 'px';
+
+            if (showRecent && (this.recentSwapIndices.has(i) || this.recentAddedIndex === i)) {
+                node.classList.add('recent');
+            }
 
             if (i === this.selectedNode && this.pushPhase !== 'selectLeaf' && this.popPhase !== 'selectNode') {
                 node.classList.add('selected');
@@ -877,8 +951,8 @@ class HeapVisualizer {
 
     calculateTreePositions() {
         const positions = [];
-        const horizontalSpacing = 70;
-        const verticalSpacing = 90;
+        const horizontalSpacing = this.treeSpacing.horizontal;
+        const verticalSpacing = this.treeSpacing.vertical;
         
         // Calculate subtree widths for proper spacing
         const getSubtreeWidth = (index) => {
@@ -999,6 +1073,7 @@ class HeapVisualizer {
         const displayCount = (this.mode === 'push' && this.pushPhase === 'selectLeaf') ? 
             (showNewSlot ? this.heap.heap.length + 1 : this.heap.heap.length - 1) : this.heap.heap.length;
 
+        const showRecent = !this.mode;
         for (let i = 0; i < displayCount; i++) {
             const item = document.createElement('div');
             item.className = 'array-item';
@@ -1008,6 +1083,9 @@ class HeapVisualizer {
             }
             if (i === this.selectedNode) {
                 item.classList.add('highlight');
+            }
+            if (showRecent && (this.recentSwapIndices.has(i) || this.recentAddedIndex === i)) {
+                item.classList.add('recent');
             }
 
             if (showNewSlot && i === this.heap.heap.length) {

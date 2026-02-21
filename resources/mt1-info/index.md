@@ -80,7 +80,7 @@ Note: Spring '26 has reorganized all former sample midterms into the topical ind
  - **Linked Lists and Recurion**
    - [Q1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) , [Sol1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)
-   - [Q3]({{site.baseurl}}/resources/mt1-info/ll-su21/ques-ll-su21.html), [Sol3]({{site.baseurl}}/resources/mt1-info/ll-su21/sol-ll-su21.pdf)
+   - [Q3]({{site.baseurl}}/resources/mt1-info/ll-su21/ques-ll-su21.html), [Sol3]({{site.baseurl}}/resources/mt1-info/ll-su21/ll-su21-sol.pdf)
  - **ADTs**
    - [Q1]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts-sol.html)

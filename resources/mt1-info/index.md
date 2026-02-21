@@ -74,7 +74,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 
  - **Runtime**
    - [Q1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1.html), [Sol1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1-sol.html)
-   - [Q2]({{site.baseurl}}/resources/mt1-info/runtime-bincntr/ques-runtime-bincntr.pdf), [Sol2]({{site.baseurl}}/resources/runtime-1/mt1-info/sol-runtime-bincntr.pdf)
+   - [Q2]({{site.baseurl}}/resources/mt1-info/runtime-bincntr/ques-runtime-bincntr.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/runtime-1/sol-runtime-bincntr.pdf)
  - **Linked Lists and Recurion**
    - [Q1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) , [Sol1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)
@@ -82,6 +82,10 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
    - [Q1]({{site.baseurl}}/resources/mt1-info/adt-id1/ques-adt-id1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/adt-id1/sol-adt-id1.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts-sol.html)
    - [Q3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-blank.pdf), [Sol3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-sol.pdf)
+   - [Q4]({{site.baseurl}}/resources/mt1-info/adt-su21/ques-adt-su21.html), [Sol4]({{site.baseurl}}//resources/mt1-info/adt-su21/sol-adt-su21.html)
+
+
+   
  - **Class Hierarchy**
    - [Q1]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
  - **Polymorphism**
@@ -93,7 +97,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
    - [Q2]({{site.baseurl}}/resources/mt1-info/stl-brain/ques-stl-brain.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/stl-brain/sol-stl-brain.pdf)
    - [Q3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-blank.html), [Sol3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-sol.html)
    - [Q4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-blank.pdf), [Sol4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-sol.pdf)
-
+   - [Q5]({{site.baseurl}}/resources/mt1-info/stl-su21-travel/ques-stl-travel-su21.html), [Sol5]({{site.baseurl}}/resources/mt1-info/stl-su21-travel/sol-stl-travel-su21.html)
 
 #### Sample Midterms
 

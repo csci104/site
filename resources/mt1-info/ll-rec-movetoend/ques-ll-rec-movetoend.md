@@ -10,7 +10,7 @@ nav: Resources
 Write a **recursive** function:
 
 ```c++
-Item* ll_move_vals_to_end(Item* head, int val);
+Item* ll_movtoend(Item* head, int val);
 ```
 
 that moves every Item node whose val equals val to the end of the singly-linked list and returns a pointer to the head of the (possibly) updated list.

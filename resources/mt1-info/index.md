@@ -12,7 +12,7 @@ Spring 2026 Canary: The following information HAS NOW been updated for Spring 20
 The test will be **IN PERSON**
 
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
-  - The test will be set for **1 hour, 30 minutes**
+  - The test will be set for **1 hour, 40 minutes**
   - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) 7 days before the exam, otherwise you will not be able to use your accommodations.  
 - Location: THH 101 & 102
 
@@ -74,7 +74,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 
  - **Runtime**
    - [Q1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1.html), [Sol1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1-sol.html)
-   - [Q2]({{site.baseurl}}/resources/runtime-bincntr/ques-runtime-bincntr.pdf), [Sol2]({{site.baseurl}}/resources/runtime-1/sol-runtime-bincntr.pdf)
+   - [Q2]({{site.baseurl}}/resources/mt1-info/runtime-bincntr/ques-runtime-bincntr.pdf), [Sol2]({{site.baseurl}}/resources/runtime-1/mt1-info/sol-runtime-bincntr.pdf)
  - **Linked Lists and Recurion**
    - [Q1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) , [Sol1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)
@@ -83,13 +83,13 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
    - [Q2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/adt-id2/quiz-adts-sol.html)
    - [Q3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-blank.pdf), [Sol3]({{site.baseurl}}/resources/mt1-info/adt-sp22/adt-sp22-sol.pdf)
  - **Class Hierarchy**
-   [Q1]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
+   - [Q1]({{site.baseurl}}/resources/mt1-info/class-hier1/ques-class-hier1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/class-hier1/sol-class-hier1.pdf)
  - **Polymorphism**
-   - [Q1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.md)
+   - [Q1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/ques-polymorph-trace1.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/polymorph-trace1/sol-polymorph-trace1.html)
  - **Inheritance, Runtime, and Data Structure Coding**
    - [Q1]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-blank.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/stack-set-runtime-sp22/stack-set-runtime-sp22-sol.pdf)
  - **Data Structure Coding**
-   - [Q1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/ques-stack-shape-game.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/sol-stack-shape-game.md)
+   - [Q1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/ques-stack-shape-game.pdf), [Sol1]({{site.baseurl}}/resources/mt1-info/stack-shape-game/sol-stack-shape-game.html)
    - [Q2]({{site.baseurl}}/resources/mt1-info/stl-brain/ques-stl-brain.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/stl-brain/sol-stl-brain.pdf)
    - [Q3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-blank.html), [Sol3]({{site.baseurl}}/resources/mt1-info/stl-piazza/stl-piazza-sp20-sol.html)
    - [Q4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-blank.pdf), [Sol4]({{site.baseurl}}/resources/mt1-info/stl-ohqueue-sp22/stl-ohqueue-sp22-sol.pdf)

@@ -46,7 +46,7 @@ It is not required to preserve the original relative order of the moved nodes; t
  - Input: `[]` (empty list), any val
     Output: `[]`
 
-Node definition
+### Node definition
 
 Assume the following Item struct:
 
@@ -104,7 +104,7 @@ Item* ll_movtoend(Item* head, int val)
 #### Base Case
 
 If `head == nullptr`, the original list has been fully processed.  
-Return `duphead`, which contains all nodes that were removed.
+Return `duphead`, which contains all nodes that were removed.  Notice in the lower cases, that whatever is returned from a recursion is used to fill in the `next` pointer upon return to nodes that are **still** in the main list (i.e. whose value does NOT match `val`).
 
 #### If `head->val == val`
 
@@ -117,7 +117,7 @@ Return `duphead`, which contains all nodes that were removed.
 
 - Recursively process the rest of the list.
 - Set `head->next` to the returned pointer (which will be the kept nodes followed by the moved nodes).
-- Return `head`.
+- Return `head` to that the previous node the remains in the main list can link this nodes as its **next**.
 
 As recursion unwinds, the non-matching nodes rebuild their chain in original order, and at the very end the accumulated `duphead` list is appended to them.
 

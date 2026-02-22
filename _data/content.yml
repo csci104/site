@@ -135,7 +135,7 @@ labs:
     date: 2/24
     title: Midterm 1 Review Lab
     assigned: true
-    topics: Punch the Monkey
+    topics:
     slides:
      - Midterm1Lab_Student.pdf
 #      - Midterm1Lab.pdf

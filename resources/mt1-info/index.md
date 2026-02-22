@@ -76,7 +76,7 @@ Note: Spring '26 has reorganized all former sample midterms into the topical ind
 
  - **Runtime**
    - [Q1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1.html), [Sol1]({{site.baseurl}}/resources/mt1-info/runtime-1/runtime-1-sol.html)
-   - [Q2]({{site.baseurl}}/resources/mt1-info/runtime-bincntr/ques-runtime-bincntr.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/runtime-1/sol-runtime-bincntr.pdf)
+   - [Q2]({{site.baseurl}}/resources/mt1-info/runtime-bincntr/ques-runtime-bincntr.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/runtime-bincntr/sol-runtime-bincntr.pdf)
  - **Linked Lists and Recurion**
    - [Q1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/ques-ll-rec-merge.pdf) , [Sol1]({{site.baseurl}}/resources/mt1-info/ll-rec-merge/sol-ll-rec-merge.pdf)
    - [Q2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion.pdf), [Sol2]({{site.baseurl}}/resources/mt1-info/ll-rec-reverse/quiz-list-recursion-sol.cpp)

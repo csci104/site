@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move to End: Detailed Step-by-Step Visualizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        select, button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        select {
+            background: white;
+            color: #333;
+            min-width: 200px;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            border: none;
+        }
+
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .step-title-box {
+            background: #fffaf0;
+            border: 2px solid #f6ad55;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 30px;
+            color: #7b341e;
+        }
+
+        .step-title {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .step-description {
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 1200px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .section h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            border-bottom: 2px solid #cbd5e0;
+            padding-bottom: 10px;
+        }
+
+        .code-full {
+            background: #1a202c;
+            color: #68d391;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-line {
+            margin: 3px 0;
+            padding: 3px 8px;
+            transition: all 0.3s;
+        }
+
+        .code-line.highlighted {
+            background: #f6ad55;
+            color: #1a202c;
+            font-weight: 600;
+            border-left: 4px solid #dd6b20;
+            padding: 3px 8px;
+        }
+
+        .before-after-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .before-after-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .state-box {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            border: 2px solid #cbd5e0;
+            border-top: 4px solid #667eea;
+        }
+
+        .state-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .list-visual {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            min-height: 60px;
+        }
+
+        .node {
+            width: 45px;
+            height: 45px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background: #48bb78;
+            border: 2px solid #38a169;
+        }
+
+        .arrow {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .null-ptr {
+            color: #a0aec0;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .node.processed {
+            background: #cbd5e0;
+            border: 2px solid #a0aec0;
+            color: #718096;
+            opacity: 0.6;
+        }
+
+        .empty-msg {
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .call-stack {
+            background: white;
+            border: 2px solid #cbd5e0;
+            border-radius: 5px;
+            padding: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8em;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .stack-item {
+            padding: 6px 8px;
+            margin-bottom: 4px;
+            background: #edf2f7;
+            border-left: 3px solid #cbd5e0;
+            border-radius: 2px;
+        }
+
+        .stack-item.current {
+            background: #bee3f8;
+            border-left-color: #4299e1;
+            font-weight: 600;
+            color: #1a365d;
+        }
+
+        .info-panel {
+            background: #edf2f7;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 0.9em;
+            color: #2d3748;
+        }
+
+        .step-counter {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Move to End: Detailed Visualizer</h1>
+        <p class="subtitle">See BEFORE and AFTER states as each line of code executes</p>
+
+        <div class="controls">
+            <select id="exampleSelect">
+                <option value="0">[3, 1, 3, 2, 3], val=3</option>
+                <option value="1">[5, 1, 5], val=5</option>
+                <option value="2">[1, 2, 3, 4], val=9</option>
+                <option value="3">[] (empty)</option>
+            </select>
+            <button onclick="loadExample()">Load Example</button>
+            <button onclick="previousStep()" id="prevBtn">← Previous</button>
+            <button onclick="nextStep()" id="nextBtn">Next →</button>
+            <button onclick="resetSteps()">Reset</button>
+        </div>
+
+        <div class="step-title-box">
+            <div class="step-title" id="stepTitle">Ready to start</div>
+            <div class="step-description" id="stepDesc">Select an example and click Load Example</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="section">
+                <h3>Full Algorithm Code</h3>
+                <div class="code-full" id="codeSection"></div>
+            </div>
+
+            <div class="section">
+                <h3>Call Stack (Recursion Depth)</h3>
+                <div class="call-stack" id="callStackSection"></div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>BEFORE: State before highlighted line executes</h3>
+            <div class="before-after-grid">
+                <div class="state-box">
+                    <div class="state-title">Main List (head)</div>
+                    <div class="list-visual" id="beforeMainList"></div>
+                </div>
+                <div class="state-box">
+                    <div class="state-title">Moved List (duphead)</div>
+                    <div class="list-visual" id="beforeMovedList"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>AFTER: State after highlighted line executes</h3>
+            <div class="before-after-grid">
+                <div class="state-box">
+                    <div class="state-title">Main List (head)</div>
+                    <div class="list-visual" id="afterMainList"></div>
+                </div>
+                <div class="state-box">
+                    <div class="state-title">Moved List (duphead)</div>
+                    <div class="list-visual" id="afterMovedList"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <span class="step-counter">Step <span id="currentStep">1</span> / <span id="totalSteps">1</span></span>
+        </div>
+    </div>
+
+    <script>
+        const examples = [
+            { values: [3, 1, 3, 2, 3], val: 3 },
+            { values: [5, 1, 5], val: 5 },
+            { values: [1, 2, 3, 4], val: 9 },
+            { values: [], val: 0 }
+        ];
+
+        class Node {
+            constructor(val) {
+                this.val = val;
+                this.next = null;
+            }
+        }
+
+        function createList(values) {
+            if (values.length === 0) return null;
+            const head = new Node(values[0]);
+            let current = head;
+            for (let i = 1; i < values.length; i++) {
+                current.next = new Node(values[i]);
+                current = current.next;
+            }
+            return head;
+        }
+
+        function copyList(node) {
+            if (!node) return null;
+            const copy = new Node(node.val);
+            copy.next = copyList(node.next);
+            return copy;
+        }
+
+        let globalSteps = [];
+        let globalCurrentStep = 0;
+
+        function generateSteps(values, targetVal) {
+            const steps = [];
+            let stepId = 0;
+
+            const initialHead = createList(values);
+            
+            // Step 0: Initial state
+            const upcoming = findUpcomingMatches(initialHead, targetVal);
+            steps.push({
+                id: stepId++,
+                title: "Initial Setup",
+                description: `Starting list: ${values.length === 0 ? '(empty)' : `[${values.join(', ')}]`}. Target value: ${targetVal}`,
+                code: codeTemplate(),
+                highlightLines: [],
+                beforeMain: copyList(initialHead),
+                beforeMoved: null,
+                afterMain: copyList(initialHead),
+                afterMoved: null,
+                callStack: ["ll_movtoend_helper(head, nullptr, val) [CALL]"],
+                processedBefore: upcoming,
+                processedAfter: upcoming,
+                depth: 1
+            });
+
+            // Simulate recursion
+            simulateRec(initialHead, null, targetVal, steps, stepId, 1);
+            
+            return steps;
+        }
+
+        let globalStepId = 1;
+
+        // Helper: get all values from head onward
+        function getRemainderValues(head) {
+            const vals = [];
+            let current = head;
+            while (current) {
+                vals.push(current.val);
+                current = current.next;
+            }
+            return vals;
+        }
+
+        // Helper: find all indices of target value in the remainder
+        function findUpcomingMatches(head, val) {
+            const matches = [];
+            let current = head;
+            while (current) {
+                if (current.val === val) {
+                    matches.push(current.val);
+                }
+                current = current.next;
+            }
+            return matches;
+        }
+
+        function simulateRec(head, duphead, val, steps, baseId, depth) {
+            const indent = "  ".repeat(depth - 1);
+
+            // STEP: Check if head is null (BASE CASE)
+            if (!head) {
+                steps.push({
+                    id: globalStepId++,
+                    title: `[Depth ${depth}] Base Case: head == nullptr`,
+                    description: "The list is fully processed. Return the accumulated moved nodes.",
+                    code: codeTemplate(),
+                    highlightLines: [2],
+                    beforeMain: null,
+                    beforeMoved: copyList(duphead),
+                    afterMain: null,
+                    afterMoved: copyList(duphead),
+                    callStack: genCallStack(depth, "RETURN duphead"),
+                    processedBefore: [],
+                    processedAfter: [],
+                    depth: depth
+                });
+                return duphead;
+            }
+
+            const upcoming = findUpcomingMatches(head.next, val);
+
+            // STEP: Check if head->val == val
+            steps.push({
+                id: globalStepId++,
+                title: `[Depth ${depth}] Checking node value: ${head.val} == ${val}?`,
+                description: head.val === val ? 
+                    `YES! Node ${head.val} matches target. Will move it to duphead.` :
+                    `NO. Node ${head.val} doesn't match. Will keep it in main list.`,
+                code: codeTemplate(),
+                highlightLines: [3],
+                beforeMain: copyList(head),
+                beforeMoved: copyList(duphead),
+                afterMain: copyList(head),
+                afterMoved: copyList(duphead),
+                callStack: genCallStack(depth, `Check: ${head.val} == ${val}`),
+                processedBefore: upcoming,
+                processedAfter: upcoming,
+                depth: depth
+            });
+
+            if (head.val === val) {
+                // MATCHED BRANCH
+                const nextNode = head.next;
+
+                // STEP: Save next pointer
+                steps.push({
+                    id: globalStepId++,
+                    title: `[Depth ${depth}] Save the next pointer`,
+                    description: `Save head->next (${nextNode ? nextNode.val : 'null'}) before we modify head`,
+                    code: codeTemplate(),
+                    highlightLines: [5],
+                    beforeMain: copyList(head),
+                    beforeMoved: copyList(duphead),
+                    afterMain: copyList(head),
+                    afterMoved: copyList(duphead),
+                    callStack: genCallStack(depth, "Save mynext"),
+                    processedBefore: upcoming,
+                    processedAfter: upcoming,
+                    depth: depth
+                });
+
+                // STEP: Relink - connect head to duphead
+                head.next = duphead;
+                steps.push({
+                    id: globalStepId++,
+                    title: `[Depth ${depth}] Move node to duphead`,
+                    description: `Set head->next = duphead. Node ${head.val} is now the first element of the moved list.`,
+                    code: codeTemplate(),
+                    highlightLines: [6],
+                    beforeMain: copyList(nextNode),
+                    beforeMoved: copyList(duphead),
+                    afterMain: copyList(nextNode),
+                    afterMoved: copyList(head),
+                    callStack: genCallStack(depth, "Relinked to duphead"),
+                    processedBefore: upcoming,
+                    processedAfter: upcoming,
+                    depth: depth
+                });
+
+                // STEP: Start new recursion - highlight function signature
+                steps.push({
+                    id: globalStepId++,
+                    title: `[Depth ${depth + 1}] ENTERING NEW RECURSION LEVEL`,
+                    description: `Calling ll_movtoend_helper(mynext=${nextNode ? nextNode.val : 'null'}, head=${head.val}, val=${val}). Starting execution at function signature with new parameters.`,
+                    code: codeTemplate(),
+                    highlightLines: [0],
+                    beforeMain: copyList(nextNode),
+                    beforeMoved: copyList(head),
+                    afterMain: copyList(nextNode),
+                    afterMoved: copyList(head),
+                    callStack: genCallStack(depth + 1, "↓ ENTERING RECURSION"),
+                    processedBefore: upcoming,
+                    processedAfter: upcoming,
+                    depth: depth
+                });
+
+                return simulateRec(nextNode, head, val, steps, globalStepId, depth + 1);
+            } else {
+                // NON-MATCHED BRANCH
+                // STEP: Start new recursion - highlight function signature
+                steps.push({
+                    id: globalStepId++,
+                    title: `[Depth ${depth + 1}] ENTERING NEW RECURSION LEVEL`,
+                    description: `Calling ll_movtoend_helper(head->next=${head.next ? head.next.val : 'null'}, duphead, val=${val}). Starting execution at function signature with new parameters.`,
+                    code: codeTemplate(),
+                    highlightLines: [0],
+                    beforeMain: copyList(head),
+                    beforeMoved: copyList(duphead),
+                    afterMain: copyList(head),
+                    afterMoved: copyList(duphead),
+                    callStack: genCallStack(depth + 1, "↓ ENTERING RECURSION"),
+                    processedBefore: upcoming,
+                    processedAfter: upcoming,
+                    depth: depth
+                });
+
+                // Recurse
+                const restList = simulateRec(head.next, duphead, val, steps, globalStepId, depth + 1);
+                head.next = restList;
+
+                // STEP: Reattach returned chain
+                steps.push({
+                    id: globalStepId++,
+                    title: `[Depth ${depth}] Reattach returned chain`,
+                    description: `Recursion returned. Connect node ${head.val} to the returned chain (which includes kept nodes followed by moved nodes).`,
+                    code: codeTemplate(),
+                    highlightLines: [10],
+                    beforeMain: copyList(head),
+                    beforeMoved: copyList(duphead),
+                    afterMain: copyList(head),
+                    afterMoved: copyList(duphead),
+                    callStack: genCallStack(depth, "RETURN from recursion"),
+                    processedBefore: upcoming,
+                    processedAfter: upcoming,
+                    depth: depth
+                });
+
+                return head;
+            }
+        }
+
+        function codeTemplate() {
+            return [
+                "Item* ll_movtoend_helper(Item* head, Item* duphead, int val) {",
+                "  // Base case: no more nodes",
+                "  if(head == nullptr) { return duphead; }",
+                "  else if(head->val == val) {",
+                "    // Node matches - move it to duphead",
+                "    Item* mynext = head->next;",
+                "    head->next = duphead;",
+                "    return ll_movtoend_helper(mynext, head, val);",
+                "  } else {",
+                "    // Node doesn't match - keep it",
+                "    head->next = ll_movtoend_helper(head->next, duphead, val);",
+                "    return head;",
+                "  }",
+                "}"
+            ];
+        }
+
+        function genCallStack(depth, status) {
+            const items = [];
+            for (let i = 1; i <= depth; i++) {
+                items.push({
+                    text: `${"  ".repeat(i-1)}ll_movtoend_helper(...) ${i === depth ? `— ${status}` : ""}`,
+                    current: i === depth
+                });
+            }
+            return items;
+        }
+
+        function displayList(node, processedValues = []) {
+            if (!node) {
+                return '<span class="empty-msg">empty / null</span>';
+            }
+            let html = '';
+            let current = node;
+            while (current) {
+                const isProcessed = processedValues.includes(current.val);
+                const nodeClass = isProcessed ? 'node processed' : 'node';
+                html += `<div class="${nodeClass}">${current.val}</div>`;
+                html += '<div class="arrow">→</div>';
+                current = current.next;
+            }
+            html += '<span class="null-ptr">null</span>';
+            return html;
+        }
+
+        function loadExample() {
+            const idx = parseInt(document.getElementById('exampleSelect').value);
+            const example = examples[idx];
+            globalStepId = 1;
+            globalSteps = generateSteps(example.values, example.val);
+            globalCurrentStep = 0;
+            displayStep();
+        }
+
+        function displayStep() {
+            if (globalSteps.length === 0) return;
+
+            const step = globalSteps[globalCurrentStep];
+
+            // Title and description
+            document.getElementById('stepTitle').textContent = step.title;
+            document.getElementById('stepDesc').textContent = step.description;
+
+            // Code with highlighting
+            let codeHtml = '';
+            const lines = step.code;
+            lines.forEach((line, idx) => {
+                const isHigh = step.highlightLines.includes(idx);
+                const className = isHigh ? 'code-line highlighted' : 'code-line';
+                codeHtml += `<div class="${className}">${escapeHtml(line)}</div>`;
+            });
+            document.getElementById('codeSection').innerHTML = codeHtml;
+
+            // Call stack
+            let stackHtml = '';
+            step.callStack.forEach(item => {
+                const className = typeof item === 'string' ? '' : (item.current ? 'stack-item current' : 'stack-item');
+                const text = typeof item === 'string' ? item : item.text;
+                stackHtml += `<div class="${className}">${escapeHtml(text)}</div>`;
+            });
+            document.getElementById('callStackSection').innerHTML = stackHtml;
+
+            // BEFORE states
+            document.getElementById('beforeMainList').innerHTML = displayList(step.beforeMain, step.processedBefore || []);
+            document.getElementById('beforeMovedList').innerHTML = displayList(step.beforeMoved, []);
+
+            // AFTER states
+            document.getElementById('afterMainList').innerHTML = displayList(step.afterMain, step.processedAfter || []);
+            document.getElementById('afterMovedList').innerHTML = displayList(step.afterMoved, []);
+
+            // Step counter
+            document.getElementById('currentStep').textContent = globalCurrentStep + 1;
+            document.getElementById('totalSteps').textContent = globalSteps.length;
+
+            // Buttons
+            document.getElementById('prevBtn').disabled = globalCurrentStep === 0;
+            document.getElementById('nextBtn').disabled = globalCurrentStep === globalSteps.length - 1;
+        }
+
+        function nextStep() {
+            if (globalCurrentStep < globalSteps.length - 1) {
+                globalCurrentStep++;
+                displayStep();
+            }
+        }
+
+        function previousStep() {
+            if (globalCurrentStep > 0) {
+                globalCurrentStep--;
+                displayStep();
+            }
+        }
+
+        function resetSteps() {
+            globalCurrentStep = 0;
+            displayStep();
+        }
+
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadExample();
+        });
+    </script>
+</body>
+</html>

@@ -134,7 +134,7 @@ labs:
     week: Week 7
     date: 2/24
     title: Midterm 1 Review Lab
-    assigned: true
+    assigned: False
     topics:
     slides:
      - Midterm1Lab_Student.pdf

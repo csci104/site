@@ -110,7 +110,7 @@ void function2(int x){
 **Key difference from `function1`:** The bitwise check `!(x & (x-1))` is $O(1)$, not $O(\log x)$.
 
 **Cost of `function2(i)`:**
-- If $i$ is a power of 2: $\Theta(1) + \Theta(i) = \Theta(i)$
+- If $i$ is a power of 2: $\Theta(1) + \Theta(i) = \Theta(i)$ 
 - If $i$ is not a power of 2: $\Theta(1)$
 
 ### Derivation Using Summation

@@ -134,10 +134,10 @@ labs:
     week: Week 7
     date: 2/24
     title: Midterm 1 Review Lab
-    assigned: false
+    assigned: False
     topics:
-#    slides:
-#      - Midterm1Lab_Student.pdf
+    slides:
+     - Midterm1Lab_Student.pdf
 #      - Midterm1Lab.pdf
     slide_msg: See shared folder
 

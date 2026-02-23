@@ -67,7 +67,7 @@ $$\sum_{k=0}^{\log_2 n} 2^k = 2^{k+1} - 1 \approx 2n - 1 = \Theta(n)$$
 
 All other calls cost $\Theta(\log i)$:
 
-$$\sum_{i=1, i \text{ not power of 2}}^{n} \log i = \Theta(n \log n)$$
+$$\sum_{i=1, i \text{ not power of 2}}^{n} \log i \leq \Theta(n \log n)$$
 
 **Total:** $\Theta(n) + \Theta(n \log n) = \Theta(n \log n)$
 

@@ -14,7 +14,9 @@ The test will be **IN PERSON**
 - Time/Date: **{{site.data.schedule.exams[0].time}}**
   - The test will be set for **1 hour, 40 minutes**
   - If you have USC approved accommodations, you must upload your accomodation information [HERE]({{site.data.urls.osas_dsp_form}}) 7 days before the exam, otherwise you will not be able to use your accommodations.  
-- Location: THH 101 & 102
+- Location: **THH 101 & 102**
+  - Leave empty seats between each student.
+  - Do NOT sit in the **back** row.  
 
   - If you have OSAS accommodations you should schedule your exam at the OSAS offices **on Thursday during OSAS hours**
 

@@ -140,10 +140,14 @@ class HeapVisualizer {
         document.getElementById('makeHeapBtn').addEventListener('click', () => this.startMakeHeap());
         document.getElementById('doneBtn').addEventListener('click', () => this.checkDone());
         document.getElementById('nextBtn').addEventListener('click', () => this.handleNext());
+        document.getElementById('treeNextBtn').addEventListener('click', () => this.handleNext());
         document.getElementById('resetBtn').addEventListener('click', () => this.resetOperation());
         document.getElementById('viewMode').addEventListener('change', (e) => {
             this.interactionMode = e.target.value;
             this.selectedNode = null;
+            if (this.mode === 'make-heap' && this.buildIndex >= 0) {
+                this.updateNextButtonPlacement();
+            }
             this.render();
         });
     }
@@ -183,6 +187,20 @@ class HeapVisualizer {
     addError() {
         this.errorCount += 1;
         this.updateStats();
+    }
+
+    updateNextButtonPlacement() {
+        if (this.mode !== 'make-heap') return;
+        
+        if (this.interactionMode === 'tree') {
+            document.getElementById('nextButtonContainer').style.display = 'none';
+            document.getElementById('treeNextButtonContainer').style.display = 'block';
+            document.getElementById('treeNextBtn').disabled = false;
+        } else {
+            document.getElementById('nextButtonContainer').style.display = 'block';
+            document.getElementById('nextBtn').disabled = false;
+            document.getElementById('treeNextButtonContainer').style.display = 'none';
+        }
     }
 
     generate() {
@@ -230,6 +248,7 @@ class HeapVisualizer {
         document.getElementById('makeHeapBtn').disabled = false;
         document.getElementById('doneBtn').style.display = 'none';
         document.getElementById('nextButtonContainer').style.display = 'none';
+        document.getElementById('treeNextButtonContainer').style.display = 'none';
         document.getElementById('practiceStats').style.display = 'none';
         document.getElementById('resetBtn').style.display = 'none';
     }
@@ -260,7 +279,6 @@ class HeapVisualizer {
         this.startTimer();
         this.updateStats();
 
-        this.render();
         document.getElementById('practiceStats').style.display = 'flex';
 
         if (this.buildIndex < 0) {
@@ -268,11 +286,15 @@ class HeapVisualizer {
             document.getElementById('doneBtn').disabled = false;
             document.getElementById('doneBtn').style.display = 'inline-block';
             document.getElementById('nextButtonContainer').style.display = 'none';
+            document.getElementById('treeNextButtonContainer').style.display = 'none';
         } else {
-            this.showMessage('Make-Heap: Click a node to run heapify.', 'info');
+            if (this.interactionMode === 'tree') {
+                this.showMessage('Make-Heap: Click a node to run heapify, then drag it to the smallest child to swap.', 'info');
+            } else {
+                this.showMessage('Make-Heap: Click a node to run heapify.', 'info');
+            }
             document.getElementById('doneBtn').style.display = 'none';
-            document.getElementById('nextBtn').disabled = false;
-            document.getElementById('nextButtonContainer').style.display = 'block';
+            this.updateNextButtonPlacement();
         }
 
         document.getElementById('pushBtn').disabled = true;
@@ -281,6 +303,8 @@ class HeapVisualizer {
         document.getElementById('generateBtn').disabled = true;
         document.getElementById('resetBtn').disabled = false;
         document.getElementById('resetBtn').style.display = 'inline-block';
+        
+        this.render();
     }
 
     startPush() {
@@ -323,6 +347,7 @@ class HeapVisualizer {
         document.getElementById('doneBtn').disabled = false;
         document.getElementById('doneBtn').style.display = 'inline-block';
         document.getElementById('nextButtonContainer').style.display = 'none';
+        document.getElementById('treeNextButtonContainer').style.display = 'none';
         document.getElementById('practiceStats').style.display = 'none';
         document.getElementById('resetBtn').disabled = false;
         document.getElementById('resetBtn').style.display = 'inline-block';
@@ -353,6 +378,7 @@ class HeapVisualizer {
         document.getElementById('doneBtn').disabled = false;
         document.getElementById('doneBtn').style.display = 'inline-block';
         document.getElementById('nextButtonContainer').style.display = 'none';
+        document.getElementById('treeNextButtonContainer').style.display = 'none';
         document.getElementById('practiceStats').style.display = 'none';
         document.getElementById('resetBtn').disabled = false;
         document.getElementById('resetBtn').style.display = 'inline-block';
@@ -405,7 +431,11 @@ class HeapVisualizer {
             this.buildPhase = 'heapify';
             this.currentIndex = this.buildIndex;
             this.buildStepState = this.heap.clone();
-            this.showMessage('Heapify started. Drag the current index to the smallest child to swap. If no swap is needed, click Next.', 'info');
+            if (this.interactionMode === 'tree') {
+                this.showMessage('Heapify started. Drag the highlighted node to the smallest child to swap. If no swap is needed, click Next.', 'info');
+            } else {
+                this.showMessage('Heapify started. Drag the current index to the smallest child to swap. If no swap is needed, click Next.', 'info');
+            }
             this.render();
         }
     }
@@ -491,10 +521,15 @@ class HeapVisualizer {
         this.buildStepState = this.heap.clone();
 
         if (this.buildIndex >= 0) {
-            this.showMessage('Make-Heap: Click a node to run heapify.', 'info');
+            if (this.interactionMode === 'tree') {
+                this.showMessage('Make-Heap: Click a node to run heapify, then drag it to the smallest child to swap.', 'info');
+            } else {
+                this.showMessage('Make-Heap: Click a node to run heapify.', 'info');
+            }
         } else {
             this.showMessage('Make-Heap: All indices processed. Click Done to finish.', 'info');
             document.getElementById('nextButtonContainer').style.display = 'none';
+            document.getElementById('treeNextButtonContainer').style.display = 'none';
             document.getElementById('doneBtn').disabled = false;
             document.getElementById('doneBtn').style.display = 'inline-block';
         }
@@ -510,6 +545,39 @@ class HeapVisualizer {
         const sourceIndex = this.swapDragIndex;
         this.swapDragIndex = null;
         this.attemptSwap(sourceIndex, targetIndex);
+    }
+
+    handleMakeHeapDragStart(index) {
+        this.dragIndex = index;
+    }
+
+    handleMakeHeapDrop(targetIndex) {
+        if (this.mode !== 'make-heap' || this.buildPhase !== 'heapify') return;
+        if (this.dragIndex === null) return;
+
+        const expectedSwap = this.heap.getNextSwapForPop(this.currentIndex);
+
+        if (expectedSwap === null) {
+            this.showMessage('✗ Error! Try again.', 'error');
+            this.addError();
+            this.dragIndex = null;
+            return;
+        }
+
+        if (this.dragIndex !== this.currentIndex || targetIndex !== expectedSwap) {
+            this.showMessage('✗ Error! Try again.', 'error');
+            this.addError();
+            this.heap = this.buildStepState.clone();
+            this.currentIndex = this.buildIndex;
+            this.dragIndex = null;
+            this.render();
+            return;
+        }
+
+        this.heap.swap(this.currentIndex, expectedSwap);
+        this.currentIndex = expectedSwap;
+        this.dragIndex = null;
+        this.render();
     }
 
     handlePushLeafSelection(index) {
@@ -901,9 +969,16 @@ class HeapVisualizer {
             this.interactionMode === 'tree' &&
             ((this.mode === 'push' && this.pushPhase === 'trickleUp') ||
             (this.mode === 'pop' && this.popPhase === 'trickleDown'));
+        const showMakeHeapInstructions =
+            this.interactionMode === 'tree' &&
+            this.mode === 'make-heap' &&
+            this.buildPhase === 'heapify';
         if (treeInstructions) {
             if (showSwapInstructions) {
                 treeInstructions.textContent = 'To swap, drag the node you want to swap to the node you want to swap it with. Click Done when the operation is complete.';
+                treeInstructions.style.display = 'block';
+            } else if (showMakeHeapInstructions) {
+                treeInstructions.textContent = 'Drag the highlighted node to the smallest child to swap. Click Next when heapify is complete.';
                 treeInstructions.style.display = 'block';
             } else {
                 treeInstructions.textContent = '';
@@ -1012,6 +1087,10 @@ class HeapVisualizer {
             this.interactionMode === 'tree' &&
             ((this.mode === 'push' && this.pushPhase === 'trickleUp') ||
             (this.mode === 'pop' && this.popPhase === 'trickleDown'));
+        const enableMakeHeapDrag =
+            this.interactionMode === 'tree' &&
+            this.mode === 'make-heap' &&
+            this.buildPhase === 'heapify';
         // Draw existing nodes
         for (let i = 0; i < existingCount; i++) {
             const node = document.createElement('div');
@@ -1034,6 +1113,25 @@ class HeapVisualizer {
                 node.addEventListener('drop', (e) => {
                     e.preventDefault();
                     this.handleSwapDrop(i);
+                });
+            } else if (enableMakeHeapDrag) {
+                if (i === this.currentIndex) {
+                    node.draggable = true;
+                    node.style.cursor = 'grab';
+                    node.addEventListener('dragstart', (e) => {
+                        this.handleMakeHeapDragStart(i);
+                        e.dataTransfer.setData('text/plain', String(i));
+                        node.style.cursor = 'grabbing';
+                    });
+                    node.addEventListener('dragend', (e) => {
+                        node.style.cursor = 'grab';
+                    });
+                }
+                // All nodes should be droppable targets
+                node.addEventListener('dragover', (e) => e.preventDefault());
+                node.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    this.handleMakeHeapDrop(i);
                 });
             }
 
@@ -1224,16 +1322,19 @@ class HeapVisualizer {
                 if (this.buildPhase === 'heapify' && i === this.currentIndex) {
                     item.classList.add('highlight');
                 }
-                item.draggable = this.buildPhase === 'heapify';
-                item.addEventListener('dragstart', (e) => {
-                    this.handleArrayDragStart(i);
-                    e.dataTransfer.setData('text/plain', String(i));
-                });
-                item.addEventListener('dragover', (e) => e.preventDefault());
-                item.addEventListener('drop', (e) => {
-                    e.preventDefault();
-                    this.handleArrayDrop(i);
-                });
+                // Only enable drag in array mode for make-heap
+                if (this.interactionMode === 'array') {
+                    item.draggable = this.buildPhase === 'heapify';
+                    item.addEventListener('dragstart', (e) => {
+                        this.handleArrayDragStart(i);
+                        e.dataTransfer.setData('text/plain', String(i));
+                    });
+                    item.addEventListener('dragover', (e) => e.preventDefault());
+                    item.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        this.handleArrayDrop(i);
+                    });
+                }
             } else if (enableSwapDrag) {
                 item.draggable = true;
                 item.addEventListener('dragstart', (e) => {

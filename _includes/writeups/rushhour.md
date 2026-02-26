@@ -10,6 +10,10 @@ We've provided a majority of the code to allow the user to play a text-based ver
   - Ask for a cheat where your program will use A* to find a shortest sequence of moves that will solve the puzzle and display those moves to the user for their consideration.  The user can then key these in or go their own route, asking again later for another cheat sequence based on their updated board state. 
   - Undo the moves already entered if the user realizes those moves were not useful and have the state of the board be restored to its previous value(s) before the move(s) were made. 
 
+#### Related Videos
+
+A video overview of some of the relevant object/class relationships and how the A* algorithm works **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-rh-expl/cs104-sp22-hw3-rh-expl.html)**.
+
 #### Commands and GamePlay
 
 A sample starting board might look be the following: 
@@ -353,6 +357,3 @@ Note: For `boards/inboard1.in` a **BFS** heuristic (0) yields **72** expansions 
 
 You can crowd source the output of your A* solutions on various boards and how many expansions were required.  But for the basic boards it should be easy enough to verify the solution.
 
-#### Related Videos
-
-A video overview of some of the relevant object/class relationships and how the A* algorithm works **[is available here](https://ee.usc.edu/~redekopp/Streaming/cs104/20221/cs104-sp22-hw3-rh-expl/cs104-sp22-hw3-rh-expl.html)**.

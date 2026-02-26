@@ -88,7 +88,7 @@ hw3:
     - writeup: rushhour.md
       number: 5
       title: Rush Hour
-      points: 30
+      points: 40
 
 hw4:
   written_parts:

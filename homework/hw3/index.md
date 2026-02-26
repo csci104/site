@@ -5,7 +5,7 @@ tasks: false
 title: Homework 3
 nav: assignments
 hwpath: hw3
-github_starter_url: https://classroom.github.com/
+github_starter_url: https://classroom.github.com/a/R-6P7OYj
 
 ---
 

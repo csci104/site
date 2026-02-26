@@ -5,6 +5,7 @@ tasks: false
 title: Homework 3
 nav: assignments
 hwpath: hw3
+github_starter_url: https://classroom.github.com/
 
 ---
 
@@ -13,8 +14,10 @@ hwpath: hw3
 + Due: See [homework page]({{site.baseurl}}/homework/index.html)
 + Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
 
-### Skeleton Code
-Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and has been pushed to the Github repository [`resources`](https://github.com/{{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  Otherwise you'll need to clone it.
+### Updates
+
+- 2026/02/25 - Coding portion is released
+
 
 
 ## Written Portion
@@ -29,7 +32,24 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 {% endfor %}
 
 
-## Programming Portion
+## Coding Portion
+
+### Github Classroom URL
+
+**Signup link to create your HW3 repo:** [signup link]({{page.github_starter_url}})
+
+
+### Reminder: A Few Notes on Repositories
+
+ 1. **Never** clone one repo into another.  Clone your new homework repo under (in) the `cs104-repos`.
+1. Clone your repo using the `ssh` approach, NOT `https`.
+- Clone your repo:
+  
+  ```bash
+  git clone git@github.com:{{ site.data.urls.github_org }}/<your_{{page.hwpath}}_repo>
+  ```
+
+- In the VS Code editor, choose `File..Open Folder` and then find and open that folder (i.e. `cs104-repos/<your_{{page.hwpath}}_repo>`)
 
 {% for part in site.data.hws.hw3.programming_parts %}
 
@@ -39,17 +59,22 @@ Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and
 
 {% endfor %}
 
-## Checkpoint
-
-For checkpoint credit, submit your working code for the linked list recursion problem. Ensure you add/commit/push your `hw-username` repo with a `{{page.hwpath}}` subfolder that contains:
-
-  - Your `Makefile` and **all necessary source code files** so that running `make llrec-test` will compile and create a working executable: `llrec-test` that we can test.  Failure to compile will result in 0 credit for your checkpoint.  There should also be no memory/Valgrind errors of any kind when we run your test on any valid input file. It is fine to push input test files if you like, though we will not grade them.
-
-  - **THEN** you must submit your SHA on our Submit page linked from the [Homework Page]({{site.baseurl}}/homeworks/).
-
 ## Submission Files
 
-Ensure you add/commit/push all your source code files, `Makefile`, and written problem files.  Do **NOT** commit/push any test suite folder/files that we provide from any folder other than the `resources/{{page.hwpath}}` repo.
+- **Add, commit and push** your source files including all the `.cpp` and `.h` files and `Makefile`. 
+
+- Do **NOT** add/commit/push `.o` files or executables (things that the compiler can easily generate anytime we need).  If you want to avoid adding files you should not, you can add the lines to your `.gitignore` and then save, add, commit, push the `.gitignore`
+
+
+Do **NOT** commit/push any test suite folder/files that we provide from the `resources` repo.  When we grade your code, we will move a fresh copy of the `{{page.hwpath}}_tests` folder into your repo, `cd` to that test folder, and run
+
+```bash
+cmake .
+make grade
+```
+
+
+
 
 {% include commit-reclone.md %}
 

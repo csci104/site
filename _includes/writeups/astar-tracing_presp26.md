@@ -10,7 +10,7 @@ You are given the above unweighted graph, and want to find the shortest path fro
 - If two nodes look equally good, it breaks ties by selecting the node with a smaller heuristic (or, equivalently, the node with the largest distance travelled)
 - If two nodes are still tied, it break ties by choosing the node which comes first alphabetically.
 
-First trace the behavior of the algorithm on paper. We suggest you list the order that nodes are explored and discovered (start from `L`) showing the `g`, `h`, and `f` values for each node as it is discovered (see the format shown below where the values are fictitious and intended for demonstrating the format). Then, answer the related questions on Gradescope based on your trace.
+Place your answer in a file `q2.txt` which lists the order that nodes are explored and discovered (start from `L`) showing the `g`, `h`, and `f` values for each node as it is discovered. Use the format shown below (where the values are fictitious and intended for demonstrating the format):
 
 ```
 - explore L

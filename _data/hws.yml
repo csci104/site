@@ -92,18 +92,22 @@ hw3:
 
 hw4:
   written_parts:
-    - writeup: heap-trace-1.md
-      number: 1
-      title: Heap Tracing
-      points: 30
     - writeup: astar-tracing.md
-      number: 2
-      title: A* Algorithm Tracing
-      points: 30
-    - writeup: avl-tracing-1.md
       number: 1
+      title: A* Algorithm Tracing
+      points: 32
+    - writeup: heap-ops-1.md
+      number: 2
+      title: Heap Operations Tracing
+      points: 20
+    - writeup: heap-make-heap-1.md
+      number: 3
+      title: Make-Heap Tracing
+      points: 20
+    - writeup: avl-tracing-1-sp26.md
+      number: 4
       title: AVL Operations
-      points: 40
+      points: 28
   programming_parts:
     - writeup: traversal-intrange.md
       number: 2

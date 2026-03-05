@@ -109,6 +109,17 @@ hw4:
       title: AVL Operations
       points: 28
   programming_parts:
+    - writeup: under-construction.md
+      number: 1
+      title: Under Construction
+      points: 100
+hw4b:
+  written_parts:  
+    - writeup: blank.md
+      number: 0
+      title: No Written Portion for this Homework
+      points: 0
+  programming_parts:
     - writeup: traversal-intrange.md
       number: 2
       title: Tree Traversals

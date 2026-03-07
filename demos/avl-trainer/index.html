@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVL BST Trainer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌲 AVL BST Trainer</h1>
+
+        <div class="controls">
+            <div class="control-group wide">
+                <label for="sequenceInput">Keys (space-separated integers)</label>
+                <input id="sequenceInput" type="text" placeholder="e.g. 30 10 20 40 35" />
+            </div>
+
+            <button id="buildFromKeysBtn">Build from keys</button>
+
+            <div class="control-group">
+                <label for="nInput">n</label>
+                <input id="nInput" type="number" min="1" max="63" value="10" />
+            </div>
+
+            <button id="buildRandomBtn">Build random AVL</button>
+            <button id="clearBtn">Reset/Clear</button>
+            <button id="labelBalancesBtn" disabled>Label balances</button>
+        </div>
+
+        <div class="controls secondary">
+            <div class="row-group">
+                <span class="group-title">Insert</span>
+                <label class="inline"><input id="insertRandom" type="checkbox"> random</label>
+                <input id="insertKeyInput" type="text" placeholder="key" />
+                <button id="insertBtn" disabled>Insert</button>
+            </div>
+
+            <div class="row-group">
+                <span class="group-title">Remove</span>
+                <label class="inline"><input id="removeRandom" type="checkbox"> random</label>
+                <input id="removeKeyInput" type="text" placeholder="key" />
+                <button id="removeBtn" disabled>Remove</button>
+            </div>
+        </div>
+
+        <div id="messageArea" class="message info">Build a tree to begin.</div>
+
+        <div class="practice-stats" id="practiceStats" style="display:none;">
+            <div class="stat-item">Errors: <span id="errorCount" class="stat-error">0</span></div>
+            <div class="stat-item">Timer: <span id="timerDisplay">00:00</span></div>
+        </div>
+
+        <div class="visualization">
+            <div class="section tree-section">
+                <h2>Tree View</h2>
+                <div id="treeView"></div>
+            </div>
+
+            <div class="section side-section">
+                <h2>Questions / Controls</h2>
+                <div id="exercisePanel" class="exercise-panel">
+                    <p>No active exercise.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>Practice Modes</h3>
+            <ul>
+                <li><strong>Label balances:</strong> identify each node's balance in random order using -1, 0, +1.</li>
+                <li><strong>Insert:</strong> choose traversal clicks, place the new key, then repair AVL balance/rotations.</li>
+                <li><strong>Remove:</strong> currently validates and selects the target key only (full remove exercise can be added next).</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

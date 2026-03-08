@@ -34,7 +34,7 @@ assignments:
 #      due: Fri., October 17th at
   - id: hw4
     title: AVL Trees
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link:
     dates:

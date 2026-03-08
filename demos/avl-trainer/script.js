@@ -342,7 +342,7 @@ class AVLTrainer {
     setButtonsEnabled(hasTree) {
         const inExercise = this.mode !== null;
         document.getElementById('labelBalancesBtn').disabled = !hasTree || inExercise;
-        document.getElementById('insertBtn').disabled = !hasTree || inExercise;
+        document.getElementById('insertBtn').disabled = inExercise;
         document.getElementById('removeBtn').disabled = !hasTree || inExercise;
     }
 
@@ -389,8 +389,10 @@ class AVLTrainer {
 
     parseSequenceInput() {
         const raw = document.getElementById('sequenceInput').value.trim();
+        
+        // Allow empty input to create an empty tree
         if (!raw) {
-            return { ok: false, error: 'Please enter a non-empty key sequence.' };
+            return { ok: true, keys: [] };
         }
 
         const chunks = raw.split(/[\s,]+/).filter(Boolean);
@@ -429,7 +431,7 @@ class AVLTrainer {
         this.stopTimer();
         this.showStats(false);
         this.resetStats();
-        this.setButtonsEnabled(this.tree.root !== null);
+        this.setButtonsEnabled(true);
         this.render();
     }
 
@@ -607,7 +609,7 @@ class AVLTrainer {
     }
 
     startInsert() {
-        if (!this.tree.root || this.mode) return;
+        if (this.mode) return;
 
         const randomOn = document.getElementById('insertRandom').checked;
         let key = null;
@@ -628,13 +630,44 @@ class AVLTrainer {
             }
         }
 
-        const path = this.computeSearchPathForInsert(key);
         const snapshot = this.tree.toSerializable();
 
-        this.mode = 'insert-traverse';
         this.resetStats();
         this.showStats(true);
         this.startTimer();
+
+        // For empty tree, skip traversal and go directly to placeholder click
+        if (!this.tree.root) {
+            this.insertSession = {
+                key,
+                snapshot,
+                oldHeights: new Map(),
+                pathNodeIds: [],
+                pathIndex: 0,
+                parentId: null,
+                side: 'root',
+                insertedNodeId: null,
+                fixNodeId: null,
+                expectedNextNodeId: null,
+                pendingRotations: null,
+                pendingRotationIndex: 0,
+                selectedRotationNodeId: null,
+                postRotationDecisionPending: false
+            };
+
+            this.nodeStatus.clear();
+            this.currentHighlightNodeId = null;
+            this.mode = 'insert-traverse';
+            this.setButtonsEnabled(true);
+            this.setInfo(`Insert target key: ${key}. Click the root placeholder to place the new node.`);
+            this.render();
+            this.renderInsertTraversePanel();
+            return;
+        }
+
+        const path = this.computeSearchPathForInsert(key);
+
+        this.mode = 'insert-traverse';
 
         this.insertSession = {
             key,
@@ -1198,7 +1231,7 @@ class AVLTrainer {
         this.currentHighlightNodeId = null;
         this.stopTimer();
         this.showStats(false);
-        this.setButtonsEnabled(this.tree.root !== null);
+        this.setButtonsEnabled(true);
 
         if (withMessage) {
             this.setInfo('Exercise cancelled. Tree reverted to pre-exercise state.');
@@ -2189,6 +2222,26 @@ class AVLTrainer {
         treeView.innerHTML = '';
 
         if (!this.tree.root) {
+            // Special case: if inserting into empty tree, show root placeholder
+            if (this.mode === 'insert-traverse' && this.insertSession) {
+                const container = document.createElement('div');
+                container.className = 'tree-container';
+                container.style.width = '300px';
+                container.style.height = '220px';
+
+                const el = document.createElement('div');
+                el.className = 'tree-node placeholder';
+                el.dataset.placeholder = '1';
+                el.dataset.placeholderSide = 'root';
+                el.style.left = '120px';
+                el.style.top = '50px';
+                el.textContent = '+';
+                
+                container.appendChild(el);
+                treeView.appendChild(container);
+                return;
+            }
+            
             treeView.innerHTML = '<div style="color:#888;text-align:center;">No tree to display</div>';
             return;
         }

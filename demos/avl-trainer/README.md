@@ -58,3 +58,7 @@ Ask them what the balance of the node should be (-2, -1, 0, +1, +2) and how many
 
 
 Can you make sure that when random is selected for insert or remove, show the text in the corresponding insert or remove textbox in gray so they realize that value won't be used. It should still be editable, but in gray
+
+Can you please allow building of an empty tree if the keys textbox has no entries.
+
+Can you also allow insertion of a key into an empty tree. Then just show a root node as the possible location to enter the key. From there everything else should work as it does already.

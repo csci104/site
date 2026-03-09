@@ -136,12 +136,6 @@ Something to think about: does your solution work even if the tree is not a BST?
 
 - [ ] Implement `isBalanced` in `bst.cpp`
 
-#### Level Order Traversal
-
-Given a *binary tree*, return the level order traversal of its nodes' values. (i.e. from left to right, level by level).
-
-- [ ] Implement `levelOrder` in `bst.cpp`
-
 ### Check off
 
 - [ ] Use `make` to run all tests and show a TA/CP to get checked off!

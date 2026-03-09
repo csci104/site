@@ -287,7 +287,8 @@ class SplayTrainer {
             const nodeId = parseInt(nodeEl.dataset.nodeId, 10);
             const isPlaceholder = nodeEl.dataset.placeholder === '1';
             if (isPlaceholder) {
-                this.handlePlaceholderClick(nodeEl.dataset.placeholderSide || null);
+                const parentId = nodeEl.dataset.parentId ? parseInt(nodeEl.dataset.parentId, 10) : null;
+                this.handlePlaceholderClick(nodeEl.dataset.placeholderSide || null, parentId);
                 return;
             }
             if (!Number.isInteger(nodeId)) return;
@@ -719,8 +720,17 @@ class SplayTrainer {
         }
     }
 
-    handlePlaceholderClick(chosenSide = null) {
+    handlePlaceholderClick(chosenSide = null, parentId = null) {
         if (this.mode === 'insert-traverse' && this.insertSession) {
+            // Check if user clicked an intermediate placeholder (wrong side of a node with 1 child)
+            if (parentId && parentId !== this.insertSession.parentId) {
+                this.addError();
+                this.setError('That is not the correct location to attach the new node. Keep going.');
+                this.render();
+                this.renderInsertTraversePanel(true);
+                return;
+            }
+
             if (this.insertSession.pathIndex < this.insertSession.pathNodeIds.length) {
                 this.addError();
                 this.setError('Complete the traversal clicks before placing the new node.');
@@ -793,6 +803,7 @@ class SplayTrainer {
         session.pendingSplayOps = [{ ...step, nodeId: splayNode.id }];
         session.pendingSplayIndex = 0;
         session.selectedRotationNodeId = step.pivotId;
+        this.currentHighlightNodeId = step.pivotId;
         this.mode = 'insert-splay-identify-op';
         this.setInfo('Identify the splay operation type, then submit.');
         this.render();
@@ -821,10 +832,26 @@ class SplayTrainer {
             return;
         }
 
-        this.mode = 'insert-splay-select-node';
-        this.setInfo('Correct. Now click the node to rotate.');
-        this.render();
-        this.renderInsertSplayPanel();
+        // Apply the rotation immediately
+        const splayNode = this.tree.getNodeById(session.splayNodeId);
+        if (!splayNode) return;
+
+        this.applyOneSplayStep(splayNode);
+        session.pendingSplayIndex++;
+
+        // Check if splaying is complete
+        if (!splayNode.parent) {
+            this.finishInsertExercise('Insert and splay exercise complete.');
+        } else {
+            // Continue with next splay step
+            session.selectedRotationNodeId = null;
+            session.pendingSplayOps = null;
+            this.mode = 'insert-splay';
+            this.currentHighlightNodeId = null;
+            this.setInfo('Identify the next splay operation or click Done if complete.');
+            this.render();
+            this.renderInsertSplayPanel();
+        }
     }
 
     determineSplayOp(node) {
@@ -892,14 +919,11 @@ class SplayTrainer {
         // User clicked on node to rotate - validate and apply rotation
         const session = this.insertSession;
         const splayNode = this.tree.getNodeById(session.splayNodeId);
-        if (!splayNode || !splayNode.parent) {
-            this.finishInsertExercise('Insert and splay exercise complete.');
-            return;
-        }
+        if (!splayNode) return;
 
         if (nodeId !== session.selectedRotationNodeId) {
             this.addError();
-            this.setError('Incorrect rotation node. Use grandparent for Zig-Zig/Zig-Zag, and parent for final Zig.');
+            this.setError('Incorrect rotation node.');
             this.render();
             this.renderInsertSplayPanel();
             return;
@@ -1302,23 +1326,36 @@ class SplayTrainer {
             return;
         }
 
-        this.mode = 'remove-splay-select-node';
-        this.setInfo('Correct. Now click the node to rotate.');
-        this.render();
-        this.renderRemoveSplayPanel();
+        // Apply the rotation immediately
+        const splayNode = this.tree.getNodeById(session.splayNodeId);
+        if (!splayNode) return;
+
+        this.applyOneSplayStep(splayNode);
+        session.pendingSplayIndex++;
+
+        // Check if splaying is complete
+        if (!splayNode.parent) {
+            this.finishRemoveExercise('Remove and splay exercise complete.');
+        } else {
+            // Continue with next splay step
+            session.selectedRotationNodeId = null;
+            session.pendingSplayOps = null;
+            this.mode = 'remove-splay';
+            this.currentHighlightNodeId = null;
+            this.setInfo('Identify the next splay operation or click Done if complete.');
+            this.render();
+            this.renderRemoveSplayPanel();
+        }
     }
 
     handleRemoveSplaySelectNode(nodeId) {
         const session = this.removeSession;
         const splayNode = this.tree.getNodeById(session.splayNodeId);
-        if (!splayNode || !splayNode.parent) {
-            this.finishRemoveExercise('Remove and splay exercise complete.');
-            return;
-        }
+        if (!splayNode) return;
 
         if (nodeId !== session.selectedRotationNodeId) {
             this.addError();
-            this.setError('Incorrect rotation node. Use grandparent for Zig-Zig/Zig-Zag, and parent for final Zig.');
+            this.setError('Incorrect rotation node.');
             this.render();
             this.renderRemoveSplayPanel();
             return;
@@ -1564,23 +1601,36 @@ class SplayTrainer {
             return;
         }
 
-        this.mode = 'splay-only-select-node';
-        this.setInfo('Correct. Now click the node to rotate.');
-        this.render();
-        this.renderSplayOnlyPanel();
+        // Apply the rotation immediately
+        const splayNode = this.tree.getNodeById(session.targetNodeId);
+        if (!splayNode) return;
+
+        this.applyOneSplayStep(splayNode);
+        session.pendingSplayIndex++;
+
+        // Check if splaying is complete
+        if (!splayNode.parent) {
+            this.finishSplayExercise('Splay exercise complete.');
+        } else {
+            // Continue with next splay step
+            session.selectedRotationNodeId = null;
+            session.pendingSplayOps = null;
+            this.mode = 'splay-only';
+            this.currentHighlightNodeId = null;
+            this.setInfo('Identify the next splay operation or click Done if complete.');
+            this.render();
+            this.renderSplayOnlyPanel();
+        }
     }
 
     handleSplayOnlySelectNode(nodeId) {
         const session = this.splaySession;
         const splayNode = this.tree.getNodeById(session.targetNodeId);
-        if (!splayNode || !splayNode.parent) {
-            this.finishSplayExercise('Splay exercise complete.');
-            return;
-        }
+        if (!splayNode) return;
 
         if (nodeId !== session.selectedRotationNodeId) {
             this.addError();
-            this.setError('Incorrect rotation node. Use grandparent for Zig-Zig/Zig-Zag, and parent for final Zig.');
+            this.setError('Incorrect rotation node.');
             this.render();
             this.renderSplayOnlyPanel();
             return;
@@ -1997,6 +2047,14 @@ class SplayTrainer {
             container.appendChild(el);
         }
 
+        if (this.mode === 'insert-traverse' && this.insertSession) {
+            // Show intermediate placeholders for nodes with only 1 child
+            const intermediatePlaceholders = this.buildIntermediatePlaceholderElements(positions, scale);
+            for (const placeholder of intermediatePlaceholders) {
+                container.appendChild(placeholder);
+            }
+        }
+
         if (this.shouldShowInsertPlaceholder() && this.insertSession) {
             const placeholders = this.buildInsertPlaceholderElements(positions, scale);
             for (const placeholder of placeholders) {
@@ -2005,6 +2063,52 @@ class SplayTrainer {
         }
 
         treeView.appendChild(container);
+    }
+
+    buildIntermediatePlaceholderElements(positions, scale) {
+        const session = this.insertSession;
+        if (!session) return [];
+
+        const placeholders = [];
+        
+        // Only show intermediate placeholder for the current/most recently visited node
+        // Don't show if we haven't started traversing or have reached the final insertion point
+        if (session.pathIndex === 0 || session.pathIndex >= session.pathNodeIds.length) {
+            return placeholders;
+        }
+
+        // Get the current node being visited (last node in the visited path)
+        const currentNodeId = session.pathNodeIds[session.pathIndex - 1];
+        const currentNode = this.tree.getNodeById(currentNodeId);
+        if (!currentNode) return placeholders;
+
+        // Only show placeholder if current node has exactly 1 child (test of understanding)
+        const childCount = (currentNode.left ? 1 : 0) + (currentNode.right ? 1 : 0);
+        if (childCount !== 1) return placeholders;
+
+        const p = positions.get(currentNode.id);
+        if (!p) return placeholders;
+
+        const depth = Math.max(0, p.depth ?? 0);
+        const base = this.treeSpacing.horizontal * Math.max(0.6, scale);
+        const offset = Math.max(38, base * Math.pow(0.64, depth));
+        const y = p.y + this.treeSpacing.vertical * Math.max(0.7, scale);
+
+        // Show placeholder for the missing child
+        const side = currentNode.left ? 'right' : 'left';
+        const x = side === 'left' ? p.x - offset : p.x + offset;
+
+        const el = document.createElement('div');
+        el.className = 'tree-node placeholder';
+        el.dataset.placeholder = '1';
+        el.dataset.placeholderSide = side;
+        el.dataset.parentId = currentNode.id;
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+        el.textContent = side === 'left' ? '+L' : '+R';
+        placeholders.push(el);
+
+        return placeholders;
     }
 
     buildInsertPlaceholderElements(positions, scale) {

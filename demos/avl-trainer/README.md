@@ -62,3 +62,13 @@ Can you make sure that when random is selected for insert or remove, show the te
 Can you please allow building of an empty tree if the keys textbox has no entries.
 
 Can you also allow insertion of a key into an empty tree. Then just show a root node as the possible location to enter the key. From there everything else should work as it does already.
+
+Without breaking anything in this AVL-trainer that already exists, can you add the feature where on INSERT, as we walk down the tree choosing the path to traverse to find the correct location to insert, if we get to a node with only 1 child, even though it is not hte correct place to insert the node, make a new node appear as an option for them to click on even though it would be wrong.  Just to test their understanding? 
+
+No, you are showing the possible new child nodes  right at the start of insert. Only show the potential new child  when I reach that node. 
+
+Much better, but two things: Don't show them in gray while you show the actual correct potential children (when I get to the correct leaf) in normal colors.  This gives it away that it is an incorrect choice. Finally once I click on to another node, make that optional child disappear if I didn't choose it.
+
+If they do click an incorrect child, in addition to incrementing the error, give a status message that that is not the correct location for the new node.
+
+Nope, that didn't change anything..when I click the wrong potential child of a node where the new node should not be connect, I still just see "Complete the traversal clicks before placing the new node."  I'd like to see "That is not the correct location to attach the new node. Keep going."

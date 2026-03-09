@@ -17,3 +17,11 @@ That's a bit better, but the first node that needs to be rotated is always the g
 
 Iteration 4:
 Still not working on insert. When I insert a node, splaying starts on the grandparent or parent (if there is no grandparent). But the current implementation gives an error when I choose the above and instead says I should have chosen the node I just inserted. Please fix that.
+
+Don't give hints like you gave in the parentheses when insert or removing (Click the next rotation pivot (grandparent for Zig-Zig/Zig-Zag, parent for final Zig), 
+
+When I'm inserting a new node as the left or right child of the root, and I choose the root to splay, I can choose zig, but nothing happens.  It doesn't do the rotation. And when I clicked on the root to be the next pivot point, it doesn't highlight it.
+
+so now I click the next pivot point and say it only needs a zig rotation and hit submit button. But then for some reason rather than doing it and asking me if I'm done or need to pick another pivot, it makes me click that node to rotate again.  This seems like an error.
+
+Remove doesn't quite work.  When I delete a node, we need to splay it's parent, but that means the pivot point is the parent or grandparent of the *parent* and yet you are asking me to splay the parent node.

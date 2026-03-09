@@ -284,13 +284,6 @@ button:disabled {
     font-size: calc(var(--node-font-size) - 1px);
 }
 
-.tree-node.placeholder.intermediate-placeholder {
-    opacity: 0.5;
-    background: #f9f9f9;
-    border-color: #aaa;
-    color: #aaa;
-}
-
 .exercise-panel {
     min-height: 440px;
     display: flex;

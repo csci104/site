@@ -278,7 +278,8 @@ class AVLTrainer {
             const nodeId = parseInt(nodeEl.dataset.nodeId, 10);
             const isPlaceholder = nodeEl.dataset.placeholder === '1';
             if (isPlaceholder) {
-                this.handlePlaceholderClick(nodeEl.dataset.placeholderSide || null);
+                const parentId = nodeEl.dataset.parentId ? parseInt(nodeEl.dataset.parentId, 10) : null;
+                this.handlePlaceholderClick(nodeEl.dataset.placeholderSide || null, parentId);
                 return;
             }
             if (!Number.isInteger(nodeId)) return;
@@ -890,12 +891,21 @@ class AVLTrainer {
         this.renderInsertTraversePanel();
     }
 
-    handlePlaceholderClick(chosenSide = null) {
+    handlePlaceholderClick(chosenSide = null, parentId = null) {
         if (this.mode !== 'insert-traverse' || !this.insertSession) return;
 
         if (this.insertSession.pathIndex < this.insertSession.pathNodeIds.length) {
             this.addError();
             this.setError('Complete the traversal clicks before placing the new node.');
+            return;
+        }
+
+        // Check if user clicked an intermediate placeholder (wrong side of a node with 1 child)
+        if (parentId && parentId !== this.insertSession.parentId) {
+            this.addError();
+            this.setError('That is not the correct insertion point. Continue traversing down the tree.');
+            this.render();
+            this.renderInsertTraversePanel(true);
             return;
         }
 
@@ -2367,6 +2377,14 @@ class AVLTrainer {
             container.appendChild(el);
         }
 
+        if (this.mode === 'insert-traverse' && this.insertSession) {
+            // Show intermediate placeholders for nodes with only 1 child
+            const intermediatePlaceholders = this.buildIntermediatePlaceholderElements(positions, scale);
+            for (const placeholder of intermediatePlaceholders) {
+                container.appendChild(placeholder);
+            }
+        }
+
         if (this.shouldShowInsertPlaceholder() && this.insertSession) {
             const placeholders = this.buildInsertPlaceholderElements(positions, scale);
             for (const placeholder of placeholders) {
@@ -2375,6 +2393,47 @@ class AVLTrainer {
         }
 
         treeView.appendChild(container);
+    }
+
+    buildIntermediatePlaceholderElements(positions, scale) {
+        const session = this.insertSession;
+        if (!session) return [];
+
+        const placeholders = [];
+        const all = this.tree.getAllNodes();
+
+        for (const node of all) {
+            // Don't show placeholders for the final insertion point (that's handled separately)
+            if (node.id === session.parentId) continue;
+
+            // Only show placeholders for nodes with exactly 1 child during traversal
+            const childCount = (node.left ? 1 : 0) + (node.right ? 1 : 0);
+            if (childCount !== 1) continue;
+
+            const p = positions.get(node.id);
+            if (!p) continue;
+
+            const depth = Math.max(0, p.depth ?? 0);
+            const base = this.treeSpacing.horizontal * Math.max(0.6, scale);
+            const offset = Math.max(38, base * Math.pow(0.64, depth));
+            const y = p.y + this.treeSpacing.vertical * Math.max(0.7, scale);
+
+            // Show placeholder for the missing child
+            const side = node.left ? 'right' : 'left';
+            const x = side === 'left' ? p.x - offset : p.x + offset;
+
+            const el = document.createElement('div');
+            el.className = 'tree-node placeholder intermediate-placeholder';
+            el.dataset.placeholder = '1';
+            el.dataset.placeholderSide = side;
+            el.dataset.parentId = node.id;
+            el.style.left = `${x}px`;
+            el.style.top = `${y}px`;
+            el.textContent = side === 'left' ? '+L' : '+R';
+            placeholders.push(el);
+        }
+
+        return placeholders;
     }
 
     buildInsertPlaceholderElements(positions, scale) {

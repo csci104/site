@@ -109,16 +109,16 @@ button:disabled {
     background: #f56565;
 }
 
-#labelBalancesBtn {
-    background: #805ad5;
-}
-
 #insertBtn {
     background: #38a169;
 }
 
 #removeBtn {
     background: #dd6b20;
+}
+
+#splayBtn {
+    background: #9f7aea;
 }
 
 .row-group {
@@ -282,13 +282,6 @@ button:disabled {
     border: 2px dashed #667eea;
     color: #667eea;
     font-size: calc(var(--node-font-size) - 1px);
-}
-
-.tree-node.placeholder.intermediate-placeholder {
-    opacity: 0.5;
-    background: #f9f9f9;
-    border-color: #aaa;
-    color: #aaa;
 }
 
 .exercise-panel {

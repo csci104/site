@@ -120,15 +120,7 @@ class Node {
 }
 ```
 
-#### 2. Range Sum
-
-Given the root of a *BST* and two values L and R, return the sum of all the nodes in the tree with values between L and R (inclusive).
-
-For example, if L = 1, R = 3, and your BST has values {1, 2, 3, 4} return 6 (1 + 2 + 3).
-
-- [ ] Implement `rangeSum` in `bst.cpp`
-
-#### 3. Is a Tree Balanced?
+#### Is a Tree Balanced?
 
 Given a *binary tree*, determine if it obeys the height-balancing property.
 
@@ -144,7 +136,7 @@ Something to think about: does your solution work even if the tree is not a BST?
 
 - [ ] Implement `isBalanced` in `bst.cpp`
 
-#### 4. Level Order Traversal
+#### Level Order Traversal
 
 Given a *binary tree*, return the level order traversal of its nodes' values. (i.e. from left to right, level by level).
 

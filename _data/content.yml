@@ -30,7 +30,7 @@ assignments:
       assigned:
       checkpoint:
       written: None
-      programming: Wed., Mar 11th
+      programming: Thurs., Mar 12th
 #      due: Fri., October 17th at
   - id: hw4
     title: AVL Trees
@@ -41,7 +41,7 @@ assignments:
       assigned:
       checkpoint:
       written: Fri., Mar 13th
-      programming: Fri., Mar 27th
+      programming: Mon., Mar 30th
 #      due: Fri., November 14th at 11:59PM PDT
   - id: hw5
     title: Backtracking and Recursion

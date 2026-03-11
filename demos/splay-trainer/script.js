@@ -1276,28 +1276,29 @@ class SplayTrainer {
 
     handleRemoveSplayClick(nodeId) {
         const session = this.removeSession;
-        const node = this.tree.getNodeById(nodeId);
-        if (!node) return;
+        const splayNode = this.tree.getNodeById(session.splayNodeId);
+        if (!splayNode) return;
 
-        if (session.splayNodeId !== nodeId) {
+        if (!splayNode.parent) {
+            this.finishRemoveExercise('Remove and splay exercise complete.');
+            return;
+        }
+
+        const step = this.getSplayStep(splayNode);
+        if (!step) return;
+
+        if (nodeId !== step.pivotId) {
             this.addError();
-            this.setError('Select the designated splay node for the next step.');
+            this.setError('Choose the next rotation pivot.');
             this.render();
             this.renderRemoveSplayPanel();
             return;
         }
 
-        if (!node.parent) {
-            this.finishRemoveExercise('Remove and splay exercise complete.');
-            return;
-        }
-
-        const step = this.getSplayStep(node);
-        if (!step) return;
-
-        session.pendingSplayOps = [{ ...step, nodeId: node.id }];
+        session.pendingSplayOps = [{ ...step, nodeId: splayNode.id }];
         session.pendingSplayIndex = 0;
         session.selectedRotationNodeId = step.pivotId;
+        this.currentHighlightNodeId = step.pivotId;
         this.mode = 'remove-splay-identify-op';
         this.setInfo('Identify the splay operation type, then submit.');
         this.render();
@@ -1383,8 +1384,8 @@ class SplayTrainer {
         panel.innerHTML = `
             <div class="exercise-block">
                 <h3>Remove Splay</h3>
-                <p>Splay the parent node to the root.</p>
-                <p>Click the node to splay next, or:</p>
+                <p>Splay the deleted node's parent to the root.</p>
+                <p>Click the next rotation pivot, or:</p>
                 <div class="btn-row">
                     <button id="splayDoneBtn">Done</button>
                     <button id="removeCancelBtn" class="btn-secondary">Cancel</button>
@@ -1393,8 +1394,8 @@ class SplayTrainer {
         `;
 
         document.getElementById('splayDoneBtn').addEventListener('click', () => {
-            const node = this.tree.root;
-            if (node && node.id === this.removeSession.splayNodeId) {
+            const splayNode = this.tree.getNodeById(this.removeSession.splayNodeId);
+            if (splayNode && !splayNode.parent) {
                 this.finishRemoveExercise('Remove and splay exercise complete.');
             } else {
                 this.addError();

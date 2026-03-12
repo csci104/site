@@ -5,7 +5,7 @@ tasks: false
 title: Homework 4
 nav: homework
 hwpath: hw4
-github_starter_url: https://classroom.github.com/
+github_starter_url: https://classroom.github.com/a/B9Z9ADXr
 
 ---
 

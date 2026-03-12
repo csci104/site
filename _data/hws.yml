@@ -109,10 +109,18 @@ hw4:
       title: AVL Operations
       points: 28
   programming_parts:
-    - writeup: under-construction.md
+    - writeup: traversal-intrange.md
       number: 1
-      title: Under Construction
-      points: 100
+      title: Tree Traversals
+      points: 20
+    - writeup: bst.md
+      number: 2
+      title: BSTs and Iterators
+      points: 35
+    - writeup: bst-avl.md
+      number: 3
+      title: AVL Trees
+      points: 45
 hw4b:
   written_parts:  
     - writeup: blank.md
@@ -120,18 +128,10 @@ hw4b:
       title: No Written Portion for this Homework
       points: 0
   programming_parts:
-    - writeup: traversal-intrange.md
-      number: 2
-      title: Tree Traversals
-      points: 20
-    - writeup: bst.md
-      number: 3
-      title: BSTs and Iterators
-      points: 35
-    - writeup: bst-avl.md
-      number: 4
-      title: AVL Trees
-      points: 45
+    - writeup: under-construction.md
+      number: 1
+      title: Under Construction
+      points: 100
 
 hw5:
   written_parts:

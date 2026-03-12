@@ -30,7 +30,7 @@ assignments:
       assigned:
       checkpoint:
       written: None
-      programming: Thurs., Mar 12th
+      programming: Fri., Mar 13th
 #      due: Fri., October 17th at
   - id: hw4
     title: AVL Trees
@@ -175,7 +175,7 @@ labs:
     folder: lab9
     week: Week 10
     date: 3/24
-    title: Backtracking
+    title: MT2 Review
     assigned: false
     topics: Recursion, Graph Algorithms
 #    slides: BacktrackingLab.pdf
@@ -196,7 +196,7 @@ labs:
     folder: lab11
     week: Week 12
     date: 4/7
-    title: Midterm 2 Review Lab
+    title: Recursive Backtracking & Counting
     assigned: false
 #    slides: Midterm2Lab.pdf
     slide_msg: See shared folder
@@ -205,7 +205,7 @@ labs:
     folder: lab12
     week: Week 13
     date: 4/14
-    title: Counting
+    title: Counting & Probability
     assigned: false
     topics: Counting
 #    slides: CountingLab.pdf
@@ -215,9 +215,9 @@ labs:
     folder: lab13
     week: Week 14
     date: 4/21
-    title: Probability & Number Theory
+    title: Number Theory
     assigned: false
-    topics: Probability, Number Theory
+    topics: Number Theory
 #    slides: ProbabilityNumberTheoryLab.pdf
     slide_msg: See shared folder
 

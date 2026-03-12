@@ -16,8 +16,9 @@ github_starter_url: https://classroom.github.com/a/B9Z9ADXr
 
 ### Updates
 
-- 2026/03/05 - Written portion is released
-
+- 2026/03/05 - Written portion is released.
+- 2026/03/11 - For the **written portion**, there will not be a late penalty but the last day to turn it in is the Sunday we come back from Spring break (3/22) at 11:59 p.m.
+- 2026/03/12 - Coding portion is now released.
 
 
 ## Written Portion

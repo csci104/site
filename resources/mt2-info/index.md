@@ -75,16 +75,16 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
      - Practice `push`, `pop`, and `make-heap` including from **JUST the array-view**.
   
    - `make-heap` Algorithm 1 
-     - [Problem]({{site.baseurl/resources/mt2-info/build-heap/quiz-build-heap.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/build-heap/quiz-build-heap-sol.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/build-heap/quiz-build-heap.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/build-heap/quiz-build-heap-sol.pdf}})
 
    - `make-heap` Algorithm 2 
-     - [Problem]({{site.baseurl/resources/mt2-info/heap-trace-su21/heap-trace-su21-blank.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/heap-trace-su21/heap-trace-su21-sol.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/heap-trace-su21/heap-trace-su21-blank.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/heap-trace-su21/heap-trace-su21-sol.pdf}})
 
    - `make-heap` Algorithm 3
-     - [Problem]({{site.baseurl/resources/mt2-info/heap-trace-sp22/heap-trace-sp22-blank.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/heap-trace-sp22/heap-trace-sp22-sol.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/heap-trace-sp22/heap-trace-sp22-blank.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/heap-trace-sp22/heap-trace-sp22-sol.pdf}})
 
    - Reasoning about heaps
-     - [Problem]({{site.baseurl/resources/mt2-info/heap-trickleUpDown/heap-trickleUpDown-problem.html}}) ; [Solution]({{site.baseurl/resources/mt2-info/heap-trickleUpDown/heap-trickleUpDown-sol.html}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/heap-trickleUpDown/heap-trickleUpDown-problem.html}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/heap-trickleUpDown/heap-trickleUpDown-sol.html}})
 
    - Spring 2024 Review problem (Low priority)
      - [Sample Midterm Heap Problems]({{site.baseurl}}/resources/mt2-info/heap-sp24-practice/csci104-midterm-heap-practice-sp2024.pdf) - [Solutions]({{site.baseurl}}/resources/mt2-info/heap-sp24-practice/csci104-midterm-heap-practice-sp2024-answer-key.pdf)
@@ -93,44 +93,44 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 
 #### Dijkstra's and A*
    - A* practice 1 
-     - [Problem]({{site.baseurl/resources/mt2-info/astar-trace-1/ques-astar-trace-1.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/astar-trace-1/sol-astar-trace-1.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/astar-trace-1/ques-astar-trace-1.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/astar-trace-1/sol-astar-trace-1.pdf}})
 
    - A* practice 2 
-     - [Problem]({{site.baseurl/resources/mt2-info/astar-sp22/astar-sp22-blank.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/astar-sp22/astar-sp22-sol.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/astar-sp22/astar-sp22-blank.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/astar-sp22/astar-sp22-sol.pdf}})
 
 #### Graphs
    - Graph / STL Coding
-     - [Problem]({{site.baseurl/resources/mt2-info/graph-impl-stl1/ques-graph-impl-stl1.pdf}})  ; [Solution]({{site.baseurl/resources/mt2-info/graph-impl-stl1/sol-graph-impl-stl1.html}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/graph-impl-stl1/ques-graph-impl-stl1.pdf}})  ; [Solution]({{site.baseurl}}/resources/mt2-info/graph-impl-stl1/sol-graph-impl-stl1.html}})
 
 #### Traversal Coding Problems
 
   - Remove Depth
-     - [Problem]({{site.baseurl/resources/mt2-info/traversal-remdepth/traversal-remdepth-problem.pdf}}) ;  [Skeleton]({{site.baseurl/resources/mt2-info/traversal-remdepth/remdepth.cpp}}) ; [Solution]({{site.baseurl/resources/mt2-info/traversal-remdepth/remdepth-sol.cpp}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/traversal-remdepth-problem.pdf}}) ;  [Skeleton]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/remdepth.cpp}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/remdepth-sol.cpp}})
 
   - Even Tree
-     - [Problem]({{site.baseurl/resources/mt2-info/traversals/traversal-eventree-blank.pdf}}) ;  [Solution]({{site.baseurl/resources/mt2-info/traversals/traversal-eventree-sol.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/traversals/traversal-eventree-blank.pdf}}) ;  [Solution]({{site.baseurl}}/resources/mt2-info/traversals/traversal-eventree-sol.pdf}})
 
   - Sum Large to Small
-     - [Problem]({{site.baseurl/resources/mt2-info/traversals/traversal-lg-to-small-blank.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/traversals/traversal-lg-to-small-sol.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/traversals/traversal-lg-to-small-blank.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/traversals/traversal-lg-to-small-sol.pdf}})
 
 #### AVL Tree Operations
 
    - [AVL Trainer Website]({{site.url}}/demos/avl-trainer/index.html)
 
   - Exercise set 1:
-    - [Problem]({{site.baseurl/resources/mt2-info/avl-exercises/su20-avl-practice-blank.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/avl-exercises/su20-avl-practice-sol.pdf}})
+    - [Problem]({{site.baseurl}}/resources/mt2-info/avl-exercises/su20-avl-practice-blank.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/avl-exercises/su20-avl-practice-sol.pdf}})
 
   - Exercise set 2:
-    - [Problem]({{site.baseurl/resources/mt2-info/avl-exercises/su21-avl-practice-blank.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/avl-exercises/su21-avl-practice-sol.pdf}})
+    - [Problem]({{site.baseurl}}/resources/mt2-info/avl-exercises/su21-avl-practice-blank.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/avl-exercises/su21-avl-practice-sol.pdf}})
 
  
 #### Other Coding Problems
 
    - Pointer-based Heap Remove-Min
-     - [Problem]({{site.baseurl/resources/mt2-info/heap-linked-removemin/ques-heap-linked-removemin.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/heap-linked-removemin/sol-heap-linked-removemin.html}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/heap-linked-removemin/ques-heap-linked-removemin.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/heap-linked-removemin/sol-heap-linked-removemin.html}})
 
    - Heap/BST Coding 
-     - [Problem]({{site.baseurl/resources/mt2-info/coding-heap-bst/coding-heap-bst-problem.pdf}}) ; [Solution]({{site.baseurl/resources/mt2-info/coding-heap-bst/coding-heap-bst-sol.pdf}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/coding-heap-bst/coding-heap-bst-problem.pdf}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/coding-heap-bst/coding-heap-bst-sol.pdf}})
 
 #### Recurrence Relationship (May not be tested...See topic list)
  - [Lazy-Quicksort]({{site.baseurl}}/resources/mt2-info/lazy-quicksort/ques-lazy-quicksort.pdf) ; [Solutions]({{site.baseurl}}/resources/mt2-info/lazy-quicksort/sol-lazy-quicksort.pdf)

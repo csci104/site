@@ -50,57 +50,88 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 #### Unit 11 - Recursive Graph & Tree Traversals Algorithms
  - Graph Traversals
 
-#### Unit 12 - Recursion: Combinations & Backtracking
- - Recursion
- - Combinations & Backtracking
-
-#### Unit 13 - Iterators
- - Iterators
-
-#### Unit 14 - Binary Search Trees & AVL Trees
+#### Unit 12 - Binary Search Trees & AVL Trees
  - Binary Search Trees
  - Balanced Binary Search Trees / AVL Trees
 
-#### Unit 15 - Splay Trees
+#### Unit 13 - Splay Trees
  - Splay Trees
 
- 
+#### Unit 14 - Iterators
+ - Iterators
+
+
+
+
+## Study Guide
+
+ - Make sure you what you did in your **homework** well!
+
 ### Practice Materials
 
-#### Sample Midterms
+#### Heaps
 
- - [Sample Midterm]({{site.baseurl}}/resources/midterm-b.pdf) - [Solutions]({{site.baseurl}}/resources/midterm-b-sol.pdf)
-    - Copy construction, operator overloading are not a major focus of CS104 but were in previous years.
- - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (partial solutions)
-   - [Q1 Solution]({{site.baseurl}}/resources/midterm-c-q1sol.png)
-   - [Q2 and Q3 Solution]({{site.baseurl}}/resources/midterm-c-q2q3sol.pdf)
- - [Summer 2020 Midterm (Programming)]({{site.baseurl}}/resources/mt-su20.html) (no solutions)
- - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
-   - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
-   - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
+   - [Heap Trainer Website]({{site.url}}/demos/heap-trainer/index.html)
+     - Practice `push`, `pop`, and `make-heap` including from **JUST the array-view**.
+  
+   - `make-heap` Algorithm 1 
+     - [Problem]({{site.baseurl/resources/mt2-info/build-heap/quiz-build-heap.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/build-heap/quiz-build-heap-sol.pdf}})
+
+   - `make-heap` Algorithm 2 
+     - [Problem]({{site.baseurl/resources/mt2-info/heap-trace-su21/heap-trace-su21-blank.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/heap-trace-su21/heap-trace-su21-sol.pdf}})
+
+   - `make-heap` Algorithm 3
+     - [Problem]({{site.baseurl/resources/mt2-info/heap-trace-sp22/heap-trace-sp22-blank.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/heap-trace-sp22/heap-trace-sp22-sol.pdf}})
+
+   - Reasoning about heaps
+     - [Problem]({{site.baseurl/resources/mt2-info/heap-trickleUpDown/heap-trickleUpDown-problem.html}}) | [Solution]({{site.baseurl/resources/mt2-info/heap-trickleUpDown/heap-trickleUpDown-sol.html}})
+
+   - Spring 2024 Review problem (Low priority)
+     - [Sample Midterm Heap Problems]({{site.baseurl}}/resources/mt2-info/heap-sp24-practice/csci104-midterm-heap-practice-sp2024.pdf) - [Solutions]({{site.baseurl}}/resources/mt2-info/heap-sp24-practice/csci104-midterm-heap-practice-sp2024-answer-key.pdf)
+
+
+
+#### Dijkstra's and A*
+   - A* practice 1 
+     - [Problem]({{site.baseurl/resources/mt2-info/astar-trace-1/ques-astar-trace-1.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/astar-trace-1/sol-astar-trace-1.pdf}})
+
+   - A* practice 2 
+     - [Problem]({{site.baseurl/resources/mt2-info/astar-sp22/astar-sp22-blank.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/astar-sp22/astar-sp22-sol.pdf}})
+
+#### Graphs
+   - Graph / STL Coding
+     - [Problem]({{site.baseurl/resources/mt2-info/graph-impl-stl1/ques-graph-impl-stl1.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/graph-impl-stl1/sol-graph-impl-stl1.html}})
+
+#### Traversal Coding Problems
+
+  - Remove Depth
+     - [Problem]({{site.baseurl/resources/mt2-info/traversal-remdepth/traversal-remdepth-problem.pdf}}) | [Skeleton]({{site.baseurl/resources/mt2-info/traversal-remdepth/remdepth.cpp}}) [Solution]({{site.baseurl/resources/mt2-info/traversal-remdepth/remdepth-sol.cpp}})
+
+  - Even Tree
+     - [Problem]({{site.baseurl/resources/mt2-info/traversals/traversal-eventree-blank.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/traversals/traversal-eventree-sol.pdf}})
+
+  - Sum Large to Small
+     - [Problem]({{site.baseurl/resources/mt2-info/traversals/traversal-lg-to-small-blank.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/traversals/traversal-lg-to-small-sol.pdf}})
+
+#### AVL Tree Operations
+
+   - [AVL Trainer Website]({{site.url}}/demos/avl-trainer/index.html)
+
+  - Exercise set 1:
+    - [Problem]({{site.baseurl/resources/mt2-info/avl-exercises/su20-avl-practice-blank.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/avl-exercises/su20-avl-practice-sol.pdf}})
+
+  - Exercise set 2:
+    - [Problem]({{site.baseurl/resources/mt2-info/avl-exercises/su21-avl-practice-blank.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/avl-exercises/su21-avl-practice-sol.pdf}})
+
  
-#### Practice Quizzes
+#### Other Coding Problems
 
- - [ADTs]({{site.baseurl}}/resources/quiz-adts.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-adts-sol.html)
- - [Streams and Simple Recursion]({{site.baseurl}}/resources/quiz-streams-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-streams-recursion-sol.cpp)
- - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) - [No Solutions]
- - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
- - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)
- 
- 
- 
- - [Sample Midterm Heap Problems]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024.pdf) - [Solutions]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024-answer-key.pdf)
- - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (partial solutions)
-   - [Q1 Solution]({{site.baseurl}}/resources/midterm-c-q1sol.png)
-   - [Q2 and Q3 Solution]({{site.baseurl}}/resources/midterm-c-q2q3sol.pdf)
- - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
-   - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
-   - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
+   - Pointer-based Heap Remove-Min
+     - [Problem]({{site.baseurl/resources/mt2-info/heap-linked-removemin/ques-heap-linked-removemin.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/heap-linked-removemin/sol-heap-linked-removemin.html}})
 
- - [Lazy-Quicksort]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/ques-lazy-quicksort.pdf) - [Solutions]({{site.baseurl}}/resources/mt1-info/lazy-quicksort/sol-lazy-quicksort.pdf)
+   - Heap/BST Coding 
+     - [Problem]({{site.baseurl/resources/mt2-info/coding-heap-bst/coding-heap-bst-problem.pdf}}) | [Solution]({{site.baseurl/resources/mt2-info/coding-heap-bst/coding-heap-bst-sol.pdf}})
 
-#### Practice Quizzes
+#### Recurrence Relationship (May not be tested...See topic list)
+ - [Lazy-Quicksort]({{site.baseurl}}/resources/mt2-info/lazy-quicksort/ques-lazy-quicksort.pdf) - [Solutions]({{site.baseurl}}/resources/mt2-info/lazy-quicksort/sol-lazy-quicksort.pdf)
 
- - [Runtime and Recursion]({{site.baseurl}}/resources/quiz-runtime.pdf) - [No Solutions]
- - [Linked Lists and Recursion]({{site.baseurl}}/resources/quiz-list-recursion.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-list-recursion-sol.cpp)
- - [Build-heap]({{site.baseurl}}/resources/quiz-build-heap.pdf) - [Solutions]({{site.baseurl}}/resources/quiz-build-heap-sol.pdf)

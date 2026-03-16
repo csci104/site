@@ -1,3 +1,9 @@
+---
+layout: default
+title: Midterm 2 Info
+nav: Resources
+---
+
 # Solution: Link-Based Heap RemoveMin
 
 ## Problem Summary

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BST Rotation Coding Trainer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>↔️ BST Rotation Coding Trainer</h1>
+
+        <div class="top-controls">
+            <button id="newRightBtn" class="accent-right">New Right Rotation</button>
+            <button id="newLeftBtn" class="accent-left">New Left Rotation</button>
+            <button id="resetOrderBtn">Reset Ordering</button>
+            <button id="submitBtn" class="accent-submit">Submit Sequence</button>
+        </div>
+
+        <div id="messageArea" class="message info">Click a rotation button to start.</div>
+
+        <div class="layout-grid">
+            <section class="panel">
+                <h2>Scenario</h2>
+                <div id="scenarioMeta" class="scenario-meta"></div>
+                <div id="scenarioTree" class="scenario-tree"></div>
+                <div id="scenarioFacts" class="scenario-facts"></div>
+            </section>
+
+            <section class="panel">
+                <h2>Build Code Sequence</h2>
+                <p class="panel-help">Drag lines here in the order that safely performs the rotation.</p>
+                <div id="sequenceArea" class="code-list dropzone"></div>
+            </section>
+
+            <section class="panel">
+                <h2>Shuffled Lines</h2>
+                <p class="panel-help">Drag from here into the middle panel.</p>
+                <div id="poolArea" class="code-list dropzone"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

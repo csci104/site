@@ -30,36 +30,18 @@ The test will be **IN PERSON**
 
 The exam is a mix of short answer and coding snippets. We will **visually** grade your code snippets and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
 
-#### Unit 9 - Priority Queues and Heaps
- - Build Heap
- - Heap Sort
 
-#### Unit 10 - Graph Representations and Traversals
- - Graph Algorithms
 
-#### Unit 11 - Recursive Graph & Tree Traversals Algorithms
- - Graph Traversals
+#### Unit 15 - Hash Tables Intro
+ - Introductory hash-table
+ 
+#### Unit 16 
+ - Counting
 
-#### Unit 12 - Recursion: Combinations & Backtracking
+#### Unit 17 - Recursion: Combinations & Backtracking
  - Recursion
  - Combinations & Backtracking
 
-#### Unit 13 - Iterators
- - Iterators
-
-#### Unit 14 - Binary Search Trees & AVL Trees
- - Binary Search Trees
- - Balanced Binary Search Trees / AVL Trees
-
-#### Unit 15 - Splay Trees
- - Splay Trees
-
-#### Unit 16 - Hash Tables Intro
- - Introductory hash-table
- 
-#### Unit 17 
- - Counting
- 
 #### Unit 18
  - Probability
  

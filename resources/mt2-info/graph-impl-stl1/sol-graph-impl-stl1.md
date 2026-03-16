@@ -1,3 +1,9 @@
+---
+layout: default
+title: Midterm 2 Info
+nav: Resources
+---
+
 # Solution: Graph Implementation with STL
 
 ## Problem Summary

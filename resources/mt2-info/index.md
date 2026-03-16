@@ -105,7 +105,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
 #### Traversal Coding Problems
 
   - Remove Depth
-     - [Problem]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/traversal-remdepth-problem.pdf) ;  [Skeleton]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/remdepth.cpp}}) ; [Solution]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/remdepth-sol.cpp}})
+     - [Problem]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/traversal-remdepth-problem.pdf) ;  [Skeleton]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/remdepth.cpp) ; [Solution]({{site.baseurl}}/resources/mt2-info/traversal-remdepth/remdepth-sol.cpp)
 
   - Even Tree
      - [Problem]({{site.baseurl}}/resources/mt2-info/traversals/traversal-eventree-blank.pdf) ;  [Solution]({{site.baseurl}}/resources/mt2-info/traversals/traversal-eventree-sol.pdf)

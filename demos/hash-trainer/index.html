@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash Table Trainer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧮 Hash Table Trainer</h1>
+
+        <div class="controls-grid">
+            <div class="card control-card">
+                <h2>Table Setup</h2>
+                <div class="row">
+                    <label for="tableSizeInput">Table size (m)</label>
+                    <input id="tableSizeInput" type="number" min="1" value="9">
+                    <button id="applyTableBtn">Apply m</button>
+                </div>
+
+                <div class="row-wrap">
+                    <label>Collision handling</label>
+                    <label class="inline"><input type="radio" name="collision" value="chaining" checked> Chaining</label>
+                    <label class="inline"><input type="radio" name="collision" value="linear"> Linear probing</label>
+                    <label class="inline"><input type="radio" name="collision" value="quadratic"> Quadratic probing</label>
+                    <label class="inline"><input type="radio" name="collision" value="double"> Double hashing</label>
+                </div>
+            </div>
+
+            <div class="card control-card">
+                <h2>Hash Function</h2>
+                <div class="row-wrap">
+                    <label>h(k) mode</label>
+                    <label class="inline"><input type="radio" name="hMode" value="auto" checked> automatic</label>
+                    <label class="inline"><input type="radio" name="hMode" value="manual"> manual</label>
+                </div>
+
+                <div class="row expression-row">
+                    <label for="hExprInput">h(k)</label>
+                    <input id="hExprInput" type="text" value="k">
+                    <span class="suffix">% m</span>
+                </div>
+
+                <div id="h2Block" class="h2-block hidden">
+                    <div class="row-wrap">
+                        <label>h2(k) mode</label>
+                        <label class="inline"><input type="radio" name="h2Mode" value="auto" checked> automatic</label>
+                        <label class="inline"><input type="radio" name="h2Mode" value="manual"> manual</label>
+                    </div>
+                    <div class="row expression-row">
+                        <label for="h2ExprInput">h2(k)</label>
+                        <input id="h2ExprInput" type="text" value="k">
+                        <span class="suffix">% m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ops-counter-bar">
+            <div class="ops-counter-item">Completed Operations: <span id="totalOpsDisplay">0</span></div>
+            <div class="ops-counter-sep">|</div>
+            <div class="ops-counter-item">Total Array Accesses/Probes: <span id="totalProbesDisplay">0</span></div>
+            <div class="ops-counter-sep">|</div>
+            <div class="ops-counter-item">Avg Probes/Op: <span id="avgProbesDisplay">—</span></div>
+            <button id="resetCountersBtn" class="btn-reset-counters">Reset</button>
+        </div>
+
+        <div id="messageArea" class="message info">Choose an operation to begin.</div>
+
+        <div class="stats" id="statsBar" style="display:none;">
+            <div>Errors: <span id="errorCount" class="error-text">0</span></div>
+            <div>Timer: <span id="timerText">00:00</span></div>
+        </div>
+
+        <div id="rehashBar" class="rehash-bar hidden"></div>
+
+        <div class="main-grid">
+            <div class="card">
+                <h2 id="tableTitle">Hash Table</h2>
+                <div id="tableView"></div>
+            </div>
+
+            <div class="card">
+                <h2>Trainer Panel</h2>
+                <div id="idlePanel" class="trainer-idle-panel">
+                    <div class="panel-section">
+                        <h3>Key Selection</h3>
+                        <div class="row-wrap">
+                            <label>Key type</label>
+                            <label class="inline"><input type="radio" name="keyType" value="int" checked> int</label>
+                            <label class="inline"><input type="radio" name="keyType" value="string"> string</label>
+                        </div>
+
+                        <div class="row-wrap">
+                            <label>Key input mode</label>
+                            <label class="inline"><input type="radio" name="keyMode" value="manual" checked> manual</label>
+                            <label class="inline"><input type="radio" name="keyMode" value="auto"> auto random</label>
+                        </div>
+
+                        <div class="row">
+                            <label for="keyInput">Operation key</label>
+                            <input id="keyInput" type="text" placeholder="e.g. 42 or apple">
+                        </div>
+                    </div>
+
+                    <div class="panel-section">
+                        <h3>Operations</h3>
+                        <div class="row-wrap ops-row">
+                            <button id="insertBtn" class="btn-insert">Insert</button>
+                            <button id="findBtn" class="btn-find">Find</button>
+                            <button id="removeBtn" class="btn-remove">Remove</button>
+                        </div>
+
+                        <div class="row rehash-row">
+                            <label for="rehashSizeInput">Rehash table size</label>
+                            <input id="rehashSizeInput" type="number" min="1" value="13">
+                            <button id="rehashBtn" class="btn-rehash">Rehash</button>
+                        </div>
+
+                        <div class="row rehash-row">
+                            <label for="randomFillCountInput">Auto-insert random keys (k)</label>
+                            <input id="randomFillCountInput" type="number" min="1" value="10">
+                            <button id="randomFillBtn">Insert k keys</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="trainerPanel" class="trainer-panel hidden">
+                </div>
+            </div>
+        </div>
+
+        <div id="rehashPanels" class="rehash-panels hidden">
+            <div class="card">
+                <h2>Old Table</h2>
+                <div id="oldTableView"></div>
+            </div>
+            <div class="card">
+                <h2>New Table (m = <span id="newMLabel"></span>)</h2>
+                <div id="newTableView"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

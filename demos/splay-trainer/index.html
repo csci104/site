@@ -43,10 +43,10 @@
             </div>
 
             <div class="row-group">
-                <span class="group-title">Splay</span>
+                <span class="group-title">Find</span>
                 <label class="inline"><input id="splayRandom" type="checkbox"> random</label>
                 <input id="splayKeyInput" type="text" placeholder="key" />
-                <button id="splayBtn" disabled>Splay</button>
+                <button id="splayBtn" disabled>Find</button>
             </div>
         </div>
 
@@ -76,7 +76,7 @@
             <ul>
                 <li><strong>Insert:</strong> choose traversal clicks, place the new key, then splay it to the root.</li>
                 <li><strong>Remove:</strong> walk down to find the target, choose 0/1/2-child action, then splay.</li>
-                <li><strong>Splay:</strong> walk down to find a key and splay it to the root.</li>
+                <li><strong>Find:</strong> walk down to find a key (or the miss path), then splay the accessed node to the root.</li>
             </ul>
         </div>
     </div>

@@ -25,3 +25,25 @@ When I'm inserting a new node as the left or right child of the root, and I choo
 so now I click the next pivot point and say it only needs a zig rotation and hit submit button. But then for some reason rather than doing it and asking me if I'm done or need to pick another pivot, it makes me click that node to rotate again.  This seems like an error.
 
 Remove doesn't quite work.  When I delete a node, we need to splay it's parent, but that means the pivot point is the parent or grandparent of the *parent* and yet you are asking me to splay the parent node.
+
+
+Can you change the splay command button to "Find".  Also, during that splay (or, now, "find") operation it's unclear what I should do once I traverse the tree and find that node.  The options on the right are to click "Done" or "Cancel" and say to "Click the node to splay next, or:"...please say "Click the node to splay next, or press Done if no splay is necessary, or Cancel".
+
+We need to change the "find/splay" operation to support keys that ARE NOT in the tree, because for splay trees we must splay something to the top. The correct behavior is to walk the tree downward. At each node, let's give a button to say "Node found", "Node not found", "Cancel". Thus, for finding (or removing a node as well), they need to walk down the tree and for find, choose Node not found at the leaf node on the path to the desired, non-existent key.  After they click Node found, or Node not found, then ask them: "Click 'Done' if the operation is done or 'Splay' if a node should be splayed (of course, keep 'cancel' button).  The right answer is to 'Splay'. After that they should be asked to choose the pivot point like in insertion, as I've noticed there is a discrepancy in the current "Find/Splay" operation for how splyaing works vs. when insert operations are performed.   During a find operation requires us to "click the node" to splay which is the node that is deeper on the ancestory path.  But for insert we are asked to "Click the next rotation pivot" (which is the node higher in the ancestry path). Can we make this consistent across all operations. I think it would be best to make them click on the node to splay (the deeper node that is moving up) and then choose zig-zig or zig-zag or zig.  
+
+finally, as we splay nodes up the tree can we highlight the last node they clicked to splay even after the zig-zig, zig-zag, or zig.  We just ask them to click the next node to splay. It will be the item that's highlighted but without that highlighting it's sometimes easy to visually lose your place.
+
+
+===
+
+this looks good but a few alterations:
+
+Don't show "Step m/n" in the right pane area as it gives away the solution.  And don't say " (normally required)" in the status area as that is too much of a hint.
+
+I think even for insert, once they insert the new node, we want to ask them to click a button "Splay" or "Done" (or "cancel") before splyaing back up to make sure they know they SHOULD splay.
+
+I found a bug. When I try to remove a node with 2 children, go to it, and click "Found it" and it asks me to swap wiht successor or predecessor, but those actions don't work. I've tried multiple times and I start to click through the pathway to either the predecessor or successor and it raises errors. Or I just click on my successor or predecessor and it also gives errors. Please fix.
+
+===
+
+Removing still doesn't work with neither successor and predecessor working. In the graphic, I try to remove 19, go to it and click "Found". I then enter success or predecssor, which from the graphic clearly has at most 2 steps to find, but you think there should be 4 steps and when I click either child of 19 (no matter predecessor or successor being chosen), I get an error.

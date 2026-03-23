@@ -660,6 +660,11 @@ class SplayTrainer {
     handleNodeClick(nodeId) {
         if (this.mode === 'insert-traverse' && this.insertSession) {
             this.handleInsertTraverseClick(nodeId);
+        } else if (this.mode === 'insert-post-insert' && this.insertSession) {
+            this.addError();
+            this.setError('Use Splay, Done, or Cancel in the panel.');
+            this.render();
+            this.renderInsertPostInsertPanel();
         } else if (this.mode === 'remove-traverse' && this.removeSession) {
             this.handleRemoveTraverseClick(nodeId);
         } else if (this.mode === 'splay-traverse' && this.splaySession) {
@@ -755,11 +760,37 @@ class SplayTrainer {
             this.insertSession.insertedNodeId = inserted.id;
             this.insertSession.splayNodeId = inserted.id;
             this.currentHighlightNodeId = inserted.id;
-            this.mode = 'insert-splay';
-            this.setInfo(`Inserted ${this.insertSession.key}. Now splay this node to the root.`);
+            this.mode = 'insert-post-insert';
+            this.setInfo(`Inserted ${this.insertSession.key}. Choose Done or Splay.`);
             this.render();
-            this.renderInsertSplayPanel();
+            this.renderInsertPostInsertPanel();
         }
+    }
+
+    handleInsertPostInsertDecision(doSplay) {
+        const session = this.insertSession;
+        if (!session) return;
+
+        const splayNode = this.tree.getNodeById(session.splayNodeId);
+        if (!splayNode) return;
+
+        if (!doSplay) {
+            if (!splayNode.parent) {
+                this.finishInsertExercise('Insert exercise complete.');
+            } else {
+                this.addError();
+                this.setError('A splay is still required. Click Splay.');
+                this.render();
+                this.renderInsertPostInsertPanel();
+            }
+            return;
+        }
+
+        this.mode = 'insert-splay';
+        this.currentHighlightNodeId = session.splayNodeId;
+        this.setInfo('Now splay the inserted node to the root.');
+        this.render();
+        this.renderInsertSplayPanel();
     }
 
     insertAtMarkedPlaceholder() {
@@ -792,9 +823,9 @@ class SplayTrainer {
         const step = this.getSplayStep(splayNode);
         if (!step) return;
 
-        if (nodeId !== step.pivotId) {
+        if (nodeId !== splayNode.id) {
             this.addError();
-            this.setError('Choose the next rotation pivot: grandparent for Zig-Zig/Zig-Zag, or parent for final Zig.');
+            this.setError('Click the node to splay next (the deeper node moving up).');
             this.render();
             this.renderInsertSplayPanel();
             return;
@@ -802,8 +833,8 @@ class SplayTrainer {
 
         session.pendingSplayOps = [{ ...step, nodeId: splayNode.id }];
         session.pendingSplayIndex = 0;
-        session.selectedRotationNodeId = step.pivotId;
-        this.currentHighlightNodeId = step.pivotId;
+        session.selectedRotationNodeId = splayNode.id;
+        this.currentHighlightNodeId = splayNode.id;
         this.mode = 'insert-splay-identify-op';
         this.setInfo('Identify the splay operation type, then submit.');
         this.render();
@@ -847,7 +878,7 @@ class SplayTrainer {
             session.selectedRotationNodeId = null;
             session.pendingSplayOps = null;
             this.mode = 'insert-splay';
-            this.currentHighlightNodeId = null;
+            this.currentHighlightNodeId = session.splayNodeId;
             this.setInfo('Identify the next splay operation or click Done if complete.');
             this.render();
             this.renderInsertSplayPanel();
@@ -939,6 +970,7 @@ class SplayTrainer {
             session.pendingSplayOps = null;
             session.mode = 'insert-splay';
             this.mode = 'insert-splay';
+            this.currentHighlightNodeId = session.splayNodeId;
             this.setInfo('Identify the next splay operation or click Done if complete.');
             this.render();
             this.renderInsertSplayPanel();
@@ -1012,10 +1044,6 @@ class SplayTrainer {
                 return;
             }
             key = Number(raw);
-            if (!this.tree.containsKey(key)) {
-                this.setError(`Key ${key} is not in the tree.`);
-                return;
-            }
         }
 
         const path = this.computeSearchPathForKey(key);
@@ -1032,6 +1060,7 @@ class SplayTrainer {
             pathNodeIds: path,
             pathIndex: 0,
             correctClickedPathIds: [],
+            lastVisitedNodeId: null,
             targetNodeId: null,
             targetChildCount: 0,
             targetParentId: null,
@@ -1048,7 +1077,7 @@ class SplayTrainer {
         this.nodeStatus.clear();
         this.currentHighlightNodeId = null;
         this.setButtonsEnabled(true);
-        this.setInfo(`Remove target key: ${key}. Click each node on the path to the target.`);
+        this.setInfo(`Remove target key: ${key}. Click each node on the search path, then choose Node Found/Node Not Found.`);
         this.render();
         this.renderRemoveTraversePanel();
     }
@@ -1067,23 +1096,61 @@ class SplayTrainer {
 
         session.correctClickedPathIds.push(nodeId);
         session.pathIndex++;
+        session.lastVisitedNodeId = nodeId;
         this.currentHighlightNodeId = nodeId;
 
-        if (session.pathIndex >= session.pathNodeIds.length) {
-            // Reached the target node
-            const targetNode = this.tree.getNodeById(nodeId);
-            session.targetNodeId = nodeId;
-            session.targetChildCount = (targetNode.left ? 1 : 0) + (targetNode.right ? 1 : 0);
-            session.targetParentId = targetNode.parent ? targetNode.parent.id : null;
+        this.render();
+        this.renderRemoveTraversePanel();
+    }
 
+    submitRemoveSearchResult(found) {
+        const session = this.removeSession;
+        if (!session || !session.lastVisitedNodeId) {
+            this.addError();
+            this.setError('Click the current node on the search path first.');
+            return;
+        }
+
+        const lastNode = this.tree.getNodeById(session.lastVisitedNodeId);
+        if (!lastNode) return;
+
+        const expectedFound = lastNode.key === session.key;
+        const atPathEnd = session.pathIndex >= session.pathNodeIds.length;
+
+        if (found) {
+            if (!expectedFound) {
+                this.addError();
+                this.setError('Node Found is only valid when the selected node key matches the target key.');
+                this.render();
+                this.renderRemoveTraversePanel();
+                return;
+            }
+
+            session.targetNodeId = lastNode.id;
+            session.targetChildCount = (lastNode.left ? 1 : 0) + (lastNode.right ? 1 : 0);
+            session.targetParentId = lastNode.parent ? lastNode.parent.id : null;
             this.mode = 'remove-action';
-            this.setInfo('You\'ve reached the target node. Choose an action.');
+            this.setInfo('Target found. Choose the remove action.');
             this.render();
             this.renderRemoveActionPanel();
-        } else {
+            return;
+        }
+
+        if (expectedFound || !atPathEnd) {
+            this.addError();
+            this.setError('Node Not Found is only valid at the final searched node when the target key is absent.');
             this.render();
             this.renderRemoveTraversePanel();
+            return;
         }
+
+        // Unsuccessful remove in splay tree: splay last accessed node to root.
+        session.splayNodeId = lastNode.id;
+        this.mode = 'remove-splay';
+        this.currentHighlightNodeId = lastNode.id;
+        this.setInfo('Key not found. Splay the last accessed node to the root.');
+        this.render();
+        this.renderRemoveSplayPanel();
     }
 
     renderRemoveActionPanel() {
@@ -1177,27 +1244,58 @@ class SplayTrainer {
             session.swapTargetKey = succ.key;
             const path = this.computeSearchPathForKey(succ.key);
             session.swapPathIds = path;
+            session.swapPathFromTargetIds = [];
+            let cur = targetNode.right;
+            while (cur) {
+                session.swapPathFromTargetIds.push(cur.id);
+                if (!cur.left) break;
+                cur = cur.left;
+            }
         } else {
             let pred = targetNode.left;
             while (pred.right) pred = pred.right;
             session.swapTargetKey = pred.key;
             const path = this.computeSearchPathForKey(pred.key);
             session.swapPathIds = path;
+            session.swapPathFromTargetIds = [];
+            let cur = targetNode.left;
+            while (cur) {
+                session.swapPathFromTargetIds.push(cur.id);
+                if (!cur.right) break;
+                cur = cur.right;
+            }
+        }
+
+        // Practice path should be local to the target subtree (not from root).
+        if (session.swapPathFromTargetIds && session.swapPathFromTargetIds.length) {
+            session.swapPathIds = [...session.swapPathFromTargetIds];
         }
 
         session.swapPathIndex = 0;
+        session.swapPathMode = null;
         this.mode = 'remove-swap-path';
         this.currentHighlightNodeId = null;
-        this.setInfo(`Click nodes on the path to the ${action}.`);
+        this.setInfo(`Click nodes from the target's ${action === 'successor' ? 'right' : 'left'} subtree path to the ${action}.`);
         this.render();
         this.renderRemoveSwapPathPanel();
     }
-
     handleRemoveSwapPathClick(nodeId) {
         const session = this.removeSession;
-        const expectedNodeId = session.swapPathIds[session.swapPathIndex];
+        const chosenPath = (session.swapPathFromTargetIds && session.swapPathFromTargetIds.length)
+            ? session.swapPathFromTargetIds
+            : (session.swapPathIds || []);
 
-        if (nodeId !== expectedNodeId) {
+        if (!chosenPath.length) {
+            this.addError();
+            this.setError('No successor/predecessor path is available.');
+            this.render();
+            this.renderRemoveSwapPathPanel();
+            return;
+        }
+
+        // Allow direct click on final node or any forward node in the expected path.
+        const pos = chosenPath.indexOf(nodeId);
+        if (pos === -1 || pos < session.swapPathIndex) {
             this.addError();
             this.setError('Click the next node on the swap path.');
             this.render();
@@ -1205,7 +1303,7 @@ class SplayTrainer {
             return;
         }
 
-        session.swapPathIndex++;
+        session.swapPathIndex = pos + 1;
         session.swapPathNodeId = nodeId;
         this.currentHighlightNodeId = nodeId;
         this.render();
@@ -1217,14 +1315,11 @@ class SplayTrainer {
         const panel = document.getElementById('exercisePanel');
         const session = this.removeSession;
 
-        const idx = Math.min(session.swapPathIndex + 1, session.swapPathIds.length);
-        const total = session.swapPathIds.length;
-
         panel.innerHTML = `
             <div class="exercise-block">
                 <h3>Remove Swap</h3>
                 <p>Find path to ${session.swapAction}</p>
-                <p>Step ${idx} / ${total}</p>
+                <p>Click path nodes (or click the final ${session.swapAction} directly), then swap.</p>
                 <div class="btn-row">
                     <button id="swapWithNodeBtn">Swap with target node</button>
                     <button id="removeCancelBtn" class="btn-secondary">Cancel</button>
@@ -1238,7 +1333,11 @@ class SplayTrainer {
 
     performSwapAndDelete() {
         const session = this.removeSession;
-        if (session.swapPathIndex !== session.swapPathIds.length) {
+        const chosenPath = (session.swapPathFromTargetIds && session.swapPathFromTargetIds.length)
+            ? session.swapPathFromTargetIds
+            : (session.swapPathIds || []);
+
+        if (session.swapPathIndex !== chosenPath.length) {
             this.addError();
             this.setError('Complete the path to the successor/predecessor first.');
             return;
@@ -1287,9 +1386,9 @@ class SplayTrainer {
         const step = this.getSplayStep(splayNode);
         if (!step) return;
 
-        if (nodeId !== step.pivotId) {
+        if (nodeId !== splayNode.id) {
             this.addError();
-            this.setError('Choose the next rotation pivot.');
+            this.setError('Click the node to splay next (the deeper node moving up).');
             this.render();
             this.renderRemoveSplayPanel();
             return;
@@ -1297,8 +1396,8 @@ class SplayTrainer {
 
         session.pendingSplayOps = [{ ...step, nodeId: splayNode.id }];
         session.pendingSplayIndex = 0;
-        session.selectedRotationNodeId = step.pivotId;
-        this.currentHighlightNodeId = step.pivotId;
+        session.selectedRotationNodeId = splayNode.id;
+        this.currentHighlightNodeId = splayNode.id;
         this.mode = 'remove-splay-identify-op';
         this.setInfo('Identify the splay operation type, then submit.');
         this.render();
@@ -1342,7 +1441,7 @@ class SplayTrainer {
             session.selectedRotationNodeId = null;
             session.pendingSplayOps = null;
             this.mode = 'remove-splay';
-            this.currentHighlightNodeId = null;
+            this.currentHighlightNodeId = session.splayNodeId;
             this.setInfo('Identify the next splay operation or click Done if complete.');
             this.render();
             this.renderRemoveSplayPanel();
@@ -1371,6 +1470,7 @@ class SplayTrainer {
             session.selectedRotationNodeId = null;
             session.pendingSplayOps = null;
             this.mode = 'remove-splay';
+            this.currentHighlightNodeId = session.splayNodeId;
             this.setInfo('Identify the next splay operation or click Done if complete.');
             this.render();
             this.renderRemoveSplayPanel();
@@ -1385,7 +1485,7 @@ class SplayTrainer {
             <div class="exercise-block">
                 <h3>Remove Splay</h3>
                 <p>Splay the deleted node's parent to the root.</p>
-                <p>Click the next rotation pivot, or:</p>
+                <p>Click the node to splay next, or press Done if no splay is necessary, or Cancel.</p>
                 <div class="btn-row">
                     <button id="splayDoneBtn">Done</button>
                     <button id="removeCancelBtn" class="btn-secondary">Cancel</button>
@@ -1434,21 +1534,22 @@ class SplayTrainer {
     renderRemoveTraversePanel() {
         if (!this.removeSession) return;
         const panel = document.getElementById('exercisePanel');
-        const idx = Math.min(this.removeSession.pathIndex + 1, this.removeSession.pathNodeIds.length);
-        const total = this.removeSession.pathNodeIds.length;
 
         panel.innerHTML = `
             <div class="exercise-block">
                 <h3>Remove Traversal</h3>
                 <p>Target key: <strong>${this.removeSession.key}</strong></p>
-                <p>Step ${idx} / ${total}</p>
                 <p>Click nodes in the BST search path in order.</p>
                 <div class="btn-row">
+                    <button id="removeFoundBtn">Node Found</button>
+                    <button id="removeNotFoundBtn">Node Not Found</button>
                     <button id="removeCancelBtn" class="btn-secondary">Cancel</button>
                 </div>
             </div>
         `;
 
+        document.getElementById('removeFoundBtn').addEventListener('click', () => this.submitRemoveSearchResult(true));
+        document.getElementById('removeNotFoundBtn').addEventListener('click', () => this.submitRemoveSearchResult(false));
         document.getElementById('removeCancelBtn').addEventListener('click', () => this.cancelExercise());
     }
 
@@ -1484,14 +1585,10 @@ class SplayTrainer {
         } else {
             const raw = document.getElementById('splayKeyInput').value.trim();
             if (!raw || !/^-?\d+$/.test(raw)) {
-                this.setError('Splay key must be a valid integer when random is unchecked.');
+                this.setError('Find key must be a valid integer when random is unchecked.');
                 return;
             }
             key = Number(raw);
-            if (!this.tree.containsKey(key)) {
-                this.setError(`Key ${key} is not in the tree.`);
-                return;
-            }
         }
 
         const path = this.computeSearchPathForKey(key);
@@ -1508,6 +1605,9 @@ class SplayTrainer {
             pathNodeIds: path,
             pathIndex: 0,
             correctClickedPathIds: [],
+            lastVisitedNodeId: null,
+            searchResolved: false,
+            searchOutcome: null,
             targetNodeId: null,
             pendingSplayOps: null,
             pendingSplayIndex: 0,
@@ -1517,13 +1617,23 @@ class SplayTrainer {
         this.nodeStatus.clear();
         this.currentHighlightNodeId = null;
         this.setButtonsEnabled(true);
-        this.setInfo(`Splay target key: ${key}. Click each node on the path.`);
+        this.setInfo(`Find target key: ${key}. Click each node on the search path, then choose Node Found/Node Not Found.`);
         this.render();
         this.renderSplayTraversePanel();
     }
 
     handleSplayTraverseClick(nodeId) {
         const session = this.splaySession;
+        if (!session || session.searchResolved) return;
+
+        if (session.pathIndex >= session.pathNodeIds.length) {
+            this.addError();
+            this.setError('Use Node Found or Node Not Found in the panel.');
+            this.render();
+            this.renderSplayTraversePanel();
+            return;
+        }
+
         const expectedNodeId = session.pathNodeIds[session.pathIndex];
 
         if (nodeId !== expectedNodeId) {
@@ -1536,18 +1646,67 @@ class SplayTrainer {
 
         session.correctClickedPathIds.push(nodeId);
         session.pathIndex++;
+        session.lastVisitedNodeId = nodeId;
         this.currentHighlightNodeId = nodeId;
 
-        if (session.pathIndex >= session.pathNodeIds.length) {
-            session.targetNodeId = nodeId;
-            this.mode = 'splay-only';
-            this.setInfo('You\'ve reached the target node. Now splay it to the root.');
-            this.render();
-            this.renderSplayOnlyPanel();
-        } else {
-            this.render();
-            this.renderSplayTraversePanel();
+        this.render();
+        this.renderSplayTraversePanel();
+    }
+
+    submitSplaySearchResult(found) {
+        const session = this.splaySession;
+        if (!session) return;
+
+        if (!session.lastVisitedNodeId) {
+            this.addError();
+            this.setError('Click the current node on the search path first.');
+            return;
         }
+
+        const lastNode = this.tree.getNodeById(session.lastVisitedNodeId);
+        if (!lastNode) return;
+
+        const expectedFound = lastNode.key === session.key;
+        const atPathEnd = session.pathIndex >= session.pathNodeIds.length;
+
+        if (found) {
+            if (!expectedFound) {
+                this.addError();
+                this.setError('Node Found is only valid when the selected node key matches the target key.');
+                this.render();
+                this.renderSplayTraversePanel();
+                return;
+            }
+            session.searchOutcome = 'found';
+            session.targetNodeId = lastNode.id;
+        } else {
+            if (expectedFound || !atPathEnd) {
+                this.addError();
+                this.setError('Node Not Found is only valid at the final searched node when the target key is absent.');
+                this.render();
+                this.renderSplayTraversePanel();
+                return;
+            }
+            session.searchOutcome = 'not-found';
+            session.targetNodeId = lastNode.id;
+        }
+
+        session.searchResolved = true;
+        this.mode = 'splay-post-search';
+        this.setInfo('Search result recorded. Choose Splay or Done.');
+        this.render();
+        this.renderSplayPostSearchPanel();
+    }
+
+    beginSplayAfterSearchDecision() {
+        const session = this.splaySession;
+        if (!session || !session.targetNodeId) return;
+
+        this.mode = 'splay-only';
+        this.currentHighlightNodeId = session.targetNodeId;
+        this.setInfo('Now splay the selected node to the root.');
+        this.render();
+        this.renderSplayOnlyPanel();
     }
 
     handleSplayOnlyClick(nodeId) {
@@ -1573,7 +1732,8 @@ class SplayTrainer {
 
         session.pendingSplayOps = [{ ...step, nodeId: node.id }];
         session.pendingSplayIndex = 0;
-        session.selectedRotationNodeId = step.pivotId;
+        session.selectedRotationNodeId = node.id;
+        this.currentHighlightNodeId = node.id;
         this.mode = 'splay-only-identify-op';
         this.setInfo('Identify the splay operation type, then submit.');
         this.render();
@@ -1617,7 +1777,7 @@ class SplayTrainer {
             session.selectedRotationNodeId = null;
             session.pendingSplayOps = null;
             this.mode = 'splay-only';
-            this.currentHighlightNodeId = null;
+            this.currentHighlightNodeId = session.targetNodeId;
             this.setInfo('Identify the next splay operation or click Done if complete.');
             this.render();
             this.renderSplayOnlyPanel();
@@ -1646,6 +1806,7 @@ class SplayTrainer {
             session.selectedRotationNodeId = null;
             session.pendingSplayOps = null;
             this.mode = 'splay-only';
+            this.currentHighlightNodeId = session.targetNodeId;
             this.setInfo('Identify the next splay operation or click Done if complete.');
             this.render();
             this.renderSplayOnlyPanel();
@@ -1655,21 +1816,56 @@ class SplayTrainer {
     renderSplayTraversePanel() {
         if (!this.splaySession) return;
         const panel = document.getElementById('exercisePanel');
-        const idx = Math.min(this.splaySession.pathIndex + 1, this.splaySession.pathNodeIds.length);
-        const total = this.splaySession.pathNodeIds.length;
 
         panel.innerHTML = `
             <div class="exercise-block">
-                <h3>Splay Traversal</h3>
+                <h3>Find Traversal</h3>
                 <p>Target key: <strong>${this.splaySession.key}</strong></p>
-                <p>Step ${idx} / ${total}</p>
                 <p>Click nodes in the BST search path in order.</p>
                 <div class="btn-row">
+                    <button id="splayFoundBtn">Node Found</button>
+                    <button id="splayNotFoundBtn">Node Not Found</button>
                     <button id="splayCancelBtn" class="btn-secondary">Cancel</button>
                 </div>
             </div>
         `;
 
+        document.getElementById('splayFoundBtn').addEventListener('click', () => this.submitSplaySearchResult(true));
+        document.getElementById('splayNotFoundBtn').addEventListener('click', () => this.submitSplaySearchResult(false));
+        document.getElementById('splayCancelBtn').addEventListener('click', () => this.cancelExercise());
+    }
+
+    renderSplayPostSearchPanel() {
+        if (!this.splaySession) return;
+        const panel = document.getElementById('exercisePanel');
+        const outcomeText = this.splaySession.searchOutcome === 'found' ? 'Node found.' : 'Node not found.';
+
+        panel.innerHTML = `
+            <div class="exercise-block">
+                <h3>Find Result</h3>
+                <p>${outcomeText}</p>
+                <p>Click <strong>Splay</strong> if a node should be splayed, or <strong>Done</strong> if no splay is necessary.</p>
+                <div class="btn-row">
+                    <button id="splayDecisionDoneBtn">Done</button>
+                    <button id="splayDecisionSplayBtn">Splay</button>
+                    <button id="splayCancelBtn" class="btn-secondary">Cancel</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('splayDecisionDoneBtn').addEventListener('click', () => {
+            const target = this.tree.getNodeById(this.splaySession.targetNodeId);
+            if (target && !target.parent) {
+                this.finishSplayExercise('Find exercise complete.');
+            } else {
+                this.addError();
+                this.setError('A splay is still required. Click Splay.');
+                this.render();
+                this.renderSplayPostSearchPanel();
+            }
+        });
+
+        document.getElementById('splayDecisionSplayBtn').addEventListener('click', () => this.beginSplayAfterSearchDecision());
         document.getElementById('splayCancelBtn').addEventListener('click', () => this.cancelExercise());
     }
 
@@ -1681,7 +1877,7 @@ class SplayTrainer {
             <div class="exercise-block">
                 <h3>Splay to Root</h3>
                 <p>Splay the target node to the root.</p>
-                <p>Click the node to splay next, or:</p>
+                <p>Click the node to splay next, or press Done if no splay is necessary, or Cancel.</p>
                 <div class="btn-row">
                     <button id="splayDoneBtn">Done</button>
                     <button id="splayCancelBtn" class="btn-secondary">Cancel</button>
@@ -1747,14 +1943,11 @@ class SplayTrainer {
         if (!this.insertSession) return;
 
         const panel = document.getElementById('exercisePanel');
-        const idx = Math.min(this.insertSession.pathIndex + 1, Math.max(1, this.insertSession.pathNodeIds.length));
-        const total = Math.max(1, this.insertSession.pathNodeIds.length);
 
         panel.innerHTML = `
             <div class="exercise-block">
                 <h3>Insert Traversal</h3>
                 <p>Target key: <strong>${this.insertSession.key}</strong></p>
-                <p>Step ${idx} / ${total}</p>
                 ${showPlaceholderPrompt ? '<p><strong>Now click the correct placeholder (+) to place the new node.</strong></p>' : '<p>Click nodes in the BST search path in order.</p>'}
                 <div class="btn-row">
                     <button id="insertCancelBtn" class="btn-secondary">Cancel</button>
@@ -1762,6 +1955,28 @@ class SplayTrainer {
             </div>
         `;
 
+        document.getElementById('insertCancelBtn').addEventListener('click', () => this.cancelExercise());
+    }
+
+    renderInsertPostInsertPanel() {
+        if (!this.insertSession) return;
+        const panel = document.getElementById('exercisePanel');
+
+        panel.innerHTML = `
+            <div class="exercise-block">
+                <h3>After Insert</h3>
+                <p>Inserted key: <strong>${this.insertSession.key}</strong></p>
+                <p>Choose what to do next.</p>
+                <div class="btn-row">
+                    <button id="insertDoSplayBtn">Splay</button>
+                    <button id="insertDoneBtn">Done</button>
+                    <button id="insertCancelBtn" class="btn-secondary">Cancel</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('insertDoSplayBtn').addEventListener('click', () => this.handleInsertPostInsertDecision(true));
+        document.getElementById('insertDoneBtn').addEventListener('click', () => this.handleInsertPostInsertDecision(false));
         document.getElementById('insertCancelBtn').addEventListener('click', () => this.cancelExercise());
     }
 
@@ -1773,7 +1988,7 @@ class SplayTrainer {
             <div class="exercise-block">
                 <h3>Insert Splay</h3>
                 <p>Splay the inserted node to the root.</p>
-                <p>Click the next rotation pivot (grandparent for Zig-Zig/Zig-Zag, parent for final Zig), or:</p>
+                <p>Click the node to splay next, or press Done if no splay is necessary, or Cancel.</p>
                 <div class="btn-row">
                     <button id="splayInsertDoneBtn">Done</button>
                     <button id="insertCancelBtn" class="btn-secondary">Cancel</button>
@@ -1826,6 +2041,8 @@ class SplayTrainer {
 
         if (this.mode === 'insert-traverse') {
             this.renderInsertTraversePanel(this.insertSession?.pathIndex >= this.insertSession?.pathNodeIds.length);
+        } else if (this.mode === 'insert-post-insert') {
+            this.renderInsertPostInsertPanel();
         } else if (this.mode === 'insert-splay-identify-op') {
             this.renderInsertSplayIdentifyPanel();
         } else if (this.mode === 'insert-splay' || this.mode === 'insert-splay-select-node') {
@@ -1842,6 +2059,8 @@ class SplayTrainer {
             this.renderRemoveSplayPanel();
         } else if (this.mode === 'splay-traverse') {
             this.renderSplayTraversePanel();
+        } else if (this.mode === 'splay-post-search') {
+            this.renderSplayPostSearchPanel();
         } else if (this.mode === 'splay-only-identify-op') {
             this.renderSplayOnlyIdentifyPanel();
         } else if (this.mode === 'splay-only' || this.mode === 'splay-only-select-node') {

@@ -169,6 +169,7 @@ lectures:
       - Chapter 9.1, 9.3
     notes: 
       - L10_GraphsAlgorithms.pdf
+    special_row: "Exam 1 during Quiz Section"
   
   # 15 Tue 3/3
   - topics:
@@ -178,7 +179,6 @@ lectures:
       - Chapter 9.2-9.3,9.6
     notes: 
       - L11_GraphTraversals.pdf
-    special_row: "Exam 1 during Quiz Section"
 
   # 16 Thu 3/5
   - topics:

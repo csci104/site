@@ -123,20 +123,19 @@ lectures:
   # 9 Tue 2/10
   - topics:
       - Stacks and Queues
-      - Templates
     chapters:
       - Chapter 3.6-3.7
-      - Chapter 1.6
     notes: 
       - L07_QueueStackDeque.pdf
       - L08_Templates.pdf
 
   # 10 Thu 2/12
   - topics:
+      - Stacks
       - Templates
       - Trees
     chapters:
-      - Chapter 4.1-4.2
+      - Chapter 1.6, 4.1,4.2
     notes: 
       - L09_PQHeaps.pdf
 
@@ -146,6 +145,8 @@ lectures:
 
   # 12 Thurs 2/19
   - topics:
+      - Templates (cont.)
+      - Trees
       - Heaps
     chapters:
       - Chapter 6.1-6.5   
@@ -155,57 +156,56 @@ lectures:
 
   # 13 Tue 2/24
   - topics:
-      - Heapsort and build-heap
-      - Graph Algorithms
-    chapters:
-      - Chapter 9.3
-    notes: 
-      - L10_GraphsAlgorithms.pdf
+      - More Heaps, make-heap
+  - chapters:
+      - Chapter 6.1-6.5   
  
   # 14 Thu 2/26
   - topics:
-      - Graph Traversals
-      - Tree Traversals
+      - Graphs
+      - BFS and runtime
     chapters:
-      - Chapter 9.2-9.3,9.6
-      - Chapter 4.1-4.2,4.6
+      - Chapter 9.1, 9.3
     notes: 
-      - L11_GraphTraversals.pdf
-    special_row: "Exam 1 during Quiz Section"
+      - L10_GraphsAlgorithms.pdf
 
   
   # 15 Tue 3/3
   - topics:
-      - Iterators
-      - Binary Search Trees
+      - Dijkstra's Algorithm
+      - A* Search
     chapters:
-      - Chapter 4.3-4.4
+      - Chapter 9.2-9.3,9.6
+    notes: 
+      - L11_GraphTraversals.pdf
+    special_row: "Exam 1 during Quiz Section"
+
+  # 16 Thu 3/5
+  - topics:
+      - Tree Traversals
+      - Graph Traversals
+      - DFS
+    chapters:
+      - Chapter 4.1-4.2,4.6
     notes: 
       - L13_Iterators.pdf
       - L14_BalancedBST_AVL.pdf
 
-  # 16 Thu 3/5
+  # 17 Tue 3/10
   - topics:
-      - AVL Trees
+      - Binary Search Trees
+      - AVL Trees (Insert)
     chapters:
-      - Chapter 4.4-4.5,4.7
+      - Chapter 4.3-4.5,4.7
     notes: 
       - L14_BalancedBST_AVL.pdf
 
-  # 17 Tue 3/10
-  - topics:
-      - Splay Trees
-      - Hash Table introduction
-    chapters:
-      - Chapter 4.7,5.1,5.3
-    notes: 
-      - L15_SplayTrees.pdf
-
   # 18 Thu 3/12
   - topics:
-      - Hash Table introduction
+      - AVL Trees (Remove)
+      - Iterators
     chapters:
-      - Chapter 5.1-5.3
+      - Class Notes
     notes: 
       - L16_HashingIntro.pdf
       - L16_HashingIntro_Mark.pdf
@@ -214,16 +214,19 @@ lectures:
 
   # 19 Tue 3/24
   - topics:
-      - Counting
+      - Splay Trees
+      - Hash Table introduction
     chapters:
-      - Lewis & Zax Chapter 22
+      - Chapter 4.7,5.1,5.3
     notes: 
-      - L17_Counting.pdf
+      - L15_SplayTrees.pdf
 
   # 20 Thu 3/26
   - topics:
+      - Hashing Intro (cont)
       - Counting
     chapters:
+      - Chapter 5.1,5.3
       - Lewis & Zax Chapter 23
     notes: 
       - L17_Counting.pdf

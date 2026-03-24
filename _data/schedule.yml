@@ -157,8 +157,9 @@ lectures:
   # 13 Tue 2/24
   - topics:
       - More Heaps, make-heap
-  - chapters:
+    chapters:
       - Chapter 6.1-6.5   
+    notes:
  
   # 14 Thu 2/26
   - topics:
@@ -168,7 +169,6 @@ lectures:
       - Chapter 9.1, 9.3
     notes: 
       - L10_GraphsAlgorithms.pdf
-
   
   # 15 Tue 3/3
   - topics:

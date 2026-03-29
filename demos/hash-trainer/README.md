@@ -72,3 +72,7 @@ The counts should reset every time we rehash or reset the table (size or probing
 Fixes 6:
 
 Do you think we can move the key selection and operations panels of user input to be in the right "Trainer" panel...sharing that area until an operation begins? Then put table setup and hash function in a single row at the top and thus save vertical space because with all of these moves we won't need a second row of user input panels. Can you take extreme case to not lose the nice formatting you have for all the current aspects like the hash table? because when I asked you to do this previously you broke the formatting and the hash table looked terrible. I would like to move the key selection and operation panels to the right Trainer panel, but don't want to break how the hash table status bar and other aspects are displayed.
+
+=== 
+
+for open-addressing remove, auto-generated keys, you generated a random key that did not exist, it hashed to a locaiton that had an item and so I cliked "Return not found", but you showed that this is wrong. It is not.  

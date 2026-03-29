@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Binary Combinations Recursion Stepper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🔁 Binary Combinations Recursion Stepper</h1>
+
+    <div class="controls card">
+      <div class="field">
+        <label for="lenInput">Combination length (len)</label>
+        <input id="lenInput" type="number" min="0" value="2" />
+      </div>
+
+      <button id="buildBtn">Build Trace</button>
+      <button id="prevBtn">Prev</button>
+      <button id="nextBtn">Next</button>
+      <button id="resetBtn">Reset</button>
+      <button id="playBtn">Play</button>
+      <button id="pauseBtn" class="secondary">Pause</button>
+
+      <div class="field speed-field">
+        <label for="speedInput">Play speed (ms/step)</label>
+        <input id="speedInput" type="range" min="80" max="1200" step="20" value="320" />
+        <span id="speedText" class="speed-text">320 ms</span>
+      </div>
+
+      <button id="toggleCodeBtn" class="secondary">Hide Code Panel</button>
+    </div>
+
+    <div id="message" class="message info">Set len, then click Build Trace.</div>
+
+    <div class="status card">
+      <div><strong>Step:</strong> <span id="stepText">0 / 0</span></div>
+      <div><strong>Current line:</strong> <span id="lineText">—</span></div>
+      <div><strong>Current prefix:</strong> <span id="currText">""</span></div>
+    </div>
+
+    <div class="main-grid">
+      <div class="left-col">
+        <div class="card">
+          <h2>Recursion choice graphic</h2>
+          <div id="recursionGraphic" class="recursion-graphic"></div>
+        </div>
+
+        <div class="card">
+          <h2>Current building array</h2>
+          <div id="slots" class="slots"></div>
+        </div>
+
+        <div class="card">
+          <h2>Call stack (top is current call)</h2>
+          <div id="stack" class="stack"></div>
+        </div>
+
+        <div class="card">
+          <h2>Generated combinations</h2>
+          <div id="outputs" class="outputs"></div>
+        </div>
+      </div>
+
+      <div id="codePanel" class="card code-panel">
+        <h2>Reference code</h2>
+        <pre id="codeBlock" class="code-block"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -184,11 +184,11 @@ labs:
   - id: 11
     folder: lab10
     week: Week 11
-    date: 3/31
+    date: 3/30
     title: Hashtables
     topics: Hashtables, Hashing
-    assigned: false
-#    slides: HashtablesLab.pdf
+    assigned: true
+  #  slides: HashtablesLab.pdf
     slide_msg: See shared folder
 
 

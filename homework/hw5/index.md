@@ -23,7 +23,7 @@ github_starter_url: https://classroom.github.com/a/uSYrKfjc
 ## Written Portion
 
 
-{% for part in site.data.hws.hw4.written_parts %}
+{% for part in site.data.hws.hw5.written_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
@@ -51,7 +51,7 @@ github_starter_url: https://classroom.github.com/a/uSYrKfjc
 
 - In the VS Code editor, choose `File..Open Folder` and then find and open that folder (i.e. `cs104-repos/<your_{{page.hwpath}}_repo>`)
 
-{% for part in site.data.hws.hw4.programming_parts %}
+{% for part in site.data.hws.hw5.programming_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 

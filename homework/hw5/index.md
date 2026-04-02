@@ -36,7 +36,7 @@ github_starter_url: https://classroom.github.com/a/uSYrKfjc
 
 ### Github Classroom URL
 
-**Signup link to create your HW4 repo:** [signup link]({{page.github_starter_url}})
+**Signup link to create your HW5 repo:** [signup link]({{page.github_starter_url}})
 
 
 ### Reminder: A Few Notes on Repositories

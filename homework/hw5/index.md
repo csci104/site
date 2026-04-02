@@ -5,7 +5,7 @@ tasks: false
 title: Homework 5
 nav: homework
 hwpath: hw5
-
+github_starter_url: https://classroom.github.com/a/uSYrKfjc
 ---
 
 ## {{page.title}}
@@ -13,15 +13,17 @@ hwpath: hw5
 + Due: See [homework page]({{site.baseurl}}/homework/index.html)
 + Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
 
-### Skeleton Code
-Some skeleton code has been provided for you in the `{{page.hwpath}}` folder and has been pushed to the Github repository [`resources`](https://github.com/{{site.data.main.github_org}}/resources/ ). If you already have this repository locally cloned, just perform a `git pull`.  Otherwise you'll need to clone it.
+### Updates
 
-If no `Makefile` is provided with the skeleton code, you will need to create one yourself.  It should have a target for each of the executables in the programming portion.
+- 2026/03/05 - Written portion is released.
+- 2026/03/11 - For the **written portion**, there will not be a late penalty but the last day to turn it in is the Sunday we come back from Spring break (3/22) at 11:59 p.m.
+- 2026/03/12 -  Coding portion is now released.
+
 
 ## Written Portion
 
 
-{% for part in site.data.hws.hw5.written_parts %}
+{% for part in site.data.hws.hw4.written_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
@@ -30,15 +32,51 @@ If no `Makefile` is provided with the skeleton code, you will need to create one
 {% endfor %}
 
 
-## Programming Portion
+## Coding Portion
 
-{% for part in site.data.hws.hw5.programming_parts %}
+### Github Classroom URL
+
+**Signup link to create your HW4 repo:** [signup link]({{page.github_starter_url}})
+
+
+### Reminder: A Few Notes on Repositories
+
+ 1. **Never** clone one repo into another.  Clone your new homework repo under (in) the `cs104-repos`.
+1. Clone your repo using the `ssh` approach, NOT `https`.
+- Clone your repo:
+  
+  ```bash
+  git clone git@github.com:{{ site.data.urls.github_org }}/<your_{{page.hwpath}}_repo>
+  ```
+
+- In the VS Code editor, choose `File..Open Folder` and then find and open that folder (i.e. `cs104-repos/<your_{{page.hwpath}}_repo>`)
+
+{% for part in site.data.hws.hw4.programming_parts %}
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
 {% include writeups/{{ part.writeup }} %}
 
 {% endfor %}
+
+
+
+## Submission Files
+
+- **Add, commit and push** your source files including all the `.cpp` and `.h` files and `Makefile`. 
+
+- Do **NOT** add/commit/push `.o` files or executables (things that the compiler can easily generate anytime we need).  If you want to avoid adding files you should not, you can add the lines to your `.gitignore` and then save, add, commit, push the `.gitignore`
+
+
+Do **NOT** commit/push any test suite folder/files that we provide from the `resources` repo.  When we grade your code, we will move a fresh copy of the `{{page.hwpath}}_tests` folder into your repo, `cd` to that test folder, and run
+
+```bash
+cmake .
+make grade
+```
+
+
 
 
 {% include commit-reclone.md %}
+

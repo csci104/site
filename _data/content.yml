@@ -45,7 +45,7 @@ assignments:
 #      due: Fri., November 14th at 11:59PM PDT
   - id: hw5
     title: Backtracking and Recursion
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link:
     dates:

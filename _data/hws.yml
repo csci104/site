@@ -140,12 +140,12 @@ hw5:
       title: No Written Portion for this Homework
       points: 0
   programming_parts:
-    - writeup: gridpaths.md
-      number: 3
+    - writeup: wordle.md
+      number: 1
       title: Recursion, Counting, and Combinations
       points: 50
-    - writeup: satsolver.md
-      number: 4
+    - writeup: schedwork.md
+      number: 2
       title: Recursion and Backtracking and Boolean Satisfiability
       points: 50
 

@@ -193,7 +193,7 @@ labs:
 
 
   - id: 12
-    folder: lab11
+    folder: lab9
     week: Week 12
     date: 4/7
     title: Recursive Backtracking & Counting

@@ -197,7 +197,7 @@ labs:
     week: Week 12
     date: 4/7
     title: Recursive Backtracking & Counting
-    assigned: false
+    assigned: true
 #    slides: Midterm2Lab.pdf
     slide_msg: See shared folder
 

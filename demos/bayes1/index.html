@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bayes Demo 1: Boxes and Coins</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Bayes Demo: Box and Coin Inversion</h1>
+
+    <div class="controls card">
+      <button id="prevBtn">Prev</button>
+      <button id="nextBtn">Next</button>
+      <button id="playBtn">Play</button>
+      <button id="pauseBtn" class="secondary">Pause</button>
+      <button id="resetBtn" class="secondary">Reset</button>
+    </div>
+
+    <div class="card status">
+      <div><strong>Step:</strong> <span id="stepText">1 / 7</span></div>
+      <div id="caption"></div>
+    </div>
+
+    <div class="stage card">
+      <div id="formulaBox" class="formula"></div>
+      <div class="boxes" id="boxesArea"></div>
+
+      <div id="breakdownPanel" class="breakdown hidden">
+        <h3>Bayes breakdown</h3>
+        <div id="breakdownEq" class="breakdown-eq"></div>
+        <div class="term-bars">
+          <div class="term">
+            <div class="term-label">P(CC|B1)P(B1)</div>
+            <div class="bar-wrap"><div id="barTerm1" class="bar b1"></div></div>
+            <div id="term1Text" class="term-text"></div>
+          </div>
+          <div class="term">
+            <div class="term-label">P(CC|B2)P(B2)</div>
+            <div class="bar-wrap"><div id="barTerm2" class="bar b2"></div></div>
+            <div id="term2Text" class="term-text"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="legend">
+        <span class="pill gold">Gold coin</span>
+        <span class="pill cardinal">Cardinal coin</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

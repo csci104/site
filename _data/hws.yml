@@ -146,15 +146,11 @@ hw5:
       points: 50
     - writeup: schedwork.md
       number: 2
-      title: Recursion and Backtracking and Boolean Satisfiability
+      title: Recursion and Backtracking 
       points: 50
 
 hw6:
   written_parts:
-    - writeup: course-evals.md
-      number: 0
-      title: Complete the Course Evalutions
-      points: 0
     - writeup: counting2.md
       number: 1
       title: Counting
@@ -168,15 +164,19 @@ hw6:
       title: Number Thoery
       points: 30
   programming_parts:
-    - writeup: hash-func-str.md
+    - writeup: course-evals.md
       number: 4
+      title: Complete the Course Evalutions
+      points: 0
+    - writeup: hash-func-str.md
+      number: 5
       title: Write Your Own String Hash Function
       points: 20
     - writeup: hashtable.md
-      number: 2
+      number: 6
       title: Hash Table with Quadratic Probing
       points: 60
     - writeup: graphiso.md
-      number: 5
+      number: 7
       title: Subgraph Isomorphism
       points: 20

@@ -11,7 +11,6 @@ github_starter_url:
 ## {{page.title}}
 
 + Due: See [homework page]({{site.baseurl}}/homework/index.html)
-+ Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
 
 ### Updates
 

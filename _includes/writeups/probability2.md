@@ -1,6 +1,11 @@
 You must show work supporting your answer to receive credit.
+**Note:** You should work through all of the problems below on paper, writing out scratch works and supporting steps to **SOLVE** the problem.  However, Gradescope will have a mixture of multiple choice questions and open-ended problems that require you to submit a PDF or image of your works/steps and final answer.    To then enter your answers on Gradescope, some problems are:
+ - Multiple choice. You will only be graded on your correct answer and no work needs to be uploaded though you should have shown work for your own benefit and to prepare for the exam.  There will be no partial credit given for wrong answers.
+ - Other problems will require a PDF or picture upload of your work and we will grade these visually, with the potential for some partial credit.
 
-Place your answers in a file **`probability.pdf`**.
+**See Gradescope for more detail**.
+
+
 
 **1** Suppose a college application asks students to choose, in order, 3 of the following words that best describe them: `leader`, `innovative`, `determined`, `logical`, `empathetic`, `dreamer`, `analytical`.  A college admission officer is lazy and decides to admit any student that chooses `innovative` and `analytical` as two of the three as long as `innovative` is **before** `analytical`, **OR** if they choose `empathetic` and `innovative` (in any order).
 
@@ -26,7 +31,7 @@ In your version of the game the secret answer can be only one of these words:
 
 The secret word is chosen randomly (uniformly) before you start playing. You can use only words from the list as guesses.  The best starting word is the word with the smallest expected number of moves to finish the game under optimal play. You are choosing between NASTY and HASTY for a starting word. What is the expected number of moves for each of them if you play optimally?
 
-**4**. Lewix and Zax 27.5:  A man is accused of robbing a bank. Eyewitnesses testify that the robber was 6 feet tall and had red hair and green eyes; the suspect matches this descirption.  Suppose that only 100 of the 100000 residents in the town are men who are 6 feet tall with red hair and green eyes, and assume that one of them robbed the bank.  
+**4**. Lewis and Zax 27.5:  A man is accused of robbing a bank. Eyewitnesses testify that the robber was 6 feet tall and had red hair and green eyes; the suspect matches this descirption.  Suppose that only 100 of the 100000 residents in the town are men who are 6 feet tall with red hair and green eyes, and assume that one of them robbed the bank.  
 
 -  **4.1**. What is the probability that the suspect is innocent, given that he matches the description?
 

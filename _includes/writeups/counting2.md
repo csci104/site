@@ -1,6 +1,10 @@
-You must show work supporting your answer to receive credit.
+**Note:** You should work through all of the problems below on paper, writing out scratch works and supporting steps to **SOLVE** the problem.  However, Gradescope will have a mixture of multiple choice questions and open-ended problems that require you to submit a PDF or image of your works/steps and final answer.    To then enter your answers on Gradescope, some problems are:
+ - Multiple choice. You will only be graded on your correct answer and no work needs to be uploaded though you should have shown work for your own benefit and to prepare for the exam.  There will be no partial credit given for wrong answers.
+ - Other problems will require a PDF or picture upload of your work and we will grade these visually, with the potential for some partial credit.
 
-Place your answers in a file **`counting.pdf`**.
+**See Gradescope for more detail**.
+
+
 
  **1**. Consider a 5-character string made up of lower-case, alpha characters, `a`-`z`.  It is known that the second and third letters are `e` and `a`, respectively, (e.g. `-ea--`) and that the letters `s` and `t` appear somewhere in the remaining locations.  How many possible such (unique) strings exist?
 
@@ -9,7 +13,7 @@ Place your answers in a file **`counting.pdf`**.
 
  **3**. Consider that one way to categorize Pokemon cards is into water type, fire type, and all other types.
 
- - **3.1**. You have a total 21 Pokemons, out of which 7 are water type and 5 are fire type. How many combinations of 3 Pokemon cards (the order they are selected does not matter) exist such that none of the following occur: a selection has at least two fire types and a selection has at least two water types.
+ - **3.1**. You have a total 21 Pokemons, out of which 7 are water type and 5 are fire type. How many combinations of 3 Pokemon cards (the order they are selected does not matter) exist such that a selection has neither two or more fire types NOR two or more water types.
 
  - **3.2**. Your friend sends you 10 random Pokemon cards.  How many different combinations exist of their types: water, fire, and other?
 

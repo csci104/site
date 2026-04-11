@@ -56,7 +56,7 @@ assignments:
 #      due: Fri., December 5th at 11:59PM PDT
   - id: hw6
     title: Counting, Probability, and Hash tables
-    assigned: false
+    assigned: true
     regrade_form:
     submit_link:
     dates:

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diffie-Hellman Key Exchange Exercise</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🔐 Diffie-Hellman Partner Exercise</h1>
+    <p class="subtitle">Each student works on their own copy: pick a private number between <span class="mono">0</span> and <span class="mono">p-1</span>, compute your public value, share it, then compute your shared secret using your partner’s public value.</p>
+
+    <section class="card global">
+      <h2>Public Parameters (shared by both students)</h2>
+      <div class="row">
+        <label>Prime modulus <span class="mono">p</span>
+          <input id="primeInput" type="number" min="3" step="1" value="103" />
+        </label>
+        <label>Generator <span class="mono">g</span>
+          <input id="baseInput" type="number" min="2" step="1" value="5" />
+        </label>
+      </div>
+      <p class="hint">Use private values in <span class="mono">[0, p-1]</span>. Public value formula: <span class="mono">public = g^private mod p</span></p>
+    </section>
+
+    <section class="grid">
+      <article class="card student" id="studentA">
+        <h2>Your Side</h2>
+        <label>Private number <span class="mono">a</span>
+          <input id="aPrivate" type="number" min="0" step="1" value="6" />
+        </label>
+        <div class="btn-row">
+          <button id="aRandomBtn">Pick Random</button>
+          <button id="aPublicBtn">Compute Public</button>
+        </div>
+
+        <label>Public value to share <span class="mono">A = g^a mod p</span>
+          <input id="aPublic" type="text" readonly />
+        </label>
+
+        <label>Partner public value (<span class="mono">B</span>)
+          <input id="aPartnerPublic" type="number" min="0" step="1" placeholder="Enter Student B public value" />
+        </label>
+        <button id="aSharedBtn">Compute Shared Secret</button>
+
+        <label>Shared secret <span class="mono">S_A = B^a mod p</span>
+          <input id="aShared" type="text" readonly />
+        </label>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="btn-row">
+        <button id="resetBtn" class="secondary">Reset</button>
+      </div>
+      <p id="status" class="status">Compute your public value, share it with your partner, then enter your partner’s public value and compute your shared secret.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modular Exponentiation Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Modular Exponentiation</h1>
+    <p class="subtitle">Step-by-step trace: computing <span id="problemDisplay" class="mono">b^n mod m</span></p>
+
+    <div class="card top-bar">
+      <div class="inputs">
+        <label>Base <span class="mono">b</span>
+          <input id="baseIn" type="number" value="52" min="0" />
+        </label>
+        <label>Exponent <span class="mono">n</span>
+          <input id="expIn" type="number" value="23" min="0" />
+        </label>
+        <label>Modulus <span class="mono">m</span>
+          <input id="modIn" type="number" value="7" min="2" />
+        </label>
+        <button id="buildBtn">▶ Build</button>
+      </div>
+      <div class="nav">
+        <button id="prevBtn" disabled>◀ Prev</button>
+        <button id="nextBtn" disabled>Next ▶</button>
+        <button id="resetBtn" class="secondary" disabled>Reset</button>
+        <span id="stepLabel" class="mono step-label"></span>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <!-- Left: code + state panel -->
+      <div class="card code-panel">
+        <h3>C++ Algorithm</h3>
+        <div class="code-block">
+          <div id="cl1" class="cl cmt">// N = bits of n in LSB-first order</div>
+          <div id="cl2" class="cl">int modExp(vector&lt;bool&gt; N, int b, int m) {</div>
+          <div id="cl3" class="cl">  int x = 1, r = b % m;</div>
+          <div id="cl4" class="cl">  for (int i = 0; i &lt; N.size(); i++) {</div>
+          <div id="cl5" class="cl">    if (N[i] == true)</div>
+          <div id="cl6" class="cl">      x = (x * r) % m;</div>
+          <div id="cl7" class="cl">    r = (r * r) % m;</div>
+          <div id="cl8" class="cl">  }</div>
+          <div id="cl9" class="cl">  return x;</div>
+          <div id="cl10" class="cl">}</div>
+        </div>
+
+        <div class="card-inner">
+          <div class="bi-label">n in binary (LSB → MSB):</div>
+          <div id="bitsRow" class="bits-row"></div>
+        </div>
+
+        <div class="card-inner var-box">
+          <div class="vr x-var">x = <span id="xVal" class="vval">—</span></div>
+          <div class="vr r-var">r = <span id="rVal" class="vval">—</span></div>
+        </div>
+      </div>
+
+      <!-- Right: table panel -->
+      <div class="card table-panel">
+        <div class="col-legend">
+          <div class="lx">
+            <span class="sw xsw"></span>
+            <strong>x column</strong>: <em>partial answer</em> — multiplied only when N[i] = 1
+          </div>
+          <div class="lr">
+            <span class="sw rsw"></span>
+            <strong>r column</strong>: <em>raw power</em> b<sup>2<sup>i</sup></sup> mod m — always squared each step
+          </div>
+        </div>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>i</th>
+                <th>N[i]</th>
+                <th class="xh">x &nbsp;(partial answer)</th>
+                <th class="rh">r &nbsp;(raw power)</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card explain-card" id="explainCard">
+      Enter values above and click <strong>▶ Build</strong> to start.
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

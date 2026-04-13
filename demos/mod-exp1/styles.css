@@ -1,0 +1,183 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  color: #0f172a;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+h1 { text-align: center; margin: 0 0 6px; }
+.subtitle { text-align: center; color: #64748b; margin: 0 0 14px; font-size: 1.1rem; }
+
+.card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.card-inner {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #f8fafc;
+}
+
+/* --- Top bar --- */
+.top-bar { display: flex; flex-direction: column; gap: 10px; }
+.inputs, .nav { display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-end; }
+
+label { display: flex; flex-direction: column; font-weight: 600; font-size: 1rem; gap: 4px; }
+input {
+  width: 108px; padding: 9px 10px;
+  border-radius: 7px; border: 1px solid #94a3b8;
+  background: #ffffff; color: #0f172a;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 16px; border: none; border-radius: 8px;
+  background: #3b82f6; color: #fff; font-weight: 700; cursor: pointer;
+  font-size: 0.98rem;
+}
+button.secondary { background: #475569; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.step-label { color: #64748b; font-size: 1rem; align-self: center; }
+.mono { font-family: Consolas, 'Courier New', monospace; }
+
+/* --- Workspace --- */
+.workspace {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 12px;
+}
+
+/* --- Code panel --- */
+.code-panel h3 { margin: 0 0 8px; }
+.code-block {
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 10px 8px;
+  border: 1px solid #cbd5e1;
+  line-height: 1.6;
+}
+
+.cl {
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: pre;
+  color: #1e293b;
+  transition: background 0.2s, color 0.2s;
+}
+.cl.cmt { color: #64748b; }
+
+/* Code highlight classes */
+.cl.hl-init   { background: #fef3c7; color: #92400e; font-weight: 700; border-left: 3px solid #d97706; }
+.cl.hl-loop   { background: #dbeafe; color: #1d4ed8; font-weight: 700; border-left: 3px solid #2563eb; }
+.cl.hl-x      { background: #dcfce7; color: #166534; font-weight: 700; border-left: 3px solid #16a34a; }
+.cl.hl-check  { background: #e2e8f0; color: #334155; font-weight: 700; border-left: 3px solid #64748b; }
+.cl.hl-r      { background: #f3e8ff; color: #6b21a8; font-weight: 700; border-left: 3px solid #9333ea; }
+.cl.hl-ret    { background: #bbf7d0; color: #14532d; font-weight: 700; border-left: 3px solid #16a34a; }
+
+/* --- Binary display --- */
+.bi-label { font-size: 0.95rem; color: #475569; margin-bottom: 8px; }
+.bits-row { display: flex; gap: 6px; flex-wrap: wrap; padding-bottom: 18px; }
+
+.bit-box {
+  position: relative;
+  width: 42px; height: 42px;
+  border-radius: 7px;
+  border: 1px solid #94a3b8;
+  background: #f1f5f9;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Consolas, monospace; font-size: 1.15rem; font-weight: 700;
+  color: #1e293b;
+  transition: background 0.2s, border-color 0.2s;
+}
+.bit-box .bidx {
+  position: absolute; bottom: -17px;
+  font-size: 0.75rem; color: #64748b;
+  font-family: Consolas, monospace;
+}
+.bit-box.b1 { border-color: #16a34a; background: #dcfce7; color: #166534; }
+.bit-box.b0 { border-color: #94a3b8; background: #f1f5f9; color: #64748b; }
+.bit-box.active-bit { border-color: #854d0e !important; background: #facc15 !important; color: #000000 !important; box-shadow: 0 0 0 3px rgba(250,204,21,0.45); }
+
+/* --- Var display --- */
+.var-box { display: flex; gap: 28px; font-family: Consolas, monospace; }
+.vr { font-size: 1.15rem; font-weight: 700; }
+.x-var { color: #166534; }
+.r-var { color: #6b21a8; }
+.vval { font-size: 1.5rem; }
+
+/* --- Table panel --- */
+.col-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; font-size: 1rem; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 5px; vertical-align: middle; }
+.xsw { background: #22c55e; }
+.rsw { background: #a855f7; }
+
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; }
+th, td { padding: 10px 12px; border: 1px solid #cbd5e1; text-align: center; font-family: Consolas, monospace; font-size: 1rem; }
+th { background: #f1f5f9; color: #334155; font-size: 0.95rem; }
+.xh { color: #166534 !important; background: #ecfdf5 !important; }
+.rh { color: #6b21a8 !important; background: #faf5ff !important; }
+
+td.xc { background: #f0fdf4; }
+td.rc { background: #faf5ff; }
+
+/* Active row */
+tr.active-row td { background: rgba(59,130,246,0.08) !important; }
+tr.active-row td.xc { background: #dcfce7 !important; }
+tr.active-row td.rc { background: #f3e8ff !important; }
+
+/* x was updated this iteration */
+td.x-updated {
+  background: #16a34a !important;
+  color: #052e16 !important;
+  text-shadow: 0 0 0 transparent;
+  font-weight: 700;
+}
+
+/* keep x-column readable on active row as well */
+tr.active-row td.xc {
+  color: #14532d;
+}
+/* x was NOT updated (bit=0) */
+td.x-same { color: #64748b; }
+
+/* bit styling in N[i] column */
+td.bit1 { color: #166534; font-weight: 700; }
+td.bit0 { color: #475569; }
+
+/* init row */
+tr.init-row td { color: #94a3b8; }
+
+/* r cell power annotation */
+.rpow { display: block; font-size: 0.85rem; color: #7e5bbd; margin-top: 2px; }
+.rpow2 { display: block; font-size: 0.85rem; color: #0ea5e9; margin-top: 2px; }
+.rpow3 { display: block; font-size: 0.9rem; color: #7e22ce; margin-top: 2px; font-weight: 700; }
+
+/* --- Explain card --- */
+.explain-card { font-size: 1.05rem; line-height: 1.75; color: #cbd5e1; }
+.explain-card { color: #1e293b; }
+.explain-card code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; font-family: Consolas, monospace; }
+
+/* Inline highlight spans used in explain text */
+.hi-x  { color: #166534; font-weight: 700; }
+.hi-r  { color: #7e22ce; font-weight: 700; }
+.hi-no { color: #64748b; }
+
+@media (max-width: 900px) {
+  .workspace { grid-template-columns: 1fr; }
+}

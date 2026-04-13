@@ -206,7 +206,7 @@ labs:
     week: Week 13
     date: 4/14
     title: Counting & Probability
-    assigned: false
+    assigned: True
     topics: Counting
 #    slides: CountingLab.pdf
     slide_msg: See shared folder

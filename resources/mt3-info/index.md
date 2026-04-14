@@ -23,7 +23,8 @@ The test will be **IN PERSON**
 
 ### Topics and Style
 
-The exam is a mix of short answer, multiple choice, analysis, tracing, and coding. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
+The exam is a mix of short answer, multiple choice, analysis, tracing, and coding. For coding, we will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
+
 
 
 #### Unit 10 - Graph Representations and Traversals
@@ -86,13 +87,3 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
    - [Solutions](./su20-graphs1-sol.pdf)
 
 
-Note: since the number of midterms (one vs. two) and their timing differs from semester to semester, some of these exams have material not mentioned above. Look for problems that match the topics listed above.
-
- - [Sample Midterm Heap Problems]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024.pdf) - [Solutions]({{site.baseurl}}/resources/csci104-midterm-heap-practice-sp2024-answer-key.pdf)
- - [Sample Midterm 2]({{site.baseurl}}/resources/midterm-c.pdf) (partial solutions)
-   - [Q1 Solution]({{site.baseurl}}/resources/midterm-c-q1sol.png)
-   - [Q2 and Q3 Solution]({{site.baseurl}}/resources/midterm-c-q2q3sol.pdf)
- - [Summer 2021 Midterm (Hybrid)]({{site.baseurl}}/resources/mt-su21.pdf)
-   - [Skeleton Code]({{site.baseurl}}/resources/mt-su21-code.zip)
-   - [Solutions]({{site.baseurl}}/resources/mt-su21-sol.pdf)
- 

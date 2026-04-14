@@ -40,4 +40,4 @@ $$60 = 396 - 2\times 168 \implies 12 = 3\times(396 - 2\times 168) - 168 = 3\time
 
 $$\boxed{x = 3,\quad y = -7}$$
 
-**Verification:** $3 \times 396 - 7 \times 168 = 1188 - 1176 = 12$ ✓
+**Verification:** $3 \times 396 - 7 \times 168 = 1188 - 1176 = 12$ 

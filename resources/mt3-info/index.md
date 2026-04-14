@@ -26,6 +26,12 @@ The test will be **IN PERSON**
 The exam is a mix of short answer, multiple choice, analysis, tracing, and coding. We will **visually** grade your code and be fairly lenient with **small** syntax errors (e.g. a missing semicolon).
 
 
+#### Unit 10 - Graph Representations and Traversals
+ - Graph Algorithms (no specific Dijkstra/A*), but general understanding of graph representation.
+
+#### Unit 11 - Recursive Graph & Tree Traversals Algorithms
+ - BFS
+ - DFS
 
 #### Unit 15 - Hash Tables Intro
  - Introductory hash-table

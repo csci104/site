@@ -216,7 +216,7 @@ labs:
     week: Week 14
     date: 4/21
     title: Number Theory
-    assigned: false
+    assigned: True
     topics: Number Theory
 #    slides: ProbabilityNumberTheoryLab.pdf
     slide_msg: See shared folder

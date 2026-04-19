@@ -103,7 +103,3 @@ There are two functions for you to implement, both of which are in `fermat.cpp`:
 
 After you finish your implementation, type `make` in your terminal to run the tests.
 
-
-### Additional Probability Question (not necessary for checkoff)
-1. You roll a fair die 6 times. What is the probability that no number appears twice?
-

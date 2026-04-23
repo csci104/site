@@ -5,7 +5,7 @@ tasks: false
 title: Homework 6
 nav: homework
 hwpath: hw6
-github_starter_url: 
+github_starter_url: https://classroom.github.com/a/4n0zYYXT
 ---
 
 ## {{page.title}}
@@ -15,6 +15,7 @@ github_starter_url:
 ### Updates
 
 - 2026/04/10 - Written portion is released.
+- 2026/04/22 - Coding portion is released.
 
 
 ## Written Portion

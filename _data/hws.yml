@@ -171,12 +171,12 @@ hw6:
     - writeup: hash-func-str.md
       number: 5
       title: Write Your Own String Hash Function
-      points: 20
+      points: 35
     - writeup: hashtable.md
       number: 6
       title: Hash Table with Quadratic Probing
-      points: 60
+      points: 65
     - writeup: graphiso.md
       number: 7
-      title: Subgraph Isomorphism
-      points: 20
+      title: Subgraph Isomorphism (OPTIONAL - UNGRADED)
+      points: 0

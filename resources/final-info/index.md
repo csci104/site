@@ -89,6 +89,7 @@ The final is cumulative over the topics listed below:
 
 #### Unit 23 - Amortized Analysis and Log Structured Merge Trees
  - Approaches to performing amortized analysis
+ - Understand find and insert for log-structured merge trees
 
 ### Practice Materials
 

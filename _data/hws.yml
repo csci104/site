@@ -174,7 +174,7 @@ hw6:
       points: 35
     - writeup: hashtable-dh.md
       number: 6
-      title: Hash Table with Quadratic Probing
+      title: Hash Table with Double-Hash Probing
       points: 65
     - writeup: graphiso.md
       number: 7

@@ -172,7 +172,7 @@ hw6:
       number: 5
       title: Write Your Own String Hash Function
       points: 35
-    - writeup: hashtable.md
+    - writeup: hashtable-dh.md
       number: 6
       title: Hash Table with Quadratic Probing
       points: 65

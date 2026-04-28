@@ -4,7 +4,7 @@ You will create a `HashTable` data structure that uses open-addressing (i.e. use
 template<
     typename K, 
     typename V, 
-    typename Prober = LinearProber,
+    typename Prober = LinearProber<K>,
     typename Hash = std::hash<K>, 
     typename KEqual = std::equal_to<K> >
 class HashTable

@@ -18,7 +18,7 @@ The test will be **IN PERSON**
   - **THH 202:  L-S**
   - **THH 208:  T-Z**
 
-  - If you have OSAS accommodations you should schedule your exam at the OSAS offices **on Thursday during OSAS hours**
+  - If you have OSAS accommodations you should schedule your exam at the OSAS offices **on the same day during OSAS hours**
 
 - The test will be taken on paper. Be prepared a pencil/pen.
 - The exam is **Closed book, Closed notes, Closed Internet (search/reference)**. You may use your mind, and blank scratch paper but nothing else. No referencing your labs, homeworks, etc.

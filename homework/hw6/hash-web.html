@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyStringHash Visualizer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; max-width: 900px; }
+    h1 { margin-bottom: 8px; }
+    .row { margin: 10px 0; }
+    input[type="text"] { width: 100%; padding: 8px; font-size: 16px; }
+    button { padding: 8px 12px; font-size: 15px; }
+    pre { background: #f6f8fa; border: 1px solid #ddd; padding: 12px; white-space: pre-wrap; }
+    .note { color: #555; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>MyStringHash Output Tool</h1>
+  <div class="note">
+    Emulates <code>MyStringHash::operator()</code> from <code>hash.h</code> using 64-bit unsigned wraparound behavior.
+    Toggle DEBUG to show lines like <code>w[i] = ...</code> exactly as the C++ code would print.
+  </div>
+
+  <div class="row">
+    <label for="inputStr">Input string</label>
+    <input id="inputStr" type="text" placeholder="Type a string (e.g. abc123)" />
+  </div>
+
+  <div class="row">
+    <label><input id="debugMode" type="checkbox" /> DEBUG defined (print w array)</label>
+  </div>
+
+  <div class="row">
+    <button id="runBtn">Compute hash</button>
+  </div>
+
+  <pre id="output"></pre>
+
+  <script>
+    const MOD64 = 1n << 64n;
+    const R_VALUES = [
+      983132572n,
+      1468777056n,
+      552714139n,
+      984953261n,
+      261934300n
+    ];
+
+    function toLowerAsciiChar(ch) {
+      return ch.toLowerCase();
+    }
+
+    function letterDigitToNumber(ch) {
+      const c = ch.charCodeAt(0);
+      if (c >= 48 && c <= 57) { // '0'..'9'
+        return BigInt(c - 48 + 26);
+      }
+      const lower = toLowerAsciiChar(ch).charCodeAt(0);
+      // Mirrors: static_cast<HASH_INDEX_T>(std::tolower(letter) - 'a')
+      // For non [a-z], this can go negative in signed math before casting to size_t.
+      // We emulate size_t cast using mod 2^64.
+      return BigInt.asUintN(64, BigInt(lower - 97));
+    }
+
+    function calculateWValues(k) {
+      const w = [0n, 0n, 0n, 0n, 0n];
+      let processed = 0;
+
+      while (processed !== k.length) {
+        const idx = 4 - Math.floor(processed / 6);
+        if (idx < 0 || idx > 4) {
+          throw new Error("Input too long for this exact implementation (it writes past w[5] in C++). Try length <= 30.");
+        }
+
+        if (k.length - processed < 6) {
+          let currW = 0n;
+          for (let j = 0; j < k.length - processed; j++) {
+            currW = (currW * 36n + letterDigitToNumber(k[j])) % MOD64;
+          }
+          w[idx] = currW;
+          processed = k.length;
+        } else {
+          let currW = 0n;
+          for (let j = k.length - processed - 6; j < k.length - processed; j++) {
+            currW = (currW * 36n + letterDigitToNumber(k[j])) % MOD64;
+          }
+          w[idx] = currW;
+          processed += 6;
+        }
+      }
+
+      return w;
+    }
+
+    function myStringHash(k, debug) {
+      const w = calculateWValues(k);
+      let hashValue = 0n;
+      let out = "";
+
+      for (let i = 0; i < 5; i++) {
+        if (debug) out += `w[${i}] = ${w[i].toString()}\n`;
+        hashValue = (hashValue + (R_VALUES[i] * w[i]) % MOD64) % MOD64;
+      }
+
+      out += hashValue.toString();
+      return out;
+    }
+
+    document.getElementById('runBtn').addEventListener('click', () => {
+      const input = document.getElementById('inputStr').value;
+      const debug = document.getElementById('debugMode').checked;
+      const output = document.getElementById('output');
+
+      try {
+        output.textContent = myStringHash(input, debug);
+      } catch (e) {
+        output.textContent = `Error: ${e.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

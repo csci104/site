@@ -32,6 +32,8 @@ Note:  Make sure you compute using `unsigned long long` variables or cast (const
 
 #### Testing
 
+In Spring '26 we added a simple website you can use to check your intermediate `w[i]` values and the final output. It is available [here]({{site.baseurl}}/homework/hw6/hash-web.html).
+
 We have provided a simple test program, `str-hash-test.cpp` where you can provide a string on the command line and it will hash the string and output the hash result. Below is some debug output of the `w[i]` values computed for several test strings using the debug `r` values. 
 
 Below is the output for a few strings:

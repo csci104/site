@@ -60,6 +60,7 @@ The exam is a mix of short answer, multiple choice, analysis, tracing, and codin
  - Definitions of modular congruence
  - Performing modular arithmetic
  - Modular exponentiation techniques
+ - Properties of primes
  - Euclid's algorithm for finding `gcd`
  - Finding multiplicative inverses for modulo-n systems
 

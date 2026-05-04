@@ -74,6 +74,14 @@ The final is cumulative over the topics listed below:
  - Linearity of Expectation
  - Geometric Distribution
 
+#### Unit 19a,b - Number Theory
+ - Definitions of modular congruence
+ - Performing modular arithmetic
+ - Modular exponentiation techniques
+ - Properties of primes
+ - Euclid's algorithm for finding `gcd`
+ - Finding multiplicative inverses for modulo-n systems
+
 #### Unit 20 - Bloom Filters & Skip Lists
  - Bloom filter pros and cons
  - Bloom filter operations (insert and find)

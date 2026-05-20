@@ -1,44 +1,28 @@
 instructors:
-  - name: Mark Redekopp
-    email: redekopp@usc.edu
-    image: /assets/img/staff/redekopp.jpg
-    hours: "M: 12-1:30PM, T/Th: 9:30-10:45AM, Th: 1-2:45 pm, F: 9:30-10:45AM"
-    location: EEB-222
+  - name: Carter Slocum
+    email: cpslocum@usc.edu
+    image: /assets/img/staff/carslo.png
+    hours: "T/Th: 2:00-3:00pm"
+    location: Ginsberg Hall B2 floor, or after lecture in THH 110
 
 assistants:
-  - name: Wen, Jiahao
-    email: jiahaow@usc.edu
-    image: /assets/img/staff/jiahaow.png
+#  - name: Wen, Jiahao
+#    email: jiahaow@usc.edu
+#    image: /assets/img/staff/jiahaow.png
 
-  - name: Gerard, Patrick
-    email: pgerard@usc.edu
-    image: /assets/img/staff/pgerard.jpg
-
-  - name: Cai, Yuliang
-    email: caiyulia@usc.edu
-    image: /assets/img/staff/caiyulia.jpg
-
-  - name: Zhu, Feiyu
-    email: feiyuzhu@usc.edu
-    image: /assets/img/staff/feiyuzhu.jpg
-
-  - name: Wang, Ting-Yuan
-    email: twang151@usc.edu
-    image: /assets/img/staff/twang151.jpg
-
-uas:
-  - name: Anna Hsu
-    email: adhsu@usc.edu
-    image: /assets/img/staff/adhsu.jpg
-  - name: Andrew Zhang
-    email: azhang69@usc.edu
-    image: /assets/img/staff/azhang69.jpg
-  - name: Brianna Huynh
-    email: huynhbri@usc.edu
-    image: /assets/img/staff/huynhbri.jpg
-  - name: Darius Mahjoob
-    email: dmahjoob@usc.edu
-    image: /assets/img/staff/dmahjoob.jpg
-  - name: Himanshu Jain
-    email: jainhima@usc.edu
-    image: /assets/img/staff/jainhima.png
+#uas:
+#  - name: Anna Hsu
+#    email: adhsu@usc.edu
+#    image: /assets/img/staff/adhsu.jpg
+#  - name: Andrew Zhang
+#    email: azhang69@usc.edu
+#    image: /assets/img/staff/azhang69.jpg
+#  - name: Brianna Huynh
+#    email: huynhbri@usc.edu
+#    image: /assets/img/staff/huynhbri.jpg
+#  - name: Darius Mahjoob
+#    email: dmahjoob@usc.edu
+#    image: /assets/img/staff/dmahjoob.jpg
+#  - name: Himanshu Jain
+#    email: jainhima@usc.edu
+#    image: /assets/img/staff/jainhima.png

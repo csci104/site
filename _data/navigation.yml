@@ -15,7 +15,7 @@ items:
   #   icon: /assets/img/icon/duration.svg
   - title: Shared folder
     short: Drive
-    url: https://drive.google.com/drive/u/1/folders/1-NAExAHZAchzXIe1jOD0H7DfTqzHBX4t
+    url: https://drive.google.com/drive/folders/1BH9A5aKMhYYFliw4meHU_ls8Tmc9JD-n?usp=sharing
     icon: /assets/img/icon/google-document.svg 
     external: true
   - title: Semester schedule
@@ -33,15 +33,15 @@ items:
     url: /labs/
     icon: /assets/img/icon/lab.svg
     external: false
-  - title: EdStem
-    short: EdStem
-    url: https://edstem.org/us/courses/89779/discussion
+  - title: Piazza
+    short: Piazza
+    url: https://piazza.com/class/mpdae6c5rti1x1#
     icon: /assets/img/icon/admin.svg
     external: true
   - title: Course syllabus
     short: Syllabus
 #    url: /syllabus/
-    url: https://drive.google.com/file/d/14B4TDT-GC7P5e27snm6HKsJ2EJFu77z-/view?usp=drive_link
+    url: https://docs.google.com/document/d/1vuLb1JFop7B5xUubh2b_RdmSscxFACHDmCwOCcxRsGA/edit?usp=sharing
     icon: /assets/img/icon/google-document.svg
     external: true
   # - title: Section list

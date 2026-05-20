@@ -1,32 +1,32 @@
 qa_tool: EdStem
 # Piazza discussion links updated for Spring 2026
-piazza: https://edstem.org/us/courses/89779/discussion
+piazza: https://piazza.com/class/mpdae6c5rti1x1#
 #admin_piazza: httpx://piazza.com/usc/spring2023/csci104/home
-discussion: https://edstem.org/us/courses/89779/discussion
-discussion-join: https://edstem.org/us/join/qw9gPK
+#discussion: https://edstem.org/us/courses/89779/discussion
+#discussion-join: https://edstem.org/us/join/qw9gPK
 #admin_discussion-join: httpx://piazza.com/usc/spring2023/csci104
-calendar_fa25: https://calendar.google.com/calendar/embed?src=c_69c16e2e4689c2b7eb50fdb6af4e3f1bc8e9efa77a7fba116b02d7821a04268a%40group.calendar.google.com&ctz=America%2FLos_Angeles
-calendar: https://calendar.google.com/calendar/embed?src=c_u2lqs93tskk0tkkm1b2a0e6ae4%40group.calendar.google.com&ctz=America%2FLos_Angeles
+#calendar_fa25: https://calendar.google.com/calendar/embed?src=c_69c16e2e4689c2b7eb50fdb6af4e3f1bc8e9efa77a7fba116b02d7821a04268a%40group.calendar.google.com&ctz=America%2FLos_Angeles
+#calendar: https://calendar.google.com/calendar/embed?src=c_u2lqs93tskk0tkkm1b2a0e6ae4%40group.calendar.google.com&ctz=America%2FLos_Angeles
 #github: httpx://github.com/usc-csci104-summer2022
 #github_ssh: git@github.com:usc-csci104-summer2022
 github_org: usc-csci104-spring2026
 # discord: https://discord.gg/YNAzZkF
 vm: https://bytes.usc.edu/files/cs103/VM/StudentVM_Spring2018.ova
 
-github_classroom: https://classroom.github.com/classrooms/244087996-usc-csci104-spring2026-classroom
-blackboard: https://brightspace.usc.edu/
+#github_classroom: https://classroom.github.com/classrooms/244087996-usc-csci104-spring2026-classroom
+#blackboard: https://brightspace.usc.edu/
 notes: http://david-kempe.com/teaching/DataStructures.pdf
 # these are the same, the html and md files should be searched and fixed
-regrades: https://forms.gle/wd3EDjYLMbr59rN17
-regrade_form: https://forms.gle/wd3EDjYLMbr59rN17
+#regrades: https://forms.gle/wd3EDjYLMbr59rN17
+#regrade_form: https://forms.gle/wd3EDjYLMbr59rN17
 slug: cs104-sp26
-slide_location: https://drive.google.com/drive/folders/1-NAExAHZAchzXIe1jOD0H7DfTqzHBX4t?usp=drive_link
+slide_location: https://drive.google.com/drive/folders/1BH9A5aKMhYYFliw4meHU_ls8Tmc9JD-n?usp=sharing
 #extension_form: https://forms.gle/Vgx3uDJEFYyMEJZn8
-syllabus_link: https://drive.google.com/file/d/14B4TDT-GC7P5e27snm6HKsJ2EJFu77z-/view?usp=drive_link
+syllabus_link: https://docs.google.com/document/d/1vuLb1JFop7B5xUubh2b_RdmSscxFACHDmCwOCcxRsGA/edit?usp=sharing
 visual_code: https://code.visualstudio.com/download
-docker_repo: https://github.com/csci104/docker
+#docker_repo: https://github.com/csci104/docker
 lab_form: 
-git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
+#git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
 osas_dsp_form: https://docs.google.com/forms/d/e/1FAIpQLSf_JvPQKjhDkMENDSW_J9iV-N-C8qpw5oSH0njNgTpVDZy99Q/viewform?usp=header
 account_ta_name: TBD
 account_ta_email: tbd@usc.edu

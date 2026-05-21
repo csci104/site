@@ -6,11 +6,14 @@ title: Homework
 
 # Homework
 
-Homework will be assigned once every **1 and a half weeks** roughly. It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homework assignments will typically be split into two components: a written component and a coding component. Note: These components are submitted separately and have different late policies.
+Homework will be assigned once every **2 weeks** roughly (Sometimes more often for the Summer section). It will be graded, and require substantial work. The average student should **expect to spend about 15-20 hours per homework**. Homework assignments will typically be split into two components: a written component and a coding component. Note: These components are submitted separately and have different late policies.
 <!--
 Each student will be responsible for use Github Classroom to generate a `git` repository for their coding work and also for submission. You will be using the **git** source code management tool to maintain your homework code. 
 -->
 
+All Assignmets can be found on Codio {{ site.data.urls.codio_course }}
+
+Join the Codio via the link: {{ site.data.urls.codio_join }}
 
 <h2 id="schedule">Schedule</h2>
 

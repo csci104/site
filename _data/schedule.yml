@@ -7,29 +7,29 @@ show:
 exams:
 
   - name: Midterm 1 
-    time: 7pm-8:40pm Feb 26th
-    location: TBA
+    time: 3-5pm June 5th
+    location: THH 110
     link: TBA
     #link: mt1-info/
 
   - name: Midterm 2 
-    time: 7pm-8:40pm Apr 2nd
-    location: TBA
+    time: 3-5pm June 19th
+    location: THH 110
     link: TBA
 
   - name: Midterm 3
-    time: 7pm-8:40pm Apr 23rd
-    location: TBA
+    time: 3-5pm July 3rd
+    location: THH 110
     link: TBA
 
   - name: Midterm 4
-    time: 7pm-8:40pm Apr 23rd
-    location: TBA
+    time: 3-5pm July 17th
+    location: THH 110
     link: TBA
 
   - name: Final
     time: 3-5pm July 23rd
-    location: TBA
+    location: THH 110
     link: TBA
 
 lectures:
@@ -61,11 +61,6 @@ lectures:
       - L02e_LinkedLists.pdf
       - L02b_Classes.pdf
     recording: 
-    special_row: "Special Review Lecture on Zoom during Thurs. 1/15 Quiz time -- See EdStem for link."
-
-  # 3 Tue 1/20
-  - topics: 
-    - MLK Holiday
 
   # 4 Thurs. 1/22
   - topics:
@@ -216,7 +211,6 @@ lectures:
       - L16_HashingIntro.pdf
       - L16_HashingIntro_Mark.pdf
       - L16_HashingPractice.pdf
-    special_row: "Spring Break"
 
   # 19 Tue 3/24
   - topics:

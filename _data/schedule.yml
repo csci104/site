@@ -7,23 +7,23 @@ show:
 exams:
 
   - name: Midterm 1 
-    time: 3-5pm June 5th
+    time: 3-5pm June 4th
     location: THH 110
     link: TBA
     #link: mt1-info/
 
   - name: Midterm 2 
-    time: 3-5pm June 19th
+    time: 3-5pm June 18th
     location: THH 110
     link: TBA
 
   - name: Midterm 3
-    time: 3-5pm July 3rd
+    time: 3-5pm July 2nd
     location: THH 110
     link: TBA
 
   - name: Midterm 4
-    time: 3-5pm July 17th
+    time: 3-5pm July 16th
     location: THH 110
     link: TBA
 
@@ -140,10 +140,6 @@ lectures:
     notes: 
       - L09_PQHeaps.pdf
 
-  # 11 Tue 2/17
-  - topics: 
-    - President's Day Holiday
-
   # 12 Thurs 2/19
   - topics:
       - Templates (cont.)
@@ -170,7 +166,6 @@ lectures:
       - Chapter 9.1, 9.3
     notes: 
       - L10_GraphsAlgorithms.pdf
-    special_row: "Exam 1 during Quiz Section"
   
   # 15 Tue 3/3
   - topics:
@@ -247,7 +242,6 @@ lectures:
       - Lewis & Zax Chapter 26
     notes: 
       - L18_Probability.pdf
-    special_row: "Exam 2 during Quiz Section"
 
   # 23 Tue 4/7
   - topics:
@@ -302,7 +296,6 @@ lectures:
     notes: 
       - L22_Tries.pdf
       - L21_SkipLists.pdf
-    special_row: "Exam 3 during Quiz Section"
   
   # 29 Tue 4/28
   - topics:

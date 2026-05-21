@@ -28,13 +28,13 @@ Additional info is provided in [Lab 0]({{site.url}}/labs/lab0/index.html)
 - [The unofficial 104 textbook](./textbook-data-structures.pdf) has extensive notes on all 104 topics by David Kempe.
 
 ## Exam Info pages
- - [MT1 Info page]({{site.baseurl}}/resources/mt1-info/) 
- - [Final Info page]({{site.baseurl}}/resources/final-info/)
+
+To be posted periodically throughout the semester. Check the Drive also.
 
 ## Editors and IDEs
 
-We strongly advise you against using gedit, notepad, or other primitive editors.
-Switch to a professional-level environment or editor, such as the following:
+We strongly advise you against using gedit, notepad, or other basic editors.
+Switch to a professional-level environment or editor designed for computer programming work, such as the following:
 
 - [Visual Studio Code](https://code.visualstudio.com/) is a free, open source IDE with good developer tooling and a wide array of plugins. **This is the recommended editor for CS 104**.
 - [Microsoft Visual Studio](https://visualstudio.microsoft.com/) is a commercial development environment that is generally not free, but for which you can get a free license as a USC student.

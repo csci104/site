@@ -12,7 +12,7 @@ Lab sessions are held every week with the possible exception of Exam weeks, and 
 ## Policies
 
  - **Attendance:** You must attend lab in person and in your registered section (seating is limited; do not attend a different lab).
- - **Allowed absences:** You may miss at most **3 labs** during the semester and still receive credit for the lab portion. You have **2 excused lab sessions** (illness/emergency only). To use an excused absence, email your lab instructor in advance.
+ - **Allowed absences:** You may miss at most **3 labs** during the semester and still receive credit for the lab portion. You have **3 excused lab sessions** (illness/emergency only). To use an excused absence, email your lab instructor in advance.
  - **Grading (CR/NC):** To receive credit, attend for the vast majority of the session, participate in exercises, and show honest effort on the assigned work. Effort matters — ask questions and engage; lack of effort/work may result in no credit.
  - **Collaboration:** Light pair collaboration is allowed and encouraged only when both partners consent and clearly contribute. Do not direct or code for your partner. Staff may require independent work if needed.
  - **Make‑ups:** Labs generally cannot be made up after the session unless pre‑approved for documented emergencies; otherwise, a missed lab counts toward your allowed absences.

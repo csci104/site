@@ -7,8 +7,8 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      written: Mon., Jan 26th
-      programming: Fri., Jan 30th
+      written: Jun 3rd
+      programming: Jun 3rd
 #      due: Fri., September 12th
   - id: hw2
     title: Inheritance, Polymorphism, and STL
@@ -18,8 +18,8 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      written: Mon., Feb 9th
-      programming: Fri., Feb 20th
+      written: None
+      programming: Jun 10th
 #      due: Fri., October 3rd
   - id: hw3
     title: Heaps
@@ -29,8 +29,8 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      written: None
-      programming: Fri., Mar 13th
+      written: June 24th
+      programming: June 24th
 #      due: Fri., October 17th at
   - id: hw4
     title: AVL Trees
@@ -40,8 +40,8 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      written: Fri., Mar 13th
-      programming: Mon., Mar 30th
+      written: July 1st
+      programming: July 1st
 #      due: Fri., November 14th at 11:59PM PDT
   - id: hw5
     title: Backtracking and Recursion
@@ -52,7 +52,7 @@ assignments:
       assigned:
       checkpoint:
       written: None
-      programming: Fri., Apr 10th
+      programming: July 15th
 #      due: Fri., December 5th at 11:59PM PDT
   - id: hw6
     title: Counting, Probability, and Hash tables
@@ -62,8 +62,8 @@ assignments:
     dates:
       assigned:
       checkpoint:
-      written: Mon., Apr 20th
-      programming: Fri., May 1st
+      written: July 22nd
+      programming: July 22nd
 #      due: Fri., December 16th at 11:59PM PDT
 
 labs:

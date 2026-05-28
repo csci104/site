@@ -16,7 +16,7 @@ In this lab, we will review Makefiles, how they work, and how to write them.
 In order to do this, we will also be reviewing how to use GCC to effectively compile your code with the right settings and configuration.
 We will also explore some advanced techniques you can use to streamline your Makefile as your projects get larger (heads up for PA2!).
 
-To access the source code for this lab, head over to the 104 lab <a href="https://github.com/usc-csci104-spring2026/resources">resources repository</a> and pull to your local machine to work on it.
+To access the source code for this lab, head over to the 104 lab <a href="https://github.com/csci104/sp24-labs">resources repository</a> and pull to your local machine to work on it.
 
 
 ## GCC and Makefiles
@@ -365,7 +365,9 @@ $(BIN_DIR)/.dirstamp:
 ```
 
 The `.dirstamp` file is a hidden file we make to make sure a directory exists.
-Notice that this rule does not have any dependency.When a rule has no dependency, it will be executed if the target does not exist. The `touch` command in a makefile is used to update a file's modification timestap to the current time, which influences how the `make` utility determines whether a target needs to be rebuilt. You can add this rule to the dependency list of your compile commands.
+Notice that this rule does not have any dependency.
+When a rule has no dependency, it will be executed if the target does not exist.
+You can add this rule to the dependency list of your compile commands.
 
 ```
 all: $(BIN_DIR)/.dirstamp $(BIN_DIR)/pokemon
@@ -441,14 +443,14 @@ $(BIN_DIR)/attackMove.o: src/attackMove.cpp lib/attackMove.h
 There is another problem, however. By default, GCC will look in the current directory of the file (i.e. `src` when compiling a file in `src`), but it will not look under nested directories.
 In addition, GCC also searches for standard libraries.
 
-In order to add a directory to its search paths, you use the -I *dir* option, where *dir* is the relative directory path from where you run the compile command.
+In order to add a directory to its search paths, you use the -I*dir* option, where *dir* is the relative directory path from where you run the compile command.
 If you are using a Makefile, the path will be relative to where your Makefile is.
 
 In our case, we want to ask GCC to look for files under the `lib` directory.
 We can add append the option to the end of `CPPFLAGS`:
 
 ```
-CPPFLAGS = -Wall -g -I lib
+CPPFLAGS = -Wall -g -Ilib
 ```
 
 Technically, this is not a makefile feature, but a compiler option.

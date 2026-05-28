@@ -7,15 +7,14 @@ title: Jamie's GDB House of Horrors
 
 ---
 
-## To Get Credit...
+**Due at the end of your lab section**
 
-You are expected to show your work to your TA.  **You may not finish EVERYTHING but should make significant progress.**
+You are expected to show your work to any CP/TA to get checked off during the lab section
+you registered for. If you are sick or cannot make it for some reason, please email bgbell@usc.edu.
 
 ---
 
-# GDB House of Horrors
-
-**(Lab Credit: Jamie Smith, amazing former CS104 CP)**
+# Jamie's GDB House of Horrors
 
 Can you survive the maze of segfaults, and banish a battery of blatantly bad behavior, all in the name of improving your GDB skills?
 This lab will guide you through hunting down the kind of bugs that keep programmers awake at night.
@@ -73,7 +72,8 @@ In order to successfully find the issue, you need to be able to answer a few que
 
 1. What line is the problem occurring on?
     - Read through long standard library backtraces.
-      Often, a segfault or exception will happen deep inside C++ standard library code, and you will get a backtrace with several frames of obscurely named and templated functions at the top.  **BUT the problem is NOT in the C++ library code...It is in your code and the data you passed to the library function was INVALID, or you called the function for an invalid scenario.**  So ignore those function calls of C++ library functions, and find the highest frame that **mentions your code**.
+      Often, a segfault or exception will happen deep inside C++ standard library code, and you will get a backtrace with several frames of obscurely named and templated functions at the top.
+      Just ignore those, and find the highest frame that mentions your code.
       That is usually where the actual error is.
     - Use Valgrind as well.
       If all you need is the backtrace for a segfault, Valgrind can give that to you without any hassle.
@@ -92,7 +92,7 @@ In order to successfully find the issue, you need to be able to answer a few que
 ### Why is the Issue Occurring?
 
 The main question to ask is, "is the problem conceptual, logical, or coding error?"
-To answer, understand what your function/code is trying to and then use `cerr` statements (`cerr` and `cout` are mostly the same for our purposes, so you can also just use `cout`; to find out more search up these two or ask AI) or use GDB in order to identify what the values of variables are to determine if they are correct or not.
+To answer, understand what your function/code is trying to and then use `cerr` statements or GDB in order to identify what the values of variables are to determine if they are correct or not.
 
 - Carefully place breakpoints.
   You want to break at the start of the area where the problem might be occurring, not before and not after.
@@ -101,9 +101,9 @@ To answer, understand what your function/code is trying to and then use `cerr` s
 - Print important variables.
   Use the `print` GDB command to check the values of any suspicious variables.
   Don't forget that by calling print with a struct or class, it will print out all the member variables of that class.
-- Use `cerr`/`cout` statements.
+- Use `cerr` statements.
   For localizing a fault to a specific area of the code, or tracing the flow of an entire program, it's invaluable to just print out important values and messages throughout your program.
-  One advantage of using `cerr` rather than `cout` is that it guarantess that your output is flushed to the terminal before the program terminates.
+  Remember to use `cerr` rather than `cout` so your output is guaranteed to be flushed to the terminal before the program terminates.
 
 ### GDB Command Cheat Sheet
 
@@ -153,16 +153,10 @@ Think of it like matrix multiplication, but with more violence!
     <img src="./assets/game_of_pointers.png" alt="Game of Pointers" width="500" height="350" class="no-shadow" />
 </div> -->
 
-
 Two students (whose names have been omitted to protect the guilty) attempted this problem, but didn't get it quite right.
 We're now going to find the bugs in their programs with GDB.
 
 ### Directions
-
-For this lab…
-- You may work in **teams of 2** (but absolutely NO teams of 3) where you solve the bugs and what to do together
-- But **EACH** person should **run the commands and gdb for themselves**, individually;  JUST think TOGETHER as a team!
-- You create your answers together but each person should record them for themselves.
 
 For each problem below, answer in `answers.txt` with:
 
@@ -171,35 +165,15 @@ For each problem below, answer in `answers.txt` with:
 - A **short** explanation of what you did to fix the error.
 
 
-### Get the Code
-
-Run these commands in your development environment:
-
-- `cd` into your `resources` folder and do a `git pull`
-
-```bash
-cd cs104-repos/resources
-git pull
-```
-
-A folder, `lab2` should be downloaded.  It is probably best to make a copy of the lab2 folder to your own area, such as your home directory and then go to that folder.
-
-```bash
-cp -rf lab2 ~
-cd ~/lab2
-```
-
-### Problem 1 (Guided)
-
+## Problem 1 (Guided)
 
 Okay, so let's check out the first student's program.
-Open a terminal in the assignment directory, and run the simulation with:
+Open a terminal in the assignment directory, and run the simulation with `make test_game1`.
 
-```bash
-make test_game1
-```
+Remember to open a shell before proceeding (ie, by running `ch shell csci104`). If you don't have a container running yet, remember to run `ch start csci104` before opening a shell!
 
-- [ ] Run `make test_game1`.
+- [ ] Start/open a shell.
+- [ ] `cd` into the `lab2` folder within the docker shell.
 
 You should get something like:
 
@@ -212,34 +186,23 @@ Makefile:15: recipe for target 'test_game1' failed
 make: *** [test_game1] Segmentation fault (core dumped)
 ```
 
+- [ ] Run `make test_game1`.
+
 Uh-oh.
 That's not good.
 In the past, you might have ran screaming from an error like this, but now we have tools to attack it!
-Run GDB on the program with the terminal command:
-
-```bash
-gdb ./game_student1
-```
-
-- [ ] Start `gdb` with the newly compiled `game_student1`.
-
+Run GDB on the program with the terminal command `gdb ./game_student1`.
 You should now have a terminal prompt that looks like:
 
 ```
 (gdb)
 ```
 
+- [ ] Start `gdb` with the newly compiled `game_student1`.
+
 The program has not been started yet, and GDB is now awaiting your commands.
 Just to practice, let's set a breakpoint at the start of the program so it will stop right away.
-Run the command:
-
-```bash
-break main
-```
-
-
-- [ ] Set a breakpoint on `main`.
-
+Run the command `break main`.
 You should get:
 
 ```
@@ -247,15 +210,9 @@ You should get:
 Breakpoint 1 at 0x401d81: file game_of_pointers_student1.cpp, line 198.
 ```
 
+- [ ] Set a breakpoint on `main`.
 
-Now, let's start the program, supplying the command line arguments for its input and output files:
-
-```bash
-run input1.txt output1-stu1.txt
-```
-- [ ] Run the program with input and output files.
-
-
+Now, let's start the program, supplying the command line arguments for its input and output files: `run input1.txt output1-stu1.txt`.
 You should get:
 
 ```
@@ -267,6 +224,7 @@ Breakpoint 1, main (argc=3, argv=0x7fffffffdc58)
 198	{
 ```
 
+- [ ] Run the program with input and output files.
 
 GDB has now started your program, and it stopped on the breakpoint we set earlier.
 You can set these breakpoints on any function name or source line in your code, and GDB will stop there.
@@ -276,11 +234,7 @@ Cool, right?
 However, it would take forever to search through the entire program this way.
 Instead, let's just head straight to the segfault.
 Luckily, GDB automatically breaks on segfaults, so we don't have to worry about breakpoint positioning right now.
-
 Enter `c` to continue straight to the issue.
-
-- [ ] Use `c` or `continue` to get to our error.
-
 You should get:
 
 ```
@@ -293,25 +247,19 @@ Program received signal SIGSEGV, Segmentation fault.
 252	            invaders[invaderRow][invaderCol]->power = invaderRow * 10 + (invaderCol + 1) * 10;
 ```
 
+- [ ] Use `continue` to get to our error.
 
 GDB is now at the point of the segfault, ready for you to analyze what's wrong.
 Since the segfault is occurring on this line, we already have a pretty big clue on what's wrong.
 There's only one pointer being dereferenced here.
-Let's check out its value: 
-
-```bash
-print invaders[invaderRow][invaderCol]`
-```
-
-- [ ] Check the value of the dereferenced pointer.
-
-You should see:
+Let's check out its value: `print invaders[invaderRow][invaderCol]`
 
 ```
 (gdb) print invaders[invaderRow][invaderCol]
 $1 = (Warrior *) 0x0
 ```
 
+- [ ] Check the value of the dereferenced pointer.
 
 GDB is telling us it's a null pointer!
 Fantastic!
@@ -330,17 +278,7 @@ The issue should be fairly clear.
 
 - [ ] Fix the mistake and describe your solution in `answers.txt` as outlined above.
 
-## Problem 2 
-
-Now recompile and rerun.  
-
-Quit out of gdb using the command `q` or `quit`
-
-Recompile.
-
-```
-make test_game1
-```
+## Problem 2 (Semi-Guided)
 
 When you run `make test_game1` again, you should see that the segfault is fixed, but the program fails its first test case.
 The output file should be
@@ -429,7 +367,7 @@ Describe your solution and your fix in `answers.txt`.
 - [ ] Figure out what's going wrong in `getDuelResult()`.
 - [ ] Write up the answer in `answers.txt`.
 
-## Problem 3 
+## Problem 3 (Semi-Guided)
 
 Run `make test_game1` in terminal, and you should see the first test pass!
 Unfortunately, the second test gets stuck in an infinite loop.
@@ -445,8 +383,6 @@ Don't forget to use the second input and output files in this run command!
 Like you can cancel a program on the command line, GDB lets you use `ctrl-c` to stop a program wherever it currently is.
 Hit `ctrl-c` now to break the infinite loop.
 
-- [ ] Use `ctrl-c` to send a `SIGINT` interrupt.
-
 ```
 (gdb) run input2.txt output2-stu1.txt
 Starting program: ./game_student1 input2.txt output2-stu1.txt
@@ -458,11 +394,10 @@ Program received signal SIGINT, Interrupt.
 64				if (invaders[rowIdx][colIdx] == nullptr)
 ```
 
+- [ ] Use `ctrl-c` to send a `SIGINT` interrupt.
 
 So, the code is stopped at some point within the infinite loop, but we don't really know where in the program we are.
 To find out, use the backtrace command: `bt`
-
-- [ ] Backtrace to figure out where you are.
 
 ```
 (gdb) bt
@@ -474,6 +409,7 @@ To find out, use the backtrace command: `bt`
     at game_of_pointers_student1.cpp:284
 ```
 
+- [ ] Backtrace to figure out where you are.
 
 This backtrace contains a wealth of useful information.
 Each numbered paragraph represents one frame in the current call stack of the program.
@@ -483,10 +419,7 @@ Next, we have the name of the function and the arguments it was called with, and
 The backtrace is an extremely useful tool since it lets you get a quick glance at which functions were called to bring the program to its current state.
 
 We are also able to move around through the backtrace and inspect the environment at each stack frame.
-
 Let's switch to frame 1 with the command `frame 1`.
-
-- [ ] Switch to frame 1.
 
 ```
 (gdb) frame 1
@@ -495,11 +428,10 @@ Let's switch to frame 1 with the command `frame 1`.
 103				Warrior **firstOpenInvaderPos = findOpenInvaderPos(invaders, columns, rows);
 ```
 
+- [ ] Switch to frame 1.
 
 The program is in skirmish() at line 103.
 Let's check out the values of `columns` and `rows`.
-
-- [ ] Check `columns` and `rows`.
 
 ```
 (gdb) print columns
@@ -508,6 +440,7 @@ $1 = 5
 $2 = 2
 ```
 
+- [ ] Check `columns` and `rows`.
 
 Those numbers match the dimensions in input2.txt, so they seem legitimate.
 Your job, now, is to figure out why the code is getting in a loop.

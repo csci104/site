@@ -15,7 +15,7 @@ items:
   #   icon: /assets/img/icon/duration.svg
   - title: Shared folder
     short: Drive
-    url: https://drive.google.com/drive/folders/1BH9A5aKMhYYFliw4meHU_ls8Tmc9JD-n?usp=sharing
+    url: https://drive.google.com/drive/folders/16_0Y5IOuRbZa7G9W1VWokgdiXe_xsLR4?usp=sharing
     icon: /assets/img/icon/google-document.svg 
     external: true
   - title: Semester schedule
@@ -41,7 +41,7 @@ items:
   - title: Course syllabus
     short: Syllabus
 #    url: /syllabus/
-    url: https://docs.google.com/document/d/1vuLb1JFop7B5xUubh2b_RdmSscxFACHDmCwOCcxRsGA/edit?usp=sharing
+    url: https://docs.google.com/document/d/11Jvv_UGgmsIA3X4BtjEUj5q5tQ_2a_W8sk_cpB8Hmxg/edit?usp=sharing
     icon: /assets/img/icon/google-document.svg
     external: true
   # - title: Section list

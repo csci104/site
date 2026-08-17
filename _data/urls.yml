@@ -1,6 +1,7 @@
-qa_tool: EdStem
+qa_tool: Piazza
 # Piazza discussion links updated for Spring 2026
-piazza: https://piazza.com/class/mpdae6c5rti1x1#
+piazza: https://piazza.com/class/msxqij2njyw47a
+piazza_join: https://piazza.com/usc/fall2026/csci104
 #admin_piazza: httpx://piazza.com/usc/spring2023/csci104/home
 #discussion: https://edstem.org/us/courses/89779/discussion
 #discussion-join: https://edstem.org/us/join/qw9gPK
@@ -28,10 +29,10 @@ visual_code: https://code.visualstudio.com/download
 lab_form: 
 #git_tut_slides: http://ee.usc.edu/~redekopp/cs104/slides/L99_AppendixA_Git.pdf
 osas_dsp_form: https://docs.google.com/forms/d/e/1FAIpQLSf_JvPQKjhDkMENDSW_J9iV-N-C8qpw5oSH0njNgTpVDZy99Q/viewform?usp=header
-account_ta_name: TBD
-account_ta_email: tbd@usc.edu
+#account_ta_name: TBD
+#account_ta_email: tbd@usc.edu
 #tutoring_queue: https://immasignup.com/q/fmkr
-codio_course: https://codio.com/home/teacher/e56e0b13ed4e86bf47407352be917fa2/overview
-codio_join: https://codio.com/p/signup?courseToken=montana-mailbox-phone-open
+codio_course: https://codio.com/home/teacher/a13594ba722328697a5e573b586f5a64/overview
+codio_join: https://codio.com/p/signup?courseToken=jaguar-state-match-express
 #covid_lab: httpx://forms.gle/GuyuVfw33ehAx68S9
 #excused_lab: https://forms.gle/3gUGeSpR5oFAnCtDA

@@ -1,9 +1,9 @@
 instructors:
-  - name: Carter Slocum
+  - name: Carter Slocum, PhD
     email: cpslocum@usc.edu
     image: /assets/img/staff/carslo.png
     hours: "T/Th: 2:00-3:00pm"
-    location: Ginsberg Hall B2 floor, or after lecture in THH 110
+    location: Ginsberg Hall B2 floor
 
 assistants:
 #  - name: Wen, Jiahao

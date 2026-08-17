@@ -6,31 +6,26 @@ show:
 
 exams:
 
-  - name: Midterm 1 
-    time: 3-5pm June 4th
-    location: THH 110
-    link: TBA
+  - name: Midterm 1
+    time: 7-9pm September 11th (tentative)
+    location: TBD
     #link: mt1-info/
 
   - name: Midterm 2 
-    time: 3-5pm June 18th
-    location: THH 110
-    link: TBA
+    time: 7-9pm October 2nd (tentative)
+    location: TBD
 
   - name: Midterm 3
-    time: 3-5pm July 2nd
-    location: THH 110
-    link: TBA
+    time: 7-9pm October 23rd (tentative)
+    location: TBD
 
   - name: Midterm 4
-    time: 3-5pm July 16th
-    location: THH 110
-    link: TBA
+    time: 7-9pm November 20th (tentative)
+    location: TBD
 
-  - name: Final
-    time: 3-5pm July 23rd
-    location: THH 110
-    link: TBA
+  - name: Final Exam
+    time: 11am-1pm December 12th
+    location: TBD
 
 lectures:
 

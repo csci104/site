@@ -81,7 +81,7 @@ labs:
     week: Week 2
     date: 1/20
     title: Git
-    assigned: false
+    assigned: true
     topics: Git, GitHub
     #slides: GitLab.pdf
     slide_msg: See shared folder

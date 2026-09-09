@@ -7,8 +7,8 @@ show:
 exams:
 
   - name: Midterm 1
-    time: 7-9pm September 11th (tentative)
-    location: TBD
+    time: 7-9pm September 11th
+    location: GFS 106
     #link: mt1-info/
 
   - name: Midterm 2 

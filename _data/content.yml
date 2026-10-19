@@ -163,7 +163,7 @@ labs:
     folder: lab9
     week: Week 10
     date: 3/24
-    title: Recursive Backtracking & Counting
+    title: Hashtables
     assigned: False
 #    slides: BacktrackingLab.pdf
     slide_msg: See shared folder
@@ -173,7 +173,7 @@ labs:
     week: Week 11
     date: 3/30
     title: Hashtables
-    topics: Hashtables, Hashing
+    topics: Counting & Probability
     assigned: false
   #  slides: HashtablesLab.pdf
     slide_msg: See shared folder
@@ -182,7 +182,7 @@ labs:
     folder: lab11
     week: Week 12
     date: 4/7
-    title: Counting & Probability
+    title: Midterm Review
     assigned: false
     topics: Counting
 #    slides: Midterm2Lab.pdf
@@ -192,7 +192,7 @@ labs:
     folder: lab12
     week: Week 13
     date: 4/14
-    title: Midterm Review
+    title: Number Theory
     assigned: false
 #    slides: CountingLab.pdf
     slide_msg: See shared folder
@@ -201,7 +201,7 @@ labs:
     folder: lab13
     week: Week 14
     date: 4/21
-    title: Number Theory
+    title: Recursive Backtracking & Counting
     assigned: false
     topics: Number Theory
 #    slides: ProbabilityNumberTheoryLab.pdf

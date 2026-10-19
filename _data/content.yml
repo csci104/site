@@ -163,9 +163,8 @@ labs:
     folder: lab9
     week: Week 10
     date: 3/24
-    title: MT2 Review
+    title: Recursive Backtracking & Counting
     assigned: False
-    topics: Recursion, Graph Algorithms
 #    slides: BacktrackingLab.pdf
     slide_msg: See shared folder
 
@@ -179,13 +178,13 @@ labs:
   #  slides: HashtablesLab.pdf
     slide_msg: See shared folder
 
-
   - id: 11
     folder: lab11
     week: Week 12
     date: 4/7
-    title: Recursive Backtracking & Counting
+    title: Counting & Probability
     assigned: false
+    topics: Counting
 #    slides: Midterm2Lab.pdf
     slide_msg: See shared folder
 
@@ -193,9 +192,8 @@ labs:
     folder: lab12
     week: Week 13
     date: 4/14
-    title: Counting & Probability
+    title: Midterm Review
     assigned: false
-    topics: Counting
 #    slides: CountingLab.pdf
     slide_msg: See shared folder
 

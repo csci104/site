@@ -164,7 +164,7 @@ labs:
     week: Week 10
     date: 3/24
     title: Hashtables
-    assigned: False
+    assigned: true
 #    slides: BacktrackingLab.pdf
     slide_msg: See shared folder
 

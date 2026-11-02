@@ -174,7 +174,7 @@ labs:
     date: 3/30
     title: Counting & Probability
     topics: Counting & Probability
-    assigned: false
+    assigned: true
   #  slides: HashtablesLab.pdf
     slide_msg: See shared folder
 
@@ -182,7 +182,7 @@ labs:
     folder: lab11
     week: Week 12
     date: 4/7
-    title: Midterm Review
+    title: Number Theory
     assigned: false
     topics: Counting
 #    slides: Midterm2Lab.pdf
@@ -192,7 +192,7 @@ labs:
     folder: lab12
     week: Week 13
     date: 4/14
-    title: Number Theory
+    title: Midterm Review
     assigned: false
 #    slides: CountingLab.pdf
     slide_msg: See shared folder
@@ -203,7 +203,7 @@ labs:
     date: 4/21
     title: Recursive Backtracking & Counting
     assigned: false
-    topics: Number Theory
+    topics: Recursion
 #    slides: ProbabilityNumberTheoryLab.pdf
     slide_msg: See shared folder
 

@@ -183,7 +183,7 @@ labs:
     week: Week 12
     date: 4/7
     title: Number Theory
-    assigned: false
+    assigned: true
     topics: Counting
 #    slides: Midterm2Lab.pdf
     slide_msg: See shared folder

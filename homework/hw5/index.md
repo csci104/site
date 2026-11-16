@@ -5,7 +5,6 @@ tasks: false
 title: Homework 5
 nav: homework
 hwpath: hw5
-github_starter_url: https://classroom.github.com/a/uSYrKfjc
 ---
 
 ## {{page.title}}
@@ -13,15 +12,10 @@ github_starter_url: https://classroom.github.com/a/uSYrKfjc
 + Due: See [homework page]({{site.baseurl}}/homework/index.html)
 + Directory name in your github repository for this homework (case sensitive): `{{page.hwpath}}`
 
-### Updates
-
-- 2026/04/03 - Coding portion is released.
-
 
 ## Written Portion
 
-
-{% for part in site.data.hws.hw5.written_parts %}
+The Written portion is a collection of Combinatorics, Probability, and Number Theory problems found on Codio.
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
@@ -48,15 +42,6 @@ github_starter_url: https://classroom.github.com/a/uSYrKfjc
   ```
 
 - In the VS Code editor, choose `File..Open Folder` and then find and open that folder (i.e. `cs104-repos/<your_{{page.hwpath}}_repo>`)
-
-{% for part in site.data.hws.hw5.programming_parts %}
-
-### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
-
-{% include writeups/{{ part.writeup }} %}
-
-{% endfor %}
-
 
 
 ## Submission Files

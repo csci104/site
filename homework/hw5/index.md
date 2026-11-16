@@ -15,7 +15,7 @@ hwpath: hw5
 
 ## Written Portion
 
-The Written portion is a collection of Combinatorics, Probability, and Number Theory problems found on Codio.
+- The Written portion is a collection of Combinatorics, Probability, and Number Theory problems found on Codio.
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 

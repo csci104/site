@@ -44,7 +44,7 @@ assignments:
       programming: November 12
 #      due: Fri., November 14th at 11:59PM PDT
   - id: hw5
-    title: Backtracking and Recursion
+    title: Heuristic Search with Data Structures
     assigned: true
     regrade_form:
     submit_link:

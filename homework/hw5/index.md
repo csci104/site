@@ -19,10 +19,6 @@ hwpath: hw5
 
 ### Problem {{ part.number }} - {{ part.title }} ({{part.points}}%)
 
-{% include writeups/{{ part.writeup }} %}
-
-{% endfor %}
-
 
 ## Coding Portion
 

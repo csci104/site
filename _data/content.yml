@@ -1,7 +1,7 @@
 assignments:
   - id: hw1
     title: Linked Lists and Recursion
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link:
     dates:
@@ -12,7 +12,7 @@ assignments:
 #      due: Fri., September 12th
   - id: hw2
     title: Inheritance, Polymorphism, and STL
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link:
     dates:
@@ -23,7 +23,7 @@ assignments:
 #      due: Fri., October 3rd
   - id: hw3
     title: Heaps
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link:
     dates:
@@ -34,7 +34,7 @@ assignments:
 #      due: Fri., October 17th at
   - id: hw4
     title: AVL Trees
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link:
     dates:
@@ -45,7 +45,7 @@ assignments:
 #      due: Fri., November 14th at 11:59PM PDT
   - id: hw5
     title: Heuristic Search with Data Structures
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link:
     dates:
@@ -56,7 +56,7 @@ assignments:
 #      due: Fri., December 5th at 11:59PM PDT
   - id: hw6
     title: Counting, Probability, and Hash tables
-    assigned: true
+    assigned: false
     regrade_form:
     submit_link:
     dates:
@@ -183,7 +183,7 @@ labs:
     week: Week 12
     date: 4/7
     title: Number Theory
-    assigned: false
+    assigned: true
     topics: Counting
 #    slides: Midterm2Lab.pdf
     slide_msg: See shared folder
@@ -193,7 +193,7 @@ labs:
     week: Week 13
     date: 4/14
     title: Midterm Review
-    assigned: false
+    assigned: true
 #    slides: CountingLab.pdf
     slide_msg: See shared folder
 

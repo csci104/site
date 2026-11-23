@@ -202,7 +202,7 @@ labs:
     week: Week 14
     date: 4/21
     title: Recursive Backtracking & Counting
-    assigned: false
+    assigned: true
     topics: Recursion
 #    slides: ProbabilityNumberTheoryLab.pdf
     slide_msg: See shared folder
